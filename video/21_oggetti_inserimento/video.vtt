@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.306
+Un'app diventa davvero utile quando chi la usa può scriverci dentro: un nome,
+
+2
+00:00:05.306 --> 00:00:06.720
+un'età, una data.
+
+3
+00:00:06.720 --> 00:00:09.886
+In questo video vediamo la famiglia Inserimento:
+
+4
+00:00:09.886 --> 00:00:13.561
+sette oggetti per far entrare informazioni nella tua app.
+
+5
+00:00:14.861 --> 00:00:17.593
+Eccoli tutti in una sola schermata.
+
+6
+00:00:17.593 --> 00:00:21.659
+La casella di testo per una riga, e la casella password,
+
+7
+00:00:21.659 --> 00:00:24.836
+che mostra pallini al posto delle lettere.
+
+8
+00:00:24.836 --> 00:00:28.013
+La casella numero, con i tasti meno e più.
+
+9
+00:00:28.013 --> 00:00:31.888
+Il selettore di data apre il calendario del telefono,
+
+10
+00:00:31.888 --> 00:00:35.129
+e il selettore di colore apre la tavolozza.
+
+11
+00:00:35.129 --> 00:00:38.115
+Il cursore è una levetta da trascinare.
+
+12
+00:00:38.115 --> 00:00:41.800
+E l'area di testo, in basso, contiene tante righe.
+
+13
+00:00:43.100 --> 00:00:46.196
+La casella di testo ha due eventi importanti.
+
+14
+00:00:46.196 --> 00:00:48.999
+Cambio arriva a ogni lettera che scrivi:
+
+15
+00:00:48.999 --> 00:00:52.738
+perfetto per aggiornare qualcosa mentre l'utente digita.
+
+16
+00:00:52.738 --> 00:00:56.651
+Invio arriva quando si preme il tasto Invio della tastiera,
+
+17
+00:00:56.651 --> 00:00:58.929
+cioè quando l'utente ha finito.
+
+18
+00:00:58.929 --> 00:01:02.843
+Dentro il blocco c'è sempre una variabile speciale, evento:
+
+19
+00:01:02.843 --> 00:01:06.230
+un dizionario con i dati di quello che è successo.
+
+20
+00:01:06.230 --> 00:01:09.910
+Per l'invio, evento di testo contiene la frase scritta.
+
+21
+00:01:09.910 --> 00:01:14.583
+E il metodo aggiungi riga dell'area di testo aggiunge una riga in fondo,
+
+22
+00:01:14.583 --> 00:01:16.569
+senza cancellare le altre.
+
+23
+00:01:17.869 --> 00:01:22.289
+Un esempio pratico: una password deve avere almeno otto caratteri.
+
+24
+00:01:22.289 --> 00:01:25.813
+A ogni cambio controlliamo la lunghezza del valore.
+
+25
+00:01:25.813 --> 00:01:30.353
+Se è più corta di otto, lo sfondo della casella diventa rosa chiaro,
+
+26
+00:01:30.353 --> 00:01:32.205
+come un avviso gentile.
+
+27
+00:01:32.205 --> 00:01:37.401
+Quando la password è abbastanza lunga, rimettiamo lo sfondo con il testo vuoto:
+
+28
+00:01:37.401 --> 00:01:39.910
+vuol dire torna al colore normale.
+
+29
+00:01:41.210 --> 00:01:47.226
+Per i numeri, usa la casella numero o il cursore invece di una casella di testo.
+
+30
+00:01:47.226 --> 00:01:53.173
+Hanno un minimo e un massimo, quindi nessuno può scrivere un'età di mille anni.
+
+31
+00:01:53.173 --> 00:01:59.121
+La casella numero ha anche il passo, cioè di quanto salgono i tasti più e meno,
+
+32
+00:01:59.121 --> 00:02:00.556
+e i decimali.
+
+33
+00:02:00.556 --> 00:02:06.641
+E soprattutto la loro proprietà valore è già un numero: puoi fare i conti subito,
+
+34
+00:02:06.641 --> 00:02:08.965
+senza convertire il testo.
+
+35
+00:02:10.265 --> 00:02:13.772
+Tutti questi oggetti usano lo stesso evento, cambio,
+
+36
+00:02:13.772 --> 00:02:16.929
+e mettono il nuovo valore in evento di valore.
+
+37
+00:02:16.929 --> 00:02:19.968
+Per l'età controlliamo se è almeno diciotto.
+
+38
+00:02:19.968 --> 00:02:24.470
+Per il cursore del volume scriviamo il numero nell'etichetta accanto,
+
+39
+00:02:24.470 --> 00:02:25.872
+mentre trascini.
+
+40
+00:02:25.872 --> 00:02:29.906
+E per il selettore di colore il valore è un codice di colore,
+
+41
+00:02:29.906 --> 00:02:33.530
+che possiamo usare direttamente per colorare un testo.
+
+42
+00:02:34.830 --> 00:02:38.528
+Il selettore di data apre il calendario del telefono,
+
+43
+00:02:38.528 --> 00:02:40.952
+così nessuno sbaglia a scrivere.
+
+44
+00:02:40.952 --> 00:02:46.165
+La data arriva nel formato italiano: giorno, mese e anno separati dalla barra.
+
+45
+00:02:46.165 --> 00:02:50.348
+Con minimo data e massimo data puoi anche limitare la scelta,
+
+46
+00:02:50.348 --> 00:02:53.197
+per esempio vietare le date nel futuro.
+
+47
+00:02:54.497 --> 00:02:59.497
+Un piccolo tocco che fa sembrare la tua app professionale: il segnaposto.
+
+48
+00:02:59.497 --> 00:03:04.620
+È il testo grigio che si vede nella casella vuota, come scrivi il tuo nome,
+
+49
+00:03:04.620 --> 00:03:06.904
+oppure almeno otto caratteri.
+
+50
+00:03:06.904 --> 00:03:10.978
+Spiega cosa scrivere senza bisogno di un'etichetta in più,
+
+51
+00:03:10.978 --> 00:03:14.497
+e sparisce da solo appena si comincia a digitare.
+
+52
+00:03:15.797 --> 00:03:16.407
+Quiz.
+
+53
+00:03:16.407 --> 00:03:19.879
+Vuoi aggiornare un riepilogo mentre l'utente sta ancora scrivendo.
+
+54
+00:03:24.179 --> 00:03:25.403
+Quale evento usi?
+
+55
+00:03:27.403 --> 00:03:31.525
+La risposta giusta è cambio, che arriva a ogni lettera.
+
+56
+00:03:31.525 --> 00:03:35.974
+Invio arriva solo alla fine, quando si preme il tasto Invio.
+
+57
+00:03:37.274 --> 00:03:38.562
+Ricapitoliamo.
+
+58
+00:03:38.562 --> 00:03:42.073
+Caselle per il testo, la password e le righe lunghe.
+
+59
+00:03:42.073 --> 00:03:46.287
+Oggetti apposta per numeri, date e colori, così nessuno sbaglia.
+
+60
+00:03:46.287 --> 00:03:49.506
+Cambio arriva a ogni modifica, invio alla fine.
+
+61
+00:03:49.506 --> 00:03:52.784
+E i dati li trovi sempre nella variabile evento.
+
+62
+00:03:54.084 --> 00:03:56.005
+Esercizio: quando cambia l'età,
+
+63
+00:03:56.005 --> 00:03:59.158
+scrivi in un'etichetta quanti anni avrai fra dieci anni.
+
+64
+00:03:59.158 --> 00:04:03.099
+Nel prossimo video vediamo come far scegliere l'utente: spunte, pallini,
+
+65
+00:04:03.099 --> 00:04:04.676
+interruttori ed elenchi.
+
+66
+00:04:04.676 --> 00:04:05.513
+A presto.

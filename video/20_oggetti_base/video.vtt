@@ -1,0 +1,281 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.582
+Con questo video comincia la serie sugli oggetti delle finestre.
+
+2
+00:00:04.582 --> 00:00:09.514
+Gli oggetti sono i mattoncini delle tue app: scritte, pulsanti, caselle, barre,
+
+3
+00:00:09.514 --> 00:00:10.534
+calendari.
+
+4
+00:00:10.534 --> 00:00:15.410
+Li vediamo una famiglia alla volta, e partiamo dalla più semplice e più usata:
+
+5
+00:00:15.410 --> 00:00:16.827
+la famiglia Base.
+
+6
+00:00:18.127 --> 00:00:22.791
+Apri la tua app nel disegnatore e tocca il pulsante rosso in basso,
+
+7
+00:00:22.791 --> 00:00:24.532
+Aggiungi un oggetto.
+
+8
+00:00:24.532 --> 00:00:30.004
+Si apre la tavolozza, divisa in famiglie: Base, Inserimento, Scelta, e così via.
+
+9
+00:00:30.004 --> 00:00:35.289
+Tocca un oggetto e lui compare nella finestra, già largo e comodo da toccare.
+
+10
+00:00:35.289 --> 00:00:37.403
+Poi lo trascini dove vuoi.
+
+11
+00:00:37.403 --> 00:00:41.072
+Ogni oggetto riceve un nome, per esempio Pulsante1.
+
+12
+00:00:41.072 --> 00:00:45.736
+Ti consiglio di cambiarlo subito con un nome che dica a cosa serve,
+
+13
+00:00:45.736 --> 00:00:49.964
+come Pulsante Saluta: nel codice lo userai tantissime volte.
+
+14
+00:00:51.264 --> 00:00:53.932
+La famiglia Base ha quattro oggetti.
+
+15
+00:00:53.932 --> 00:00:59.026
+L'etichetta è un testo da leggere: un titolo, una spiegazione, un risultato.
+
+16
+00:00:59.026 --> 00:01:02.300
+Il pulsante si tocca, e fa succedere qualcosa.
+
+17
+00:01:02.300 --> 00:01:07.819
+Il pulsante immagine è uguale, ma mostra anche una piccola immagine, come un'icona.
+
+18
+00:01:07.819 --> 00:01:12.488
+E il collegamento è un testo sottolineato che porta a una pagina web.
+
+19
+00:01:13.788 --> 00:01:15.639
+Ecco il primo programma.
+
+20
+00:01:15.639 --> 00:01:20.092
+Si legge quasi come una frase: quando Pulsante Saluta riceve un clic,
+
+21
+00:01:20.092 --> 00:01:21.480
+fai queste cose.
+
+22
+00:01:21.480 --> 00:01:25.240
+Il clic, sul telefono, è semplicemente il tocco del dito.
+
+23
+00:01:25.240 --> 00:01:29.751
+Ogni volta aumentiamo la variabile tocchi di uno, prepariamo la frase,
+
+24
+00:01:29.751 --> 00:01:33.857
+e la scriviamo nell'etichetta cambiando la sua proprietà testo.
+
+25
+00:01:33.857 --> 00:01:38.600
+Le parentesi graffe dentro il testo inseriscono il valore della variabile.
+
+26
+00:01:38.600 --> 00:01:42.359
+Tre tocchi, e l'etichetta dice: mi hai toccato tre volte.
+
+27
+00:01:43.659 --> 00:01:48.143
+Non devi ricordare a memoria come si scrive la riga con quando.
+
+28
+00:01:48.143 --> 00:01:52.122
+Nel disegnatore tocca il pulsante, poi Evento in basso:
+
+29
+00:01:52.122 --> 00:01:55.848
+il telefono ti propone gli eventi di quell'oggetto.
+
+30
+00:01:55.848 --> 00:01:58.943
+Scegli quando Pulsante Saluta punto clic,
+
+31
+00:01:58.943 --> 00:02:02.606
+e Leo scrive per te l'inizio e la fine del blocco.
+
+32
+00:02:02.606 --> 00:02:05.890
+Tu scrivi solo cosa deve succedere in mezzo.
+
+33
+00:02:05.890 --> 00:02:11.006
+Il segno di spunta accanto all'evento vuol dire che il blocco esiste già.
+
+34
+00:02:12.306 --> 00:02:16.450
+Tutti gli oggetti visibili condividono un gruppo di proprietà.
+
+35
+00:02:16.450 --> 00:02:21.423
+Colore del testo e colore dello sfondo, dimensione del carattere, grassetto.
+
+36
+00:02:21.423 --> 00:02:26.158
+Visibile: se la metti a falso, l'oggetto sparisce, e con vero ricompare.
+
+37
+00:02:26.158 --> 00:02:30.125
+Abilitato: se è falso, l'oggetto resta lì, un po' sbiadito,
+
+38
+00:02:30.125 --> 00:02:32.137
+ma non risponde ai tocchi.
+
+39
+00:02:32.137 --> 00:02:37.229
+E poi la posizione e la misura: sinistra, alto, larghezza e altezza, in pixel.
+
+40
+00:02:37.229 --> 00:02:39.123
+Imparale una volta sola,
+
+41
+00:02:39.123 --> 00:02:43.326
+e valgono per tutti gli oggetti che vedremo nei prossimi video.
+
+42
+00:02:44.626 --> 00:02:48.135
+Il pulsante con la stella colora il saluto d'oro.
+
+43
+00:02:48.135 --> 00:02:52.752
+Per i colori puoi usare i nomi italiani, come oro, rosso o celeste.
+
+44
+00:02:52.752 --> 00:02:57.676
+Il secondo pulsante usa un trucco utile: abilitato uguale non abilitato.
+
+45
+00:02:57.676 --> 00:03:00.200
+La parola non rovescia il valore,
+
+46
+00:03:00.200 --> 00:03:04.016
+quindi ogni tocco blocca o sblocca il pulsante Saluta.
+
+47
+00:03:04.016 --> 00:03:06.971
+E subito dopo cambiamo anche la scritta,
+
+48
+00:03:06.971 --> 00:03:11.157
+così chi usa l'app capisce cosa succederà al prossimo tocco.
+
+49
+00:03:12.457 --> 00:03:17.993
+Il collegamento ha una proprietà in più: indirizzo, cioè la pagina web da aprire.
+
+50
+00:03:17.993 --> 00:03:20.419
+La scrivi nel pannello Aspetto.
+
+51
+00:03:20.419 --> 00:03:25.209
+Quando lo tocchi arriva l'evento clic, e sei tu a decidere cosa fare:
+
+52
+00:03:25.209 --> 00:03:30.310
+qui chiamiamo il metodo apri, che apre la pagina nel browser del telefono.
+
+53
+00:03:30.310 --> 00:03:35.722
+Mettendo visitato a vero, il collegamento cambia colore, come succede nei siti.
+
+54
+00:03:37.022 --> 00:03:41.152
+Un consiglio da programmatore esperto: dai nomi che parlano.
+
+55
+00:03:41.152 --> 00:03:46.011
+Tra un mese, leggendo Pulsante Saluta, capirai subito di cosa si tratta.
+
+56
+00:03:46.011 --> 00:03:48.805
+Pulsante sette invece non dice niente.
+
+57
+00:03:48.805 --> 00:03:52.935
+Il nome si cambia nel pannello Aspetto, nella prima casella.
+
+58
+00:03:52.935 --> 00:03:57.430
+Se lo cambi dal telefono, Leo aggiorna anche il codice che lo usa.
+
+59
+00:03:58.730 --> 00:03:59.138
+Quiz.
+
+60
+00:04:03.438 --> 00:04:06.703
+Che cosa fa Pulsante1 punto abilitato uguale falso?
+
+61
+00:04:08.703 --> 00:04:12.965
+La risposta giusta è la B: il pulsante resta al suo posto,
+
+62
+00:04:12.965 --> 00:04:15.420
+ma non risponde più ai tocchi.
+
+63
+00:04:15.420 --> 00:04:18.907
+Per farlo sparire serve visibile uguale falso.
+
+64
+00:04:20.207 --> 00:04:21.465
+Ricapitoliamo.
+
+65
+00:04:21.465 --> 00:04:26.382
+La famiglia Base ha etichette, pulsanti, pulsanti con immagine e collegamenti.
+
+66
+00:04:26.382 --> 00:04:31.356
+Con quando e clic reagisci al tocco, e con il punto leggi e cambi le proprietà.
+
+67
+00:04:31.356 --> 00:04:34.901
+Visibile e abilitato funzionano con tutti gli oggetti.
+
+68
+00:04:36.201 --> 00:04:41.643
+Ora tocca a te: aggiungi un pulsante che rimette a zero il contatore dei tocchi.
+
+69
+00:04:41.643 --> 00:04:47.085
+Nel prossimo video passiamo agli oggetti per scrivere: caselle di testo, numeri,
+
+70
+00:04:47.085 --> 00:04:48.446
+date e colori.

@@ -1,0 +1,233 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.027
+Lo schermo del telefono è piccolo, e prima o poi gli oggetti non ci stanno più.
+
+2
+00:00:06.027 --> 00:00:10.665
+La soluzione sono i contenitori: oggetti che ne contengono altri.
+
+3
+00:00:10.665 --> 00:00:13.969
+Oggi vediamo come usarli per mettere ordine.
+
+4
+00:00:15.269 --> 00:00:17.478
+I contenitori sono quattro.
+
+5
+00:00:17.478 --> 00:00:22.402
+Il riquadro è una cornice con un titolo, che raggruppa oggetti simili.
+
+6
+00:00:22.402 --> 00:00:25.875
+Le schede sono pagine con le linguette in alto,
+
+7
+00:00:25.875 --> 00:00:28.778
+come le cartelline di un raccoglitore.
+
+8
+00:00:28.778 --> 00:00:34.334
+Il pannello scorrevole è una finestrella in cui il contenuto scorre con il dito.
+
+9
+00:00:34.334 --> 00:00:38.942
+E il divisore separa due parti con una barra che si può spostare.
+
+10
+00:00:40.242 --> 00:00:43.091
+Ecco una piccola app di impostazioni.
+
+11
+00:00:43.091 --> 00:00:47.587
+In alto due schede: Profilo, con il nome e una spunta, e Suoni,
+
+12
+00:00:47.587 --> 00:00:50.120
+con il volume e un interruttore.
+
+13
+00:00:50.120 --> 00:00:55.565
+Toccando la linguetta cambia la pagina, e il resto della finestra resta fermo.
+
+14
+00:00:55.565 --> 00:00:58.921
+Sotto c'è il riquadro Avvisi, con due spunte.
+
+15
+00:00:58.921 --> 00:01:02.531
+E in fondo un pannello con le regole del circolo,
+
+16
+00:01:02.531 --> 00:01:06.773
+che scorre perché sono più lunghe dello spazio disponibile.
+
+17
+00:01:08.073 --> 00:01:12.636
+Nel disegnatore mettere un oggetto dentro un contenitore è immediato:
+
+18
+00:01:12.636 --> 00:01:14.829
+lo trascini sopra e lo lasci.
+
+19
+00:01:14.829 --> 00:01:18.800
+In basso compare un messaggio che lo conferma, per esempio:
+
+20
+00:01:18.800 --> 00:01:21.644
+Casella Nome ora sta dentro Schede Menu.
+
+21
+00:01:21.644 --> 00:01:26.563
+Con le schede, l'oggetto finisce nella scheda che è aperta in quel momento.
+
+22
+00:01:26.563 --> 00:01:31.304
+Da quel momento sinistra e alto si misurano dall'angolo del contenitore,
+
+23
+00:01:31.304 --> 00:01:33.142
+non più dalla finestra.
+
+24
+00:01:33.142 --> 00:01:37.053
+E se sposti il contenitore, gli oggetti dentro lo seguono.
+
+25
+00:01:38.353 --> 00:01:43.425
+Le schede hanno la proprietà schede, cioè la lista dei titoli delle linguette,
+
+26
+00:01:43.425 --> 00:01:47.907
+e scheda corrente, il numero della pagina aperta, che parte da zero.
+
+27
+00:01:47.907 --> 00:01:51.918
+Quando l'utente cambia pagina arriva l'evento cambio scheda,
+
+28
+00:01:51.918 --> 00:01:54.277
+con l'indice della nuova pagina.
+
+29
+00:01:54.277 --> 00:01:58.877
+Con l'indice prendiamo il titolo dalla lista, e lo scriviamo in basso.
+
+30
+00:01:58.877 --> 00:02:04.067
+E dal codice puoi anche aprire una scheda tu stesso, assegnando scheda corrente.
+
+31
+00:02:05.367 --> 00:02:09.798
+Il pannello scorrevole mostra solo una parte del suo contenuto.
+
+32
+00:02:09.798 --> 00:02:14.230
+Quanto è lungo dentro lo decide la proprietà altezza contenuto,
+
+33
+00:02:14.230 --> 00:02:17.787
+oppure lo calcola lui dagli oggetti che contiene.
+
+34
+00:02:17.787 --> 00:02:21.407
+Ogni volta che scorre arriva l'evento scorrimento,
+
+35
+00:02:21.407 --> 00:02:24.465
+con la posizione in evento x ed evento y.
+
+36
+00:02:24.465 --> 00:02:28.584
+E con il metodo scorri a, zero e zero, lo riporti in cima:
+
+37
+00:02:28.584 --> 00:02:31.081
+comodo per un pulsante torna su.
+
+38
+00:02:32.381 --> 00:02:33.745
+Come scegliere?
+
+39
+00:02:33.745 --> 00:02:37.125
+Il riquadro raggruppa cose che si vedono insieme,
+
+40
+00:02:37.125 --> 00:02:39.794
+come i pallini di una stessa domanda.
+
+41
+00:02:39.794 --> 00:02:44.301
+Le schede invece dividono cose che non servono nello stesso momento.
+
+42
+00:02:44.301 --> 00:02:49.401
+Una regola pratica: se una finestra sul telefono ha più di sette o otto campi,
+
+43
+00:02:49.401 --> 00:02:51.003
+dividila in schede.
+
+44
+00:02:51.003 --> 00:02:53.197
+Chi usa l'app ti ringrazierà.
+
+45
+00:02:54.497 --> 00:02:55.310
+Quiz.
+
+46
+00:02:55.310 --> 00:02:59.438
+Un pulsante sta dentro un riquadro e ha alto uguale venti.
+
+47
+00:02:59.438 --> 00:03:02.252
+Da dove si misurano quei venti pixel?
+
+48
+00:03:04.252 --> 00:03:06.448
+Dal bordo in alto del riquadro.
+
+49
+00:03:06.448 --> 00:03:10.783
+Gli oggetti dentro un contenitore si misurano sempre dal contenitore.
+
+50
+00:03:19.383 --> 00:03:20.496
+Ricapitoliamo.
+
+51
+00:03:20.496 --> 00:03:22.873
+Quattro contenitori per mettere ordine.
+
+52
+00:03:22.873 --> 00:03:26.060
+Per metterci dentro un oggetto basta trascinarlo sopra.
+
+53
+00:03:26.060 --> 00:03:28.893
+Le schede hanno cambio scheda e scheda corrente,
+
+54
+00:03:28.893 --> 00:03:31.220
+il pannello ha scorrimento e scorri a.
+
+55
+00:03:32.520 --> 00:03:37.015
+Esercizio: aggiungi una terza scheda, Aiuto, con un'etichetta che spiega l'app.
+
+56
+00:03:37.015 --> 00:03:41.665
+Nel prossimo video vediamo come mostrare le informazioni in modo chiaro: immagini,
+
+57
+00:03:41.665 --> 00:03:43.887
+barre, lancette, semafori e stelle.
+
+58
+00:03:43.887 --> 00:03:44.765
+A presto.

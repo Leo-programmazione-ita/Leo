@@ -1,0 +1,261 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.481
+Scrivere costa fatica, soprattutto sul telefono.
+
+2
+00:00:03.481 --> 00:00:07.634
+Spesso è molto meglio far scegliere tra alcune possibilità già pronte.
+
+3
+00:00:07.634 --> 00:00:11.520
+Oggi costruiamo l'ordine di una gelateria con la famiglia Scelta.
+
+4
+00:00:12.820 --> 00:00:14.059
+Ecco l'app.
+
+5
+00:00:14.059 --> 00:00:19.015
+Tre pallini per la grandezza del cono: se ne può scegliere uno solo.
+
+6
+00:00:19.015 --> 00:00:23.254
+Un elenco di gusti, una casella da spuntare per la panna,
+
+7
+00:00:23.254 --> 00:00:26.905
+un menu a tendina per dire dove mangi il gelato,
+
+8
+00:00:26.905 --> 00:00:29.775
+e un interruttore per il tema scuro.
+
+9
+00:00:29.775 --> 00:00:34.861
+In fondo, un'etichetta riassume l'ordine, e si aggiorna a ogni scelta.
+
+10
+00:00:36.161 --> 00:00:41.224
+La casella di spunta e l'interruttore rispondono a una domanda sola, sì o no.
+
+11
+00:00:41.224 --> 00:00:44.560
+Per la spunta si legge la proprietà selezionata,
+
+12
+00:00:44.560 --> 00:00:47.360
+per l'interruttore la proprietà acceso.
+
+13
+00:00:47.360 --> 00:00:49.088
+Valgono vero o falso.
+
+14
+00:00:49.088 --> 00:00:53.794
+Tutti e due mandano l'evento cambio, con il nuovo valore dentro evento.
+
+15
+00:00:53.794 --> 00:00:58.202
+L'interruttore ha anche il metodo commuta, che lo gira dal codice.
+
+16
+00:00:59.502 --> 00:01:01.997
+Ecco l'interruttore del tema scuro.
+
+17
+00:01:01.997 --> 00:01:03.622
+Se il valore è vero,
+
+18
+00:01:03.622 --> 00:01:08.845
+lo sfondo della finestra diventa quasi nero e il testo dell'ordine diventa bianco,
+
+19
+00:01:08.845 --> 00:01:10.527
+così resta leggibile.
+
+20
+00:01:10.527 --> 00:01:13.081
+Altrimenti rimettiamo tutto com'era,
+
+21
+00:01:13.081 --> 00:01:16.330
+con il testo vuoto che vuol dire colore normale.
+
+22
+00:01:16.330 --> 00:01:20.915
+Nota che dopo se c'è direttamente evento di valore: è già vero o falso,
+
+23
+00:01:20.915 --> 00:01:23.584
+non serve scrivere uguale uguale vero.
+
+24
+00:01:24.884 --> 00:01:27.140
+I pallini si chiamano Scelta.
+
+25
+00:01:27.140 --> 00:01:29.640
+Il segreto è la proprietà gruppo.
+
+26
+00:01:29.640 --> 00:01:34.945
+Tutti i pallini con lo stesso gruppo, per esempio cono, si escludono a vicenda:
+
+27
+00:01:34.945 --> 00:01:38.238
+toccandone uno, gli altri si spengono da soli.
+
+28
+00:01:38.238 --> 00:01:43.726
+Se nella stessa finestra vuoi un'altra domanda a pallini, dagli un gruppo diverso.
+
+29
+00:01:43.726 --> 00:01:46.836
+E mettili dentro un riquadro con un titolo:
+
+30
+00:01:46.836 --> 00:01:50.190
+chi usa l'app capisce subito che vanno insieme.
+
+31
+00:01:51.490 --> 00:01:55.734
+Per sapere quale pallino è acceso scriviamo una piccola funzione.
+
+32
+00:01:55.734 --> 00:01:59.048
+Se è selezionato il piccolo, restituisce piccolo.
+
+33
+00:01:59.048 --> 00:02:02.943
+Altrimenti, se è selezionato il grande, restituisce grande.
+
+34
+00:02:02.943 --> 00:02:06.199
+Se nessuno dei due, allora è per forza il medio.
+
+35
+00:02:06.199 --> 00:02:11.490
+Una funzione così si usa ovunque ci serva la grandezza, senza ripetere i controlli.
+
+36
+00:02:12.790 --> 00:02:16.193
+Elenco e menu a tendina mandano l'evento selezione.
+
+37
+00:02:16.193 --> 00:02:20.693
+Dentro evento trovi l'elemento toccato, e l'indice, cioè la posizione,
+
+38
+00:02:20.693 --> 00:02:22.193
+che parte da zero.
+
+39
+00:02:22.193 --> 00:02:26.000
+Qui conserviamo in una variabile dove si mangia il gelato.
+
+40
+00:02:26.000 --> 00:02:30.672
+Per l'elenco dei gusti invece leggiamo più avanti la proprietà selezione,
+
+41
+00:02:30.672 --> 00:02:32.807
+che contiene la voce toccata.
+
+42
+00:02:32.807 --> 00:02:36.441
+Le voci si scrivono nel pannello Aspetto, una per riga,
+
+43
+00:02:36.441 --> 00:02:39.729
+oppure dal codice con aggiungi, rimuovi e svuota.
+
+44
+00:02:41.029 --> 00:02:44.023
+Ed ecco la funzione che mette tutto insieme.
+
+45
+00:02:44.023 --> 00:02:47.939
+La chiamiamo da ogni evento: pallini, elenco, spunta e menu.
+
+46
+00:02:47.939 --> 00:02:52.373
+Attenzione alla riga evidenziata: finché nessuno ha toccato un gusto,
+
+47
+00:02:52.373 --> 00:02:54.216
+la selezione vale nulla.
+
+48
+00:02:54.216 --> 00:02:57.786
+Controlliamo con è nulla, e scriviamo scegli un gusto.
+
+49
+00:02:57.786 --> 00:03:01.759
+Poi aggiungiamo con la panna solo se la spunta è selezionata,
+
+50
+00:03:01.759 --> 00:03:03.889
+e componiamo la frase finale.
+
+51
+00:03:03.889 --> 00:03:08.784
+Un'unica funzione chiamata da tanti eventi: così l'etichetta è sempre giusta.
+
+52
+00:03:10.084 --> 00:03:10.733
+Quiz.
+
+53
+00:03:10.733 --> 00:03:13.327
+Tre pallini Scelta hanno tre gruppi diversi.
+
+54
+00:03:13.327 --> 00:03:14.574
+Che cosa succede?
+
+55
+00:03:16.574 --> 00:03:19.077
+Si possono accendere tutti e tre:
+
+56
+00:03:19.077 --> 00:03:23.105
+solo i pallini dello stesso gruppo si escludono a vicenda.
+
+57
+00:03:31.705 --> 00:03:32.963
+Ricapitoliamo.
+
+58
+00:03:32.963 --> 00:03:35.536
+Spunta e interruttore dicono sì o no.
+
+59
+00:03:35.536 --> 00:03:39.138
+I pallini dello stesso gruppo lasciano una sola scelta.
+
+60
+00:03:39.138 --> 00:03:42.511
+Elenco e menu a tendina mandano l'evento selezione.
+
+61
+00:03:42.511 --> 00:03:46.399
+E prima di usare una selezione, controlla che non sia nulla.
+
+62
+00:03:47.699 --> 00:03:51.781
+Esercizio: aggiungi un pulsante che mette il gusto nocciola nell'elenco,
+
+63
+00:03:51.781 --> 00:03:53.362
+con il metodo aggiungi.
+
+64
+00:03:53.362 --> 00:03:57.444
+Nel prossimo video mettiamo ordine nelle finestre affollate, con schede,
+
+65
+00:03:57.444 --> 00:03:59.536
+riquadri e pannelli che scorrono.
