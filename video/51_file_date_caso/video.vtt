@@ -1,0 +1,277 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.998
+Questo video apre le librerie per il lavoro: cominciamo da file,
+
+2
+00:00:04.998 --> 00:00:06.810
+date e numeri a caso.
+
+3
+00:00:06.810 --> 00:00:11.620
+Oggi apriamo la cassetta degli attrezzi di Leo: la libreria standard.
+
+4
+00:00:11.620 --> 00:00:14.432
+Vedremo come salvare dati in un file,
+
+5
+00:00:14.432 --> 00:00:18.305
+come lavorare con le date e come far decidere al caso.
+
+6
+00:00:18.305 --> 00:00:23.053
+E la cosa bella è che tutte queste funzioni sono sempre disponibili,
+
+7
+00:00:23.053 --> 00:00:24.990
+senza importare niente.
+
+8
+00:00:26.290 --> 00:00:30.455
+Quando un programma finisce, le sue variabili spariscono.
+
+9
+00:00:30.455 --> 00:00:34.748
+Per ricordare qualcosa fino alla volta dopo, serve un file.
+
+10
+00:00:34.748 --> 00:00:38.721
+Scrivi file crea il file, o lo sovrascrive se c'è già.
+
+11
+00:00:38.721 --> 00:00:42.822
+Aggiungi a file scrive in fondo, andando a capo da solo.
+
+12
+00:00:42.822 --> 00:00:47.436
+Poi leggi righe ci restituisce una lista, una riga per elemento.
+
+13
+00:00:47.436 --> 00:00:51.921
+E leggi file, invece, dà tutto il contenuto in un unico testo.
+
+14
+00:00:51.921 --> 00:00:56.086
+Il file finisce nella cartella da cui lanci il programma.
+
+15
+00:00:57.386 --> 00:01:01.050
+Leggere un file che non esiste dà un errore di file.
+
+16
+00:01:01.050 --> 00:01:04.348
+Puoi controllare prima con la funzione esiste,
+
+17
+00:01:04.348 --> 00:01:07.524
+oppure gestire l'errore con prova e cattura,
+
+18
+00:01:07.524 --> 00:01:10.639
+come abbiamo imparato nel video precedente.
+
+19
+00:01:10.639 --> 00:01:15.647
+Un'altra comodità: Leo riconosce da solo le codifiche dei file di Windows,
+
+20
+00:01:15.647 --> 00:01:18.822
+quindi anche un file salvato dal Blocco note
+
+21
+00:01:18.822 --> 00:01:21.876
+o un CSV di Excel si legge senza sorprese.
+
+22
+00:01:23.176 --> 00:01:28.120
+Oltre ai testi, Leo sa leggere e scrivere tabelle nel formato CSV,
+
+23
+00:01:28.120 --> 00:01:32.796
+quello che si apre con Excel: ogni riga diventa un dizionario,
+
+24
+00:01:32.796 --> 00:01:35.803
+con i nomi delle colonne come chiavi.
+
+25
+00:01:35.803 --> 00:01:41.615
+E con leggi json e scrivi json salvi in un colpo solo liste e dizionari interi,
+
+26
+00:01:41.615 --> 00:01:44.688
+per esempio la classifica di un gioco.
+
+27
+00:01:44.688 --> 00:01:49.298
+Ci sono anche funzioni per elencare i file e creare cartelle.
+
+28
+00:01:50.598 --> 00:01:56.059
+Leo ha un tipo apposta per le date, e le scrive all'italiana: giorno, mese, anno.
+
+29
+00:01:56.059 --> 00:02:00.539
+In lettere diventa venerdì venticinque settembre duemilaventisei.
+
+30
+00:02:00.539 --> 00:02:05.448
+Aggiungi giorni crea una nuova data: cento giorni dopo è il tre gennaio.
+
+31
+00:02:05.448 --> 00:02:08.332
+Giorni tra conta i giorni fra due date:
+
+32
+00:02:08.332 --> 00:02:12.260
+dal venticinque settembre a Natale ce ne sono novantuno.
+
+33
+00:02:12.260 --> 00:02:17.537
+E formato scrive la data come preferisci, con segnaposti come GG, MESE e AAAA.
+
+34
+00:02:18.837 --> 00:02:20.545
+Qualche dettaglio.
+
+35
+00:02:20.545 --> 00:02:25.275
+Data senza argomenti è la data di oggi, e adesso dà anche l'ora.
+
+36
+00:02:25.275 --> 00:02:29.939
+Una data si può leggere anche da un testo scritto all'italiana.
+
+37
+00:02:29.939 --> 00:02:35.589
+Le proprietà, come giorno, mese e nome del giorno, si leggono senza parentesi.
+
+38
+00:02:35.589 --> 00:02:40.056
+E una data non si modifica: per spostarla ne crei una nuova.
+
+39
+00:02:40.056 --> 00:02:43.735
+Se provi a cambiare il giorno, Leo te lo spiega.
+
+40
+00:02:45.035 --> 00:02:47.450
+E ora giochiamo con il caso.
+
+41
+00:02:47.450 --> 00:02:53.151
+Casuale di uno e sei tira un dado: un intero tra uno e sei, estremi compresi.
+
+42
+00:02:53.151 --> 00:02:58.584
+Scegli a caso pesca un elemento da una lista: ecco sasso, carta, forbici.
+
+43
+00:02:58.584 --> 00:03:04.486
+Con quanti uguale sei, pesca sei numeri diversi da uno a novanta, come al lotto.
+
+44
+00:03:04.486 --> 00:03:08.779
+E mescola restituisce una nuova lista in ordine casuale,
+
+45
+00:03:08.779 --> 00:03:13.272
+perfetta per un mazzo di carte o per le domande di un quiz.
+
+46
+00:03:13.272 --> 00:03:18.504
+Ogni volta che esegui il programma, naturalmente, il risultato cambia.
+
+47
+00:03:19.804 --> 00:03:23.098
+Ricordi il gioco del video sul ciclo mentre?
+
+48
+00:03:23.098 --> 00:03:28.230
+Ora il numero segreto lo sceglie il computer, con casuale di uno e cento.
+
+49
+00:03:28.230 --> 00:03:33.299
+Nessuno lo conosce in anticipo, nemmeno tu che hai scritto il programma!
+
+50
+00:03:33.299 --> 00:03:38.304
+Una sfida per te: con la strategia giusta, dividendo ogni volta a metà,
+
+51
+00:03:38.304 --> 00:03:41.028
+bastano al massimo sette tentativi.
+
+52
+00:03:42.328 --> 00:03:45.659
+E la cassetta degli attrezzi è ancora piena.
+
+53
+00:03:45.659 --> 00:03:50.016
+Per la statistica ci sono media, mediana, moda e deviazione.
+
+54
+00:03:50.016 --> 00:03:54.885
+Per le liste, mappa e filtra applicano una funzione a ogni elemento.
+
+55
+00:03:54.885 --> 00:03:59.626
+Attendi mette in pausa il programma, e cronometro misura il tempo.
+
+56
+00:03:59.626 --> 00:04:04.943
+E i modelli di testo trovano, per esempio, tutti i numeri dentro una frase.
+
+57
+00:04:04.943 --> 00:04:07.634
+Li trovi tutti nella guida di Leo.
+
+58
+00:04:08.934 --> 00:04:09.763
+Quiz.
+
+59
+00:04:09.763 --> 00:04:13.016
+Quali valori può dare casuale di uno e tre?
+
+60
+00:04:17.316 --> 00:04:22.025
+La risposta giusta è: Uno, due o tre: casuale restituisce un intero,
+
+61
+00:04:22.025 --> 00:04:24.255
+e gli estremi sono compresi.
+
+62
+00:04:25.555 --> 00:04:26.827
+Ricapitoliamo.
+
+63
+00:04:26.827 --> 00:04:29.544
+Con i file il programma ricorda i dati.
+
+64
+00:04:29.544 --> 00:04:33.012
+Con le date calcoli giorni e scadenze, all'italiana.
+
+65
+00:04:33.012 --> 00:04:34.284
+E con casuale,
+
+66
+00:04:34.284 --> 00:04:39.024
+scegli a caso e mescola metti un pizzico di imprevisto nei tuoi programmi.
+
+67
+00:04:40.324 --> 00:04:45.810
+File, date e numeri a caso sono le prime librerie che userai tutti i giorni.
+
+68
+00:04:45.810 --> 00:04:51.753
+Nei prossimi video della serie vediamo le librerie per il lavoro vero: fogli Excel,
+
+69
+00:04:51.753 --> 00:04:55.018
+PDF, tabelle di dati, internet e database.

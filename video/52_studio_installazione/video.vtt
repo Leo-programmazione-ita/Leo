@@ -1,0 +1,293 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.782
+Questo video apre la parte dedicata a Leo Studio,
+
+2
+00:00:03.782 --> 00:00:06.662
+l'ambiente visuale di Leo per il computer.
+
+3
+00:00:06.662 --> 00:00:09.080
+Con Leo Studio disegni le finestre
+
+4
+00:00:09.080 --> 00:00:12.420
+dei tuoi programmi trascinando pulsanti e caselle,
+
+5
+00:00:12.420 --> 00:00:16.451
+come nel vecchio Visual Basic, e scrivi il codice in italiano.
+
+6
+00:00:16.451 --> 00:00:21.116
+In questo primo video lo installiamo insieme su Windows, passo per passo.
+
+7
+00:00:21.116 --> 00:00:23.765
+Non servono diritti di amministratore.
+
+8
+00:00:25.065 --> 00:00:30.147
+Si parte dal sito di Leo: scarica il programma di installazione, Setup Leo.
+
+9
+00:00:30.147 --> 00:00:35.167
+Dentro c'è già tutto quello che serve: Python, la libreria delle finestre,
+
+10
+00:00:35.167 --> 00:00:37.004
+gli esempi e la guida.
+
+11
+00:00:37.004 --> 00:00:39.453
+Non devi installare nient'altro.
+
+12
+00:00:39.453 --> 00:00:44.045
+Basta un computer con Windows dieci o undici a sessantaquattro bit.
+
+13
+00:00:44.045 --> 00:00:49.555
+E non servono i diritti di amministratore: Leo si installa solo per il tuo utente.
+
+14
+00:00:50.855 --> 00:00:55.455
+L'installazione ha cinque passi, e a sinistra vedi sempre a che punto sei.
+
+15
+00:00:55.455 --> 00:01:00.111
+Benvenuto: se Leo è già installato, il programma ti dice che lo aggiornerà.
+
+16
+00:01:00.111 --> 00:01:01.906
+Licenza: spunta accetto.
+
+17
+00:01:01.906 --> 00:01:06.113
+Cartella: quella proposta, nella tua cartella utente, va benissimo.
+
+18
+00:01:06.113 --> 00:01:10.039
+Poi le opzioni, tutte attive di serie, e l'installazione vera,
+
+19
+00:01:10.039 --> 00:01:12.059
+con la barra di avanzamento.
+
+20
+00:01:12.059 --> 00:01:14.302
+Se Windows mostra un avviso blu,
+
+21
+00:01:14.302 --> 00:01:18.958
+è perché il programma non è ancora firmato con un certificato riconosciuto:
+
+22
+00:01:18.958 --> 00:01:21.875
+ulteriori informazioni, poi esegui comunque.
+
+23
+00:01:23.175 --> 00:01:24.891
+Vediamo le opzioni.
+
+24
+00:01:24.891 --> 00:01:30.229
+Un collegamento a Leo Studio sul desktop, e una cartella Leo nel menu Start,
+
+25
+00:01:30.229 --> 00:01:33.598
+con la riga di comando e la disinstallazione.
+
+26
+00:01:33.598 --> 00:01:38.618
+I file punto leo vengono associati a Leo Studio, con l'icona del leone:
+
+27
+00:01:38.618 --> 00:01:43.385
+un doppio clic li apre, e con il tasto destro trovi esegui con Leo.
+
+28
+00:01:43.385 --> 00:01:47.579
+E il comando leo viene aggiunto al percorso dei programmi:
+
+29
+00:01:47.579 --> 00:01:52.155
+funziona in ogni prompt dei comandi aperto dopo l'installazione.
+
+30
+00:01:53.455 --> 00:01:58.552
+Per aggiornare Leo non serve disinstallare: lanci il Setup della versione nuova,
+
+31
+00:01:58.552 --> 00:02:02.026
+che propone la stessa cartella e sostituisce i file.
+
+32
+00:02:02.026 --> 00:02:04.227
+Leo Studio deve essere chiuso.
+
+33
+00:02:04.227 --> 00:02:08.339
+E se vuoi toglierlo, lo trovi tra le app installate di Windows,
+
+34
+00:02:08.339 --> 00:02:10.598
+come qualunque altro programma.
+
+35
+00:02:11.898 --> 00:02:15.095
+Fai doppio clic sul collegamento Leo Studio.
+
+36
+00:02:15.095 --> 00:02:18.538
+Durante il caricamento compare lo stemma di Leo:
+
+37
+00:02:18.538 --> 00:02:23.150
+un triangolo rosso con la punta in basso e un leone nero al centro.
+
+38
+00:02:23.150 --> 00:02:25.917
+L'interfaccia è nera e rossa, sobria,
+
+39
+00:02:25.917 --> 00:02:29.729
+pensata per lavorare a lungo senza stancare gli occhi.
+
+40
+00:02:29.729 --> 00:02:34.094
+Se preferisci, dal menu Visualizza puoi passare al tema chiaro.
+
+41
+00:02:34.094 --> 00:02:39.321
+Leo Studio si può usare gratis e completo per novanta giorni dal primo avvio;
+
+42
+00:02:39.321 --> 00:02:43.502
+poi serve una chiave di licenza, da inserire nel menu Aiuto,
+
+43
+00:02:43.502 --> 00:02:45.531
+alla voce Attiva licenza.
+
+44
+00:02:45.531 --> 00:02:50.265
+I programmi scritti in Leo, invece, si eseguono sempre, senza limiti.
+
+45
+00:02:51.565 --> 00:02:56.791
+Se non c'è nessun progetto aperto, Studio mostra la schermata di benvenuto.
+
+46
+00:02:56.791 --> 00:03:00.694
+Qui trovi i progetti recenti e quattro modelli pronti.
+
+47
+00:03:00.694 --> 00:03:05.228
+Applicazione vuota è il punto di partenza per un progetto nuovo.
+
+48
+00:03:05.228 --> 00:03:09.068
+Calcolatrice ha due operandi e le quattro operazioni.
+
+49
+00:03:09.068 --> 00:03:14.231
+Gioco 2D ha un bersaglio che si muove, il punteggio e una partita a tempo.
+
+50
+00:03:14.231 --> 00:03:19.205
+E poi un disegno con la tartaruga, fatto di poligoni, stelle e spirali.
+
+51
+00:03:19.205 --> 00:03:22.857
+Il mio consiglio: apri la calcolatrice e premi F5.
+
+52
+00:03:22.857 --> 00:03:27.075
+Il programma parte subito, e puoi curiosare nel suo codice.
+
+53
+00:03:28.375 --> 00:03:29.734
+Al primo avvio,
+
+54
+00:03:29.734 --> 00:03:34.460
+una guida in tre passi ti accompagna nel tuo primo programma a finestre.
+
+55
+00:03:34.460 --> 00:03:36.646
+Primo: inserisci un pulsante.
+
+56
+00:03:36.646 --> 00:03:40.663
+Secondo: scrivi che cosa succede quando qualcuno ci fa clic.
+
+57
+00:03:40.663 --> 00:03:42.731
+Terzo: esegui il programma.
+
+58
+00:03:42.731 --> 00:03:44.739
+Bastano un paio di minuti.
+
+59
+00:03:44.739 --> 00:03:48.579
+E se la salti, puoi ripeterla quando vuoi dal menu Aiuto,
+
+60
+00:03:48.579 --> 00:03:50.824
+alla voce Primo avvio guidato.
+
+61
+00:03:52.124 --> 00:03:53.047
+Domanda.
+
+62
+00:03:53.047 --> 00:03:56.626
+Hai già Leo installato ed è uscita una versione nuova.
+
+63
+00:03:56.626 --> 00:03:57.838
+Che cosa fai?
+
+64
+00:04:02.138 --> 00:04:06.200
+La risposta giusta è: lanci il Setup della versione nuova.
+
+65
+00:04:06.200 --> 00:04:09.893
+Propone la stessa cartella e aggiorna tutto da solo.
+
+66
+00:04:11.193 --> 00:04:12.500
+Ricapitoliamo.
+
+67
+00:04:12.500 --> 00:04:15.056
+Il Setup di Leo contiene già tutto,
+
+68
+00:04:15.056 --> 00:04:19.215
+e si installa in cinque passi senza diritti di amministratore.
+
+69
+00:04:19.215 --> 00:04:21.711
+Infine il collegamento Leo Studio,
+
+70
+00:04:21.711 --> 00:04:26.703
+che ti accoglie con i progetti recenti e i modelli pronti da provare con F5.
+
+71
+00:04:28.003 --> 00:04:29.602
+Leo Studio è installato!
+
+72
+00:04:29.602 --> 00:04:32.201
+Nel prossimo video facciamo un giro completo
+
+73
+00:04:32.201 --> 00:04:35.350
+dell'interfaccia e disegniamo la nostra prima finestra.
