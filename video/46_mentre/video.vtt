@@ -1,0 +1,229 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.063
+Nel video precedente sapevamo sempre quante volte ripetere: tre volte,
+
+2
+00:00:05.063 --> 00:00:07.579
+oppure una volta per ogni elemento.
+
+3
+00:00:07.579 --> 00:00:09.627
+Ma a volte non lo sappiamo.
+
+4
+00:00:09.627 --> 00:00:14.190
+Quante volte dovrà provare un giocatore prima di indovinare un numero?
+
+5
+00:00:14.190 --> 00:00:15.477
+Nessuno lo sa!
+
+6
+00:00:15.477 --> 00:00:18.051
+Per questi casi c'è il ciclo mentre.
+
+7
+00:00:19.351 --> 00:00:23.130
+Si legge così: mentre n è maggiore di zero, fai.
+
+8
+00:00:23.130 --> 00:00:26.841
+Prima di ogni giro Leo controlla la condizione.
+
+9
+00:00:26.841 --> 00:00:30.484
+Se è vera, esegue il blocco e poi ricontrolla.
+
+10
+00:00:30.484 --> 00:00:33.656
+Appena diventa falsa, il ciclo finisce.
+
+11
+00:00:33.656 --> 00:00:39.323
+Qui n parte da dieci e scende di tre alla volta: dieci, sette, quattro, uno.
+
+12
+00:00:39.323 --> 00:00:44.249
+Poi diventa meno due, la condizione è falsa, e il ciclo si ferma.
+
+13
+00:00:45.549 --> 00:00:48.456
+Ecco un gioco vero: indovina il numero.
+
+14
+00:00:48.456 --> 00:00:50.991
+La variabile trovato parte falsa.
+
+15
+00:00:50.991 --> 00:00:55.568
+Mentre non trovato, il programma chiede un numero e dà un indizio.
+
+16
+00:00:55.568 --> 00:00:59.216
+Quando il giocatore indovina, trovato diventa vero,
+
+17
+00:00:59.216 --> 00:01:03.298
+la condizione del mentre diventa falsa e il gioco finisce.
+
+18
+00:01:03.298 --> 00:01:06.576
+Per semplicità qui il numero segreto è fisso.
+
+19
+00:01:06.576 --> 00:01:12.080
+Nel gioco vero si scrive casuale di uno e cento: lo vedremo in un prossimo video.
+
+20
+00:01:13.380 --> 00:01:14.759
+Come scegliere?
+
+21
+00:01:14.759 --> 00:01:20.216
+Se sai quante volte ripetere, o hai una lista da percorrere, usa per ogni o ripeti.
+
+22
+00:01:20.216 --> 00:01:23.873
+Se invece ripeti finché succede qualcosa, usa mentre.
+
+23
+00:01:23.873 --> 00:01:29.390
+Con mentre, però, tocca a te cambiare la variabile della condizione dentro il ciclo.
+
+24
+00:01:29.390 --> 00:01:33.767
+Curiosità: Leo accetta anche la parola finché al posto di mentre.
+
+25
+00:01:33.767 --> 00:01:36.645
+Finché non trovato fai: suona benissimo.
+
+26
+00:01:37.945 --> 00:01:41.521
+Due parole per controllare i cicli dall'interno.
+
+27
+00:01:41.521 --> 00:01:45.991
+Continua salta il resto del giro e passa subito al successivo.
+
+28
+00:01:45.991 --> 00:01:51.291
+Qui salta i numeri pari: i percento due è il resto della divisione per due,
+
+29
+00:01:51.291 --> 00:01:53.654
+e se è zero il numero è pari.
+
+30
+00:01:53.654 --> 00:01:56.846
+Interrompi, invece, esce subito dal ciclo.
+
+31
+00:01:56.846 --> 00:01:59.465
+Appena i supera nove, basta così.
+
+32
+00:01:59.465 --> 00:02:02.594
+Risultato: uno, tre, cinque, sette, nove.
+
+33
+00:02:02.594 --> 00:02:08.149
+Tutte e due funzionano in ogni tipo di ciclo, e agiscono su quello più interno.
+
+34
+00:02:09.449 --> 00:02:12.795
+Prima o poi capita a tutti: il ciclo infinito.
+
+35
+00:02:12.795 --> 00:02:16.451
+Succede quando la condizione non diventa mai falsa,
+
+36
+00:02:16.451 --> 00:02:21.841
+di solito perché ci siamo dimenticati di cambiare la variabile dentro il ciclo.
+
+37
+00:02:21.841 --> 00:02:25.559
+Niente panico: dal terminale lo fermi con control C,
+
+38
+00:02:25.559 --> 00:02:29.648
+e in Leo Studio con il pulsante Stop, oppure maiuscolo F5.
+
+39
+00:02:29.648 --> 00:02:35.163
+Poi controlla: dentro il ciclo c'è qualcosa che avvicina la condizione alla fine?
+
+40
+00:02:36.463 --> 00:02:42.091
+Per chi conosce Python: mentre è while, interrompi è break e continua è continue.
+
+41
+00:02:42.091 --> 00:02:47.023
+E in Leo la condizione deve essere proprio vero o falso: mentre lista,
+
+42
+00:02:47.023 --> 00:02:49.932
+senza un confronto, sarebbe un errore.
+
+43
+00:02:51.232 --> 00:02:52.005
+Quiz.
+
+44
+00:02:52.005 --> 00:02:53.134
+X vale uno.
+
+45
+00:02:53.134 --> 00:02:55.868
+Mentre x è minore di cinque, stampa x.
+
+46
+00:02:55.868 --> 00:02:57.354
+Che cosa succede?
+
+47
+00:03:01.654 --> 00:03:04.873
+La risposta giusta è: Stampa uno all'infinito!
+
+48
+00:03:04.873 --> 00:03:09.702
+Dentro il ciclo nessuno cambia x, quindi la condizione resta sempre vera.
+
+49
+00:03:09.702 --> 00:03:12.266
+Mancava una riga: x più uguale uno.
+
+50
+00:03:13.566 --> 00:03:14.923
+Ricapitoliamo.
+
+51
+00:03:14.923 --> 00:03:20.164
+Mentre ripete finché la condizione è vera, e la controlla prima di ogni giro.
+
+52
+00:03:20.164 --> 00:03:24.419
+Continua salta al giro successivo, interrompi esce dal ciclo.
+
+53
+00:03:24.419 --> 00:03:27.872
+E se il ciclo non finisce più, control C o Stop,
+
+54
+00:03:27.872 --> 00:03:30.709
+poi cerca la variabile che non cambia.
+
+55
+00:03:32.009 --> 00:03:34.480
+Ora conosci tutti i cicli di Leo.
+
+56
+00:03:34.480 --> 00:03:39.964
+Nel prossimo video diamo ai cicli qualcosa di interessante da percorrere: le liste.
+
+57
+00:03:39.964 --> 00:03:40.989
+A presto.
