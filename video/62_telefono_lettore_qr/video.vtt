@@ -1,0 +1,177 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.363
+I codici QR sono dappertutto: sui menù, sui biglietti, sui prodotti.
+
+2
+00:00:05.363 --> 00:00:08.626
+E i codici a barre sono su ogni confezione.
+
+3
+00:00:08.626 --> 00:00:12.337
+Oggi costruiamo un lettore di codici tutto nostro.
+
+4
+00:00:13.637 --> 00:00:16.734
+Il Lettore QR è nella scheda Media.
+
+5
+00:00:16.734 --> 00:00:20.912
+Nella finestra è un riquadro con gli angoli rossi.
+
+6
+00:00:20.912 --> 00:00:26.602
+Quando lo tocchi, oppure chiami il metodo avvia, si apre la fotocamera:
+
+7
+00:00:26.602 --> 00:00:29.700
+fotografi il codice e Leo lo legge.
+
+8
+00:00:29.700 --> 00:00:35.678
+Funziona con i codici QR e con i codici a barre, anche se la foto è girata.
+
+9
+00:00:36.978 --> 00:00:41.208
+Quando il codice è stato letto arriva l'evento codice letto.
+
+10
+00:00:41.208 --> 00:00:45.749
+Prima facciamo un piccolo din di conferma con un controllo Suono.
+
+11
+00:00:45.749 --> 00:00:48.672
+Poi teniamo il formato in una variabile
+
+12
+00:00:48.672 --> 00:00:52.032
+e mettiamo il testo del codice nell'etichetta.
+
+13
+00:00:52.032 --> 00:00:55.950
+Con il metodo inizia con capiamo se è un indirizzo web.
+
+14
+00:00:55.950 --> 00:01:00.243
+Altrimenti guardiamo il formato: QR underscore CODE per i QR,
+
+15
+00:01:00.243 --> 00:01:03.975
+oppure il nome del codice a barre, come EAN tredici,
+
+16
+00:01:03.975 --> 00:01:06.774
+quello dei prodotti del supermercato.
+
+17
+00:01:08.074 --> 00:01:11.287
+Ecco la nostra app dopo aver letto un codice.
+
+18
+00:01:11.287 --> 00:01:16.864
+Sul computer arriva un codice di prova, sul telefono quello vero che hai inquadrato.
+
+19
+00:01:16.864 --> 00:01:20.319
+Nel riquadro resta scritto l'ultimo codice letto.
+
+20
+00:01:21.619 --> 00:01:25.026
+Aggiungiamo un pulsante per condividere il codice letto.
+
+21
+00:01:25.026 --> 00:01:28.487
+La proprietà ultimo codice contiene l'ultimo testo letto.
+
+22
+00:01:28.487 --> 00:01:30.563
+Se è vuota, avvisiamo l'utente.
+
+23
+00:01:30.563 --> 00:01:33.917
+Altrimenti usiamo il controllo invisibile Condivisione,
+
+24
+00:01:33.917 --> 00:01:38.762
+che apre la finestra del telefono per mandarlo con WhatsApp, la posta o i messaggi.
+
+25
+00:01:40.062 --> 00:01:42.236
+Ecco i formati più comuni.
+
+26
+00:01:42.236 --> 00:01:44.922
+QR underscore CODE è il codice QR.
+
+27
+00:01:44.922 --> 00:01:48.311
+EAN tredici è il codice a barre dei prodotti.
+
+28
+00:01:48.311 --> 00:01:52.276
+CODE centoventotto si trova su spedizioni e magazzini.
+
+29
+00:01:52.276 --> 00:01:57.711
+Se nella foto non c'è nessun codice, arriva un errore che spiega il problema:
+
+30
+00:01:57.711 --> 00:01:59.246
+basta riprovare.
+
+31
+00:02:00.546 --> 00:02:04.123
+Un consiglio pratico: il codice deve essere nitido.
+
+32
+00:02:04.123 --> 00:02:07.580
+Avvicinati perché riempia buona parte della foto,
+
+33
+00:02:07.580 --> 00:02:12.066
+tieni fermo il telefono e cerca una luce uniforme, senza riflessi.
+
+34
+00:02:12.066 --> 00:02:17.281
+E se la stanza è buia, nel video sulla torcia vedremo come accendere il flash.
+
+35
+00:02:18.581 --> 00:02:19.380
+Quiz.
+
+36
+00:02:19.380 --> 00:02:23.742
+Che cosa contiene evento formato quando leggi un codice QR? ...
+
+37
+00:02:23.742 --> 00:02:26.446
+QR underscore CODE, tutto maiuscolo.
+
+38
+00:02:26.446 --> 00:02:30.010
+Il testo del codice, invece, è nella chiave testo.
+
+39
+00:02:38.610 --> 00:02:39.911
+Ricapitoliamo.
+
+40
+00:02:39.911 --> 00:02:42.631
+Un tocco, o avvia, apre la fotocamera.
+
+41
+00:02:42.631 --> 00:02:46.060
+L'evento codice letto porta il testo e il formato.
+
+42
+00:02:46.060 --> 00:02:51.263
+Ultimo codice ricorda l'ultimo testo, e con la Condivisione lo mandi a chi vuoi.
+
+43
+00:02:52.563 --> 00:02:55.561
+Nel prossimo video facciamo parlare il telefono:
+
+44
+00:02:55.561 --> 00:02:59.094
+costruiamo un pappagallo che ripete tutto quello che dici.

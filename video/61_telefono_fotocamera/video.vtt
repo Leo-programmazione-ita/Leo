@@ -1,0 +1,181 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.575
+Oggi mettiamo una fotocamera nella nostra app.
+
+2
+00:00:03.575 --> 00:00:07.847
+Scatteremo foto normali e selfie, e scopriremo dove vanno a finire.
+
+3
+00:00:09.147 --> 00:00:12.142
+La Fotocamera si trova nella scheda Media.
+
+4
+00:00:12.142 --> 00:00:16.275
+Sul telefono è un riquadro che mostra l'ultima foto scattata.
+
+5
+00:00:16.275 --> 00:00:19.869
+Se lo tocchi, si apre l'app fotocamera del telefono.
+
+6
+00:00:19.869 --> 00:00:22.745
+Scatti, confermi, e torni nella tua app.
+
+7
+00:00:22.745 --> 00:00:26.698
+Puoi farla partire anche dal codice, con il metodo scatta.
+
+8
+00:00:27.998 --> 00:00:29.552
+Ecco due pulsanti.
+
+9
+00:00:29.552 --> 00:00:34.393
+Il primo scatta con la fotocamera dietro: la proprietà anteriore è falso.
+
+10
+00:00:34.393 --> 00:00:38.995
+Il secondo mette anteriore a vero, così si usa la fotocamera davanti,
+
+11
+00:00:38.995 --> 00:00:40.549
+quella dei selfie.
+
+12
+00:00:40.549 --> 00:00:44.733
+In tutti e due i casi, poi, chiamiamo FotoCamera punto scatta.
+
+13
+00:00:46.033 --> 00:00:48.663
+Attenzione a questo punto importante.
+
+14
+00:00:48.663 --> 00:00:53.340
+Scatta non aspetta la foto: apre la fotocamera e il programma va avanti.
+
+15
+00:00:53.340 --> 00:00:57.899
+La foto arriva dopo, quando l'utente ha scattato, con l'evento scatto.
+
+16
+00:00:57.899 --> 00:01:02.810
+Nel dizionario evento, la chiave file contiene il percorso del file salvato.
+
+17
+00:01:02.810 --> 00:01:07.018
+Lo mettiamo nella variabile file e lo scriviamo in un'etichetta;
+
+18
+00:01:07.018 --> 00:01:09.298
+intanto con n contiamo le foto.
+
+19
+00:01:10.598 --> 00:01:11.849
+Ecco l'app.
+
+20
+00:01:11.849 --> 00:01:17.181
+Ho premuto Scatta: nel riquadro c'è la foto e sotto il percorso del file.
+
+21
+00:01:17.181 --> 00:01:21.263
+Sul computer la foto è un disegno di prova, con l'ora.
+
+22
+00:01:21.263 --> 00:01:24.884
+Sul telefono vero, ovviamente, c'è la tua foto.
+
+23
+00:01:26.184 --> 00:01:29.111
+Le foto vanno nella cartella foto dell'app,
+
+24
+00:01:29.111 --> 00:01:32.670
+con un nome che contiene la data e l'ora dello scatto.
+
+25
+00:01:32.670 --> 00:01:37.089
+Il percorso dell'ultima foto resta anche nella proprietà ultima foto,
+
+26
+00:01:37.089 --> 00:01:39.213
+così puoi usarlo quando vuoi.
+
+27
+00:01:39.213 --> 00:01:41.739
+E se l'utente cambia idea e annulla?
+
+28
+00:01:41.739 --> 00:01:44.551
+Semplicemente l'evento scatto non arriva.
+
+29
+00:01:45.851 --> 00:01:47.430
+Un consiglio onesto:
+
+30
+00:01:47.430 --> 00:01:52.619
+la proprietà anteriore chiede all'app fotocamera di partire con l'obiettivo davanti.
+
+31
+00:01:52.619 --> 00:01:56.905
+Quasi sempre funziona, ma non tutte le app fotocamera la rispettano.
+
+32
+00:01:56.905 --> 00:02:01.361
+Se capita, l'utente gira la fotocamera con un tocco, come fa di solito.
+
+33
+00:02:02.661 --> 00:02:08.103
+La prima volta che scatti, il telefono chiede il permesso di usare la fotocamera.
+
+34
+00:02:08.103 --> 00:02:12.505
+Se dici di no, la tua app riceve un errore spiegato in italiano,
+
+35
+00:02:12.505 --> 00:02:17.763
+che dice anche dove andare per riattivarlo: Impostazioni, App, Autorizzazioni.
+
+36
+00:02:19.063 --> 00:02:19.770
+Quiz.
+
+37
+00:02:19.770 --> 00:02:23.145
+Dove trovi il percorso della foto appena scattata? ...
+
+38
+00:02:23.145 --> 00:02:25.594
+Nell'evento scatto, alla chiave file.
+
+39
+00:02:25.594 --> 00:02:28.859
+Scatta apre solo la fotocamera: la foto arriva dopo.
+
+40
+00:02:37.459 --> 00:02:38.731
+Ricapitoliamo.
+
+41
+00:02:38.731 --> 00:02:42.202
+Scatta, o un tocco sul riquadro, apre la fotocamera.
+
+42
+00:02:42.202 --> 00:02:45.036
+Anteriore vero sceglie quella dei selfie.
+
+43
+00:02:45.036 --> 00:02:47.523
+La foto arriva con l'evento scatto,
+
+44
+00:02:47.523 --> 00:02:51.745
+e il suo percorso è in evento file e nella proprietà ultima foto.
+
+45
+00:02:53.045 --> 00:02:59.984
+Nel prossimo video usiamo la fotocamera per leggere i codici QR e i codici a barre.

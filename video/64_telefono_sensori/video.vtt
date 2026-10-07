@@ -1,0 +1,205 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.216
+Dentro il telefono ci sono tanti piccoli strumenti di misura: i sensori.
+
+2
+00:00:05.216 --> 00:00:08.872
+Oggi impariamo a leggerli tutti con un solo controllo,
+
+3
+00:00:08.872 --> 00:00:11.112
+che si chiama proprio Sensore.
+
+4
+00:00:12.412 --> 00:00:15.461
+Il Sensore si trova nella scheda Hardware.
+
+5
+00:00:15.461 --> 00:00:19.182
+Con la proprietà tipo sensore scegli che cosa misura.
+
+6
+00:00:19.182 --> 00:00:22.231
+Parte da solo all'apertura della finestra,
+
+7
+00:00:22.231 --> 00:00:26.012
+e si disegna come un riquadro con il nome del sensore,
+
+8
+00:00:26.012 --> 00:00:28.330
+il valore e l'unità di misura.
+
+9
+00:00:29.630 --> 00:00:30.940
+Ecco i sensori.
+
+10
+00:00:30.940 --> 00:00:35.324
+L'accelerometro misura le accelerazioni in metri al secondo quadrato:
+
+11
+00:00:35.324 --> 00:00:39.423
+fermo sul tavolo segna circa nove virgola otto, cioè la gravità.
+
+12
+00:00:39.423 --> 00:00:44.319
+Il giroscopio misura quanto velocemente giri il telefono, in gradi al secondo.
+
+13
+00:00:44.319 --> 00:00:48.020
+Il magnetometro misura il campo magnetico, in microtesla.
+
+14
+00:00:48.020 --> 00:00:49.899
+La luce si misura in lux.
+
+15
+00:00:49.899 --> 00:00:53.543
+La prossimità dice se c'è qualcosa davanti allo schermo.
+
+16
+00:00:53.543 --> 00:00:58.610
+E poi la pressione dell'aria in ettopascal, i passi, la bussola e l'orientamento.
+
+17
+00:00:59.910 --> 00:01:03.649
+Ecco quattro sensori nella stessa finestra: luce, prossimità,
+
+18
+00:01:03.649 --> 00:01:05.330
+pressione e giroscopio.
+
+19
+00:01:05.330 --> 00:01:10.044
+Il giroscopio, come l'accelerometro e il magnetometro, ha tre valori, x, y e z,
+
+20
+00:01:10.044 --> 00:01:12.971
+scritti in piccolo sotto il valore principale.
+
+21
+00:01:14.271 --> 00:01:20.013
+A ogni misura arriva l'evento lettura, e in evento valore c'è il numero letto:
+
+22
+00:01:20.013 --> 00:01:23.886
+lo arrotondiamo e lo mettiamo nella variabile lux.
+
+23
+00:01:23.886 --> 00:01:28.693
+Sotto dieci lux è buio: il telefono è in tasca o in un cassetto.
+
+24
+00:01:28.693 --> 00:01:31.497
+Sopra diecimila sei sotto il sole.
+
+25
+00:01:31.497 --> 00:01:35.904
+Altrimenti è la luce di una stanza, e scriviamo il valore.
+
+26
+00:01:37.204 --> 00:01:39.846
+Il sensore di prossimità è quello che
+
+27
+00:01:39.846 --> 00:01:43.779
+spegne lo schermo quando avvicini il telefono all'orecchio.
+
+28
+00:01:43.779 --> 00:01:48.241
+Su molti telefoni dà solo due valori: zero quando qualcosa è vicino,
+
+29
+00:01:48.241 --> 00:01:50.472
+e il massimo quando è lontano.
+
+30
+00:01:50.472 --> 00:01:54.347
+Per questo controlliamo semplicemente se il valore è zero.
+
+31
+00:01:55.647 --> 00:01:57.825
+Ricordati queste proprietà.
+
+32
+00:01:57.825 --> 00:02:00.190
+Valore è il numero principale.
+
+33
+00:02:00.190 --> 00:02:03.674
+Per i sensori a tre assi ci sono anche x, y e z,
+
+34
+00:02:03.674 --> 00:02:07.781
+e il valore è quanto è forte il movimento nel suo insieme.
+
+35
+00:02:07.781 --> 00:02:12.137
+L'intervallo dice ogni quanti millisecondi arriva una lettura.
+
+36
+00:02:12.137 --> 00:02:17.240
+Cento vuol dire dieci volte al secondo: molto reattivo, ma consuma di più.
+
+37
+00:02:17.240 --> 00:02:19.729
+Per la luce bastano cinquecento.
+
+38
+00:02:21.029 --> 00:02:24.921
+Un consiglio: non tutti i telefoni hanno tutti i sensori.
+
+39
+00:02:24.921 --> 00:02:29.652
+Il sensore di pressione, per esempio, manca su tanti modelli economici.
+
+40
+00:02:29.652 --> 00:02:33.724
+Nessun problema: il controllo scrive che il sensore non c'è,
+
+41
+00:02:33.724 --> 00:02:36.539
+e il resto dell'app funziona lo stesso.
+
+42
+00:02:37.839 --> 00:02:38.573
+Quiz.
+
+43
+00:02:38.573 --> 00:02:40.774
+Il telefono è fermo sul tavolo.
+
+44
+00:02:40.774 --> 00:02:43.371
+Quanto vale circa l'accelerometro? ...
+
+45
+00:02:43.371 --> 00:02:48.451
+Circa nove virgola otto: anche da fermo, il telefono sente la gravità della Terra.
+
+46
+00:02:57.051 --> 00:02:58.417
+Ricapitoliamo.
+
+47
+00:02:58.417 --> 00:03:03.262
+Tipo sensore sceglie lo strumento, l'evento lettura porta il valore e,
+
+48
+00:03:03.262 --> 00:03:06.306
+per i sensori a tre assi, anche x, y e z.
+
+49
+00:03:06.306 --> 00:03:11.337
+Ogni sensore ha la sua unità, e l'intervallo decide ogni quanto misurare.
+
+50
+00:03:12.637 --> 00:03:16.749
+Nel prossimo video usiamo l'accelerometro per un progetto concreto:
+
+51
+00:03:16.749 --> 00:03:19.984
+un allarme che suona se qualcuno muove il telefono.

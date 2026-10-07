@@ -1,0 +1,197 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.350
+Oggi il telefono impara ad ascoltare e a parlare.
+
+2
+00:00:04.350 --> 00:00:09.888
+Costruiamo un pappagallo: tu dici una frase, e lui la ripete ad alta voce.
+
+3
+00:00:11.188 --> 00:00:15.314
+Ci servono due controlli, che lavorano in direzioni opposte.
+
+4
+00:00:15.314 --> 00:00:18.226
+La Dettatura trasforma la voce in testo:
+
+5
+00:00:18.226 --> 00:00:21.502
+nella finestra è un pulsante con il microfono,
+
+6
+00:00:21.502 --> 00:00:25.810
+e quando ha capito la frase arriva l'evento frase riconosciuta.
+
+7
+00:00:25.810 --> 00:00:28.601
+La Voce fa il contrario: è invisibile,
+
+8
+00:00:28.601 --> 00:00:33.637
+e con il metodo leggi pronuncia un testo con la voce italiana del telefono.
+
+9
+00:00:34.937 --> 00:00:38.027
+Ecco il cuore del pappagallo, solo tre righe.
+
+10
+00:00:38.027 --> 00:00:41.176
+Quando il microfono ha riconosciuto una frase,
+
+11
+00:00:41.176 --> 00:00:45.375
+la scriviamo nell'etichetta e la passiamo a VoceLeo punto leggi.
+
+12
+00:00:45.375 --> 00:00:48.815
+Tutto qui: il telefono ripete quello che hai detto.
+
+13
+00:00:50.115 --> 00:00:53.804
+Tocco il microfono, parlo, ed ecco la frase scritta.
+
+14
+00:00:53.804 --> 00:00:56.140
+Intanto il telefono la ripete.
+
+15
+00:00:56.140 --> 00:01:00.505
+Sul computer la dettatura è simulata e capisce sempre ciao leo;
+
+16
+00:01:00.505 --> 00:01:04.809
+sul telefono si apre la vera finestra di dettatura di Android.
+
+17
+00:01:06.109 --> 00:01:08.040
+Rendiamolo più interessante.
+
+18
+00:01:08.040 --> 00:01:12.976
+Mettiamo la frase riconosciuta nella variabile frase e la trasformiamo in minuscolo,
+
+19
+00:01:12.976 --> 00:01:15.014
+così le maiuscole non contano.
+
+20
+00:01:15.014 --> 00:01:18.716
+Poi, con contiene, controlliamo se dentro c'è come ti chiami.
+
+21
+00:01:18.716 --> 00:01:22.417
+In quel caso il pappagallo risponde: sono Leo, il pappagallo!
+
+22
+00:01:22.417 --> 00:01:24.885
+Altrimenti ripete la frase come prima.
+
+23
+00:01:26.185 --> 00:01:27.388
+Tre ritocchi.
+
+24
+00:01:27.388 --> 00:01:31.453
+Un cursore da meno dieci a dieci cambia la velocità della voce:
+
+25
+00:01:31.453 --> 00:01:35.290
+meno dieci è lentissima, dieci velocissima, zero è normale.
+
+26
+00:01:35.290 --> 00:01:38.154
+Il pulsante Ripeti rilegge l'ultima frase,
+
+27
+00:01:38.154 --> 00:01:41.360
+che resta nella proprietà testo della Dettatura.
+
+28
+00:01:41.360 --> 00:01:45.369
+E il pulsante Basta chiama ferma, che zittisce subito la voce.
+
+29
+00:01:46.669 --> 00:01:48.645
+Qualche dettaglio utile.
+
+30
+00:01:48.645 --> 00:01:53.646
+Se chiami leggi più volte, le frasi si mettono in fila, una dopo l'altra.
+
+31
+00:01:53.646 --> 00:01:57.782
+L'evento fine lettura arriva quando finisce l'ultima frase,
+
+32
+00:01:57.782 --> 00:02:00.560
+ma non se l'hai fermata tu con ferma.
+
+33
+00:02:00.560 --> 00:02:06.055
+E ricorda: la dettatura usa il servizio del telefono, di solito quello di Google,
+
+34
+00:02:06.055 --> 00:02:08.710
+che a volte ha bisogno di Internet.
+
+35
+00:02:10.010 --> 00:02:15.749
+Se la dettatura non capisce, arriva un errore spiegato e il microfono torna pronto:
+
+36
+00:02:15.749 --> 00:02:17.262
+tocca e riprova.
+
+37
+00:02:17.262 --> 00:02:22.623
+Parla con calma, a una spanna dal telefono, e se puoi in un posto silenzioso.
+
+38
+00:02:22.623 --> 00:02:24.704
+Fa una grande differenza.
+
+39
+00:02:26.004 --> 00:02:26.738
+Quiz.
+
+40
+00:02:26.738 --> 00:02:29.449
+Quale metodo fa parlare il telefono? ...
+
+41
+00:02:29.449 --> 00:02:31.482
+Leggi, il metodo della Voce.
+
+42
+00:02:31.482 --> 00:02:34.984
+Ascolta, invece, è della Dettatura, e serve a sentire.
+
+43
+00:02:43.584 --> 00:02:44.965
+Ricapitoliamo.
+
+44
+00:02:44.965 --> 00:02:50.052
+La Dettatura trasforma la voce in testo, con l'evento frase riconosciuta.
+
+45
+00:02:50.052 --> 00:02:54.448
+La Voce legge ad alta voce con leggi, e si zittisce con ferma.
+
+46
+00:02:54.448 --> 00:02:57.273
+La velocità va da meno dieci a dieci,
+
+47
+00:02:57.273 --> 00:03:00.727
+e fine lettura arriva quando la voce ha finito.
+
+48
+00:03:02.027 --> 00:03:06.079
+Nel prossimo video scopriamo i sensori del telefono: luce, prossimità,
+
+49
+00:03:06.079 --> 00:03:07.741
+pressione e tanti altri.
