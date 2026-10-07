@@ -1,0 +1,205 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.220
+Nel video precedente abbiamo imparato a decidere con se e altrimenti.
+
+2
+00:00:05.220 --> 00:00:10.125
+Oggi vediamo uno strumento pensato per quando le possibilità sono tante:
+
+3
+00:00:10.125 --> 00:00:11.473
+scegli e caso.
+
+4
+00:00:11.473 --> 00:00:16.010
+Il codice diventa più corto, più ordinato e si legge come un menu.
+
+5
+00:00:17.310 --> 00:00:20.627
+Ecco un piccolo robot che obbedisce ai comandi.
+
+6
+00:00:20.627 --> 00:00:23.462
+Dopo scegli c'è il valore da esaminare.
+
+7
+00:00:23.462 --> 00:00:27.563
+Poi, uno sotto l'altro, i casi possibili, ognuno con allora.
+
+8
+00:00:27.563 --> 00:00:30.699
+Leo confronta il valore con i casi dall'alto
+
+9
+00:00:30.699 --> 00:00:33.836
+in basso ed esegue il primo che corrisponde.
+
+10
+00:00:33.836 --> 00:00:37.635
+In un caso puoi mettere più valori separati da virgole:
+
+11
+00:00:37.635 --> 00:00:40.470
+stop oppure ferma fanno la stessa cosa.
+
+12
+00:00:40.470 --> 00:00:43.124
+Altrimenti raccoglie tutto il resto.
+
+13
+00:00:43.124 --> 00:00:46.079
+E, come sempre, un fine chiude il blocco.
+
+14
+00:00:46.079 --> 00:00:49.095
+Hai notato il punto minuscolo dopo chiedi?
+
+15
+00:00:49.095 --> 00:00:52.412
+Così Ferma con la maiuscola funziona lo stesso.
+
+16
+00:00:53.712 --> 00:00:59.298
+Lo stesso programma si potrebbe scrivere con una catena di altrimenti se.
+
+17
+00:00:59.298 --> 00:01:03.850
+Funziona, ma bisogna ripetere c uguale uguale a ogni riga,
+
+18
+00:01:03.850 --> 00:01:07.643
+e con l'o per i due comandi la riga si allunga.
+
+19
+00:01:07.643 --> 00:01:13.712
+Con scegli il valore si scrive una volta sola, e ogni caso è pulito e leggibile.
+
+20
+00:01:15.012 --> 00:01:18.363
+Un caso può contenere anche un intervallo.
+
+21
+00:01:18.363 --> 00:01:23.254
+Sei punto punto sette vuol dire da sei a sette, estremi compresi.
+
+22
+00:01:23.254 --> 00:01:29.218
+E vale anche per i numeri decimali: un sei e mezzo cadrebbe proprio in quel caso.
+
+23
+00:01:29.218 --> 00:01:32.971
+Con otto, Leo trova il secondo caso: molto bene.
+
+24
+00:01:34.271 --> 00:01:40.304
+Un caso può essere anche una lista: il valore corrisponde se è uno degli elementi.
+
+25
+00:01:40.304 --> 00:01:46.269
+E gli intervalli funzionano anche con i testi, in ordine alfabetico: da a a zeta.
+
+26
+00:01:46.269 --> 00:01:50.961
+Guarda l'ordine dei casi: le vocali stanno anche tra a e zeta,
+
+27
+00:01:50.961 --> 00:01:57.128
+ma siccome vince il primo caso che corrisponde, la e viene riconosciuta come vocale.
+
+28
+00:01:58.428 --> 00:02:00.384
+Ecco le regole in breve.
+
+29
+00:02:00.384 --> 00:02:04.113
+Il valore dopo scegli viene calcolato una volta sola,
+
+30
+00:02:04.113 --> 00:02:06.802
+anche se è una chiamata di funzione.
+
+31
+00:02:06.802 --> 00:02:11.876
+Vince il primo caso che corrisponde, quindi metti prima i casi più precisi.
+
+32
+00:02:11.876 --> 00:02:16.521
+Un caso può essere un valore, più valori, un intervallo o una lista.
+
+33
+00:02:16.521 --> 00:02:18.538
+Altrimenti è facoltativo.
+
+34
+00:02:18.538 --> 00:02:23.734
+E per chiarezza puoi chiudere con fine scegli: Leo controlla che corrisponda.
+
+35
+00:02:25.034 --> 00:02:28.707
+Per chi viene da Python: scegli somiglia a match,
+
+36
+00:02:28.707 --> 00:02:31.543
+arrivato con Python tre punto dieci.
+
+37
+00:02:31.543 --> 00:02:37.021
+In Leo i valori si separano con la virgola invece che con la barra verticale,
+
+38
+00:02:37.021 --> 00:02:40.501
+altrimenti prende il posto del trattino basso,
+
+39
+00:02:40.501 --> 00:02:44.626
+e gli intervalli si scrivono con i due punti di seguito.
+
+40
+00:02:45.926 --> 00:02:46.550
+Quiz.
+
+41
+00:02:46.550 --> 00:02:47.703
+Il voto è sette.
+
+42
+00:02:47.703 --> 00:02:49.191
+Quale caso corrisponde?
+
+43
+00:02:53.491 --> 00:02:57.066
+La risposta giusta è: Il caso sei punto punto sette:
+
+44
+00:02:57.066 --> 00:03:01.654
+gli intervalli comprendono entrambi gli estremi, quindi il sette c'è.
+
+45
+00:03:02.954 --> 00:03:04.231
+Ricapitoliamo.
+
+46
+00:03:04.231 --> 00:03:09.280
+Scegli esamina un valore, e ogni caso è una possibilità: un valore, più valori,
+
+47
+00:03:09.280 --> 00:03:11.253
+un intervallo o una lista.
+
+48
+00:03:11.253 --> 00:03:15.199
+Vince il primo caso giusto, e altrimenti raccoglie il resto.
+
+49
+00:03:16.499 --> 00:03:18.732
+Ora il programma sa decidere.
+
+50
+00:03:18.732 --> 00:03:23.923
+Nel prossimo video impara a ripetere: arrivano i cicli, con ripeti e per ogni.
+
+51
+00:03:23.923 --> 00:03:25.070
+Ti aspetto!

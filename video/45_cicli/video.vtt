@@ -1,0 +1,233 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.002
+C'è una cosa che il computer fa meglio di chiunque: ripetere,
+
+2
+00:00:05.002 --> 00:00:07.742
+senza stancarsi e senza sbagliare.
+
+3
+00:00:07.742 --> 00:00:13.353
+In questo video conosciamo i due cicli più semplici di Leo: ripeti e per ogni.
+
+4
+00:00:13.353 --> 00:00:18.051
+Con loro, dieci righe di codice possono fare il lavoro di mille.
+
+5
+00:00:19.351 --> 00:00:22.547
+Il ciclo più semplice: ripeti tre volte.
+
+6
+00:00:22.547 --> 00:00:26.675
+Le righe tra ripeti e fine vengono eseguite tre volte.
+
+7
+00:00:26.675 --> 00:00:31.136
+Nota che dopo volte non si scrive niente, né allora né fai:
+
+8
+00:00:31.136 --> 00:00:33.400
+si va direttamente a capo.
+
+9
+00:00:33.400 --> 00:00:38.127
+Al posto del tre puoi mettere anche una variabile o un calcolo.
+
+10
+00:00:39.427 --> 00:00:42.599
+Per ogni è il ciclo più usato in assoluto.
+
+11
+00:00:42.599 --> 00:00:46.152
+Si legge così: per ogni frutto nella lista, fai.
+
+12
+00:00:46.152 --> 00:00:51.227
+A ogni giro la variabile frutto prende il valore successivo della lista:
+
+13
+00:00:51.227 --> 00:00:53.828
+prima banana, poi mela, poi pera.
+
+14
+00:00:53.828 --> 00:00:58.015
+Il nome della variabile lo scegli tu: frutto, elemento, x.
+
+15
+00:00:58.015 --> 00:01:01.060
+Meglio un nome che spiega cosa contiene.
+
+16
+00:01:02.360 --> 00:01:07.276
+Uno punto punto quattro è un intervallo: tutti i numeri da uno a quattro,
+
+17
+00:01:07.276 --> 00:01:08.794
+estremi compresi.
+
+18
+00:01:08.794 --> 00:01:11.950
+Così per ogni diventa un contatore perfetto.
+
+19
+00:01:11.950 --> 00:01:17.352
+E se il primo numero è più grande del secondo, l'intervallo va all'indietro: tre,
+
+20
+00:01:17.352 --> 00:01:18.687
+due, uno, via!
+
+21
+00:01:19.987 --> 00:01:22.269
+Riassumiamo gli intervalli.
+
+22
+00:01:22.269 --> 00:01:26.506
+Uno punto punto cinque comprende sia l'uno sia il cinque.
+
+23
+00:01:26.506 --> 00:01:29.766
+Cinque punto punto uno conta all'indietro.
+
+24
+00:01:29.766 --> 00:01:35.698
+E se ti serve un passo diverso da uno, c'è la funzione intervallo: da zero a dieci,
+
+25
+00:01:35.698 --> 00:01:37.133
+di due in due.
+
+26
+00:01:37.133 --> 00:01:41.435
+Ricorda: dopo il nome della variabile si scrive sempre in.
+
+27
+00:01:41.435 --> 00:01:44.173
+Se scrivi per ogni i da uno a tre,
+
+28
+00:01:44.173 --> 00:01:48.150
+Leo capisce cosa volevi e ti propone la forma giusta.
+
+29
+00:01:49.450 --> 00:01:53.343
+Ecco uno schema che userai mille volte: l'accumulatore.
+
+30
+00:01:53.343 --> 00:01:56.617
+Prima del ciclo prepari una variabile a zero.
+
+31
+00:01:56.617 --> 00:02:00.881
+Dentro il ciclo, a ogni giro, le aggiungi il valore corrente.
+
+32
+00:02:00.881 --> 00:02:04.588
+Alla fine, totale contiene la somma di tutti i voti,
+
+33
+00:02:04.588 --> 00:02:08.419
+e dividendo per il numero dei voti otteniamo la media.
+
+34
+00:02:08.419 --> 00:02:12.496
+Importante: la variabile totale va creata fuori dal ciclo.
+
+35
+00:02:12.496 --> 00:02:16.389
+Se la creassi dentro, ripartirebbe da zero a ogni giro.
+
+36
+00:02:17.689 --> 00:02:21.034
+I cicli si possono mettere uno dentro l'altro.
+
+37
+00:02:21.034 --> 00:02:25.122
+Per ogni riga, il ciclo interno percorre tutte le colonne.
+
+38
+00:02:25.122 --> 00:02:28.405
+Qui costruiamo una piccola tavola pitagorica:
+
+39
+00:02:28.405 --> 00:02:33.794
+ogni riga è un testo a cui aggiungiamo i prodotti, separati da una tabulazione.
+
+40
+00:02:33.794 --> 00:02:38.688
+Il ciclo interno fa tre giri per ognuno dei tre giri di quello esterno:
+
+41
+00:02:38.688 --> 00:02:40.546
+nove calcoli in tutto.
+
+42
+00:02:41.846 --> 00:02:47.949
+Per chi conosce Python: in Leo gli intervalli comprendono entrambi gli estremi.
+
+43
+00:02:47.949 --> 00:02:54.263
+Da uno a dieci si scrive proprio uno punto punto dieci, non range da uno a undici.
+
+44
+00:02:54.263 --> 00:02:59.805
+E al posto dei due punti e del rientro obbligatorio ci sono fai e fine.
+
+45
+00:03:01.105 --> 00:03:01.907
+Quiz.
+
+46
+00:03:01.907 --> 00:03:03.881
+Per ogni i da due a sei.
+
+47
+00:03:03.881 --> 00:03:06.411
+Quante volte viene stampato ciao?
+
+48
+00:03:10.711 --> 00:03:15.542
+La risposta giusta è: Cinque volte: due, tre, quattro, cinque e sei.
+
+49
+00:03:15.542 --> 00:03:18.466
+Gli estremi sono compresi tutti e due.
+
+50
+00:03:19.766 --> 00:03:21.105
+Ricapitoliamo.
+
+51
+00:03:21.105 --> 00:03:24.695
+Ripeti esegue un blocco un numero preciso di volte.
+
+52
+00:03:24.695 --> 00:03:28.712
+Per ogni prende gli elementi uno alla volta, da una lista,
+
+53
+00:03:28.712 --> 00:03:31.450
+da un intervallo o anche da un testo.
+
+54
+00:03:31.450 --> 00:03:36.501
+E per sommare, contare o raccogliere, prepara la variabile prima del ciclo.
+
+55
+00:03:37.801 --> 00:03:41.299
+E se non sappiamo in anticipo quante volte ripetere?
+
+56
+00:03:41.299 --> 00:03:44.798
+Per esempio, finché l'utente non indovina un numero?
+
+57
+00:03:44.798 --> 00:03:46.722
+Ci serve il ciclo mentre.
+
+58
+00:03:46.722 --> 00:03:50.862
+Lo vediamo nel prossimo video, insieme a interrompi e continua.
