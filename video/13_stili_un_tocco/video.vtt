@@ -1,0 +1,253 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.787
+Un'app che funziona è il punto di partenza.
+
+2
+00:00:03.787 --> 00:00:09.200
+Un'app che funziona ed è anche curata, è quella che la gente usa volentieri.
+
+3
+00:00:09.200 --> 00:00:14.098
+Oggi vediamo come cambiare l'aspetto della tua app con pochi tocchi,
+
+4
+00:00:14.098 --> 00:00:16.418
+anche se non sei un grafico.
+
+5
+00:00:17.718 --> 00:00:20.039
+Partiamo dalla lista della spesa.
+
+6
+00:00:20.039 --> 00:00:22.529
+Nel disegnatore tocca i tre puntini.
+
+7
+00:00:22.529 --> 00:00:26.888
+Nel menu dell'app ci sono quattro voci per l'aspetto: stile dell'app,
+
+8
+00:00:26.888 --> 00:00:30.907
+sistema gli oggetti da solo, immagine di sfondo dalla galleria,
+
+9
+00:00:30.907 --> 00:00:33.228
+e colori e sfondo della finestra.
+
+10
+00:00:34.528 --> 00:00:39.117
+Stile dell'app apre la scelta: un tocco cambia tutti gli oggetti insieme.
+
+11
+00:00:39.117 --> 00:00:41.157
+Leo, rosso e nero, elegante.
+
+12
+00:00:41.157 --> 00:00:42.687
+Notte, blu e viola.
+
+13
+00:00:42.687 --> 00:00:44.443
+Oceano, azzurro fresco.
+
+14
+00:00:44.443 --> 00:00:46.766
+Pastello, pesca e crema, morbido.
+
+15
+00:00:46.766 --> 00:00:49.032
+Neon, contorni luminosi su nero.
+
+16
+00:00:49.032 --> 00:00:50.619
+Prato, verde natura.
+
+17
+00:00:50.619 --> 00:00:54.528
+E classico, che toglie gli stili e usa i colori del telefono.
+
+18
+00:00:55.828 --> 00:01:01.527
+Ecco la stessa lista della spesa con tre stili diversi: Leo, Oceano e Neon.
+
+19
+00:01:01.527 --> 00:01:06.128
+Il codice non cambia di una virgola: cambia solo l'aspetto.
+
+20
+00:01:06.128 --> 00:01:10.522
+E se lo stile non ti piace, in basso c'è sempre annulla.
+
+21
+00:01:11.822 --> 00:01:16.826
+Quando hai aggiunto tanti oggetti un po' a caso, usa sistema gli oggetti da solo.
+
+22
+00:01:16.826 --> 00:01:20.875
+Leo li mette in colonna, dall'alto in basso, con margini uguali;
+
+23
+00:01:20.875 --> 00:01:24.361
+quelli che erano sulla stessa riga restano affiancati.
+
+24
+00:01:24.361 --> 00:01:28.240
+Caselle e pulsanti si allargano sulla larghezza del telefono,
+
+25
+00:01:28.240 --> 00:01:31.614
+e diventano abbastanza alti da toccarli comodamente.
+
+26
+00:01:31.614 --> 00:01:32.963
+Non ti convince?
+
+27
+00:01:32.963 --> 00:01:33.863
+Annulla.
+
+28
+00:01:35.163 --> 00:01:40.303
+Colori e sfondo della finestra apre il pannello della finestra: il titolo,
+
+29
+00:01:40.303 --> 00:01:42.748
+il colore di sfondo e il resto.
+
+30
+00:01:42.748 --> 00:01:48.326
+E con immagine di sfondo dalla galleria scegli una tua foto come sfondo dell'app.
+
+31
+00:01:48.326 --> 00:01:52.714
+Leo la copia dentro il progetto, così viaggia insieme all'app.
+
+32
+00:01:54.014 --> 00:01:58.360
+Ogni oggetto ha anche il suo stile personale, nel pannello aspetto.
+
+33
+00:01:58.360 --> 00:02:03.284
+Un pulsante può essere principale, secondario, a contorno, verde di successo,
+
+34
+00:02:03.284 --> 00:02:07.804
+o rosso di pericolo, per le azioni da fare con attenzione, come togli.
+
+35
+00:02:07.804 --> 00:02:12.381
+E poi angoli arrotondati, ombra, bordo, sfumatura, grassetto e corsivo.
+
+36
+00:02:13.681 --> 00:02:17.763
+I colori si cambiano anche dal codice, mentre l'app gira.
+
+37
+00:02:19.063 --> 00:02:21.693
+Un colore si scrive in quattro modi.
+
+38
+00:02:21.693 --> 00:02:25.220
+Con il codice esadecimale, cancelletto e sei cifre.
+
+39
+00:02:25.220 --> 00:02:29.823
+Con un nome italiano: ce ne sono più di cinquanta, da nero a lavanda,
+
+40
+00:02:29.823 --> 00:02:32.334
+passando per oro, menta, bordeaux.
+
+41
+00:02:32.334 --> 00:02:37.834
+Con la funzione rgb, che prende tre numeri da zero a duecentocinquantacinque: rosso,
+
+42
+00:02:37.834 --> 00:02:39.030
+verde e blu.
+
+43
+00:02:39.030 --> 00:02:42.736
+E le virgolette vuote riportano il colore predefinito.
+
+44
+00:02:44.036 --> 00:02:46.831
+Per finire, un pizzico di movimento.
+
+45
+00:02:46.831 --> 00:02:51.404
+La frase anima porta pian piano una proprietà a un nuovo valore:
+
+46
+00:02:51.404 --> 00:02:56.359
+anima numero punto colore testo, a rosso, in zero virgola due secondi.
+
+47
+00:02:56.359 --> 00:03:01.821
+Nel contatore, a ogni tocco, il numero lampeggia di rosso e poi torna normale.
+
+48
+00:03:01.821 --> 00:03:06.077
+Funziona con la posizione, la misura, i colori e l'opacità.
+
+49
+00:03:07.377 --> 00:03:11.872
+Il consiglio di oggi: scegli uno stile e un solo colore d'accento,
+
+50
+00:03:11.872 --> 00:03:13.756
+e usali in tutta l'app.
+
+51
+00:03:13.756 --> 00:03:16.915
+Pochi colori, usati sempre allo stesso modo:
+
+52
+00:03:16.915 --> 00:03:20.438
+è il segreto delle app che sembrano professionali.
+
+53
+00:03:21.738 --> 00:03:22.451
+Quiz.
+
+54
+00:03:22.451 --> 00:03:25.411
+Che cosa cambia quando applichi lo stile Neon?
+
+55
+00:03:29.711 --> 00:03:33.209
+Solo l'aspetto di tutti gli oggetti, risposta B.
+
+56
+00:03:33.209 --> 00:03:35.833
+Il codice e i nomi restano uguali.
+
+57
+00:03:37.133 --> 00:03:38.514
+Ricapitoliamo.
+
+58
+00:03:38.514 --> 00:03:42.471
+Con stile dell'app scegli tra sette stili con un tocco.
+
+59
+00:03:42.471 --> 00:03:45.548
+Sistema gli oggetti da solo mette ordine.
+
+60
+00:03:45.548 --> 00:03:48.185
+Lo sfondo può essere una tua foto.
+
+61
+00:03:48.185 --> 00:03:51.827
+E dal codice cambi i colori, e li animi con anima.
+
+62
+00:03:53.127 --> 00:03:57.033
+Nel prossimo video guardiamo da vicino i modelli pronti,
+
+63
+00:03:57.033 --> 00:03:59.658
+e che cosa puoi imparare da ognuno.
