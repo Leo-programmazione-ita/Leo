@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.727
+Oggi facciamo un giro tra i modelli pronti.
+
+2
+00:00:03.727 --> 00:00:08.092
+Ognuno è un'app completa, e ognuno insegna qualcosa di nuovo.
+
+3
+00:00:08.092 --> 00:00:13.153
+Il modo migliore per usarli è guardare come sono fatti, e poi cambiarli.
+
+4
+00:00:14.453 --> 00:00:15.724
+Eccoli tutti.
+
+5
+00:00:15.724 --> 00:00:19.660
+Saluto e contatore sono il primo passo, e li conosci già.
+
+6
+00:00:19.660 --> 00:00:24.322
+Lista della spesa, timer da cucina e quiz sono app di tutti i giorni.
+
+7
+00:00:24.322 --> 00:00:28.257
+Scheda dati usa i campi italiani, come il codice fiscale.
+
+8
+00:00:28.257 --> 00:00:31.466
+Effetti speciali mostra le animazioni pronte.
+
+9
+00:00:31.466 --> 00:00:35.886
+E pappagallo, e bussola e livella, usano l'hardware del telefono:
+
+10
+00:00:35.886 --> 00:00:38.126
+li vediamo in video dedicati.
+
+11
+00:00:39.426 --> 00:00:41.467
+Cominciamo dalla lista della spesa.
+
+12
+00:00:42.767 --> 00:00:46.609
+Scrivi una cosa da comprare e tocca più, oppure invio.
+
+13
+00:00:46.609 --> 00:00:51.133
+La funzione aggiungi voce controlla che la casella non sia vuota,
+
+14
+00:00:51.133 --> 00:00:55.533
+aggiunge il testo all'elenco con aggiungi, e svuota la casella.
+
+15
+00:00:55.533 --> 00:00:59.995
+Nota i due eventi, il clic sul pulsante e l'invio nella casella,
+
+16
+00:00:59.995 --> 00:01:02.474
+che chiamano la stessa funzione.
+
+17
+00:01:02.474 --> 00:01:06.440
+È il consiglio del video sugli eventi, messo in pratica.
+
+18
+00:01:07.740 --> 00:01:12.245
+Per togliere una cosa, la tocchi nell'elenco e poi tocchi togli.
+
+19
+00:01:12.245 --> 00:01:16.751
+Indice selezionato dice quale voce hai toccato: zero è la prima,
+
+20
+00:01:16.751 --> 00:01:19.066
+e meno uno vuol dire nessuna.
+
+21
+00:01:19.066 --> 00:01:22.195
+Se c'è una voce scelta, rimuovi la toglie.
+
+22
+00:01:22.195 --> 00:01:25.699
+Altrimenti un messaggio ti spiega che cosa fare.
+
+23
+00:01:26.999 --> 00:01:30.264
+Passiamo al timer da cucina e al quiz.
+
+24
+00:01:31.564 --> 00:01:35.563
+Il timer usa un oggetto speciale: il conto alla rovescia.
+
+25
+00:01:35.563 --> 00:01:41.099
+Quando cambi i minuti, il codice imposta i secondi del conto: minuti per sessanta.
+
+26
+00:01:41.099 --> 00:01:42.822
+Avvia lo fa partire.
+
+27
+00:01:42.822 --> 00:01:48.482
+E quando il tempo finisce, arriva l'evento scadenza: il testo diventa tempo scaduto,
+
+28
+00:01:48.482 --> 00:01:52.788
+e il telefono vibra tre volte, grazie a un oggetto vibrazione.
+
+29
+00:01:54.088 --> 00:01:57.536
+Il quiz tiene tutte le domande in una lista.
+
+30
+00:01:57.536 --> 00:02:02.641
+Ogni domanda è a sua volta una piccola lista: il testo, tre risposte,
+
+31
+00:02:02.641 --> 00:02:05.094
+e il numero di quella giusta.
+
+32
+00:02:05.094 --> 00:02:08.939
+Il resto del codice mostra una domanda alla volta,
+
+33
+00:02:08.939 --> 00:02:12.586
+conta i punti e alla fine ti dice com'è andata.
+
+34
+00:02:12.586 --> 00:02:14.243
+Vuoi un quiz tuo?
+
+35
+00:02:14.243 --> 00:02:18.088
+Aggiungi righe a questa lista, con le tue domande.
+
+36
+00:02:18.088 --> 00:02:20.210
+Non serve toccare altro.
+
+37
+00:02:21.510 --> 00:02:26.781
+Scheda dati usa tre oggetti speciali italiani: la casella del codice fiscale,
+
+38
+00:02:26.781 --> 00:02:30.192
+il selettore del comune e la casella dell'IBAN.
+
+39
+00:02:30.192 --> 00:02:35.091
+Si controllano da soli: il bordo diventa verde quando il dato è giusto.
+
+40
+00:02:35.091 --> 00:02:40.052
+E dal codice fiscale l'app ricava perfino la data di nascita e il sesso.
+
+41
+00:02:40.052 --> 00:02:43.959
+Di questi oggetti speciali parliamo nel prossimo video.
+
+42
+00:02:45.259 --> 00:02:48.039
+Ecco il metodo giusto per usare i modelli.
+
+43
+00:02:48.039 --> 00:02:49.428
+Prova il modello.
+
+44
+00:02:49.428 --> 00:02:50.763
+Leggi il codice.
+
+45
+00:02:50.763 --> 00:02:52.708
+Cambia una cosa, e riprova.
+
+46
+00:02:52.708 --> 00:02:54.932
+Poi un'altra, e un'altra ancora.
+
+47
+00:02:54.932 --> 00:02:58.379
+Dopo dieci piccoli cambiamenti, l'app è diventata tua,
+
+48
+00:02:58.379 --> 00:03:00.769
+e hai capito come funziona davvero.
+
+49
+00:03:02.069 --> 00:03:03.667
+Domanda sul quiz.
+
+50
+00:03:03.667 --> 00:03:07.375
+Che cosa vuol dire il due alla fine della domanda?
+
+51
+00:03:11.675 --> 00:03:15.012
+Che la risposta giusta è la seconda, cioè Roma.
+
+52
+00:03:15.012 --> 00:03:16.165
+Risposta B.
+
+53
+00:03:17.465 --> 00:03:18.758
+Ricapitoliamo.
+
+54
+00:03:18.758 --> 00:03:23.222
+La lista della spesa insegna aggiungi, rimuovi e indice selezionato.
+
+55
+00:03:23.222 --> 00:03:26.806
+Il timer, il conto alla rovescia e l'evento scadenza.
+
+56
+00:03:26.806 --> 00:03:28.862
+Il quiz, le liste di liste.
+
+57
+00:03:28.862 --> 00:03:32.975
+E la scheda dati, i campi italiani che si controllano da soli.
+
+58
+00:03:34.275 --> 00:03:38.809
+Esercizio: aggiungi tre domande tue al quiz e fallo provare a qualcuno.
+
+59
+00:03:38.809 --> 00:03:41.622
+Nel prossimo video: gli oggetti speciali.
