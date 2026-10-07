@@ -1,0 +1,173 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.839
+Un programma che funziona oggi può smettere di funzionare domani,
+
+2
+00:00:04.839 --> 00:00:07.336
+dopo una modifica fatta in fretta.
+
+3
+00:00:07.336 --> 00:00:12.388
+I test automatici sono la rete di sicurezza: controllano da soli, ogni volta,
+
+4
+00:00:12.388 --> 00:00:15.301
+che le funzioni diano i risultati giusti.
+
+5
+00:00:15.301 --> 00:00:18.867
+In Leo si scrivono dentro il programma, in italiano.
+
+6
+00:00:20.167 --> 00:00:25.247
+Ecco una funzione che calcola il prezzo con l'IVA, e sotto il suo test.
+
+7
+00:00:25.247 --> 00:00:30.006
+Un blocco verifica ha un nome, e dentro una o più righe aspettati:
+
+8
+00:00:30.006 --> 00:00:32.772
+la condizione che deve essere vera.
+
+9
+00:00:32.772 --> 00:00:37.852
+Quando esegui il programma, i blocchi verifica non partono: restano lì,
+
+10
+00:00:37.852 --> 00:00:40.167
+pronti per quando li chiami.
+
+11
+00:00:41.467 --> 00:00:44.411
+Un buon test controlla anche i casi sbagliati.
+
+12
+00:00:44.411 --> 00:00:46.483
+Aspettati errore, con il tipo,
+
+13
+00:00:46.483 --> 00:00:50.028
+dice che il codice dentro deve dare proprio quell'errore.
+
+14
+00:00:50.028 --> 00:00:53.845
+Se la funzione accettasse un prezzo negativo senza protestare,
+
+15
+00:00:53.845 --> 00:00:55.753
+questo test lo scoprirebbe.
+
+16
+00:00:57.053 --> 00:01:02.412
+Dalla riga di comando, leo verifica esegue tutti i blocchi verifica del file,
+
+17
+00:01:02.412 --> 00:01:07.708
+ognuno con le sue variabili, e stampa il rapporto: in verde quelli riusciti.
+
+18
+00:01:07.708 --> 00:01:13.004
+Con una cartella al posto del file controlla tutti i programmi del progetto.
+
+19
+00:01:13.004 --> 00:01:16.913
+Ed esce con zero se è tutto verde, con uno altrimenti:
+
+20
+00:01:16.913 --> 00:01:20.318
+pronto per i sistemi di integrazione continua.
+
+21
+00:01:21.618 --> 00:01:26.551
+Quando un test fallisce, il rapporto dice tutto quello che serve: la riga,
+
+22
+00:01:26.551 --> 00:01:30.041
+l'aspettativa, il valore atteso e quello ottenuto.
+
+23
+00:01:30.041 --> 00:01:33.109
+Qui il test si aspettava dodici e diciotto,
+
+24
+00:01:33.109 --> 00:01:36.418
+ma la funzione arrotonda a dodici e diciannove.
+
+25
+00:01:36.418 --> 00:01:39.727
+L'errore può essere nella funzione, o nel test:
+
+26
+00:01:39.727 --> 00:01:42.434
+il rapporto ti porta dritto al punto.
+
+27
+00:01:43.734 --> 00:01:47.904
+Un'abitudine da professionisti: ogni volta che trovi un errore,
+
+28
+00:01:47.904 --> 00:01:51.193
+scrivi un test che lo riproduce, e poi correggi.
+
+29
+00:01:51.193 --> 00:01:54.071
+Quell'errore non tornerà più di nascosto.
+
+30
+00:01:54.071 --> 00:01:57.712
+E prima di consegnare, leo verifica: se è tutto verde,
+
+31
+00:01:57.712 --> 00:02:00.061
+la modifica non ha rotto niente.
+
+32
+00:02:01.361 --> 00:02:02.072
+Domanda.
+
+33
+00:02:02.072 --> 00:02:03.851
+Esegui il programma normalmente.
+
+34
+00:02:03.851 --> 00:02:05.851
+Che cosa succede ai blocchi verifica?
+
+35
+00:02:10.151 --> 00:02:13.824
+Non partono, risposta B: li esegue solo leo verifica.
+
+36
+00:02:15.124 --> 00:02:16.450
+Ricapitoliamo.
+
+37
+00:02:16.450 --> 00:02:20.850
+I test si scrivono dentro il programma, con verifica e aspettati,
+
+38
+00:02:20.850 --> 00:02:23.020
+anche per gli errori attesi.
+
+39
+00:02:23.020 --> 00:02:26.577
+Leo verifica li esegue su un file o su un progetto,
+
+40
+00:02:26.577 --> 00:02:29.410
+e il rapporto mostra atteso e ottenuto.
+
+41
+00:02:30.710 --> 00:02:36.133
+Esercizio: scrivi una funzione che calcola uno sconto, e tre test: uno normale,
+
+42
+00:02:36.133 --> 00:02:39.249
+uno al limite, e uno che deve dare errore.
+
+43
+00:02:39.249 --> 00:02:43.363
+Nel prossimo video portiamo Leo dentro Visual Studio Code.

@@ -1,0 +1,121 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.134
+Molti programmatori lavorano già con Visual Studio Code,
+
+2
+00:00:04.134 --> 00:00:07.712
+e non vogliono cambiare editor per un linguaggio nuovo.
+
+3
+00:00:07.712 --> 00:00:10.097
+Con l'estensione di Leo non serve:
+
+4
+00:00:10.097 --> 00:00:13.561
+VS Code capisce Leo come capisce Python o JavaScript.
+
+5
+00:00:14.861 --> 00:00:19.195
+L'estensione colora il codice con gli stessi colori di Leo Studio.
+
+6
+00:00:19.195 --> 00:00:21.596
+Segnala gli errori mentre scrivi,
+
+7
+00:00:21.596 --> 00:00:25.638
+con lo stesso messaggio in italiano e la correzione proposta.
+
+8
+00:00:25.638 --> 00:00:30.968
+Completa le parole chiave, le funzioni della libreria e gli oggetti delle finestre.
+
+9
+00:00:30.968 --> 00:00:34.657
+Passando con il mouse su una funzione vedi che cosa fa,
+
+10
+00:00:34.657 --> 00:00:37.235
+e puoi saltare alla sua definizione.
+
+11
+00:00:37.235 --> 00:00:40.983
+E formatti, esegui e verifichi senza uscire dall'editor.
+
+12
+00:00:42.283 --> 00:00:47.188
+L'installazione è quella di ogni estensione: apri il pannello delle estensioni,
+
+13
+00:00:47.188 --> 00:00:48.879
+cerca Leo, e installa.
+
+14
+00:00:48.879 --> 00:00:52.036
+Oppure installa direttamente il file punto vsix.
+
+15
+00:00:52.036 --> 00:00:56.828
+Poi apri una cartella con dei file punto leo: l'estensione si attiva da sola.
+
+16
+00:00:56.828 --> 00:00:59.252
+Usa il Leo installato sul computer,
+
+17
+00:00:59.252 --> 00:01:02.691
+quindi messaggi e regole sono esattamente gli stessi.
+
+18
+00:01:03.991 --> 00:01:08.114
+Un dettaglio importante: VS Code non ha una sua idea di Leo.
+
+19
+00:01:08.114 --> 00:01:12.419
+Errori, correzioni e colori arrivano dal server del linguaggio,
+
+20
+00:01:12.419 --> 00:01:15.633
+che è lo stesso Leo di Studio e del telefono.
+
+21
+00:01:15.633 --> 00:01:20.726
+Quello che l'editor segnala è esattamente quello che succederebbe eseguendo.
+
+22
+00:01:22.026 --> 00:01:23.089
+Domanda.
+
+23
+00:01:23.089 --> 00:01:27.740
+Da dove vengono gli errori che VS Code mostra nei file di Leo?
+
+24
+00:01:32.040 --> 00:01:35.305
+Dallo stesso Leo installato sul computer, risposta B.
+
+25
+00:01:36.605 --> 00:01:37.901
+Ricapitoliamo.
+
+26
+00:01:37.901 --> 00:01:43.323
+Con l'estensione, VS Code colora, controlla e completa il codice Leo, e lo formatta,
+
+27
+00:01:43.323 --> 00:01:45.209
+lo esegue e lo verifica.
+
+28
+00:01:45.209 --> 00:01:47.625
+Il motore è sempre lo stesso Leo.
+
+29
+00:01:48.925 --> 00:01:51.991
+Esercizio: apri un tuo progetto in VS Code,
+
+30
+00:01:51.991 --> 00:01:56.680
+prova il completamento e lancia leo verifica dal pannello dei comandi.

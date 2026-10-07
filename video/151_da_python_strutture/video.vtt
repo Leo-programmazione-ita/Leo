@@ -1,0 +1,145 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.376
+Nel video precedente abbiamo visto le parole.
+
+2
+00:00:03.376 --> 00:00:08.260
+Ora le strutture che usi tutti i giorni in Python: liste, dizionari, comprensioni,
+
+3
+00:00:08.260 --> 00:00:09.888
+funzioni ed eccezioni.
+
+4
+00:00:11.188 --> 00:00:15.776
+Le liste funzionano come in Python: parentesi quadre, indici da zero,
+
+5
+00:00:15.776 --> 00:00:17.564
+meno uno per l'ultimo.
+
+6
+00:00:17.564 --> 00:00:22.986
+I metodi hanno nomi italiani: aggiungi al posto di append, ordina al posto di sort.
+
+7
+00:00:22.986 --> 00:00:27.515
+Len diventa lunghezza, e in controlla l'appartenenza come in Python.
+
+8
+00:00:28.815 --> 00:00:32.992
+I dizionari si scrivono con le graffe, come in Python.
+
+9
+00:00:32.992 --> 00:00:38.583
+Per ogni con due nomi scorre chiavi e valori insieme: è il for sugli items.
+
+10
+00:00:38.583 --> 00:00:42.693
+E il metodo chiavi restituisce la lista delle chiavi.
+
+11
+00:00:43.993 --> 00:00:50.022
+Anche le comprensioni ci sono, con le stesse parole dei cicli: x per due,
+
+12
+00:00:50.022 --> 00:00:53.818
+per ogni x in dati, se x è maggiore di uno.
+
+13
+00:00:53.818 --> 00:00:56.646
+Si legge quasi come una frase.
+
+14
+00:00:57.946 --> 00:01:01.847
+Le funzioni hanno valori predefiniti e argomenti con nome,
+
+15
+00:01:01.847 --> 00:01:03.915
+esattamente come in Python.
+
+16
+00:01:03.915 --> 00:01:07.520
+E i parametri possono avere il tipo, con i due punti:
+
+17
+00:01:07.520 --> 00:01:11.007
+Leo lo controlla quando la funzione viene chiamata.
+
+18
+00:01:12.307 --> 00:01:16.939
+Try ed except diventano prova e cattura, con il tipo d'errore e come,
+
+19
+00:01:16.939 --> 00:01:19.044
+per avere l'oggetto errore.
+
+20
+00:01:19.044 --> 00:01:24.097
+I tipi d'errore sono in italiano: errore valore, errore tipo, errore indice,
+
+21
+00:01:24.097 --> 00:01:25.300
+errore nome.
+
+22
+00:01:25.300 --> 00:01:29.450
+E il messaggio è già scritto in italiano, pronto da mostrare.
+
+23
+00:01:30.750 --> 00:01:35.325
+Una differenza di impostazione: in Leo non si scrivono classi.
+
+24
+00:01:35.325 --> 00:01:40.227
+I dati si organizzano con dizionari e funzioni, e gli oggetti veri,
+
+25
+00:01:40.227 --> 00:01:45.128
+come le finestre, le tabelle o i database, li fornisce la libreria.
+
+26
+00:01:45.128 --> 00:01:50.357
+Per i progetti grandi ci sono i moduli con importa, i test con verifica,
+
+27
+00:01:50.357 --> 00:01:52.383
+e i tipi sui parametri.
+
+28
+00:01:53.683 --> 00:01:54.651
+Domanda.
+
+29
+00:01:54.651 --> 00:01:58.581
+Come si scorrono chiave e valore di un dizionario in Leo?
+
+30
+00:02:02.881 --> 00:02:08.187
+Per ogni k virgola v in d, risposta B: basta dare due nomi.
+
+31
+00:02:09.487 --> 00:02:10.665
+Ricapitoliamo.
+
+32
+00:02:10.665 --> 00:02:15.539
+Liste, dizionari e comprensioni si scrivono come in Python, con le parole italiane.
+
+33
+00:02:15.539 --> 00:02:18.700
+Le funzioni hanno argomenti con nome e predefiniti,
+
+34
+00:02:18.700 --> 00:02:21.324
+e le eccezioni diventano prova e cattura.
+
+35
+00:02:22.624 --> 00:02:28.493
+Esercizio: prendi un tuo script Python di una ventina di righe e traducilo in Leo.
+
+36
+00:02:28.493 --> 00:02:33.644
+Quando sbagli una parola per abitudine, guarda che cosa ti propone Leo.

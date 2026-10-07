@@ -1,0 +1,177 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.115
+Se programmi già in Python, Leo lo impari in dieci minuti: le idee sono le stesse,
+
+2
+00:00:06.115 --> 00:00:07.799
+cambiano le parole.
+
+3
+00:00:07.799 --> 00:00:11.667
+In questo video vediamo le corrispondenze una per una,
+
+4
+00:00:11.667 --> 00:00:14.786
+e le poche differenze che contano davvero.
+
+5
+00:00:16.086 --> 00:00:17.844
+Ecco il vocabolario.
+
+6
+00:00:17.844 --> 00:00:21.549
+If diventa se, elif altrimenti se, else altrimenti.
+
+7
+00:00:21.549 --> 00:00:24.751
+For diventa per ogni, while diventa mentre.
+
+8
+00:00:24.751 --> 00:00:28.142
+Def e return diventano funzione e restituisci.
+
+9
+00:00:28.142 --> 00:00:32.035
+Try, except e raise diventano prova, cattura e lancia.
+
+10
+00:00:32.035 --> 00:00:37.310
+E None, True e False sono nulla, vero e falso; and, or e not sono e, o, non.
+
+11
+00:00:38.610 --> 00:00:41.509
+Ecco lo stesso programma nei due linguaggi.
+
+12
+00:00:41.509 --> 00:00:43.329
+La struttura è identica.
+
+13
+00:00:43.329 --> 00:00:48.445
+Tre differenze saltano all'occhio: le variabili nuove si dichiarano con variabile;
+
+14
+00:00:48.445 --> 00:00:52.823
+i blocchi si chiudono con fine; e le graffe funzionano in ogni testo,
+
+15
+00:00:52.823 --> 00:00:54.528
+senza la effe davanti.
+
+16
+00:00:55.828 --> 00:00:59.339
+In Python i rientri fanno parte della sintassi.
+
+17
+00:00:59.339 --> 00:01:04.574
+In Leo no: i blocchi si chiudono con fine, e il rientro serve a chi legge.
+
+18
+00:01:04.574 --> 00:01:09.745
+Questo programma, scritto tutto allineato a sinistra, funziona lo stesso.
+
+19
+00:01:09.745 --> 00:01:13.576
+Poi il formattatore rimette i rientri al loro posto.
+
+20
+00:01:13.576 --> 00:01:19.066
+Nota anche uno punto punto tre: è l'intervallo da uno a tre, estremi compresi,
+
+21
+00:01:19.066 --> 00:01:20.726
+al posto di range.
+
+22
+00:01:22.026 --> 00:01:28.013
+Come Python, Leo non mescola i tipi da solo: un testo più un numero è un errore.
+
+23
+00:01:28.013 --> 00:01:32.979
+La differenza è nel messaggio: in italiano, con la riga indicata,
+
+24
+00:01:32.979 --> 00:01:36.312
+e con il suggerimento su come correggere.
+
+25
+00:01:37.612 --> 00:01:39.958
+Le altre differenze da ricordare.
+
+26
+00:01:39.958 --> 00:01:42.248
+Variabile crea, l'uguale cambia:
+
+27
+00:01:42.248 --> 00:01:45.968
+così un errore di battitura in un nome diventa un errore,
+
+28
+00:01:45.968 --> 00:01:48.600
+e non una variabile nuova per sbaglio.
+
+29
+00:01:48.600 --> 00:01:51.004
+Le costanti sono davvero costanti.
+
+30
+00:01:51.004 --> 00:01:54.209
+Gli intervalli comprendono entrambi gli estremi.
+
+31
+00:01:54.209 --> 00:01:59.245
+E gli indici partono da zero, con meno uno per l'ultimo, proprio come in Python.
+
+32
+00:02:00.545 --> 00:02:04.324
+E quando, per abitudine, scrivi print, len o elif,
+
+33
+00:02:04.324 --> 00:02:09.276
+Leo riconosce le parole di Python e ti dice come si scrivono in Leo,
+
+34
+00:02:09.276 --> 00:02:11.882
+con la riga corretta già pronta.
+
+35
+00:02:11.882 --> 00:02:14.423
+Ne parliamo nel prossimo video.
+
+36
+00:02:15.723 --> 00:02:16.827
+Domanda.
+
+37
+00:02:16.827 --> 00:02:20.621
+Come si scrive for i in range uno, sei, in Leo?
+
+38
+00:02:24.921 --> 00:02:28.348
+Per ogni i in uno punto punto cinque, risposta B.
+
+39
+00:02:28.348 --> 00:02:32.676
+Range esclude l'ultimo numero, l'intervallo di Leo lo comprende.
+
+40
+00:02:33.976 --> 00:02:35.253
+Ricapitoliamo.
+
+41
+00:02:35.253 --> 00:02:39.028
+Le idee sono quelle di Python, con le parole in italiano.
+
+42
+00:02:39.028 --> 00:02:42.918
+I blocchi si chiudono con fine, le variabili si dichiarano,
+
+43
+00:02:42.918 --> 00:02:47.854
+le graffe funzionano in ogni testo, e gli intervalli comprendono gli estremi.
+
+44
+00:02:49.154 --> 00:02:54.052
+Nel prossimo video: liste, dizionari, comprensioni e funzioni, da Python a Leo.

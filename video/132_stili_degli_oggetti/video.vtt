@@ -1,0 +1,185 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.574
+Lo stile dell'app sceglie i colori di tutto.
+
+2
+00:00:03.574 --> 00:00:09.012
+Ma la forma degli oggetti, angoli, bordi, ombre, il modo in cui reagiscono al tocco,
+
+3
+00:00:09.012 --> 00:00:10.549
+conta altrettanto.
+
+4
+00:00:10.549 --> 00:00:15.101
+In questo video vediamo gli stili degli oggetti: dodici forme pronte,
+
+5
+00:00:15.101 --> 00:00:17.643
+uguali sul telefono e sul computer.
+
+6
+00:00:18.943 --> 00:00:20.825
+Gli stili sono dodici.
+
+7
+00:00:20.825 --> 00:00:26.155
+Moderno, minimale ed elegante sono puliti e sobri, adatti a un'app di lavoro.
+
+8
+00:00:26.155 --> 00:00:29.605
+Pillola, tre D e gioco sono pieni e in rilievo:
+
+9
+00:00:29.605 --> 00:00:33.556
+il tre D si abbassa quando lo premi come un tasto vero.
+
+10
+00:00:33.556 --> 00:00:37.758
+Neon brilla come un'insegna, vetro è trasparente e sfocato.
+
+11
+00:00:37.758 --> 00:00:42.023
+E pixel, cartone, carta e scuola hanno un carattere preciso,
+
+12
+00:00:42.023 --> 00:00:44.657
+per giochi e progetti particolari.
+
+13
+00:00:45.957 --> 00:00:50.820
+Nel disegnatore del telefono e nel pannello proprietà di Leo Studio,
+
+14
+00:00:50.820 --> 00:00:55.619
+la riga stile mostra una miniatura vera dell'oggetto in ogni stile.
+
+15
+00:00:55.619 --> 00:01:00.034
+Tieni il dito su una miniatura, o passaci sopra con il mouse,
+
+16
+00:01:00.034 --> 00:01:03.170
+e l'oggetto nella finestra cambia subito.
+
+17
+00:01:03.170 --> 00:01:05.537
+Lasci, e lo stile si applica.
+
+18
+00:01:05.537 --> 00:01:10.976
+E scegli a chi: solo a questo oggetto, a tutti gli oggetti dello stesso tipo,
+
+19
+00:01:10.976 --> 00:01:12.896
+o a tutta la finestra.
+
+20
+00:01:14.196 --> 00:01:18.113
+Dal codice lo stile si assegna come un testo, e maiuscole,
+
+21
+00:01:18.113 --> 00:01:20.250
+accenti e spazi non contano.
+
+22
+00:01:20.250 --> 00:01:25.294
+Lo stile della finestra vale per tutti gli oggetti che non ne hanno uno loro;
+
+23
+00:01:25.294 --> 00:01:28.262
+quello di un oggetto vince sulla finestra;
+
+24
+00:01:28.262 --> 00:01:31.407
+normale lo riporta allo stile della finestra.
+
+25
+00:01:31.407 --> 00:01:33.959
+Stili oggetti restituisce l'elenco,
+
+26
+00:01:33.959 --> 00:01:37.461
+e descrizione stile racconta com'è fatto uno stile.
+
+27
+00:01:38.761 --> 00:01:43.354
+Una distinzione importante: lo stile cambia la forma, non il colore.
+
+28
+00:01:43.354 --> 00:01:47.463
+Il colore resta quello che hai scelto tu, o quello del tema.
+
+29
+00:01:47.463 --> 00:01:52.842
+Le personalizzazioni che hai fatto a mano, come il raggio degli angoli o l'ombra,
+
+30
+00:01:52.842 --> 00:01:54.957
+vincono sempre sullo stile.
+
+31
+00:01:54.957 --> 00:01:58.462
+E il testo mantiene sempre un contrasto leggibile,
+
+32
+00:01:58.462 --> 00:02:03.659
+almeno quattro virgola cinque a uno, come chiedono le regole di accessibilità.
+
+33
+00:02:04.959 --> 00:02:09.659
+Il consiglio di design: uno stile per tutta la finestra e, al massimo,
+
+34
+00:02:09.659 --> 00:02:12.732
+uno diverso per il pulsante più importante.
+
+35
+00:02:12.732 --> 00:02:17.612
+La coerenza è quello che fa sembrare un'app progettata da professionisti.
+
+36
+00:02:18.912 --> 00:02:19.992
+Domanda.
+
+37
+00:02:19.992 --> 00:02:25.731
+La finestra è in stile neon, ma il pulsante ha il raggio degli angoli a zero.
+
+38
+00:02:25.731 --> 00:02:27.892
+Come sono i suoi angoli?
+
+39
+00:02:32.192 --> 00:02:37.090
+Vivi, risposta B: le personalizzazioni fatte a mano vincono sempre sullo stile.
+
+40
+00:02:38.390 --> 00:02:39.683
+Ricapitoliamo.
+
+41
+00:02:39.683 --> 00:02:44.325
+Dodici stili per la forma degli oggetti, uguali su telefono e computer,
+
+42
+00:02:44.325 --> 00:02:48.321
+da provare con l'anteprima vera e da applicare a un oggetto,
+
+43
+00:02:48.321 --> 00:02:50.319
+a un tipo o alla finestra.
+
+44
+00:02:50.319 --> 00:02:53.492
+Dal codice basta assegnare la proprietà stile.
+
+45
+00:02:54.792 --> 00:03:00.206
+Esercizio: prendi una tua app e provala in stile moderno e in stile pixel.
+
+46
+00:03:00.206 --> 00:03:03.772
+Cambia solo lo stile della finestra: una riga.
