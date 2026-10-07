@@ -1,0 +1,209 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.850
+Devi appendere un quadro o montare una mensola?
+
+2
+00:00:03.850 --> 00:00:08.663
+Oggi il telefono diventa una livella a bolla, come quella dei muratori.
+
+3
+00:00:09.963 --> 00:00:12.824
+La Livella è nella scheda Telefono:
+
+4
+00:00:12.824 --> 00:00:17.281
+un cerchio con una bolla che scappa verso il lato più alto,
+
+5
+00:00:17.281 --> 00:00:19.476
+proprio come quella vera.
+
+6
+00:00:19.476 --> 00:00:25.197
+Inclinazione x vale più di zero quando il lato destro del telefono è più alto.
+
+7
+00:00:25.197 --> 00:00:28.457
+Inclinazione y quando è più alta la cima.
+
+8
+00:00:28.457 --> 00:00:29.920
+Sono in gradi.
+
+9
+00:00:29.920 --> 00:00:34.045
+E in piano diventa vero quando il telefono è in bolla.
+
+10
+00:00:35.345 --> 00:00:39.950
+Quanto deve essere dritto il telefono per dire che è in piano?
+
+11
+00:00:39.950 --> 00:00:43.371
+Lo decide la proprietà tolleranza, in gradi.
+
+12
+00:00:43.371 --> 00:00:45.148
+Di solito vale due.
+
+13
+00:00:45.148 --> 00:00:49.753
+Per un lavoro preciso mettila a uno, come nel nostro progetto,
+
+14
+00:00:49.753 --> 00:00:51.727
+o anche a mezzo grado.
+
+15
+00:00:51.727 --> 00:00:55.345
+Ma se è troppo piccola, non sarai mai in bolla!
+
+16
+00:00:56.645 --> 00:01:00.014
+Quando inclini il telefono arriva l'evento cambio,
+
+17
+00:01:00.014 --> 00:01:02.512
+con le due inclinazioni e in piano.
+
+18
+00:01:02.512 --> 00:01:06.811
+Per cominciare mettiamo le due inclinazioni nelle variabili x e y,
+
+19
+00:01:06.811 --> 00:01:09.134
+e le scriviamo in due etichette.
+
+20
+00:01:09.134 --> 00:01:12.155
+Arrivano già arrotondate al decimo di grado.
+
+21
+00:01:13.455 --> 00:01:15.292
+Ora diamo i consigli.
+
+22
+00:01:15.292 --> 00:01:18.587
+Se è in piano, scriviamo In bolla, in verde.
+
+23
+00:01:18.587 --> 00:01:22.135
+Altrimenti guardiamo il segno di inclinazione x:
+
+24
+00:01:22.135 --> 00:01:26.761
+se è positiva il lato destro è più alto, e diciamo di abbassarlo.
+
+25
+00:01:26.761 --> 00:01:29.675
+Se è negativa, è più alto il sinistro.
+
+26
+00:01:29.675 --> 00:01:31.006
+In arancione.
+
+27
+00:01:32.306 --> 00:01:35.711
+E quando arriviamo in bolla, una vibrazione breve.
+
+28
+00:01:35.711 --> 00:01:39.526
+Ma solo nel momento in cui ci arriviamo, non di continuo:
+
+29
+00:01:39.526 --> 00:01:43.752
+la variabile era in piano ricorda com'era alla lettura di prima.
+
+30
+00:01:43.752 --> 00:01:48.683
+Nel programma completo queste righe stanno nello stesso quando dei consigli,
+
+31
+00:01:48.683 --> 00:01:49.857
+subito dopo.
+
+32
+00:01:51.157 --> 00:01:52.802
+Ecco la livella.
+
+33
+00:01:52.802 --> 00:01:56.299
+La bolla è scappata verso destra e in alto:
+
+34
+00:01:56.299 --> 00:02:02.401
+il lato destro è più alto di dodici gradi e mezzo, e l'app ci dice di abbassarlo.
+
+35
+00:02:02.401 --> 00:02:08.708
+Quando la bolla entra nel cerchietto tratteggiato al centro, il telefono è in bolla.
+
+36
+00:02:10.008 --> 00:02:11.932
+Un consiglio da muratore.
+
+37
+00:02:11.932 --> 00:02:15.781
+Per una mensola o un tavolo, appoggia il telefono disteso:
+
+38
+00:02:15.781 --> 00:02:18.113
+controlli entrambe le direzioni.
+
+39
+00:02:18.113 --> 00:02:19.396
+Per un quadro,
+
+40
+00:02:19.396 --> 00:02:23.944
+appoggia il lato lungo del telefono sul bordo superiore della cornice.
+
+41
+00:02:23.944 --> 00:02:27.967
+E togli la cover, se è spessa o storta: falserebbe la misura.
+
+42
+00:02:29.267 --> 00:02:30.070
+Quiz.
+
+43
+00:02:30.070 --> 00:02:32.356
+Inclinazione x vale meno tre.
+
+44
+00:02:32.356 --> 00:02:34.271
+Che cosa vuol dire? ...
+
+45
+00:02:34.271 --> 00:02:37.545
+Che il lato sinistro è più alto di tre gradi.
+
+46
+00:02:37.545 --> 00:02:40.696
+Positivo è il destro, negativo il sinistro.
+
+47
+00:02:49.296 --> 00:02:50.573
+Ricapitoliamo.
+
+48
+00:02:50.573 --> 00:02:55.505
+La Livella manda l'evento cambio con le due inclinazioni in gradi e in piano,
+
+49
+00:02:55.505 --> 00:02:57.652
+che dipende dalla tolleranza.
+
+50
+00:02:57.652 --> 00:03:01.133
+Con colori e una vibrazione, l'app guida chi la usa.
+
+51
+00:03:02.433 --> 00:03:05.142
+Nel prossimo video ci mettiamo in cammino:
+
+52
+00:03:05.142 --> 00:03:08.555
+costruiamo un contapassi con tanto di meta giornaliera.

@@ -1,0 +1,229 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.413
+Il telefono sa sempre dove si trova, grazie ai satelliti del GPS.
+
+2
+00:00:05.413 --> 00:00:09.048
+Oggi costruiamo un'app che ci dice dove siamo,
+
+3
+00:00:09.048 --> 00:00:13.153
+a che velocità andiamo e quanta strada abbiamo fatto.
+
+4
+00:00:14.453 --> 00:00:18.682
+La Posizione è un controllo invisibile della scheda Telefono.
+
+5
+00:00:18.682 --> 00:00:21.808
+Si accende con avvia e si spegne con ferma.
+
+6
+00:00:21.808 --> 00:00:27.141
+Ci dà la latitudine e la longitudine, cioè le coordinate sulla Terra, in gradi.
+
+7
+00:00:27.141 --> 00:00:32.412
+Poi la precisione, in metri, l'altitudine e la velocità in chilometri all'ora.
+
+8
+00:00:33.712 --> 00:00:36.955
+All'apertura della finestra accendiamo il GPS.
+
+9
+00:00:36.955 --> 00:00:41.400
+Ogni volta che arriva una posizione nuova, arriva l'evento cambio.
+
+10
+00:00:41.400 --> 00:00:46.385
+Arrotondiamo le coordinate a cinque decimali, che vuol dire circa un metro,
+
+11
+00:00:46.385 --> 00:00:48.367
+e la precisione ai metri.
+
+12
+00:00:48.367 --> 00:00:52.150
+Poi le scriviamo: più o meno dodici metri, per esempio.
+
+13
+00:00:52.150 --> 00:00:53.712
+E poi la velocità.
+
+14
+00:00:55.012 --> 00:00:57.031
+Ora la parte più bella.
+
+15
+00:00:57.031 --> 00:01:01.330
+Il pulsante Segna la partenza salva le coordinate attuali.
+
+16
+00:01:01.330 --> 00:01:07.257
+Ma solo se la posizione è già nota: finché non arriva, la precisione vale meno uno.
+
+17
+00:01:08.557 --> 00:01:10.648
+Poi, a ogni aggiornamento,
+
+18
+00:01:10.648 --> 00:01:15.567
+il metodo distanza da calcola i metri tra dove sei adesso e la partenza,
+
+19
+00:01:15.567 --> 00:01:17.042
+in linea d'aria.
+
+20
+00:01:17.042 --> 00:01:21.961
+Le coordinate della partenza vanno tra le parentesi: se la riga è lunga,
+
+21
+00:01:21.961 --> 00:01:25.159
+puoi andare a capo dopo la parentesi aperta.
+
+22
+00:01:25.159 --> 00:01:27.741
+Arrotondiamo, e scriviamo i metri.
+
+23
+00:01:29.041 --> 00:01:32.480
+Distanza da funziona con qualunque punto della Terra.
+
+24
+00:01:32.480 --> 00:01:35.073
+Qui usiamo le coordinate del Colosseo:
+
+25
+00:01:35.073 --> 00:01:39.977
+quarantuno virgola ottantanove zero due e dodici virgola quarantanove ventidue.
+
+26
+00:01:39.977 --> 00:01:44.938
+Dividiamo i metri per mille e otteniamo i chilometri, arrotondati a un decimale.
+
+27
+00:01:44.938 --> 00:01:48.714
+Le coordinate di un posto le trovi facilmente su una mappa,
+
+28
+00:01:48.714 --> 00:01:51.082
+tenendo il dito premuto sul punto.
+
+29
+00:01:52.382 --> 00:01:53.547
+Ecco l'app.
+
+30
+00:01:53.547 --> 00:01:57.779
+Ho segnato la partenza e ho fatto qualche passo: dieci metri.
+
+31
+00:01:57.779 --> 00:02:02.563
+Sul computer la posizione è simulata, a Roma, e si sposta piano piano,
+
+32
+00:02:02.563 --> 00:02:04.219
+come se camminassi.
+
+33
+00:02:05.519 --> 00:02:07.629
+Non sempre va tutto bene.
+
+34
+00:02:07.629 --> 00:02:13.384
+Se la posizione è spenta, se l'utente nega il permesso o se il segnale non arriva,
+
+35
+00:02:13.384 --> 00:02:18.244
+scatta l'evento errore, con un messaggio chiaro in evento messaggio.
+
+36
+00:02:18.244 --> 00:02:22.465
+E ricordati di spegnere il GPS con ferma quando non serve:
+
+37
+00:02:22.465 --> 00:02:24.703
+consuma parecchia batteria.
+
+38
+00:02:26.003 --> 00:02:28.942
+Due proprietà cambiano il comportamento.
+
+39
+00:02:28.942 --> 00:02:33.962
+Precisa, se è vero, usa i satelliti; se è falso, si accontenta della rete,
+
+40
+00:02:33.962 --> 00:02:36.472
+meno precisa ma più parsimoniosa.
+
+41
+00:02:36.472 --> 00:02:41.186
+Continua, se è vero, manda aggiornamenti mentre ti muovi; se è falso,
+
+42
+00:02:41.186 --> 00:02:44.370
+trova una posizione sola e si ferma da solo.
+
+43
+00:02:45.670 --> 00:02:50.369
+Un consiglio: il GPS ascolta i satelliti, e i muri li disturbano.
+
+44
+00:02:50.369 --> 00:02:53.909
+In casa può metterci un po' o essere impreciso.
+
+45
+00:02:53.909 --> 00:02:57.449
+All'aperto, la precisione scende a pochi metri.
+
+46
+00:02:57.449 --> 00:03:02.405
+Guarda sempre la precisione prima di fidarti di una distanza piccola!
+
+47
+00:03:03.705 --> 00:03:04.425
+Quiz.
+
+48
+00:03:04.425 --> 00:03:06.918
+Che cosa restituisce distanza da? ...
+
+49
+00:03:06.918 --> 00:03:08.690
+I metri in linea d'aria.
+
+50
+00:03:08.690 --> 00:03:11.460
+Per i chilometri basta dividere per mille.
+
+51
+00:03:20.060 --> 00:03:21.252
+Ricapitoliamo.
+
+52
+00:03:21.252 --> 00:03:25.641
+La Posizione si avvia e si ferma, e manda l'evento cambio con coordinate,
+
+53
+00:03:25.641 --> 00:03:27.266
+precisione e velocità.
+
+54
+00:03:27.266 --> 00:03:30.029
+Distanza da misura i metri in linea d'aria.
+
+55
+00:03:30.029 --> 00:03:32.305
+E gestisci sempre l'evento errore.
+
+56
+00:03:33.605 --> 00:03:38.960
+Nel prossimo video accendiamo la torcia e facciamo vibrare il telefono a ritmo,
+
+57
+00:03:38.960 --> 00:03:41.360
+fino a mandare un SOS luminoso.

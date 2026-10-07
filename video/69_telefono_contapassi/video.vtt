@@ -1,0 +1,165 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.784
+Quanti passi fai in un giorno?
+
+2
+00:00:02.784 --> 00:00:08.255
+Oggi costruiamo un contapassi, con una meta da raggiungere e i chilometri percorsi.
+
+3
+00:00:09.555 --> 00:00:12.148
+Usiamo un Sensore di tipo passi.
+
+4
+00:00:12.148 --> 00:00:17.464
+Il suo valore è il numero di passi contati da quando il sensore è partito,
+
+5
+00:00:17.464 --> 00:00:20.511
+cioè da quando si è aperta la finestra.
+
+6
+00:00:20.511 --> 00:00:24.011
+I passi li conta un piccolo chip del telefono,
+
+7
+00:00:24.011 --> 00:00:27.058
+molto preciso e che consuma pochissimo.
+
+8
+00:00:27.058 --> 00:00:31.596
+La prima volta il telefono chiede il permesso Attività fisica.
+
+9
+00:00:32.896 --> 00:00:34.338
+Ecco il codice.
+
+10
+00:00:34.338 --> 00:00:40.042
+La costante META vale seimila passi, e la BarraAvanzamento ha il massimo a seimila.
+
+11
+00:00:40.042 --> 00:00:44.743
+A ogni lettura togliamo la partenza, trasformiamo in numero intero,
+
+12
+00:00:44.743 --> 00:00:46.498
+e scriviamo i passi.
+
+13
+00:00:46.498 --> 00:00:50.447
+La barra si riempie, e con minimo non va oltre la meta.
+
+14
+00:00:51.747 --> 00:00:54.715
+Un passo è lungo circa settantacinque centimetri,
+
+15
+00:00:54.715 --> 00:00:57.163
+cioè zero virgola settantacinque metri.
+
+16
+00:00:57.163 --> 00:01:01.589
+Moltiplichiamo i passi per zero virgola settantacinque e dividiamo per mille:
+
+17
+00:01:01.589 --> 00:01:03.881
+ecco i chilometri, con due decimali.
+
+18
+00:01:03.881 --> 00:01:06.849
+E quando arriviamo alla meta, un bel complimento.
+
+19
+00:01:08.149 --> 00:01:12.251
+Il sensore non si può azzerare, ma possiamo fare un trucco:
+
+20
+00:01:12.251 --> 00:01:15.925
+salviamo il valore attuale nella variabile partenza.
+
+21
+00:01:15.925 --> 00:01:20.394
+Da quel momento, i passi mostrati sono quelli fatti dopo il clic.
+
+22
+00:01:21.694 --> 00:01:24.069
+Ecco il contapassi, appena partito.
+
+23
+00:01:24.069 --> 00:01:29.041
+In basso ho messo anche un secondo sensore: la pressione dell'aria, in ettopascal.
+
+24
+00:01:30.341 --> 00:01:33.273
+Già che ci siamo, conosciamo il barometro.
+
+25
+00:01:33.273 --> 00:01:37.553
+Al livello del mare la pressione è circa milletredici ettopascal.
+
+26
+00:01:37.553 --> 00:01:42.772
+Salendo scende: circa zero virgola quattro ettopascal a ogni piano di un palazzo,
+
+27
+00:01:42.772 --> 00:01:46.056
+tanto che puoi accorgerti se prendi l'ascensore!
+
+28
+00:01:46.056 --> 00:01:51.157
+E se cala in fretta nel giro di qualche ora, probabilmente arriva brutto tempo.
+
+29
+00:01:52.457 --> 00:01:56.890
+Un consiglio: i sensori si fermano quando la finestra si chiude.
+
+30
+00:01:56.890 --> 00:02:01.445
+Per contare i passi di tutta una passeggiata, lascia l'app aperta,
+
+31
+00:02:01.445 --> 00:02:03.477
+con il telefono in tasca.
+
+32
+00:02:04.777 --> 00:02:05.509
+Quiz.
+
+33
+00:02:05.509 --> 00:02:07.817
+Come azzeriamo il contapassi? ...
+
+34
+00:02:07.817 --> 00:02:12.884
+Salviamo il valore attuale nella variabile partenza e lo togliamo da ogni lettura.
+
+35
+00:02:12.884 --> 00:02:16.206
+Il valore del sensore, invece, non si può cambiare.
+
+36
+00:02:24.806 --> 00:02:26.077
+Ricapitoliamo.
+
+37
+00:02:26.077 --> 00:02:28.966
+Il sensore passi conta i passi dall'avvio.
+
+38
+00:02:28.966 --> 00:02:33.704
+Con la variabile partenza ricominciamo da zero, e la barra mostra la meta.
+
+39
+00:02:33.704 --> 00:02:37.459
+E con il sensore di pressione abbiamo anche un barometro.
+
+40
+00:02:38.759 --> 00:02:42.465
+Nel prossimo video usciamo di casa con il GPS:
+
+41
+00:02:42.465 --> 00:02:46.514
+scopriamo dove siamo e quanta strada abbiamo fatto.

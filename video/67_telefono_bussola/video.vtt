@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.516
+Oggi il telefono diventa una bussola.
+
+2
+00:00:03.516 --> 00:00:09.480
+Anzi, di più: una guida che ti dice da che parte girarti per guardare verso nord.
+
+3
+00:00:10.780 --> 00:00:15.395
+La Bussola è nella scheda Telefono ed è un quadrante disegnato,
+
+4
+00:00:15.395 --> 00:00:18.059
+con l'ago rosso che punta a nord.
+
+5
+00:00:18.059 --> 00:00:24.039
+Ha due proprietà: direzione, in gradi da zero a trecentosessanta, e punto cardinale,
+
+6
+00:00:24.039 --> 00:00:27.613
+a parole: N, NE, E e così via, con O per ovest.
+
+7
+00:00:27.613 --> 00:00:31.188
+Quando giri il telefono arriva l'evento cambio.
+
+8
+00:00:32.488 --> 00:00:34.124
+Ripassiamo i gradi.
+
+9
+00:00:34.124 --> 00:00:39.213
+Zero è il nord, novanta l'est, centottanta il sud, duecentosettanta l'ovest.
+
+10
+00:00:39.213 --> 00:00:43.091
+La direzione è quella in cui punta la cima del telefono.
+
+11
+00:00:43.091 --> 00:00:47.998
+Quindi tienilo dritto davanti a te, e la direzione è dove stai guardando.
+
+12
+00:00:49.298 --> 00:00:50.786
+Cominciamo semplice.
+
+13
+00:00:50.786 --> 00:00:54.985
+Quando la bussola cambia, arrotondiamo la direzione a un numero intero,
+
+14
+00:00:54.985 --> 00:00:59.502
+prendiamo il punto cardinale e li scriviamo in grande, uno accanto all'altro.
+
+15
+00:01:00.802 --> 00:01:04.775
+Ora la parte furba, in un'etichetta che si chiama Consiglio.
+
+16
+00:01:04.775 --> 00:01:07.930
+Se la direzione è entro cinque gradi dal nord,
+
+17
+00:01:07.930 --> 00:01:12.722
+cioè fino a cinque o da trecentocinquantacinque in su, sei rivolto a nord.
+
+18
+00:01:12.722 --> 00:01:16.111
+Se guardi verso est, per esempio a quaranta gradi,
+
+19
+00:01:16.111 --> 00:01:19.032
+devi girarti a sinistra di quaranta gradi.
+
+20
+00:01:19.032 --> 00:01:22.888
+Se invece guardi verso ovest, per esempio a trecentoventi,
+
+21
+00:01:22.888 --> 00:01:27.329
+ti conviene girare a destra: di trecentosessanta meno trecentoventi,
+
+22
+00:01:27.329 --> 00:01:28.965
+cioè quaranta gradi.
+
+23
+00:01:30.265 --> 00:01:33.513
+Aggiungiamo una vibrazione quando arrivi al nord.
+
+24
+00:01:33.513 --> 00:01:34.995
+Ma solo una volta!
+
+25
+00:01:34.995 --> 00:01:38.471
+Altrimenti vibrerebbe di continuo mentre resti fermo.
+
+26
+00:01:38.471 --> 00:01:41.435
+La variabile era nord ricorda com'era prima:
+
+27
+00:01:41.435 --> 00:01:45.367
+vibriamo solo nel momento in cui passiamo da non nord a nord.
+
+28
+00:01:46.667 --> 00:01:47.779
+Ecco l'app.
+
+29
+00:01:47.779 --> 00:01:50.999
+Guardiamo a cinquantasei gradi, verso nord est:
+
+30
+00:01:50.999 --> 00:01:54.862
+l'app ci dice di girarci a sinistra di cinquantasei gradi.
+
+31
+00:01:54.862 --> 00:01:57.496
+Sul computer la bussola gira da sola.
+
+32
+00:01:57.496 --> 00:02:01.769
+In Leo Studio, invece, la puoi girare trascinandola con il mouse.
+
+33
+00:02:03.069 --> 00:02:07.636
+Un consiglio: se la bussola sembra impazzita, allontanati da calamite,
+
+34
+00:02:07.636 --> 00:02:09.569
+casse e oggetti di ferro.
+
+35
+00:02:09.569 --> 00:02:13.785
+Poi muovi il telefono in aria disegnando un otto, qualche volta.
+
+36
+00:02:13.785 --> 00:02:16.947
+È il modo classico per ricalibrare il sensore.
+
+37
+00:02:18.247 --> 00:02:18.933
+Quiz.
+
+38
+00:02:18.933 --> 00:02:21.042
+La direzione è duecentosettanta.
+
+39
+00:02:21.042 --> 00:02:22.730
+Dove stai guardando? ...
+
+40
+00:02:22.730 --> 00:02:23.785
+Verso ovest.
+
+41
+00:02:23.785 --> 00:02:27.635
+E per guardare a nord dovresti girarti a destra di novanta gradi.
+
+42
+00:02:36.235 --> 00:02:37.549
+Ricapitoliamo.
+
+43
+00:02:37.549 --> 00:02:41.432
+La Bussola dà la direzione in gradi e il punto cardinale.
+
+44
+00:02:41.432 --> 00:02:45.971
+Oltre centottanta gradi conviene girarsi a destra, sotto a sinistra.
+
+45
+00:02:45.971 --> 00:02:50.929
+E con una variabile che ricorda lo stato di prima, vibriamo una volta sola.
+
+46
+00:02:52.229 --> 00:02:55.337
+Nel prossimo video costruiamo una livella da muratore,
+
+47
+00:02:55.337 --> 00:02:57.943
+per appendere i quadri perfettamente dritti.
