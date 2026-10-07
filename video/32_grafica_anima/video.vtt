@@ -1,0 +1,257 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.304
+Fino ad ora, quando cambiavamo una proprietà,
+
+2
+00:00:03.304 --> 00:00:05.897
+l'oggetto saltava subito al nuovo valore.
+
+3
+00:00:05.897 --> 00:00:10.236
+Oggi impariamo a farlo scivolare pian piano, come nelle app professionali.
+
+4
+00:00:10.236 --> 00:00:11.929
+Basta una parola: anima.
+
+5
+00:00:13.229 --> 00:00:17.398
+Si legge proprio come una frase: anima la sinistra della palla,
+
+6
+00:00:17.398 --> 00:00:22.154
+fino a duecentosettantasei, in un secondo e mezzo, con la curva rimbalzo.
+
+7
+00:00:22.154 --> 00:00:25.031
+Le parti in e con curva sono facoltative.
+
+8
+00:00:25.031 --> 00:00:28.436
+Senza in, l'animazione dura tre decimi di secondo.
+
+9
+00:00:28.436 --> 00:00:31.078
+Senza curva, si usa la curva morbida.
+
+10
+00:00:31.078 --> 00:00:35.893
+La durata si può scrivere anche in millisecondi: in trecento millisecondi,
+
+11
+00:00:35.893 --> 00:00:38.535
+oppure attaccato, trecento emme esse.
+
+12
+00:00:39.835 --> 00:00:41.468
+Ecco un esempio.
+
+13
+00:00:41.468 --> 00:00:47.182
+Il pulsante Vai lancia tre animazioni insieme: la palla va a destra, scende,
+
+14
+00:00:47.182 --> 00:00:49.359
+e intanto diventa verde.
+
+15
+00:00:49.359 --> 00:00:53.372
+La prima foto è a metà strada: la palla è in mezzo,
+
+16
+00:00:53.372 --> 00:00:57.250
+e il suo colore è a metà tra il rosso e il verde.
+
+17
+00:00:57.250 --> 00:00:59.427
+La seconda è all'arrivo.
+
+18
+00:00:59.427 --> 00:01:05.345
+La curva la scegliamo con un menu a tendina, e la conserviamo in una variabile.
+
+19
+00:01:05.345 --> 00:01:09.699
+Nota che dopo con curva può esserci anche una variabile,
+
+20
+00:01:09.699 --> 00:01:12.488
+non solo un testo tra virgolette.
+
+21
+00:01:13.788 --> 00:01:18.696
+Si possono animare tutte le proprietà fatte di numeri: la posizione, la misura,
+
+22
+00:01:18.696 --> 00:01:23.547
+l'opacità, la dimensione del carattere, il valore di una barra di avanzamento.
+
+23
+00:01:23.547 --> 00:01:27.383
+E anche i colori: Leo calcola tutte le sfumature intermedie.
+
+24
+00:01:27.383 --> 00:01:31.727
+Il valore d'arrivo viene controllato come in un'assegnazione normale:
+
+25
+00:01:31.727 --> 00:01:34.604
+una larghezza negativa dà lo stesso errore.
+
+26
+00:01:35.904 --> 00:01:40.082
+Le curve decidono come si muove l'oggetto lungo la strada.
+
+27
+00:01:40.082 --> 00:01:44.197
+Lineare va sempre alla stessa velocità, un po' meccanica.
+
+28
+00:01:44.197 --> 00:01:48.692
+Morbida parte piano, accelera e arriva piano: è la predefinita,
+
+29
+00:01:48.692 --> 00:01:50.654
+e va bene quasi sempre.
+
+30
+00:01:50.654 --> 00:01:55.149
+Veloce parte di scatto e frena, ottima per le cose che entrano.
+
+31
+00:01:55.149 --> 00:01:59.454
+Lenta parte piano e accelera, ottima per le cose che escono.
+
+32
+00:01:59.454 --> 00:02:02.619
+Rimbalzo arriva e rimbalza come una palla,
+
+33
+00:02:02.619 --> 00:02:06.924
+ed elastica va un po' oltre e torna indietro come una molla.
+
+34
+00:02:08.224 --> 00:02:12.669
+La frase anima ha anche due forme gemelle, per chi ama le parentesi.
+
+35
+00:02:12.669 --> 00:02:17.991
+Come funzione: anima, l'oggetto, il nome della proprietà tra virgolette, il valore,
+
+36
+00:02:17.991 --> 00:02:19.688
+la durata e la curva.
+
+37
+00:02:19.688 --> 00:02:23.138
+Oppure come metodo dell'oggetto: Palla punto anima.
+
+38
+00:02:23.138 --> 00:02:27.408
+Fanno esattamente la stessa cosa: scegli quella che leggi meglio.
+
+39
+00:02:28.708 --> 00:02:31.772
+Importante: anima non blocca il programma.
+
+40
+00:02:31.772 --> 00:02:35.388
+Parte, e il codice va subito avanti alla riga dopo.
+
+41
+00:02:35.388 --> 00:02:39.433
+Per fare qualcosa quando l'animazione è finita si usa poi,
+
+42
+00:02:39.433 --> 00:02:41.639
+con il nome di una funzione.
+
+43
+00:02:41.639 --> 00:02:46.603
+Qui il pulsante salta in su velocemente, e poi, alla fine, chiama ricadi,
+
+44
+00:02:46.603 --> 00:02:48.993
+che lo fa ricadere rimbalzando.
+
+45
+00:02:48.993 --> 00:02:50.341
+Un vero salto!
+
+46
+00:02:51.641 --> 00:02:56.121
+Un consiglio: le animazioni devono aiutare, non far aspettare.
+
+47
+00:02:56.121 --> 00:03:02.010
+Per un pulsante o un pannello che compare bastano da due a cinque decimi di secondo.
+
+48
+00:03:02.010 --> 00:03:06.362
+Le animazioni lunghe tienile per i giochi e per le sorprese.
+
+49
+00:03:06.362 --> 00:03:12.123
+E se una persona ha chiesto di ridurre le animazioni, Leo salta subito all'arrivo,
+
+50
+00:03:12.123 --> 00:03:16.539
+e poi viene chiamato lo stesso: la tua app funziona comunque.
+
+51
+00:03:17.839 --> 00:03:18.471
+Quiz.
+
+52
+00:03:18.471 --> 00:03:22.358
+Scrivi anima Etichetta1 punto alto a duecento, senza indicare la durata.
+
+53
+00:03:22.358 --> 00:03:23.961
+Quanto dura l'animazione?
+
+54
+00:03:25.961 --> 00:03:28.930
+Tre decimi di secondo, la durata predefinita.
+
+55
+00:03:28.930 --> 00:03:31.675
+Ed è anche morbida, la curva predefinita.
+
+56
+00:03:40.275 --> 00:03:41.425
+Ricapitoliamo.
+
+57
+00:03:41.425 --> 00:03:45.713
+Anima, l'oggetto e la proprietà, a, il valore d'arrivo, in quanti secondi,
+
+58
+00:03:45.713 --> 00:03:46.967
+con quale curva.
+
+59
+00:03:46.967 --> 00:03:49.843
+Si animano posizione, misura, opacità e colori.
+
+60
+00:03:49.843 --> 00:03:52.928
+E con poi fai qualcosa quando l'animazione finisce.
+
+61
+00:03:54.228 --> 00:03:59.090
+Esercizio: anima la dimensione del carattere di un titolo, da sedici a quaranta,
+
+62
+00:03:59.090 --> 00:04:00.748
+con la curva elastica.
+
+63
+00:04:00.748 --> 00:04:05.555
+Nel prossimo video vediamo gli effetti già pronti: lampeggia, scuoti, dissolvi,
+
+64
+00:04:05.555 --> 00:04:06.881
+compari e pulsa.
