@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.788
+Nel video precedente abbiamo colorato gli oggetti.
+
+2
+00:00:03.788 --> 00:00:05.659
+Oggi ne curiamo la forma.
+
+3
+00:00:05.659 --> 00:00:09.854
+Tutti gli oggetti visibili hanno otto personalizzazioni in comune,
+
+4
+00:00:09.854 --> 00:00:12.745
+e i pulsanti hanno in più gli stili pronti.
+
+5
+00:00:14.045 --> 00:00:15.900
+Ecco cosa si può fare.
+
+6
+00:00:15.900 --> 00:00:18.621
+In alto, angoli tondi e angoli vivi.
+
+7
+00:00:18.621 --> 00:00:22.332
+Poi un pulsante con il bordo blu, e uno con l'ombra,
+
+8
+00:00:22.332 --> 00:00:24.991
+che sembra sollevato dallo schermo.
+
+9
+00:00:24.991 --> 00:00:28.516
+Il pulsante grande sfuma dall'arancione al rosso.
+
+10
+00:00:28.516 --> 00:00:31.237
+Sotto, le tre decorazioni del testo.
+
+11
+00:00:31.237 --> 00:00:34.453
+E in fondo, i sei stili pronti dei pulsanti.
+
+12
+00:00:35.753 --> 00:00:36.706
+Eccole.
+
+13
+00:00:36.706 --> 00:00:40.518
+Raggio angoli, in pixel: zero vuol dire angoli vivi,
+
+14
+00:00:40.518 --> 00:00:43.504
+meno uno vuol dire come decide il tema.
+
+15
+00:00:43.504 --> 00:00:46.236
+Più è grande, più l'angolo è tondo.
+
+16
+00:00:46.236 --> 00:00:50.429
+Colore del bordo e spessore del bordo, fino a venti pixel.
+
+17
+00:00:50.429 --> 00:00:52.208
+Ombra, vero o falso.
+
+18
+00:00:52.208 --> 00:00:55.956
+Colore sfumatura: è il secondo colore dello sfondo.
+
+19
+00:00:55.956 --> 00:01:01.483
+Lo sfondo parte in alto con il colore sfondo e arriva in basso a questo colore.
+
+20
+00:01:01.483 --> 00:01:05.549
+E infine grassetto, corsivo e sottolineato per il testo.
+
+21
+00:01:06.849 --> 00:01:11.328
+Non serve scrivere codice: tocca l'oggetto nel disegnatore, poi Aspetto,
+
+22
+00:01:11.328 --> 00:01:12.951
+e scorri il pannello.
+
+23
+00:01:12.951 --> 00:01:17.318
+Trovi raggio angoli, i colori del bordo con la tavolozza, lo spessore.
+
+24
+00:01:17.318 --> 00:01:21.572
+Più giù il colore della sfumatura, e gli interruttori per grassetto,
+
+25
+00:01:21.572 --> 00:01:23.308
+corsivo e sottolineato.
+
+26
+00:01:23.308 --> 00:01:26.387
+Ogni cambiamento si vede subito nella finestra,
+
+27
+00:01:26.387 --> 00:01:29.298
+e sotto ogni voce c'è una breve spiegazione.
+
+28
+00:01:30.598 --> 00:01:35.450
+Le stesse proprietà si cambiano anche dal codice, mentre l'app è aperta.
+
+29
+00:01:35.450 --> 00:01:39.513
+Per il pulsante sfumato: arancione in alto, rosso in basso,
+
+30
+00:01:39.513 --> 00:01:41.999
+angoli da ventisei pixel e ombra.
+
+31
+00:01:41.999 --> 00:01:46.245
+Con un'altezza di cinquantadue pixel, ventisei è metà altezza:
+
+32
+00:01:46.245 --> 00:01:49.216
+il pulsante diventa una pillola perfetta.
+
+33
+00:01:49.216 --> 00:01:52.431
+Per il bordo servono il colore e lo spessore.
+
+34
+00:01:52.431 --> 00:01:56.312
+E per il testo basta mettere a vero grassetto o corsivo.
+
+35
+00:01:57.612 --> 00:01:59.469
+Due esempi interattivi.
+
+36
+00:01:59.469 --> 00:02:04.382
+Ogni tocco sul primo pulsante arrotonda gli angoli di altri quattro pixel.
+
+37
+00:02:04.382 --> 00:02:08.636
+Il secondo accende e spegne la propria ombra con la parola non,
+
+38
+00:02:08.636 --> 00:02:10.673
+che rovescia vero e falso.
+
+39
+00:02:11.973 --> 00:02:16.317
+Pulsanti, pulsanti con immagine ed etichette hanno anche la proprietà stile,
+
+40
+00:02:16.317 --> 00:02:17.817
+con sei stili pronti.
+
+41
+00:02:17.817 --> 00:02:21.075
+Principale, per l'azione più importante della finestra.
+
+42
+00:02:21.075 --> 00:02:23.299
+Secondario, per quelle di contorno.
+
+43
+00:02:23.299 --> 00:02:25.782
+Pericolo, rosso, per eliminare qualcosa.
+
+44
+00:02:25.782 --> 00:02:28.367
+Successo, verde, per confermare o salvare.
+
+45
+00:02:28.367 --> 00:02:32.763
+Contorno mostra solo il bordo, e testo solo la scritta, come un collegamento.
+
+46
+00:02:32.763 --> 00:02:37.211
+Leo capisce anche i sinonimi: primario vale principale, elimina vale pericolo,
+
+47
+00:02:37.211 --> 00:02:38.504
+ok vale successo.
+
+48
+00:02:39.804 --> 00:02:42.911
+Dal codice si assegna come un testo.
+
+49
+00:02:42.911 --> 00:02:48.277
+Se il nome dello stile è sbagliato, Leo ti suggerisce quelli giusti.
+
+50
+00:02:48.277 --> 00:02:53.008
+E se dai a un pulsante un tuo colore di sfondo o del testo,
+
+51
+00:02:53.008 --> 00:02:56.539
+il tuo colore vince su quello dello stile.
+
+52
+00:02:57.839 --> 00:03:03.084
+Un consiglio di design: in ogni finestra metti un solo pulsante principale.
+
+53
+00:03:03.084 --> 00:03:07.128
+Se tutti i pulsanti sono rossi e grandi, nessuno spicca.
+
+54
+00:03:07.128 --> 00:03:12.941
+Uno principale e gli altri secondari o a contorno, e l'occhio sa subito dove andare.
+
+55
+00:03:14.241 --> 00:03:14.940
+Quiz.
+
+56
+00:03:14.940 --> 00:03:17.361
+Un pulsante è alto quarantotto pixel.
+
+57
+00:03:17.361 --> 00:03:21.180
+Quale raggio degli angoli lo trasforma in una pillola perfetta?
+
+58
+00:03:23.180 --> 00:03:25.707
+Ventiquattro, cioè metà dell'altezza.
+
+59
+00:03:25.707 --> 00:03:29.302
+Zero fa angoli vivi, e meno uno lascia decidere al tema.
+
+60
+00:03:37.902 --> 00:03:39.109
+Ricapitoliamo.
+
+61
+00:03:39.109 --> 00:03:43.115
+Angoli, bordo, ombra e sfumatura cambiano la forma degli oggetti.
+
+62
+00:03:43.115 --> 00:03:46.408
+Grassetto, corsivo e sottolineato cambiano il testo.
+
+63
+00:03:46.408 --> 00:03:50.963
+E gli stili pronti danno ai pulsanti un aspetto coerente con un solo tocco.
+
+64
+00:03:52.263 --> 00:03:58.128
+Esercizio: crea un pulsante Elimina con lo stile pericolo e gli angoli vivi.
+
+65
+00:03:58.128 --> 00:04:02.596
+E se ti sembra lungo sistemare ogni oggetto uno per uno,
+
+66
+00:04:02.596 --> 00:04:08.181
+il prossimo video fa per te: lo stile di tutta l'app, con un tocco solo.
