@@ -1,0 +1,277 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.059
+Il telefono è pieno di sensori e di strumenti: la bussola, la fotocamera,
+
+2
+00:00:06.059 --> 00:00:08.804
+il microfono, il GPS, la torcia.
+
+3
+00:00:08.804 --> 00:00:14.569
+Con Leo le tue app li possono usare tutti, con oggetti e parole in italiano.
+
+4
+00:00:14.569 --> 00:00:16.010
+Vediamo come.
+
+5
+00:00:17.310 --> 00:00:19.806
+Nella tavolozza c'è la scheda telefono.
+
+6
+00:00:19.806 --> 00:00:22.515
+Bussola e livella si vedono nella finestra.
+
+7
+00:00:22.515 --> 00:00:27.082
+Vibrazione, torcia, posizione, batteria e condivisione invece sono invisibili:
+
+8
+00:00:27.082 --> 00:00:28.888
+lavorano dietro le quinte,
+
+9
+00:00:28.888 --> 00:00:32.606
+e nel disegnatore compaiono in una striscia sotto la finestra.
+
+10
+00:00:32.606 --> 00:00:36.749
+E non è tutto: anche sensore, fotocamera, lettore QR, dettatura, voce,
+
+11
+00:00:36.749 --> 00:00:39.351
+suono e notifica funzionano sul telefono.
+
+12
+00:00:40.651 --> 00:00:43.916
+Cominciamo con un modello pronto: bussola e livella.
+
+13
+00:00:45.216 --> 00:00:48.914
+La bussola gira con il telefono e indica il nord.
+
+14
+00:00:48.914 --> 00:00:52.158
+Sotto scrive i gradi e il punto cardinale.
+
+15
+00:00:52.158 --> 00:00:56.376
+La livella a bolla mostra quanto è inclinato il telefono:
+
+16
+00:00:56.376 --> 00:01:00.333
+quando la bolla è nel cerchio centrale, sei in piano.
+
+17
+00:01:00.333 --> 00:01:03.642
+Partono da sole quando la finestra si apre:
+
+18
+00:01:03.642 --> 00:01:07.665
+non serve nessuna riga di codice per farle funzionare.
+
+19
+00:01:08.965 --> 00:01:11.014
+Il codice serve per reagire.
+
+20
+00:01:11.014 --> 00:01:15.056
+Quando la bussola cambia, l'etichetta scrive verso dove guardi.
+
+21
+00:01:15.056 --> 00:01:19.269
+Quando il telefono torna in piano, un piccolo colpo di vibrazione:
+
+22
+00:01:19.269 --> 00:01:20.919
+ottanta millisecondi.
+
+23
+00:01:20.919 --> 00:01:24.392
+E il pulsante accende e spegne la torcia con commuta.
+
+24
+00:01:24.392 --> 00:01:28.149
+La torcia si spegne comunque da sola quando l'app finisce.
+
+25
+00:01:29.449 --> 00:01:31.082
+Adesso facciamo parlare l'app.
+
+26
+00:01:32.449 --> 00:01:35.716
+Il modello pappagallo ripete quello che dici.
+
+27
+00:01:35.716 --> 00:01:37.873
+Tocchi il microfono, parli,
+
+28
+00:01:37.873 --> 00:01:41.880
+e la dettatura di Android trasforma la tua voce in testo.
+
+29
+00:01:41.880 --> 00:01:47.551
+Poi l'oggetto voce legge quel testo ad alta voce, con la voce italiana del telefono.
+
+30
+00:01:48.851 --> 00:01:51.373
+Ecco tutto il codice che serve.
+
+31
+00:01:51.373 --> 00:01:57.257
+Quando la dettatura riconosce una frase, l'etichetta la scrive, e la voce la legge.
+
+32
+00:01:57.257 --> 00:02:01.848
+Quando la voce ha finito di leggere, un colpetto di vibrazione.
+
+33
+00:02:01.848 --> 00:02:05.533
+Con la proprietà velocità, da meno dieci a dieci,
+
+34
+00:02:05.533 --> 00:02:08.443
+la voce parla più lenta o più veloce.
+
+35
+00:02:09.743 --> 00:02:11.784
+E ora gli altri strumenti.
+
+36
+00:02:13.084 --> 00:02:15.419
+L'oggetto posizione usa il GPS.
+
+37
+00:02:15.419 --> 00:02:20.866
+Avvia comincia a seguire la posizione; a ogni aggiornamento arriva l'evento cambio,
+
+38
+00:02:20.866 --> 00:02:24.398
+con latitudine, longitudine, altitudine e velocità.
+
+39
+00:02:24.398 --> 00:02:29.606
+E distanza da ti dice quanti metri ci sono, in linea d'aria, da un altro punto:
+
+40
+00:02:29.606 --> 00:02:31.043
+qui il Colosseo.
+
+41
+00:02:32.343 --> 00:02:36.052
+La fotocamera: tocchi l'oggetto, o chiami scatta,
+
+42
+00:02:36.052 --> 00:02:38.980
+e la foto arriva con l'evento scatto.
+
+43
+00:02:38.980 --> 00:02:44.836
+Il lettore QR legge codici QR e codici a barre, e ti dà il testo con codice letto.
+
+44
+00:02:44.836 --> 00:02:50.042
+L'oggetto sensore legge l'accelerometro, la luce, i passi, la pressione,
+
+45
+00:02:50.042 --> 00:02:51.539
+e altri ancora.
+
+46
+00:02:51.539 --> 00:02:56.028
+E poi la batteria, la condivisione verso WhatsApp o la posta,
+
+47
+00:02:56.028 --> 00:02:59.282
+le notifiche vere del telefono, e i suoni.
+
+48
+00:03:00.582 --> 00:03:02.973
+Una cosa importante: i permessi.
+
+49
+00:03:02.973 --> 00:03:07.216
+La prima volta che la tua app usa la fotocamera o la posizione,
+
+50
+00:03:07.216 --> 00:03:10.204
+il telefono chiede all'utente il permesso.
+
+51
+00:03:10.204 --> 00:03:13.849
+Se dice di no, arriva un errore spiegato in italiano,
+
+52
+00:03:13.849 --> 00:03:17.375
+che dice anche dove riattivarlo nelle impostazioni.
+
+53
+00:03:17.375 --> 00:03:19.766
+E l'app non si blocca: continua.
+
+54
+00:03:21.066 --> 00:03:26.719
+Un consiglio: questi oggetti ci sono anche in Leo Studio sul computer, simulati.
+
+55
+00:03:26.719 --> 00:03:31.215
+La bussola e la livella si provano trascinandole con il mouse,
+
+56
+00:03:31.215 --> 00:03:35.583
+la posizione è quella di Roma, la vibrazione diventa un bip.
+
+57
+00:03:35.583 --> 00:03:40.658
+Così prepari l'app comodamente sul PC, e la provi davvero sul telefono.
+
+58
+00:03:41.958 --> 00:03:42.758
+Quiz.
+
+59
+00:03:42.758 --> 00:03:46.448
+Con quale oggetto l'app legge ad alta voce un testo?
+
+60
+00:03:50.748 --> 00:03:52.268
+Voce, risposta B.
+
+61
+00:03:52.268 --> 00:03:56.462
+La dettatura fa il contrario: trasforma la tua voce in testo.
+
+62
+00:03:57.762 --> 00:03:59.045
+Ricapitoliamo.
+
+63
+00:03:59.045 --> 00:04:04.234
+La scheda telefono ha bussola, livella, torcia, vibrazione, posizione e batteria.
+
+64
+00:04:04.234 --> 00:04:06.858
+La dettatura ascolta e la voce parla.
+
+65
+00:04:06.858 --> 00:04:10.532
+Fotocamera, lettore QR e sensori mandano i loro eventi.
+
+66
+00:04:10.532 --> 00:04:14.497
+E se l'utente nega un permesso, l'app lo spiega e va avanti.
+
+67
+00:04:15.797 --> 00:04:17.538
+Questa era la panoramica.
+
+68
+00:04:17.538 --> 00:04:21.020
+Nei prossimi video prendiamo gli strumenti uno alla volta,
+
+69
+00:04:21.020 --> 00:04:23.552
+ognuno con un piccolo progetto completo.

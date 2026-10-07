@@ -1,0 +1,229 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.373
+In questo video, per chi usa il computer, creiamo l'APK con un solo comando.
+
+2
+00:00:06.373 --> 00:00:10.918
+È comodo quando il programma l'hai scritto in Leo Studio,
+
+3
+00:00:10.918 --> 00:00:15.602
+o quando devi creare tante app, per esempio per una classe.
+
+4
+00:00:16.902 --> 00:00:21.365
+Il comando è leo compila, il programma, e trattino trattino apk.
+
+5
+00:00:21.365 --> 00:00:26.510
+Funziona con un file solo, come saluto punto leo, e con un progetto intero,
+
+6
+00:00:26.510 --> 00:00:29.423
+anche con le finestre, come la rubrica.
+
+7
+00:00:29.423 --> 00:00:34.134
+Con le opzioni scegli il nome sotto l'icona, l'icona, e la versione.
+
+8
+00:00:34.134 --> 00:00:38.535
+L'app finisce nella cartella app android, accanto al programma.
+
+9
+00:00:39.835 --> 00:00:44.111
+Non servono né Android Studio, né l'SDK, né Gradle.
+
+10
+00:00:44.111 --> 00:00:50.127
+Il trucco è che l'app di Leo per Android fa da guscio: Leo ne fa una copia,
+
+11
+00:00:50.127 --> 00:00:55.345
+ci mette dentro il tuo programma, cambia il nome e il pacchetto,
+
+12
+00:00:55.345 --> 00:00:57.447
+e firma il risultato.
+
+13
+00:00:57.447 --> 00:01:03.100
+È lo stesso motore che usa il telefono quando tocchi crea app Android.
+
+14
+00:01:04.400 --> 00:01:07.002
+Ecco le opzioni che userai di più.
+
+15
+00:01:07.002 --> 00:01:09.853
+Nome, icona, e versione del programma.
+
+16
+00:01:09.853 --> 00:01:12.703
+Pacchetto è l'identificativo dell'app:
+
+17
+00:01:12.703 --> 00:01:18.341
+due app con lo stesso pacchetto sono la stessa app, e la seconda aggiorna la prima.
+
+18
+00:01:18.341 --> 00:01:21.625
+Chiave sceglie il file della chiave di firma.
+
+19
+00:01:21.625 --> 00:01:27.202
+E solo telefoni toglie la parte per l'emulatore del computer: l'app è più piccola,
+
+20
+00:01:27.202 --> 00:01:30.114
+e va comunque su tutti i telefoni veri.
+
+21
+00:01:31.414 --> 00:01:35.904
+La chiave, sul computer, è un file: chiave apk punto json,
+
+22
+00:01:35.904 --> 00:01:39.237
+nella cartella delle impostazioni di Leo.
+
+23
+00:01:39.237 --> 00:01:41.618
+Leo la crea la prima volta.
+
+24
+00:01:41.618 --> 00:01:46.992
+Se vuoi che le app create sul PC aggiornino quelle create sul telefono,
+
+25
+00:01:46.992 --> 00:01:52.843
+o il contrario, usa lo stesso file: sul telefono ne fai la copia di sicurezza,
+
+26
+00:01:52.843 --> 00:01:56.448
+sul PC la passi con trattino trattino chiave.
+
+27
+00:01:56.448 --> 00:02:01.210
+E vale la regola di sempre: conservala, e non darla a nessuno.
+
+28
+00:02:02.510 --> 00:02:05.541
+Che cosa può entrare in un'app Android?
+
+29
+00:02:05.541 --> 00:02:08.830
+I programmi testuali e le app con finestre,
+
+30
+00:02:08.830 --> 00:02:14.506
+con tutti gli oggetti che funzionano sul telefono, compresi sensori, voce e GPS.
+
+31
+00:02:14.506 --> 00:02:18.763
+Se il progetto usa oggetti che esistono solo sul computer,
+
+32
+00:02:18.763 --> 00:02:22.826
+Leo li elenca negli avvisi, così sai che cosa cambiare.
+
+33
+00:02:22.826 --> 00:02:28.372
+E i disegni con la tartaruga, sul telefono, vengono salvati come immagine SVG:
+
+34
+00:02:28.372 --> 00:02:31.081
+anche questo te lo dice un avviso.
+
+35
+00:02:32.381 --> 00:02:35.992
+Lo stesso comando, senza trattino trattino apk,
+
+36
+00:02:35.992 --> 00:02:40.259
+crea invece un file eseguibile per Windows: un punto exe,
+
+37
+00:02:40.259 --> 00:02:43.279
+da dare a chi non ha né Python né Leo.
+
+38
+00:02:43.279 --> 00:02:46.561
+Per l'exe serve PyInstaller; per l'APK no.
+
+39
+00:02:46.561 --> 00:02:51.157
+Stesso programma, due destinazioni: il telefono e il computer.
+
+40
+00:02:52.457 --> 00:02:56.789
+Un consiglio per chi prepara tante app, per esempio in classe.
+
+41
+00:02:56.789 --> 00:03:01.740
+Dai a ogni app un pacchetto diverso, come it punto scuola punto rubrica,
+
+42
+00:03:01.740 --> 00:03:03.906
+it punto scuola punto quiz.
+
+43
+00:03:03.906 --> 00:03:09.413
+Se due app diverse hanno lo stesso pacchetto, Android le considera la stessa app,
+
+44
+00:03:09.413 --> 00:03:11.641
+e l'una sovrascrive l'altra.
+
+45
+00:03:12.941 --> 00:03:13.707
+Quiz.
+
+46
+00:03:13.707 --> 00:03:18.247
+Quale opzione rende l'APK più piccolo, senza perdere nessun telefono?
+
+47
+00:03:22.547 --> 00:03:24.357
+Solo telefoni, risposta B.
+
+48
+00:03:24.357 --> 00:03:27.445
+Toglie solo la parte per l'emulatore del computer.
+
+49
+00:03:28.745 --> 00:03:29.924
+Ricapitoliamo.
+
+50
+00:03:29.924 --> 00:03:34.105
+Leo compila con trattino trattino apk crea l'app Android dal computer.
+
+51
+00:03:34.105 --> 00:03:37.320
+Le opzioni scelgono nome, icona, pacchetto e chiave.
+
+52
+00:03:37.320 --> 00:03:40.804
+Con la stessa chiave del telefono aggiorni le stesse app.
+
+53
+00:03:40.804 --> 00:03:44.663
+E senza trattino trattino apk, ottieni l'eseguibile per Windows.
+
+54
+00:03:45.963 --> 00:03:50.203
+Hai visto tutta la strada: dal primo programma fino alla tua app,
+
+55
+00:03:50.203 --> 00:03:53.804
+installata e distribuita, dal telefono e dal computer.
+
+56
+00:03:53.804 --> 00:03:58.508
+Adesso tocca a te: progetta, prova, correggi, e pubblica qualcosa di tuo.
+
+57
+00:03:58.508 --> 00:04:00.657
+Buona programmazione con Leo.
