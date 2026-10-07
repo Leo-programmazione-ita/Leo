@@ -1,0 +1,125 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.003
+Iniziamo la serie sugli errori comuni con il re di tutti gli errori:
+
+2
+00:00:05.003 --> 00:00:06.662
+il fine dimenticato.
+
+3
+00:00:06.662 --> 00:00:09.032
+Capita a tutti, anche dopo anni.
+
+4
+00:00:09.032 --> 00:00:11.520
+Vediamo come riconoscerlo al volo.
+
+5
+00:00:12.820 --> 00:00:15.367
+Ecco il messaggio vero di Leo.
+
+6
+00:00:15.367 --> 00:00:18.518
+È un errore di sintassi, cioè di forma,
+
+7
+00:00:18.518 --> 00:00:22.607
+e Leo lo trova prima ancora di eseguire il programma:
+
+8
+00:00:22.607 --> 00:00:26.025
+infatti non viene stampato nemmeno un voto.
+
+9
+00:00:26.025 --> 00:00:31.187
+Il blocco per ogni aperto alla riga due non è mai chiuso: manca fine.
+
+10
+00:00:32.487 --> 00:00:38.146
+Ti starai chiedendo: perché Leo segna la riga due, se il fine manca in fondo?
+
+11
+00:00:38.146 --> 00:00:42.273
+Perché il fine potrebbe andare in tanti punti diversi,
+
+12
+00:00:42.273 --> 00:00:45.269
+e solo tu sai dove finisce il blocco.
+
+13
+00:00:45.269 --> 00:00:50.461
+Leo invece sa con certezza dove il blocco si apre, e ti indica quello.
+
+14
+00:00:50.461 --> 00:00:55.854
+Vale per tutti i blocchi: se, per ogni, mentre, ripeti, funzione, quando,
+
+15
+00:00:55.854 --> 00:00:57.385
+prova e scegli.
+
+16
+00:00:58.685 --> 00:01:04.142
+La correzione è semplice: un fine, allineato alla riga che apre il blocco.
+
+17
+00:01:04.142 --> 00:01:06.671
+Il rientro non è obbligatorio,
+
+18
+00:01:06.671 --> 00:01:10.930
+ma ti fa vedere subito cosa sta dentro e cosa sta fuori.
+
+19
+00:01:12.230 --> 00:01:16.984
+Può succedere anche il contrario: un fine che non chiude niente.
+
+20
+00:01:16.984 --> 00:01:21.870
+Di solito nasce quando cancelli un se e ti dimentichi il suo fine.
+
+21
+00:01:21.870 --> 00:01:25.699
+Qui la riga indicata è proprio quella da togliere.
+
+22
+00:01:26.999 --> 00:01:33.100
+Il trucco per non sbagliare più: appena apri un blocco, scrivi subito il suo fine,
+
+23
+00:01:33.100 --> 00:01:35.201
+e poi riempi il centro.
+
+24
+00:01:35.201 --> 00:01:40.285
+In Leo Studio lo fa l'editor, quando premi Invio dopo fai o allora.
+
+25
+00:01:40.285 --> 00:01:45.775
+E un tocco su Formatta rientra tutto: un fine che manca salta all'occhio.
+
+26
+00:01:47.075 --> 00:01:47.907
+Quiz.
+
+27
+00:01:47.907 --> 00:01:50.340
+Un per ogni, con dentro un se.
+
+28
+00:01:54.640 --> 00:01:55.864
+Quanti fine servono?
+
+29
+00:01:58.864 --> 00:02:04.986
+La risposta giusta è la B, due: uno chiude il se, l'altro il per ogni.
+
+30
+00:02:06.286 --> 00:02:08.741
+Ricorda: blocco aperto, blocco chiuso.
+
+31
+00:02:08.741 --> 00:02:13.225
+Nel prossimo video l'errore numero due, l'uguale al posto del doppio uguale.

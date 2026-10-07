@@ -1,0 +1,117 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.662
+Quindici e quindici tra virgolette sembrano la stessa cosa.
+
+2
+00:00:04.662 --> 00:00:08.140
+Per Leo no: uno è un numero, l'altro è un testo.
+
+3
+00:00:08.140 --> 00:00:11.929
+Oggi vediamo l'errore che nasce da questa differenza.
+
+4
+00:00:13.229 --> 00:00:15.817
+Chiediamo l'età e scriviamo quindici.
+
+5
+00:00:15.817 --> 00:00:19.786
+Poi vogliamo stampare l'età dell'anno prossimo: anni più uno.
+
+6
+00:00:19.786 --> 00:00:23.409
+Errore di tipo: non posso sommare un testo e un intero.
+
+7
+00:00:23.409 --> 00:00:25.882
+Ma come, abbiamo scritto un numero!
+
+8
+00:00:27.182 --> 00:00:32.917
+Il motivo è che chiedi restituisce sempre un testo: anche se scrivi delle cifre,
+
+9
+00:00:32.917 --> 00:00:34.741
+arrivano come testo.
+
+10
+00:00:34.741 --> 00:00:40.020
+E testo più numero è ambiguo: vuoi unire dei caratteri o fare un calcolo?
+
+11
+00:00:40.020 --> 00:00:43.279
+Leo non tira a indovinare, e te lo chiede.
+
+12
+00:00:43.279 --> 00:00:47.319
+La soluzione: trasforma il testo in numero con intero,
+
+13
+00:00:47.319 --> 00:00:50.447
+o con decimale se ti servono i decimali.
+
+14
+00:00:51.747 --> 00:00:54.600
+Basta avvolgere chiedi dentro intero.
+
+15
+00:00:54.600 --> 00:00:58.278
+Adesso anni è un numero, e anni più uno fa sedici.
+
+16
+00:00:59.578 --> 00:01:02.743
+Lo stesso errore arriva anche al contrario,
+
+17
+00:01:02.743 --> 00:01:06.653
+quando vuoi attaccare un numero a una frase con il più.
+
+18
+00:01:06.653 --> 00:01:10.190
+Leo suggerisce di trasformare il numero in testo.
+
+19
+00:01:11.490 --> 00:01:14.593
+Ma c'è un modo ancora migliore: le graffe.
+
+20
+00:01:14.593 --> 00:01:20.054
+Metti il numero tra graffe dentro la frase, e Leo pensa lui alla trasformazione.
+
+21
+00:01:20.054 --> 00:01:22.102
+Niente più, niente testo.
+
+22
+00:01:23.402 --> 00:01:24.109
+Quiz.
+
+23
+00:01:24.109 --> 00:01:25.851
+Testo due più testo tre.
+
+24
+00:01:30.151 --> 00:01:31.375
+Che cosa stampa?
+
+25
+00:01:34.375 --> 00:01:38.993
+La risposta giusta è la B, ventitré: due testi si possono unire,
+
+26
+00:01:38.993 --> 00:01:41.880
+e il più li attacca uno dopo l'altro.
+
+27
+00:01:41.880 --> 00:01:43.355
+Nessun calcolo.
+
+28
+00:01:44.655 --> 00:01:49.009
+Ricorda: chiedi dà un testo, intero lo fa diventare un numero,
+
+29
+00:01:49.009 --> 00:01:51.186
+e le graffe uniscono tutto.

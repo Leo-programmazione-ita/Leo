@@ -1,0 +1,93 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.974
+Nella vita si conta da uno.
+
+2
+00:00:02.974 --> 00:00:08.488
+Nelle liste di Leo, come in quasi tutti i linguaggi, si conta da zero.
+
+3
+00:00:08.488 --> 00:00:13.153
+Ecco l'errore che ne nasce, e il suo cugino dei dizionari.
+
+4
+00:00:14.453 --> 00:00:17.749
+Tre frutti, e vogliamo il terzo: frutti, tre.
+
+5
+00:00:17.749 --> 00:00:23.409
+Errore di indice: l'indice tre è fuori dalla lista, gli indici vanno da zero a due.
+
+6
+00:00:23.409 --> 00:00:27.514
+Il messaggio ti dice esattamente quali posizioni esistono.
+
+7
+00:00:28.814 --> 00:00:33.430
+Il primo elemento è in posizione zero, il terzo in posizione due.
+
+8
+00:00:33.430 --> 00:00:37.477
+In generale, l'ultimo è in posizione lunghezza meno uno.
+
+9
+00:00:37.477 --> 00:00:42.283
+Oppure usa il trucco: meno uno ti dà sempre l'ultimo, senza contare.
+
+10
+00:00:43.583 --> 00:00:49.003
+Attenzione anche alla lista vuota: lì non esiste nemmeno la posizione zero,
+
+11
+00:00:49.003 --> 00:00:51.811
+e Leo te lo dice: la lista è vuota.
+
+12
+00:00:51.811 --> 00:00:56.644
+Prima di leggere, controlla che la lunghezza sia maggiore di zero.
+
+13
+00:00:57.944 --> 00:01:01.475
+Nei dizionari non ci sono posizioni ma chiavi.
+
+14
+00:01:01.475 --> 00:01:06.773
+Se chiedi una chiave che non c'è, come Marco, arriva un errore di chiave.
+
+15
+00:01:06.773 --> 00:01:09.781
+E il suggerimento ti offre due strade.
+
+16
+00:01:11.081 --> 00:01:14.562
+Prima strada: prendi, con un valore predefinito.
+
+17
+00:01:14.562 --> 00:01:18.043
+Se Marco non c'è, ottieni zero, e niente errore.
+
+18
+00:01:18.043 --> 00:01:23.326
+Seconda strada: chiedi prima con ha se la chiave esiste, e solo dopo leggila.
+
+19
+00:01:24.626 --> 00:01:25.068
+Quiz.
+
+20
+00:01:25.068 --> 00:01:26.259
+Lunedì, martedì, mercoledì.
+
+21
+00:01:30.559 --> 00:01:32.600
+Cosa c'è in posizione uno?
+
+22
+00:01:35.600 --> 00:01:42.131
+La risposta giusta è la B, martedì: la posizione zero è lunedì, la uno è martedì.
+
+23
+00:01:43.431 --> 00:01:49.145
+Zero, uno, due: conta come un programmatore e questo errore non ti fermerà più.

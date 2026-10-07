@@ -1,0 +1,105 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.841
+Oggi parliamo dei nomi: quelli delle variabili.
+
+2
+00:00:03.841 --> 00:00:08.032
+Leo è preciso, e un nome deve esistere prima di essere usato.
+
+3
+00:00:08.032 --> 00:00:10.704
+Vediamo i quattro errori più comuni.
+
+4
+00:00:12.004 --> 00:00:13.598
+Primo: il refuso.
+
+5
+00:00:13.598 --> 00:00:15.958
+Puntti con due ti non esiste.
+
+6
+00:00:15.958 --> 00:00:20.359
+Leo cerca un nome simile tra quelli che conosci, trova punti,
+
+7
+00:00:20.359 --> 00:00:24.249
+e ti dice perfino dove l'hai definito: alla riga uno.
+
+8
+00:00:25.549 --> 00:00:28.615
+Secondo: la variabile usata senza dichiararla.
+
+9
+00:00:28.615 --> 00:00:32.192
+In Leo la prima volta si scrive variabile, poi il nome.
+
+10
+00:00:32.192 --> 00:00:34.803
+Solo dopo puoi cambiarla con l'uguale.
+
+11
+00:00:34.803 --> 00:00:36.450
+Perché questa regola?
+
+12
+00:00:36.450 --> 00:00:40.651
+Perché così Leo si accorge dei refusi, come nell'esempio di prima.
+
+13
+00:00:41.951 --> 00:00:43.679
+Terzo: il contrario.
+
+14
+00:00:43.679 --> 00:00:46.949
+La parola variabile si scrive una volta sola.
+
+15
+00:00:46.949 --> 00:00:52.563
+Per cambiare il valore, dalla seconda volta in poi, scrivi solo il nome e l'uguale.
+
+16
+00:00:53.863 --> 00:00:58.753
+Quarto: alcune parole sono riservate, perché fanno parte del linguaggio.
+
+17
+00:00:58.753 --> 00:01:02.787
+Vuoto è un sinonimo di nulla, basta è un sinonimo di fine.
+
+18
+00:01:02.787 --> 00:01:06.516
+Scegli un altro nome, per esempio conteggio o totale.
+
+19
+00:01:07.816 --> 00:01:10.224
+E se sbagli solo una maiuscola?
+
+20
+00:01:10.224 --> 00:01:12.323
+Leo è gentile: lo tollera,
+
+21
+00:01:12.323 --> 00:01:17.015
+a meno che esistano due nomi che differiscono solo per le maiuscole.
+
+22
+00:01:17.015 --> 00:01:22.510
+Il consiglio però è semplice: nomi sempre minuscoli, e con un significato chiaro.
+
+23
+00:01:23.810 --> 00:01:26.609
+Ricapitoliamo: leggi il forse intendevi,
+
+24
+00:01:26.609 --> 00:01:31.973
+dichiara con variabile la prima volta e solo la prima, ed evita le parole riservate.
+
+25
+00:01:33.273 --> 00:01:37.961
+Un nome chiaro, dichiarato una volta sola: metà degli errori spariscono così.
+
+26
+00:01:37.961 --> 00:01:39.395
+Al prossimo video.

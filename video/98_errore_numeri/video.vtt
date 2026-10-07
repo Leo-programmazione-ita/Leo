@@ -1,0 +1,109 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.791
+Oggi tre errori con i numeri.
+
+2
+00:00:02.791 --> 00:00:06.879
+Uno è colpa dell'abitudine italiana, uno della matematica,
+
+3
+00:00:06.879 --> 00:00:09.480
+e uno di chi usa il tuo programma.
+
+4
+00:00:10.780 --> 00:00:14.045
+In Italia scriviamo tre virgola cinquanta.
+
+5
+00:00:14.045 --> 00:00:19.662
+Ma nel codice, come in tutti i linguaggi, i decimali si scrivono con il punto.
+
+6
+00:00:19.662 --> 00:00:21.817
+Leo lo sa e te lo spiega:
+
+7
+00:00:21.817 --> 00:00:25.343
+la virgola serve già per separare gli elementi
+
+8
+00:00:25.343 --> 00:00:28.739
+di una lista e gli argomenti delle funzioni.
+
+9
+00:00:30.039 --> 00:00:33.231
+E se vuoi mostrare i numeri all'italiana?
+
+10
+00:00:33.231 --> 00:00:37.855
+Nel codice usa il punto, poi nel testo usa il formato migliaia:
+
+11
+00:00:37.855 --> 00:00:42.284
+Leo stampa i punti delle migliaia e la virgola dei decimali.
+
+12
+00:00:43.584 --> 00:00:45.749
+Secondo: dividere per zero.
+
+13
+00:00:45.749 --> 00:00:50.201
+Nemmeno Leo sa farlo, perché non ha senso neanche in matematica.
+
+14
+00:00:50.201 --> 00:00:55.829
+Di solito succede quando il divisore è una variabile che, per una volta, vale zero.
+
+15
+00:00:57.129 --> 00:01:01.815
+La soluzione è controllare prima: se le persone sono più di zero, dividi.
+
+16
+00:01:01.815 --> 00:01:04.476
+Altrimenti mostra un messaggio chiaro.
+
+17
+00:01:05.776 --> 00:01:11.476
+Terzo: intero trasforma un testo in un numero, ma solo se il testo contiene cifre.
+
+18
+00:01:11.476 --> 00:01:14.010
+Dieci scritto in lettere non va.
+
+19
+00:01:14.010 --> 00:01:16.987
+Succede quando l'utente, a una domanda,
+
+20
+00:01:16.987 --> 00:01:20.470
+risponde con le parole invece che con le cifre.
+
+21
+00:01:21.770 --> 00:01:26.089
+Qui non puoi controllare prima, perché la risposta la decide l'utente.
+
+22
+00:01:26.089 --> 00:01:29.744
+Allora usa prova e cattura: se la trasformazione fallisce,
+
+23
+00:01:29.744 --> 00:01:32.790
+invece di fermarti mostri un messaggio gentile.
+
+24
+00:01:34.090 --> 00:01:38.408
+Ricapitoliamo: decimali con il punto, un controllo prima di dividere,
+
+25
+00:01:38.408 --> 00:01:41.437
+e prova e cattura per le risposte dell'utente.
+
+26
+00:01:42.737 --> 00:01:44.849
+I numeri non hanno più segreti.
+
+27
+00:01:44.849 --> 00:01:48.043
+Nell'ultimo video della serie parliamo di funzioni.
