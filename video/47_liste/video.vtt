@@ -1,0 +1,213 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.082
+Finora ogni variabile conteneva un solo valore.
+
+2
+00:00:04.082 --> 00:00:09.814
+Ma pensa alla lista della spesa, ai voti di una classe, ai punteggi di un gioco.
+
+3
+00:00:09.814 --> 00:00:14.178
+Serve una variabile capace di contenere tante cose in fila.
+
+4
+00:00:14.178 --> 00:00:18.867
+Si chiama lista, ed è uno degli strumenti più usati in assoluto.
+
+5
+00:00:20.167 --> 00:00:25.682
+Una lista si scrive tra parentesi quadre, con gli elementi separati da virgole.
+
+6
+00:00:25.682 --> 00:00:30.879
+Per leggere un elemento si usa il suo indice, sempre tra parentesi quadre.
+
+7
+00:00:30.879 --> 00:00:33.224
+Attenzione: si conta da zero!
+
+8
+00:00:33.224 --> 00:00:36.457
+Spesa di zero è il pane, il primo elemento.
+
+9
+00:00:36.457 --> 00:00:40.197
+Con meno uno si parte dal fondo: l'ultimo elemento.
+
+10
+00:00:40.197 --> 00:00:43.176
+Lunghezza dice quanti elementi ci sono,
+
+11
+00:00:43.176 --> 00:00:47.106
+e la parola in controlla se un elemento è nella lista.
+
+12
+00:00:48.406 --> 00:00:52.616
+Le liste si possono cambiare, con i metodi, cioè con il punto.
+
+13
+00:00:52.616 --> 00:00:55.263
+Aggiungi mette un elemento in fondo.
+
+14
+00:00:55.263 --> 00:01:00.797
+Inserisci lo mette nella posizione che vuoi: qui in posizione zero, cioè all'inizio.
+
+15
+00:01:00.797 --> 00:01:04.767
+Rimuovi toglie il primo elemento uguale a quello indicato.
+
+16
+00:01:04.767 --> 00:01:08.917
+E con l'indice e il segno uguale puoi sostituire un elemento:
+
+17
+00:01:08.917 --> 00:01:11.263
+il pane diventa pane integrale.
+
+18
+00:01:12.563 --> 00:01:15.837
+Ecco i metodi principali in un colpo d'occhio.
+
+19
+00:01:15.837 --> 00:01:18.323
+Aggiungi e inserisci per mettere.
+
+20
+00:01:18.323 --> 00:01:23.658
+Rimuovi ed estrai per togliere: estrai, in più, ti restituisce l'elemento tolto.
+
+21
+00:01:23.658 --> 00:01:27.781
+Ordina mette in ordine, anche dal più grande al più piccolo,
+
+22
+00:01:27.781 --> 00:01:29.963
+e inverti rovescia la lista.
+
+23
+00:01:29.963 --> 00:01:35.420
+Trova ti dice in che posizione si trova un elemento, e conta quante volte compare.
+
+24
+00:01:36.720 --> 00:01:41.340
+Con le liste di numeri Leo ti regala un sacco di funzioni pronte.
+
+25
+00:01:41.340 --> 00:01:46.086
+Somma, massimo, minimo e media fanno esattamente quello che dicono.
+
+26
+00:01:46.086 --> 00:01:49.440
+E ordina, come vedi, cambia proprio la lista:
+
+27
+00:01:49.440 --> 00:01:53.047
+dopo la chiamata i voti sono in ordine crescente.
+
+28
+00:01:54.347 --> 00:01:58.751
+Un trucco da esperti, ma che si legge come una frase.
+
+29
+00:01:58.751 --> 00:02:04.598
+Tra parentesi quadre scrivi come calcolare ogni elemento, e poi per ogni.
+
+30
+00:02:04.598 --> 00:02:08.785
+N per n, per ogni n da uno a sei: ecco i quadrati.
+
+31
+00:02:08.785 --> 00:02:13.766
+E puoi aggiungere un filtro con se: tieni solo i numeri pari.
+
+32
+00:02:13.766 --> 00:02:15.571
+In una riga sola!
+
+33
+00:02:16.871 --> 00:02:21.365
+L'errore più comune con le liste è andare oltre la fine.
+
+34
+00:02:21.365 --> 00:02:26.421
+La lista ha tre elementi, quindi gli indici vanno da zero a due.
+
+35
+00:02:26.421 --> 00:02:28.668
+Spesa di tre non esiste!
+
+36
+00:02:28.668 --> 00:02:33.724
+Leo te lo dice con precisione: l'indice tre è fuori dalla lista,
+
+37
+00:02:33.724 --> 00:02:36.463
+gli indici vanno da zero a due.
+
+38
+00:02:37.763 --> 00:02:42.608
+Chi arriva da Python si troverà a casa: le liste funzionano allo stesso modo,
+
+39
+00:02:42.608 --> 00:02:44.431
+indici da zero compresi.
+
+40
+00:02:44.431 --> 00:02:48.706
+Cambiano solo i nomi: append diventa aggiungi, sort diventa ordina,
+
+41
+00:02:48.706 --> 00:02:50.416
+len diventa lunghezza.
+
+42
+00:02:51.716 --> 00:02:52.482
+Quiz.
+
+43
+00:02:52.482 --> 00:02:55.312
+La lista contiene dieci, venti e trenta.
+
+44
+00:02:55.312 --> 00:02:57.022
+Quanto vale l di uno?
+
+45
+00:03:01.322 --> 00:03:04.043
+La risposta giusta è: Venti!
+
+46
+00:03:04.043 --> 00:03:09.485
+Gli indici partono da zero: l di zero è dieci, l di uno è venti.
+
+47
+00:03:10.785 --> 00:03:12.167
+Ricapitoliamo.
+
+48
+00:03:12.167 --> 00:03:16.311
+Le liste stanno tra parentesi quadre e si contano da zero.
+
+49
+00:03:16.311 --> 00:03:19.702
+I metodi le cambiano, le funzioni le misurano,
+
+50
+00:03:19.702 --> 00:03:24.663
+e con per ogni tra parentesi quadre ne costruisci di nuove in una riga.
+
+51
+00:03:25.963 --> 00:03:29.317
+Nelle liste ritrovi i valori con un numero.
+
+52
+00:03:29.317 --> 00:03:33.591
+E se volessi ritrovarli con un nome, come in una rubrica?
+
+53
+00:03:33.591 --> 00:03:37.800
+Ti servono i dizionari: sono il tema del prossimo video.

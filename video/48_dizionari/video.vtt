@@ -1,0 +1,217 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.343
+Pensa a un vocabolario: cerchi una parola e trovi la sua spiegazione.
+
+2
+00:00:05.343 --> 00:00:10.061
+Oppure alla rubrica del telefono: cerchi un nome e trovi il numero.
+
+3
+00:00:10.061 --> 00:00:15.470
+In programmazione questa idea si chiama dizionario: ogni valore ha una chiave,
+
+4
+00:00:15.470 --> 00:00:18.867
+cioè un nome, con cui ritrovarlo in un attimo.
+
+5
+00:00:20.167 --> 00:00:23.586
+Un dizionario si scrive tra parentesi graffe.
+
+6
+00:00:23.586 --> 00:00:28.036
+Dentro ci sono le coppie: la chiave, i due punti e il valore.
+
+7
+00:00:28.036 --> 00:00:33.713
+Per leggere un valore si scrive la chiave tra parentesi quadre: persona, quadra,
+
+8
+00:00:33.713 --> 00:00:34.551
+nome.
+
+9
+00:00:34.551 --> 00:00:40.163
+Con lo stesso modo si scrive: se la chiave non c'è, come città, viene aggiunta;
+
+10
+00:00:40.163 --> 00:00:43.840
+se c'è già, come età, il valore viene sostituito.
+
+11
+00:00:45.140 --> 00:00:48.789
+Che succede se chiediamo una chiave che non esiste?
+
+12
+00:00:48.789 --> 00:00:50.520
+Un errore di chiave.
+
+13
+00:00:50.520 --> 00:00:55.220
+E, come sempre, Leo ci suggerisce la via d'uscita: il metodo prendi,
+
+14
+00:00:55.220 --> 00:00:57.385
+oppure un controllo con ha.
+
+15
+00:00:58.685 --> 00:01:03.593
+Prendi restituisce il valore della chiave, oppure, se la chiave manca,
+
+16
+00:01:03.593 --> 00:01:06.298
+il valore di riserva che scegli tu.
+
+17
+00:01:06.298 --> 00:01:07.682
+Niente errori.
+
+18
+00:01:07.682 --> 00:01:09.758
+Ha risponde vero o falso.
+
+19
+00:01:09.758 --> 00:01:14.603
+Chiavi e valori ti danno due liste: tutte le chiavi e tutti i valori.
+
+20
+00:01:15.903 --> 00:01:19.000
+Per ogni funziona anche con i dizionari.
+
+21
+00:01:19.000 --> 00:01:23.194
+Con due nomi separati da una virgola ricevi, a ogni giro,
+
+22
+00:01:23.194 --> 00:01:25.646
+la chiave e il valore insieme.
+
+23
+00:01:25.646 --> 00:01:29.260
+Con un nome solo riceveresti soltanto le chiavi.
+
+24
+00:01:29.260 --> 00:01:33.454
+E l'ordine è quello in cui le coppie sono state inserite.
+
+25
+00:01:34.754 --> 00:01:38.815
+Ecco un classico: contare quante volte compare ogni parola.
+
+26
+00:01:38.815 --> 00:01:42.451
+Si parte da un dizionario vuoto, due graffe e basta.
+
+27
+00:01:42.451 --> 00:01:47.845
+Per ogni parola, prendiamo il conteggio attuale, oppure zero se è la prima volta,
+
+28
+00:01:47.845 --> 00:01:49.421
+e aggiungiamo uno.
+
+29
+00:01:49.421 --> 00:01:52.996
+Tre righe di codice e abbiamo un'analisi del testo.
+
+30
+00:01:52.996 --> 00:01:54.754
+Prova con una poesia!
+
+31
+00:01:56.054 --> 00:01:59.417
+Liste e dizionari si combinano benissimo.
+
+32
+00:01:59.417 --> 00:02:05.113
+Qui la classe è una lista, e ogni studente è un dizionario con nome e voto.
+
+33
+00:02:05.113 --> 00:02:10.740
+È così che si rappresentano i dati veri: una tabella è una lista di righe,
+
+34
+00:02:10.740 --> 00:02:13.211
+e ogni riga è un dizionario.
+
+35
+00:02:13.211 --> 00:02:19.319
+E nota una comodità: dentro le parentesi quadre si può andare a capo liberamente.
+
+36
+00:02:20.619 --> 00:02:24.258
+Per chi conosce Python: i dizionari sono gli stessi.
+
+37
+00:02:24.258 --> 00:02:28.928
+Get diventa prendi, e per percorrere chiavi e valori non serve items:
+
+38
+00:02:28.928 --> 00:02:31.657
+basta mettere due nomi dopo per ogni.
+
+39
+00:02:31.657 --> 00:02:35.721
+Anche in Leo, comunque, puoi scrivere chiave in dizionario.
+
+40
+00:02:37.021 --> 00:02:37.779
+Quiz.
+
+41
+00:02:37.779 --> 00:02:40.286
+Un dizionario con la sola chiave a.
+
+42
+00:02:40.286 --> 00:02:43.493
+Chiediamo prendi di b, con cinque come riserva.
+
+43
+00:02:43.493 --> 00:02:44.776
+Che cosa esce?
+
+44
+00:02:49.076 --> 00:02:51.335
+La risposta giusta è: Cinque.
+
+45
+00:02:51.335 --> 00:02:56.831
+La chiave b non c'è, quindi prendi restituisce il valore di riserva, senza errori.
+
+46
+00:02:58.131 --> 00:02:59.391
+Ricapitoliamo.
+
+47
+00:02:59.391 --> 00:03:02.026
+Un dizionario collega chiavi e valori.
+
+48
+00:03:02.026 --> 00:03:04.719
+Con le parentesi quadre leggi e scrivi.
+
+49
+00:03:04.719 --> 00:03:07.927
+Prendi e ha ti proteggono dalle chiavi mancanti,
+
+50
+00:03:07.927 --> 00:03:11.192
+e per ogni con due nomi percorre tutte le coppie.
+
+51
+00:03:12.492 --> 00:03:14.363
+Ora sai organizzare i dati.
+
+52
+00:03:14.363 --> 00:03:19.280
+Nel prossimo video impariamo a organizzare il codice: creeremo comandi tutti nostri,
+
+53
+00:03:19.280 --> 00:03:20.563
+con le funzioni.
+
+54
+00:03:20.563 --> 00:03:21.472
+A presto.
