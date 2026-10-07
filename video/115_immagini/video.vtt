@@ -1,0 +1,197 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.734
+Ridimensionare cento foto per un sito, aggiungere una filigrana,
+
+2
+00:00:04.734 --> 00:00:09.615
+togliere la posizione GPS prima di condividerle: sono lavori noiosi a mano,
+
+3
+00:00:09.615 --> 00:00:11.791
+e immediati con un programma.
+
+4
+00:00:11.791 --> 00:00:14.378
+Vediamo la libreria immagini di Leo.
+
+5
+00:00:15.678 --> 00:00:20.822
+Apri immagine apre una foto; le foto del telefono vengono anche raddrizzate da sole.
+
+6
+00:00:20.822 --> 00:00:25.463
+I metodi cambiano l'immagine e la restituiscono, quindi si mettono in fila:
+
+7
+00:00:25.463 --> 00:00:27.811
+miniatura, contrasto, saturazione.
+
+8
+00:00:27.811 --> 00:00:32.116
+Filigrana aggiunge una firma semitrasparente, e salva scrive il file:
+
+9
+00:00:32.116 --> 00:00:36.086
+il formato lo decide l'estensione, la qualità conta per i JPEG.
+
+10
+00:00:37.386 --> 00:00:42.942
+Gli attrezzi sono quelli di un programma di fotoritocco: misure e ritagli, luce,
+
+11
+00:00:42.942 --> 00:00:47.489
+contrasto e colori, i filtri classici, e il testo sopra la foto.
+
+12
+00:00:47.489 --> 00:00:50.646
+Colori dominanti trova i colori più usati,
+
+13
+00:00:50.646 --> 00:00:55.571
+utile per scegliere il colore di una pagina che si intona con la foto.
+
+14
+00:00:55.571 --> 00:01:00.243
+Per lavorare sull'originale senza toccarlo, si parte da una copia.
+
+15
+00:01:01.543 --> 00:01:07.019
+Si può anche disegnare da zero: nuova immagine crea un foglio di un colore,
+
+16
+00:01:07.019 --> 00:01:10.186
+e poi rettangoli, cerchi, linee e testo.
+
+17
+00:01:10.186 --> 00:01:16.190
+Le coordinate partono dall'angolo in alto a sinistra, e la y cresce verso il basso,
+
+18
+00:01:16.190 --> 00:01:18.038
+come nelle finestre.
+
+19
+00:01:18.038 --> 00:01:21.138
+Qui quattro barre, una per ogni valore.
+
+20
+00:01:21.138 --> 00:01:25.625
+Colore pixel legge il colore di un punto: è il rosso di Leo.
+
+21
+00:01:26.925 --> 00:01:31.619
+Il lavoro più comune: una cartella di foto da preparare per il web.
+
+22
+00:01:31.619 --> 00:01:35.687
+Converti immagini le converte tutte nel formato che vuoi,
+
+23
+00:01:35.687 --> 00:01:40.944
+rimpicciolendo quelle troppo grandi, e restituisce la lista dei file creati.
+
+24
+00:01:40.944 --> 00:01:45.701
+Collage le mette in una griglia: un foglio di anteprime in una riga.
+
+25
+00:01:47.001 --> 00:01:52.327
+Ogni foto porta con sé dati nascosti: la data, il modello del telefono,
+
+26
+00:01:52.327 --> 00:01:56.169
+spesso la posizione GPS di dove è stata scattata.
+
+27
+00:01:56.169 --> 00:02:02.237
+Leggi exif li restituisce in un dizionario con i nomi in italiano: marca, modello,
+
+28
+00:02:02.237 --> 00:02:03.450
+data, gps.
+
+29
+00:02:03.450 --> 00:02:09.450
+E togli exif crea una copia pulita, da condividere senza dire a tutti dove abiti.
+
+30
+00:02:10.750 --> 00:02:12.326
+Una nota tecnica.
+
+31
+00:02:12.326 --> 00:02:16.614
+Con il pacchetto Pillow funziona tutto, con tutti i formati;
+
+32
+00:02:16.614 --> 00:02:19.137
+sul telefono è già dentro l'app.
+
+33
+00:02:19.137 --> 00:02:23.866
+Senza Pillow, Leo usa un ripiego scritto in Python puro, più lento,
+
+34
+00:02:23.866 --> 00:02:25.947
+che lavora con PNG e BMP.
+
+35
+00:02:25.947 --> 00:02:28.785
+Se una funzione ha bisogno di Pillow,
+
+36
+00:02:28.785 --> 00:02:33.199
+il messaggio d'errore te lo dice e ti spiega come installarlo.
+
+37
+00:02:34.499 --> 00:02:35.275
+Domanda.
+
+38
+00:02:35.275 --> 00:02:38.573
+Vuoi una miniatura della foto, ma senza perdere l'originale.
+
+39
+00:02:38.573 --> 00:02:39.397
+Come fai?
+
+40
+00:02:43.697 --> 00:02:46.546
+Con copia, e poi miniatura, risposta B.
+
+41
+00:02:46.546 --> 00:02:49.819
+I metodi cambiano l'immagine su cui li chiami.
+
+42
+00:02:51.119 --> 00:02:52.508
+Ricapitoliamo.
+
+43
+00:02:52.508 --> 00:02:56.866
+Una foto si apre, si ritocca con i metodi in fila e si salva.
+
+44
+00:02:56.866 --> 00:03:00.086
+Un'immagine si può anche disegnare da zero.
+
+45
+00:03:00.086 --> 00:03:03.623
+Converti immagini lavora su una cartella intera,
+
+46
+00:03:03.623 --> 00:03:07.854
+e i dati EXIF si leggono e si tolgono prima di condividere.
+
+47
+00:03:09.154 --> 00:03:12.206
+Esercizio: prendi una cartella di foto,
+
+48
+00:03:12.206 --> 00:03:16.817
+portale a milleduecentottanta pixel e togli a tutte i dati GPS.
+
+49
+00:03:16.817 --> 00:03:20.583
+Nel prossimo video: il testo e la lingua italiana.

@@ -1,0 +1,213 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.057
+Quando i dati crescono, un file non basta più: serve un database.
+
+2
+00:00:05.057 --> 00:00:10.363
+Leo usa SQLite, che è già dentro Python: niente server, niente installazioni,
+
+3
+00:00:10.363 --> 00:00:12.610
+funziona anche sul telefono.
+
+4
+00:00:12.610 --> 00:00:16.418
+E per quasi tutto non serve scrivere una riga di SQL.
+
+5
+00:00:17.718 --> 00:00:22.890
+Le colonne si descrivono con parole semplici: testo, intero, decimale, sì o no,
+
+6
+00:00:22.890 --> 00:00:23.663
+data.
+
+7
+00:00:23.663 --> 00:00:27.765
+Dopo il tipo aggiungi i vincoli: obbligatorio, unico, chiave.
+
+8
+00:00:27.765 --> 00:00:30.559
+E collegato clienti dice che la colonna
+
+9
+00:00:30.559 --> 00:00:34.483
+contiene l'identificativo di una riga di un'altra tabella.
+
+10
+00:00:34.483 --> 00:00:38.942
+La colonna id, con i numeri uno, due, tre, la aggiunge Leo da solo.
+
+11
+00:00:40.242 --> 00:00:44.431
+Importa righe riempie una tabella da una lista di dizionari,
+
+12
+00:00:44.431 --> 00:00:46.896
+e se la tabella non c'è la crea.
+
+13
+00:00:46.896 --> 00:00:52.441
+Poi si cerca scrivendo le condizioni per nome, come gli argomenti di una funzione:
+
+14
+00:00:52.441 --> 00:00:55.459
+pagato uguale falso, in ordine di totale.
+
+15
+00:00:55.459 --> 00:01:00.758
+Conta, somma, media, minimo e massimo fanno i conti direttamente nel database,
+
+16
+00:01:00.758 --> 00:01:03.099
+senza caricare tutte le righe.
+
+17
+00:01:04.399 --> 00:01:09.385
+Per le condizioni diverse da uguale si usa un dizionario con l'operatore:
+
+18
+00:01:09.385 --> 00:01:13.140
+maggiore o uguale a cento, contiene, inizia, tra, in.
+
+19
+00:01:13.140 --> 00:01:17.326
+Ordina e limite decidono l'ordine e quante righe al massimo.
+
+20
+00:01:17.326 --> 00:01:20.034
+Raggruppa fa i riassunti per gruppi:
+
+21
+00:01:20.034 --> 00:01:23.543
+il totale e il numero di ordini per ogni cliente.
+
+22
+00:01:23.543 --> 00:01:28.221
+E cerca testo trova le righe che contengono tutte le parole scritte,
+
+23
+00:01:28.221 --> 00:01:30.930
+senza badare ad accenti e maiuscole.
+
+24
+00:01:32.230 --> 00:01:37.654
+Negli ordini c'è solo il numero del cliente: il nome è nella tabella clienti.
+
+25
+00:01:37.654 --> 00:01:42.823
+Unisci mette insieme le righe collegate, e trova da solo il collegamento,
+
+26
+00:01:42.823 --> 00:01:47.099
+perché la colonna è stata creata come collegata ai clienti.
+
+27
+00:01:47.099 --> 00:01:51.310
+Qui, gli ordini non pagati, dal più grande al più piccolo,
+
+28
+00:01:51.310 --> 00:01:53.863
+con il nome del cliente accanto.
+
+29
+00:01:55.163 --> 00:01:58.075
+La SQL injection è il trucco di chi
+
+30
+00:01:58.075 --> 00:02:02.003
+scrive un pezzo di comando SQL dentro una casella,
+
+31
+00:02:02.003 --> 00:02:06.135
+sperando che il programma lo incolli nel suo comando.
+
+32
+00:02:06.135 --> 00:02:11.688
+Con i comandi di Leo non può succedere: i valori viaggiano sempre a parte,
+
+33
+00:02:11.688 --> 00:02:16.700
+come parametri, e i nomi di tabelle e colonne vengono controllati.
+
+34
+00:02:16.700 --> 00:02:22.727
+Se scrivi SQL a mano, fai lo stesso: un punto di domanda al posto di ogni valore,
+
+35
+00:02:22.727 --> 00:02:25.775
+e i valori nella lista dei parametri.
+
+36
+00:02:27.075 --> 00:02:32.456
+Per imparare, usa database di esempio: un database in memoria già pieno di dati,
+
+37
+00:02:32.456 --> 00:02:35.208
+che sparisce alla fine del programma.
+
+38
+00:02:35.208 --> 00:02:38.143
+Puoi provare tutto senza rompere niente.
+
+39
+00:02:38.143 --> 00:02:43.402
+E sui dati veri, prima di una modifica importante, fai una copia di sicurezza.
+
+40
+00:02:44.702 --> 00:02:45.711
+Domanda.
+
+41
+00:02:45.711 --> 00:02:50.250
+Un utente scrive un pezzo di comando SQL nella casella del nome.
+
+42
+00:02:50.250 --> 00:02:52.457
+Che cosa fa db punto cerca?
+
+43
+00:02:56.757 --> 00:03:01.393
+Cerca un cliente con quel nome esatto, e non lo trova.
+
+44
+00:03:01.393 --> 00:03:06.553
+Risposta B: il testo resta un dato, e la tabella è al sicuro.
+
+45
+00:03:07.853 --> 00:03:09.103
+Ricapitoliamo.
+
+46
+00:03:09.103 --> 00:03:11.659
+Le tabelle si descrivono in italiano.
+
+47
+00:03:11.659 --> 00:03:15.693
+Si cerca, si conta e si somma scrivendo le condizioni per nome.
+
+48
+00:03:15.693 --> 00:03:19.216
+Raggruppa e unisci fanno i riassunti e i collegamenti.
+
+49
+00:03:19.216 --> 00:03:23.363
+E i valori viaggiano sempre come parametri: niente SQL injection.
+
+50
+00:03:24.663 --> 00:03:29.285
+Esercizio: trova i tre clienti che hanno speso di più, con raggruppa,
+
+51
+00:03:29.285 --> 00:03:30.725
+ordina e limite.
+
+52
+00:03:30.725 --> 00:03:33.667
+Nel prossimo video: la rete e il sistema,
+
+53
+00:03:33.667 --> 00:03:36.908
+dai collegamenti TCP ai processi del computer.

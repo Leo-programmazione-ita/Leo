@@ -1,0 +1,225 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.650
+In questo video scendiamo di un livello: la rete e il sistema operativo.
+
+2
+00:00:05.650 --> 00:00:10.928
+Due programmi che si parlano, gli indirizzi IP, i certificati, i processi,
+
+3
+00:00:10.928 --> 00:00:12.859
+la memoria e il disco.
+
+4
+00:00:12.859 --> 00:00:18.459
+Con gli stessi comandi su Windows, Linux, macOS e, dove ha senso, sul telefono.
+
+5
+00:00:19.759 --> 00:00:21.870
+Prima di tutto, le regole.
+
+6
+00:00:21.870 --> 00:00:24.726
+Questi comandi servono a far parlare i
+
+7
+00:00:24.726 --> 00:00:28.080
+tuoi programmi e a controllare i tuoi servizi.
+
+8
+00:00:28.080 --> 00:00:31.681
+Non si possono scansionare reti o computer altrui:
+
+9
+00:00:31.681 --> 00:00:35.903
+porta aperta controlla una porta di un indirizzo alla volta,
+
+10
+00:00:35.903 --> 00:00:38.946
+con una pausa tra un controllo e l'altro.
+
+11
+00:00:38.946 --> 00:00:42.920
+E i server, di serie, ascoltano solo su questo computer.
+
+12
+00:00:42.920 --> 00:00:47.825
+Per aprirli alla rete di casa o dell'ufficio serve in rete uguale vero,
+
+13
+00:00:47.825 --> 00:00:50.371
+e l'utente deve dare il permesso.
+
+14
+00:00:51.671 --> 00:00:56.485
+Un programma apre un server TCP sulla porta cinquemila e aspetta.
+
+15
+00:00:56.485 --> 00:00:59.188
+L'altro si collega con collegati.
+
+16
+00:00:59.188 --> 00:01:03.672
+Poi ognuno manda righe con invia e le legge con ricevi riga:
+
+17
+00:01:03.672 --> 00:01:07.035
+il testo viaggia in UTF-8, con gli accenti.
+
+18
+00:01:07.035 --> 00:01:11.388
+È la base di ogni servizio: un controllo remoto, una chat,
+
+19
+00:01:11.388 --> 00:01:15.344
+un programma che raccoglie misure da altri computer.
+
+20
+00:01:16.644 --> 00:01:20.693
+I calcoli sulle reti si fanno senza contattare nessuno.
+
+21
+00:01:20.693 --> 00:01:26.348
+E indirizzo ip controlla che un indirizzo sia scritto bene: trecento non esiste.
+
+22
+00:01:26.348 --> 00:01:29.883
+Info indirizzo ip dice se è privato o pubblico.
+
+23
+00:01:29.883 --> 00:01:34.510
+Indirizzo in rete risponde se un indirizzo fa parte di una rete,
+
+24
+00:01:34.510 --> 00:01:39.909
+e info rete calcola maschera, primo e ultimo indirizzo, e quanti ce ne sono.
+
+25
+00:01:41.209 --> 00:01:45.002
+Un controllo che ogni amministratore dovrebbe automatizzare:
+
+26
+00:01:45.002 --> 00:01:47.009
+la scadenza dei certificati.
+
+27
+00:01:47.009 --> 00:01:51.025
+Certificato sito legge il certificato anche quando non è valido,
+
+28
+00:01:51.025 --> 00:01:55.543
+così sai che cosa non va: scaduto, autofirmato, emesso per un altro nome.
+
+29
+00:01:55.543 --> 00:01:59.168
+Con giorni rimasti ti accorgi per tempo che va rinnovato.
+
+30
+00:02:00.468 --> 00:02:02.046
+E ora il computer.
+
+31
+00:02:02.046 --> 00:02:06.172
+Info sistema dice nome, utente, processori, memoria e disco.
+
+32
+00:02:06.172 --> 00:02:10.724
+Memoria e spazio disco hanno anche un testo già pronto da mostrare.
+
+33
+00:02:10.724 --> 00:02:15.761
+Avvia in sfondo lancia un comando e ti restituisce un processo, da leggere,
+
+34
+00:02:15.761 --> 00:02:17.460
+aspettare o fermare.
+
+35
+00:02:17.460 --> 00:02:22.618
+E osserva cartella ti avvisa quando arrivano, cambiano o spariscono dei file:
+
+36
+00:02:22.618 --> 00:02:25.774
+la base per un programma che lavora da solo.
+
+37
+00:02:27.074 --> 00:02:29.244
+Ultimo strumento: la posta.
+
+38
+00:02:29.244 --> 00:02:34.142
+Apri posta legge la tua casella, cerca i messaggi e salva gli allegati;
+
+39
+00:02:34.142 --> 00:02:38.792
+invia email con allegati spedisce un report generato dal programma.
+
+40
+00:02:38.792 --> 00:02:42.512
+E come sempre, la password non si scrive nel codice:
+
+41
+00:02:42.512 --> 00:02:46.666
+si legge da un file protetto o da una variabile d'ambiente.
+
+42
+00:02:47.966 --> 00:02:48.734
+Domanda.
+
+43
+00:02:48.734 --> 00:02:50.991
+Un server aperto sulla porta cinquemila
+
+44
+00:02:50.991 --> 00:02:53.680
+è raggiungibile dagli altri computer della rete?
+
+45
+00:02:57.980 --> 00:02:59.373
+No, risposta B.
+
+46
+00:02:59.373 --> 00:03:02.341
+Di serie ascolta solo su questo computer;
+
+47
+00:03:02.341 --> 00:03:07.368
+per aprirlo alla rete serve in rete uguale vero, e il permesso dell'utente.
+
+48
+00:03:08.668 --> 00:03:09.892
+Ricapitoliamo.
+
+49
+00:03:09.892 --> 00:03:13.065
+Server TCP e collegati fanno parlare i programmi.
+
+50
+00:03:13.065 --> 00:03:17.351
+Gli indirizzi si controllano e si calcolano senza contattare nessuno.
+
+51
+00:03:17.351 --> 00:03:21.191
+I certificati dei tuoi siti si tengono d'occhio con un ciclo,
+
+52
+00:03:21.191 --> 00:03:25.811
+e il computer si interroga con info sistema, processi e cartelle osservate.
+
+53
+00:03:27.111 --> 00:03:28.197
+Esercizio:
+
+54
+00:03:28.197 --> 00:03:32.238
+scrivi un programma che ogni ora controlla lo spazio libero
+
+55
+00:03:32.238 --> 00:03:35.556
+del disco e ti avvisa sotto il dieci per cento.
+
+56
+00:03:35.556 --> 00:03:39.356
+Nel prossimo video: le immagini, dalle foto ai disegni.
