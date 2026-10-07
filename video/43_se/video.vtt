@@ -1,0 +1,261 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.754
+Nella vita prendiamo decisioni di continuo: se piove prendo l'ombrello,
+
+2
+00:00:04.754 --> 00:00:05.938
+altrimenti no.
+
+3
+00:00:05.938 --> 00:00:10.569
+Anche un programma può decidere, e in Leo si fa proprio con queste parole: se,
+
+4
+00:00:10.569 --> 00:00:12.022
+allora, altrimenti.
+
+5
+00:00:12.022 --> 00:00:13.153
+Vediamo come.
+
+6
+00:00:14.453 --> 00:00:20.271
+Leggiamolo ad alta voce: se voto è maggiore o uguale a sei, allora stampa promosso,
+
+7
+00:00:20.271 --> 00:00:22.828
+altrimenti stampa da recuperare.
+
+8
+00:00:22.828 --> 00:00:23.659
+Fine.
+
+9
+00:00:23.659 --> 00:00:29.157
+Dopo se c'è la condizione, cioè una domanda che ha come risposta vero o falso.
+
+10
+00:00:29.157 --> 00:00:32.417
+Se è vera, Leo esegue le righe dopo allora.
+
+11
+00:00:32.417 --> 00:00:35.166
+Se è falsa, quelle dopo altrimenti.
+
+12
+00:00:35.166 --> 00:00:38.746
+E il blocco si chiude sempre con la parola fine.
+
+13
+00:00:38.746 --> 00:00:42.774
+Rientrare le righe di quattro spazi non è obbligatorio,
+
+14
+00:00:42.774 --> 00:00:46.290
+ma rende il codice molto più facile da leggere.
+
+15
+00:00:47.590 --> 00:00:50.080
+Ecco i confronti che puoi usare.
+
+16
+00:00:50.080 --> 00:00:53.566
+Uguale si scrive con due segni uguale attaccati.
+
+17
+00:00:53.566 --> 00:00:56.865
+Diverso, con il punto esclamativo e l'uguale.
+
+18
+00:00:56.865 --> 00:01:00.910
+Poi minore, minore o uguale, maggiore, maggiore o uguale.
+
+19
+00:01:00.910 --> 00:01:05.579
+Come in matematica, puoi scrivere zero minore di x minore di dieci,
+
+20
+00:01:05.579 --> 00:01:07.259
+tutto in una volta.
+
+21
+00:01:07.259 --> 00:01:12.488
+E la parola in controlla se qualcosa sta dentro un testo o dentro una lista.
+
+22
+00:01:13.788 --> 00:01:17.133
+Attenzione a due segni che si somigliano.
+
+23
+00:01:17.133 --> 00:01:21.911
+Un solo uguale dà un valore a una variabile: si legge diventa.
+
+24
+00:01:21.911 --> 00:01:23.413
+X diventa tre.
+
+25
+00:01:23.413 --> 00:01:27.986
+Il doppio uguale confronta due valori: si legge è uguale a.
+
+26
+00:01:27.986 --> 00:01:29.897
+Se x è uguale a tre.
+
+27
+00:01:29.897 --> 00:01:33.788
+Leggili così ad alta voce, e non li confondi più.
+
+28
+00:01:35.088 --> 00:01:39.739
+Quando le possibilità sono più di due, si aggiunge altrimenti se.
+
+29
+00:01:39.739 --> 00:01:44.963
+Leo controlla le condizioni dall'alto in basso e si ferma alla prima vera.
+
+30
+00:01:44.963 --> 00:01:47.957
+Con trentuno gradi è vera già la prima,
+
+31
+00:01:47.957 --> 00:01:51.334
+quindi le altre non vengono nemmeno guardate.
+
+32
+00:01:51.334 --> 00:01:55.539
+Per questo l'ordine conta: le soglie più alte vanno prima.
+
+33
+00:01:55.539 --> 00:01:59.170
+E nota bene: un solo fine chiude tutta la catena.
+
+34
+00:02:00.470 --> 00:02:05.031
+Le condizioni si possono combinare con tre parole italianissime.
+
+35
+00:02:05.031 --> 00:02:07.692
+E: devono essere vere tutte e due.
+
+36
+00:02:07.692 --> 00:02:11.810
+Qui servono almeno quattordici anni e anche il biglietto.
+
+37
+00:02:11.810 --> 00:02:13.964
+O: basta che una sia vera.
+
+38
+00:02:13.964 --> 00:02:19.793
+Ridotto per i bambini sotto i sei anni oppure per chi ha più di sessantacinque anni.
+
+39
+00:02:19.793 --> 00:02:25.368
+E non rovescia una condizione: se non biglietto vuol dire se il biglietto manca.
+
+40
+00:02:26.668 --> 00:02:30.739
+In Leo la condizione deve essere proprio vero o falso.
+
+41
+00:02:30.739 --> 00:02:34.154
+In altri linguaggi si può scrivere se lista,
+
+42
+00:02:34.154 --> 00:02:37.503
+per chiedere se la lista contiene qualcosa.
+
+43
+00:02:37.503 --> 00:02:40.458
+In Leo no: sarebbe un errore di tipo.
+
+44
+00:02:40.458 --> 00:02:44.332
+Si scrive in modo esplicito: se non vuota di spesa.
+
+45
+00:02:44.332 --> 00:02:47.484
+Si legge meglio, e non ci sono sorprese.
+
+46
+00:02:48.784 --> 00:02:54.027
+Un consiglio che funziona benissimo con Leo: leggi le condizioni ad alta voce.
+
+47
+00:02:54.027 --> 00:02:58.964
+Se anni maggiore o uguale a quattordici e biglietto, allora puoi entrare.
+
+48
+00:02:58.964 --> 00:03:00.123
+Suona bene?
+
+49
+00:03:00.123 --> 00:03:02.439
+Allora probabilmente è giusto.
+
+50
+00:03:02.439 --> 00:03:07.560
+Se la frase ti sembra strana, fermati: di solito lì c'è un errore di logica.
+
+51
+00:03:08.860 --> 00:03:09.688
+Quiz.
+
+52
+00:03:09.688 --> 00:03:11.089
+X vale cinque.
+
+53
+00:03:11.089 --> 00:03:14.529
+Il primo ramo, se x maggiore di tre, stampa A.
+
+54
+00:03:14.529 --> 00:03:18.479
+Il secondo, altrimenti se x maggiore di uno, stampa B.
+
+55
+00:03:18.479 --> 00:03:19.880
+Che cosa esce?
+
+56
+00:03:24.180 --> 00:03:26.593
+La risposta giusta è: Solo A.
+
+57
+00:03:26.593 --> 00:03:31.548
+Cinque è maggiore di tre, e Leo si ferma alla prima condizione vera:
+
+58
+00:03:31.548 --> 00:03:35.200
+il ramo altrimenti se non viene mai controllato.
+
+59
+00:03:36.500 --> 00:03:39.773
+Ricapitoliamo: se, allora e fine per decidere.
+
+60
+00:03:39.773 --> 00:03:43.106
+Altrimenti se e altrimenti per le altre strade.
+
+61
+00:03:43.106 --> 00:03:46.984
+Uguale uguale per confrontare, e, o e non per combinare.
+
+62
+00:03:46.984 --> 00:03:50.378
+E la condizione deve essere sempre vero o falso.
+
+63
+00:03:51.678 --> 00:03:57.044
+Quando le strade diventano tante, la catena di altrimenti se si allunga parecchio.
+
+64
+00:03:57.044 --> 00:04:01.276
+Nel prossimo video vediamo un modo più elegante: scegli e caso.
+
+65
+00:04:01.276 --> 00:04:02.290
+A presto.
