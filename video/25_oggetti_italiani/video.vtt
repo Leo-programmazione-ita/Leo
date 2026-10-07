@@ -1,0 +1,253 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.111
+Oggi vediamo una famiglia di oggetti che non trovi in nessun altro linguaggio:
+
+2
+00:00:06.111 --> 00:00:07.873
+la famiglia Italia.
+
+3
+00:00:07.873 --> 00:00:13.092
+Sono pensati per le cose di tutti i giorni in Italia: il codice fiscale,
+
+4
+00:00:13.092 --> 00:00:18.051
+l'IBAN del conto, la targa dell'auto, gli euro, i comuni e le feste.
+
+5
+00:00:19.351 --> 00:00:24.010
+Nella tavolozza del disegnatore li trovi tutti insieme, nella famiglia Italia:
+
+6
+00:00:24.010 --> 00:00:28.560
+calendario festività, casella codice fiscale, casella IBAN, casella importo,
+
+7
+00:00:28.560 --> 00:00:30.781
+casella targa e selettore comune.
+
+8
+00:00:30.781 --> 00:00:33.543
+Si aggiungono come tutti gli altri oggetti.
+
+9
+00:00:33.543 --> 00:00:36.902
+La differenza è che dentro sanno già un sacco di cose.
+
+10
+00:00:38.202 --> 00:00:43.266
+La casella codice fiscale controlla il formato e il carattere di controllo,
+
+11
+00:00:43.266 --> 00:00:47.048
+l'ultima lettera, che si calcola dalle altre quindici.
+
+12
+00:00:47.048 --> 00:00:52.539
+Appena il codice diventa giusto, oppure smette di esserlo, arriva l'evento valido,
+
+13
+00:00:52.539 --> 00:00:54.064
+con vero o falso.
+
+14
+00:00:54.064 --> 00:00:59.493
+Il bordo della casella diventa verde se il codice è giusto, rosso se è sbagliato.
+
+15
+00:00:59.493 --> 00:01:03.154
+E non è tutto: dal codice ricava la data di nascita,
+
+16
+00:01:03.154 --> 00:01:05.594
+il sesso e il comune di nascita.
+
+17
+00:01:05.594 --> 00:01:09.133
+Il codice dell'esempio è inventato, ma è corretto:
+
+18
+00:01:09.133 --> 00:01:12.488
+nata il dodici maggio duemilaundici, a Catania.
+
+19
+00:01:13.788 --> 00:01:19.134
+L'IBAN funziona allo stesso modo: la casella verifica le cifre di controllo e,
+
+20
+00:01:19.134 --> 00:01:23.982
+se il conto è italiano, ti dice anche la banca, dalla proprietà banca.
+
+21
+00:01:23.982 --> 00:01:27.773
+La casella targa accetta solo targhe italiane valide,
+
+22
+00:01:27.773 --> 00:01:32.870
+e la proprietà tipo targa distingue per esempio un'auto da un ciclomotore.
+
+23
+00:01:32.870 --> 00:01:38.278
+In tutte e tre le caselle le lettere diventano maiuscole da sole mentre scrivi.
+
+24
+00:01:39.578 --> 00:01:45.779
+La casella importo scrive gli euro come si fa in Italia: il punto per le migliaia,
+
+25
+00:01:45.779 --> 00:01:49.774
+la virgola per i decimali, e il simbolo dell'euro.
+
+26
+00:01:49.774 --> 00:01:55.424
+Chi usa l'app può scrivere con la virgola o con il punto, come preferisce.
+
+27
+00:01:55.424 --> 00:02:01.211
+Nel codice però la proprietà valore è un numero normale, pronto per i conti.
+
+28
+00:02:02.511 --> 00:02:06.985
+Con il valore facciamo i conti: il prezzo per uno virgola ventidue,
+
+29
+00:02:06.985 --> 00:02:11.817
+arrotondato a due decimali, dà il prezzo con l'IVA al ventidue per cento.
+
+30
+00:02:11.817 --> 00:02:15.516
+Il selettore comune cerca tra tutti i comuni italiani.
+
+31
+00:02:15.516 --> 00:02:18.856
+Quando ne scegli uno, arriva l'evento selezione,
+
+32
+00:02:18.856 --> 00:02:23.927
+e dentro evento di comune c'è un dizionario: nome, provincia, sigla, regione,
+
+33
+00:02:23.927 --> 00:02:25.776
+CAP e codice catastale.
+
+34
+00:02:27.076 --> 00:02:28.631
+Ecco come si usa.
+
+35
+00:02:28.631 --> 00:02:32.302
+Scrivi le prime lettere, per esempio c, a, t, a, n,
+
+36
+00:02:32.302 --> 00:02:38.025
+e compaiono i suggerimenti con la regione accanto: Catania, in Sicilia, e Catanzaro,
+
+37
+00:02:38.025 --> 00:02:39.270
+in Calabria.
+
+38
+00:02:39.270 --> 00:02:43.811
+Tocchi quello giusto, e l'app scrive subito sigla, regione e CAP.
+
+39
+00:02:45.111 --> 00:02:48.146
+L'ultimo oggetto è il calendario festività.
+
+40
+00:02:48.146 --> 00:02:51.478
+Le domeniche e le feste nazionali sono in rosso,
+
+41
+00:02:51.478 --> 00:02:55.644
+e Leo calcola da solo anche la Pasqua e il lunedì dell'Angelo,
+
+42
+00:02:55.644 --> 00:02:57.488
+che cambiano ogni anno.
+
+43
+00:02:57.488 --> 00:03:00.940
+Quando tocchi un giorno arriva l'evento selezione,
+
+44
+00:03:00.940 --> 00:03:06.177
+con la data e il nome della festa, oppure un testo vuoto se è un giorno feriale.
+
+45
+00:03:06.177 --> 00:03:10.580
+Guarda il quattro ottobre duemilaventisei: San Francesco d'Assisi,
+
+46
+00:03:10.580 --> 00:03:14.091
+che dal duemilaventisei è di nuovo festa nazionale.
+
+47
+00:03:15.391 --> 00:03:19.406
+Se vuoi vedere questi oggetti al lavoro tutti insieme,
+
+48
+00:03:19.406 --> 00:03:24.069
+crea una nuova app con finestre e scegli il modello Scheda dati.
+
+49
+00:03:24.069 --> 00:03:28.668
+Hai già codice fiscale, comune e IBAN collegati a un riepilogo.
+
+50
+00:03:28.668 --> 00:03:32.942
+È un ottimo punto di partenza per un modulo di iscrizione.
+
+51
+00:03:34.242 --> 00:03:35.053
+Quiz.
+
+52
+00:03:35.053 --> 00:03:38.732
+Che cosa non si ricava da un codice fiscale valido?
+
+53
+00:03:40.732 --> 00:03:43.347
+Il numero di telefono, ovviamente.
+
+54
+00:03:43.347 --> 00:03:48.079
+Data di nascita, sesso e comune invece la casella li ricava da sola.
+
+55
+00:03:56.679 --> 00:03:57.915
+Ricapitoliamo.
+
+56
+00:03:57.915 --> 00:04:02.747
+Codice fiscale, IBAN e targa si controllano da soli e mandano l'evento valido.
+
+57
+00:04:02.747 --> 00:04:05.894
+La casella importo scrive gli euro all'italiana.
+
+58
+00:04:05.894 --> 00:04:10.557
+Il selettore comune conosce tutti i comuni, e il calendario tutte le feste.
+
+59
+00:04:11.857 --> 00:04:12.864
+Esercizio:
+
+60
+00:04:12.864 --> 00:04:17.677
+crea un'app dal modello Scheda dati e aggiungi una casella targa al riepilogo.
+
+61
+00:04:17.677 --> 00:04:22.321
+Nel prossimo video vediamo gli oggetti per organizzarsi: la bacheca Kanban,
+
+62
+00:04:22.321 --> 00:04:24.784
+la lavagna e il conto alla rovescia.
+
+63
+00:04:24.784 --> 00:04:25.735
+A presto.
