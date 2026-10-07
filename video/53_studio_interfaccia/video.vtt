@@ -1,0 +1,313 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.348
+Leo Studio è installato: ora facciamo un giro completo della sua interfaccia.
+
+2
+00:00:05.348 --> 00:00:08.713
+Scopriremo a cosa serve ogni pannello e, alla fine,
+
+3
+00:00:08.713 --> 00:00:13.561
+disegneremo una piccola finestra con un'etichetta, una casella e un pulsante.
+
+4
+00:00:14.861 --> 00:00:19.955
+Ecco uno schema della finestra di Leo Studio, con i sette pezzi principali.
+
+5
+00:00:19.955 --> 00:00:23.270
+In alto, sotto i menu, la barra dei controlli.
+
+6
+00:00:23.270 --> 00:00:26.891
+A sinistra, in verticale, la barra degli strumenti.
+
+7
+00:00:26.891 --> 00:00:31.249
+Al centro l'area di progettazione, dove si disegna la finestra.
+
+8
+00:00:31.249 --> 00:00:35.177
+A destra le proprietà e, sotto, la tavolozza dei colori.
+
+9
+00:00:35.177 --> 00:00:37.510
+In basso il codice e l'uscita.
+
+10
+00:00:37.510 --> 00:00:39.351
+Vediamoli uno per uno.
+
+11
+00:00:40.651 --> 00:00:46.087
+La barra dei controlli contiene tutti i controlli di Leo, divisi per categoria.
+
+12
+00:00:46.087 --> 00:00:49.211
+Un clic su una categoria apre una tendina,
+
+13
+00:00:49.211 --> 00:00:52.523
+con una breve descrizione per ogni controllo.
+
+14
+00:00:52.523 --> 00:00:57.084
+Un clic sul controllo lo mette in un posto libero della finestra,
+
+15
+00:00:57.084 --> 00:00:59.396
+oppure lo trascini dove vuoi.
+
+16
+00:00:59.396 --> 00:01:02.895
+E se non sai dove si trova, usa Cerca controllo:
+
+17
+00:01:02.895 --> 00:01:05.957
+capisce anche parole come bottone o foto.
+
+18
+00:01:07.257 --> 00:01:10.403
+A sinistra c'è la barra degli strumenti.
+
+19
+00:01:10.403 --> 00:01:14.204
+In alto nuovo, apri e salva, poi annulla e ripeti.
+
+20
+00:01:14.204 --> 00:01:19.053
+Poi il grande pulsante rosso Esegui, con il passo passo e lo Stop,
+
+21
+00:01:19.053 --> 00:01:21.347
+e più sotto Crea punto exe.
+
+22
+00:01:21.347 --> 00:01:26.131
+In fondo c'è Comandi, dove scrivi in italiano che cosa vuoi fare,
+
+23
+00:01:26.131 --> 00:01:28.163
+come aggiungi pulsante.
+
+24
+00:01:28.163 --> 00:01:30.522
+Si apre anche con control K.
+
+25
+00:01:31.822 --> 00:01:36.474
+Al centro c'è la finestra che stai disegnando, su una griglia a puntini.
+
+26
+00:01:36.474 --> 00:01:40.429
+Il controllo selezionato ha un bordo rosso e delle maniglie:
+
+27
+00:01:40.429 --> 00:01:44.558
+trascinalo per spostarlo, tira le maniglie per ridimensionarlo.
+
+28
+00:01:44.558 --> 00:01:48.454
+Mentre trascini, delle guide rosse ti aiutano ad allineare.
+
+29
+00:01:48.454 --> 00:01:51.187
+Per gli spostamenti fini usa le frecce.
+
+30
+00:01:51.187 --> 00:01:53.455
+E se sbagli, control Z annulla.
+
+31
+00:01:54.755 --> 00:01:59.138
+A destra c'è il pannello Proprietà, come in Visual Basic.
+
+32
+00:01:59.138 --> 00:02:03.857
+In alto il nome del controllo scelto e, in rosso, il suo tipo.
+
+33
+00:02:03.857 --> 00:02:08.645
+Sotto, le proprietà divise in gruppi, come aspetto e posizione.
+
+34
+00:02:08.645 --> 00:02:11.948
+Se sono tante, usa la casella di ricerca.
+
+35
+00:02:11.948 --> 00:02:17.612
+E un valore che non va bene viene segnalato in ambra, e non viene applicato.
+
+36
+00:02:18.912 --> 00:02:22.237
+Attenzione a una distinzione importantissima:
+
+37
+00:02:22.237 --> 00:02:26.315
+il nome e il testo di un controllo sono due cose diverse.
+
+38
+00:02:26.315 --> 00:02:31.584
+Il nome, per esempio Pulsante Saluta tutto attaccato, serve solo nel codice,
+
+39
+00:02:31.584 --> 00:02:34.533
+e chi usa il programma non lo vede mai.
+
+40
+00:02:34.533 --> 00:02:38.485
+Lo cambi con F2, e Studio lo aggiorna anche nel codice.
+
+41
+00:02:38.485 --> 00:02:43.002
+Il testo, invece, è la scritta che compare sul pulsante: Saluta.
+
+42
+00:02:43.002 --> 00:02:47.393
+Un consiglio: dai ai controlli nomi che dicono a cosa servono.
+
+43
+00:02:47.393 --> 00:02:51.157
+Pulsante Saluta si capisce, Pulsante Uno molto meno.
+
+44
+00:02:52.457 --> 00:02:55.052
+Sotto le proprietà c'è la Tavolozza.
+
+45
+00:02:55.052 --> 00:02:59.474
+Scegli se colorare lo sfondo o il testo, poi fai clic su un colore:
+
+46
+00:02:59.474 --> 00:03:02.894
+va ai controlli selezionati, oppure alla finestra.
+
+47
+00:03:02.894 --> 00:03:07.140
+Nella casella Codice puoi scrivere il colore con il cancelletto,
+
+48
+00:03:07.140 --> 00:03:11.917
+con tre numeri da zero a duecentocinquantacinque, o con un nome italiano,
+
+49
+00:03:11.917 --> 00:03:13.273
+come arancione.
+
+50
+00:03:14.573 --> 00:03:17.326
+In basso ci sono il codice e l'uscita.
+
+51
+00:03:17.326 --> 00:03:20.318
+L'editor colora ogni parola secondo il suo
+
+52
+00:03:20.318 --> 00:03:23.430
+ruolo e sottolinea gli errori mentre scrivi.
+
+53
+00:03:23.430 --> 00:03:28.278
+Con un doppio clic su un controllo, Studio crea il suo evento principale:
+
+54
+00:03:28.278 --> 00:03:30.552
+lo vediamo nel prossimo video.
+
+55
+00:03:30.552 --> 00:03:34.981
+Accanto c'è l'uscita, dove compare quello che il programma stampa.
+
+56
+00:03:36.281 --> 00:03:37.208
+Proviamo!
+
+57
+00:03:37.208 --> 00:03:39.607
+Dal menu File scegli Nuovo progetto.
+
+58
+00:03:39.607 --> 00:03:41.516
+Si apre una finestra vuota.
+
+59
+00:03:41.516 --> 00:03:46.042
+Dalla categoria Base metti un'etichetta, e nelle proprietà scrivi il testo:
+
+60
+00:03:46.042 --> 00:03:47.296
+Come ti chiami?
+
+61
+00:03:47.296 --> 00:03:52.203
+Dalla categoria Inserimento aggiungi una casella di testo e chiamala Casella Nome.
+
+62
+00:03:52.203 --> 00:03:55.639
+Infine un pulsante: nome Pulsante Saluta, testo Saluta.
+
+63
+00:03:55.639 --> 00:04:00.328
+Per vedere la finestra com'è davvero, senza eseguire il codice, premi control,
+
+64
+00:04:00.328 --> 00:04:02.836
+maiuscolo e A: è l'anteprima dal vivo.
+
+65
+00:04:02.836 --> 00:04:04.036
+Esc la chiude.
+
+66
+00:04:05.336 --> 00:04:10.014
+Se all'inizio ti sembrano troppi comandi, attiva la modalità essenziale,
+
+67
+00:04:10.014 --> 00:04:11.651
+dal menu Visualizza.
+
+68
+00:04:11.651 --> 00:04:16.797
+Restano solo i controlli più usati, come pulsante, etichetta e casella di testo,
+
+69
+00:04:16.797 --> 00:04:20.481
+e i comandi principali, con un testo un po' più grande.
+
+70
+00:04:20.481 --> 00:04:23.288
+L'aspetto nero e rosso rimane lo stesso.
+
+71
+00:04:23.288 --> 00:04:25.744
+Quando ti senti pronto, la spegni.
+
+72
+00:04:27.044 --> 00:04:28.430
+Ricapitoliamo.
+
+73
+00:04:28.430 --> 00:04:33.786
+I controlli si prendono dalla barra in alto, gli strumenti stanno a sinistra,
+
+74
+00:04:33.786 --> 00:04:37.692
+al centro disegni, a destra regoli proprietà e colori,
+
+75
+00:04:37.692 --> 00:04:41.031
+e in basso scrivi il codice e leggi l'uscita.
+
+76
+00:04:41.031 --> 00:04:45.820
+E ricorda: il nome serve al codice, il testo a chi usa il programma.
+
+77
+00:04:47.120 --> 00:04:50.990
+La finestra è pronta, ma per ora non fa niente.
+
+78
+00:04:50.990 --> 00:04:57.324
+Nel prossimo video la facciamo reagire ai clic, con gli eventi e la parola quando.

@@ -1,0 +1,313 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.809
+Nel video precedente abbiamo disegnato una finestra con un'etichetta,
+
+2
+00:00:04.809 --> 00:00:06.711
+una casella e un pulsante.
+
+3
+00:00:06.711 --> 00:00:08.222
+Bella, ma immobile.
+
+4
+00:00:08.222 --> 00:00:10.013
+Oggi la facciamo vivere.
+
+5
+00:00:10.013 --> 00:00:14.489
+In un programma a finestre il codice non parte dall'alto verso il basso:
+
+6
+00:00:14.489 --> 00:00:16.560
+aspetta che succeda qualcosa.
+
+7
+00:00:16.560 --> 00:00:19.134
+Un clic, un tasto, il tempo che passa.
+
+8
+00:00:19.134 --> 00:00:21.316
+Queste cose si chiamano eventi.
+
+9
+00:00:22.616 --> 00:00:26.520
+Fai doppio clic sul pulsante nell'area di progettazione,
+
+10
+00:00:26.520 --> 00:00:29.021
+oppure selezionalo e premi Invio.
+
+11
+00:00:29.021 --> 00:00:33.047
+Studio crea il gestore del suo evento principale, il clic,
+
+12
+00:00:33.047 --> 00:00:37.134
+e ti porta il cursore proprio lì dentro, pronto a scrivere.
+
+13
+00:00:37.134 --> 00:00:39.391
+Proprio come in Visual Basic.
+
+14
+00:00:39.391 --> 00:00:43.844
+Gli altri eventi di un controllo li trovi nel pannello Proprietà,
+
+15
+00:00:43.844 --> 00:00:48.358
+nella parte Eventi: quelli che hanno già un gestore sono in rosso,
+
+16
+00:00:48.358 --> 00:00:50.371
+e un doppio clic li apre.
+
+17
+00:00:51.671 --> 00:00:56.045
+Ecco il codice completo, che trovi anche tra gli esempi di Leo,
+
+18
+00:00:56.045 --> 00:00:58.448
+nella cartella progetto saluto.
+
+19
+00:00:58.448 --> 00:01:03.993
+Si legge così: quando la Finestra uno si apre, scrivi nell'etichetta il benvenuto.
+
+20
+00:01:03.993 --> 00:01:06.827
+Quando Pulsante Saluta riceve un clic,
+
+21
+00:01:06.827 --> 00:01:12.249
+se la casella del nome è vuota mostra un messaggio, altrimenti scrivi il saluto.
+
+22
+00:01:12.249 --> 00:01:16.746
+Nota come si usano i controlli: il nome, un punto e la proprietà.
+
+23
+00:01:16.746 --> 00:01:21.059
+Casella Nome punto testo legge quello che l'utente ha scritto.
+
+24
+00:01:22.359 --> 00:01:24.428
+Qualche regola sui gestori.
+
+25
+00:01:24.428 --> 00:01:28.979
+Si scrivono al livello più esterno del file, non dentro una funzione.
+
+26
+00:01:28.979 --> 00:01:32.703
+Per ogni coppia di controllo ed evento ce n'è uno solo.
+
+27
+00:01:32.703 --> 00:01:37.372
+E si usa sempre il nome del controllo, scritto con le maiuscole giuste,
+
+28
+00:01:37.372 --> 00:01:40.859
+perché altrimenti il gestore non verrebbe chiamato.
+
+29
+00:01:40.859 --> 00:01:43.992
+Niente paura: l'autocorrezione te lo segnala.
+
+30
+00:01:45.292 --> 00:01:50.535
+Un errore classico: scrivere il tipo del controllo invece del suo nome.
+
+31
+00:01:50.535 --> 00:01:54.053
+Etichetta è il tipo, Etichetta uno è il nome.
+
+32
+00:01:54.053 --> 00:01:58.301
+Leo se ne accorge e ti dice anche qual è il nome giusto,
+
+33
+00:01:58.301 --> 00:02:01.619
+perché conosce i controlli della finestra.
+
+34
+00:02:02.919 --> 00:02:07.993
+Ecco un contatore con due pulsanti, Pulsante Più e Pulsante Azzera.
+
+35
+00:02:07.993 --> 00:02:13.338
+La variabile conteggio è dichiarata fuori dai gestori, in cima al file:
+
+36
+00:02:13.338 --> 00:02:18.751
+così la vedono tutti e due, e il suo valore resta tra un clic e l'altro.
+
+37
+00:02:18.751 --> 00:02:24.637
+Se la dichiarassi dentro il gestore del clic, ripartirebbe da zero a ogni clic.
+
+38
+00:02:24.637 --> 00:02:27.817
+Prova, e vedrai che resta sempre a uno!
+
+39
+00:02:29.117 --> 00:02:31.757
+Alcuni eventi non li provoca il mouse.
+
+40
+00:02:31.757 --> 00:02:36.120
+Il Timer è un controllo invisibile che scatta a intervalli regolari:
+
+41
+00:02:36.120 --> 00:02:40.138
+ogni mille millisecondi, se non cambi la proprietà intervallo.
+
+42
+00:02:40.138 --> 00:02:42.032
+Qui aggiorna un orologio.
+
+43
+00:02:42.032 --> 00:02:46.222
+L'evento invio di una casella scatta quando l'utente preme Invio.
+
+44
+00:02:46.222 --> 00:02:51.502
+E dentro ogni gestore c'è la variabile evento, un dizionario con i dati dell'evento:
+
+45
+00:02:51.502 --> 00:02:55.348
+qui evento, quadra, testo è quello che l'utente ha scritto.
+
+46
+00:02:55.348 --> 00:02:58.505
+Infine, Timer uno punto ferma ferma l'orologio.
+
+47
+00:02:59.805 --> 00:03:02.592
+Ecco gli eventi che userai più spesso.
+
+48
+00:03:02.592 --> 00:03:06.408
+Apertura della finestra, per preparare tutto all'avvio.
+
+49
+00:03:06.408 --> 00:03:08.892
+Clic, con la posizione del mouse.
+
+50
+00:03:08.892 --> 00:03:12.224
+Cambio, quando cambia il valore di una casella,
+
+51
+00:03:12.224 --> 00:03:15.192
+di un cursore o di una casella di spunta.
+
+52
+00:03:15.192 --> 00:03:19.796
+Tasto della finestra, con il nome del tasto in italiano, come Invio,
+
+53
+00:03:19.796 --> 00:03:22.886
+Spazio o Sinistra: utilissimo per i giochi.
+
+54
+00:03:22.886 --> 00:03:24.703
+E lo scatto del timer.
+
+55
+00:03:26.003 --> 00:03:29.701
+Attenzione a un errore di ragionamento molto comune.
+
+56
+00:03:29.701 --> 00:03:31.734
+Nei programmi a finestre,
+
+57
+00:03:31.734 --> 00:03:37.404
+il blocco inizio e il codice fuori dai gestori partono una volta sola, all'apertura.
+
+58
+00:03:37.404 --> 00:03:40.485
+In quel momento la casella è ancora vuota,
+
+59
+00:03:40.485 --> 00:03:43.566
+e la condizione non verrà più controllata.
+
+60
+00:03:43.566 --> 00:03:46.463
+Per reagire all'utente serve un evento,
+
+61
+00:03:46.463 --> 00:03:50.284
+come il cambio della casella o il clic su un pulsante.
+
+62
+00:03:50.284 --> 00:03:54.166
+Leo se ne accorge, e te lo segnala nel pannello Uscita.
+
+63
+00:03:55.466 --> 00:04:00.727
+Un progetto di Leo è una cartella, con il file progetto punto toml.
+
+64
+00:04:00.727 --> 00:04:05.849
+Per ogni finestra ci sono due file: la maschera, con i controlli,
+
+65
+00:04:05.849 --> 00:04:11.601
+che scrive Studio per te, e il file punto leo, con il codice degli eventi.
+
+66
+00:04:11.601 --> 00:04:15.951
+Control S li salva, e F5 salva ed esegue il programma.
+
+67
+00:04:15.951 --> 00:04:17.915
+Prova il tuo saluto!
+
+68
+00:04:19.215 --> 00:04:20.523
+Ricapitoliamo.
+
+69
+00:04:20.523 --> 00:04:22.843
+Un doppio clic crea il gestore.
+
+70
+00:04:22.843 --> 00:04:25.757
+Quando, il nome, il punto, l'evento, fai:
+
+71
+00:04:25.757 --> 00:04:29.801
+e il codice dentro si esegue ogni volta che l'evento accade.
+
+72
+00:04:29.801 --> 00:04:33.310
+Con nome punto proprietà leggi e cambi i controlli,
+
+73
+00:04:33.310 --> 00:04:36.284
+e la variabile evento ti porta i dettagli.
+
+74
+00:04:36.284 --> 00:04:40.031
+E per reagire all'utente, sempre un evento, mai inizio.
+
+75
+00:04:41.331 --> 00:04:43.648
+Adesso le tue finestre rispondono!
+
+76
+00:04:43.648 --> 00:04:46.350
+Nel prossimo video vediamo come eseguire,
+
+77
+00:04:46.350 --> 00:04:50.597
+correggere gli errori con un clic e seguire il programma passo passo.
+
+78
+00:04:50.597 --> 00:04:51.535
+A presto.
