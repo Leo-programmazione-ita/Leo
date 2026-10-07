@@ -1,0 +1,225 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.469
+Nel video precedente abbiamo scritto le animazioni a mano.
+
+2
+00:00:04.469 --> 00:00:09.459
+Oggi usiamo cinque effetti già pronti, che si scrivono con una parola sola.
+
+3
+00:00:09.459 --> 00:00:13.969
+Li useremo per costruire una schermata di accesso con una password.
+
+4
+00:00:15.269 --> 00:00:16.199
+Eccoli.
+
+5
+00:00:16.199 --> 00:00:21.286
+Lampeggia fa sparire e ricomparire l'oggetto, tre volte se non dici altro.
+
+6
+00:00:21.286 --> 00:00:23.768
+Serve per attirare l'attenzione.
+
+7
+00:00:23.768 --> 00:00:28.544
+Scuoti lo muove a destra e a sinistra, come una testa che dice di no:
+
+8
+00:00:28.544 --> 00:00:30.467
+perfetto per un errore.
+
+9
+00:00:30.467 --> 00:00:34.747
+Pulsa lo ingrandisce un poco dal centro e lo riporta com'era,
+
+10
+00:00:34.747 --> 00:00:38.904
+come un cuore che batte: ottimo per confermare un successo.
+
+11
+00:00:38.904 --> 00:00:43.432
+Dissolvi lo fa sfumare fino a sparire, e compari fa il contrario.
+
+12
+00:00:44.732 --> 00:00:49.435
+Ogni effetto si scrive in due modi: come metodo dell'oggetto, con il punto,
+
+13
+00:00:49.435 --> 00:00:52.721
+oppure come funzione, con l'oggetto tra parentesi.
+
+14
+00:00:52.721 --> 00:00:55.271
+Gli argomenti sono tutti facoltativi.
+
+15
+00:00:55.271 --> 00:00:58.047
+Lampeggia e pulsa accettano quante volte.
+
+16
+00:00:58.047 --> 00:01:01.844
+Scuoti accetta l'intensità, cioè di quanti pixel si sposta,
+
+17
+00:01:01.844 --> 00:01:03.713
+dieci se non dici niente.
+
+18
+00:01:03.713 --> 00:01:06.773
+E tutti accettano la durata e poi, come anima.
+
+19
+00:01:08.073 --> 00:01:09.644
+Ecco la schermata.
+
+20
+00:01:09.644 --> 00:01:13.875
+C'è un riquadro con una casella password e il pulsante Accedi.
+
+21
+00:01:13.875 --> 00:01:17.380
+Se la password è sbagliata, il riquadro si scuote,
+
+22
+00:01:17.380 --> 00:01:21.671
+proprio come fa un telefono quando sbagli il codice di sblocco,
+
+23
+00:01:21.671 --> 00:01:24.451
+e il suggerimento lampeggia tre volte.
+
+24
+00:01:24.451 --> 00:01:29.104
+Se è giusta, il riquadro sfuma e sparisce, e alla fine, grazie a poi,
+
+25
+00:01:29.104 --> 00:01:31.703
+parte la funzione mostra benvenuto.
+
+26
+00:01:31.703 --> 00:01:34.604
+Nella foto vedi il risultato: Benvenuto!
+
+27
+00:01:35.904 --> 00:01:39.617
+Il benvenuto e il pulsante Esci all'inizio sono invisibili:
+
+28
+00:01:39.617 --> 00:01:42.443
+nel pannello Aspetto hanno visibile spento.
+
+29
+00:01:42.443 --> 00:01:45.768
+Compari li rende visibili e li fa apparire sfumando.
+
+30
+00:01:45.768 --> 00:01:50.090
+Poi il benvenuto pulsa due volte, per sottolineare l'accesso riuscito.
+
+31
+00:01:50.090 --> 00:01:55.078
+Il pulsante Esci fa tutto al contrario: dissolve il benvenuto, svuota la password,
+
+32
+00:01:55.078 --> 00:01:57.128
+e fa ricomparire il riquadro.
+
+33
+00:01:58.428 --> 00:02:00.345
+Qualche dettaglio utile.
+
+34
+00:02:00.345 --> 00:02:05.497
+Dopo dissolvi l'oggetto diventa invisibile davvero, con visibile uguale falso,
+
+35
+00:02:05.497 --> 00:02:07.773
+quindi non si può più toccare.
+
+36
+00:02:07.773 --> 00:02:12.626
+Invece un oggetto con opacità zero non si vede, ma si può ancora toccare:
+
+37
+00:02:12.626 --> 00:02:15.920
+per toglierlo di mezzo usa dissolvi o visibile.
+
+38
+00:02:15.920 --> 00:02:20.174
+E se vuoi interrompere un effetto a metà, c'è ferma animazioni,
+
+39
+00:02:20.174 --> 00:02:22.510
+che lo blocca lì dove si trova.
+
+40
+00:02:23.810 --> 00:02:25.122
+Come scegliere?
+
+41
+00:02:25.122 --> 00:02:30.311
+Scuoti e lampeggia comunicano un problema: qualcosa è sbagliato, oppure guarda qui.
+
+42
+00:02:30.311 --> 00:02:33.961
+Pulsa comunica una cosa bella, come un punto guadagnato.
+
+43
+00:02:33.961 --> 00:02:38.809
+Compari e dissolvi servono per far entrare e uscire gli oggetti con eleganza.
+
+44
+00:02:38.809 --> 00:02:42.402
+Usa sempre lo stesso effetto per lo stesso significato:
+
+45
+00:02:42.402 --> 00:02:44.626
+chi usa l'app impara a capirlo.
+
+46
+00:02:45.926 --> 00:02:46.567
+Quiz.
+
+47
+00:02:46.567 --> 00:02:48.640
+L'utente ha sbagliato la password.
+
+48
+00:02:48.640 --> 00:02:50.416
+Quale effetto usi sul campo?
+
+49
+00:02:52.416 --> 00:02:55.170
+Scuoti, come un no con la testa.
+
+50
+00:02:55.170 --> 00:02:58.130
+Pulsa lo teniamo per le cose belle.
+
+51
+00:03:06.730 --> 00:03:07.910
+Ricapitoliamo.
+
+52
+00:03:07.910 --> 00:03:12.524
+Cinque effetti pronti, da scrivere come metodo o come funzione, tutti con poi.
+
+53
+00:03:12.524 --> 00:03:16.118
+Dopo dissolvi l'oggetto è invisibile, e compari lo riporta.
+
+54
+00:03:17.418 --> 00:03:22.363
+Esercizio: prendi il modello Contatore e fai pulsare il numero a ogni tocco.
+
+55
+00:03:22.363 --> 00:03:27.249
+Anzi, lo facciamo insieme: dal prossimo video iniziano i progetti completi,
+
+56
+00:03:27.249 --> 00:03:29.663
+e si parte proprio dal contatore.
