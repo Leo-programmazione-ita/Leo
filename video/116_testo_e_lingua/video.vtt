@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.268
+Le librerie dei linguaggi di programmazione conoscono l'inglese.
+
+2
+00:00:04.268 --> 00:00:09.030
+Leo conosce l'italiano: numeri in lettere, plurali, articoli, sillabe, leggibilità.
+
+3
+00:00:09.030 --> 00:00:12.536
+In questo video vediamo i comandi per lavorare con i testi,
+
+4
+00:00:12.536 --> 00:00:14.786
+pensati per chi scrive in italiano.
+
+5
+00:00:16.086 --> 00:00:21.254
+Numero in lettere scrive un numero come si pronuncia, con le regole giuste:
+
+6
+00:00:21.254 --> 00:00:26.173
+ventuno senza doppia vocale, ventitré con l'accento, duemila attaccato.
+
+7
+00:00:26.173 --> 00:00:30.344
+Euro in lettere è quello che serve per fatture e contratti,
+
+8
+00:00:30.344 --> 00:00:32.710
+e nella forma per gli assegni.
+
+9
+00:00:32.710 --> 00:00:38.127
+Lettere in numero fa il contrario, e data in parole scrive una data per esteso.
+
+10
+00:00:39.427 --> 00:00:43.300
+Plurale conosce le regole difficili: medico diventa medici,
+
+11
+00:00:43.300 --> 00:00:46.363
+problema diventa problemi, uovo diventa uova.
+
+12
+00:00:46.363 --> 00:00:49.774
+Con articolo sceglie lo, l'apostrofo, un apostrofo:
+
+13
+00:00:49.774 --> 00:00:54.918
+quello che serve per generare frasi corrette, per esempio nei messaggi di un'app.
+
+14
+00:00:54.918 --> 00:00:59.427
+E poi le sillabe, e togli accenti per i nomi dei file e gli indirizzi.
+
+15
+00:01:00.727 --> 00:01:04.871
+Per analizzare un testo ci sono i contatori: parole, occorrenze,
+
+16
+00:01:04.871 --> 00:01:08.440
+le parole più frequenti senza articoli e preposizioni.
+
+17
+00:01:08.440 --> 00:01:12.872
+E l'indice Gulpease, la misura di leggibilità pensata per l'italiano:
+
+18
+00:01:12.872 --> 00:01:14.254
+da zero a cento.
+
+19
+00:01:14.254 --> 00:01:18.686
+Utile per controllare che un avviso o un modulo si capiscano davvero.
+
+20
+00:01:19.986 --> 00:01:24.519
+Somiglianza dice quanto sono vicini due testi, da zero a cento.
+
+21
+00:01:24.519 --> 00:01:28.669
+Differenze testi mostra le righe tolte e quelle aggiunte,
+
+22
+00:01:28.669 --> 00:01:33.075
+come i programmi che confrontano le versioni di un documento.
+
+23
+00:01:33.075 --> 00:01:37.161
+E forse cercavi trova la parola più simile in un elenco:
+
+24
+00:01:37.161 --> 00:01:42.843
+è quello che serve per suggerire il comando giusto a chi ha sbagliato a scrivere.
+
+25
+00:01:44.143 --> 00:01:48.990
+E infine i formati: da Markdown a HTML, da HTML a testo semplice,
+
+26
+00:01:48.990 --> 00:01:53.439
+e XML e YAML letti e scritti come dizionari e liste di Leo.
+
+27
+00:01:53.439 --> 00:01:58.286
+Riempi segnaposti riempie un modello di lettera letto da un file.
+
+28
+00:01:58.286 --> 00:02:02.934
+Incolonna allinea una tabella di testo, con i numeri a destra.
+
+29
+00:02:02.934 --> 00:02:08.445
+Per sicurezza, l'HTML scritto dentro un Markdown viene mostrato come testo,
+
+30
+00:02:08.445 --> 00:02:11.898
+e gli XML con entità esterne non si leggono.
+
+31
+00:02:13.198 --> 00:02:15.662
+Una regola facile da ricordare:
+
+32
+00:02:15.662 --> 00:02:20.841
+in tutti questi comandi il testo da elaborare è sempre il primo argomento.
+
+33
+00:02:20.841 --> 00:02:25.389
+E se qualcosa non va, per esempio manca un valore in un modello,
+
+34
+00:02:25.389 --> 00:02:29.116
+il messaggio d'errore ti suggerisce il nome giusto.
+
+35
+00:02:30.416 --> 00:02:31.287
+Domanda.
+
+36
+00:02:31.287 --> 00:02:34.879
+Quale comando scrive un importo nella forma degli assegni,
+
+37
+00:02:34.879 --> 00:02:36.947
+con i centesimi dopo la barra?
+
+38
+00:02:41.247 --> 00:02:43.894
+Euro in lettere, con assegno uguale vero.
+
+39
+00:02:43.894 --> 00:02:44.920
+Risposta B.
+
+40
+00:02:46.220 --> 00:02:47.493
+Ricapitoliamo.
+
+41
+00:02:47.493 --> 00:02:51.831
+Numeri, importi e date si scrivono in lettere con le regole giuste.
+
+42
+00:02:51.831 --> 00:02:55.013
+Plurali, articoli e sillabe seguono l'italiano.
+
+43
+00:02:55.013 --> 00:02:57.617
+I testi si confrontano e si misurano,
+
+44
+00:02:57.617 --> 00:03:00.914
+e i formati più comuni si convertono in una riga.
+
+45
+00:03:02.214 --> 00:03:07.170
+Esercizio: calcola il totale di una fattura e scrivilo in cifre e in lettere,
+
+46
+00:03:07.170 --> 00:03:09.677
+come si fa nei documenti ufficiali.
+
+47
+00:03:09.677 --> 00:03:13.234
+Nel prossimo video: matematica, statistica e scienza.
