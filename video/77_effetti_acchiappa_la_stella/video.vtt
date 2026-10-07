@@ -1,0 +1,205 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.459
+In questo video ricostruiamo acchiappa la stella usando tutte le animazioni.
+
+2
+00:00:05.459 --> 00:00:08.056
+Una stella salta per lo schermo e tu
+
+3
+00:00:08.056 --> 00:00:11.480
+devi toccarla più volte che puoi in venti secondi.
+
+4
+00:00:11.480 --> 00:00:14.786
+Useremo quasi tutto quello che abbiamo imparato.
+
+5
+00:00:16.086 --> 00:00:17.418
+Ecco i pezzi.
+
+6
+00:00:17.418 --> 00:00:22.493
+La stella è un pulsante con l'emoji della stella, invisibile all'inizio.
+
+7
+00:00:22.493 --> 00:00:26.933
+Due etichette per i punti e per il tempo, e il pulsante Gioca.
+
+8
+00:00:26.933 --> 00:00:32.008
+E due Timer, da un secondo, spenti all'inizio: uno fa saltare la stella,
+
+9
+00:00:32.008 --> 00:00:34.862
+l'altro conta il tempo della partita.
+
+10
+00:00:36.162 --> 00:00:39.484
+Il cuore del gioco è la funzione nuovo posto.
+
+11
+00:00:39.484 --> 00:00:42.993
+Sceglie una posizione a caso con casuale, x e y,
+
+12
+00:00:42.993 --> 00:00:48.007
+e ci porta la stella in zero virgola tre secondi, con la curva elastica.
+
+13
+00:00:48.007 --> 00:00:53.272
+Qui usiamo anima nella forma con le parentesi: controllo, proprietà, arrivo,
+
+14
+00:00:53.272 --> 00:00:54.713
+durata e curva.
+
+15
+00:00:54.713 --> 00:00:59.853
+Le due animazioni partono insieme, quindi la stella si muove in diagonale,
+
+16
+00:00:59.853 --> 00:01:02.360
+e all'arrivo fa l'effetto molla.
+
+17
+00:01:02.360 --> 00:01:05.619
+Nota: la funzione non si può chiamare salta,
+
+18
+00:01:05.619 --> 00:01:08.815
+perché salta è una parola riservata di Leo.
+
+19
+00:01:10.115 --> 00:01:13.405
+Quando premi Gioca, azzeriamo punti e secondi.
+
+20
+00:01:13.405 --> 00:01:18.278
+Il pulsante Gioca si dissolve, la stella compare, e partono i due timer.
+
+21
+00:01:19.578 --> 00:01:22.743
+Quando tocchi la stella guadagni un punto,
+
+22
+00:01:22.743 --> 00:01:26.162
+e l'etichetta dei punti pulsa per festeggiare.
+
+23
+00:01:26.162 --> 00:01:29.580
+Poi la stella scappa subito in un altro posto.
+
+24
+00:01:29.580 --> 00:01:31.290
+E se non la prendi?
+
+25
+00:01:31.290 --> 00:01:35.088
+Ogni secondo il timer dei salti la sposta lo stesso.
+
+26
+00:01:36.388 --> 00:01:41.286
+Ecco una partita in corso: due stelle prese, e mancano diciassette secondi.
+
+27
+00:01:42.586 --> 00:01:46.292
+Ogni secondo il timer del gioco toglie un secondo.
+
+28
+00:01:46.292 --> 00:01:51.148
+Negli ultimi cinque, il tempo lampeggia, un lampo veloce al secondo,
+
+29
+00:01:51.148 --> 00:01:53.449
+per mettere un po' di ansia.
+
+30
+00:01:53.449 --> 00:01:58.752
+A zero, fermiamo i timer, la stella si dissolve, i punti pulsano tre volte,
+
+31
+00:01:58.752 --> 00:02:02.586
+e il pulsante ricompare con la scritta Gioca ancora.
+
+32
+00:02:03.886 --> 00:02:09.244
+Ed ecco la fine: la stella è sparita, il punteggio finale è in alto,
+
+33
+00:02:09.244 --> 00:02:11.641
+e Gioca ancora ci aspetta.
+
+34
+00:02:12.941 --> 00:02:14.280
+Ora rendilo tuo!
+
+35
+00:02:14.280 --> 00:02:17.793
+Puoi far andare la stella più veloce ogni cinque punti,
+
+36
+00:02:17.793 --> 00:02:20.693
+abbassando l'intervallo del timer dei salti.
+
+37
+00:02:20.693 --> 00:02:24.821
+Puoi farla rimpicciolire con anima sulla larghezza e sull'altezza,
+
+38
+00:02:24.821 --> 00:02:26.773
+per renderla più difficile.
+
+39
+00:02:26.773 --> 00:02:30.900
+O aggiungere un suono a ogni presa, e sul telefono una vibrazione.
+
+40
+00:02:32.200 --> 00:02:33.526
+Ultima domanda.
+
+41
+00:02:33.526 --> 00:02:36.466
+Perché la stella si muove in diagonale? ...
+
+42
+00:02:36.466 --> 00:02:40.675
+Perché le due animazioni, su sinistra e su alto, partono insieme:
+
+43
+00:02:40.675 --> 00:02:42.404
+anima non aspetta mai.
+
+44
+00:02:51.004 --> 00:02:52.333
+Ricapitoliamo.
+
+45
+00:02:52.333 --> 00:02:57.709
+Anima con casuale fa saltare la stella, due timer scandiscono i salti e il tempo,
+
+46
+00:02:57.709 --> 00:03:00.367
+pulsa e lampeggia danno le emozioni,
+
+47
+00:03:00.367 --> 00:03:03.750
+dissolvi e compari aprono e chiudono la partita.
+
+48
+00:03:03.750 --> 00:03:06.106
+Ora sai dare vita alle tue app.
+
+49
+00:03:07.406 --> 00:03:11.990
+Un consiglio per chiudere: metti un piccolo effetto in ogni tua app,
+
+50
+00:03:11.990 --> 00:03:15.368
+un pulsante che pulsa, un messaggio che compare.
+
+51
+00:03:15.368 --> 00:03:19.651
+Pochi, e sempre con lo stesso significato: fanno la differenza.

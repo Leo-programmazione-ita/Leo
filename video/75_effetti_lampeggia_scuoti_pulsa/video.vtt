@@ -1,0 +1,157 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.353
+Oggi tre effetti già pronti, che si usano con una parola sola: scuoti,
+
+2
+00:00:05.353 --> 00:00:06.971
+pulsa e lampeggia.
+
+3
+00:00:06.971 --> 00:00:10.704
+Li proviamo in una schermata con la parola d'ordine.
+
+4
+00:00:12.004 --> 00:00:14.019
+Ogni effetto dice qualcosa.
+
+5
+00:00:14.019 --> 00:00:18.508
+Scuoti dice: no, così non va, come quando una persona scuote la testa.
+
+6
+00:00:18.508 --> 00:00:21.904
+Pulsa dice: sì, ben fatto, come un cuore che batte.
+
+7
+00:00:21.904 --> 00:00:24.725
+Lampeggia dice: guarda qui, è importante.
+
+8
+00:00:24.725 --> 00:00:29.963
+Sono metodi che ha ogni controllo visibile: pulsanti, etichette, caselle, immagini.
+
+9
+00:00:31.263 --> 00:00:35.242
+Se la parola d'ordine è sbagliata, contiamo il tentativo,
+
+10
+00:00:35.242 --> 00:00:39.100
+scriviamo il messaggio in rosso e scuotiamo la casella.
+
+11
+00:00:39.100 --> 00:00:44.610
+È lo stesso effetto che vedi su tanti telefoni quando sbagli il codice di sblocco:
+
+12
+00:00:44.610 --> 00:00:47.181
+si capisce al volo, senza leggere.
+
+13
+00:00:48.481 --> 00:00:52.104
+Ecco la schermata dopo un tentativo sbagliato.
+
+14
+00:00:52.104 --> 00:00:58.277
+La casella si è scossa a destra e a sinistra, ed è tornata esattamente al suo posto.
+
+15
+00:00:59.577 --> 00:01:04.853
+Se invece la parola è giusta, il messaggio diventa verde e pulsa due volte:
+
+16
+00:01:04.853 --> 00:01:08.540
+si ingrandisce un poco dal centro e torna com'era.
+
+17
+00:01:08.540 --> 00:01:12.227
+Pulsa è perfetto anche sui pulsanti come Mi piace:
+
+18
+00:01:12.227 --> 00:01:15.087
+un piccolo battito conferma il tocco.
+
+19
+00:01:16.387 --> 00:01:20.106
+Dal terzo tentativo sbagliato, il messaggio lampeggia cinque volte:
+
+20
+00:01:20.106 --> 00:01:23.280
+sparisce e ricompare, per attirare davvero l'attenzione.
+
+21
+00:01:23.280 --> 00:01:26.999
+Usalo con parsimonia: un'app che lampeggia sempre stanca gli occhi.
+
+22
+00:01:28.299 --> 00:01:32.724
+Tutti e tre hanno dei valori predefiniti, che puoi cambiare.
+
+23
+00:01:32.724 --> 00:01:38.450
+Scuoti ha l'intensità, cioè di quanti pixel si sposta, dieci se non dici niente.
+
+24
+00:01:38.450 --> 00:01:40.792
+Pulsa ha il numero di volte.
+
+25
+00:01:40.792 --> 00:01:44.957
+Lampeggia ha il numero di lampi e la durata di ciascuno.
+
+26
+00:01:44.957 --> 00:01:50.748
+E tutti accettano poi, per fare qualcosa alla fine, come abbiamo visto con anima.
+
+27
+00:01:52.048 --> 00:01:55.811
+Come per anima, ogni effetto esiste anche come funzione:
+
+28
+00:01:55.811 --> 00:01:58.809
+si passa il controllo come primo argomento.
+
+29
+00:01:58.809 --> 00:02:03.924
+Scuoti Casella Parola, con venti, è uguale a Casella Parola punto scuoti venti.
+
+30
+00:02:03.924 --> 00:02:06.334
+Scegli la forma che leggi meglio.
+
+31
+00:02:07.634 --> 00:02:08.392
+Quiz.
+
+32
+00:02:08.392 --> 00:02:10.724
+L'utente ha sbagliato il codice.
+
+33
+00:02:10.724 --> 00:02:12.999
+Quale effetto è più adatto? ...
+
+34
+00:02:12.999 --> 00:02:17.022
+Scuoti: è il no universale, capito da tutti al primo sguardo.
+
+35
+00:02:25.622 --> 00:02:26.972
+Ricapitoliamo.
+
+36
+00:02:26.972 --> 00:02:31.756
+Scuoti per gli errori, pulsa per i successi, lampeggia per gli avvisi.
+
+37
+00:02:31.756 --> 00:02:36.234
+Ognuno ha i suoi parametri, e si usa come metodo o come funzione.
+
+38
+00:02:37.534 --> 00:02:41.962
+Nel prossimo video facciamo sparire e comparire i controlli con eleganza,
+
+39
+00:02:41.962 --> 00:02:43.656
+con dissolvi e compari.

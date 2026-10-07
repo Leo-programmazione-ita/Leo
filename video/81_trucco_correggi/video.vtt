@@ -1,0 +1,109 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.540
+Sapevi che molti errori di Leo si correggono con un tocco solo?
+
+2
+00:00:05.540 --> 00:00:08.663
+Vediamo come, sul telefono e sul PC.
+
+3
+00:00:09.963 --> 00:00:14.178
+Guarda la fine di questo messaggio: riga corretta proposta.
+
+4
+00:00:14.178 --> 00:00:18.897
+Quando Leo capisce come sistemare la riga, non si limita a dirtelo:
+
+5
+00:00:18.897 --> 00:00:21.036
+te la scrive già corretta.
+
+6
+00:00:21.036 --> 00:00:26.698
+Qui ha visto che tottale, con due ti, somiglia a totale, dichiarato alla riga due.
+
+7
+00:00:27.998 --> 00:00:33.064
+Nell'app Leo sul telefono, sotto il messaggio d'errore ci sono due pulsanti:
+
+8
+00:00:33.064 --> 00:00:35.115
+Vai alla riga, e Correggi.
+
+9
+00:00:35.115 --> 00:00:38.070
+Tocca Correggi: la riga viene sostituita,
+
+10
+00:00:38.070 --> 00:00:42.352
+si illumina per un attimo e in basso compare Riga sei corretta,
+
+11
+00:00:42.352 --> 00:00:45.549
+con il pulsante Annulla se hai cambiato idea.
+
+12
+00:00:46.849 --> 00:00:49.410
+In Leo Studio è ancora più veloce.
+
+13
+00:00:49.410 --> 00:00:51.483
+Appena Leo trova l'errore,
+
+14
+00:00:51.483 --> 00:00:54.410
+in basso a destra sul codice compare una
+
+15
+00:00:54.410 --> 00:00:58.130
+barretta con la riga proposta e il pulsante Correggi.
+
+16
+00:00:58.130 --> 00:01:01.362
+Se preferisci la tastiera, premi alt e Invio.
+
+17
+00:01:01.362 --> 00:01:06.362
+E dopo un'esecuzione lo stesso pulsante compare anche nel pannello Uscita:
+
+18
+00:01:06.362 --> 00:01:07.947
+Correggi riga sei.
+
+19
+00:01:07.947 --> 00:01:12.155
+La riga si illumina di verde, e control Z la rimette com'era.
+
+20
+00:01:13.455 --> 00:01:16.056
+E non vale solo per i nomi sbagliati.
+
+21
+00:01:16.056 --> 00:01:20.506
+Print diventa stampa, un uguale singolo nel se diventa uguale uguale,
+
+22
+00:01:20.506 --> 00:01:24.378
+un allora dimenticato viene aggiunto, while diventa mentre.
+
+23
+00:01:24.378 --> 00:01:26.516
+Tutte correzioni di un tocco.
+
+24
+00:01:27.816 --> 00:01:32.750
+Un consiglio: prima di toccare Correggi, leggi la riga proposta.
+
+25
+00:01:32.750 --> 00:01:37.204
+Leo è bravo con la forma, ma sa cosa volevi fare solo tu.
+
+26
+00:01:38.504 --> 00:01:41.776
+Ecco fatto: un errore, un tocco, e si riparte.
+
+27
+00:01:41.776 --> 00:01:46.259
+Nel prossimo trucco vediamo come Leo corregge anche dal terminale.

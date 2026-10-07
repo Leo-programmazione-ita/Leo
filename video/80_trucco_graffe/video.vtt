@@ -1,0 +1,113 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:07.113
+Ecco un trucco che userai in quasi tutti i tuoi programmi: le graffe dentro i testi.
+
+2
+00:00:07.113 --> 00:00:11.929
+In un minuto smetti di incollare pezzi di testo con il più.
+
+3
+00:00:13.229 --> 00:00:17.018
+A sinistra il modo faticoso: tre pezzi di testo,
+
+4
+00:00:17.018 --> 00:00:21.552
+due segni più e perfino la conversione del numero in testo.
+
+5
+00:00:21.552 --> 00:00:26.829
+A destra lo stesso saluto con le graffe: scrivi la frase così com'è e,
+
+6
+00:00:26.829 --> 00:00:31.566
+al posto del numero, metti il nome della variabile tra graffe.
+
+7
+00:00:31.566 --> 00:00:34.611
+Leo lo sostituisce con il suo valore,
+
+8
+00:00:34.611 --> 00:00:38.535
+e si occupa lui di trasformare il numero in testo.
+
+9
+00:00:39.835 --> 00:00:41.520
+E non solo variabili.
+
+10
+00:00:41.520 --> 00:00:44.831
+Tra le graffe puoi mettere qualunque espressione:
+
+11
+00:00:44.831 --> 00:00:50.060
+una chiamata di funzione come lunghezza dei voti, un calcolo come ventuno per due,
+
+12
+00:00:50.060 --> 00:00:52.442
+perfino un metodo come maiuscolo.
+
+13
+00:00:52.442 --> 00:00:55.753
+Leo calcola tutto e mette il risultato nel testo.
+
+14
+00:00:57.053 --> 00:00:59.082
+Ora il trucco nel trucco.
+
+15
+00:00:59.082 --> 00:01:02.587
+Dopo l'espressione scrivi due punti e un formato.
+
+16
+00:01:02.587 --> 00:01:07.014
+Due punti e due vuol dire: due decimali, quindi tre e cinquanta.
+
+17
+00:01:07.014 --> 00:01:11.502
+Due punti migliaia aggiunge i punti delle migliaia, all'italiana.
+
+18
+00:01:11.502 --> 00:01:16.237
+E migliaia due fa entrambe le cose: perfetto per gli importi in euro.
+
+19
+00:01:17.537 --> 00:01:23.170
+Se vieni da Python e ti scappa il formato punto due effe, niente paura:
+
+20
+00:01:23.170 --> 00:01:29.374
+Leo non lo conosce, ma nel suggerimento ti spiega subito come si scrive in Leo.
+
+21
+00:01:30.674 --> 00:01:35.120
+Ultima cosa: se nel testo ti serve proprio il simbolo della graffa,
+
+22
+00:01:35.120 --> 00:01:37.788
+mettici davanti una barra rovesciata.
+
+23
+00:01:37.788 --> 00:01:41.286
+Così Leo la stampa e basta, senza calcolare niente.
+
+24
+00:01:42.586 --> 00:01:46.169
+Ricapitoliamo: le graffe mettono un valore dentro un testo,
+
+25
+00:01:46.169 --> 00:01:50.341
+accettano qualunque espressione e, con due punti, formattano i numeri.
+
+26
+00:01:51.641 --> 00:01:55.867
+Prova subito a riscrivere un tuo vecchio programma con le graffe:
+
+27
+00:01:55.867 --> 00:01:58.241
+diventerà più corto e più chiaro.
+
+28
+00:01:58.241 --> 00:01:59.804
+Al prossimo trucco.

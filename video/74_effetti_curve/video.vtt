@@ -1,0 +1,205 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.214
+Un'animazione non dice solo dove arrivare, ma anche come arrivarci: di corsa,
+
+2
+00:00:05.214 --> 00:00:06.988
+frenando, rimbalzando...
+
+3
+00:00:06.988 --> 00:00:10.704
+Oggi facciamo una gara tra sei palline, una per ogni curva.
+
+4
+00:00:12.004 --> 00:00:17.563
+Per scegliere la curva aggiungi alla frase con curva e il nome tra virgolette.
+
+5
+00:00:17.563 --> 00:00:22.088
+Qui la pallina cade e rimbalza sul fondo, come una palla vera.
+
+6
+00:00:22.088 --> 00:00:26.290
+Attenzione: il nome della curva va sempre tra virgolette.
+
+7
+00:00:27.590 --> 00:00:29.098
+Ecco le sei curve.
+
+8
+00:00:29.098 --> 00:00:32.694
+Lineare va sempre alla stessa velocità, come un robot.
+
+9
+00:00:32.694 --> 00:00:38.030
+Morbida parte piano, accelera e arriva piano: è quella predefinita, la più naturale.
+
+10
+00:00:38.030 --> 00:00:40.175
+Rimbalzo rimbalza all'arrivo.
+
+11
+00:00:40.175 --> 00:00:44.235
+Elastica supera il traguardo e torna indietro, come una molla.
+
+12
+00:00:44.235 --> 00:00:49.223
+Veloce parte di scatto e frena, lenta fa il contrario: parte piano e accelera.
+
+13
+00:00:50.523 --> 00:00:52.064
+Ed ecco la gara.
+
+14
+00:00:52.064 --> 00:00:56.301
+Sei etichette rotonde, ognuna con il nome della sua curva.
+
+15
+00:00:56.301 --> 00:00:59.960
+La funzione corri fa sempre la stessa animazione,
+
+16
+00:00:59.960 --> 00:01:05.352
+con la stessa durata e lo stesso traguardo, ma con la curva che le passiamo.
+
+17
+00:01:05.352 --> 00:01:08.883
+Al via la chiamiamo per tutte e sei le palline.
+
+18
+00:01:08.883 --> 00:01:12.478
+Partono tutte insieme, perché anima non aspetta,
+
+19
+00:01:12.478 --> 00:01:16.137
+e arrivano tutte insieme dopo un secondo e mezzo.
+
+20
+00:01:16.137 --> 00:01:17.870
+Ma a metà strada...
+
+21
+00:01:19.170 --> 00:01:22.514
+...a metà strada sono in posti diversissimi!
+
+22
+00:01:22.514 --> 00:01:28.303
+L'elastica e il rimbalzo sono già vicini al fondo, e la veloce li segue da vicino.
+
+23
+00:01:28.303 --> 00:01:33.255
+La lineare è a un terzo della strada, la morbida un po' più indietro,
+
+24
+00:01:33.255 --> 00:01:35.570
+e la lenta è appena partita.
+
+25
+00:01:35.570 --> 00:01:40.394
+Stesso tempo, stesso arrivo, ma un movimento completamente diverso.
+
+26
+00:01:41.694 --> 00:01:47.000
+E dopo un secondo e mezzo sono tutte arrivate, esattamente nello stesso momento.
+
+27
+00:01:48.300 --> 00:01:51.821
+E se vuoi fare qualcosa quando l'animazione è finita?
+
+28
+00:01:51.821 --> 00:01:52.744
+Usa poi.
+
+29
+00:01:52.744 --> 00:01:57.766
+Scrivi una funzione, qui diventa verde, e passala con poi uguale diventa verde,
+
+30
+00:01:57.766 --> 00:01:59.151
+senza parentesi.
+
+31
+00:01:59.151 --> 00:02:03.423
+Quando la pallina ha finito di rimbalzare, Leo chiama la funzione,
+
+32
+00:02:03.423 --> 00:02:05.443
+e la pallina diventa verde.
+
+33
+00:02:06.743 --> 00:02:10.242
+Ferma animazioni blocca tutte le animazioni in corso,
+
+34
+00:02:10.242 --> 00:02:13.454
+lasciando i controlli dove sono in quel momento.
+
+35
+00:02:13.454 --> 00:02:16.149
+Puoi anche passargli un controllo solo.
+
+36
+00:02:16.149 --> 00:02:19.992
+Attenzione: le animazioni fermate non chiamano il loro poi.
+
+37
+00:02:19.992 --> 00:02:24.294
+Dopo averle fermate, rimettiamo le palline in alto con un per ogni.
+
+38
+00:02:25.594 --> 00:02:27.467
+Un consiglio di stile.
+
+39
+00:02:27.467 --> 00:02:33.022
+Per spostare o far comparire le cose, usa morbida o veloce: sono le più eleganti.
+
+40
+00:02:33.022 --> 00:02:36.705
+Per giochi e momenti leggeri, rimbalzo ed elastica.
+
+41
+00:02:36.705 --> 00:02:39.577
+Lineare va bene per barre e contatori.
+
+42
+00:02:39.577 --> 00:02:45.133
+E tieni le animazioni brevi, tra zero virgola due e mezzo secondo: se sono lente,
+
+43
+00:02:45.133 --> 00:02:46.818
+l'app sembra pigra.
+
+44
+00:02:48.118 --> 00:02:48.820
+Quiz.
+
+45
+00:02:48.820 --> 00:02:52.328
+Quale curva supera il traguardo e poi torna indietro? ...
+
+46
+00:02:52.328 --> 00:02:54.649
+L'elastica, proprio come una molla.
+
+47
+00:03:03.249 --> 00:03:04.453
+Ricapitoliamo.
+
+48
+00:03:04.453 --> 00:03:08.120
+Con curva scegli come si muove l'animazione, tra sei curve.
+
+49
+00:03:08.120 --> 00:03:10.856
+Con poi decidi che cosa succede alla fine.
+
+50
+00:03:10.856 --> 00:03:13.045
+E ferma animazioni blocca tutto.
+
+51
+00:03:14.345 --> 00:03:19.243
+Nel prossimo video usiamo tre effetti già pronti: lampeggia, scuoti e pulsa.

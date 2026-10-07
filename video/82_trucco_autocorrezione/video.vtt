@@ -1,0 +1,125 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.013
+Oggi un trucco per chi esegue i programmi dal terminale,
+
+2
+00:00:05.013 --> 00:00:07.693
+o con un doppio clic sul file.
+
+3
+00:00:07.693 --> 00:00:11.571
+Leo può correggere da solo gli errori di forma.
+
+4
+00:00:11.571 --> 00:00:13.969
+Ma solo se gli dici di sì.
+
+5
+00:00:15.269 --> 00:00:17.962
+Questo programma ha due sviste.
+
+6
+00:00:17.962 --> 00:00:23.623
+Il per ogni non è chiuso da nessun fine, e mostra non è un comando di Leo:
+
+7
+00:00:23.623 --> 00:00:25.350
+si scrive stampa.
+
+8
+00:00:25.350 --> 00:00:29.147
+Lo salviamo come voti punto leo e lo eseguiamo.
+
+9
+00:00:30.447 --> 00:00:34.703
+Invece di fermarsi al primo errore, Leo li trova tutti e due,
+
+10
+00:00:34.703 --> 00:00:37.170
+e per ognuno scrive la proposta.
+
+11
+00:00:37.170 --> 00:00:39.761
+Poi chiede: applico le correzioni?
+
+12
+00:00:39.761 --> 00:00:44.325
+Puoi rispondere sì, no, una alla volta, oppure vedi le differenze.
+
+13
+00:00:45.625 --> 00:00:47.559
+Rispondiamo esse, per sì.
+
+14
+00:00:47.559 --> 00:00:52.424
+Leo corregge il file, ne tiene una copia di sicurezza con l'estensione bak,
+
+15
+00:00:52.424 --> 00:00:57.054
+e subito dopo esegue il programma: promosso con ventisette virgola tre.
+
+16
+00:00:58.354 --> 00:01:03.373
+L'autocorrezione sistema solo la forma: un fine dimenticato, una parentesi,
+
+17
+00:01:03.373 --> 00:01:06.638
+una variabile nuova senza la parola variabile,
+
+18
+00:01:06.638 --> 00:01:10.871
+una parola chiave scritta male o presa da un altro linguaggio.
+
+19
+00:01:10.871 --> 00:01:14.257
+Non tocca mai la logica: i nomi delle variabili,
+
+20
+00:01:14.257 --> 00:01:17.341
+i valori e i calcoli restano decisioni tue.
+
+21
+00:01:17.341 --> 00:01:21.211
+E se non la vuoi, aggiungi meno meno correggi uguale no.
+
+22
+00:01:22.511 --> 00:01:26.365
+Un bonus per chi insegna o per chi è proprio all'inizio:
+
+23
+00:01:26.365 --> 00:01:28.593
+l'opzione meno meno semplice.
+
+24
+00:01:28.593 --> 00:01:33.110
+La proviamo su un calcolo scritto a parole, più invece del simbolo.
+
+25
+00:01:33.110 --> 00:01:36.241
+Il messaggio diventa più corto e amichevole,
+
+26
+00:01:36.241 --> 00:01:40.878
+e in fondo aggiunge un piccolo esempio giusto dello stesso costrutto.
+
+27
+00:01:42.178 --> 00:01:46.728
+Ricapitolando: dal terminale Leo trova tutti gli errori di forma,
+
+28
+00:01:46.728 --> 00:01:50.780
+propone e corregge solo con il tuo sì, tenendo una copia.
+
+29
+00:01:50.780 --> 00:01:54.831
+E con meno meno semplice i messaggi diventano più facili.
+
+30
+00:01:56.131 --> 00:02:00.566
+Prova a sbagliare apposta un fine e guarda cosa ti propone Leo.
+
+31
+00:02:00.566 --> 00:02:02.253
+Al prossimo trucco.

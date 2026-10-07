@@ -1,0 +1,177 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.594
+Mettere visibile a falso fa sparire un controllo di colpo.
+
+2
+00:00:04.594 --> 00:00:09.245
+Oggi impariamo a farlo sparire e comparire sfumando, come nei film.
+
+3
+00:00:09.245 --> 00:00:13.153
+E poi facciamo i registi: mettiamo più effetti in fila.
+
+4
+00:00:14.453 --> 00:00:19.951
+Dissolvi fa sparire il controllo sfumandolo, e alla fine mette visibile a falso:
+
+5
+00:00:19.951 --> 00:00:22.512
+il controllo non c'è più davvero.
+
+6
+00:00:22.512 --> 00:00:28.135
+Compari fa il contrario: rende il controllo visibile e lo fa apparire piano piano.
+
+7
+00:00:28.135 --> 00:00:32.820
+Tutti e due durano zero virgola quattro secondi, se non dici altro.
+
+8
+00:00:34.120 --> 00:00:37.141
+Ecco un classico: i consigli del giorno.
+
+9
+00:00:37.141 --> 00:00:39.533
+Al clic, la frase si dissolve.
+
+10
+00:00:39.533 --> 00:00:44.191
+Quando è sparita, grazie a poi, parte la funzione mostra prossima.
+
+11
+00:00:44.191 --> 00:00:47.212
+La funzione passa alla frase successiva,
+
+12
+00:00:47.212 --> 00:00:52.688
+con il resto della divisione che fa ricominciare da capo alla fine della lista,
+
+13
+00:00:52.688 --> 00:00:56.779
+cambia il testo mentre è invisibile, e lo fa ricomparire.
+
+14
+00:00:56.779 --> 00:01:01.059
+Il cambio di testo non si vede mai: la transizione è pulita.
+
+15
+00:01:02.359 --> 00:01:05.944
+Ecco il momento giusto: la frase nuova sta ricomparendo,
+
+16
+00:01:05.944 --> 00:01:08.073
+ed è ancora mezza trasparente.
+
+17
+00:01:09.373 --> 00:01:12.122
+E se vuoi tre effetti uno dopo l'altro?
+
+18
+00:01:12.122 --> 00:01:15.221
+Senza fare niente partirebbero tutti insieme.
+
+19
+00:01:15.221 --> 00:01:19.783
+Aspetta animazioni aspetta che finiscano tutte le animazioni in corso.
+
+20
+00:01:19.783 --> 00:01:24.520
+Quindi: la frase pulsa tre volte, poi si scuote, poi lampeggia due volte.
+
+21
+00:01:24.520 --> 00:01:28.965
+Mentre aspetta, la finestra resta viva e risponde, come con attendi.
+
+22
+00:01:30.265 --> 00:01:32.983
+Due strumenti per lo stesso scopo.
+
+23
+00:01:32.983 --> 00:01:38.030
+Con poi il programma va avanti subito, e alla fine parte una funzione:
+
+24
+00:01:38.030 --> 00:01:40.553
+è ottimo per un passaggio solo.
+
+25
+00:01:40.553 --> 00:01:46.183
+Con aspetta animazioni il codice si ferma su quella riga finché tutto è finito:
+
+26
+00:01:46.183 --> 00:01:51.489
+è più comodo quando hai una sequenza lunga, da leggere dall'alto in basso.
+
+27
+00:01:52.789 --> 00:01:55.246
+Ferma animazioni blocca tutto dov'è.
+
+28
+00:01:55.246 --> 00:01:58.596
+Siccome potremmo fermarla a metà di una dissolvenza,
+
+29
+00:01:58.596 --> 00:02:01.667
+rimettiamo visibile a vero e l'opacità a cento:
+
+30
+00:02:01.667 --> 00:02:04.626
+così la frase torna sicuramente al suo posto.
+
+31
+00:02:05.926 --> 00:02:10.619
+Un dettaglio furbo: alla fine di dissolvi, Leo rimette l'opacità com'era prima,
+
+32
+00:02:10.619 --> 00:02:12.291
+e cambia solo visibile.
+
+33
+00:02:12.291 --> 00:02:15.959
+Così, per rivedere il controllo, basta visibile uguale vero,
+
+34
+00:02:15.959 --> 00:02:18.171
+oppure compari se vuoi l'effetto.
+
+35
+00:02:19.471 --> 00:02:20.144
+Quiz.
+
+36
+00:02:20.144 --> 00:02:23.300
+Dopo dissolvi, quanto vale la proprietà visibile? ...
+
+37
+00:02:23.300 --> 00:02:26.818
+Falso: il controllo è sparito davvero, non solo trasparente.
+
+38
+00:02:35.418 --> 00:02:36.610
+Ricapitoliamo.
+
+39
+00:02:36.610 --> 00:02:39.861
+Dissolvi fa sparire e compari fa apparire, sfumando.
+
+40
+00:02:39.861 --> 00:02:43.003
+Con poi cambi il contenuto quando nessuno lo vede.
+
+41
+00:02:43.003 --> 00:02:47.663
+Aspetta animazioni mette gli effetti in fila, e ferma animazioni blocca tutto.
+
+42
+00:02:48.963 --> 00:02:51.885
+Nel prossimo video mettiamo insieme tutto quello
+
+43
+00:02:51.885 --> 00:02:54.441
+che abbiamo imparato in un piccolo gioco:
+
+44
+00:02:54.441 --> 00:02:55.902
+acchiappa la stella!
