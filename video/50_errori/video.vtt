@@ -1,0 +1,277 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.375
+Oggi parliamo di una cosa che spaventa molti principianti: gli errori.
+
+2
+00:00:05.375 --> 00:00:10.500
+Ti svelo un segreto: anche i programmatori più bravi ne fanno di continuo.
+
+3
+00:00:10.500 --> 00:00:13.812
+La differenza è che sanno leggere i messaggi.
+
+4
+00:00:13.812 --> 00:00:15.500
+E con Leo è facile,
+
+5
+00:00:15.500 --> 00:00:20.500
+perché i messaggi sono in italiano e spesso contengono già la soluzione.
+
+6
+00:00:21.800 --> 00:00:25.007
+Guardiamo questo messaggio pezzo per pezzo.
+
+7
+00:00:25.007 --> 00:00:30.225
+In alto c'è il tipo di errore, un errore di nome, e la posizione: riga due,
+
+8
+00:00:30.225 --> 00:00:31.545
+colonna otto.
+
+9
+00:00:31.545 --> 00:00:35.947
+Poi la riga di codice, con dei segnini sotto il punto preciso.
+
+10
+00:00:35.947 --> 00:00:39.971
+Poi la spiegazione: tottale, con due ti, non è definito.
+
+11
+00:00:39.971 --> 00:00:43.554
+E infine il suggerimento: forse intendevi totale?
+
+12
+00:00:43.554 --> 00:00:46.698
+In fondo c'è perfino la riga già corretta.
+
+13
+00:00:47.998 --> 00:00:51.803
+Leo conosce anche le parole degli altri linguaggi.
+
+14
+00:00:51.803 --> 00:00:57.575
+Chi viene da Python e scrive print si sente rispondere: in Leo si scrive stampa.
+
+15
+00:00:57.575 --> 00:01:01.642
+Lo stesso vale per if, while, def, True e tante altre:
+
+16
+00:01:01.642 --> 00:01:05.775
+una riga scritta alla Python viene tradotta per intero.
+
+17
+00:01:05.775 --> 00:01:11.678
+In Leo Studio, poi, la riga proposta si applica con un clic sul pulsante Correggi,
+
+18
+00:01:11.678 --> 00:01:13.712
+oppure con Alt e Invio.
+
+19
+00:01:15.012 --> 00:01:18.698
+Ecco i tipi di errore che incontrerai più spesso.
+
+20
+00:01:18.698 --> 00:01:23.094
+L'errore di sintassi riguarda la forma: un fine dimenticato,
+
+21
+00:01:23.094 --> 00:01:25.228
+una parentesi non chiusa.
+
+22
+00:01:25.228 --> 00:01:29.043
+Leo lo trova prima ancora di eseguire il programma.
+
+23
+00:01:29.043 --> 00:01:32.082
+Errore di nome: un nome che non esiste.
+
+24
+00:01:32.082 --> 00:01:35.509
+Errore di tipo: tipi che non vanno d'accordo.
+
+25
+00:01:35.509 --> 00:01:39.324
+Errore di valore: il tipo è giusto ma il valore no.
+
+26
+00:01:39.324 --> 00:01:44.303
+E poi l'indice fuori dalla lista, la chiave che manca nel dizionario,
+
+27
+00:01:44.303 --> 00:01:47.665
+la divisione per zero e il file che non c'è.
+
+28
+00:01:48.965 --> 00:01:51.497
+A volte un errore si può prevedere,
+
+29
+00:01:51.497 --> 00:01:54.971
+e invece di fermare il programma vogliamo gestirlo.
+
+30
+00:01:54.971 --> 00:01:57.620
+Prova esegue le righe al suo interno.
+
+31
+00:01:57.620 --> 00:02:01.978
+Se nasce un errore di valore, il programma salta subito a cattura,
+
+32
+00:02:01.978 --> 00:02:04.627
+e l'errore finisce nella variabile e.
+
+33
+00:02:04.627 --> 00:02:09.161
+L'errore ha dei campi: tipo, messaggio, riga, colonna e suggerimento.
+
+34
+00:02:09.161 --> 00:02:13.047
+Infine, facoltativo, si esegue sempre: con o senza errore.
+
+35
+00:02:14.347 --> 00:02:18.536
+Puoi catturare un tipo preciso di errore, oppure qualunque errore,
+
+36
+00:02:18.536 --> 00:02:20.631
+scrivendo cattura senza tipo.
+
+37
+00:02:20.631 --> 00:02:25.103
+Puoi anche mettere più cattura uno dopo l'altro: vince il primo adatto.
+
+38
+00:02:25.103 --> 00:02:29.123
+Gli errori di sintassi invece non si catturano: vanno corretti,
+
+39
+00:02:29.123 --> 00:02:31.727
+perché il programma non parte nemmeno.
+
+40
+00:02:31.727 --> 00:02:35.237
+Un consiglio: cattura solo gli errori che sai gestire.
+
+41
+00:02:35.237 --> 00:02:39.653
+Nascondere tutti gli errori rende i problemi più difficili da trovare.
+
+42
+00:02:40.953 --> 00:02:43.918
+Anche tu puoi creare errori, con lancia.
+
+43
+00:02:43.918 --> 00:02:47.809
+È utile nelle funzioni, per rifiutare i dati sbagliati.
+
+44
+00:02:47.809 --> 00:02:51.947
+Ogni tipo di errore è anche una funzione che crea l'errore,
+
+45
+00:02:51.947 --> 00:02:54.047
+con il messaggio che vuoi.
+
+46
+00:02:54.047 --> 00:02:59.729
+Chi chiama la funzione può catturarlo con prova, esattamente come gli errori di Leo.
+
+47
+00:03:01.029 --> 00:03:06.090
+Per chi inizia c'è un'opzione in più: meno meno semplice, dalla riga di comando.
+
+48
+00:03:06.090 --> 00:03:09.080
+Il messaggio diventa più corto e amichevole,
+
+49
+00:03:09.080 --> 00:03:11.841
+mostra la correzione proposta e aggiunge
+
+50
+00:03:11.841 --> 00:03:15.119
+un piccolo esempio giusto dello stesso costrutto.
+
+51
+00:03:15.119 --> 00:03:17.764
+Perfetto in classe, con i più giovani.
+
+52
+00:03:19.064 --> 00:03:21.440
+Ecco il metodo che ti consiglio.
+
+53
+00:03:21.440 --> 00:03:25.122
+Primo: guarda la riga e il punto indicato dai segnini.
+
+54
+00:03:25.122 --> 00:03:28.032
+Secondo: leggi la spiegazione, con calma.
+
+55
+00:03:28.032 --> 00:03:30.230
+Terzo: prova il suggerimento.
+
+56
+00:03:30.230 --> 00:03:34.803
+E correggi un errore alla volta, rieseguendo il programma ogni volta.
+
+57
+00:03:34.803 --> 00:03:38.248
+A volte un solo errore ne provoca altri a cascata.
+
+58
+00:03:39.548 --> 00:03:40.256
+Quiz.
+
+59
+00:03:40.256 --> 00:03:42.433
+Testo tre più il numero quattro.
+
+60
+00:03:42.433 --> 00:03:43.630
+Che errore dà?
+
+61
+00:03:47.930 --> 00:03:51.327
+La risposta giusta è: Un errore di tipo:
+
+62
+00:03:51.327 --> 00:03:55.008
+un testo e un intero non si possono sommare.
+
+63
+00:03:55.008 --> 00:04:00.175
+La forma della riga è giusta, quindi non è un errore di sintassi.
+
+64
+00:04:01.475 --> 00:04:02.752
+Ricapitoliamo.
+
+65
+00:04:02.752 --> 00:04:07.340
+Un messaggio d'errore ha quattro parti e spesso anche la riga corretta.
+
+66
+00:04:07.340 --> 00:04:11.230
+Con prova e cattura gestisci gli errori che puoi prevedere,
+
+67
+00:04:11.230 --> 00:04:15.353
+con infine esegui sempre qualcosa, e con lancia segnali i tuoi.
+
+68
+00:04:16.653 --> 00:04:19.788
+Adesso sai leggere e gestire gli errori.
+
+69
+00:04:19.788 --> 00:04:24.816
+Il prossimo passo sono le librerie utili: file, date e numeri a caso.
