@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.467
+Il terzo progetto viene dritto dalla cucina: un timer.
+
+2
+00:00:04.467 --> 00:00:06.899
+Scegli i minuti, tocchi Avvia,
+
+3
+00:00:06.899 --> 00:00:10.995
+e quando il tempo finisce il telefono vibra e ti avvisa.
+
+4
+00:00:10.995 --> 00:00:15.602
+Poi aggiungiamo due pulsanti rapidi, per la pasta e per le uova.
+
+5
+00:00:16.902 --> 00:00:18.336
+Ecco il timer.
+
+6
+00:00:18.336 --> 00:00:22.832
+In alto il conto alla rovescia, grande, con minuti e secondi.
+
+7
+00:00:22.832 --> 00:00:26.155
+Qui è partito da nove minuti, e già scende.
+
+8
+00:00:26.155 --> 00:00:31.694
+Sotto, la casella dei minuti, da uno a centottanta, poi i tre pulsanti Avvia,
+
+9
+00:00:31.694 --> 00:00:35.799
+Pausa e Azzera, e l'etichetta Stato, che dice in corso.
+
+10
+00:00:35.799 --> 00:00:41.077
+In fondo i due pulsanti che aggiungiamo oggi: Pasta, nove minuti, e Uova,
+
+11
+00:00:41.077 --> 00:00:42.511
+cinque minuti.
+
+12
+00:00:42.511 --> 00:00:46.290
+Il punto di partenza è il modello Timer da cucina.
+
+13
+00:00:47.590 --> 00:00:50.429
+Il conto alla rovescia ragiona in secondi,
+
+14
+00:00:50.429 --> 00:00:53.553
+mentre per noi è più comodo scegliere i minuti.
+
+15
+00:00:53.553 --> 00:00:56.335
+Quindi, ogni volta che cambiano i minuti,
+
+16
+00:00:56.335 --> 00:01:01.106
+moltiplichiamo per sessanta e mettiamo il risultato nella proprietà secondi.
+
+17
+00:01:01.106 --> 00:01:05.762
+Subito dopo chiamiamo azzera: così il numero grande mostra il nuovo tempo,
+
+18
+00:01:05.762 --> 00:01:07.182
+pronto a partire.
+
+19
+00:01:08.482 --> 00:01:14.080
+I tre pulsanti chiamano i tre metodi del conto alla rovescia: avvia, ferma e azzera.
+
+20
+00:01:14.080 --> 00:01:16.757
+E ognuno aggiorna l'etichetta Stato,
+
+21
+00:01:16.757 --> 00:01:21.746
+così chi guarda il telefono da lontano capisce subito cosa sta succedendo.
+
+22
+00:01:21.746 --> 00:01:25.093
+Pausa usa ferma, che conserva il tempo rimasto:
+
+23
+00:01:25.093 --> 00:01:28.074
+toccando di nuovo Avvia si riparte da lì.
+
+24
+00:01:29.374 --> 00:01:31.119
+Quando arriva a zero,
+
+25
+00:01:31.119 --> 00:01:35.572
+il conto alla rovescia lampeggia e fa vibrare il telefono da solo.
+
+26
+00:01:35.572 --> 00:01:37.919
+In più manda l'evento scadenza.
+
+27
+00:01:37.919 --> 00:01:41.410
+Noi aggiorniamo lo stato e mostriamo un messaggio,
+
+28
+00:01:41.410 --> 00:01:44.599
+che resta sullo schermo finché non tocchi OK.
+
+29
+00:01:44.599 --> 00:01:48.150
+Così, anche se eri distratto, lo vedi quando torni.
+
+30
+00:01:49.450 --> 00:01:52.045
+Ora il miglioramento: due pulsanti rapidi.
+
+31
+00:01:52.045 --> 00:01:56.561
+Nel disegnatore aggiungi due pulsanti, chiamali Pulsante Pasta e Pulsante Uova,
+
+32
+00:01:56.561 --> 00:01:58.430
+e dagli lo stile secondario.
+
+33
+00:01:59.730 --> 00:02:03.319
+Invece di ripetere quattro righe in ogni pulsante,
+
+34
+00:02:03.319 --> 00:02:07.836
+scriviamo una funzione con un parametro: imposta minuti, di emme.
+
+35
+00:02:07.836 --> 00:02:10.992
+Emme è il numero di minuti che le passiamo.
+
+36
+00:02:10.992 --> 00:02:15.262
+La funzione scrive i minuti nella casella, calcola i secondi,
+
+37
+00:02:15.262 --> 00:02:17.984
+azzera il conto e aggiorna lo stato.
+
+38
+00:02:17.984 --> 00:02:21.697
+Poi il pulsante Pasta chiama imposta minuti di nove,
+
+39
+00:02:21.697 --> 00:02:24.915
+e il pulsante Uova imposta minuti di cinque.
+
+40
+00:02:24.915 --> 00:02:29.061
+Aggiungere il tè, tre minuti, è una questione di tre righe.
+
+41
+00:02:29.061 --> 00:02:32.650
+Nota: quando cambi Minuti punto valore dal codice,
+
+42
+00:02:32.650 --> 00:02:38.219
+sul telefono il suo evento cambio non scatta, perché non l'ha toccato una persona.
+
+43
+00:02:38.219 --> 00:02:42.179
+Per questo la funzione aggiorna da sola anche i secondi.
+
+44
+00:02:43.479 --> 00:02:48.639
+Un dettaglio: il conto alla rovescia può mostrare il tempo in tre formati.
+
+45
+00:02:48.639 --> 00:02:51.219
+Minuti e secondi, il predefinito.
+
+46
+00:02:51.219 --> 00:02:55.246
+Ore, minuti e secondi, comodo per un arrosto di due ore.
+
+47
+00:02:55.246 --> 00:02:58.581
+Oppure solo i secondi, perfetto per i giochi.
+
+48
+00:02:59.881 --> 00:03:00.664
+Quiz.
+
+49
+00:03:00.664 --> 00:03:03.554
+Qual è la differenza tra ferma e azzera?
+
+50
+00:03:05.554 --> 00:03:09.150
+Ferma mette in pausa e conserva il tempo rimasto.
+
+51
+00:03:09.150 --> 00:03:12.493
+Azzera riporta il conto al tempo di partenza.
+
+52
+00:03:21.093 --> 00:03:22.362
+Ricapitoliamo.
+
+53
+00:03:22.362 --> 00:03:25.766
+I minuti diventano secondi con una moltiplicazione.
+
+54
+00:03:25.766 --> 00:03:30.439
+Avvia, ferma e azzera governano il tempo, e scadenza ti avvisa alla fine.
+
+55
+00:03:30.439 --> 00:03:35.516
+E una funzione con un parametro ci ha dato tutti i pulsanti rapidi che vogliamo,
+
+56
+00:03:35.516 --> 00:03:37.420
+senza ripetere il codice.
+
+57
+00:03:38.720 --> 00:03:42.660
+Esercizio: aggiungi il pulsante per il tè, tre minuti.
+
+58
+00:03:42.660 --> 00:03:48.252
+Nel prossimo progetto costruiamo un quiz, con le domande in una lista e i punti.
+
+59
+00:03:48.252 --> 00:03:49.332
+A presto.
