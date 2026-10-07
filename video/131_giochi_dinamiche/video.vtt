@@ -1,0 +1,193 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.654
+In un gioco la parte difficile non è l'idea: è la fisica.
+
+2
+00:00:04.654 --> 00:00:08.936
+Il personaggio che cade, salta, si ferma sulle piattaforme,
+
+3
+00:00:08.936 --> 00:00:13.027
+raccoglie le monete e perde una vita toccando un nemico.
+
+4
+00:00:13.027 --> 00:00:18.459
+In Leo tutto questo si assegna agli oggetti, senza codice: sono le dinamiche.
+
+5
+00:00:19.759 --> 00:00:23.907
+Una dinamica è un comportamento pronto, con qualche regolazione.
+
+6
+00:00:23.907 --> 00:00:28.689
+Giocatore si muove con le frecce, con il joystick o inclinando il telefono.
+
+7
+00:00:28.689 --> 00:00:32.664
+Gravità lo fa cadere e saltare, e si ferma sulle piattaforme.
+
+8
+00:00:32.664 --> 00:00:36.639
+Raccoglibile dà punti e sparisce, nemico pattuglia o insegue.
+
+9
+00:00:36.639 --> 00:00:41.018
+E poi rimbalza, trascinabile, generatore, che crea copie ogni tanto,
+
+10
+00:00:41.018 --> 00:00:43.841
+e la telecamera che segue il personaggio.
+
+11
+00:00:45.141 --> 00:00:49.627
+Nel pannello delle proprietà, sul telefono e in Leo Studio,
+
+12
+00:00:49.627 --> 00:00:52.105
+ogni oggetto ha le dinamiche:
+
+13
+00:00:52.105 --> 00:00:56.591
+le aggiungi con un pulsante e le regoli con i campi giusti,
+
+14
+00:00:56.591 --> 00:00:59.671
+come la velocità o la forza del salto.
+
+15
+00:00:59.671 --> 00:01:04.893
+Un oggetto può averne più di una: un eroe è giocatore e ha la gravità.
+
+16
+00:01:04.893 --> 00:01:07.906
+Il movimento e gli urti li calcola il
+
+17
+00:01:07.906 --> 00:01:11.723
+motore di gioco a sessanta fotogrammi al secondo;
+
+18
+00:01:11.723 --> 00:01:14.937
+il tuo programma riceve solo gli eventi.
+
+19
+00:01:16.237 --> 00:01:21.607
+E ci sono gli oggetti da gioco, già pronti con le dinamiche giuste: personaggio,
+
+20
+00:01:21.607 --> 00:01:24.231
+nemico, moneta, piattaforma, porta.
+
+21
+00:01:24.231 --> 00:01:29.784
+Il mondo a piastrelle per disegnare i livelli, lo sfondo che scorre, la telecamera.
+
+22
+00:01:29.784 --> 00:01:32.836
+Le vite, il timer di gioco, la classifica.
+
+23
+00:01:32.836 --> 00:01:35.765
+I comandi sullo schermo per il telefono.
+
+24
+00:01:35.765 --> 00:01:41.135
+E per i giochi da tavolo: dado, mazzo di carte, scacchiera, ruota della fortuna.
+
+25
+00:01:42.435 --> 00:01:47.561
+Il codice che resta è quello che racconta le regole del tuo gioco.
+
+26
+00:01:47.561 --> 00:01:51.439
+Quando l'eroe tocca una moneta, un punto in più.
+
+27
+00:01:51.439 --> 00:01:56.218
+Il nome dopo tocca dice con chi: qui, con gli oggetti moneta.
+
+28
+00:01:56.218 --> 00:02:01.413
+Quando tocca un nemico, le vite ne tolgono una, e l'eroe si scuote.
+
+29
+00:02:01.413 --> 00:02:05.292
+E quando le vite finiscono, la partita è finita.
+
+30
+00:02:06.592 --> 00:02:09.625
+Gli oggetti da gioco hanno i loro metodi,
+
+31
+00:02:09.625 --> 00:02:15.073
+e quelli che fanno un'azione si scrivono anche senza parentesi, come un comando:
+
+32
+00:02:15.073 --> 00:02:16.931
+dado uno punto lancia.
+
+33
+00:02:16.931 --> 00:02:20.026
+Il risultato arriva con l'evento lanciato.
+
+34
+00:02:20.026 --> 00:02:25.721
+E le dinamiche si cambiano mentre il gioco gira: aggiungi dinamica e togli dinamica.
+
+35
+00:02:25.721 --> 00:02:30.674
+Qui, raccolto lo scudo, l'eroe smette di cadere e si sposta con il dito.
+
+36
+00:02:31.974 --> 00:02:36.292
+Un consiglio da sviluppatori di giochi: prima le regole, poi la grafica.
+
+37
+00:02:36.292 --> 00:02:40.124
+Costruisci il livello con rettangoli colorati, prova, correggi.
+
+38
+00:02:40.124 --> 00:02:45.035
+Quando il gioco funziona, sostituisci i rettangoli con gli elementi della galleria.
+
+39
+00:02:46.335 --> 00:02:47.236
+Domanda.
+
+40
+00:02:47.236 --> 00:02:51.233
+Che cosa devi scrivere per far cadere e saltare un personaggio?
+
+41
+00:02:55.533 --> 00:02:59.542
+Niente, risposta B: basta la dinamica gravità e salto.
+
+42
+00:02:59.542 --> 00:03:02.064
+Il motore di gioco fa il resto.
+
+43
+00:03:03.364 --> 00:03:04.615
+Ricapitoliamo.
+
+44
+00:03:04.615 --> 00:03:09.677
+Le dinamiche danno agli oggetti movimento, gravità, urti e raccolte senza codice.
+
+45
+00:03:09.677 --> 00:03:12.237
+Gli oggetti da gioco sono già pronti.
+
+46
+00:03:12.237 --> 00:03:17.242
+Il codice racconta solo le regole, con gli eventi come quando eroe tocca moneta.
+
+47
+00:03:18.542 --> 00:03:23.786
+Esercizio: un livello con tre piattaforme, cinque monete e un nemico che pattuglia.
+
+48
+00:03:23.786 --> 00:03:28.338
+Quando le monete finiscono, compare la porta per il livello successivo.

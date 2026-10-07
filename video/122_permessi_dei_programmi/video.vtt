@@ -1,0 +1,149 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.199
+Un programma ricevuto da un collega,
+
+2
+00:00:03.199 --> 00:00:08.230
+scaricato da un sito o scritto con l'aiuto di un'intelligenza artificiale:
+
+3
+00:00:08.230 --> 00:00:12.586
+prima di eseguirlo, vuoi sapere che cosa farà sul tuo computer.
+
+4
+00:00:12.586 --> 00:00:17.739
+In questo video vediamo i permessi dei programmi Leo: come Leo te li chiede,
+
+5
+00:00:17.739 --> 00:00:20.500
+e come li dichiari nei tuoi progetti.
+
+6
+00:00:21.800 --> 00:00:25.355
+Un programma Leo lavora liberamente nella sua cartella.
+
+7
+00:00:25.355 --> 00:00:30.209
+Per uscirne serve un permesso: leggere o scrivere file altrove, usare la rete,
+
+8
+00:00:30.209 --> 00:00:32.240
+avviare comandi del sistema.
+
+9
+00:00:32.240 --> 00:00:36.416
+Sul telefono vale lo stesso per fotocamera, microfono e posizione,
+
+10
+00:00:36.416 --> 00:00:39.351
+con le richieste di Android che già conosci.
+
+11
+00:00:40.651 --> 00:00:46.420
+Quando un programma prova a fare una di queste cose, Leo si ferma e te lo chiede:
+
+12
+00:00:46.420 --> 00:00:51.281
+quale programma, che cosa vuole fare, e con quale file o indirizzo.
+
+13
+00:00:51.281 --> 00:00:54.976
+Puoi rispondere sì, solo questa volta, oppure no.
+
+14
+00:00:54.976 --> 00:00:59.578
+Se dici no, il programma riceve un errore spiegato in italiano,
+
+15
+00:00:59.578 --> 00:01:02.625
+e può continuare senza quella funzione.
+
+16
+00:01:02.625 --> 00:01:06.773
+Le scelte fatte si rivedono, e si revocano, quando vuoi.
+
+17
+00:01:08.073 --> 00:01:13.628
+Nei tuoi progetti, i permessi si dichiarano nel file del progetto: per esempio,
+
+18
+00:01:13.628 --> 00:01:17.969
+questo programma legge la cartella documenti e usa internet.
+
+19
+00:01:17.969 --> 00:01:21.672
+Chi riceve il progetto li vede prima di eseguirlo,
+
+20
+00:01:21.672 --> 00:01:24.545
+come succede con le app del telefono.
+
+21
+00:01:24.545 --> 00:01:27.929
+E un programma che chiede solo quello che gli
+
+22
+00:01:27.929 --> 00:01:30.930
+serve è un programma di cui ci si fida.
+
+23
+00:01:32.230 --> 00:01:37.161
+Con un programma ricevuto da altri, leggi i permessi prima di eseguirlo,
+
+24
+00:01:37.161 --> 00:01:40.058
+e nel dubbio concedi solo questa volta.
+
+25
+00:01:40.058 --> 00:01:44.928
+E ricorda leo spiega: ti racconta in italiano che cosa fa il programma,
+
+26
+00:01:44.928 --> 00:01:47.332
+riga per riga, senza eseguirlo.
+
+27
+00:01:48.632 --> 00:01:49.542
+Domanda.
+
+28
+00:01:49.542 --> 00:01:54.149
+Un programma vuole scrivere in una cartella di sistema, e tu rispondi no.
+
+29
+00:01:54.149 --> 00:01:55.571
+Che cosa succede?
+
+30
+00:01:59.871 --> 00:02:03.345
+Il programma riceve un errore spiegato, e può continuare.
+
+31
+00:02:03.345 --> 00:02:04.361
+Risposta B.
+
+32
+00:02:05.661 --> 00:02:06.984
+Ricapitoliamo.
+
+33
+00:02:06.984 --> 00:02:12.518
+Uscire dalla propria cartella, usare la rete o avviare comandi richiede un permesso.
+
+34
+00:02:12.518 --> 00:02:17.451
+Leo te lo chiede in modo chiaro, e i progetti dichiarano quello che usano.
+
+35
+00:02:17.451 --> 00:02:22.804
+E per un programma sconosciuto, prima leo spiega, poi, se ti convince, lo esegui.
+
+36
+00:02:24.104 --> 00:02:28.344
+Esercizio: apri un progetto che hai ricevuto da qualcun altro,
+
+37
+00:02:28.344 --> 00:02:33.492
+leggi i permessi che dichiara, e fatti raccontare il programma da leo spiega.

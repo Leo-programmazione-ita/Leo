@@ -1,0 +1,181 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.102
+Un gioco o un'app hanno bisogno di grafica e di suoni.
+
+2
+00:00:04.102 --> 00:00:06.601
+Disegnarli da zero richiede giorni.
+
+3
+00:00:06.601 --> 00:00:11.598
+La galleria di Leo ne contiene migliaia, pronti da usare e con licenza libera:
+
+4
+00:00:11.598 --> 00:00:16.827
+personaggi animati, nemici, piastrelle, sfondi, suoni, musiche, icone e caratteri.
+
+5
+00:00:18.127 --> 00:00:23.272
+La galleria si apre dal disegnatore del telefono, con il tasto galleria,
+
+6
+00:00:23.272 --> 00:00:27.131
+e da Leo Studio, dal menu visualizza o con alt otto.
+
+7
+00:00:27.131 --> 00:00:30.668
+Telefono e computer vedono gli stessi elementi.
+
+8
+00:00:30.668 --> 00:00:35.492
+Gli elementi sono divisi per categoria, e la ricerca è in italiano:
+
+9
+00:00:35.492 --> 00:00:39.351
+capisce i plurali e non bada ad accenti e maiuscole.
+
+10
+00:00:40.651 --> 00:00:43.448
+Nel disegnatore non serve scrivere niente:
+
+11
+00:00:43.448 --> 00:00:48.257
+tocchi un elemento e poi aggiungi alla finestra, oppure lo trascini dove vuoi.
+
+12
+00:00:48.257 --> 00:00:52.732
+Leo sceglie l'oggetto giusto: un personaggio diventa un oggetto animato,
+
+13
+00:00:52.732 --> 00:00:55.249
+un pulsante un pulsante con immagine,
+
+14
+00:00:55.249 --> 00:00:59.835
+uno sfondo l'immagine di sfondo della finestra, un suono un oggetto suono.
+
+15
+00:01:01.135 --> 00:01:06.792
+Dal codice ogni elemento ha un nome semplice: galleria, due punti, categoria e nome.
+
+16
+00:01:06.792 --> 00:01:09.989
+Si scrive ovunque va un'immagine o un suono.
+
+17
+00:01:09.989 --> 00:01:13.125
+Il valore galleria ha i metodi per cercare,
+
+18
+00:01:13.125 --> 00:01:17.675
+trovare il primo elemento che corrisponde, elencare una categoria,
+
+19
+00:01:17.675 --> 00:01:19.336
+e suonare un suono.
+
+20
+00:01:19.336 --> 00:01:24.808
+E licenza ti dice con quale licenza è distribuito un elemento, e chi l'ha creato.
+
+21
+00:01:26.108 --> 00:01:28.280
+Gli elementi hanno tre stati.
+
+22
+00:01:28.280 --> 00:01:30.510
+Gli aperti sono pronti subito.
+
+23
+00:01:30.510 --> 00:01:32.740
+I compressi, con la scatolina,
+
+24
+00:01:32.740 --> 00:01:37.964
+stanno in un pacchetto dentro Leo e si estraggono al primo tocco, senza internet.
+
+25
+00:01:37.964 --> 00:01:41.954
+Quelli nella nuvola sono pacchetti extra di suoni e musiche:
+
+26
+00:01:41.954 --> 00:01:46.650
+Leo chiede prima di scaricarli, poi controlla impronta e firma digitale,
+
+27
+00:01:46.650 --> 00:01:49.056
+e da lì funzionano anche offline.
+
+28
+00:01:49.056 --> 00:01:53.047
+Il codice dei programmi non può scaricare pacchetti da solo.
+
+29
+00:01:54.347 --> 00:01:57.246
+Quando crei l'eseguibile o l'app Android,
+
+30
+00:01:57.246 --> 00:02:02.631
+Leo cerca nel progetto i riferimenti alla galleria e copia solo gli elementi usati:
+
+31
+00:02:02.631 --> 00:02:04.288
+l'app resta leggera.
+
+32
+00:02:04.288 --> 00:02:09.377
+E aggiunge il file dei crediti, con titolo, autore e licenza di ogni elemento.
+
+33
+00:02:09.377 --> 00:02:14.347
+Molte licenze libere chiedono di citare l'autore: così sei sempre in regola.
+
+34
+00:02:15.647 --> 00:02:16.669
+Domanda.
+
+35
+00:02:16.669 --> 00:02:20.950
+Crei l'APK di un gioco che usa tre elementi della galleria.
+
+36
+00:02:20.950 --> 00:02:22.994
+Che cosa entra nell'app?
+
+37
+00:02:27.294 --> 00:02:30.235
+Solo i tre elementi usati, con i crediti.
+
+38
+00:02:30.235 --> 00:02:31.376
+Risposta B.
+
+39
+00:02:32.676 --> 00:02:34.044
+Ricapitoliamo.
+
+40
+00:02:34.044 --> 00:02:37.775
+La galleria si apre dal disegnatore e da Leo Studio,
+
+41
+00:02:37.775 --> 00:02:42.252
+e gli elementi si aggiungono con un tocco o si usano dal codice.
+
+42
+00:02:42.252 --> 00:02:47.226
+Aperti, compressi o nella nuvola, e nell'app finale solo quello che usi,
+
+43
+00:02:47.226 --> 00:02:48.594
+con i crediti.
+
+44
+00:02:49.894 --> 00:02:53.879
+Nel prossimo video usiamo questi elementi in un gioco vero,
+
+45
+00:02:53.879 --> 00:02:58.874
+con gli oggetti da gioco e le dinamiche: movimento, gravità, nemici, monete.

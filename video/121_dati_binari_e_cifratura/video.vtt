@@ -1,0 +1,229 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.628
+Sotto ogni file ci sono i byte: numeri da zero a duecentocinquantacinque.
+
+2
+00:00:05.628 --> 00:00:10.439
+In questo video li guardiamo da vicino, scopriamo i file travestiti,
+
+3
+00:00:10.439 --> 00:00:16.010
+e poi cifriamo e firmiamo dati sul serio, con gli algoritmi che usano le banche.
+
+4
+00:00:17.310 --> 00:00:23.138
+Dati binari crea una sequenza di byte da un testo, da una lista di numeri,
+
+5
+00:00:23.138 --> 00:00:25.909
+da un esadecimale o da un file.
+
+6
+00:00:25.909 --> 00:00:31.239
+Si può vedere come lista, come esadecimale, come Base64 o come bit.
+
+7
+00:00:31.239 --> 00:00:37.280
+E numero in byte scrive un numero su più byte, nell'ordine che vuoi: piccolo,
+
+8
+00:00:37.280 --> 00:00:42.397
+come nei file del PC, o grande, come nei protocolli di internet.
+
+9
+00:00:42.397 --> 00:00:47.514
+È quello che in Python si fa con struct, ma con parole italiane.
+
+10
+00:00:48.814 --> 00:00:53.159
+Riconosci tipo file guarda i primi byte, la firma del formato,
+
+11
+00:00:53.159 --> 00:00:55.083
+e non si fida del nome.
+
+12
+00:00:55.083 --> 00:00:59.427
+Un programma che si chiama fattura punto pdf riceve un avviso:
+
+13
+00:00:59.427 --> 00:01:03.647
+è la difesa contro i file travestiti che arrivano per posta.
+
+14
+00:01:03.647 --> 00:01:08.178
+Vista esadecimale mostra i byte come gli strumenti professionali.
+
+15
+00:01:08.178 --> 00:01:11.840
+E l'entropia misura quanto i byte sono disordinati:
+
+16
+00:01:11.840 --> 00:01:16.371
+un testo sta tra quattro e cinque, un file cifrato vicino a otto.
+
+17
+00:01:16.371 --> 00:01:19.970
+Se i tuoi documenti diventano tutti vicini a otto,
+
+18
+00:01:19.970 --> 00:01:23.508
+potrebbero essere stati cifrati da un ransomware.
+
+19
+00:01:24.808 --> 00:01:29.241
+Cifra testo rende un testo illeggibile a chi non ha la password;
+
+20
+00:01:29.241 --> 00:01:31.888
+decifra testo lo riporta in chiaro.
+
+21
+00:01:31.888 --> 00:01:36.136
+Il cifrario è AES a duecentocinquantasei bit in modalità GCM,
+
+22
+00:01:36.136 --> 00:01:40.507
+e la chiave si ricava dalla password con scrypt, lento apposta.
+
+23
+00:01:40.507 --> 00:01:44.263
+GCM controlla anche che nessuno abbia toccato i dati:
+
+24
+00:01:44.263 --> 00:01:49.003
+con la password sbagliata o con un byte cambiato si riceve un errore,
+
+25
+00:01:49.003 --> 00:01:50.912
+mai un testo sbagliato.
+
+26
+00:01:50.912 --> 00:01:55.222
+Cifra file crea una copia cifrata; l'originale lo cancelli tu,
+
+27
+00:01:55.222 --> 00:01:57.869
+solo dopo aver provato a decifrare.
+
+28
+00:01:59.169 --> 00:02:02.974
+Un principio di sicurezza: mai inventare un cifrario.
+
+29
+00:02:02.974 --> 00:02:08.712
+Per questo cifratura e firme usano il pacchetto cryptography, lo standard di Python;
+
+30
+00:02:08.712 --> 00:02:14.326
+se non è installato, Leo te lo dice con un messaggio chiaro, invece di fare finta.
+
+31
+00:02:14.326 --> 00:02:19.502
+E ricorda: se dimentichi la password, i dati cifrati sono persi per sempre.
+
+32
+00:02:19.502 --> 00:02:22.434
+Usa una frase lunga, e conservala bene.
+
+33
+00:02:23.734 --> 00:02:27.994
+Le firme digitali usano due chiavi: la privata firma,
+
+34
+00:02:27.994 --> 00:02:34.279
+e va custodita come una password; la pubblica si dà a tutti, e serve a verificare.
+
+35
+00:02:34.279 --> 00:02:39.795
+Chi riceve il listino e la firma controlla, con la tua chiave pubblica,
+
+36
+00:02:39.795 --> 00:02:44.963
+che il file venga proprio da te e che non sia cambiato di un byte.
+
+37
+00:02:44.963 --> 00:02:50.130
+A differenza della firma HMAC, qui chi verifica non ha il segreto:
+
+38
+00:02:50.130 --> 00:02:52.714
+non può firmare al posto tuo.
+
+39
+00:02:54.014 --> 00:02:59.400
+Impronta cartella fotografa una cartella intera, file per file; confronta impronte,
+
+40
+00:02:59.400 --> 00:03:03.544
+giorni dopo, dice che cosa è stato aggiunto, tolto o cambiato.
+
+41
+00:03:03.544 --> 00:03:07.273
+E per la compressione, comprimi dati e decomprimi dati,
+
+42
+00:03:07.273 --> 00:03:10.114
+con un limite di sicurezza contro i file
+
+43
+00:03:10.114 --> 00:03:13.606
+minuscoli che si gonfiano fino a riempire il disco.
+
+44
+00:03:14.906 --> 00:03:15.754
+Domanda.
+
+45
+00:03:15.754 --> 00:03:18.988
+Con la password sbagliata, che cosa fa decifra testo?
+
+46
+00:03:23.288 --> 00:03:25.422
+Dà un errore, risposta B.
+
+47
+00:03:25.422 --> 00:03:29.819
+GCM se ne accorge, e non restituisce mai un testo sbagliato.
+
+48
+00:03:31.119 --> 00:03:32.491
+Ricapitoliamo.
+
+49
+00:03:32.491 --> 00:03:35.985
+I byte si leggono e si scrivono con dati binari.
+
+50
+00:03:35.985 --> 00:03:41.723
+I file travestiti si smascherano dai primi byte, e l'entropia rivela i file cifrati.
+
+51
+00:03:41.723 --> 00:03:45.965
+Cifra testo e cifra file proteggono i dati con una password,
+
+52
+00:03:45.965 --> 00:03:49.895
+e le firme digitali dimostrano chi ha prodotto un file.
+
+53
+00:03:51.195 --> 00:03:52.191
+Esercizio:
+
+54
+00:03:52.191 --> 00:03:54.901
+scrivi un programma che controlla il vero
+
+55
+00:03:54.901 --> 00:03:57.888
+tipo di tutti i file della cartella scaricati,
+
+56
+00:03:57.888 --> 00:04:00.100
+e ti avvisa dei file travestiti.
+
+57
+00:04:00.100 --> 00:04:03.032
+Nel prossimo video: i permessi dei programmi.
