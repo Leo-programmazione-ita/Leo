@@ -1,0 +1,241 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.588
+Un numero scritto si legge,
+
+2
+00:00:02.588 --> 00:00:07.420
+ma una barra che si riempie o una lancetta che sale si capiscono al volo.
+
+3
+00:00:07.420 --> 00:00:11.775
+In questo video vediamo gli oggetti che mostrano le informazioni:
+
+4
+00:00:11.775 --> 00:00:16.010
+prima la famiglia Visualizzazione, poi quella degli Indicatori.
+
+5
+00:00:17.310 --> 00:00:19.259
+In alto c'è un'immagine.
+
+6
+00:00:19.259 --> 00:00:23.401
+Il pulsante Avanza fa crescere la barra di dieci alla volta.
+
+7
+00:00:23.401 --> 00:00:27.055
+La barra di avanzamento ha valore, minimo e massimo,
+
+8
+00:00:27.055 --> 00:00:31.806
+e con mostra percentuale scrive da sola il sessanta per cento accanto.
+
+9
+00:00:31.806 --> 00:00:34.913
+Quando arriviamo al massimo ci fermiamo lì,
+
+10
+00:00:34.913 --> 00:00:39.237
+e la barra di stato in fondo mostra Completato per tre secondi:
+
+11
+00:00:39.237 --> 00:00:41.491
+il tremila sono millisecondi.
+
+12
+00:00:41.491 --> 00:00:45.389
+La barra di stato è la striscia in basso della finestra:
+
+13
+00:00:45.389 --> 00:00:48.739
+perfetta per brevi messaggi che non disturbano.
+
+14
+00:00:50.039 --> 00:00:53.903
+Per l'oggetto immagine, nel pannello Aspetto tocca Scegli,
+
+15
+00:00:53.903 --> 00:00:57.064
+e prendi una foto dalla galleria del telefono.
+
+16
+00:00:57.064 --> 00:00:59.054
+Leo la copia dentro l'app.
+
+17
+00:00:59.054 --> 00:01:02.391
+La proprietà adatta decide come sta nello spazio.
+
+18
+00:01:02.391 --> 00:01:05.260
+Adatta la mostra tutta, senza deformarla.
+
+19
+00:01:05.260 --> 00:01:09.007
+Riempi copre tutto lo spazio e taglia quello che avanza,
+
+20
+00:01:09.007 --> 00:01:11.641
+come nella nostra foto del paesaggio.
+
+21
+00:01:11.641 --> 00:01:15.563
+Estendi la stira, e nessuno la lascia alla sua misura vera.
+
+22
+00:01:15.563 --> 00:01:19.427
+E anche l'immagine riceve il clic: puoi farne un pulsante.
+
+23
+00:01:20.727 --> 00:01:25.625
+Passiamo alla famiglia degli Indicatori: oggetti che sembrano presi da un cruscotto.
+
+24
+00:01:26.925 --> 00:01:28.546
+Ecco il cruscotto.
+
+25
+00:01:28.546 --> 00:01:32.787
+Il quadrante ha una lancetta, come il tachimetro di un'auto,
+
+26
+00:01:32.787 --> 00:01:36.216
+e la sua unità di misura, qui chilometri orari.
+
+27
+00:01:36.216 --> 00:01:40.457
+Il semaforo ha quattro stati: rosso, giallo, verde e spento.
+
+28
+00:01:40.457 --> 00:01:44.884
+E la valutazione mostra un voto a stelle, che si dà toccandole.
+
+29
+00:01:46.184 --> 00:01:48.835
+Il cursore del gas muove la lancetta:
+
+30
+00:01:48.835 --> 00:01:52.428
+basta copiare il suo valore nel valore del quadrante.
+
+31
+00:01:52.428 --> 00:01:54.903
+La parte interessante è la soglia.
+
+32
+00:01:54.903 --> 00:01:58.555
+Il quadrante ha una proprietà soglia, qui centotrenta,
+
+33
+00:01:58.555 --> 00:02:03.150
+e quando la lancetta la supera manda da solo l'evento soglia superata.
+
+34
+00:02:03.150 --> 00:02:07.215
+Tu non devi controllare niente con se: scrivi solo cosa fare,
+
+35
+00:02:07.215 --> 00:02:09.041
+cioè l'avviso Rallenta.
+
+36
+00:02:10.341 --> 00:02:13.110
+Il semaforo ha la proprietà stato.
+
+37
+00:02:13.110 --> 00:02:18.779
+Ogni tocco del pulsante lo fa girare: dal rosso al verde, dal verde al giallo,
+
+38
+00:02:18.779 --> 00:02:21.218
+dal giallo di nuovo al rosso.
+
+39
+00:02:21.218 --> 00:02:26.294
+La valutazione manda l'evento cambio con il numero di stelle toccate.
+
+40
+00:02:26.294 --> 00:02:30.579
+Se tocchi di nuovo l'ultima stella, il voto torna a zero.
+
+41
+00:02:30.579 --> 00:02:35.061
+Con sola lettura uguale vero le stelle si mostrano soltanto,
+
+42
+00:02:35.061 --> 00:02:40.137
+e non si possono più cambiare: utile per far vedere un voto già dato.
+
+43
+00:02:41.437 --> 00:02:46.383
+Un consiglio: gli indicatori sono bellissimi perché si capiscono senza leggere.
+
+44
+00:02:46.383 --> 00:02:50.135
+Però accanto al colore scrivi sempre anche un breve testo,
+
+45
+00:02:50.135 --> 00:02:53.660
+come abbiamo fatto con l'etichetta sotto il cruscotto.
+
+46
+00:02:53.660 --> 00:02:57.355
+Non tutte le persone distinguono bene il rosso dal verde.
+
+47
+00:02:58.655 --> 00:02:59.063
+Quiz.
+
+48
+00:03:03.363 --> 00:03:07.853
+Quale evento arriva quando la lancetta del quadrante supera la soglia?
+
+49
+00:03:09.853 --> 00:03:12.112
+La risposta è soglia superata.
+
+50
+00:03:12.112 --> 00:03:15.975
+Il quadrante controlla da solo, tu scrivi solo cosa fare.
+
+51
+00:03:17.275 --> 00:03:18.522
+Ricapitoliamo.
+
+52
+00:03:18.522 --> 00:03:21.584
+L'immagine si adatta allo spazio come vuoi tu.
+
+53
+00:03:21.584 --> 00:03:24.815
+La barra di avanzamento va dal minimo al massimo,
+
+54
+00:03:24.815 --> 00:03:27.649
+e la barra di stato mostra messaggi brevi.
+
+55
+00:03:27.649 --> 00:03:28.670
+Quadrante,
+
+56
+00:03:28.670 --> 00:03:33.602
+semaforo e valutazione trasformano i numeri in qualcosa che si capisce al volo.
+
+57
+00:03:34.902 --> 00:03:37.895
+Esercizio: quando la lancetta supera la soglia,
+
+58
+00:03:37.895 --> 00:03:40.399
+fai diventare rosso anche il semaforo.
+
+59
+00:03:40.399 --> 00:03:45.296
+Nel prossimo video scopriamo gli oggetti che esistono solo in Leo: codice fiscale,
+
+60
+00:03:45.296 --> 00:03:47.963
+IBAN, targa, comuni e festività italiane.
