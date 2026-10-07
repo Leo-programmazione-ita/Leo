@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.122
+Il secondo progetto è un'app che userai davvero: la lista della spesa.
+
+2
+00:00:05.122 --> 00:00:09.269
+Partiamo dal modello, e poi le insegniamo due cose importanti:
+
+3
+00:00:09.269 --> 00:00:12.350
+chiedere conferma prima di cancellare tutto,
+
+4
+00:00:12.350 --> 00:00:15.194
+e non scrivere due volte la stessa cosa.
+
+5
+00:00:16.494 --> 00:00:18.239
+Ecco dove arriviamo.
+
+6
+00:00:18.239 --> 00:00:21.917
+In alto una casella per scrivere e un pulsante più.
+
+7
+00:00:21.917 --> 00:00:27.526
+Al centro l'elenco: qui ho aggiunto pane, latte, mele e caffè, e ho toccato latte,
+
+8
+00:00:27.526 --> 00:00:29.147
+che è evidenziato.
+
+9
+00:00:29.147 --> 00:00:33.385
+In basso Togli, rosso perché cancella, e Svuota, a contorno.
+
+10
+00:00:33.385 --> 00:00:36.689
+E sotto, il conteggio delle cose da comprare.
+
+11
+00:00:36.689 --> 00:00:41.800
+Per averla, crea una nuova app con finestre dal modello Lista della spesa.
+
+12
+00:00:43.100 --> 00:00:44.914
+Prima funzione: conta.
+
+13
+00:00:44.914 --> 00:00:49.086
+La proprietà elementi dell'elenco è una lista normale di Leo,
+
+14
+00:00:49.086 --> 00:00:52.291
+quindi lunghezza ci dice quante voci ci sono.
+
+15
+00:00:52.291 --> 00:00:57.854
+Se sono zero scriviamo la lista è vuota, altrimenti quante cose ci sono da comprare.
+
+16
+00:00:57.854 --> 00:01:01.059
+La chiameremo ogni volta che la lista cambia.
+
+17
+00:01:02.359 --> 00:01:06.466
+Si può aggiungere una voce in due modi: toccando il più,
+
+18
+00:01:06.466 --> 00:01:11.472
+oppure premendo Invio sulla tastiera del telefono, che è molto comodo.
+
+19
+00:01:11.472 --> 00:01:16.221
+Tutti e due gli eventi chiamano la stessa funzione, aggiungi voce.
+
+20
+00:01:16.221 --> 00:01:20.649
+Così il codice è scritto una volta sola, e se lo miglioriamo,
+
+21
+00:01:20.649 --> 00:01:22.767
+migliora per tutti e due.
+
+22
+00:01:24.067 --> 00:01:25.957
+Ecco il miglioramento.
+
+23
+00:01:25.957 --> 00:01:29.232
+Prendiamo il testo e lo puliamo dagli spazi.
+
+24
+00:01:29.232 --> 00:01:34.334
+Se è vuoto usciamo subito, con restituisci: non si aggiungono voci vuote.
+
+25
+00:01:34.334 --> 00:01:38.995
+Poi la riga evidenziata: se cosa è già negli elementi dell'elenco.
+
+26
+00:01:38.995 --> 00:01:43.089
+La parola in controlla se un valore sta dentro una lista.
+
+27
+00:01:43.089 --> 00:01:47.057
+Se c'è già, un messaggio avvisa e la casella si scuote.
+
+28
+00:01:47.057 --> 00:01:50.774
+Altrimenti aggiungiamo la voce e contiamo di nuovo.
+
+29
+00:01:50.774 --> 00:01:54.679
+In tutti e due i casi, alla fine svuotiamo la casella.
+
+30
+00:01:55.979 --> 00:02:00.127
+Per togliere una voce serve sapere quale è stata toccata.
+
+31
+00:02:00.127 --> 00:02:04.211
+Lo dice indice selezionato: la posizione, da zero in su,
+
+32
+00:02:04.211 --> 00:02:07.211
+oppure meno uno se non è scelto niente.
+
+33
+00:02:07.211 --> 00:02:11.997
+Se è zero o più, rimuoviamo quella posizione con il metodo rimuovi.
+
+34
+00:02:11.997 --> 00:02:15.571
+Se è meno uno, spieghiamo gentilmente cosa fare.
+
+35
+00:02:16.871 --> 00:02:21.069
+Svuotare tutta la lista per sbaglio sarebbe un piccolo disastro.
+
+36
+00:02:21.069 --> 00:02:23.577
+Per questo aggiungiamo una domanda.
+
+37
+00:02:23.577 --> 00:02:28.708
+La funzione domanda apre una finestrella con la domanda e due pulsanti, sì e no,
+
+38
+00:02:28.708 --> 00:02:30.749
+e restituisce vero o falso.
+
+39
+00:02:30.749 --> 00:02:33.722
+Solo se la risposta è sì svuotiamo davvero.
+
+40
+00:02:33.722 --> 00:02:38.912
+Regola d'oro: prima di cancellare qualcosa di importante, chiedi sempre conferma.
+
+41
+00:02:40.212 --> 00:02:42.800
+Hai notato gli stili dei pulsanti?
+
+42
+00:02:42.800 --> 00:02:46.866
+Togli usa lo stile pericolo, rosso pieno, perché cancella.
+
+43
+00:02:46.866 --> 00:02:52.103
+Svuota è a contorno, più discreto, perché si usa raramente e chiede conferma.
+
+44
+00:02:52.103 --> 00:02:56.539
+Il colore aiuta chi usa l'app a capire, prima ancora di leggere.
+
+45
+00:02:57.839 --> 00:02:58.417
+Quiz.
+
+46
+00:02:58.417 --> 00:03:00.595
+Nessuna voce dell'elenco è stata toccata.
+
+47
+00:03:00.595 --> 00:03:02.329
+Quanto vale indice selezionato?
+
+48
+00:03:04.329 --> 00:03:05.408
+Meno uno.
+
+49
+00:03:05.408 --> 00:03:10.043
+Zero invece è la prima voce, perché le posizioni partono da zero.
+
+50
+00:03:18.643 --> 00:03:19.840
+Ricapitoliamo.
+
+51
+00:03:19.840 --> 00:03:23.106
+L'elenco si gestisce con aggiungi, rimuovi e svuota.
+
+52
+00:03:23.106 --> 00:03:25.446
+Una funzione sola serve due eventi.
+
+53
+00:03:25.446 --> 00:03:30.072
+La parola in evita i doppioni, e domanda chiede conferma prima di cancellare.
+
+54
+00:03:31.372 --> 00:03:32.445
+Esercizio:
+
+55
+00:03:32.445 --> 00:03:35.307
+fai in modo che Latte con la maiuscola e
+
+56
+00:03:35.307 --> 00:03:38.824
+latte con la minuscola contino come la stessa voce.
+
+57
+00:03:38.824 --> 00:03:40.732
+Suggerimento: minuscolo.
+
+58
+00:03:40.732 --> 00:03:44.309
+Nel prossimo progetto costruiamo un timer da cucina,
+
+59
+00:03:44.309 --> 00:03:47.290
+con i pulsanti per la pasta e per le uova.

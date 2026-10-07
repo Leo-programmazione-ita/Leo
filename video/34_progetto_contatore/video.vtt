@@ -1,0 +1,293 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.666
+Con questo video cominciano i progetti completi:
+
+2
+00:00:03.666 --> 00:00:06.154
+app costruite dall'inizio alla fine.
+
+3
+00:00:06.154 --> 00:00:08.754
+Si parte da un classico: un contatore.
+
+4
+00:00:08.754 --> 00:00:13.164
+Serve per contare persone all'ingresso, pezzi prodotti, giri di pista.
+
+5
+00:00:13.164 --> 00:00:17.235
+Lo creiamo dal modello, lo capiamo, e poi lo rendiamo più furbo.
+
+6
+00:00:18.535 --> 00:00:22.456
+Nella schermata iniziale tocca Nuova app con finestre.
+
+7
+00:00:22.456 --> 00:00:24.795
+Leo ti chiede: da cosa parti?
+
+8
+00:00:24.795 --> 00:00:26.376
+Scegli Contatore.
+
+9
+00:00:26.376 --> 00:00:31.056
+Poi dai un nome alla tua app, per esempio Contatore, e tocca Crea.
+
+10
+00:00:31.056 --> 00:00:34.218
+In un secondo hai un'app che funziona già.
+
+11
+00:00:34.218 --> 00:00:36.747
+È il modo migliore per imparare:
+
+12
+00:00:36.747 --> 00:00:40.984
+si parte da qualcosa che funziona e si guarda come è fatto.
+
+13
+00:00:42.284 --> 00:00:44.083
+Si apre il disegnatore.
+
+14
+00:00:44.083 --> 00:00:48.436
+La finestra ha un titolo, un'etichetta enorme che si chiama Numero,
+
+15
+00:00:48.436 --> 00:00:51.802
+con il carattere a sessantaquattro e in grassetto.
+
+16
+00:00:51.802 --> 00:00:56.619
+Due pulsanti tondi, Pulsante Meno, con lo stile secondario, e Pulsante Più,
+
+17
+00:00:56.619 --> 00:00:57.780
+con l'ombra.
+
+18
+00:00:57.780 --> 00:01:00.740
+E un pulsante Azzera con lo stile contorno.
+
+19
+00:01:00.740 --> 00:01:04.570
+Tocca ogni oggetto e poi Aspetto, per vedere come è fatto.
+
+20
+00:01:04.570 --> 00:01:07.182
+Ormai conosci tutte queste proprietà.
+
+21
+00:01:08.482 --> 00:01:10.395
+Tocca Codice, in basso.
+
+22
+00:01:10.395 --> 00:01:13.481
+Ecco il programma, e lo capisci già tutto.
+
+23
+00:01:13.481 --> 00:01:17.925
+La variabile conteggio è la memoria dell'app: ricorda il numero.
+
+24
+00:01:17.925 --> 00:01:21.567
+La funzione mostra scrive il numero nell'etichetta.
+
+25
+00:01:21.567 --> 00:01:25.949
+Ogni tocco sul più aumenta il conteggio di uno e chiama mostra.
+
+26
+00:01:25.949 --> 00:01:27.986
+Azzera lo rimette a zero.
+
+27
+00:01:27.986 --> 00:01:31.998
+Il meno, che qui non si vede, fa lo stesso togliendo uno.
+
+28
+00:01:31.998 --> 00:01:37.430
+Perché una funzione mostra, invece di scrivere l'etichetta dentro ogni pulsante?
+
+29
+00:01:37.430 --> 00:01:41.935
+Perché così, se un giorno vuoi cambiare come si mostra il numero,
+
+30
+00:01:41.935 --> 00:01:44.034
+lo cambi in un posto solo.
+
+31
+00:01:44.034 --> 00:01:46.441
+Ed è proprio quello che faremo.
+
+32
+00:01:47.741 --> 00:01:49.924
+Adesso rendiamolo più furbo.
+
+33
+00:01:49.924 --> 00:01:54.593
+Vogliamo un traguardo di dieci, il numero rosso quando va sotto zero,
+
+34
+00:01:54.593 --> 00:01:58.353
+verde al traguardo, e un piccolo effetto a ogni tocco.
+
+35
+00:01:59.653 --> 00:02:03.209
+Prima riga: una costante, MASSIMO, scritta in maiuscolo.
+
+36
+00:02:03.209 --> 00:02:06.321
+Una costante è una variabile che non cambia mai:
+
+37
+00:02:06.321 --> 00:02:10.267
+se un giorno vuoi il traguardo a venti, cambi solo questa riga.
+
+38
+00:02:10.267 --> 00:02:11.989
+Poi arricchiamo mostra.
+
+39
+00:02:11.989 --> 00:02:14.379
+Sotto zero il numero diventa rosso.
+
+40
+00:02:14.379 --> 00:02:18.157
+Al traguardo diventa verde, e un'etichetta nuova, Messaggio,
+
+41
+00:02:18.157 --> 00:02:20.102
+scrive traguardo raggiunto.
+
+42
+00:02:20.102 --> 00:02:23.159
+Negli altri casi rimettiamo il colore del tema.
+
+43
+00:02:23.159 --> 00:02:28.215
+E alla fine il numero pulsa: un piccolo battito a ogni tocco, che rende l'app viva.
+
+44
+00:02:28.215 --> 00:02:32.105
+Ricordati di aggiungere l'etichetta Messaggio nel disegnatore,
+
+45
+00:02:32.105 --> 00:02:33.939
+sotto il pulsante Azzera.
+
+46
+00:02:35.239 --> 00:02:38.904
+Ultimo ritocco: il più non deve superare il traguardo.
+
+47
+00:02:38.904 --> 00:02:43.278
+Se il conteggio è ancora minore di MASSIMO, aumentiamo come prima.
+
+48
+00:02:43.278 --> 00:02:47.180
+Altrimenti il numero si scuote, come per dire: basta così!
+
+49
+00:02:47.180 --> 00:02:52.382
+Nessun messaggio d'errore, nessuna finestrella: un gesto che si capisce al volo.
+
+50
+00:02:53.682 --> 00:02:56.044
+Tocca Prova, in alto a destra.
+
+51
+00:02:56.044 --> 00:03:01.637
+Tocco il più dieci volte: il numero pulsa a ogni tocco, e al decimo diventa verde,
+
+52
+00:03:01.637 --> 00:03:04.309
+con la scritta traguardo raggiunto.
+
+53
+00:03:04.309 --> 00:03:07.044
+Se tocco ancora, il dieci si scuote.
+
+54
+00:03:07.044 --> 00:03:08.784
+Tutto come previsto.
+
+55
+00:03:10.084 --> 00:03:14.472
+Il consiglio più prezioso per ogni progetto: un passo alla volta.
+
+56
+00:03:14.472 --> 00:03:18.440
+Cambia una sola cosa, tocca Prova, controlla che funzioni,
+
+57
+00:03:18.440 --> 00:03:20.965
+e solo dopo passa alla successiva.
+
+58
+00:03:20.965 --> 00:03:25.594
+Se qualcosa si rompe, sai subito che la colpa è dell'ultima modifica.
+
+59
+00:03:26.894 --> 00:03:27.484
+Quiz.
+
+60
+00:03:27.484 --> 00:03:29.479
+Perché conviene una funzione mostra,
+
+61
+00:03:29.479 --> 00:03:32.200
+invece di scrivere l'etichetta dentro ogni pulsante?
+
+62
+00:03:34.200 --> 00:03:39.203
+Perché così il modo di mostrare il numero si cambia in un posto solo.
+
+63
+00:03:39.203 --> 00:03:44.727
+L'abbiamo appena visto: colori ed effetti li abbiamo aggiunti una volta sola,
+
+64
+00:03:44.727 --> 00:03:47.261
+e valgono per tutti i pulsanti.
+
+65
+00:03:55.861 --> 00:03:57.108
+Ricapitoliamo.
+
+66
+00:03:57.108 --> 00:04:01.813
+Abbiamo creato un'app dal modello, letto il codice, e l'abbiamo migliorata:
+
+67
+00:04:01.813 --> 00:04:05.895
+una costante per il traguardo, i colori per lo stato del numero,
+
+68
+00:04:05.895 --> 00:04:08.106
+e due effetti per dare segnali.
+
+69
+00:04:09.406 --> 00:04:13.357
+Esercizio: aggiungi una casella numero per scegliere il traguardo,
+
+70
+00:04:13.357 --> 00:04:14.958
+invece della costante.
+
+71
+00:04:14.958 --> 00:04:18.268
+Nel prossimo progetto costruiamo la lista della spesa,
+
+72
+00:04:18.268 --> 00:04:21.151
+e impariamo a non comprare due volte il latte.
+
+73
+00:04:21.151 --> 00:04:22.059
+A presto.
