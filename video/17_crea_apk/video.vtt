@@ -1,0 +1,217 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.665
+In questo video la tua app diventa un'app vera: con il suo nome e la sua icona,
+
+2
+00:00:06.665 --> 00:00:10.704
+installata sul telefono accanto a tutte le altre.
+
+3
+00:00:12.004 --> 00:00:17.377
+APK è il nome del file con cui si installano le app su Android.
+
+4
+00:00:17.377 --> 00:00:22.598
+Quando crei l'APK della tua app, dentro c'è il tuo programma,
+
+5
+00:00:22.598 --> 00:00:25.776
+pronto a partire a schermo intero.
+
+6
+00:00:25.776 --> 00:00:31.754
+Chi la installa non vede l'editor, non vede il codice: vede la tua app.
+
+7
+00:00:31.754 --> 00:00:34.630
+E non ha bisogno di avere Leo.
+
+8
+00:00:34.630 --> 00:00:38.943
+Un solo file, che va su tutti i telefoni Android.
+
+9
+00:00:40.243 --> 00:00:44.552
+Il comando si chiama crea app Android, e lo trovi in tre posti.
+
+10
+00:00:44.552 --> 00:00:48.983
+Nel disegnatore di un'app con finestre, nel menu dei tre puntini.
+
+11
+00:00:48.983 --> 00:00:53.171
+Nell'editor di un programma, sempre nel menu dei tre puntini.
+
+12
+00:00:53.171 --> 00:00:56.570
+Oppure tenendo premuto il programma nell'elenco.
+
+13
+00:00:57.870 --> 00:01:02.643
+Si apre la scheda per personalizzare l'app, con un'anteprima in cima.
+
+14
+00:01:02.643 --> 00:01:05.928
+Il nome è quello che comparirà sotto l'icona.
+
+15
+00:01:05.928 --> 00:01:08.717
+L'icona: di serie è lo stemma di Leo,
+
+16
+00:01:08.717 --> 00:01:13.118
+ma con scegli un'immagine puoi usare una foto o un disegno tuo.
+
+17
+00:01:13.118 --> 00:01:16.962
+Poi il colore principale, e lo sfondo, scuro o chiaro.
+
+18
+00:01:16.962 --> 00:01:19.503
+L'anteprima cambia mentre scegli.
+
+19
+00:01:20.803 --> 00:01:21.994
+Tocca crea.
+
+20
+00:01:21.994 --> 00:01:25.631
+Leo controlla il programma, crea l'app e la firma.
+
+21
+00:01:25.631 --> 00:01:30.899
+Ci vuole qualche secondo: se vuoi, tocca continua in sottofondo e fai altro.
+
+22
+00:01:30.899 --> 00:01:34.787
+La prima volta Leo crea anche la chiave delle tue app,
+
+23
+00:01:34.787 --> 00:01:37.483
+e ti propone di salvarne una copia.
+
+24
+00:01:37.483 --> 00:01:41.120
+È importante: ne parliamo bene nel prossimo video.
+
+25
+00:01:41.120 --> 00:01:43.252
+Per ora puoi toccare dopo.
+
+26
+00:01:44.552 --> 00:01:45.863
+L'app è pronta.
+
+27
+00:01:45.863 --> 00:01:50.195
+Leo ti dice il nome, la dimensione e l'identificativo del pacchetto.
+
+28
+00:01:50.195 --> 00:01:54.811
+Sotto ci sono tre pulsanti: installa su questo telefono, condividi l'app,
+
+29
+00:01:54.811 --> 00:01:57.205
+e copia di sicurezza della chiave.
+
+30
+00:01:58.505 --> 00:02:00.826
+Tocca installa su questo telefono.
+
+31
+00:02:00.826 --> 00:02:05.522
+La prima volta Android apre un'impostazione: attiva consenti da questa fonte,
+
+32
+00:02:05.522 --> 00:02:08.285
+poi torna a Leo e tocca di nuovo installa.
+
+33
+00:02:08.285 --> 00:02:11.158
+Da quel momento l'installazione è immediata.
+
+34
+00:02:12.458 --> 00:02:13.314
+Fatto.
+
+35
+00:02:13.314 --> 00:02:17.103
+L'icona della tua app compare tra le app del telefono.
+
+36
+00:02:17.103 --> 00:02:22.053
+Toccala: parte direttamente sul tuo programma, senza passare dall'editor.
+
+37
+00:02:22.053 --> 00:02:25.598
+L'app si installa accanto a Leo, non al suo posto.
+
+38
+00:02:25.598 --> 00:02:30.915
+E quando cambi il programma, basta rifare crea app Android, con lo stesso nome,
+
+39
+00:02:30.915 --> 00:02:35.315
+e installare di nuovo: l'app si aggiorna e mantiene i suoi dati.
+
+40
+00:02:36.615 --> 00:02:40.602
+Un consiglio per l'icona: scegli un'immagine semplice, quadrata,
+
+41
+00:02:40.602 --> 00:02:43.094
+con un solo soggetto e colori decisi.
+
+42
+00:02:43.094 --> 00:02:47.635
+Sullo schermo del telefono le icone sono piccole, e i dettagli spariscono.
+
+43
+00:02:48.935 --> 00:02:49.585
+Quiz.
+
+44
+00:02:49.585 --> 00:02:51.834
+Hai cambiato il codice della tua app.
+
+45
+00:02:51.834 --> 00:02:53.833
+Come aggiorni quella installata?
+
+46
+00:02:58.133 --> 00:03:02.355
+Rifai crea app Android e la installi di nuovo, risposta B.
+
+47
+00:03:02.355 --> 00:03:06.704
+Con la stessa chiave, la nuova versione aggiorna la vecchia.
+
+48
+00:03:08.004 --> 00:03:09.430
+Ricapitoliamo.
+
+49
+00:03:09.430 --> 00:03:12.217
+Un APK è il file di un'app Android.
+
+50
+00:03:12.217 --> 00:03:17.208
+Dal menu dei tre puntini tocchi crea app Android, scegli nome, icona,
+
+51
+00:03:17.208 --> 00:03:19.282
+colore e sfondo, e crei.
+
+52
+00:03:19.282 --> 00:03:23.106
+Poi installi l'app sul tuo telefono, accanto a Leo.
+
+53
+00:03:24.406 --> 00:03:27.802
+Nel prossimo video distribuiamo l'app ad altre persone,
+
+54
+00:03:27.802 --> 00:03:30.120
+e impariamo a proteggere la chiave.
