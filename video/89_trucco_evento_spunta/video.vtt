@@ -1,0 +1,105 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.560
+Sul telefono scrivere codice è più scomodo che sul PC.
+
+2
+00:00:04.560 --> 00:00:09.602
+Per questo il disegnatore dell'app Leo scrive per te la parte noiosa.
+
+3
+00:00:09.602 --> 00:00:12.745
+Vediamo come, con una casella di spunta.
+
+4
+00:00:14.045 --> 00:00:15.969
+Partiamo dal modello Saluto.
+
+5
+00:00:15.969 --> 00:00:20.405
+Tocca Aggiungi un oggetto e scegli Casella Spunta: eccola, già selezionata,
+
+6
+00:00:20.405 --> 00:00:21.795
+sotto il pulsante.
+
+7
+00:00:21.795 --> 00:00:26.071
+In basso ci sono i tasti per l'oggetto scelto: Aspetto, Evento, Duplica,
+
+8
+00:00:26.071 --> 00:00:27.514
+Livello ed Elimina.
+
+9
+00:00:28.814 --> 00:00:30.126
+Tocca Evento.
+
+10
+00:00:30.126 --> 00:00:32.812
+Leo ti chiede: quando succede cosa?
+
+11
+00:00:32.812 --> 00:00:37.935
+E ti elenca gli eventi di quell'oggetto, con il più usato in cima: cambio,
+
+12
+00:00:37.935 --> 00:00:41.059
+cioè quando la spunta viene messa o tolta.
+
+13
+00:00:42.359 --> 00:00:44.122
+Ed ecco il trucco.
+
+14
+00:00:44.122 --> 00:00:47.715
+Si apre il codice con il gestore già scritto,
+
+15
+00:00:47.715 --> 00:00:52.800
+e per una casella di spunta Leo prepara anche il se e l'altrimenti:
+
+16
+00:00:52.800 --> 00:00:57.410
+una parte per quando si attiva, una per quando si disattiva.
+
+17
+00:00:57.410 --> 00:01:02.359
+Il cursore è già sulla riga giusta: devi solo scrivere cosa fare.
+
+18
+00:01:03.659 --> 00:01:08.153
+Per esempio: se la spunta è selezionata, l'etichetta dice promemoria attivo,
+
+19
+00:01:08.153 --> 00:01:10.132
+altrimenti promemoria spento.
+
+20
+00:01:10.132 --> 00:01:14.679
+Lo stesso schema compare con l'Interruttore, che usa acceso, e con la Scelta.
+
+21
+00:01:15.979 --> 00:01:19.480
+Torna al disegnatore e tocca di nuovo Evento:
+
+22
+00:01:19.480 --> 00:01:22.914
+accanto a cambio ora c'è un segno di spunta.
+
+23
+00:01:22.914 --> 00:01:25.953
+Vuol dire che quel gestore esiste già.
+
+24
+00:01:25.953 --> 00:01:31.897
+Toccandolo non ne crei un doppione: Leo ti porta dritto al codice che hai scritto.
+
+25
+00:01:33.197 --> 00:01:36.155
+Con questo si chiude la serie dei trucchi.
+
+26
+00:01:36.155 --> 00:01:41.360
+Nella prossima serie impariamo a riconoscere e correggere gli errori più comuni.
