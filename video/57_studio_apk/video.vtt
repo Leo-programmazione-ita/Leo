@@ -1,0 +1,293 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.262
+Oggi, dal PC, trasformiamo un programma Leo in un'app Android,
+
+2
+00:00:05.262 --> 00:00:09.752
+da installare sul telefono con la sua icona e il suo nome.
+
+3
+00:00:09.752 --> 00:00:11.929
+E basta un solo comando.
+
+4
+00:00:13.229 --> 00:00:15.056
+Il trucco è questo.
+
+5
+00:00:15.056 --> 00:00:19.453
+L'app di Leo per Android sa già eseguire i programmi Leo.
+
+6
+00:00:19.453 --> 00:00:25.542
+Leo ne prende una copia, che chiamiamo guscio, e ci mette dentro il tuo programma.
+
+7
+00:00:25.542 --> 00:00:31.698
+Chi apre la tua app non vede l'editor: il programma parte subito, a schermo intero.
+
+8
+00:00:31.698 --> 00:00:37.719
+Tutto il lavoro lo fa Leo: non servono Android Studio, né Gradle, né PyInstaller.
+
+9
+00:00:39.019 --> 00:00:43.592
+Serve solo il guscio: il file Leo, trattino, versione, punto apk,
+
+10
+00:00:43.592 --> 00:00:45.973
+nella cartella android di Leo.
+
+11
+00:00:45.973 --> 00:00:51.737
+Se manca, Leo te lo dice: si costruisce una volta sola con costruisci apk punto bat,
+
+12
+00:00:51.737 --> 00:00:53.992
+che richiede Android Studio.
+
+13
+00:00:53.992 --> 00:00:58.190
+Oppure indichi un guscio che hai già, con meno meno guscio.
+
+14
+00:00:58.190 --> 00:01:02.262
+Il guscio contiene i processori di tutti i telefoni veri,
+
+15
+00:01:02.262 --> 00:01:05.958
+quindi la tua app va su qualunque telefono Android.
+
+16
+00:01:07.258 --> 00:01:12.407
+Ecco il programma da portare sul telefono: un piccolo quiz delle capitali.
+
+17
+00:01:12.407 --> 00:01:16.175
+Pulisci e minuscolo rendono la risposta valida anche
+
+18
+00:01:16.175 --> 00:01:19.252
+con la maiuscola o con uno spazio in più.
+
+19
+00:01:19.252 --> 00:01:24.338
+I programmi testuali, con stampa e chiedi, sono perfetti per il telefono:
+
+20
+00:01:24.338 --> 00:01:26.850
+si risponde con la sua tastiera.
+
+21
+00:01:26.850 --> 00:01:30.115
+Prima di creare l'app, però, provalo sul PC.
+
+22
+00:01:31.415 --> 00:01:36.775
+Ed ecco il comando: leo compila, il nome del programma, e meno meno apk.
+
+23
+00:01:36.775 --> 00:01:37.981
+Tutto qui.
+
+24
+00:01:37.981 --> 00:01:44.011
+Meno meno nome sceglie il nome sotto l'icona, meno meno icona usa un'immagine PNG,
+
+25
+00:01:44.011 --> 00:01:47.896
+e meno meno versione programma indica la versione.
+
+26
+00:01:47.896 --> 00:01:52.452
+Con meno meno colore e meno meno tema scegli colore e fondo.
+
+27
+00:01:52.452 --> 00:01:57.946
+Nel video il comando va a capo solo per comodità: tu scrivilo su una riga.
+
+28
+00:01:59.246 --> 00:02:05.041
+Dopo Invio, Leo controlla il programma: se c'è un errore, si ferma e te lo mostra.
+
+29
+00:02:05.041 --> 00:02:10.835
+Poi copia il guscio, aggiunge il tuo programma, scrive nome, pacchetto e versione,
+
+30
+00:02:10.835 --> 00:02:13.411
+e firma l'app con la tua chiave.
+
+31
+00:02:13.411 --> 00:02:17.854
+Alla fine leggi App Android pronta, con il percorso del file:
+
+32
+00:02:17.854 --> 00:02:22.103
+lo trovi nella cartella app android, accanto al programma.
+
+33
+00:02:23.403 --> 00:02:27.758
+Porta il file sul telefono come preferisci: Google Drive, un'e-mail,
+
+34
+00:02:27.758 --> 00:02:30.050
+WhatsApp a te stesso, o il cavo.
+
+35
+00:02:30.050 --> 00:02:31.139
+Poi aprilo.
+
+36
+00:02:31.139 --> 00:02:34.233
+La prima volta Android chiede di consentire le
+
+37
+00:02:34.233 --> 00:02:37.041
+app sconosciute per l'app da cui lo apri:
+
+38
+00:02:37.041 --> 00:02:39.047
+consenti, e tocca Installa.
+
+39
+00:02:39.047 --> 00:02:43.001
+Se Play Protect avvisa che l'app non è conosciuta, è normale:
+
+40
+00:02:43.001 --> 00:02:44.777
+l'hai appena creata tu.
+
+41
+00:02:44.777 --> 00:02:46.668
+Scegli Installa comunque.
+
+42
+00:02:47.968 --> 00:02:51.506
+Questo è il consiglio più importante del video.
+
+43
+00:02:51.506 --> 00:02:57.039
+La prima volta Leo crea la tua chiave di firma, il file chiave apk punto json,
+
+44
+00:02:57.039 --> 00:03:00.192
+nella cartella delle impostazioni di Leo.
+
+45
+00:03:00.192 --> 00:03:03.537
+Conservane una copia, e non darla a nessuno.
+
+46
+00:03:03.537 --> 00:03:08.749
+Android installa un aggiornamento solo se è firmato con la stessa chiave.
+
+47
+00:03:08.749 --> 00:03:12.866
+Senza la chiave, la tua app non si potrà più aggiornare.
+
+48
+00:03:14.166 --> 00:03:18.842
+Per aggiornare l'app sui telefoni di chi la usa servono tre cose.
+
+49
+00:03:18.842 --> 00:03:24.222
+Lo stesso pacchetto, cioè il nome interno dell'app, che Leo ricava dal nome:
+
+50
+00:03:24.222 --> 00:03:28.001
+due app con lo stesso pacchetto sono la stessa app.
+
+51
+00:03:28.001 --> 00:03:33.253
+Una versione più alta, perché Android non installa una versione più bassa.
+
+52
+00:03:33.253 --> 00:03:34.982
+E la stessa chiave.
+
+53
+00:03:36.282 --> 00:03:40.319
+Lo stesso si fa anche sul telefono, dall'app di Leo:
+
+54
+00:03:40.319 --> 00:03:44.086
+nel menu con i tre puntini c'è Crea app Android.
+
+55
+00:03:44.086 --> 00:03:46.105
+Il motore è lo stesso.
+
+56
+00:03:46.105 --> 00:03:49.940
+Per aggiornare dal PC un'app creata sul telefono,
+
+57
+00:03:49.940 --> 00:03:54.649
+basta usare lo stesso file della chiave, con meno meno chiave.
+
+58
+00:03:55.949 --> 00:03:59.611
+I programmi testuali sono quelli che funzionano meglio.
+
+59
+00:03:59.611 --> 00:04:03.505
+Un progetto con finestre parte sulla sua finestra iniziale,
+
+60
+00:04:03.505 --> 00:04:08.793
+ma alcuni controlli sul telefono non ci sono ancora: compaiono come riquadri vuoti,
+
+61
+00:04:08.793 --> 00:04:11.234
+e Leo te lo scrive tra gli avvisi.
+
+62
+00:04:11.234 --> 00:04:13.908
+Prova sempre l'app prima di regalarla.
+
+63
+00:04:15.208 --> 00:04:15.888
+Quiz.
+
+64
+00:04:15.888 --> 00:04:19.290
+Perché è così importante conservare il file della chiave?
+
+65
+00:04:23.590 --> 00:04:25.796
+La risposta giusta è la seconda.
+
+66
+00:04:25.796 --> 00:04:28.389
+L'app installata continua a funzionare,
+
+67
+00:04:28.389 --> 00:04:31.753
+ma senza la stessa chiave non potrai più aggiornarla.
+
+68
+00:04:33.053 --> 00:04:34.323
+Ricapitoliamo.
+
+69
+00:04:34.323 --> 00:04:39.287
+Con leo compila e meno meno apk il programma diventa un'app Android, con nome,
+
+70
+00:04:39.287 --> 00:04:41.480
+icona e versione scelti da te.
+
+71
+00:04:41.480 --> 00:04:44.482
+E conserva la chiave, per gli aggiornamenti.
+
+72
+00:04:45.782 --> 00:04:49.640
+Ecco fatto: la tua prima app Android, creata dal PC.
+
+73
+00:04:49.640 --> 00:04:55.170
+Nel prossimo video vediamo come verificare un programma con i test automatici.

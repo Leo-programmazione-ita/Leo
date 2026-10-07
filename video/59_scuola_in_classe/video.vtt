@@ -1,0 +1,305 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.064
+Questo video è per chi insegna, e per chi vuole preparare esercizi.
+
+2
+00:00:05.064 --> 00:00:10.663
+Vedremo tre strumenti di Leo per la scuola: la spiegazione a parole di un programma,
+
+3
+00:00:10.663 --> 00:00:14.375
+le verifiche automatiche e le lezioni personalizzate.
+
+4
+00:00:14.375 --> 00:00:17.235
+E chiuderemo con gli errori più comuni.
+
+5
+00:00:18.535 --> 00:00:19.664
+Perché Leo?
+
+6
+00:00:19.664 --> 00:00:23.109
+Perché il codice si legge come una frase italiana:
+
+7
+00:00:23.109 --> 00:00:26.495
+se voto è maggiore di sei allora stampa promosso.
+
+8
+00:00:26.495 --> 00:00:31.366
+I messaggi d'errore sono in italiano e spesso propongono la riga corretta.
+
+9
+00:00:31.366 --> 00:00:34.812
+Con meno meno semplice diventano ancora più brevi.
+
+10
+00:00:34.812 --> 00:00:39.861
+Leo tollera alcune distrazioni di chi inizia, e meno meno rigoroso le spegne.
+
+11
+00:00:39.861 --> 00:00:43.841
+E gli studenti ritrovano lo stesso linguaggio sul telefono.
+
+12
+00:00:45.141 --> 00:00:49.126
+Il primo strumento è leo spiega: gli dai un programma,
+
+13
+00:00:49.126 --> 00:00:53.239
+e Leo lo racconta in italiano, un'istruzione alla volta.
+
+14
+00:00:53.239 --> 00:00:58.573
+Qui il programma somma tre voti e, se il totale supera venti, scrive bravo.
+
+15
+00:00:58.573 --> 00:01:01.851
+Con meno meno semplice le frasi sono brevi.
+
+16
+00:01:01.851 --> 00:01:06.221
+Con meno meno dettagli si aggiungono il codice di ogni riga,
+
+17
+00:01:06.221 --> 00:01:08.406
+delle note e un riepilogo.
+
+18
+00:01:09.706 --> 00:01:10.906
+Qualche idea.
+
+19
+00:01:10.906 --> 00:01:14.106
+Mostra un programma e chiedi: che cosa stamperà?
+
+20
+00:01:14.106 --> 00:01:15.706
+Solo dopo, eseguilo.
+
+21
+00:01:15.706 --> 00:01:19.763
+Oppure fai spiegare il programma a uno studente con parole sue,
+
+22
+00:01:19.763 --> 00:01:23.535
+e confrontate la sua spiegazione con quella di leo spiega.
+
+23
+00:01:23.535 --> 00:01:26.449
+E nel REPL, la riga di comando interattiva,
+
+24
+00:01:26.449 --> 00:01:29.706
+due punti spiega racconta l'ultima cosa eseguita.
+
+25
+00:01:31.006 --> 00:01:35.223
+Il secondo strumento è il mio preferito: le verifiche incorporate.
+
+26
+00:01:35.223 --> 00:01:39.952
+In fondo al file l'insegnante scrive dei blocchi verifica e, con aspettati,
+
+27
+00:01:39.952 --> 00:01:44.624
+che cosa deve succedere: l'area di un rettangolo tre per quattro è dodici.
+
+28
+00:01:44.624 --> 00:01:46.846
+Lo studente scrive la funzione.
+
+29
+00:01:46.846 --> 00:01:51.006
+Quando esegue il programma normalmente, le verifiche non partono.
+
+30
+00:01:52.306 --> 00:01:56.457
+Per controllare si scrive leo verifica e il nome del file.
+
+31
+00:01:56.457 --> 00:02:01.487
+Qui lo studente ha sommato invece di moltiplicare, e Leo mostra la riga,
+
+32
+00:02:01.487 --> 00:02:05.198
+il valore atteso, dodici, e quello ottenuto, sette.
+
+33
+00:02:05.198 --> 00:02:09.097
+Quando la funzione è giusta, ogni verifica diventa ok.
+
+34
+00:02:09.097 --> 00:02:13.939
+E con una cartella, leo verifica controlla tutti i file che contiene.
+
+35
+00:02:15.239 --> 00:02:20.773
+Ecco un compito: un file con l'intestazione della funzione e le verifiche in fondo.
+
+36
+00:02:20.773 --> 00:02:24.240
+Le verifiche sono la consegna, scritta in codice.
+
+37
+00:02:24.240 --> 00:02:29.470
+Con aspettati errore puoi pretendere che la funzione rifiuti i dati sbagliati.
+
+38
+00:02:29.470 --> 00:02:33.606
+E lo studente riprova quante volte vuole, finché tutto è ok.
+
+39
+00:02:34.906 --> 00:02:40.175
+Il terzo strumento: le lezioni di leo impara sono file di testo nella cartella dati,
+
+40
+00:02:40.175 --> 00:02:41.091
+lezioni.
+
+41
+00:02:41.091 --> 00:02:44.069
+Puoi aggiungerne di nuove senza toccare Leo.
+
+42
+00:02:44.069 --> 00:02:48.135
+Ogni lezione ha numero, titolo, spiegazione, esercizio e aiuti.
+
+43
+00:02:48.135 --> 00:02:51.227
+Nella parte controllo scrivi come verificarla:
+
+44
+00:02:51.227 --> 00:02:55.064
+qui Leo prova il programma rispondendo quattro e poi sette,
+
+45
+00:02:55.064 --> 00:02:57.355
+e si aspetta pari e poi dispari.
+
+46
+00:02:58.655 --> 00:03:00.930
+Ora gli errori più comuni.
+
+47
+00:03:00.930 --> 00:03:06.751
+Il campione assoluto: i calcoli e i confronti scritti a parole, come si dicono.
+
+48
+00:03:06.751 --> 00:03:12.439
+Leo li riconosce e insegna il simbolo: maggiore di diventa il segno maggiore,
+
+49
+00:03:12.439 --> 00:03:17.257
+più diventa il segno più, e propone la riga intera già corretta.
+
+50
+00:03:17.257 --> 00:03:23.145
+Dentro un se, invece, un solo uguale va bene: se x uguale cinque è un confronto.
+
+51
+00:03:24.445 --> 00:03:26.088
+Gli altri classici.
+
+52
+00:03:26.088 --> 00:03:29.799
+Dimenticare fine: Leo dice quale blocco non è chiuso.
+
+53
+00:03:29.799 --> 00:03:34.970
+Scrivere fai cinque volte o mostra: Leo propone ripeti cinque volte e stampa.
+
+54
+00:03:34.970 --> 00:03:37.525
+I decimali scritti con la virgola.
+
+55
+00:03:37.525 --> 00:03:40.384
+Chiedi che restituisce sempre un testo.
+
+56
+00:03:40.384 --> 00:03:43.365
+Le liste che partono da zero, non da uno.
+
+57
+00:03:43.365 --> 00:03:46.894
+E un nome usato senza averlo creato con variabile.
+
+58
+00:03:48.194 --> 00:03:53.220
+Il consiglio per la classe: leggete il messaggio d'errore ad alta voce,
+
+59
+00:03:53.220 --> 00:03:56.402
+tutti insieme, prima di toccare il codice.
+
+60
+00:03:56.402 --> 00:03:59.201
+Poi correggete un errore alla volta.
+
+61
+00:03:59.201 --> 00:04:05.055
+Con i più giovani usate meno meno semplice, e in Leo Studio il passo passo, con F10.
+
+62
+00:04:05.055 --> 00:04:09.827
+Così l'errore smette di essere un fallimento, e diventa un indizio.
+
+63
+00:04:11.127 --> 00:04:12.379
+Ultima domanda.
+
+64
+00:04:12.379 --> 00:04:16.025
+Quale comando esegue i blocchi verifica scritti in un file?
+
+65
+00:04:20.325 --> 00:04:22.861
+La risposta giusta è: Leo verifica.
+
+66
+00:04:22.861 --> 00:04:27.757
+Leo spiega racconta il programma a parole, e se esegui il file normalmente,
+
+67
+00:04:27.757 --> 00:04:30.529
+i blocchi verifica non partono proprio.
+
+68
+00:04:31.829 --> 00:04:33.071
+Ricapitoliamo.
+
+69
+00:04:33.071 --> 00:04:35.895
+Leo spiega racconta il codice in italiano,
+
+70
+00:04:35.895 --> 00:04:39.113
+leo verifica corregge gli esercizi in automatico,
+
+71
+00:04:39.113 --> 00:04:42.219
+e le lezioni nuove sono semplici file di testo.
+
+72
+00:04:42.219 --> 00:04:46.115
+E conoscere gli errori comuni ti aiuta a spiegarli con calma.
+
+73
+00:04:47.415 --> 00:04:49.249
+Grazie per l'attenzione.
+
+74
+00:04:49.249 --> 00:04:52.918
+Prova a portare in classe un esercizio con le verifiche:
+
+75
+00:04:52.918 --> 00:04:56.358
+vedrai gli studenti fare a gara per vedere tutto ok.
+
+76
+00:04:56.358 --> 00:04:57.619
+Buona lezione!

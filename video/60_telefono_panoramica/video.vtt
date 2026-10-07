@@ -1,0 +1,269 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.308
+Il telefono che hai in tasca è un piccolo laboratorio.
+
+2
+00:00:04.308 --> 00:00:07.564
+Ha una fotocamera, un microfono, una bussola,
+
+3
+00:00:07.564 --> 00:00:11.065
+un GPS e tanti sensori che misurano il movimento,
+
+4
+00:00:11.065 --> 00:00:13.829
+la luce e perfino il campo magnetico.
+
+5
+00:00:13.829 --> 00:00:18.128
+In questa serie impariamo a usarli tutti con Leo, in italiano,
+
+6
+00:00:18.128 --> 00:00:22.981
+costruendo piccoli progetti: un pappagallo parlante, un metal detector,
+
+7
+00:00:22.981 --> 00:00:25.806
+una livella da muratore e molto altro.
+
+8
+00:00:27.106 --> 00:00:29.557
+Ci serve l'app Leo sul telefono.
+
+9
+00:00:29.557 --> 00:00:33.418
+Dalla schermata iniziale scegli Nuova app con finestre:
+
+10
+00:00:33.418 --> 00:00:38.260
+nasce un progetto con una finestra della misura giusta per il telefono.
+
+11
+00:00:38.260 --> 00:00:41.691
+Puoi anche lavorare con Leo Studio sul computer:
+
+12
+00:00:41.691 --> 00:00:44.388
+il formato dei progetti è lo stesso,
+
+13
+00:00:44.388 --> 00:00:48.739
+quindi un'app iniziata sul PC si apre sul telefono e viceversa.
+
+14
+00:00:50.039 --> 00:00:55.524
+Ecco l'esempio pronto che trovi tra gli esempi di Leo, nella cartella controlli,
+
+15
+00:00:55.524 --> 00:00:56.584
+telefono.
+
+16
+00:00:56.584 --> 00:00:59.701
+In alto una bussola e una livella a bolla.
+
+17
+00:00:59.701 --> 00:01:04.625
+Poi la fotocamera, il lettore di codici QR, il microfono e due sensori:
+
+18
+00:01:04.625 --> 00:01:06.745
+la luce e l'accelerometro.
+
+19
+00:01:06.745 --> 00:01:11.669
+Sotto, i pulsanti per vibrare, accendere la torcia e scoprire dove sei.
+
+20
+00:01:11.669 --> 00:01:16.095
+Questa foto è stata fatta sul computer: i valori sono simulati,
+
+21
+00:01:16.095 --> 00:01:19.835
+ma l'app è esattamente quella che gira sul telefono.
+
+22
+00:01:21.135 --> 00:01:25.997
+Nella tavolozza dei controlli c'è una scheda tutta dedicata: si chiama Telefono.
+
+23
+00:01:25.997 --> 00:01:29.975
+Due controlli si vedono nella finestra: la Bussola e la Livella.
+
+24
+00:01:29.975 --> 00:01:34.671
+Gli altri cinque sono invisibili, cioè lavorano dietro le quinte: Vibrazione,
+
+25
+00:01:34.671 --> 00:01:37.489
+Torcia, Posizione, Batteria e Condivisione.
+
+26
+00:01:37.489 --> 00:01:41.135
+Li aggiungi come tutti gli altri, con Aggiungi un oggetto.
+
+27
+00:01:42.435 --> 00:01:43.694
+Non è tutto.
+
+28
+00:01:43.694 --> 00:01:48.100
+Altri controlli che conosci già funzionano anche sul telefono.
+
+29
+00:01:48.100 --> 00:01:53.135
+Il Sensore legge l'accelerometro, il giroscopio, la luce, la prossimità,
+
+30
+00:01:53.135 --> 00:01:55.967
+la pressione, i passi e altro ancora.
+
+31
+00:01:55.967 --> 00:02:00.185
+La Fotocamera scatta le foto, il Lettore QR legge i codici.
+
+32
+00:02:00.185 --> 00:02:05.157
+La Dettatura trasforma la tua voce in testo, e la Voce fa il contrario:
+
+33
+00:02:05.157 --> 00:02:07.423
+legge un testo ad alta voce.
+
+34
+00:02:07.423 --> 00:02:09.374
+E poi Suono e Notifica.
+
+35
+00:02:10.674 --> 00:02:15.305
+La cosa bella è che si programma tutto nello stesso modo, con quando.
+
+36
+00:02:15.305 --> 00:02:20.417
+Quando la bussola cambia, guardiamo nel dizionario evento il punto cardinale:
+
+37
+00:02:20.417 --> 00:02:25.288
+se è N, cioè nord, facciamo vibrare il telefono per ottanta millisecondi.
+
+38
+00:02:25.288 --> 00:02:28.235
+E quando tocchi il pulsante della torcia,
+
+39
+00:02:28.235 --> 00:02:31.603
+Torcia uno punto commuta la accende o la spegne.
+
+40
+00:02:31.603 --> 00:02:35.572
+Niente codice difficile: solo eventi e metodi in italiano.
+
+41
+00:02:36.872 --> 00:02:41.041
+Alcune cose sono delicate, come la fotocamera o la posizione.
+
+42
+00:02:41.041 --> 00:02:45.271
+Per questo, la prima volta, il telefono ti chiede il permesso.
+
+43
+00:02:45.271 --> 00:02:48.594
+Se rispondi di no, non succede niente di grave:
+
+44
+00:02:48.594 --> 00:02:54.153
+arriva un messaggio in italiano che spiega come dare il permesso nelle impostazioni,
+
+45
+00:02:54.153 --> 00:02:56.872
+e il programma continua a funzionare.
+
+46
+00:02:58.172 --> 00:03:01.918
+Un consiglio: prova le tue app anche sul computer.
+
+47
+00:03:01.918 --> 00:03:07.149
+Lì l'hardware è simulato: la bussola gira da sola, la posizione è a Roma,
+
+48
+00:03:07.149 --> 00:03:10.895
+e la fotocamera ti dà una foto di prova disegnata.
+
+49
+00:03:10.895 --> 00:03:13.865
+Così controlli che la logica funzioni.
+
+50
+00:03:13.865 --> 00:03:18.580
+Poi passi al telefono vero, dove i numeri diventano quelli reali.
+
+51
+00:03:19.880 --> 00:03:23.202
+Un'altra comodità: i sensori, la bussola,
+
+52
+00:03:23.202 --> 00:03:28.354
+la livella e la batteria partono da soli quando la finestra si apre.
+
+53
+00:03:28.354 --> 00:03:33.032
+E quando la finestra si chiude, Leo ferma i sensori e il GPS,
+
+54
+00:03:33.032 --> 00:03:36.354
+spegne la torcia e zittisce voce e suoni.
+
+55
+00:03:36.354 --> 00:03:39.472
+Così non consumi batteria per sbaglio.
+
+56
+00:03:40.772 --> 00:03:41.959
+Piccolo quiz.
+
+57
+00:03:41.959 --> 00:03:44.615
+Quale di questi controlli è invisibile?
+
+58
+00:03:44.615 --> 00:03:48.119
+La Bussola, la Livella, la Torcia o la Fotocamera? ...
+
+59
+00:03:52.419 --> 00:03:57.725
+Esatto, la Torcia: non occupa spazio nella finestra, la usi solo dal codice.
+
+60
+00:03:59.025 --> 00:04:00.332
+Ricapitoliamo.
+
+61
+00:04:00.332 --> 00:04:05.265
+La scheda Telefono ha la bussola, la livella e cinque controlli invisibili.
+
+62
+00:04:05.265 --> 00:04:10.020
+In più funzionano sul telefono il Sensore, la Fotocamera, il Lettore QR,
+
+63
+00:04:10.020 --> 00:04:11.862
+la Dettatura e la Voce.
+
+64
+00:04:11.862 --> 00:04:16.736
+Si programma tutto con quando ed evento, i permessi li chiede il telefono,
+
+65
+00:04:16.736 --> 00:04:20.658
+e sul computer puoi provare tutto con l'hardware simulato.
+
+66
+00:04:21.958 --> 00:04:24.737
+Nel prossimo video cominciamo dalla fotocamera:
+
+67
+00:04:24.737 --> 00:04:27.264
+scatteremo foto e selfie dalla nostra app.
