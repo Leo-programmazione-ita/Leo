@@ -1,0 +1,193 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.714
+Sapevi che il telefono può trovare il metallo?
+
+2
+00:00:03.714 --> 00:00:08.655
+Dentro c'è un magnetometro, lo stesso sensore che fa funzionare la bussola.
+
+3
+00:00:08.655 --> 00:00:11.929
+Oggi lo usiamo per costruire un metal detector.
+
+4
+00:00:13.229 --> 00:00:18.429
+La Terra è una grande calamita: il suo campo magnetico, misurato dal telefono,
+
+5
+00:00:18.429 --> 00:00:22.480
+vale di solito tra venticinque e sessantacinque microtesla.
+
+6
+00:00:22.480 --> 00:00:28.043
+Quando avvicini qualcosa di ferro, o una calamita, il campo cambia e il valore sale.
+
+7
+00:00:28.043 --> 00:00:32.518
+Attenzione però: funziona con ferro e acciaio, come viti e chiodi,
+
+8
+00:00:32.518 --> 00:00:34.453
+non con oro o alluminio.
+
+9
+00:00:35.753 --> 00:00:37.425
+I pezzi sono questi.
+
+10
+00:00:37.425 --> 00:00:42.141
+Un Quadrante, cioè una lancetta come un tachimetro, da zero a duecento,
+
+11
+00:00:42.141 --> 00:00:43.991
+con l'unità microtesla.
+
+12
+00:00:43.991 --> 00:00:47.036
+Due etichette per il valore e per lo stato.
+
+13
+00:00:47.036 --> 00:00:48.767
+Un pulsante Taratura.
+
+14
+00:00:48.767 --> 00:00:53.304
+E il Sensore di tipo magnetometro, che legge dieci volte al secondo.
+
+15
+00:00:54.604 --> 00:00:59.951
+Prima parte: a ogni lettura mettiamo il valore sulla lancetta e nell'etichetta.
+
+16
+00:00:59.951 --> 00:01:05.298
+Il valore del magnetometro è la forza totale del campo, calcolata dai tre assi.
+
+17
+00:01:05.298 --> 00:01:10.522
+Con minimo non superiamo mai duecento, così la lancetta non esce dalla scala.
+
+18
+00:01:11.822 --> 00:01:14.408
+Ogni posto ha il suo campo normale.
+
+19
+00:01:14.408 --> 00:01:19.158
+Per questo facciamo la taratura: lontano dal metallo premi il pulsante,
+
+20
+00:01:19.158 --> 00:01:22.405
+e salviamo il valore attuale in campo normale.
+
+21
+00:01:22.405 --> 00:01:25.472
+L'etichetta ti invita a cercare il metallo.
+
+22
+00:01:25.472 --> 00:01:30.944
+Poi, a ogni lettura, se il campo supera quello normale di più di trenta microtesla,
+
+23
+00:01:30.944 --> 00:01:34.251
+scriviamo Metallo e diamo una vibrazione breve.
+
+24
+00:01:34.251 --> 00:01:38.761
+Più ti avvicini, più vibra, perché le letture arrivano di continuo.
+
+25
+00:01:40.061 --> 00:01:45.096
+Ecco il nostro metal detector, appena tarato: circa quarantaquattro microtesla,
+
+26
+00:01:45.096 --> 00:01:46.427
+niente metallo.
+
+27
+00:01:46.427 --> 00:01:49.784
+Sul telefono vero prova ad avvicinarlo a una vite,
+
+28
+00:01:49.784 --> 00:01:52.967
+a una pentola di ferro o a un magnete da frigo:
+
+29
+00:01:52.967 --> 00:01:55.571
+vedrai la lancetta schizzare in alto.
+
+30
+00:01:56.871 --> 00:01:58.797
+Un consiglio da cercatore:
+
+31
+00:01:58.797 --> 00:02:02.536
+il magnetometro di solito è nella parte alta del telefono.
+
+32
+00:02:02.536 --> 00:02:05.821
+Passa quella parte vicino all'oggetto, lentamente.
+
+33
+00:02:05.821 --> 00:02:08.767
+E non esagerare con le calamite molto forti:
+
+34
+00:02:08.767 --> 00:02:12.789
+possono disturbare la bussola del telefono per un po' di tempo.
+
+35
+00:02:14.089 --> 00:02:18.476
+Un'idea in più: passa il telefono lentamente lungo una parete.
+
+36
+00:02:18.476 --> 00:02:22.863
+Dove il valore sale, forse c'è un tubo o un rinforzo di ferro.
+
+37
+00:02:22.863 --> 00:02:28.064
+È un esperimento, non uno strumento professionale: prima di forare un muro,
+
+38
+00:02:28.064 --> 00:02:30.007
+usa un rilevatore vero.
+
+39
+00:02:31.307 --> 00:02:32.033
+Quiz.
+
+40
+00:02:32.033 --> 00:02:34.101
+Perché serve la taratura? ...
+
+41
+00:02:34.101 --> 00:02:38.292
+Perché ogni posto ha il suo campo normale: confrontando con quello,
+
+42
+00:02:38.292 --> 00:02:40.695
+capiamo quando c'è qualcosa in più.
+
+43
+00:02:49.295 --> 00:02:50.595
+Ricapitoliamo.
+
+44
+00:02:50.595 --> 00:02:55.264
+Il magnetometro misura il campo in microtesla, e il ferro lo fa salire.
+
+45
+00:02:55.264 --> 00:02:58.278
+Con la taratura salviamo il valore normale,
+
+46
+00:02:58.278 --> 00:03:02.356
+e oltre trenta microtesla in più diciamo che c'è del metallo.
+
+47
+00:03:03.656 --> 00:03:07.100
+Nel prossimo video usiamo il controllo Bussola per
+
+48
+00:03:07.100 --> 00:03:10.187
+costruire un'app che ci guida verso il nord.

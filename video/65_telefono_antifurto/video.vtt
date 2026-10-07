@@ -1,0 +1,225 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.496
+Oggi costruiamo un antifurto.
+
+2
+00:00:02.496 --> 00:00:05.571
+Appoggi il telefono sul tavolo, attivi l'allarme,
+
+3
+00:00:05.571 --> 00:00:08.322
+e se qualcuno lo sposta... suona la sirena!
+
+4
+00:00:08.322 --> 00:00:12.745
+Useremo l'accelerometro, un timer, un suono, la vibrazione e una notifica.
+
+5
+00:00:14.045 --> 00:00:15.366
+Ecco i pezzi.
+
+6
+00:00:15.366 --> 00:00:20.082
+Un Sensore di tipo accelerometro, che legge dieci volte al secondo.
+
+7
+00:00:20.082 --> 00:00:23.477
+Un Timer di cinque secondi, spento all'inizio:
+
+8
+00:00:23.477 --> 00:00:26.684
+ci darà il tempo di appoggiare il telefono.
+
+9
+00:00:26.684 --> 00:00:30.332
+Un Suono con un file audio e ripeti uguale a vero,
+
+10
+00:00:30.332 --> 00:00:33.790
+così la sirena continua finché non la fermiamo.
+
+11
+00:00:33.790 --> 00:00:36.494
+E poi la Vibrazione e una Notifica.
+
+12
+00:00:37.794 --> 00:00:42.445
+Se l'allarme si attivasse subito, suonerebbe mentre appoggi il telefono!
+
+13
+00:00:42.445 --> 00:00:44.479
+Per questo usiamo il timer.
+
+14
+00:00:44.479 --> 00:00:48.549
+Il pulsante chiede di appoggiare il telefono e avvia il timer.
+
+15
+00:00:48.549 --> 00:00:52.618
+Dopo cinque secondi arriva l'evento scatto: fermiamo il timer,
+
+16
+00:00:52.618 --> 00:00:56.978
+perché serve una volta sola, e mettiamo la variabile armato a vero.
+
+17
+00:00:58.278 --> 00:00:59.541
+Ora il trucco.
+
+18
+00:00:59.541 --> 00:01:03.562
+Da fermo l'accelerometro segna sempre circa nove virgola otto,
+
+19
+00:01:03.562 --> 00:01:07.524
+per via della gravità, quindi non possiamo aspettare lo zero.
+
+20
+00:01:07.524 --> 00:01:11.142
+Invece confrontiamo ogni lettura con quella precedente.
+
+21
+00:01:11.142 --> 00:01:14.703
+Se il telefono è fermo, x, y e z restano quasi uguali.
+
+22
+00:01:14.703 --> 00:01:16.943
+Se qualcuno lo tocca, cambiano.
+
+23
+00:01:16.943 --> 00:01:21.135
+Sommiamo le differenze: se la somma supera due, scatta l'allarme.
+
+24
+00:01:22.435 --> 00:01:23.813
+Ecco il cuore.
+
+25
+00:01:23.813 --> 00:01:28.262
+Per ogni asse calcoliamo la differenza con la lettura di prima,
+
+26
+00:01:28.262 --> 00:01:31.959
+con la funzione assoluto, che toglie il segno meno:
+
+27
+00:01:31.959 --> 00:01:36.219
+così contano sia gli spostamenti in un verso sia nell'altro.
+
+28
+00:01:36.219 --> 00:01:39.352
+La somma delle tre differenze è la scossa.
+
+29
+00:01:39.352 --> 00:01:43.237
+Poi ricordiamo i valori attuali per la prossima volta.
+
+30
+00:01:43.237 --> 00:01:48.249
+Se l'allarme è armato, non è già scattato e la scossa è maggiore di due,
+
+31
+00:01:48.249 --> 00:01:51.006
+chiamiamo la funzione suona allarme.
+
+32
+00:01:52.306 --> 00:01:56.865
+E qui parte tutto: la sirena, tre vibrazioni lunghe e una notifica.
+
+33
+00:01:56.865 --> 00:02:01.789
+La variabile scattato serve a non far ripartire la sirena a ogni lettura:
+
+34
+00:02:01.789 --> 00:02:06.592
+finché nessuno disattiva l'allarme, la condizione di prima resta falsa.
+
+35
+00:02:07.892 --> 00:02:13.239
+Il pulsante Disattiva rimette tutto a posto: le due variabili tornano a falso,
+
+36
+00:02:13.239 --> 00:02:17.280
+fermiamo il timer, se stava ancora contando, e la sirena.
+
+37
+00:02:18.580 --> 00:02:22.505
+Ecco l'app dopo i cinque secondi: l'allarme è attivo.
+
+38
+00:02:22.505 --> 00:02:28.233
+Sotto vediamo l'accelerometro in diretta, con nove virgola otto e i tre valori x,
+
+39
+00:02:28.233 --> 00:02:29.134
+y e z.
+
+40
+00:02:29.134 --> 00:02:32.866
+Ora basta sollevare il telefono e parte la sirena.
+
+41
+00:02:34.166 --> 00:02:38.242
+Un consiglio: la soglia due è un buon punto di partenza,
+
+42
+00:02:38.242 --> 00:02:40.917
+ma ogni telefono è un po' diverso.
+
+43
+00:02:40.917 --> 00:02:45.183
+Se l'allarme scatta da solo, magari perché il tavolo vibra,
+
+44
+00:02:45.183 --> 00:02:47.667
+alza la soglia a tre o quattro.
+
+45
+00:02:47.667 --> 00:02:50.469
+Se invece non scatta mai, abbassala.
+
+46
+00:02:50.469 --> 00:02:52.125
+Fai qualche prova!
+
+47
+00:02:53.425 --> 00:02:54.241
+Quiz.
+
+48
+00:02:54.241 --> 00:02:57.444
+A che cosa serve la variabile scattato? ...
+
+49
+00:02:57.444 --> 00:03:02.593
+A non far ripartire la sirena, la vibrazione e la notifica a ogni lettura,
+
+50
+00:03:02.593 --> 00:03:04.854
+cioè dieci volte al secondo!
+
+51
+00:03:13.454 --> 00:03:14.651
+Ricapitoliamo.
+
+52
+00:03:14.651 --> 00:03:17.644
+Il timer dà il tempo di appoggiare il telefono.
+
+53
+00:03:17.644 --> 00:03:22.651
+Il movimento si scopre confrontando due letture, con assoluto per togliere il segno.
+
+54
+00:03:22.651 --> 00:03:26.515
+E quando scatta, suono, vibrazione e notifica lavorano insieme.
+
+55
+00:03:27.815 --> 00:03:30.672
+Nel prossimo video usiamo il magnetometro per
+
+56
+00:03:30.672 --> 00:03:33.529
+trasformare il telefono in un metal detector.
