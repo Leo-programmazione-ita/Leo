@@ -1,0 +1,225 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.984
+Fogli Excel, documenti Word, PDF: sono i file che girano in ogni ufficio.
+
+2
+00:00:05.984 --> 00:00:11.062
+In questo video vediamo come un programma Leo li legge e li scrive,
+
+3
+00:00:11.062 --> 00:00:14.786
+senza installare niente, sul PC e sul telefono.
+
+4
+00:00:16.086 --> 00:00:21.591
+La libreria ufficio legge e scrive i fogli di calcolo di Excel e di LibreOffice,
+
+5
+00:00:21.591 --> 00:00:24.969
+i documenti di Word e di LibreOffice, e i PDF.
+
+6
+00:00:24.969 --> 00:00:28.222
+Converte le tabelle da un formato all'altro,
+
+7
+00:00:28.222 --> 00:00:32.539
+e prepara tante lettere da un solo modello: la stampa unione.
+
+8
+00:00:32.539 --> 00:00:36.230
+È scritta tutta con la libreria standard di Python,
+
+9
+00:00:36.230 --> 00:00:40.984
+quindi funziona uguale sul computer, nell'eseguibile e sul telefono.
+
+10
+00:00:42.284 --> 00:00:47.296
+Una tabella, in Leo, è una lista di dizionari: ogni dizionario è una riga,
+
+11
+00:00:47.296 --> 00:00:50.902
+e le chiavi diventano l'intestazione delle colonne.
+
+12
+00:00:50.902 --> 00:00:52.980
+Scrivi excel crea il file,
+
+13
+00:00:52.980 --> 00:00:57.259
+con l'intestazione in grassetto e le colonne larghe il giusto.
+
+14
+00:00:57.259 --> 00:01:02.576
+Leggi excel fa il contrario: restituisce le righe, pronte da usare in un ciclo.
+
+15
+00:01:02.576 --> 00:01:06.366
+Numeri, date e importi restano numeri, date e importi.
+
+16
+00:01:07.666 --> 00:01:12.067
+Un testo che comincia con uguale è una formula, come in Excel,
+
+17
+00:01:12.067 --> 00:01:16.657
+e si possono usare i nomi italiani: somma, media, conta punto se.
+
+18
+00:01:16.657 --> 00:01:20.053
+Qui l'ultima riga somma la colonna dei totali.
+
+19
+00:01:20.053 --> 00:01:23.700
+Delle formule semplici Leo salva già il risultato,
+
+20
+00:01:23.700 --> 00:01:27.347
+così puoi rileggerlo subito con leggi cella excel.
+
+21
+00:01:27.347 --> 00:01:31.748
+Le formule più complesse le calcola Excel quando apre il file.
+
+22
+00:01:33.048 --> 00:01:36.157
+Per un documento vero si usa nuovo documento,
+
+23
+00:01:36.157 --> 00:01:40.555
+e si aggiungono i pezzi uno alla volta: titoli, paragrafi, elenchi,
+
+24
+00:01:40.555 --> 00:01:42.139
+tabelle e immagini.
+
+25
+00:01:42.139 --> 00:01:45.658
+Nei paragrafi, due asterischi scrivono in grassetto.
+
+26
+00:01:45.658 --> 00:01:48.766
+Poi salva: il formato lo decide l'estensione.
+
+27
+00:01:48.766 --> 00:01:53.048
+Lo stesso documento diventa un file Word e un PDF, con due righe.
+
+28
+00:01:54.348 --> 00:01:59.794
+Con i PDF si fanno i lavori di tutti i giorni: unire più file in uno,
+
+29
+00:01:59.794 --> 00:02:04.746
+estrarre alcune pagine, dividere un PDF in un file per pagina,
+
+30
+00:02:04.746 --> 00:02:07.080
+ruotare le pagine storte.
+
+31
+00:02:07.080 --> 00:02:13.163
+E cerca in pdf ti dice in quale pagina compare una parola, con la riga intera.
+
+32
+00:02:13.163 --> 00:02:19.246
+Le pagine si scrivono come a stampa: uno trattino due, oppure uno virgola tre.
+
+33
+00:02:20.546 --> 00:02:24.735
+E ora il lavoro che fa risparmiare ore: la stampa unione.
+
+34
+00:02:24.735 --> 00:02:30.148
+Nel modello i campi si scrivono tra doppie parentesi angolari: nome, numero,
+
+35
+00:02:30.148 --> 00:02:31.244
+scadenza.
+
+36
+00:02:31.244 --> 00:02:34.144
+Le righe arrivano da un foglio Excel.
+
+37
+00:02:34.144 --> 00:02:40.009
+Se il nome del file di uscita contiene un campo, Leo crea un file per ogni cliente;
+
+38
+00:02:40.009 --> 00:02:43.682
+altrimenti un solo file, con una pagina per riga.
+
+39
+00:02:43.682 --> 00:02:48.709
+Il modello può anche essere un documento Word: la grafica resta com'è.
+
+40
+00:02:50.009 --> 00:02:55.116
+Un consiglio pratico: prima di scrivere codice per trasformare un file,
+
+41
+00:02:55.116 --> 00:02:58.477
+prova converti tabella e converti documento.
+
+42
+00:02:58.477 --> 00:03:04.295
+Da Excel a CSV, da Word a HTML, da una tabella a un PDF impaginato: una riga sola.
+
+43
+00:03:05.595 --> 00:03:06.669
+Domanda.
+
+44
+00:03:06.669 --> 00:03:10.493
+Come decide Leo se salvare un file Word o un PDF?
+
+45
+00:03:14.793 --> 00:03:17.762
+Dall'estensione del nome, risposta B.
+
+46
+00:03:17.762 --> 00:03:21.324
+Punto docx è un file Word, punto pdf è un PDF.
+
+47
+00:03:22.624 --> 00:03:24.091
+Ricapitoliamo.
+
+48
+00:03:24.091 --> 00:03:29.424
+Excel si scrive e si legge con liste di dizionari, anche con le formule.
+
+49
+00:03:29.424 --> 00:03:34.424
+Un documento si costruisce a pezzi e si salva nel formato che vuoi.
+
+50
+00:03:34.424 --> 00:03:37.891
+I PDF si uniscono, si dividono e si cercano.
+
+51
+00:03:37.891 --> 00:03:42.624
+E la stampa unione prepara tutte le lettere da un solo modello.
+
+52
+00:03:43.924 --> 00:03:47.750
+Esercizio: scrivi un foglio Excel con le spese del mese,
+
+53
+00:03:47.750 --> 00:03:50.738
+una colonna di totali e la somma in fondo.
+
+54
+00:03:50.738 --> 00:03:52.233
+Poi fanne un PDF.
+
+55
+00:03:52.233 --> 00:03:57.015
+Nel prossimo video lavoriamo con le tabelle di dati: filtrare, ordinare,
+
+56
+00:03:57.015 --> 00:03:58.210
+raggruppare.

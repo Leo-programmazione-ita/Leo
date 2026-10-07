@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.180
+Leo è un linguaggio a tipi forti: non somma mai un testo e un numero per sbaglio.
+
+2
+00:00:06.180 --> 00:00:11.477
+Ma l'errore arriva quando il programma esegue quella riga, magari dopo ore,
+
+3
+00:00:11.477 --> 00:00:13.327
+magari da un cliente.
+
+4
+00:00:13.327 --> 00:00:16.646
+In questo video vediamo come trovarli prima:
+
+5
+00:00:16.646 --> 00:00:20.092
+i tipi facoltativi e il comando leo controlla.
+
+6
+00:00:21.392 --> 00:00:27.163
+I tipi si scrivono dopo il nome del parametro, con i due punti: voti è una lista,
+
+7
+00:00:27.163 --> 00:00:29.237
+lode è un valore logico.
+
+8
+00:00:29.237 --> 00:00:35.203
+Sono facoltativi: li metti dove aiutano, per esempio nelle funzioni che usano altri,
+
+9
+00:00:35.203 --> 00:00:37.796
+o nelle librerie di un progetto.
+
+10
+00:00:37.796 --> 00:00:42.400
+Se una chiamata passa il tipo sbagliato, l'errore parla chiaro:
+
+11
+00:00:42.400 --> 00:00:46.290
+che cosa voleva la funzione, e che cosa ha ricevuto.
+
+12
+00:00:47.590 --> 00:00:52.330
+Leo controlla legge tutto il progetto, deduce i tipi dei valori,
+
+13
+00:00:52.330 --> 00:00:55.688
+e segnala i problemi senza eseguire niente.
+
+14
+00:00:55.688 --> 00:00:59.835
+Una funzione che riceve un testo al posto di una lista.
+
+15
+00:00:59.835 --> 00:01:04.575
+Un confronto tra un testo e un numero, che sarebbe sempre falso.
+
+16
+00:01:04.575 --> 00:01:10.434
+È il lavoro che in Python fanno strumenti esterni come mypy; in Leo è già dentro,
+
+17
+00:01:10.434 --> 00:01:12.080
+e parla italiano.
+
+18
+00:01:13.380 --> 00:01:17.713
+Gli stessi avvisi compaiono mentre scrivi: accanto alla riga,
+
+19
+00:01:17.713 --> 00:01:22.736
+l'editor ti dice per esempio attento, t è un testo, segreto è un numero.
+
+20
+00:01:22.736 --> 00:01:27.006
+Succede sul telefono, in Leo Studio e in Visual Studio Code:
+
+21
+00:01:27.006 --> 00:01:30.523
+l'errore lo vedi prima ancora di premere esegui.
+
+22
+00:01:31.823 --> 00:01:33.703
+Quando conviene scriverli?
+
+23
+00:01:33.703 --> 00:01:37.740
+In un programma piccolo, raramente: Leo deduce già molto da solo.
+
+24
+00:01:37.740 --> 00:01:41.832
+Nelle funzioni che usano altre persone, e nei progetti grandi, sì:
+
+25
+00:01:41.832 --> 00:01:44.818
+sono documentazione che il computer controlla.
+
+26
+00:01:44.818 --> 00:01:48.966
+E prima di consegnare un progetto, leo controlla come ultimo passo.
+
+27
+00:01:50.266 --> 00:01:51.050
+Domanda.
+
+28
+00:01:51.050 --> 00:01:52.715
+Che cosa fa leo controlla?
+
+29
+00:01:57.015 --> 00:02:01.097
+Cerca gli errori di tipo senza eseguire niente, risposta B.
+
+30
+00:02:02.397 --> 00:02:03.475
+Ricapitoliamo.
+
+31
+00:02:03.475 --> 00:02:06.168
+I tipi si scrivono sui parametri, dove servono.
+
+32
+00:02:06.168 --> 00:02:09.058
+Leo controlla verifica il progetto senza eseguirlo,
+
+33
+00:02:09.058 --> 00:02:12.193
+e gli stessi avvisi compaiono nell'editor mentre scrivi.
+
+34
+00:02:13.493 --> 00:02:18.503
+Esercizio: lancia leo controlla su un tuo progetto, e correggi ogni avviso.
+
+35
+00:02:18.503 --> 00:02:22.064
+Scoprirai almeno un errore che non sapevi di avere.

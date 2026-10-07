@@ -1,0 +1,217 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.735
+Vendite, presenze, misure, ordini: quasi tutti i dati del lavoro sono tabelle.
+
+2
+00:00:05.735 --> 00:00:11.335
+In questo video vediamo le tabelle di Leo: righe e colonne con un nome, da filtrare,
+
+3
+00:00:11.335 --> 00:00:14.378
+ordinare e riassumere con parole italiane.
+
+4
+00:00:15.678 --> 00:00:20.531
+Una tabella nasce da una lista di dizionari, da una lista di liste,
+
+5
+00:00:20.531 --> 00:00:22.213
+oppure da un file.
+
+6
+00:00:22.213 --> 00:00:26.419
+Stampa la scrive allineata, come in un foglio di calcolo,
+
+7
+00:00:26.419 --> 00:00:29.914
+e sotto dice quante righe e quante colonne ha.
+
+8
+00:00:29.914 --> 00:00:34.443
+Nota Napoli: l'incasso manca, e una cella mancante vale nulla.
+
+9
+00:00:34.443 --> 00:00:36.902
+I conti la salteranno da soli.
+
+10
+00:00:38.202 --> 00:00:41.348
+Di solito i dati arrivano da un file.
+
+11
+00:00:41.348 --> 00:00:46.941
+Tabella da file legge CSV, TSV e JSON, e indovina da sola il separatore,
+
+12
+00:00:46.941 --> 00:00:51.835
+anche il punto e virgola dei CSV salvati da Excel in italiano.
+
+13
+00:00:51.835 --> 00:00:57.847
+I numeri con la virgola diventano numeri veri, le celle vuote diventano nulla.
+
+14
+00:00:57.847 --> 00:01:01.902
+E con tabella da database e tabella da json prendi
+
+15
+00:01:01.902 --> 00:01:05.957
+i dati da un database o dalla risposta di un sito.
+
+16
+00:01:07.257 --> 00:01:11.975
+Filtra tiene solo le righe che rispettano una condizione: la colonna,
+
+17
+00:01:11.975 --> 00:01:13.936
+l'operatore e il valore.
+
+18
+00:01:13.936 --> 00:01:16.632
+Qui gli incassi da mille euro in su.
+
+19
+00:01:16.632 --> 00:01:22.208
+Ordina le mette in ordine, e con decrescente uguale vero dal più alto al più basso.
+
+20
+00:01:22.208 --> 00:01:26.497
+Attenzione: questi metodi non cambiano la tabella di partenza,
+
+21
+00:01:26.497 --> 00:01:28.641
+ne restituiscono una nuova.
+
+22
+00:01:28.641 --> 00:01:32.563
+Per questo si possono mettere in fila, uno dopo l'altro.
+
+23
+00:01:33.863 --> 00:01:38.560
+Filtra capisce molti operatori: uguale, diverso, maggiore, minore; in,
+
+24
+00:01:38.560 --> 00:01:43.980
+con una lista di valori; tra, con due estremi; contiene, inizia con e finisce con,
+
+25
+00:01:43.980 --> 00:01:46.148
+senza badare alle maiuscole.
+
+26
+00:01:46.148 --> 00:01:49.339
+E mancante trova le righe con la cella vuota:
+
+27
+00:01:49.339 --> 00:01:52.230
+il primo controllo da fare su dati veri.
+
+28
+00:01:53.530 --> 00:01:58.227
+Ecco la domanda che ogni responsabile fa: quanto ha incassato ogni negozio?
+
+29
+00:01:58.227 --> 00:02:03.377
+Raggruppa crea una riga per ogni negozio e fa i calcoli sulle altre colonne: somma,
+
+30
+00:02:03.377 --> 00:02:06.036
+media, conta, minimo, massimo, mediana.
+
+31
+00:02:06.036 --> 00:02:11.073
+E statistiche riassume una colonna intera in un dizionario: somma, media, minimo,
+
+32
+00:02:11.073 --> 00:02:12.714
+massimo e deviazione.
+
+33
+00:02:14.014 --> 00:02:18.319
+Unisci affianca due tabelle che hanno una colonna in comune,
+
+34
+00:02:18.319 --> 00:02:21.928
+per esempio le vendite e l'anagrafica dei negozi.
+
+35
+00:02:21.928 --> 00:02:27.627
+La tabella incrociata è la tabella pivot dei fogli di calcolo: negozi sulle righe,
+
+36
+00:02:27.627 --> 00:02:29.336
+mesi sulle colonne.
+
+37
+00:02:29.336 --> 00:02:33.389
+Salva scrive il risultato in CSV, JSON, HTML o Markdown.
+
+38
+00:02:33.389 --> 00:02:36.871
+E grafico ne fa un grafico a barre in una riga.
+
+39
+00:02:38.171 --> 00:02:40.553
+Un consiglio sulle prestazioni.
+
+40
+00:02:40.553 --> 00:02:44.340
+Quando puoi, filtra e ordina con i nomi delle colonne:
+
+41
+00:02:44.340 --> 00:02:48.676
+Leo lavora così su centinaia di migliaia di righe senza fatica.
+
+42
+00:02:48.676 --> 00:02:51.852
+Una funzione scritta da te è più flessibile,
+
+43
+00:02:51.852 --> 00:02:54.906
+ma viene chiamata una volta per ogni riga.
+
+44
+00:02:56.206 --> 00:02:57.127
+Domanda.
+
+45
+00:02:57.127 --> 00:03:00.696
+Dopo t punto filtra, che cosa contiene la variabile t?
+
+46
+00:03:04.996 --> 00:03:07.676
+Tutte le righe di prima, risposta B.
+
+47
+00:03:07.676 --> 00:03:13.159
+Filtra restituisce una tabella nuova: per tenerla, scrivi t uguale t punto filtra.
+
+48
+00:03:14.459 --> 00:03:15.742
+Ricapitoliamo.
+
+49
+00:03:15.742 --> 00:03:18.774
+Una tabella nasce da una lista o da un file.
+
+50
+00:03:18.774 --> 00:03:22.972
+Filtra e ordina restituiscono tabelle nuove, da mettere in fila.
+
+51
+00:03:22.972 --> 00:03:27.053
+Raggruppa e statistiche riassumono i dati, unisci li incrocia,
+
+52
+00:03:27.053 --> 00:03:30.377
+e salva e grafico li portano fuori dal programma.
+
+53
+00:03:31.677 --> 00:03:37.266
+Esercizio: trova il negozio con l'incasso medio più alto, con raggruppa e ordina.
+
+54
+00:03:37.266 --> 00:03:42.289
+Nel prossimo video usciamo su internet: pagine web e servizi con le API.
