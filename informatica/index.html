@@ -1,0 +1,65 @@
+<title>Pensare in codice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C; --accent:#E6111A;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px;padding-left:18px;padding-right:18px}
+.hero{text-align:center;padding:30px 0 10px;position:relative}
+.glow{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:560px;height:560px;max-width:100%;
+  background:radial-gradient(closest-side,rgba(230,17,26,.22),rgba(230,17,26,0) 70%);pointer-events:none}
+.lion{width:112px;height:112px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-top:18px}
+h1{font-family:var(--disp);font-weight:900;font-size:clamp(40px,9vw,72px);line-height:.98;margin:.12em 0 .1em;letter-spacing:-.01em}
+h1 .r{color:var(--accent)}
+.tag{color:var(--muted);font-size:18px;max-width:52ch;margin:0 auto}
+.by{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--faint);margin-top:16px;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+a.card{display:flex;flex-direction:column;gap:8px;background:var(--panel);border:1px solid var(--line);
+  border-radius:16px;padding:20px;text-decoration:none;color:inherit;transition:.15s;min-height:150px}
+a.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.1em}
+.ct{font-family:var(--disp);font-weight:600;font-size:24px;line-height:1.1}
+.cd{color:var(--muted);font-size:14.5px}
+.go{margin-top:auto;font-family:var(--mono);font-size:12.5px;color:var(--faint);letter-spacing:.06em}
+a.card:hover .go{color:var(--accent)}
+.soon{opacity:.5;pointer-events:none}
+.soon .go{color:var(--faint)}
+.badge{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint);
+  border:1px solid var(--line);border-radius:999px;padding:2px 8px;text-transform:uppercase}
+.foot{color:var(--faint);font-size:13px;margin-top:48px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:18px;text-align:center}
+.foot a{color:var(--muted);text-decoration:none}
+</style>
+<div class="wrap">
+  <div class="hero">
+    <div class="glow"></div>
+    <svg class="lion" viewBox="0 0 572 572" aria-label="Leo"><path fill="#E6111A" fill-rule="evenodd" d="M286 24 54 158v232l232 134 232-134V158L286 24Zm0 70 170 98v22l-58 34 8 70-50 30 10 64-80 46-80-46 10-64-50-30 8-70-58-34v-22l170-98Z"/></svg>
+    <div class="eyebrow">Informatica interattiva</div>
+    <h1>Pensare<br>in <span class="r">codice</span></h1>
+    <p class="tag">Un libro che spiega l'informatica <b style="color:var(--fg)">da toccare</b>: ogni concetto ha qualcosa da esplorare. Con Leo, il linguaggio di programmazione in italiano.</p>
+    <div class="by">di Rosario Zappalà</div>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="bit.html"><span class="num">01</span><span class="ct">Tutto è bit</span><span class="cd">Come numeri, testo, immagini e suoni diventano zeri e uni.</span><span class="go">Apri →</span></a>
+    <a class="card" href="logica.html"><span class="num">02</span><span class="ct">La logica</span><span class="cd">Vero e falso, le porte logiche, come un computer decide.</span><span class="go">Apri →</span></a>
+    <a class="card" href="cpu.html"><span class="num">03</span><span class="ct">Dentro il computer</span><span class="cd">Il processore in 3D: preleva, decodifica, esegui.</span><span class="go">Apri →</span></a>
+    <a class="card" href="algoritmi.html"><span class="num">04</span><span class="ct">Gli algoritmi</span><span class="cd">Ricette di passi: ordinare e cercare, animati passo passo.</span><span class="go">Apri →</span></a>
+    <a class="card" href="dati.html"><span class="num">05</span><span class="ct">I dati</span><span class="cd">Liste, pile, code e dizionari che si costruiscono sotto i tuoi occhi.</span><span class="go">Apri →</span></a>
+    <a class="card" href="reti.html"><span class="num">06</span><span class="ct">Reti e Internet</span><span class="cd">Pacchetti, client e server, il viaggio di una pagina web.</span><span class="go">Apri →</span></a>
+    <div class="card soon"><span class="num">07</span><span class="ct">Sicurezza</span><span class="cd">Cifratura e impronte: proteggere i dati.</span><span class="go"><span class="badge">in arrivo</span></span></div>
+    <div class="card soon"><span class="num">08</span><span class="ct">Scrivere in Leo</span><span class="cd">Dal concetto al codice vero, capitolo per capitolo.</span><span class="go"><span class="badge">in arrivo</span></span></div>
+  </div>
+
+  <div class="foot">Informatica interattiva — un libro di <b style="color:var(--muted)">Rosario Zappalà</b> · <a href="https://leoitalia.com">leoitalia.com</a></div>
+</div>

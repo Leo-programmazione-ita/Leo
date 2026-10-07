@@ -1,0 +1,290 @@
+<title>Tutto è bit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Libro interattivo "Informatica" — sezione 1. Lettura a scorrimento, moduli da toccare.
+   Mondo visivo unico e scuro, coerente con la CPU 3D; colori espliciti. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+
+/* --- byte explorer --- */
+.bits{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.bitcol{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.place{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.bit{width:clamp(34px,9vw,52px);aspect-ratio:1;border-radius:12px;border:1px solid var(--line);
+  background:var(--off);color:var(--faint);font-family:var(--mono);font-size:clamp(16px,4vw,22px);
+  font-weight:600;cursor:pointer;transition:.12s;display:flex;align-items:center;justify-content:center}
+.bit.on{background:var(--on);border-color:var(--on);color:#fff;box-shadow:0 0 18px -5px var(--accent)}
+.byteread{text-align:center;margin-top:18px}
+.byteread .big{font-family:var(--disp);font-weight:700;font-size:clamp(44px,12vw,72px);line-height:1}
+.byteread .bin{font-family:var(--mono);color:var(--muted);letter-spacing:.14em;font-size:15px;margin-top:4px}
+input[type=range]{width:100%;accent-color:var(--accent);margin-top:16px;height:26px}
+.rowlab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:2px}
+
+/* --- testo --- */
+.tfield{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--fg);
+  font-family:var(--body);font-size:18px;padding:12px 14px}
+.tfield:focus{outline:2px solid var(--accent);outline-offset:1px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:8px 10px;text-align:center;min-width:54px}
+.chip .ch{font-family:var(--disp);font-weight:600;font-size:26px;line-height:1}
+.chip .co{font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:3px}
+.chip .bn{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:2px;letter-spacing:.04em}
+
+/* --- immagine --- */
+.imgwrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center}
+#pix{border:1px solid var(--line);border-radius:10px;image-rendering:pixelated;touch-action:none;cursor:crosshair;background:#0c0a0b}
+.pal{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.sw{width:30px;height:30px;border-radius:8px;border:2px solid var(--line);cursor:pointer}
+.sw.sel{border-color:#fff}
+.imgmeta{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center}
+.imgmeta b{color:#fff}
+.imgbtns{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+
+/* --- suono --- */
+#wave{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--panel2);touch-action:none}
+.soundctl{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.soundctl label{font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+/* --- bottoni / codice --- */
+button.btn{font-family:var(--body);font-weight:600;font-size:14px;border-radius:10px;padding:9px 14px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;transition:.15s}
+button.btn:hover{border-color:var(--faint)}
+button.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA}
+pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color:var(--faint)}
+.out{font-family:var(--mono);font-size:13px;color:var(--ok);margin-top:8px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <span class="eyebrow">Informatica interattiva · Sezione 1</span>
+  <h1>Tutto è bit</h1>
+  <p class="lead">Un numero, una parola, una foto, una canzone. Dentro un computer sono tutti la stessa cosa: lunghe file di <b>zeri e uni</b>. Qui lo tocchi con mano.</p>
+  <p>Un computer, sotto sotto, sa fare una cosa sola: distinguere tra <b>acceso</b> e <b>spento</b>. Niente lettere, niente colori, niente suoni — solo milioni di minuscoli interruttori. Il bello è che con quella sola distinzione, ripetuta tante volte, si può rappresentare <em>qualsiasi</em> cosa. Vediamo come.</p>
+
+  <section>
+    <h2><span class="n">01</span>Un interruttore: il bit</h2>
+    <p>La più piccola informazione possibile è una risposta sì/no: <b>1</b> o <b>0</b>, acceso o spento. Si chiama <b>bit</b>. Da solo dice poco. Ma mettine otto in fila — un <b>byte</b> — e ognuno vale il doppio del precedente: 128, 64, 32… Accendi gli interruttori e guarda che numero formano.</p>
+    <div class="card">
+      <div class="bits" id="bits"></div>
+      <input type="range" id="slide" min="0" max="255" value="65">
+      <div class="rowlab"><span>0</span><span>trascina per cambiare</span><span>255</span></div>
+      <div class="byteread">
+        <div class="big" id="dec">65</div>
+        <div class="bin"><span id="bin">01000001</span> &nbsp;·&nbsp; in base dieci: <b id="dec2" style="color:var(--fg)">65</b></div>
+      </div>
+      <p class="take">Otto bit contano da <b>0</b> a <b>255</b>: 256 combinazioni. Vuoi numeri più grandi? Aggiungi byte. È tutto qui.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Le lettere sono numeri</h2>
+    <p>Se il computer conosce solo numeri, come fa a scrivere «Ciao»? Semplice: a ogni carattere è assegnato un numero, uguale per tutti i computer del mondo (lo standard <b>Unicode</b>). La <b>A</b> è 65, la <b>a</b> è 97. E quel numero, come hai appena visto, è un byte. Scrivi qualcosa e guarda ogni lettera diventare codice e poi binario.</p>
+    <div class="card">
+      <input class="tfield" id="txt" value="Ciao" maxlength="18" aria-label="scrivi del testo">
+      <div class="chips" id="chips"></div>
+      <p class="take">Perfino le <b>emoji</b> sono numeri Unicode (solo un po' più grandi di un byte). Un testo è una collana di codici.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Le immagini sono griglie di numeri</h2>
+    <p>Una foto è una griglia di puntini: i <b>pixel</b>. Ogni pixel è un numero che dice il suo colore. Qui ogni cella è accesa (1) o spenta (0): disegna qualcosa e conta — l'immagine <em>è</em> quei numeri.</p>
+    <div class="card">
+      <div class="imgwrap">
+        <canvas id="pix" width="256" height="256"></canvas>
+      </div>
+      <div class="pal" id="pal"></div>
+      <div class="imgbtns">
+        <button class="btn" id="clr">Pulisci</button>
+        <button class="btn" id="leone">Disegna un leone</button>
+      </div>
+      <p class="imgmeta" style="margin-top:14px">Griglia <b>16×16</b> = <b>256</b> numeri · accesi ora: <b id="npix">0</b></p>
+      <p class="take">A colori ogni pixel sono <b>tre</b> numeri (quanto rosso, quanto verde, quanto blu). Una foto del telefono? Milioni di pixel, milioni di numeri.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>Anche il suono è numeri</h2>
+    <p>Un suono è un'onda che vibra nell'aria. Il computer la <b>misura</b> tante volte al secondo e segna ogni misura come un numero: sono i <b>campioni</b>. Rimetti insieme i numeri abbastanza in fretta e l'orecchio risente l'onda. Muovi la frequenza e, se vuoi, ascolta.</p>
+    <div class="card">
+      <canvas id="wave" width="640" height="200"></canvas>
+      <div class="soundctl">
+        <label for="freq">frequenza</label>
+        <input type="range" id="freq" min="1" max="12" value="4" style="flex:1;margin:0">
+        <button class="btn primary" id="play">▶ ascolta</button>
+      </div>
+      <p class="take">I puntini rossi sono i campioni: ognuno è un numero. Più campioni al secondo, più il suono è fedele.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span>E con Leo?</h2>
+    <p>In Leo questi "numeri sotto le cose" sono a portata di mano. Puoi trasformare un numero in binario, o vedere i byte di un testo — esattamente quello che hai toccato qui sopra:</p>
+    <pre class="code"><span class="cm"># il numero 65 in binario</span>
+<span class="kw">stampa</span>(in_binario(<span class="st">65</span>))
+
+<span class="cm"># i byte della parola "Ciao", scritti in bit</span>
+<span class="kw">stampa</span>(dati_binari(<span class="st">"Ciao"</span>).codifica(<span class="st">"bit"</span>, <span class="st">" "</span>))</pre>
+    <div class="out">▸ 1000001<br>▸ 01000011 01101001 01100001 01101111</div>
+    <p style="margin-top:14px" class="kicker">C=67, i=105, a=97, o=111 — le stesse lettere della collana qui sopra, ora in zeri e uni. Dal concetto al codice vero, senza magia.</p>
+  </section>
+
+  <div class="foot">
+    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
+    <a href="https://leoitalia.com">leoitalia.com</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // ---------- 01 byte explorer ----------
+  var places=[128,64,32,16,8,4,2,1], bitsEl=document.getElementById('bits'), bitBtns=[];
+  var val=65;
+  places.forEach(function(p,i){
+    var col=document.createElement('div'); col.className='bitcol';
+    var pl=document.createElement('div'); pl.className='place'; pl.textContent=p;
+    var b=document.createElement('button'); b.className='bit'; b.type='button'; b.setAttribute('aria-label','bit '+p);
+    b.addEventListener('click',function(){ val ^= p; syncByte(); });
+    col.appendChild(pl); col.appendChild(b); bitsEl.appendChild(col); bitBtns[i]=b;
+  });
+  var dec=document.getElementById('dec'),dec2=document.getElementById('dec2'),bin=document.getElementById('bin'),slide=document.getElementById('slide');
+  function syncByte(){
+    val=((val%256)+256)%256;
+    var s='';
+    places.forEach(function(p,i){var on=(val&p)!==0;bitBtns[i].classList.toggle('on',on);bitBtns[i].textContent=on?'1':'0';s+=on?'1':'0';});
+    dec.textContent=val; dec2.textContent=val; bin.textContent=s; slide.value=val;
+  }
+  slide.addEventListener('input',function(){val=+slide.value;syncByte();});
+  syncByte();
+
+  // ---------- 02 testo ----------
+  var txt=document.getElementById('txt'), chips=document.getElementById('chips');
+  function pad8(n){var s=n.toString(2);while(s.length<8)s='0'+s;return s;}
+  function renderText(){
+    chips.innerHTML='';
+    var arr=Array.from(txt.value); // gestisce le emoji (code point)
+    arr.forEach(function(ch){
+      var cp=ch.codePointAt(0);
+      var d=document.createElement('div'); d.className='chip';
+      var bn = cp<=255 ? pad8(cp) : cp.toString(2);
+      d.innerHTML='<div class="ch">'+(ch===' '?'␠':escapeHtml(ch))+'</div><div class="co">'+cp+'</div><div class="bn">'+bn+'</div>';
+      chips.appendChild(d);
+    });
+  }
+  function escapeHtml(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  txt.addEventListener('input',renderText); renderText();
+
+  // ---------- 03 immagine ----------
+  var N=16, cv=document.getElementById('pix'), ctx=cv.getContext('2d'), cell=cv.width/N;
+  var palette=[null,'#E6111A','#F4ECEA','#F0A830'], cur=1;
+  var gridData=new Array(N*N).fill(0);
+  var palEl=document.getElementById('pal');
+  palette.forEach(function(c,i){
+    var s=document.createElement('div'); s.className='sw'+(i===cur?' sel':'');
+    s.style.background=c||'#0c0a0b'; if(!c){s.style.borderStyle='dashed';}
+    s.title=c?'colore':'gomma';
+    s.addEventListener('click',function(){cur=i;[].forEach.call(palEl.children,function(x,j){x.classList.toggle('sel',j===i);});});
+    palEl.appendChild(s);
+  });
+  function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(var y=0;y<N;y++)for(var x=0;x<N;x++){
+      var v=gridData[y*N+x];
+      if(v){ctx.fillStyle=palette[v];ctx.fillRect(x*cell,y*cell,cell,cell);}
+    }
+    // griglia
+    ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;
+    for(var i=0;i<=N;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,cv.height);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(0,i*cell);ctx.lineTo(cv.width,i*cell);ctx.stroke();}
+    var on=gridData.filter(function(v){return v!==0;}).length;
+    document.getElementById('npix').textContent=on;
+  }
+  function paintAt(e){
+    var r=cv.getBoundingClientRect();
+    var px=(e.touches?e.touches[0].clientX:e.clientX)-r.left, py=(e.touches?e.touches[0].clientY:e.clientY)-r.top;
+    var x=Math.floor(px/(r.width/N)), y=Math.floor(py/(r.height/N));
+    if(x<0||y<0||x>=N||y>=N)return;
+    gridData[y*N+x]=cur; draw();
+  }
+  var painting=false;
+  cv.addEventListener('pointerdown',function(e){painting=true;cv.setPointerCapture(e.pointerId);paintAt(e);});
+  cv.addEventListener('pointermove',function(e){if(painting)paintAt(e);});
+  cv.addEventListener('pointerup',function(){painting=false;});
+  cv.addEventListener('pointercancel',function(){painting=false;});
+  document.getElementById('clr').addEventListener('click',function(){gridData.fill(0);draw();});
+  // un leoncino stilizzato 16x16 (1=rosso)
+  var LEO=["0000000000000000","0001100000011000","0011110000111100","0011111111111100","0001111111111000","0001110110111000","0001111111111000","0001100110011000","0001111111111000","0000111111110000","0000011111100000","0000001111000000","0000000110000000","0000000000000000","0000000000000000","0000000000000000"];
+  document.getElementById('leone').addEventListener('click',function(){
+    for(var y=0;y<N;y++)for(var x=0;x<N;x++)gridData[y*N+x]=LEO[y][x]==='1'?1:0; draw();
+  });
+  draw();
+
+  // ---------- 04 suono ----------
+  var wave=document.getElementById('wave'), wc=wave.getContext('2d'), freq=document.getElementById('freq');
+  function resizeWave(){var w=wave.clientWidth; wave.width=w*Math.min(devicePixelRatio||1,2); wave.height=200*Math.min(devicePixelRatio||1,2); wc.setTransform(Math.min(devicePixelRatio||1,2),0,0,Math.min(devicePixelRatio||1,2),0,0);}
+  var t0=performance.now();
+  function drawWave(){
+    var w=wave.width/Math.min(devicePixelRatio||1,2), h=200, f=+freq.value, mid=h/2, amp=h*0.33;
+    wc.clearRect(0,0,w,h);
+    var ph= reduce?0:(performance.now()-t0)/600;
+    // onda
+    wc.strokeStyle='#B39A9D'; wc.lineWidth=2; wc.beginPath();
+    for(var x=0;x<=w;x++){var y=mid - amp*Math.sin((x/w)*f*2*Math.PI + ph); if(x===0)wc.moveTo(x,y);else wc.lineTo(x,y);}
+    wc.stroke();
+    // campioni
+    var S=Math.round(f*4)+8;
+    for(var i=0;i<=S;i++){var sx=i/S*w, sy=mid-amp*Math.sin((sx/w)*f*2*Math.PI+ph);
+      wc.fillStyle='#E6111A'; wc.beginPath(); wc.arc(sx,sy,3.2,0,7); wc.fill();
+      wc.strokeStyle='rgba(230,17,26,.25)';wc.lineWidth=1;wc.beginPath();wc.moveTo(sx,mid);wc.lineTo(sx,sy);wc.stroke();}
+    requestAnimationFrame(drawWave);
+  }
+  resizeWave(); window.addEventListener('resize',resizeWave); drawWave();
+  // audio
+  var actx=null, osc=null;
+  document.getElementById('play').addEventListener('click',function(){
+    try{
+      if(!actx)actx=new (window.AudioContext||window.webkitAudioContext)();
+      if(osc){osc.stop();osc=null;this.textContent='▶ ascolta';return;}
+      osc=actx.createOscillator(); var g=actx.createGain();
+      osc.frequency.value=160+(+freq.value)*70; g.gain.value=0.08;
+      osc.connect(g); g.connect(actx.destination); osc.start();
+      this.textContent='⏹ ferma'; var btn=this;
+      osc._g=g;
+      setTimeout(function(){ if(osc){try{osc.stop();}catch(e){} osc=null; btn.textContent='▶ ascolta';} },2500);
+    }catch(e){ this.textContent='audio non disponibile'; }
+  });
+  freq.addEventListener('input',function(){ if(osc)osc.frequency.value=160+(+freq.value)*70; });
+})();
+</script>

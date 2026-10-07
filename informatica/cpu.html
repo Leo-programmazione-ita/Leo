@@ -1,0 +1,385 @@
+<title>Dal codice al processore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una "macchina" 3D a sinistra, il pannello strumenti a destra; su telefono si impila.
+   Mondo visivo unico e scuro (lo schermo di uno strumento), colori espliciti. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#766A6B;
+  --accent:#E6111A; --accent-dim:#7d1116; --alu:#F0A830; --ok:#49C27A;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding-block:22px;padding-left:16px;padding-right:16px}
+header.top{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.04;margin:0;text-wrap:balance}
+.sub{color:var(--muted);max-width:60ch;font-size:15.5px}
+.stage{display:grid;grid-template-columns:1.35fr .95fr;gap:18px;align-items:stretch}
+@media (max-width:760px){.stage{grid-template-columns:1fr}}
+.scene-card{position:relative;background:
+   radial-gradient(120% 90% at 50% 0%, #1a1412 0%, #0d0a0b 70%);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:430px}
+#scene{display:block;width:100%;height:100%;position:absolute;inset:0;touch-action:none;cursor:grab}
+#scene:active{cursor:grabbing}
+.labels{position:absolute;inset:0;pointer-events:none}
+.lab{position:absolute;transform:translate(-50%,-50%);font-family:var(--mono);font-size:12px;
+  letter-spacing:.04em;color:var(--fg);background:rgba(10,8,9,.62);border:1px solid var(--line);
+  padding:3px 9px;border-radius:999px;white-space:nowrap;backdrop-filter:blur(2px)}
+.scene-hint{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:11px;
+  color:var(--faint);letter-spacing:.03em}
+.phasebar{position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.phase{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:4px 12px;transition:.25s}
+.phase.on{color:#fff;border-color:var(--accent);background:var(--accent);box-shadow:0 0 18px -4px var(--accent)}
+.phase.on.alu{border-color:var(--alu);background:var(--alu);color:#1a1205;box-shadow:0 0 18px -4px var(--alu)}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;
+  display:flex;flex-direction:column;gap:14px;min-width:0}
+.block-title{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.prog{font-family:var(--mono);font-size:13.5px;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:2px}
+.prog .ln{padding:4px 8px;border-radius:7px;color:var(--muted);white-space:nowrap;overflow-x:auto}
+.prog .ln.cur{background:rgba(230,17,26,.14);color:var(--fg);box-shadow:inset 2px 0 0 var(--accent)}
+.prog .ln.done{color:var(--faint)}
+.kw{color:var(--accent)}
+.regs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.reg{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.reg .nm{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.1em}
+.reg .vl{font-family:var(--mono);font-size:26px;font-variant-numeric:tabular-nums;margin-top:2px;color:var(--fg);transition:.2s}
+.reg.hot{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.reg.hot .vl{color:#fff;text-shadow:0 0 14px var(--accent)}
+.out{font-family:var(--mono);font-size:14px;background:#07110b;border:1px solid #16311f;border-radius:12px;
+  padding:10px 12px;min-height:46px;color:var(--ok);display:flex;flex-direction:column;gap:2px}
+.out .ph{color:#2f6a46}
+.decoded{font-family:var(--mono);font-size:13px;color:var(--muted);min-height:20px}
+.decoded b{color:var(--alu)}
+.inputs{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.08em}
+.field input{width:72px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;color:var(--fg);
+  font-family:var(--mono);font-size:16px;padding:7px 9px}
+.field input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.controls{display:flex;gap:9px;flex-wrap:wrap}
+button{font-family:var(--body);font-weight:600;font-size:14px;border-radius:10px;padding:10px 15px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;transition:.15s}
+button:hover{border-color:var(--faint)}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{box-shadow:0 0 20px -6px var(--accent)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.foot{color:var(--faint);font-size:12.5px;margin-top:16px;font-family:var(--mono);letter-spacing:.02em}
+.foot b{color:var(--muted);font-weight:500}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Leo · sotto il cofano</span>
+    <h1>Dal codice al processore</h1>
+    <p class="sub">Scrivi una riga in Leo e guarda cosa succede davvero: ogni istruzione viaggia dentro il processore in tre tempi — <b>preleva</b>, <b>decodifica</b>, <b>esegui</b>. Trascina per girare la scena.</p>
+  </header>
+
+  <div class="stage">
+    <div class="scene-card">
+      <canvas id="scene"></canvas>
+      <div class="labels" id="labels"></div>
+      <div class="phasebar">
+        <span class="phase" data-ph="fetch">Preleva</span>
+        <span class="phase" data-ph="decode">Decodifica</span>
+        <span class="phase alu" data-ph="exec">Esegui</span>
+      </div>
+      <div class="scene-hint">trascina per ruotare · rotellina per lo zoom</div>
+    </div>
+
+    <div class="panel">
+      <div>
+        <p class="block-title">Il programma Leo</p>
+        <div class="prog" id="prog"></div>
+      </div>
+      <div class="inputs">
+        <div class="field"><label for="a">a</label><input id="a" type="number" value="3" min="0" max="99"></div>
+        <div class="field"><label for="b">b</label><input id="b" type="number" value="4" min="0" max="99"></div>
+        <div style="flex:1 1 120px;align-self:center" class="decoded" id="decoded">premi <b>Passo</b> per iniziare</div>
+      </div>
+      <div>
+        <p class="block-title">Registri</p>
+        <div class="regs" id="regs"></div>
+      </div>
+      <div>
+        <p class="block-title">Uscita · stampa()</p>
+        <div class="out" id="out"><span class="ph">in attesa…</span></div>
+      </div>
+      <div class="controls">
+        <button class="primary" id="step">Passo ▸</button>
+        <button id="run">Esegui tutto ⏵⏵</button>
+        <button id="reset">Ripeti ↺</button>
+      </div>
+    </div>
+  </div>
+  <p class="foot">Modello semplificato e onesto del ciclo di un processore: i registri (<b>R1 R2 R3</b>) tengono i numeri, l'<b>ALU</b> fa i conti, l'<b>unità di controllo</b> dirige il traffico, la <b>memoria</b> custodisce il programma. leoitalia.com</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var THREE = window.THREE;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // ---------- colori ----------
+  var C = { accent:0xE6111A, alu:0xF0A830, box:0x201A18, boxEdge:0x3a2d2a,
+            fg:0xF4ECEA, dim:0x6a5d5c, board:0x120d0c };
+
+  // ---------- scena ----------
+  var canvas = document.getElementById('scene');
+  var card = canvas.parentElement;
+  var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1, 2));
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+
+  // orbita manuale
+  var cam = { theta: -0.62, phi: 0.92, r: 15.5, tr: 15.5 };
+  var target = new THREE.Vector3(0, 0.2, 0);
+  function placeCam(){
+    var ph = Math.max(0.28, Math.min(1.35, cam.phi));
+    camera.position.set(
+      target.x + cam.r*Math.sin(ph)*Math.sin(cam.theta),
+      target.y + cam.r*Math.cos(ph),
+      target.z + cam.r*Math.sin(ph)*Math.cos(cam.theta));
+    camera.lookAt(target);
+  }
+
+  // luci
+  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+  var key = new THREE.DirectionalLight(0xffffff, 0.9); key.position.set(5,10,7); scene.add(key);
+  var rim = new THREE.PointLight(0xE6111A, 0.6, 40); rim.position.set(-8,4,-4); scene.add(rim);
+  var warm = new THREE.PointLight(0xF0A830, 0.0, 30); warm.position.set(6,3,2); scene.add(warm); // ALU glow
+
+  // base board
+  var board = new THREE.Mesh(
+    new THREE.BoxGeometry(17, 0.5, 9),
+    new THREE.MeshStandardMaterial({color:C.board, roughness:.95, metalness:.1}));
+  board.position.y = -0.3; scene.add(board);
+  // griglia tenue sul board
+  var grid = new THREE.GridHelper(16, 16, 0x3a2d2a, 0x241c1a);
+  grid.position.y = -0.04; scene.add(grid);
+
+  // blocchi
+  function makeBlock(w,h,d,x,z){
+    var g = new THREE.Group();
+    var m = new THREE.Mesh(new THREE.BoxGeometry(w,h,d),
+      new THREE.MeshStandardMaterial({color:C.box, roughness:.6, metalness:.25,
+        emissive:0xE6111A, emissiveIntensity:0}));
+    var e = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w,h,d)),
+      new THREE.LineBasicMaterial({color:C.boxEdge}));
+    g.add(m); g.add(e);
+    g.position.set(x, h/2, z);
+    g.userData = {mat:m, h:h};
+    scene.add(g);
+    return g;
+  }
+  var MEM  = makeBlock(2.4,1.6,3.4, -6.0, 0);
+  var CTRL = makeBlock(2.2,1.3,2.4, -1.8, 0);
+  var REG  = makeBlock(2.2,1.1,3.2,  2.4, 0);
+  var ALU  = makeBlock(2.0,1.5,2.0,  6.0, 0);
+  // ALU prism-ish top
+  var aluTop = new THREE.Mesh(new THREE.ConeGeometry(1.2,0.9,4),
+     new THREE.MeshStandardMaterial({color:0x2a211c, roughness:.5, metalness:.3, emissive:0xF0A830, emissiveIntensity:0}));
+  aluTop.rotation.y = Math.PI/4; aluTop.position.set(6.0, 1.95, 0); scene.add(aluTop);
+  ALU.userData.top = aluTop;
+
+  // connessioni (linee sul board)
+  function link(a,b){
+    var mat = new THREE.LineBasicMaterial({color:0x4a3a36});
+    var geo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(a.position.x, 0.02, a.position.z),
+      new THREE.Vector3(b.position.x, 0.02, b.position.z)]);
+    scene.add(new THREE.Line(geo, mat));
+  }
+  link(MEM,CTRL); link(CTRL,REG); link(REG,ALU);
+
+  // pacchetto dati
+  var packet = new THREE.Mesh(new THREE.SphereGeometry(0.26, 20, 20),
+     new THREE.MeshStandardMaterial({color:0xffffff, emissive:0xE6111A, emissiveIntensity:1.4}));
+  packet.visible = false; scene.add(packet);
+  var packetGlow = new THREE.PointLight(0xE6111A, 0.0, 10); scene.add(packetGlow);
+
+  // etichette DOM
+  var labelsEl = document.getElementById('labels');
+  var LAB = [
+    {t:'MEMORIA', o:MEM,  dy:1.5},
+    {t:'CONTROLLO', o:CTRL, dy:1.3},
+    {t:'REGISTRI', o:REG, dy:1.3},
+    {t:'ALU', o:ALU, dy:2.4}
+  ];
+  LAB.forEach(function(L){ L.el=document.createElement('div'); L.el.className='lab'; L.el.textContent=L.t; labelsEl.appendChild(L.el); });
+  var _v = new THREE.Vector3();
+  function updateLabels(){
+    var rect = card.getBoundingClientRect();
+    LAB.forEach(function(L){
+      _v.set(L.o.position.x, L.dy, L.o.position.z).project(camera);
+      var x=(_v.x*0.5+0.5)*rect.width, y=(-_v.y*0.5+0.5)*rect.height;
+      L.el.style.left=x+'px'; L.el.style.top=y+'px';
+      L.el.style.opacity = _v.z<1 ? 1 : 0;
+    });
+  }
+
+  // resize
+  function resize(){
+    var w=card.clientWidth, h=card.clientHeight;
+    renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+
+  // input orbita
+  var drag=null;
+  canvas.addEventListener('pointerdown',function(e){drag={x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId);});
+  canvas.addEventListener('pointermove',function(e){
+    if(!drag)return; cam.theta -= (e.clientX-drag.x)*0.008; cam.phi -= (e.clientY-drag.y)*0.006;
+    drag.x=e.clientX; drag.y=e.clientY;});
+  canvas.addEventListener('pointerup',function(){drag=null;});
+  canvas.addEventListener('pointercancel',function(){drag=null;});
+  canvas.addEventListener('wheel',function(e){e.preventDefault();cam.tr=Math.max(9,Math.min(24,cam.tr+ (e.deltaY>0?1:-1)));},{passive:false});
+
+  // ---------- logica del processore ----------
+  var regsEl=document.getElementById('regs'), progEl=document.getElementById('prog'),
+      outEl=document.getElementById('out'), decEl=document.getElementById('decoded'),
+      phases=[].slice.call(document.querySelectorAll('.phase'));
+  var regNames=['R1','R2','R3'], regEls={};
+  regNames.forEach(function(n){
+    var d=document.createElement('div'); d.className='reg';
+    d.innerHTML='<div class="nm">'+n+'</div><div class="vl" id="vl_'+n+'">—</div>';
+    regsEl.appendChild(d); regEls[n]={box:d, vl:d.querySelector('.vl')};
+  });
+
+  var A=3,B=4, steps=[], ip=0, running=false, busy=false;
+  function build(){
+    A=clamp(document.getElementById('a').value); B=clamp(document.getElementById('b').value);
+    steps=[
+      {leo:['variabile ','a',' = '+A], op:'CARICA R1, '+A, kind:'load', reg:'R1', val:A,
+        say:'metti <b>'+A+'</b> nel registro R1'},
+      {leo:['variabile ','b',' = '+B], op:'CARICA R2, '+B, kind:'load', reg:'R2', val:B,
+        say:'metti <b>'+B+'</b> nel registro R2'},
+      {leo:['variabile ','somma',' = a + b'], op:'SOMMA R3, R1, R2', kind:'add', reg:'R3',
+        say:'l\'<b>ALU</b> somma R1 + R2 e scrive in R3'},
+      {leo:['stampa','(somma)'], op:'STAMPA R3', kind:'print',
+        say:'manda il valore di R3 all\'uscita'}
+    ];
+    renderProg(); resetRegs(); ip=0;
+    outEl.innerHTML='<span class="ph">in attesa…</span>';
+    decEl.innerHTML='premi <b>Passo</b> per iniziare';
+    document.getElementById('step').disabled=false; document.getElementById('run').disabled=false;
+  }
+  function clamp(v){v=parseInt(v,10); if(isNaN(v))v=0; return Math.max(0,Math.min(99,v));}
+  function resetRegs(){regNames.forEach(function(n){regEls[n].vl.textContent='—';regEls[n].box.classList.remove('hot');});}
+  function renderProg(){
+    progEl.innerHTML='';
+    steps.forEach(function(s,i){
+      var ln=document.createElement('div'); ln.className='ln'+(i<ip?' done':'')+(i===ip?' cur':'');
+      ln.innerHTML='<span class="kw">'+s.leo[0]+'</span>'+s.leo[1]+(s.leo[2]||'');
+      s.el=ln; progEl.appendChild(ln);
+    });
+  }
+  function setPhase(p){phases.forEach(function(el){el.classList.toggle('on', el.dataset.ph===p);});}
+  function clearPhase(){phases.forEach(function(el){el.classList.remove('on');});}
+
+  // tween pacchetto fra due punti del board
+  function P(obj){return new THREE.Vector3(obj.position.x, obj.userData.h?obj.userData.h*0.6:1.0, obj.position.z);}
+  function glow(block,on,color){
+    var i = on?(color==='alu'?0.9:0.8):0;
+    block.userData.mat.emissive.setHex(color==='alu'?0xF0A830:0xE6111A);
+    block.userData.mat.emissiveIntensity=i;
+    if(block===ALU && block.userData.top){block.userData.top.material.emissiveIntensity=on?1.0:0;}
+  }
+  var clock=performance.now();
+  function move(from,to,color,ms){
+    return new Promise(function(res){
+      if(reduce)ms=1;
+      packet.visible=true;
+      packet.material.emissive.setHex(color==='alu'?0xF0A830:0xE6111A);
+      packetGlow.color.setHex(color==='alu'?0xF0A830:0xE6111A);
+      var a=P(from), b=P(to), t0=performance.now();
+      (function anim(){
+        var k=Math.min(1,(performance.now()-t0)/ms), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+        packet.position.lerpVectors(a,b,e); packet.position.y += Math.sin(e*Math.PI)*0.9;
+        packetGlow.position.copy(packet.position); packetGlow.intensity=1.1;
+        if(k<1)requestAnimationFrame(anim); else {packetGlow.intensity=0;res();}
+      })();
+    });
+  }
+  function wait(ms){return new Promise(function(r){setTimeout(r, reduce?1:ms);});}
+  function pulseReg(n){var r=regEls[n];r.box.classList.add('hot');return wait(260).then(function(){});}
+
+  async function runStep(){
+    if(busy || ip>=steps.length) return false;
+    busy=true; var s=steps[ip];
+    renderProg();
+    // PRELEVA: memoria -> controllo
+    setPhase('fetch'); decEl.innerHTML='<b>preleva</b> l\'istruzione dalla memoria';
+    glow(MEM,true); await move(MEM,CTRL,'red',650); glow(MEM,false);
+    // DECODIFICA
+    setPhase('decode'); glow(CTRL,true);
+    decEl.innerHTML='<b>decodifica</b>: '+s.op;
+    await wait(620); glow(CTRL,false);
+    // ESEGUI
+    setPhase('exec'); decEl.innerHTML='<b>esegui</b>: '+s.say;
+    if(s.kind==='load'){
+      await move(CTRL,REG,'red',650);
+      regEls[s.reg].vl.textContent=s.val; await pulseReg(s.reg);
+    } else if(s.kind==='add'){
+      await move(REG,ALU,'alu',600);
+      glow(ALU,true,'alu'); warm.intensity=1.1;
+      regEls.R1.box.classList.add('hot'); regEls.R2.box.classList.add('hot');
+      await wait(520);
+      var r=(+regEls.R1.vl.textContent)+(+regEls.R2.vl.textContent);
+      glow(ALU,false,'alu'); warm.intensity=0;
+      regEls.R1.box.classList.remove('hot'); regEls.R2.box.classList.remove('hot');
+      await move(ALU,REG,'alu',600);
+      regEls.R3.vl.textContent=r; await pulseReg('R3');
+    } else if(s.kind==='print'){
+      await move(REG,ALU,'red',300); // piccolo verso l'uscita
+      var v=regEls.R3.vl.textContent;
+      if(outEl.querySelector('.ph'))outEl.innerHTML='';
+      var line=document.createElement('div'); line.textContent='▸ '+v; outEl.appendChild(line);
+    }
+    // cleanup
+    packet.visible=false; clearPhase();
+    regNames.forEach(function(n){regEls[n].box.classList.remove('hot');});
+    ip++; renderProg();
+    if(ip>=steps.length){decEl.innerHTML='fatto ✓ — il programma è finito';
+      document.getElementById('step').disabled=true; document.getElementById('run').disabled=true;}
+    busy=false; return ip<steps.length;
+  }
+
+  document.getElementById('step').addEventListener('click',function(){ if(!busy) runStep(); });
+  document.getElementById('run').addEventListener('click',async function(){
+    if(running)return; running=true;
+    while(await runStep()){ await wait(260); }
+    running=false;
+  });
+  document.getElementById('reset').addEventListener('click',function(){ running=false; build(); });
+  document.getElementById('a').addEventListener('change',function(){if(ip===0)build();});
+  document.getElementById('b').addEventListener('change',function(){if(ip===0)build();});
+
+  // ---------- loop render ----------
+  function tick(){
+    cam.r += (cam.tr-cam.r)*0.12;
+    placeCam(); updateLabels();
+    // leggero respiro del rim light
+    rim.intensity=0.5+0.12*Math.sin(performance.now()/1400);
+    renderer.render(scene,camera);
+    requestAnimationFrame(tick);
+  }
+  resize(); build(); placeCam(); tick();
+  // riallinea le etichette dopo il primo layout dei font
+  setTimeout(resize, 300);
+})();
+</script>

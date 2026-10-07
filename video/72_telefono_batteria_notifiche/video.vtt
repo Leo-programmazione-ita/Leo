@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.133
+Ultimo video della serie sul telefono.
+
+2
+00:00:03.133 --> 00:00:07.713
+Oggi vediamo tre controlli che fanno comunicare la tua app: la Batteria,
+
+3
+00:00:07.713 --> 00:00:09.888
+la Notifica e la Condivisione.
+
+4
+00:00:11.188 --> 00:00:13.996
+La Batteria è un controllo invisibile.
+
+5
+00:00:13.996 --> 00:00:17.170
+Ha il livello, da zero a cento, e in carica,
+
+6
+00:00:17.170 --> 00:00:21.077
+che è vero quando il telefono è attaccato al caricatore.
+
+7
+00:00:21.077 --> 00:00:25.167
+Leo la legge all'apertura della finestra e poi ogni minuto.
+
+8
+00:00:25.167 --> 00:00:28.524
+Quando qualcosa cambia, arriva l'evento cambio.
+
+9
+00:00:28.524 --> 00:00:32.004
+Se ti serve subito, c'è anche il metodo aggiorna.
+
+10
+00:00:33.304 --> 00:00:35.272
+Quando la batteria cambia,
+
+11
+00:00:35.272 --> 00:00:39.787
+mettiamo il livello in una variabile e riempiamo una BarraAvanzamento.
+
+12
+00:00:39.787 --> 00:00:42.565
+Se il telefono è in carica lo scriviamo.
+
+13
+00:00:42.565 --> 00:00:47.022
+Se la carica scende sotto il venti per cento, chiediamo di caricarlo,
+
+14
+00:00:47.022 --> 00:00:49.222
+e mandiamo anche una notifica.
+
+15
+00:00:50.522 --> 00:00:53.176
+La Notifica ha un titolo e un testo.
+
+16
+00:00:53.176 --> 00:00:58.063
+Con mostra compare una vera notifica del telefono, nella tendina in alto,
+
+17
+00:00:58.063 --> 00:01:00.597
+anche se stai usando un'altra app.
+
+18
+00:01:00.597 --> 00:01:03.070
+Se la tocchi, torni alla tua app.
+
+19
+00:01:03.070 --> 00:01:06.207
+Puoi passare il testo direttamente a mostra,
+
+20
+00:01:06.207 --> 00:01:09.706
+oppure usare quello scritto nella proprietà testo.
+
+21
+00:01:11.006 --> 00:01:13.015
+Ecco un piccolo promemoria.
+
+22
+00:01:13.015 --> 00:01:18.238
+Se la casella è vuota, la scuotiamo per dire all'utente che deve scrivere qualcosa:
+
+23
+00:01:18.238 --> 00:01:22.141
+è un'animazione, e le trovi nella serie Giochi e animazioni.
+
+24
+00:01:22.141 --> 00:01:25.700
+Altrimenti mostriamo la notifica con il testo scritto.
+
+25
+00:01:27.000 --> 00:01:28.943
+E infine la Condivisione.
+
+26
+00:01:28.943 --> 00:01:34.123
+Il metodo condividi apre la finestra del telefono per scegliere l'app: WhatsApp,
+
+27
+00:01:34.123 --> 00:01:37.420
+la posta, i messaggi, quello che hai installato.
+
+28
+00:01:37.420 --> 00:01:40.834
+Prepariamo la frase con il livello della batteria.
+
+29
+00:01:40.834 --> 00:01:45.367
+Il testo è già pronto: l'utente sceglie a chi mandarlo e preme invio.
+
+30
+00:01:46.667 --> 00:01:51.151
+Ecco l'app completa: la barra della batteria al settantasei per cento,
+
+31
+00:01:51.151 --> 00:01:54.830
+il pulsante per condividere e la casella del promemoria.
+
+32
+00:01:56.130 --> 00:02:00.688
+Un consiglio: sui telefoni recenti anche le notifiche chiedono il permesso,
+
+33
+00:02:00.688 --> 00:02:01.951
+la prima volta.
+
+34
+00:02:01.951 --> 00:02:05.356
+E se l'utente le ha spente, arriva un errore spiegato.
+
+35
+00:02:05.356 --> 00:02:07.717
+Soprattutto, mandane poche e utili.
+
+36
+00:02:07.717 --> 00:02:11.232
+Chi riceve troppe notifiche finisce per spegnerle tutte!
+
+37
+00:02:12.532 --> 00:02:13.267
+Quiz.
+
+38
+00:02:13.267 --> 00:02:15.188
+Che cosa fa condividi? ...
+
+39
+00:02:15.188 --> 00:02:19.879
+Apre la finestra del telefono per scegliere l'app con cui mandare il testo.
+
+40
+00:02:19.879 --> 00:02:23.552
+Decide sempre l'utente, niente viene mandato di nascosto.
+
+41
+00:02:32.152 --> 00:02:33.416
+Ricapitoliamo.
+
+42
+00:02:33.416 --> 00:02:37.494
+La Batteria ci dà il livello e la ricarica con l'evento cambio.
+
+43
+00:02:37.494 --> 00:02:40.596
+La Notifica mostra messaggi veri del telefono.
+
+44
+00:02:40.596 --> 00:02:44.158
+La Condivisione manda testi con le app che preferisci.
+
+45
+00:02:44.158 --> 00:02:47.662
+E con questo hai visto tutto l'hardware del telefono.
+
+46
+00:02:48.962 --> 00:02:53.269
+Il passo successivo è dare vita ai controlli: le animazioni,
+
+47
+00:02:53.269 --> 00:02:56.309
+con la frase anima e gli effetti pronti.

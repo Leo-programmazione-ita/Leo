@@ -1,0 +1,177 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.198
+Oggi usiamo due controlli piccoli ma utilissimi: la Torcia, cioè la luce del flash,
+
+2
+00:00:06.198 --> 00:00:07.701
+e la Vibrazione.
+
+3
+00:00:07.701 --> 00:00:11.520
+E alla fine mandiamo un SOS luminoso in codice Morse.
+
+4
+00:00:12.820 --> 00:00:14.929
+La Torcia è invisibile.
+
+5
+00:00:14.929 --> 00:00:18.262
+Ha tre metodi: accendi, spegni e commuta,
+
+6
+00:00:18.262 --> 00:00:22.276
+che la accende se è spenta e la spegne se è accesa.
+
+7
+00:00:22.276 --> 00:00:26.629
+Accendi restituisce vero se la luce si è accesa davvero,
+
+8
+00:00:26.629 --> 00:00:29.826
+e falso se il telefono non ha il flash.
+
+9
+00:00:29.826 --> 00:00:34.044
+E la proprietà accesa ti dice com'è in questo momento.
+
+10
+00:00:35.344 --> 00:00:38.061
+Ecco il classico pulsante della torcia.
+
+11
+00:00:38.061 --> 00:00:39.911
+Commuta cambia lo stato,
+
+12
+00:00:39.911 --> 00:00:44.535
+e poi aggiorniamo la scritta del pulsante in base alla proprietà accesa.
+
+13
+00:00:44.535 --> 00:00:48.813
+Così il pulsante dice sempre che cosa succederà al prossimo tocco.
+
+14
+00:00:50.113 --> 00:00:52.816
+Ecco l'app dopo il primo tocco:
+
+15
+00:00:52.816 --> 00:00:57.460
+la torcia è accesa e il pulsante ora dice Spegni la torcia.
+
+16
+00:00:58.760 --> 00:01:00.825
+La Vibrazione ha due metodi.
+
+17
+00:01:00.825 --> 00:01:05.184
+Vibra, senza niente, vibra per trecento millisecondi; con un numero,
+
+18
+00:01:05.184 --> 00:01:09.600
+vibra per quei millisecondi, per esempio cinquecento è mezzo secondo.
+
+19
+00:01:09.600 --> 00:01:14.705
+Schema invece vibra a ritmo: gli dai una lista di numeri che si alternano, pausa,
+
+20
+00:01:14.705 --> 00:01:16.311
+vibra, pausa, vibra.
+
+21
+00:01:17.611 --> 00:01:22.386
+Leggiamo lo schema: zero millisecondi di pausa, cioè parte subito; vibra duecento;
+
+22
+00:01:22.386 --> 00:01:24.774
+si ferma cento; vibra altri duecento.
+
+23
+00:01:24.774 --> 00:01:28.223
+Risultato: due colpetti, come quando arriva un messaggio.
+
+24
+00:01:29.523 --> 00:01:30.873
+E ora l'SOS.
+
+25
+00:01:30.873 --> 00:01:36.205
+In codice Morse, la S sono tre segnali corti e la O tre segnali lunghi:
+
+26
+00:01:36.205 --> 00:01:40.998
+quindi corto corto corto, lungo lungo lungo, corto corto corto.
+
+27
+00:01:40.998 --> 00:01:46.870
+Scriviamo una funzione tre lampi, che per tre volte accende la torcia, aspetta,
+
+28
+00:01:46.870 --> 00:01:49.637
+la spegne e fa una piccola pausa.
+
+29
+00:01:49.637 --> 00:01:54.970
+Poi la chiamiamo tre volte: lampi da zero virgola due secondi per la S,
+
+30
+00:01:54.970 --> 00:01:59.695
+da zero virgola sei per la O, e di nuovo corti per l'ultima S.
+
+31
+00:01:59.695 --> 00:02:04.217
+Attendi aspetta senza bloccare la finestra, che resta viva.
+
+32
+00:02:05.517 --> 00:02:10.124
+Una comodità: quando la finestra si chiude o il programma finisce,
+
+33
+00:02:10.124 --> 00:02:12.428
+Leo spegne la torcia da solo.
+
+34
+00:02:12.428 --> 00:02:15.479
+Niente torce dimenticate accese in tasca!
+
+35
+00:02:15.479 --> 00:02:20.211
+E non serve nessun permesso: né per la torcia, né per la vibrazione.
+
+36
+00:02:21.511 --> 00:02:22.230
+Quiz.
+
+37
+00:02:22.230 --> 00:02:26.381
+Che cosa fa lo schema zero, cinquecento, duecento, cinquecento? ...
+
+38
+00:02:26.381 --> 00:02:31.307
+Due vibrazioni da mezzo secondo, con una pausa di duecento millisecondi in mezzo.
+
+39
+00:02:39.907 --> 00:02:41.355
+Ricapitoliamo.
+
+40
+00:02:41.355 --> 00:02:44.845
+La Torcia si accende, si spegne e si commuta.
+
+41
+00:02:44.845 --> 00:02:50.638
+La Vibrazione vibra per un tempo o a ritmo con uno schema di pause e vibrazioni.
+
+42
+00:02:50.638 --> 00:02:54.193
+E con attendi creiamo ritmi anche con la luce.
+
+43
+00:02:55.493 --> 00:02:59.647
+Nel prossimo video, l'ultimo di questa serie, leggiamo la batteria,
+
+44
+00:02:59.647 --> 00:03:03.248
+mandiamo notifiche e condividiamo testi con le altre app.

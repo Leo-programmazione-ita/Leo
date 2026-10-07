@@ -1,0 +1,351 @@
+<title>La logica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Libro interattivo "Informatica" — sezione 2: La logica.
+   Stesso mondo visivo scuro della sezione 1; colori espliciti. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+
+/* --- interruttori (toggle) --- */
+.switchrow{display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+.switch{display:flex;flex-direction:column;align-items:center;gap:8px}
+.switch .lab{font-family:var(--disp);font-weight:600;font-size:22px;line-height:1}
+.toggle{position:relative;width:74px;height:38px;border-radius:999px;border:1px solid var(--line);
+  background:var(--off);cursor:pointer;padding:0;transition:.16s;flex:0 0 auto}
+.toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toggle .knob{position:absolute;top:3px;left:3px;width:30px;height:30px;border-radius:50%;
+  background:#6b5f5d;transition:.16s}
+.toggle[aria-pressed="true"]{background:var(--on);border-color:var(--on);box-shadow:0 0 18px -5px var(--accent)}
+.toggle[aria-pressed="true"] .knob{left:41px;background:#fff}
+.toggle .state{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--mono);
+  font-size:12px;font-weight:600;color:var(--faint)}
+.toggle .state.s1{left:12px;opacity:0}
+.toggle .state.s0{right:12px;opacity:1}
+.toggle[aria-pressed="true"] .state.s1{opacity:1;color:#fff}
+.toggle[aria-pressed="true"] .state.s0{opacity:0}
+
+/* --- lampadine --- */
+.lamps{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.lamp{display:flex;flex-direction:column;align-items:center;gap:9px;min-width:84px}
+.bulb{width:clamp(46px,13vw,60px);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);
+  background:var(--off);transition:.16s;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:14px;font-weight:600;color:var(--faint)}
+.bulb.on{background:var(--on);border-color:var(--on);color:#fff;box-shadow:0 0 26px -4px var(--accent)}
+.lamp .op{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center;line-height:1.3}
+.lamp .op b{color:#fff}
+
+/* --- tabelle di verità --- */
+.gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.gate h3{font-family:var(--disp);font-weight:600;font-size:19px;margin:0 0 4px;color:var(--fg)}
+.gate p.gd{font-size:13px;color:var(--muted);margin:0 0 10px}
+table.truth{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13px}
+table.truth th,table.truth td{border:1px solid var(--line);padding:6px 4px;text-align:center;color:var(--muted)}
+table.truth th{color:var(--faint);font-weight:500;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+table.truth td.res{color:var(--fg)}
+table.truth tr.hl td{background:var(--accent-soft);color:#fff;border-color:var(--accent)}
+table.truth tr.hl td.on{color:var(--accent);font-weight:600}
+
+/* --- circuito --- */
+.circuit{display:flex;flex-direction:column;gap:18px;align-items:center}
+.cinputs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.cstages{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;width:100%}
+.node{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;
+  min-width:150px;text-align:center}
+.node .nlab{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
+.node .nlab b{color:#fff}
+.dot{width:22px;height:22px;border-radius:50%;background:var(--off);border:1px solid var(--line);
+  display:inline-block;vertical-align:middle;transition:.16s}
+.dot.on{background:var(--on);border-color:var(--on);box-shadow:0 0 14px -3px var(--accent)}
+.val{font-family:var(--mono);font-size:13px;color:var(--faint);margin-left:8px;vertical-align:middle}
+.val.on{color:#fff}
+.flow{color:var(--faint);font-family:var(--mono);font-size:18px;text-align:center}
+.finalout{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:4px}
+.finalout .big{width:clamp(56px,16vw,76px);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);
+  background:var(--off);transition:.16s;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:600;color:var(--faint)}
+.finalout .big.on{background:var(--on);border-color:var(--on);color:#fff;box-shadow:0 0 30px -3px var(--accent)}
+.formula{font-family:var(--mono);font-size:14px;color:var(--muted);text-align:center}
+.formula b{color:#fff}
+
+/* --- codice --- */
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA}
+pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color:var(--faint)}
+.out{font-family:var(--mono);font-size:13px;color:var(--ok);margin-top:8px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <span class="eyebrow">Informatica interattiva · Sezione 2</span>
+  <h1>La logica</h1>
+  <p class="lead">Un computer non "pensa" come noi. Prende decisioni in un modo molto più semplice: tutto si riduce a <b>vero</b> o <b>falso</b>. Qui vedi come, da due sole risposte, nasce il ragionamento di una macchina.</p>
+  <p>Nella sezione precedente abbiamo visto che tutto, dentro un computer, è <b>acceso</b> o <b>spento</b>: 1 o 0. La stessa coppia serve anche per le <em>decisioni</em>. Chiamiamo 1 «vero» e 0 «falso», e combiniamo questi valori con poche regole fisse — le <b>porte logiche</b>. Mettendone in fila a milioni, una macchina arriva a scegliere, confrontare, decidere. Partiamo dal mattone.</p>
+
+  <section>
+    <h2><span class="n">01</span>Vero o falso</h2>
+    <p>Ogni decisione parte da una domanda a cui si può rispondere solo <b>sì</b> o <b>no</b>: «è acceso?», «è maggiore di 18?». Prendi due di queste risposte — le chiamiamo <b>A</b> e <b>B</b> — e combinale. <b>A E B</b> è vero solo se lo sono entrambe; <b>A O B</b> basta che lo sia una; <b>NON A</b> ribalta A. Accendi gli interruttori e guarda le lampadine.</p>
+    <div class="card">
+      <div class="switchrow">
+        <div class="switch">
+          <span class="lab">A</span>
+          <button class="toggle" id="swA" type="button" aria-pressed="false" aria-label="interruttore A">
+            <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+          </button>
+        </div>
+        <div class="switch">
+          <span class="lab">B</span>
+          <button class="toggle" id="swB" type="button" aria-pressed="false" aria-label="interruttore B">
+            <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+          </button>
+        </div>
+      </div>
+      <div class="lamps">
+        <div class="lamp"><div class="bulb" id="lampAnd">?</div><div class="op"><b>A E B</b><br>(AND)</div></div>
+        <div class="lamp"><div class="bulb" id="lampOr">?</div><div class="op"><b>A O B</b><br>(OR)</div></div>
+        <div class="lamp"><div class="bulb" id="lampNot">?</div><div class="op"><b>NON A</b><br>(NOT)</div></div>
+      </div>
+      <p class="take">Vero e falso sono gli <b>unici</b> ingredienti. Una lampadina accesa è un «sì», spenta un «no»: nient'altro.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Le porte logiche</h2>
+    <p>Quelle tre regole hanno un nome: sono <b>porte logiche</b>. Una porta prende uno o due valori (vero/falso) e ne restituisce uno solo, sempre allo stesso modo. Il comportamento di una porta si riassume in una <b>tabella di verità</b>: tutte le combinazioni d'ingresso e la risposta per ciascuna. Gli stessi interruttori A e B di sopra <b>sono ancora attivi</b> — la riga che vale ora è evidenziata in rosso.</p>
+    <div class="card">
+      <div class="switchrow" style="margin-bottom:6px">
+        <div class="switch">
+          <span class="lab">A</span>
+          <button class="toggle" id="swA2" type="button" aria-pressed="false" aria-label="interruttore A">
+            <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+          </button>
+        </div>
+        <div class="switch">
+          <span class="lab">B</span>
+          <button class="toggle" id="swB2" type="button" aria-pressed="false" aria-label="interruttore B">
+            <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+          </button>
+        </div>
+      </div>
+      <div class="gates">
+        <div class="gate">
+          <h3>AND · E</h3>
+          <p class="gd">Vera solo se A <b>e</b> B sono entrambe vere.</p>
+          <table class="truth" id="tAnd"><thead><tr><th>A</th><th>B</th><th>A E B</th></tr></thead><tbody></tbody></table>
+        </div>
+        <div class="gate">
+          <h3>OR · O</h3>
+          <p class="gd">Vera se almeno una tra A e B è vera.</p>
+          <table class="truth" id="tOr"><thead><tr><th>A</th><th>B</th><th>A O B</th></tr></thead><tbody></tbody></table>
+        </div>
+        <div class="gate">
+          <h3>NOT · NON</h3>
+          <p class="gd">Ribalta il valore: vero diventa falso.</p>
+          <table class="truth" id="tNot"><thead><tr><th>A</th><th>NON A</th></tr></thead><tbody></tbody></table>
+        </div>
+      </div>
+      <p class="take">1 = vero, 0 = falso. Sono le stesse cifre dei bit: una porta logica non è altro che una regola fissa su zeri e uni.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Costruisci un circuito</h2>
+    <p>Una porta sola decide poco. La forza arriva quando le <b>colleghi</b>: l'uscita di una diventa l'ingresso di un'altra. Qui tre interruttori — A, B, C — alimentano un piccolo circuito che calcola <b>(A E B) O (NON C)</b>. Cambia gli ingressi e segui i valori che si accendono, passo dopo passo, fino alla lampadina finale.</p>
+    <div class="card">
+      <div class="circuit">
+        <div class="cinputs">
+          <div class="switch">
+            <span class="lab">A</span>
+            <button class="toggle" id="cA" type="button" aria-pressed="false" aria-label="ingresso A">
+              <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+            </button>
+          </div>
+          <div class="switch">
+            <span class="lab">B</span>
+            <button class="toggle" id="cB" type="button" aria-pressed="false" aria-label="ingresso B">
+              <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+            </button>
+          </div>
+          <div class="switch">
+            <span class="lab">C</span>
+            <button class="toggle" id="cC" type="button" aria-pressed="false" aria-label="ingresso C">
+              <span class="state s1">VERO</span><span class="state s0">FALSO</span><span class="knob"></span>
+            </button>
+          </div>
+        </div>
+        <div class="flow">↓</div>
+        <div class="cstages">
+          <div class="node">
+            <div class="nlab"><b>A E B</b> (AND)</div>
+            <span class="dot" id="dAnd"></span><span class="val" id="vAnd">0</span>
+          </div>
+          <div class="node">
+            <div class="nlab"><b>NON C</b> (NOT)</div>
+            <span class="dot" id="dNot"></span><span class="val" id="vNot">0</span>
+          </div>
+        </div>
+        <div class="flow">↓ &nbsp; O &nbsp; (OR) &nbsp; ↓</div>
+        <div class="finalout">
+          <div class="big" id="dOut">0</div>
+          <div class="formula">uscita = <b>(A E B) O (NON C)</b></div>
+        </div>
+      </div>
+      <p class="take">Così, combinando porte, un computer "ragiona": ogni decisione complicata è solo tante decisioni vero/falso incastrate l'una nell'altra.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>E con Leo?</h2>
+    <p>In Leo scrivi queste decisioni quasi come le diresti a voce. Le parole <b>e</b>, <b>o</b>, <b>non</b> sono proprio le porte che hai appena toccato; <b>se … allora … fine</b> esegue qualcosa solo quando la condizione è vera. Prova a cambiare i valori e immagina quali lampadine si accendono:</p>
+    <pre class="code"><span class="cm"># chi può entrare?</span>
+eta = <span class="st">20</span>
+ha_documento = <span class="kw">vero</span>
+
+<span class="kw">se</span> eta &gt;= <span class="st">18</span> <span class="kw">e</span> ha_documento <span class="kw">allora</span>
+    <span class="kw">stampa</span>(<span class="st">"puoi entrare"</span>)
+<span class="kw">fine</span>
+
+<span class="cm"># basta una sola condizione vera</span>
+<span class="kw">se</span> eta &lt; <span class="st">18</span> <span class="kw">o</span> <span class="kw">non</span> ha_documento <span class="kw">allora</span>
+    <span class="kw">stampa</span>(<span class="st">"serve un adulto"</span>)
+<span class="kw">fine</span></pre>
+    <p style="margin-top:14px" class="kicker"><b>Provalo e guarda:</b> con <span class="mono">eta = 20</span> e <span class="mono">ha_documento</span> vero, il primo <span class="mono">se</span> è vero (18 e più <b>e</b> documento) e il secondo è falso. Cambia un valore — per esempio metti <span class="mono">ha_documento = falso</span> — e segui quali righe scattano. È la stessa logica delle porte, scritta a parole.</p>
+  </section>
+
+  <div class="foot">
+    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
+    <a href="https://leoitalia.com">leoitalia.com</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // stato condiviso tra la sezione 01 e la 02
+  var A=false, B=false;
+
+  function setPressed(el,on){ if(el) el.setAttribute('aria-pressed', on?'true':'false'); }
+
+  // ---------- 01 + 02: interruttori A/B condivisi ----------
+  var swA=document.getElementById('swA'), swB=document.getElementById('swB');
+  var swA2=document.getElementById('swA2'), swB2=document.getElementById('swB2');
+
+  var lampAnd=document.getElementById('lampAnd'),
+      lampOr=document.getElementById('lampOr'),
+      lampNot=document.getElementById('lampNot');
+
+  function setLamp(el,on){ el.classList.toggle('on',on); el.textContent=on?'1':'0'; }
+
+  // tabelle di verità
+  var rowsAB=[[false,false],[false,true],[true,false],[true,true]];
+  function b2n(v){return v?1:0;}
+  function buildTable(id,fn,single){
+    var tb=document.querySelector('#'+id+' tbody');
+    tb.innerHTML='';
+    if(single){
+      [[false],[true]].forEach(function(r){
+        var tr=document.createElement('tr');
+        tr.innerHTML='<td>'+b2n(r[0])+'</td><td class="res">'+b2n(fn(r[0]))+'</td>';
+        tb.appendChild(tr);
+      });
+    }else{
+      rowsAB.forEach(function(r){
+        var tr=document.createElement('tr');
+        tr.innerHTML='<td>'+b2n(r[0])+'</td><td>'+b2n(r[1])+'</td><td class="res">'+b2n(fn(r[0],r[1]))+'</td>';
+        tb.appendChild(tr);
+      });
+    }
+  }
+  buildTable('tAnd',function(a,b){return a&&b;},false);
+  buildTable('tOr',function(a,b){return a||b;},false);
+  buildTable('tNot',function(a){return !a;},true);
+
+  function highlightTables(){
+    var idxAB = (A?2:0) + (B?1:0);   // 00,01,10,11
+    var idxA  = A?1:0;
+    ['tAnd','tOr'].forEach(function(id){
+      var rows=document.querySelectorAll('#'+id+' tbody tr');
+      rows.forEach(function(tr,i){
+        tr.classList.toggle('hl', i===idxAB);
+        var res=tr.querySelector('.res');
+        if(res) res.classList.toggle('on', i===idxAB);
+      });
+    });
+    var rowsN=document.querySelectorAll('#tNot tbody tr');
+    rowsN.forEach(function(tr,i){
+      tr.classList.toggle('hl', i===idxA);
+      var res=tr.querySelector('.res');
+      if(res) res.classList.toggle('on', i===idxA);
+    });
+  }
+
+  function syncAB(){
+    setPressed(swA,A); setPressed(swB,B);
+    setPressed(swA2,A); setPressed(swB2,B);
+    setLamp(lampAnd, A&&B);
+    setLamp(lampOr,  A||B);
+    setLamp(lampNot, !A);
+    highlightTables();
+  }
+  function toggleA(){ A=!A; syncAB(); }
+  function toggleB(){ B=!B; syncAB(); }
+  swA.addEventListener('click',toggleA);
+  swB.addEventListener('click',toggleB);
+  swA2.addEventListener('click',toggleA);
+  swB2.addEventListener('click',toggleB);
+  syncAB();
+
+  // ---------- 03: circuito (A E B) O (NON C) ----------
+  var cA=document.getElementById('cA'), cB=document.getElementById('cB'), cC=document.getElementById('cC');
+  var dAnd=document.getElementById('dAnd'), vAnd=document.getElementById('vAnd');
+  var dNot=document.getElementById('dNot'), vNot=document.getElementById('vNot');
+  var dOut=document.getElementById('dOut');
+  var ca=false, cb=false, cc=false;
+
+  function setDot(dot,val,lab){
+    dot.classList.toggle('on',val);
+    if(lab){ lab.textContent=val?'1':'0'; lab.classList.toggle('on',val); }
+  }
+  function syncCircuit(){
+    setPressed(cA,ca); setPressed(cB,cb); setPressed(cC,cc);
+    var andv = ca&&cb;
+    var notv = !cc;
+    var out  = andv||notv;
+    setDot(dAnd,andv,vAnd);
+    setDot(dNot,notv,vNot);
+    dOut.classList.toggle('on',out);
+    dOut.textContent = out?'1':'0';
+  }
+  cA.addEventListener('click',function(){ca=!ca;syncCircuit();});
+  cB.addEventListener('click',function(){cb=!cb;syncCircuit();});
+  cC.addEventListener('click',function(){cc=!cc;syncCircuit();});
+  syncCircuit();
+})();
+</script>

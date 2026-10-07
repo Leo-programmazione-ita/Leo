@@ -1,0 +1,465 @@
+<title>Reti e Internet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Libro interattivo "Informatica" — sezione 6: Reti e Internet.
+   Stesso mondo visivo scuro delle altre sezioni; colori espliciti, moduli da toccare. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+
+/* --- campi / bottoni / codice (condivisi col resto del libro) --- */
+.tfield{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--fg);
+  font-family:var(--body);font-size:18px;padding:12px 14px}
+.tfield:focus{outline:2px solid var(--accent);outline-offset:1px}
+button.btn{font-family:var(--body);font-weight:600;font-size:14px;border-radius:10px;padding:9px 14px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;transition:.15s}
+button.btn:hover{border-color:var(--faint)}
+button.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.btn:disabled{opacity:.5;cursor:default}
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA}
+pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color:var(--faint)}
+.out{font-family:var(--mono);font-size:13px;color:var(--ok);margin-top:8px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+
+/* --- 01 pacchetti --- */
+.netbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pktscene{margin-top:20px}
+.lane{display:flex;align-items:stretch;gap:10px}
+.end{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.eplab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.epbox{width:100%;min-height:118px;border:1px dashed var(--line);border-radius:14px;background:var(--panel2);
+  padding:10px;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;justify-content:center}
+.epbox.dst{border-style:solid}
+.gap{flex:0 0 26px;align-self:center;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--faint)}
+.gap .arrow{font-size:20px;line-height:1}
+.gap .glab{font-family:var(--mono);font-size:9px;letter-spacing:.1em;writing-mode:vertical-rl;color:var(--faint)}
+.pkt{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-width:46px;padding:6px 7px;border-radius:10px;border:1px solid var(--accent);
+  background:var(--accent-soft);transition:transform .2s,opacity .2s}
+.pkt .pkn{font-family:var(--mono);font-size:10px;color:var(--accent);line-height:1}
+.pkt .pkt-t{font-family:var(--disp);font-weight:600;font-size:17px;line-height:1;color:#fff;white-space:pre}
+.pkt.ghost{opacity:0;transform:scale(.6)}
+.pkt.pop{animation:pop .3s ease}
+@keyframes pop{0%{transform:scale(.5);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+.rebuilt{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;margin-top:14px;min-height:18px}
+.rebuilt b{color:var(--ok)}
+
+/* --- 02 client/server canvas --- */
+#net{width:100%;display:block;border:1px solid var(--line);border-radius:14px;background:var(--panel2);touch-action:none}
+.netstatus{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;margin:0 0 12px;min-height:18px}
+.netstatus b{color:var(--fg)}
+
+/* --- 03 DNS --- */
+.dnsrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.dnsrow .tfield{flex:1 1 180px}
+.dnsresult{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);padding:16px;
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center;min-height:62px}
+.dnsresult .nome{font-family:var(--disp);font-weight:600;font-size:clamp(18px,4.6vw,24px);color:#fff;word-break:break-all}
+.dnsresult .freccia{font-family:var(--mono);color:var(--accent);font-size:20px}
+.dnsresult .ip{font-family:var(--mono);font-size:clamp(16px,4.4vw,22px);color:var(--ok);letter-spacing:.02em}
+.dnsresult.cerca .nome,.dnsresult.cerca .ip,.dnsresult.cerca .freccia{opacity:.4}
+.dnsnote{font-family:var(--mono);font-size:11px;color:var(--faint);text-align:center;margin-top:8px}
+.rubrica{margin-top:16px}
+.rubrica .rtitle{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:8px;text-align:center}
+.rubrica table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13px}
+.rubrica td{padding:7px 10px;border-top:1px solid var(--line);color:var(--muted)}
+.rubrica td:first-child{color:#E8DDDA}
+.rubrica td:last-child{text-align:right;color:var(--ok)}
+.rubrica tr.hit td{background:var(--accent-soft)}
+.rubrica tr.hit td:first-child{color:#fff}
+
+@media (max-width:460px){
+  .pkt{min-width:40px}
+  .pkt .pkt-t{font-size:15px}
+  .gap{flex-basis:18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <span class="eyebrow">Informatica interattiva · Sezione 6</span>
+  <h1>Reti e Internet</h1>
+  <p class="lead">Scrivi a qualcuno dall'altra parte del mondo e il messaggio arriva in un battito. Dietro quella magia non c'è un filo diretto, ma <b>tanti piccoli salti</b> e un metodo molto ordinato. Vediamolo da vicino.</p>
+  <p>Due computer lontani non si parlano «a voce». Si scambiano <b>pacchetti</b>: piccoli pezzi di dati, numerati, che viaggiano ciascuno per conto proprio e si rimontano all'arrivo. Per trovarsi hanno un <b>indirizzo</b>; per capirsi, uno <b>chiede</b> e l'altro <b>risponde</b>. Tocca con mano come funziona.</p>
+
+  <section>
+    <h2><span class="n">01</span>Il messaggio diventa pacchetti</h2>
+    <p>Internet non spedisce il tuo messaggio tutto intero. Lo taglia in <b>pezzetti piccoli</b>, mette un numero su ognuno — pacchetto 1, 2, 3… — e li manda in viaggio. Possono persino prendere strade diverse. All'arrivo, i numeri dicono come rimetterli in fila. Scrivi qualcosa e premi <b>Spedisci</b>.</p>
+    <div class="card">
+      <input class="tfield" id="msg" value="Ciao Italia" maxlength="24" aria-label="scrivi un messaggio da spedire">
+      <div class="netbtns">
+        <button class="btn primary" id="send">Spedisci</button>
+        <button class="btn" id="resend">Da capo</button>
+      </div>
+      <div class="pktscene">
+        <div class="lane">
+          <div class="end">
+            <span class="eplab">tu — mittente</span>
+            <div class="epbox" id="srcbox" aria-live="off"></div>
+          </div>
+          <div class="gap" aria-hidden="true">
+            <span class="arrow">→</span>
+            <span class="glab">in viaggio</span>
+          </div>
+          <div class="end">
+            <span class="eplab">destinatario</span>
+            <div class="epbox dst" id="dstbox" aria-live="off"></div>
+          </div>
+        </div>
+        <div class="rebuilt" id="rebuilt" aria-live="polite"></div>
+      </div>
+      <p class="take">I dati viaggiano a pezzetti numerati, e si rimontano all'arrivo. Se un pacchetto si perde, si richiede solo quello: non tutto il messaggio da capo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Client e server</h2>
+    <p>Quando apri una pagina, il tuo dispositivo è il <b>client</b>: è lui che <b>chiede</b>. Dall'altra parte c'è un computer sempre acceso, il <b>server</b>, che <b>risponde</b> mandando la pagina. In mezzo non c'è un filo unico: la richiesta fa tanti <b>salti</b>, di router in router, fino a destinazione — e la risposta rifà la strada all'indietro. Premi e guarda il viaggio.</p>
+    <div class="card">
+      <p class="netstatus" id="netstatus">Premi «Richiedi la pagina» per spedire la richiesta.</p>
+      <canvas id="net" width="640" height="220" role="img" aria-label="Scena di rete: un client a sinistra, un server a destra, alcuni router in mezzo; un pacchetto rosso salta dal client al server e poi torna indietro."></canvas>
+      <div class="netbtns" style="justify-content:center;margin-top:14px">
+        <button class="btn primary" id="request">Richiedi la pagina</button>
+      </div>
+      <p class="take">Chiedi tu (client), un computer lontano risponde (server); in mezzo, tanti salti. Nessuno conosce tutta la strada: ogni router sa solo il passo successivo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Un indirizzo per ognuno</h2>
+    <p>Perché i pacchetti si trovino, ogni dispositivo ha un <b>indirizzo IP</b>: un numero, come il civico di una casa. Ma tu scrivi <span class="mono">leoitalia.com</span>, non un numero. A tradurre il nome nell'indirizzo ci pensa il <b>DNS</b>: è la <b>rubrica di Internet</b>. Dai il nome, ottieni l'indirizzo. Provaci.</p>
+    <div class="card">
+      <div class="dnsrow">
+        <input class="tfield" id="dnsname" value="leoitalia.com" maxlength="40" aria-label="scrivi un nome di sito da cercare">
+        <button class="btn primary" id="dnsgo">Cerca</button>
+      </div>
+      <div class="dnsresult" id="dnsresult">
+        <span class="nome" id="dnsnome">leoitalia.com</span>
+        <span class="freccia" aria-hidden="true">→</span>
+        <span class="ip" id="dnsip">—</span>
+      </div>
+      <p class="dnsnote">Gli indirizzi qui sopra sono <b>di esempio</b> (intervalli riservati alle dimostrazioni): servono a capire, non a collegarsi davvero.</p>
+      <div class="rubrica">
+        <div class="rtitle">la rubrica (alcune voci)</div>
+        <table id="rubrica"><tbody></tbody></table>
+      </div>
+      <p class="take">Il DNS è la rubrica di Internet: dai il nome, ottieni l'indirizzo. Senza, dovresti ricordare un numero per ogni sito.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>E con Leo?</h2>
+    <p>Tutto questo, in Leo, sta in una riga. <span class="mono">scarica_pagina</span> fa il lavoro di client: trova l'indirizzo, spedisce la richiesta, raccoglie i pacchetti della risposta e ti consegna il testo della pagina, già rimontato. Prova tu:</p>
+    <pre class="code"><span class="cm"># chiedi a un sito la sua pagina (sei il client)</span>
+<span class="kw">variabile</span> pagina = scarica_pagina(<span class="st">"https://leoitalia.com"</span>)
+
+<span class="cm"># quanto ti è tornato indietro?</span>
+<span class="kw">stampa</span>(<span class="st">"Caratteri ricevuti:"</span>, lunghezza(pagina))</pre>
+    <p style="margin-top:14px" class="kicker">Provalo e guarda: il numero dipende da cosa risponde il sito in quel momento. Dietro quella singola riga ci sono tutti i passaggi di questa sezione — pacchetti, salti, indirizzo trovato dal DNS — fatti al posto tuo.</p>
+  </section>
+
+  <div class="foot">
+    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
+    <a href="https://leoitalia.com">leoitalia.com</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // ---------- 01 pacchetti ----------
+  var msg=document.getElementById('msg'), srcbox=document.getElementById('srcbox'),
+      dstbox=document.getElementById('dstbox'), rebuilt=document.getElementById('rebuilt'),
+      sendBtn=document.getElementById('send'), resendBtn=document.getElementById('resend');
+  var CHUNK=3, sending=false;
+
+  function makePkt(n,text){
+    var p=document.createElement('span'); p.className='pkt';
+    var t=text===' '?'␠':text;
+    p.innerHTML='<span class="pkn">#'+n+'</span><span class="pkt-t"></span>';
+    p.querySelector('.pkt-t').textContent=t;
+    return p;
+  }
+  function chunks(s){
+    var out=[]; for(var i=0;i<s.length;i+=CHUNK){ out.push(s.slice(i,i+CHUNK)); } return out;
+  }
+  function resetScene(){
+    srcbox.innerHTML=''; dstbox.innerHTML=''; rebuilt.textContent='';
+  }
+  function fly(fromEl,toEl,done){
+    var a=fromEl.getBoundingClientRect(), b=toEl.getBoundingClientRect();
+    var clone=fromEl.cloneNode(true);
+    clone.style.position='fixed'; clone.style.margin='0';
+    clone.style.left=a.left+'px'; clone.style.top=a.top+'px';
+    clone.style.width=a.width+'px'; clone.style.height=a.height+'px';
+    clone.style.zIndex='60'; clone.style.pointerEvents='none';
+    clone.style.transition='transform .8s cubic-bezier(.45,0,.2,1)';
+    document.body.appendChild(clone);
+    fromEl.style.visibility='hidden';
+    var dx=b.left-a.left, dy=b.top-a.top, fin=false;
+    function end(){ if(fin)return; fin=true; if(clone.parentNode)clone.parentNode.removeChild(clone); done(); }
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      clone.style.transform='translate('+dx+'px,'+dy+'px)'; }); });
+    clone.addEventListener('transitionend',end);
+    setTimeout(end,1000);
+  }
+  function send(){
+    if(sending) return;
+    var text=msg.value;
+    resetScene();
+    if(!text){ rebuilt.textContent='Scrivi qualcosa, poi spedisci.'; return; }
+    sending=true; sendBtn.disabled=true;
+    var parts=chunks(text), srcChips=[], dstChips=[];
+    parts.forEach(function(frag,i){
+      var s=makePkt(i+1,frag); srcbox.appendChild(s); srcChips.push(s);
+      var d=makePkt(i+1,frag); d.classList.add('ghost'); dstbox.appendChild(d); dstChips.push(d);
+    });
+
+    function finish(){
+      sending=false; sendBtn.disabled=false;
+      rebuilt.innerHTML='Rimontato all’arrivo: <b>'+escapeHtml(text)+'</b>';
+    }
+    if(reduce){
+      srcChips.forEach(function(s){ s.style.visibility='hidden'; });
+      dstChips.forEach(function(d){ d.classList.remove('ghost'); });
+      finish(); return;
+    }
+    rebuilt.textContent='Pacchetti in viaggio…';
+    var i=0;
+    function next(){
+      if(i>=srcChips.length){ setTimeout(finish,150); return; }
+      var k=i++;
+      fly(srcChips[k], dstChips[k], function(){
+        dstChips[k].classList.remove('ghost');
+        dstChips[k].classList.add('pop');
+        setTimeout(next,160);
+      });
+    }
+    setTimeout(next,480); // lascia vedere la divisione prima della partenza
+  }
+  function escapeHtml(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  sendBtn.addEventListener('click',send);
+  resendBtn.addEventListener('click',function(){ if(!sending) resetScene(); });
+  // stato di riposo visibile: mostra già la divisione in pacchetti, fermi al mittente
+  (function restPkts(){
+    var parts=chunks(msg.value);
+    parts.forEach(function(frag,i){ srcbox.appendChild(makePkt(i+1,frag)); });
+  })();
+
+  // ---------- 02 client / server ----------
+  var cv=document.getElementById('net'), ctx=cv.getContext('2d'),
+      statusEl=document.getElementById('netstatus'), reqBtn=document.getElementById('request');
+  var DPR=Math.min(window.devicePixelRatio||1,2), CW=640, CH=220;
+  var nodes=[
+    {fx:0.085, label:'tu',     sub:'client', kind:'client'},
+    {fx:0.31,  label:'R1',     sub:'router', kind:'router'},
+    {fx:0.50,  label:'R2',     sub:'router', kind:'router'},
+    {fx:0.69,  label:'R3',     sub:'router', kind:'router'},
+    {fx:0.915, label:'server', sub:'server', kind:'server'}
+  ];
+  var NY=0.40; // altezza dei nodi (frazione)
+  function resizeNet(){
+    CW=cv.clientWidth||640;
+    cv.width=CW*DPR; cv.height=CH*DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    if(anim.phase==='idle') drawNet(nodePos(0).x, nodePos(0).y, null);
+  }
+  function nodePos(i){ return {x:nodes[i].fx*CW, y:CH*NY}; }
+  function roundRect(x,y,w,h,r){
+    ctx.beginPath();
+    ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath();
+  }
+  function drawNode(i){
+    var p=nodePos(i), n=nodes[i];
+    if(n.kind==='router'){
+      var rr=11;
+      ctx.fillStyle='#211917'; ctx.strokeStyle='#4A3A37'; ctx.lineWidth=1.5;
+      roundRect(p.x-rr,p.y-rr,rr*2,rr*2,6); ctx.fill(); ctx.stroke();
+      ctx.fillStyle='#8A7A77'; ctx.font='600 9px '+mono();
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(n.label,p.x,p.y);
+    } else {
+      var w=n.kind==='server'?30:28, h=24;
+      ctx.fillStyle='#2A2321'; ctx.strokeStyle='#5A4744'; ctx.lineWidth=1.5;
+      roundRect(p.x-w/2,p.y-h/2,w,h,6); ctx.fill(); ctx.stroke();
+      // piccolo glifo
+      ctx.fillStyle='#C9B8B5';
+      if(n.kind==='server'){
+        for(var k=0;k<3;k++){ roundRect(p.x-w/2+5,p.y-h/2+5+k*5.5,w-10,2.6,1.3); ctx.fill(); }
+      } else {
+        roundRect(p.x-w/2+5,p.y-h/2+5,w-10,h-13,1.5); ctx.fill();
+        ctx.fillRect(p.x-4,p.y+h/2-4,8,2);
+      }
+    }
+    // etichette
+    ctx.textAlign='center'; ctx.textBaseline='top';
+    ctx.font='600 12px '+body();
+    ctx.fillStyle=(n.kind==='router')?'#8A7A77':'#F4ECEA';
+    ctx.fillText(n.label, p.x, p.y+20);
+    if(n.kind!=='router'){
+      ctx.font='10px '+mono(); ctx.fillStyle='#7A6E6C';
+      ctx.fillText(n.sub, p.x, p.y+36);
+    }
+  }
+  function mono(){ return "'IBM Plex Mono',monospace"; }
+  function body(){ return "'Figtree',system-ui,sans-serif"; }
+  function drawNet(px,py,tag){
+    ctx.clearRect(0,0,CW,CH);
+    // collegamenti
+    ctx.lineWidth=2; ctx.setLineDash([5,6]); ctx.strokeStyle='#3A2E2C';
+    for(var i=0;i<nodes.length-1;i++){
+      var a=nodePos(i), b=nodePos(i+1);
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    for(var j=0;j<nodes.length;j++) drawNode(j);
+    // pacchetto
+    if(px!==null){
+      ctx.save();
+      ctx.shadowColor=anim.dir>0?'#E6111A':'#49C27A';
+      ctx.shadowBlur=16;
+      ctx.fillStyle=anim.dir>0?'#E6111A':'#49C27A';
+      ctx.beginPath(); ctx.arc(px,py,7,0,7); ctx.fill();
+      ctx.restore();
+      if(tag){
+        ctx.font='600 11px '+mono(); ctx.textAlign='center'; ctx.textBaseline='bottom';
+        ctx.fillStyle=anim.dir>0?'#F6A7AB':'#8FE3B0';
+        ctx.fillText(tag, px, py-12);
+      }
+    }
+  }
+  var anim={phase:'idle', dir:1, seg:0, t:0};
+  function startRequest(){
+    if(anim.phase!=='idle') return;
+    if(reduce){
+      statusEl.innerHTML='Richiesta inviata, <b>pagina ricevuta</b>. (viaggio istantaneo)';
+      drawNet(nodePos(0).x, nodePos(0).y, 'pagina');
+      return;
+    }
+    reqBtn.disabled=true;
+    anim.phase='out'; anim.dir=1; anim.seg=0; anim.t=0;
+    statusEl.innerHTML='La <b>richiesta</b> sale di salto in salto verso il server…';
+    requestAnimationFrame(step);
+  }
+  var last=0, SPEED=1/640; // t per ms lungo un segmento
+  function step(ts){
+    if(!last) last=ts; var dt=ts-last; last=ts;
+    anim.t += dt*SPEED*140;
+    if(anim.t>=1){
+      anim.t=0;
+      if(anim.dir>0){
+        anim.seg++;
+        if(anim.seg>=nodes.length-1){
+          // arrivata al server
+          anim.phase='in'; anim.dir=-1; anim.seg=nodes.length-1;
+          statusEl.innerHTML='Il server risponde: la <b>pagina</b> torna indietro…';
+        }
+      } else {
+        anim.seg--;
+        if(anim.seg<=0){
+          anim.phase='idle'; last=0; reqBtn.disabled=false;
+          statusEl.innerHTML='Arrivata! La <b>pagina</b> è a casa. Riprova quando vuoi.';
+          drawNet(nodePos(0).x, nodePos(0).y, null);
+          return;
+        }
+      }
+    }
+    var from, to;
+    if(anim.dir>0){ from=nodePos(anim.seg); to=nodePos(anim.seg+1); }
+    else { from=nodePos(anim.seg); to=nodePos(anim.seg-1); }
+    var e = anim.t*anim.t*(3-2*anim.t); // smoothstep
+    var px=from.x+(to.x-from.x)*e, py=from.y+(to.y-from.y)*e;
+    drawNet(px,py, anim.dir>0?'GET':'pagina');
+    last=ts;
+    requestAnimationFrame(step);
+  }
+  reqBtn.addEventListener('click',startRequest);
+  window.addEventListener('resize',resizeNet);
+  resizeNet(); // disegna lo stato di riposo
+
+  // ---------- 03 DNS ----------
+  var dnsname=document.getElementById('dnsname'), dnsgo=document.getElementById('dnsgo'),
+      dnsnome=document.getElementById('dnsnome'), dnsip=document.getElementById('dnsip'),
+      dnsresult=document.getElementById('dnsresult'), rubricaBody=document.querySelector('#rubrica tbody');
+  // Indirizzi di ESEMPIO: intervalli 192.0.2.0/24 e 203.0.113.0/24, riservati dallo
+  // standard alle dimostrazioni. Non puntano a nessun computer reale.
+  var noti={
+    'leoitalia.com':'203.0.113.10',
+    'scuola.example':'192.0.2.41',
+    'biblioteca.example':'203.0.113.77',
+    'meteo.example':'192.0.2.120'
+  };
+  function hash(s){ var h=5381; for(var i=0;i<s.length;i++){ h=((h<<5)+h+s.charCodeAt(i))>>>0; } return h; }
+  function ipDi(nome){
+    nome=nome.trim().toLowerCase();
+    if(noti[nome]) return noti[nome];
+    var h=hash(nome);
+    var base=(h&1)?'203.0.113.':'192.0.2.';
+    var last=(h>>>3)%253 + 1; // 1..253
+    return base+last;
+  }
+  function buildRubrica(){
+    rubricaBody.innerHTML='';
+    Object.keys(noti).forEach(function(nome){
+      var tr=document.createElement('tr'); tr.dataset.nome=nome;
+      tr.innerHTML='<td></td><td>'+noti[nome]+'</td>';
+      tr.firstChild.textContent=nome;
+      rubricaBody.appendChild(tr);
+    });
+  }
+  function highlight(nome){
+    nome=nome.trim().toLowerCase();
+    [].forEach.call(rubricaBody.children,function(tr){
+      tr.classList.toggle('hit', tr.dataset.nome===nome);
+    });
+  }
+  function cerca(){
+    var nome=dnsname.value.trim();
+    if(!nome){ return; }
+    dnsnome.textContent=nome;
+    if(reduce){
+      dnsip.textContent=ipDi(nome); highlight(nome); return;
+    }
+    dnsresult.classList.add('cerca'); dnsip.textContent='cerco…';
+    highlight('');
+    setTimeout(function(){
+      dnsresult.classList.remove('cerca');
+      dnsip.textContent=ipDi(nome);
+      highlight(nome);
+    },520);
+  }
+  dnsgo.addEventListener('click',cerca);
+  dnsname.addEventListener('keydown',function(e){ if(e.key==='Enter') cerca(); });
+  buildRubrica();
+  // stato di riposo visibile: prima voce già risolta
+  dnsnome.textContent='leoitalia.com'; dnsip.textContent=ipDi('leoitalia.com'); highlight('leoitalia.com');
+})();
+</script>

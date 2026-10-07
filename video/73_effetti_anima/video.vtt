@@ -1,0 +1,209 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.553
+Con questo video cominciamo le animazioni.
+
+2
+00:00:03.553 --> 00:00:08.009
+Un pulsante che scivola, un titolo che cambia colore piano piano:
+
+3
+00:00:08.009 --> 00:00:12.039
+sono piccoli dettagli che rendono un'app viva e piacevole.
+
+4
+00:00:12.039 --> 00:00:14.786
+E in Leo si fanno con una frase sola.
+
+5
+00:00:16.086 --> 00:00:17.634
+Ecco la frase anima.
+
+6
+00:00:17.634 --> 00:00:19.791
+Si legge quasi come l'italiano:
+
+7
+00:00:19.791 --> 00:00:24.547
+anima Pulsante Muovi punto sinistra a duecento in zero virgola cinque secondi.
+
+8
+00:00:24.547 --> 00:00:29.579
+Vuol dire: porta la proprietà sinistra del pulsante al valore duecento, pian piano,
+
+9
+00:00:29.579 --> 00:00:30.962
+in mezzo secondo.
+
+10
+00:00:30.962 --> 00:00:33.229
+Il pulsante scivola verso destra.
+
+11
+00:00:34.529 --> 00:00:39.899
+La frase ha sempre questa forma: anima, l'oggetto con un punto e la proprietà,
+
+12
+00:00:39.899 --> 00:00:42.896
+la parola a, e il valore da raggiungere.
+
+13
+00:00:42.896 --> 00:00:47.142
+Poi, se vuoi, la durata: in secondi, oppure in millisecondi.
+
+14
+00:00:47.142 --> 00:00:51.825
+Puoi anche scriverla attaccata, come due esse o trecento emme esse.
+
+15
+00:00:51.825 --> 00:00:56.570
+Se non scrivi la durata, l'animazione dura zero virgola tre secondi.
+
+16
+00:00:57.870 --> 00:01:00.263
+Si animano i numeri e i colori.
+
+17
+00:01:00.263 --> 00:01:02.839
+La posizione, con sinistra e alto.
+
+18
+00:01:02.839 --> 00:01:07.747
+Le misure, con larghezza, altezza e perfino la dimensione del carattere.
+
+19
+00:01:07.747 --> 00:01:11.122
+L'opacità, da zero, invisibile, a cento, pieno.
+
+20
+00:01:11.122 --> 00:01:14.803
+E i colori, come il colore del testo e dello sfondo:
+
+21
+00:01:14.803 --> 00:01:17.870
+Leo passa da un colore all'altro sfumando.
+
+22
+00:01:19.170 --> 00:01:22.566
+Due animazioni una dopo l'altra partono insieme!
+
+23
+00:01:22.566 --> 00:01:27.782
+Qui il titolo diventa color oro e intanto si ingrandisce, tutto in un secondo.
+
+24
+00:01:27.782 --> 00:01:30.815
+Ricorda: i colori si scrivono come sempre,
+
+25
+00:01:30.815 --> 00:01:34.272
+con un nome italiano o con il codice esadecimale.
+
+26
+00:01:35.572 --> 00:01:38.762
+Questo è il concetto più importante del video.
+
+27
+00:01:38.762 --> 00:01:44.138
+Anima fa partire l'animazione e passa subito alla riga successiva, senza aspettare.
+
+28
+00:01:44.138 --> 00:01:47.151
+Per questo due anima di fila vanno insieme.
+
+29
+00:01:47.151 --> 00:01:50.754
+E se vuoi fare qualcosa quando l'animazione è finita?
+
+30
+00:01:50.754 --> 00:01:53.531
+Lo vediamo nel prossimo video, con poi.
+
+31
+00:01:54.831 --> 00:01:59.338
+La frase è comoda da leggere, ma esistono anche altre due forme.
+
+32
+00:01:59.338 --> 00:02:04.597
+La funzione anima, con il controllo, il nome della proprietà tra virgolette,
+
+33
+00:02:04.597 --> 00:02:06.475
+il valore e la durata.
+
+34
+00:02:06.475 --> 00:02:10.481
+E il metodo anima, che ogni controllo visibile possiede.
+
+35
+00:02:10.481 --> 00:02:15.239
+Fanno esattamente la stessa cosa: scegli quella che ti piace di più.
+
+36
+00:02:16.539 --> 00:02:19.389
+Ecco la finestra dopo i tre pulsanti.
+
+37
+00:02:19.389 --> 00:02:24.392
+Muovimi è scivolato a destra, il titolo è diventato d'oro e più grande,
+
+38
+00:02:24.392 --> 00:02:27.559
+e il pulsante Sfumami è quasi trasparente.
+
+39
+00:02:28.859 --> 00:02:30.625
+E per tornare indietro?
+
+40
+00:02:30.625 --> 00:02:33.928
+Basta animare di nuovo verso i valori di partenza.
+
+41
+00:02:33.928 --> 00:02:36.320
+Anche il ritorno, così, è morbido.
+
+42
+00:02:36.320 --> 00:02:40.990
+Se invece un'animazione nuova tocca una proprietà che si sta già animando,
+
+43
+00:02:40.990 --> 00:02:43.553
+la sostituisce: niente scatti strani.
+
+44
+00:02:44.853 --> 00:02:45.495
+Quiz.
+
+45
+00:02:45.495 --> 00:02:48.210
+Quanto dura un'animazione scritta senza in? ...
+
+46
+00:02:48.210 --> 00:02:50.975
+Zero virgola tre secondi: la durata predefinita.
+
+47
+00:02:59.575 --> 00:03:00.993
+Ricapitoliamo.
+
+48
+00:03:00.993 --> 00:03:05.891
+La frase anima porta una proprietà a un valore nel tempo che scegli.
+
+49
+00:03:05.891 --> 00:03:08.146
+Si animano numeri e colori.
+
+50
+00:03:08.146 --> 00:03:13.044
+Non ferma il programma, e ha anche la forma di funzione e di metodo.
+
+51
+00:03:14.344 --> 00:03:19.391
+Nel prossimo video scopriamo le sei curve, per animazioni che rimbalzano,
+
+52
+00:03:19.391 --> 00:03:22.507
+frenano o fanno le molle, e la parola poi.

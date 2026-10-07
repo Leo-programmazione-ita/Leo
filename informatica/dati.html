@@ -1,0 +1,338 @@
+<title>I dati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Libro interattivo "Informatica" — sezione 5. Lettura a scorrimento, moduli da toccare.
+   Mondo visivo unico e scuro, coerente con le altre sezioni; colori espliciti. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+
+/* --- controlli comuni --- */
+.tfield{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--fg);
+  font-family:var(--body);font-size:18px;padding:12px 14px}
+.tfield:focus{outline:2px solid var(--accent);outline-offset:1px}
+button.btn{font-family:var(--body);font-weight:600;font-size:14px;border-radius:10px;padding:9px 14px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;transition:.15s}
+button.btn:hover{border-color:var(--faint)}
+button.btn:disabled{opacity:.4;cursor:not-allowed}
+button.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.ctlrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center}
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA}
+pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color:var(--faint)}
+.out{font-family:var(--mono);font-size:13px;color:var(--ok);margin-top:8px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+
+/* --- 01 lista --- */
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:stretch;margin-top:16px;min-height:62px}
+.box{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-width:62px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);
+  cursor:pointer;transition:.15s}
+.box:hover{border-color:var(--accent);background:var(--accent-soft)}
+.box:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.box .idx{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.06em}
+.box .vv{font-family:var(--disp);font-weight:600;font-size:20px;line-height:1.1;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.box.leaving{opacity:0;transform:scale(.7)}
+.box.entering{animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+.empty{font-family:var(--mono);font-size:13px;color:var(--faint);align-self:center}
+
+/* --- 02 pila e coda --- */
+.twin{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+@media (max-width:460px){.twin{grid-template-columns:1fr}}
+.ds{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px}
+.ds h3{font-family:var(--disp);font-weight:600;font-size:19px;margin:0 0 2px;display:flex;align-items:center;gap:8px}
+.ds .tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:2px 7px}
+.ds .desc{font-family:var(--mono);font-size:11px;color:var(--faint);margin:0 0 12px}
+.stackwrap{display:flex;flex-direction:column-reverse;gap:7px;min-height:150px;justify-content:flex-start}
+.queuewrap{display:flex;flex-direction:column;gap:7px;min-height:150px}
+.item{font-family:var(--mono);font-weight:500;font-size:15px;text-align:center;padding:9px;border-radius:9px;
+  background:var(--panel);border:1px solid var(--line);color:var(--fg);transition:.2s}
+.item.hot{border-color:var(--accent);background:var(--accent-soft);color:#fff}
+.item.in-top{animation:dropTop .28s ease}
+.item.in-bottom{animation:slideIn .28s ease}
+.item.out{opacity:0;transform:translateY(-10px) scale(.8)}
+@keyframes dropTop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+.dsbtns{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.dsbtns .btn{width:100%}
+.marker{font-family:var(--mono);font-size:10px;color:var(--faint);text-align:center;margin-top:8px;letter-spacing:.04em}
+
+/* --- 03 dizionario --- */
+.dict{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.pair{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);transition:.2s}
+.pair .k{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--fg);min-width:92px}
+.pair .arr{color:var(--accent);font-family:var(--mono)}
+.pair .v{font-family:var(--disp);font-weight:600;font-size:18px;color:var(--muted)}
+.pair.hit{border-color:var(--accent);background:var(--accent-soft)}
+.pair.hit .v{color:#fff}
+.pair.entering{animation:pop .25s ease}
+.lookup{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.lookup .tfield{flex:1;min-width:150px;font-size:16px}
+.note{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:10px;min-height:1.2em}
+.note b{color:var(--accent)}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <span class="eyebrow">Informatica interattiva · Sezione 5</span>
+  <h1>I dati</h1>
+  <p class="lead">Avere tanti numeri non basta: bisogna <b>tenerli in ordine</b>. Una lista della spesa, una pila di piatti, la fila alla cassa, una rubrica. Sono tutti modi diversi di sistemare le cose — e il computer usa esattamente questi.</p>
+  <p>Una <b>struttura dati</b> è solo questo: un modo di organizzare l'informazione per ritrovarla facilmente. La scelta della struttura cambia tutto — cosa è veloce, cosa è lento, cosa è comodo. Qui tocchiamo le quattro più comuni: la <b>lista</b>, la <b>pila</b>, la <b>coda</b> e il <b>dizionario</b>.</p>
+
+  <section>
+    <h2><span class="n">01</span>La lista</h2>
+    <p>La cosa più semplice: metti le cose <b>una dopo l'altra</b>. Ognuna ha la sua <b>posizione</b>, un numero chiamato <b>indice</b> — e si comincia a contare da <b>zero</b>, non da uno. Aggiungi qualcosa in fondo, oppure tocca un elemento per toglierlo: guarda come gli indici si risistemano subito.</p>
+    <div class="card">
+      <div class="ctlrow">
+        <input class="tfield" id="listInput" value="mele" maxlength="14" aria-label="cosa aggiungere alla lista" style="flex:1;min-width:140px">
+        <button class="btn primary" id="listAdd">Aggiungi in fondo</button>
+        <button class="btn" id="listClear">Svuota</button>
+      </div>
+      <div class="row" id="listRow" aria-live="polite"></div>
+      <p class="take">Una lista tiene le cose <b>in ordine</b>, ognuna con la sua posizione. Tocca un elemento qui sopra per rimuoverlo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Pila e coda</h2>
+    <p>Stesse cose in fila, ma con una regola su <em>da dove</em> si entra e si esce — e questa regola cambia tutto. La <b>pila</b> (stack) lavora da sopra: l'ultimo arrivato è il primo a uscire. La <b>coda</b> (queue) lavora dai due capi: chi è arrivato prima esce prima. Prova a riempirle e svuotarle.</p>
+    <div class="card">
+      <div class="twin">
+        <div class="ds">
+          <h3>Pila <span class="tag">LIFO</span></h3>
+          <p class="desc">last in, first out</p>
+          <div class="stackwrap" id="stackWrap" aria-live="polite"></div>
+          <div class="marker" id="stackMark">▲ sopra</div>
+          <div class="dsbtns">
+            <button class="btn primary" id="stackPush">Metti sopra</button>
+            <button class="btn" id="stackPop">Togli da sopra</button>
+          </div>
+        </div>
+        <div class="ds">
+          <h3>Coda <span class="tag">FIFO</span></h3>
+          <p class="desc">first in, first out</p>
+          <div class="queuewrap" id="queueWrap" aria-live="polite"></div>
+          <div class="marker" id="queueMark">▲ esce qui · entra sotto ▼</div>
+          <div class="dsbtns">
+            <button class="btn primary" id="queuePush">Entra in fondo</button>
+            <button class="btn" id="queuePop">Esce dal primo</button>
+          </div>
+        </div>
+      </div>
+      <p class="take">La <b>pila</b> è come i piatti impilati: prendi sempre quello in cima. La <b>coda</b> è come la fila alla cassa: il primo arrivato è servito per primo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Il dizionario</h2>
+    <p>A volte la posizione non ci interessa: vogliamo cercare per <b>nome</b>. Il dizionario (detto anche <em>mappa</em>) tiene le cose a <b>coppie</b>: una <b>chiave</b> e il suo <b>valore</b>. Dici la chiave, lui ti porta dritto al valore — senza scorrere tutto il resto. Cerca una parola qui sotto, o aggiungine una tua.</p>
+    <div class="card">
+      <div class="dict" id="dict" aria-live="polite"></div>
+      <div class="lookup">
+        <input class="tfield" id="dictSearch" placeholder="cerca una chiave (es. mela)" aria-label="cerca una chiave">
+        <button class="btn primary" id="dictGo">Cerca</button>
+      </div>
+      <p class="note" id="dictNote">Scrivi una chiave e premi <b>Cerca</b>: il dizionario salta dritto al valore.</p>
+      <div class="ctlrow" style="margin-top:4px">
+        <input class="tfield" id="dictK" placeholder="nuova chiave" maxlength="16" aria-label="nuova chiave" style="flex:1;min-width:120px">
+        <input class="tfield" id="dictV" placeholder="suo valore" maxlength="16" aria-label="nuovo valore" style="flex:1;min-width:120px">
+        <button class="btn" id="dictAdd">Aggiungi coppia</button>
+      </div>
+      <p class="take">Il dizionario <b>trova per chiave, all'istante</b>. In una lista, invece, dovresti scorrere gli elementi uno per uno finché non trovi quello giusto.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>E con Leo?</h2>
+    <p>In Leo le liste e i dizionari sono pane quotidiano. Una lista si riempie con <span class="mono">.aggiungi</span>, un dizionario si interroga con la sua chiave — gli stessi gesti che hai appena fatto qui sopra. Prova tu a scriverlo e guarda cosa succede:</p>
+    <pre class="code"><span class="cm"># una lista della spesa</span>
+spesa = [<span class="st">"mele"</span>, <span class="st">"pane"</span>]
+spesa.aggiungi(<span class="st">"latte"</span>)
+<span class="kw">stampa</span>(spesa)
+<span class="kw">stampa</span>(spesa[<span class="st">0</span>])      <span class="cm"># il primo, indice zero</span>
+
+<span class="cm"># un dizionario: cerca per chiave</span>
+traduci = {<span class="st">"mela"</span>: <span class="st">"apple"</span>, <span class="st">"pane"</span>: <span class="st">"bread"</span>}
+<span class="kw">stampa</span>(traduci[<span class="st">"mela"</span>])</pre>
+    <p style="margin-top:14px" class="kicker">Non ti diciamo cosa stampa: <b>provalo e guarda</b>. Scrivi la chiave giusta e il dizionario ti risponde subito; sbagliala e vedrai come reagisce. Dal concetto al codice vero, senza magia.</p>
+  </section>
+
+  <div class="foot">
+    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
+    <a href="https://leoitalia.com">leoitalia.com</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- 01 lista ----------
+  var listRow=document.getElementById('listRow'),
+      listInput=document.getElementById('listInput');
+  var list=['mele','pane','latte'];
+  function renderList(enterIndex){
+    listRow.innerHTML='';
+    if(list.length===0){
+      var e=document.createElement('div'); e.className='empty';
+      e.textContent='(lista vuota — aggiungi qualcosa)';
+      listRow.appendChild(e); return;
+    }
+    list.forEach(function(v,i){
+      var b=document.createElement('button');
+      b.className='box'+(i===enterIndex?' entering':'');
+      b.type='button';
+      b.setAttribute('aria-label','rimuovi '+v+', posizione '+i);
+      b.innerHTML='<span class="idx">['+i+']</span><span class="vv"></span>';
+      b.querySelector('.vv').textContent=v;
+      b.addEventListener('click',function(){ removeAt(i); });
+      listRow.appendChild(b);
+    });
+  }
+  function removeAt(i){
+    var node=listRow.children[i];
+    if(node){ node.classList.add('leaving'); }
+    list.splice(i,1);
+    setTimeout(function(){ renderList(-1); }, 180);
+  }
+  document.getElementById('listAdd').addEventListener('click',function(){
+    var v=listInput.value.trim(); if(!v)return;
+    list.push(v); renderList(list.length-1);
+    listInput.value=''; listInput.focus();
+  });
+  listInput.addEventListener('keydown',function(e){ if(e.key==='Enter')document.getElementById('listAdd').click(); });
+  document.getElementById('listClear').addEventListener('click',function(){ list=[]; renderList(-1); });
+  renderList(-1);
+
+  // ---------- 02 pila e coda ----------
+  // PILA — LIFO: push/pop entrambi in cima (fine dell'array = "sopra").
+  var stackWrap=document.getElementById('stackWrap');
+  var stack=['A','B'], stackCount=2;
+  function renderStack(animLastTop){
+    stackWrap.innerHTML='';
+    // colonna-reverse: il primo figlio sta in basso, l'ultimo in alto => la cima è l'ultimo elemento
+    stack.forEach(function(v,i){
+      var el=document.createElement('div');
+      var top=(i===stack.length-1);
+      el.className='item'+(top?' hot':'')+(top&&animLastTop?' in-top':'');
+      el.textContent=v;
+      stackWrap.appendChild(el);
+    });
+    if(stack.length===0){ var e=document.createElement('div'); e.className='empty'; e.textContent='(vuota)'; stackWrap.appendChild(e); }
+  }
+  document.getElementById('stackPush').addEventListener('click',function(){
+    stack.push('P'+(++stackCount)); renderStack(true);
+  });
+  document.getElementById('stackPop').addEventListener('click',function(){
+    if(stack.length===0)return;
+    var node=stackWrap.children[stack.length-1]; // la cima
+    if(node){ node.classList.add('out'); }
+    stack.pop();
+    setTimeout(function(){ renderStack(false); }, 180);
+  });
+  renderStack(false);
+
+  // CODA — FIFO: entra in fondo (push), esce dal primo (shift).
+  var queueWrap=document.getElementById('queueWrap');
+  var queue=['1','2'], queueCount=2;
+  function renderQueue(animLastBottom){
+    queueWrap.innerHTML='';
+    queue.forEach(function(v,i){
+      var el=document.createElement('div');
+      var front=(i===0);
+      var last=(i===queue.length-1);
+      el.className='item'+(front?' hot':'')+(last&&animLastBottom?' in-bottom':'');
+      el.textContent=v;
+      queueWrap.appendChild(el);
+    });
+    if(queue.length===0){ var e=document.createElement('div'); e.className='empty'; e.textContent='(vuota)'; queueWrap.appendChild(e); }
+  }
+  document.getElementById('queuePush').addEventListener('click',function(){
+    queue.push('C'+(++queueCount)); renderQueue(true);
+  });
+  document.getElementById('queuePop').addEventListener('click',function(){
+    if(queue.length===0)return;
+    var node=queueWrap.children[0]; // il primo in fila
+    if(node){ node.classList.add('out'); }
+    queue.shift();
+    setTimeout(function(){ renderQueue(false); }, 180);
+  });
+  renderQueue(false);
+
+  // ---------- 03 dizionario ----------
+  var dictEl=document.getElementById('dict'),
+      dictNote=document.getElementById('dictNote');
+  var dict=[
+    {k:'mela', v:'apple'},
+    {k:'pane', v:'bread'},
+    {k:'gatto', v:'cat'},
+    {k:'rosso', v:'red'}
+  ];
+  function renderDict(hitKey,enterKey){
+    dictEl.innerHTML='';
+    dict.forEach(function(p){
+      var row=document.createElement('div');
+      var hit=(hitKey!=null && p.k.toLowerCase()===hitKey);
+      row.className='pair'+(hit?' hit':'')+(p.k===enterKey?' entering':'');
+      row.innerHTML='<span class="k"></span><span class="arr">&rarr;</span><span class="v"></span>';
+      row.querySelector('.k').textContent='"'+p.k+'"';
+      row.querySelector('.v').textContent=p.v;
+      dictEl.appendChild(row);
+    });
+  }
+  function lookup(){
+    var q=document.getElementById('dictSearch').value.trim().toLowerCase();
+    if(!q){ dictNote.innerHTML='Scrivi una chiave e premi <b>Cerca</b>: il dizionario salta dritto al valore.'; renderDict(null,null); return; }
+    var found=null;
+    for(var i=0;i<dict.length;i++){ if(dict[i].k.toLowerCase()===q){ found=dict[i]; break; } }
+    if(found){
+      renderDict(q,null);
+      dictNote.innerHTML='Trovato all’istante: <b>"'+found.k+'" &rarr; '+found.v+'</b>. La chiave ha portato dritto al valore.';
+    }else{
+      renderDict(null,null);
+      dictNote.innerHTML='Nessuna chiave <b>"'+q+'"</b> nel dizionario. (Le chiavi di esempio: mela, pane, gatto, rosso.)';
+    }
+  }
+  document.getElementById('dictGo').addEventListener('click',lookup);
+  document.getElementById('dictSearch').addEventListener('keydown',function(e){ if(e.key==='Enter')lookup(); });
+  document.getElementById('dictAdd').addEventListener('click',function(){
+    var k=document.getElementById('dictK').value.trim(),
+        v=document.getElementById('dictV').value.trim();
+    if(!k||!v)return;
+    // una chiave è unica: se esiste già, aggiorna il valore
+    var exist=null;
+    for(var i=0;i<dict.length;i++){ if(dict[i].k.toLowerCase()===k.toLowerCase()){ exist=dict[i]; break; } }
+    if(exist){ exist.v=v; renderDict(exist.k.toLowerCase(),null); dictNote.innerHTML='Chiave <b>"'+exist.k+'"</b> aggiornata: ora vale <b>'+v+'</b>.'; }
+    else{ dict.push({k:k,v:v}); renderDict(null,k); dictNote.innerHTML='Aggiunta la coppia <b>"'+k+'" &rarr; '+v+'</b>.'; }
+    document.getElementById('dictK').value=''; document.getElementById('dictV').value='';
+  });
+  renderDict(null,null);
+})();
+</script>
