@@ -19,8 +19,8 @@ window.LEO_CONFIG = {
 
   /* App Leo per Android: indirizzo dell'APK (o della pagina del Play Store).
      ""  -> il pulsante "Scarica l'app" mostra "Link in arrivo".                 */
-  urlDownloadAndroid: "",
-  versioneAndroid: "",
+  urlDownloadAndroid: "https://leoitalia.com/download/Leo-0.1.0.apk",
+  versioneAndroid: "0.1.0",
 
   /* --- Indirizzo del sito pubblicato ------------------------------------------
      Serve quando il sito si apre dal disco o dentro l'app: senza i video sul

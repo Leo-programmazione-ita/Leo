@@ -1,0 +1,249 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.014
+Nel video precedente abbiamo personalizzato gli oggetti uno alla volta.
+
+2
+00:00:05.014 --> 00:00:06.386
+Bello, ma lungo.
+
+3
+00:00:06.386 --> 00:00:11.415
+Oggi facciamo il contrario: cambiamo l'aspetto di tutta l'app con un tocco solo.
+
+4
+00:00:11.415 --> 00:00:14.786
+E poi mettiamo una foto della galleria come sfondo.
+
+5
+00:00:16.086 --> 00:00:18.542
+Apri la tua app nel disegnatore.
+
+6
+00:00:18.542 --> 00:00:21.674
+Qui ho creato un'app dal modello Contatore.
+
+7
+00:00:21.674 --> 00:00:25.604
+In alto, accanto al pulsante Prova, ci sono tre puntini:
+
+8
+00:00:25.604 --> 00:00:28.244
+toccali e si apre il menu dell'app.
+
+9
+00:00:28.244 --> 00:00:32.235
+Le voci che ci interessano oggi sono tre: Stile dell'app,
+
+10
+00:00:32.235 --> 00:00:36.902
+Immagine di sfondo dalla galleria, e Colori e sfondo della finestra.
+
+11
+00:00:38.202 --> 00:00:40.350
+Tocca Stile dell'app, un tocco.
+
+12
+00:00:40.350 --> 00:00:44.370
+Compare l'elenco degli stili, ognuno con un pallino di anteprima.
+
+13
+00:00:44.370 --> 00:00:46.352
+Leo, rosso e nero, elegante.
+
+14
+00:00:46.352 --> 00:00:47.839
+Notte, blu e viola.
+
+15
+00:00:47.839 --> 00:00:49.546
+Oceano, azzurro fresco.
+
+16
+00:00:49.546 --> 00:00:51.308
+Pastello, pesca e crema.
+
+17
+00:00:51.308 --> 00:00:53.511
+Neon, contorni luminosi su nero.
+
+18
+00:00:53.511 --> 00:00:55.053
+Prato, verde natura.
+
+19
+00:00:55.053 --> 00:00:59.018
+E Classico, che toglie gli stili e torna ai colori del telefono.
+
+20
+00:01:00.318 --> 00:01:05.562
+Ecco lo stesso contatore con tre stili diversi: Oceano, Neon e Pastello.
+
+21
+00:01:05.562 --> 00:01:11.200
+Con un tocco cambiano lo sfondo della finestra, i pulsanti, i campi e i testi,
+
+22
+00:01:11.200 --> 00:01:13.757
+tutti insieme e tutti coerenti.
+
+23
+00:01:13.757 --> 00:01:19.722
+In basso compare anche un avviso con il pulsante Annulla: se lo stile non ti piace,
+
+24
+00:01:19.722 --> 00:01:21.951
+un tocco e torni indietro.
+
+25
+00:01:23.251 --> 00:01:25.733
+Che cosa fa di preciso uno stile?
+
+26
+00:01:25.733 --> 00:01:30.212
+Scrive per te le proprietà che abbiamo visto nel video precedente.
+
+27
+00:01:30.212 --> 00:01:32.210
+Lo sfondo della finestra.
+
+28
+00:01:32.210 --> 00:01:35.660
+Per i pulsanti colore, sfumatura, angoli e ombra.
+
+29
+00:01:35.660 --> 00:01:39.716
+Per le caselle e gli elenchi il fondo, il testo e il bordo.
+
+30
+00:01:39.716 --> 00:01:43.408
+Per le etichette e le spunte il colore delle scritte.
+
+31
+00:01:43.408 --> 00:01:45.587
+Sono proprietà normalissime:
+
+32
+00:01:45.587 --> 00:01:48.553
+dopo aver scelto uno stile puoi ritoccare
+
+33
+00:01:48.553 --> 00:01:51.822
+a mano qualunque oggetto dal pannello Aspetto.
+
+34
+00:01:53.122 --> 00:01:54.437
+Ora la foto.
+
+35
+00:01:54.437 --> 00:02:00.291
+Dal menu tocca Immagine di sfondo dalla galleria, e scegli una foto dal telefono.
+
+36
+00:02:00.291 --> 00:02:06.079
+Leo la copia dentro il progetto dell'app, così funziona anche quando crei l'APK,
+
+37
+00:02:06.079 --> 00:02:09.893
+e la mette come immagine di sfondo della finestra.
+
+38
+00:02:09.893 --> 00:02:15.484
+A destra l'app in prova: il contatore sopra il paesaggio, con lo stile Notte.
+
+39
+00:02:15.484 --> 00:02:20.877
+Per togliere la foto, nel menu compare la voce Togli l'immagine di sfondo.
+
+40
+00:02:22.177 --> 00:02:25.392
+Tutto questo si può fare anche dal codice.
+
+41
+00:02:25.392 --> 00:02:30.214
+Lo sfondo della finestra accetta un colore, ma anche una sfumatura:
+
+42
+00:02:30.214 --> 00:02:35.743
+si scrive la parola sfumatura, i due punti e i colori separati da una virgola.
+
+43
+00:02:35.743 --> 00:02:39.408
+È proprio quello che fanno gli stili, come Notte.
+
+44
+00:02:39.408 --> 00:02:43.908
+Con sfumatura orizzontale i colori vanno da sinistra a destra.
+
+45
+00:02:43.908 --> 00:02:49.116
+E immagine sfondo vuole il nome di un'immagine che si trova nel progetto.
+
+46
+00:02:50.416 --> 00:02:53.753
+Un consiglio sulle foto di sfondo: sono bellissime,
+
+47
+00:02:53.753 --> 00:02:56.921
+ma possono rendere i testi difficili da leggere.
+
+48
+00:02:56.921 --> 00:02:59.579
+Scegli foto tranquille, con poche cose,
+
+49
+00:02:59.579 --> 00:03:03.482
+oppure dai alle etichette più importanti un colore di sfondo,
+
+50
+00:03:03.482 --> 00:03:05.518
+così si staccano dalla foto.
+
+51
+00:03:06.818 --> 00:03:07.658
+Quiz.
+
+52
+00:03:07.658 --> 00:03:11.083
+Hai scelto lo stile Neon, ma non ti convince.
+
+53
+00:03:11.083 --> 00:03:14.573
+Qual è il modo più rapido per tornare com'era?
+
+54
+00:03:16.573 --> 00:03:21.580
+Toccare Annulla, nell'avviso in basso oppure con la freccia in alto nel disegnatore.
+
+55
+00:03:21.580 --> 00:03:23.920
+Oppure scegliere lo stile Classico.
+
+56
+00:03:32.520 --> 00:03:33.803
+Ricapitoliamo.
+
+57
+00:03:33.803 --> 00:03:38.934
+Dal menu dei tre puntini scegli lo stile dell'app, e con Annulla torni indietro.
+
+58
+00:03:38.934 --> 00:03:42.899
+Dallo stesso menu metti una foto della galleria come sfondo.
+
+59
+00:03:42.899 --> 00:03:47.214
+E dal codice puoi scrivere colori, sfumature e immagini di sfondo.
+
+60
+00:03:48.514 --> 00:03:54.166
+Esercizio: prova tutti e sette gli stili sulla tua app, e scegli il tuo preferito.
+
+61
+00:03:54.166 --> 00:03:59.691
+Nel prossimo video facciamo muovere le cose: le animazioni, con la parola anima.
+
+62
+00:03:59.691 --> 00:04:00.759
+A presto.
