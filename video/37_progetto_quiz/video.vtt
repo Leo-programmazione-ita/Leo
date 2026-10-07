@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.646
+Il quarto progetto è un quiz: una domanda, tre risposte, e i punti che salgono.
+
+2
+00:00:06.646 --> 00:00:10.461
+È il progetto perfetto per imparare a tenere i
+
+3
+00:00:10.461 --> 00:00:14.346
+dati in una lista e a mostrarli uno alla volta.
+
+4
+00:00:14.346 --> 00:00:18.867
+E alla fine potrai riempirlo con le domande che vuoi tu.
+
+5
+00:00:20.167 --> 00:00:23.060
+Ecco il quiz, creato dal modello Quiz.
+
+6
+00:00:23.060 --> 00:00:27.715
+In alto la domanda, sotto tre pulsanti con le risposte, e i punti.
+
+7
+00:00:27.715 --> 00:00:30.860
+Tocco Roma, e compare il messaggio Giusto!
+
+8
+00:00:30.860 --> 00:00:33.816
+Dopo l'OK arriva la domanda successiva.
+
+9
+00:00:33.816 --> 00:00:39.351
+Alla fine il quiz dice quanti punti hai fatto, e compare il pulsante Ricomincia.
+
+10
+00:00:40.651 --> 00:00:43.173
+Il cuore del quiz sono i dati.
+
+11
+00:00:43.173 --> 00:00:45.761
+Le domande stanno in una lista,
+
+12
+00:00:45.761 --> 00:00:51.668
+e ogni domanda è a sua volta una lista di cinque cose: il testo, le tre risposte,
+
+13
+00:00:51.668 --> 00:00:55.517
+e il numero della risposta giusta, uno, due o tre.
+
+14
+00:00:55.517 --> 00:01:01.291
+Poi due variabili: numero, cioè a che domanda siamo, partendo da zero, e punti.
+
+15
+00:01:01.291 --> 00:01:06.269
+Per aggiungere una domanda basta aggiungere un elemento alla lista.
+
+16
+00:01:06.269 --> 00:01:10.517
+Ogni domanda qui occupa due righe, così si legge meglio.
+
+17
+00:01:10.517 --> 00:01:13.304
+Il resto del programma non cambia.
+
+18
+00:01:14.604 --> 00:01:18.796
+La funzione mostra domanda fa tutto il lavoro di presentazione.
+
+19
+00:01:18.796 --> 00:01:23.519
+Se numero ha raggiunto la lunghezza della lista, le domande sono finite:
+
+20
+00:01:23.519 --> 00:01:28.184
+scriviamo il risultato, nascondiamo le risposte e mostriamo Ricomincia.
+
+21
+00:01:28.184 --> 00:01:32.317
+Altrimenti prendiamo la domanda numero numero, la chiamiamo d,
+
+22
+00:01:32.317 --> 00:01:37.689
+e distribuiamo i pezzi: d di zero è il testo, d di uno, due e tre sono le risposte.
+
+23
+00:01:37.689 --> 00:01:42.767
+La chiamiamo all'apertura della finestra, con quando Finestra1 punto apertura.
+
+24
+00:01:44.067 --> 00:01:48.973
+Ogni pulsante di risposta chiama rispondi, con il suo numero: uno, due o tre.
+
+25
+00:01:48.973 --> 00:01:53.879
+La riga evidenziata confronta la scelta con l'elemento quattro della domanda,
+
+26
+00:01:53.879 --> 00:01:56.477
+cioè il numero della risposta giusta.
+
+27
+00:01:56.477 --> 00:01:58.728
+Se coincidono, un punto in più.
+
+28
+00:01:58.728 --> 00:02:02.710
+In ogni caso passiamo alla domanda successiva e la mostriamo.
+
+29
+00:02:02.710 --> 00:02:06.924
+Tre pulsanti, tre blocchi quando piccolissimi, una sola funzione.
+
+30
+00:02:08.224 --> 00:02:12.984
+Il quiz funziona, ma i messaggi da chiudere ogni volta rallentano il gioco.
+
+31
+00:02:12.984 --> 00:02:15.163
+Sostituiamoli con gli effetti.
+
+32
+00:02:16.463 --> 00:02:18.297
+Ecco la nuova rispondi.
+
+33
+00:02:18.297 --> 00:02:22.142
+Con la risposta giusta i punti diventano verdi e pulsano.
+
+34
+00:02:22.142 --> 00:02:26.165
+Con quella sbagliata diventano rossi e la domanda si scuote.
+
+35
+00:02:26.165 --> 00:02:29.891
+Nessuna finestrella da chiudere: il quiz scorre veloce,
+
+36
+00:02:29.891 --> 00:02:32.790
+e si capisce lo stesso se hai indovinato.
+
+37
+00:02:34.090 --> 00:02:37.803
+E ora la parte che rende il quiz tuo: le domande.
+
+38
+00:02:37.803 --> 00:02:42.298
+Un corso di formazione, le regole della sicurezza sul lavoro,
+
+39
+00:02:42.298 --> 00:02:44.709
+un ripasso prima di un esame.
+
+40
+00:02:44.709 --> 00:02:50.442
+Attenzione solo a due cose: ogni domanda deve avere esattamente cinque elementi,
+
+41
+00:02:50.442 --> 00:02:54.090
+e tra una domanda e l'altra ci vuole la virgola.
+
+42
+00:02:55.390 --> 00:02:59.891
+Questo progetto insegna un'idea che usano tutti i programmatori:
+
+43
+00:02:59.891 --> 00:03:02.516
+tenere separati i dati dal codice.
+
+44
+00:03:02.516 --> 00:03:06.079
+Le domande sono dati, e stanno tutte in un posto.
+
+45
+00:03:06.079 --> 00:03:10.830
+Le funzioni sono il codice, e non sanno niente di Dante o dei ragni.
+
+46
+00:03:10.830 --> 00:03:16.206
+Così puoi aggiungere cento domande senza toccare una sola riga delle funzioni.
+
+47
+00:03:17.506 --> 00:03:18.928
+Domanda sul quiz.
+
+48
+00:03:18.928 --> 00:03:23.651
+In questa riga, quanto fa sette per otto, con le risposte cinquantaquattro,
+
+49
+00:03:23.651 --> 00:03:26.894
+cinquantasei e cinquantotto, e poi il numero due.
+
+50
+00:03:31.194 --> 00:03:33.235
+Che cosa indica il due?
+
+51
+00:03:35.235 --> 00:03:38.500
+Che la risposta giusta è la seconda: cinquantasei.
+
+52
+00:03:39.800 --> 00:03:41.083
+Ricapitoliamo.
+
+53
+00:03:41.083 --> 00:03:43.882
+Le domande stanno in una lista di liste.
+
+54
+00:03:43.882 --> 00:03:49.071
+La variabile numero tiene il segno, mostra domanda presenta e rispondi controlla.
+
+55
+00:03:49.071 --> 00:03:53.678
+E con gli effetti al posto dei messaggi il quiz diventa più scorrevole.
+
+56
+00:03:54.978 --> 00:03:58.664
+Esercizio: aggiungi cinque domande sulla tua materia preferita,
+
+57
+00:03:58.664 --> 00:04:00.741
+e falle provare a qualcun altro.
+
+58
+00:04:00.741 --> 00:04:03.752
+Nel prossimo progetto costruiamo una calcolatrice,
+
+59
+00:04:03.752 --> 00:04:06.815
+e scopriamo cosa succede quando si divide per zero.
