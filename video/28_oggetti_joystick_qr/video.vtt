@@ -1,0 +1,201 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.271
+Oggi due oggetti speciali, molto diversi tra loro.
+
+2
+00:00:04.271 --> 00:00:09.342
+Il joystick, per muovere le cose con il pollice come in un videogioco,
+
+3
+00:00:09.342 --> 00:00:15.194
+e il generatore di codici QR, quei quadratini che si inquadrano con la fotocamera.
+
+4
+00:00:16.494 --> 00:00:17.596
+Ecco l'app.
+
+5
+00:00:17.596 --> 00:00:22.063
+In alto un campo scuro, con una palla gialla: sono due oggetti Forma,
+
+6
+00:00:22.063 --> 00:00:24.789
+un rettangolo arrotondato e un cerchio.
+
+7
+00:00:24.789 --> 00:00:28.850
+Sotto c'è il joystick, il cerchio grigio con la levetta rossa.
+
+8
+00:00:28.850 --> 00:00:32.272
+Quando sposti la levetta arriva l'evento movimento.
+
+9
+00:00:32.272 --> 00:00:36.971
+Noi prendiamo la posizione e la trasformiamo nella posizione della palla:
+
+10
+00:00:36.971 --> 00:00:38.943
+la palla segue il pollice.
+
+11
+00:00:40.243 --> 00:00:44.057
+Dentro evento il joystick mette quattro numeri.
+
+12
+00:00:44.057 --> 00:00:48.911
+X va da meno uno, tutto a sinistra, a più uno, tutto a destra.
+
+13
+00:00:48.911 --> 00:00:52.725
+Y va da meno uno, in alto, a più uno, in basso.
+
+14
+00:00:52.725 --> 00:00:54.875
+Al centro valgono zero.
+
+15
+00:00:54.875 --> 00:00:59.105
+Forza dice quanto è spinta la levetta, da zero a uno,
+
+16
+00:00:59.105 --> 00:01:01.810
+e angolo la direzione in gradi.
+
+17
+00:01:01.810 --> 00:01:05.139
+Quando lasci la levetta torna al centro,
+
+18
+00:01:05.139 --> 00:01:08.814
+e arriva un ultimo movimento con zero e zero.
+
+19
+00:01:10.114 --> 00:01:14.190
+Guardiamo bene questa riga, perché il trucco si usa spessissimo.
+
+20
+00:01:14.190 --> 00:01:18.096
+Centosessanta è la posizione della palla al centro del campo.
+
+21
+00:01:18.096 --> 00:01:22.852
+X per centoquaranta dà un numero tra meno centoquaranta e più centoquaranta:
+
+22
+00:01:22.852 --> 00:01:24.267
+quanto spostarsi.
+
+23
+00:01:24.267 --> 00:01:26.871
+Sommando otteniamo la nuova posizione.
+
+24
+00:01:26.871 --> 00:01:32.023
+E intero toglie la virgola, perché le posizioni sono in pixel interi: senza intero,
+
+25
+00:01:32.023 --> 00:01:35.420
+Leo ti avviserebbe che la proprietà vuole un intero.
+
+26
+00:01:36.720 --> 00:01:40.802
+Passiamo al secondo oggetto: il generatore di codici QR.
+
+27
+00:01:42.102 --> 00:01:45.229
+Il generatore QR ha la proprietà testo:
+
+28
+00:01:45.229 --> 00:01:48.954
+il testo o l'indirizzo da trasformare in codice.
+
+29
+00:01:48.954 --> 00:01:54.210
+Collegandolo a una casella, il codice cambia a ogni lettera che scrivi.
+
+30
+00:01:54.210 --> 00:01:59.932
+Prova a inquadrarlo con la fotocamera di un altro telefono: si apre la pagina.
+
+31
+00:01:59.932 --> 00:02:05.454
+Puoi cambiare il colore dei quadratini, e la correzione degli errori: da L,
+
+32
+00:02:05.454 --> 00:02:08.447
+la più leggera, ad H, la più robusta,
+
+33
+00:02:08.447 --> 00:02:12.306
+che si legge anche se il codice è un po' rovinato.
+
+34
+00:02:13.606 --> 00:02:18.921
+Qualche idea: un QR con il link del tuo sito, con il menu di un locale,
+
+35
+00:02:18.921 --> 00:02:22.218
+con i dati della rete Wi-Fi dell'ufficio.
+
+36
+00:02:22.218 --> 00:02:27.600
+Un consiglio: se cambi colore, tieni i quadratini scuri su fondo chiaro.
+
+37
+00:02:27.600 --> 00:02:31.973
+Con poco contrasto le fotocamere fanno fatica a leggerlo.
+
+38
+00:02:33.273 --> 00:02:34.008
+Quiz.
+
+39
+00:02:34.008 --> 00:02:37.177
+Sposti la levetta del joystick tutta a sinistra.
+
+40
+00:02:37.177 --> 00:02:38.987
+Quanto vale evento di x?
+
+41
+00:02:40.987 --> 00:02:42.177
+Meno uno.
+
+42
+00:02:42.177 --> 00:02:48.334
+Il joystick dà sempre numeri tra meno uno e uno: sei tu a trasformarli in pixel.
+
+43
+00:02:56.934 --> 00:02:58.355
+Ricapitoliamo.
+
+44
+00:02:58.355 --> 00:03:03.136
+Il joystick manda l'evento movimento con x e y tra meno uno e uno,
+
+45
+00:03:03.136 --> 00:03:04.880
+più forza e angolo.
+
+46
+00:03:04.880 --> 00:03:09.660
+Per muovere un oggetto trasformi quei numeri in pixel, con intero.
+
+47
+00:03:09.660 --> 00:03:14.893
+E il generatore QR disegna il codice di qualunque testo, appena lo cambi.
+
+48
+00:03:16.193 --> 00:03:21.312
+Esercizio: quando la forza supera zero virgola otto, colora la palla di rosso.
+
+49
+00:03:21.312 --> 00:03:25.300
+Con questo abbiamo visto le famiglie principali di oggetti.
+
+50
+00:03:25.300 --> 00:03:30.479
+Dal prossimo video si cambia serie: parliamo di grafica, e partiamo dai colori.

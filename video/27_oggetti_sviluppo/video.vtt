@@ -1,0 +1,241 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.985
+Questo video è per chi vuole andare un po' oltre.
+
+2
+00:00:03.985 --> 00:00:08.020
+La famiglia Sviluppo ha due oggetti da veri programmatori:
+
+3
+00:00:08.020 --> 00:00:10.650
+un editor di codice e un terminale.
+
+4
+00:00:10.650 --> 00:00:15.602
+Con loro costruiamo una piccola officina, un'app che risponde ai comandi.
+
+5
+00:00:16.902 --> 00:00:19.225
+Sopra c'è l'editor di codice,
+
+6
+00:00:19.225 --> 00:00:23.495
+con i numeri di riga e un piccolo programma Leo già scritto.
+
+7
+00:00:23.495 --> 00:00:29.147
+Sotto c'è il terminale: in fondo c'è il prompt, leo seguito dal segno di maggiore,
+
+8
+00:00:29.147 --> 00:00:31.345
+dove si scrivono i comandi.
+
+9
+00:00:31.345 --> 00:00:34.987
+All'apertura della finestra scriviamo un benvenuto
+
+10
+00:00:34.987 --> 00:00:37.687
+nel terminale con il metodo scrivi.
+
+11
+00:00:37.687 --> 00:00:41.392
+Il barra enne alla fine del testo vuol dire a capo.
+
+12
+00:00:42.692 --> 00:00:47.633
+L'editor di codice è una grande area di testo pensata per il codice:
+
+13
+00:00:47.633 --> 00:00:51.079
+carattere a larghezza fissa e numeri di riga.
+
+14
+00:00:51.079 --> 00:00:55.305
+La proprietà testo contiene tutto quello che c'è scritto.
+
+15
+00:00:55.305 --> 00:00:59.206
+Il tema può essere nero, bianco o ad alto contrasto.
+
+16
+00:00:59.206 --> 00:01:04.668
+Con sola lettura lo usi per mostrare un esempio che nessuno deve modificare.
+
+17
+00:01:04.668 --> 00:01:08.894
+Il metodo vai a riga porta il cursore alla riga che vuoi,
+
+18
+00:01:08.894 --> 00:01:12.080
+e l'evento cambio arriva a ogni modifica.
+
+19
+00:01:13.380 --> 00:01:15.121
+Ecco il cuore dell'app.
+
+20
+00:01:15.121 --> 00:01:19.333
+Quando l'utente preme Invio nel terminale, arriva l'evento comando,
+
+21
+00:01:19.333 --> 00:01:20.961
+con il testo scritto.
+
+22
+00:01:20.961 --> 00:01:23.544
+Nelle righe evidenziate lo prepariamo:
+
+23
+00:01:23.544 --> 00:01:28.598
+pulisci toglie gli spazi all'inizio e alla fine, minuscolo trasforma le maiuscole.
+
+24
+00:01:28.598 --> 00:01:32.361
+Così Aiuto, scritto con la A maiuscola, funziona lo stesso.
+
+25
+00:01:32.361 --> 00:01:36.011
+Poi una catena di se e altrimenti se sceglie la risposta.
+
+26
+00:01:36.011 --> 00:01:40.391
+Aiuto elenca i comandi, ora scrive l'ora, pulisci svuota il terminale.
+
+27
+00:01:40.391 --> 00:01:45.220
+E l'ultimo altrimenti risponde a tutto quello che non conosciamo: non conosco,
+
+28
+00:01:45.220 --> 00:01:46.849
+e il comando scritto.
+
+29
+00:01:48.149 --> 00:01:50.928
+I due oggetti possono lavorare insieme.
+
+30
+00:01:50.928 --> 00:01:53.826
+Aggiungiamo alla catena il comando righe.
+
+31
+00:01:53.826 --> 00:01:58.498
+Prendiamo il testo dell'editor e lo dividiamo a ogni a capo con dividi:
+
+32
+00:01:58.498 --> 00:02:01.514
+otteniamo una lista, una riga per elemento.
+
+33
+00:02:01.514 --> 00:02:04.707
+La lunghezza della lista è il numero di righe.
+
+34
+00:02:04.707 --> 00:02:08.965
+Questo è solo un pezzo da inserire prima dell'ultimo altrimenti.
+
+35
+00:02:10.265 --> 00:02:11.297
+Proviamolo.
+
+36
+00:02:11.297 --> 00:02:14.177
+Scrivo aiuto, e compare l'elenco dei comandi.
+
+37
+00:02:14.177 --> 00:02:16.840
+Ora, e il terminale mi dice l'ora esatta.
+
+38
+00:02:16.840 --> 00:02:20.752
+Righe: l'editor ha quattro righe, contando anche l'ultima vuota.
+
+39
+00:02:20.752 --> 00:02:25.153
+E se scrivo balla, il terminale risponde: non conosco balla, prova aiuto.
+
+40
+00:02:25.153 --> 00:02:27.816
+Niente errori, solo una risposta educata.
+
+41
+00:02:29.116 --> 00:02:31.350
+Un'abitudine da prendere subito:
+
+42
+00:02:31.350 --> 00:02:35.371
+prima di confrontare un testo scritto da una persona, preparalo.
+
+43
+00:02:35.371 --> 00:02:39.281
+Sul telefono la tastiera mette spesso la maiuscola all'inizio,
+
+44
+00:02:39.281 --> 00:02:41.404
+o uno spazio in più alla fine.
+
+45
+00:02:41.404 --> 00:02:45.034
+Con pulisci e minuscolo il tuo confronto funziona sempre.
+
+46
+00:02:46.334 --> 00:02:47.124
+Quiz.
+
+47
+00:02:47.124 --> 00:02:51.987
+L'utente scrive la parola Ora, con la O maiuscola e degli spazi intorno.
+
+48
+00:02:51.987 --> 00:02:54.905
+Che cosa resta dopo pulisci e minuscolo?
+
+49
+00:02:56.905 --> 00:02:59.762
+Resta ora, tutto minuscolo e senza spazi.
+
+50
+00:03:04.062 --> 00:03:05.695
+È la risposta C.
+
+51
+00:03:07.062 --> 00:03:08.454
+Ricapitoliamo.
+
+52
+00:03:08.454 --> 00:03:12.314
+L'editor di codice ha il testo, il tema e vai a riga.
+
+53
+00:03:12.314 --> 00:03:16.301
+Il terminale scrive con scrivi e si svuota con pulisci.
+
+54
+00:03:16.301 --> 00:03:20.415
+L'evento comando ti porta quello che l'utente ha scritto,
+
+55
+00:03:20.415 --> 00:03:23.389
+e una catena di se sceglie la risposta.
+
+56
+00:03:24.689 --> 00:03:27.383
+Esercizio: aggiungi un comando saluta,
+
+57
+00:03:27.383 --> 00:03:31.249
+che risponde ciao seguito dal nome scritto dopo la parola.
+
+58
+00:03:31.249 --> 00:03:32.772
+Ti servirà dividi.
+
+59
+00:03:32.772 --> 00:03:36.754
+Nel prossimo video: un joystick sullo schermo e i codici QR.
+
+60
+00:03:36.754 --> 00:03:37.750
+A presto.
