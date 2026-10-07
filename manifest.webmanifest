@@ -1,0 +1,16 @@
+{
+  "name": "Leo — il linguaggio di programmazione in italiano",
+  "short_name": "Leo",
+  "description": "Programmi e app in italiano, sul PC con Leo Studio e sul telefono con l'app Leo.",
+  "lang": "it",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#07070A",
+  "theme_color": "#07070A",
+  "icons": [
+    {"src": "img/stemma_192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "img/stemma_512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "img/stemma.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

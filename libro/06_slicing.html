@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 6 — Intervalli e fette — Leo, il manuale</title>
+<meta name="description" content="Chiudiamo la Parte I con un&#x27;idea piccola ma che ritorna continuamente: prendere un pezzo di una sequenza. In Leo si fa con gli intervalli, e la notazione…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/06_slicing.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/06_slicing.html">
+<meta property="og:title" content="Capitolo 6 — Intervalli e fette — Leo, il manuale">
+<meta property="og:description" content="Chiudiamo la Parte I con un&#x27;idea piccola ma che ritorna continuamente: prendere un pezzo di una sequenza. In Leo si fa con gli intervalli, e la notazione…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html" aria-current="page">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte I — Le basi</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#gli-intervalli">Gli intervalli</a></li><li><a href="#le-fette-slicing">Le fette (slicing)</a></li><li><a href="#i-bordi-senza-drammi">I bordi, senza drammi</a></li><li><a href="#una-fetta-è-una-copia">Una fetta è una copia</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 6 — Intervalli e fette</h1>
+<p>Chiudiamo la Parte I con un'idea piccola ma che ritorna continuamente: prendere un <em>pezzo</em> di una sequenza. In Leo si fa con gli intervalli, e la notazione è una delle più pulite che il linguaggio offra.</p>
+<h2 id="gli-intervalli">Gli intervalli</h2>
+<p>Un <strong>intervallo</strong> è un modo breve per dire «tutti i numeri da qui a lì». Si scrive con due punti <code>..</code> tra gli estremi, che sono <strong>entrambi compresi</strong>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-71" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-71" class="libro-pre"><code><span class="c-flusso">per ogni</span> <span class="c-variabili">i</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">5</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">i</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-72" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-72" class="libro-pre"><code>1
+2
+3
+4
+5</code></pre></figure>
+<p><code>1..5</code> sono i numeri 1, 2, 3, 4, 5 — cinque numeri, estremi inclusi. Questa è una scelta deliberata di Leo: l'intervallo <code>1..5</code> contiene esattamente i numeri che un italiano direbbe «da uno a cinque», senza i trucchi del «fino a cinque escluso» di altri linguaggi. Gli intervalli funzionano anche all'indietro: <code>10..1</code> conta da dieci a uno.</p>
+<p>Un intervallo non è solo per i cicli: puoi usarlo ovunque serva una sequenza di numeri, per esempio <code>somma(1..100)</code> o <code>media(1..10)</code>.</p>
+<h2 id="le-fette-slicing">Le fette (slicing)</h2>
+<p>Lo stesso <code>..</code>, messo tra le parentesi quadre, prende una <strong>fetta</strong> di una lista o di un testo. Gli estremi sono — di nuovo — entrambi inclusi e contati da zero; un estremo negativo conta dalla fine:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-73" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-73" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-numeri">2</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">2</span><span class="c-numeri">..</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Beatrice"</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-numeri">2</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Beatrice"</span><span class="c-punteggiatura">[</span><span class="c-numeri">2</span><span class="c-numeri">..</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-74" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-74" class="libro-pre"><code>[4, 6, 7]
+[7, 9, 10]
+[4, 6, 7, 9, 10]
+Bea
+atrice</code></pre></figure>
+<p>Leggiamole. <code>voti[0..2]</code> prende dall'elemento 0 all'elemento 2 compreso — i primi tre. <code>voti[2..-1]</code> va dall'elemento 2 fino all'ultimo (<code>-1</code>), cioè tutta la coda. <code>voti[0..-1]</code> è una scorciatoia utilissima: «dal primo all'ultimo», cioè <strong>tutta</strong> la sequenza. E poiché la stessa notazione vale per i testi, <code>"Beatrice"[0..2]</code> è <code>"Bea"</code> e <code>"Beatrice"[2..-1]</code> è <code>"atrice"</code>.</p>
+<p>Una fetta <strong>mantiene il tipo</strong>: una fetta di lista è una lista, una fetta di testo è un testo.</p>
+<h2 id="i-bordi-senza-drammi">I bordi, senza drammi</h2>
+<p>Che succede se chiedi una fetta più grande della sequenza, o «al contrario»? Leo non va in errore: si comporta nel modo più ragionevole.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-75" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-75" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-numeri">100</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">3</span><span class="c-numeri">..</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-76" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-76" class="libro-pre"><code>[4, 6, 7, 9, 10]
+[]</code></pre></figure>
+<p>Se un estremo sfora, viene accostato al limite: <code>voti[0..100]</code> dà tutta la lista, senza lamentele. Se l'inizio viene <em>dopo</em> la fine (<code>3..1</code>), la fetta è semplicemente vuota, <code>[]</code>. Questa tolleranza ti risparmia una quantità di controlli manuali.</p>
+<h2 id="una-fetta-è-una-copia">Una fetta è una copia</h2>
+<p>C'è un dettaglio che vale oro quando i programmi crescono: prendere una fetta crea una <strong>lista nuova</strong>. Modificarla non tocca l'originale.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-77" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-77" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">copia</span> <span class="c-operatori">=</span> <span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span>
+<span class="c-variabili">copia</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-numeri">99</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">copia</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-78" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-78" class="libro-pre"><code>[4, 6, 7, 9, 10]
+[4, 6, 7, 9, 10, 99]</code></pre></figure>
+<p><code>voti[0..-1]</code> ha prodotto una copia completa: aggiungendo <code>99</code> alla copia, l'originale è rimasto intatto. È il modo idiomatico, in Leo, per «fare una copia di una lista» prima di lavorarci sopra senza rischiare di rovinare i dati di partenza.</p>
+<p>Per rovesciare una lista, invece, non usare una fetta: c'è il metodo apposito <code>.inverti()</code>, che hai visto nel capitolo scorso.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Data la lista <code>[10, 20, 30, 40, 50, 60]</code>, stampa separatamente la prima metà e la seconda metà usando due fette.</li><li>Prendi una parola lunga e stampa le sue ultime tre lettere con una fetta che usa indici negativi.</li><li>Fai una copia di una lista con <code>[0..-1]</code>, ordina la copia e stampa entrambe per convincerti che l'originale non è cambiato.</li></ol>
+<hr>
+<p>Con questo si chiude la Parte I. Ora sai dichiarare dati, manipolarli e mostrarli. Nella Parte II daremo ai programmi la capacità di <strong>decidere</strong> e di <strong>ripetere</strong>: è lì che il codice comincia davvero a prendere vita.</p>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="05_liste_dizionari.html"><span>Indietro</span><strong>Liste e dizionari</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="07_condizioni.html"><span>Avanti</span><strong>Prendere decisioni</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

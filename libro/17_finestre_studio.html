@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 17 — Finestre e Leo Studio — Leo, il manuale</title>
+<meta name="description" content="Tutto quello che abbiamo scritto finora vive nel terminale: testo che entra, testo che esce. È il modo giusto per imparare, ed è anche il modo giusto per…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/17_finestre_studio.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/17_finestre_studio.html">
+<meta property="og:title" content="Capitolo 17 — Finestre e Leo Studio — Leo, il manuale">
+<meta property="og:description" content="Tutto quello che abbiamo scritto finora vive nel terminale: testo che entra, testo che esce. È il modo giusto per imparare, ed è anche il modo giusto per…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html" aria-current="page">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte V — Fare cose vere</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#dal-terminale-alle-finestrelle">Dal terminale alle finestrelle</a></li><li><a href="#leo-studio-disegnare-invece-di-descrivere">Leo Studio: disegnare invece di descrivere</a></li><li><a href="#gli-eventi-reagire-con-quando">Gli eventi: reagire con <code>quando</code></a></li><li><a href="#la-regola-d-oro-delle-finestre">La regola d'oro delle finestre</a></li><li><a href="#più-finestre-nello-stesso-progetto">Più finestre nello stesso progetto</a></li><li><a href="#il-grande-catalogo-dei-controlli">Il grande catalogo dei controlli</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 17 — Finestre e Leo Studio</h1>
+<p>Tutto quello che abbiamo scritto finora vive nel terminale: testo che entra, testo che esce. È il modo giusto per imparare, ed è anche il modo giusto per molti strumenti veri. Ma prima o poi vorrai una finestra con pulsanti e caselle — un'<strong>interfaccia grafica</strong>. Leo la costruisce con un modello collaudato da decenni: disegni la finestra, e scrivi il codice che reagisce a ciò che fa l'utente.</p>
+<h2 id="dal-terminale-alle-finestrelle">Dal terminale alle finestrelle</h2>
+<p>Prima ancora delle finestre vere e proprie, due funzioni fanno il ponte: aprono finestrelle quando la grafica è disponibile, e si comportano come testo quando non lo è (per esempio in un terminale puro).</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-176" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-176" class="libro-pre"><code><span class="c-libreria">messaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">"Benvenuto nel programma!"</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">ok</span> <span class="c-operatori">=</span> <span class="c-libreria">domanda</span><span class="c-punteggiatura">(</span><span class="c-testi">"Vuoi continuare?"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Hai risposto: </span><span class="c-interpolazione">{</span><span class="c-variabili">ok</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<p>Eseguito in un terminale senza grafica, rispondendo «s», stampa:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-177" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-177" class="libro-pre"><code>[Leo] Benvenuto nel programma!
+[Leo] Vuoi continuare? [s/n] Hai risposto: vero</code></pre></figure>
+<p><code>messaggio(testo)</code> mostra un avviso con un pulsante OK; <code>domanda(testo)</code> pone una domanda sì/no e restituisce <code>vero</code> o <code>falso</code>. Sono il modo più rapido per dare un tocco interattivo a un programma, senza ancora disegnare nulla.</p>
+<h2 id="leo-studio-disegnare-invece-di-descrivere">Leo Studio: disegnare invece di descrivere</h2>
+<p>Le finestre complete, con pulsanti, caselle, elenchi e grafici, non si scrivono a mano: si <strong>disegnano</strong>. Lo strumento per farlo è <strong>Leo Studio</strong>, l'ambiente visuale di Leo, nello spirito dei vecchi Visual Basic e Delphi. Trascini un pulsante dove lo vuoi, imposti le sue proprietà in un pannello, e Leo Studio registra tutto in un file <code>.maschera</code>. Tu scrivi solo la parte interessante: cosa succede <em>quando</em> l'utente agisce.</p>
+<p>Leo Studio richiede PySide6 (la libreria grafica) e si avvia con il comando <code>leo studio</code> o dal menu del sistema operativo. Un programma con finestre è una <strong>cartella</strong> — un <em>progetto</em> — con un file <code>progetto.toml</code> che lo descrive, un file <code>.maschera</code> per ogni finestra (i controlli e il loro aspetto) e un file <code>.leo</code> per ogni finestra (il codice degli eventi). La cosa bella: un progetto disegnato sul computer gira identico sul telefono, e viceversa, perché il formato è lo stesso.</p>
+<h2 id="gli-eventi-reagire-con-quando">Gli eventi: reagire con <code>quando</code></h2>
+<p>Il cuore di un programma a finestre è il gestore di eventi, introdotto dalla parola <code>quando</code>. Si legge come una frase: «quando il pulsante riceve un clic, fai...». Ecco il codice reale del progetto di esempio «Saluto», che trovi in <code>esempi/progetto_saluto/</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-178" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-178" class="libro-pre"><code><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span>
+    <span class="c-testo_normale">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Benvenuto! Come ti chiami?"</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">PulsanteSaluta</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-libreria">vuota</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">CasellaNome</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">messaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">"Scrivi prima il tuo nome"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-testo_normale">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-testo_normale">CasellaNome</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<p>Due gestori, due momenti. Il primo scatta all'<strong>apertura</strong> della finestra e imposta il testo di un'etichetta. Il secondo scatta al <strong>clic</strong> del pulsante: legge quello che l'utente ha scritto nella casella (<code>CasellaNome.testo</code>), e se è vuoto protesta con un <code>messaggio</code>, altrimenti saluta. I controlli sono <strong>oggetti</strong>: leggi e cambi le loro proprietà con il punto, come hai fatto con gli oggetti del Capitolo 11.</p>
+<h2 id="la-regola-d-oro-delle-finestre">La regola d'oro delle finestre</h2>
+<p>C'è un principio che all'inizio confonde e poi diventa ovvio. Il codice «fuori» dai gestori (il blocco <code>inizio</code>, le variabili) gira <strong>una volta sola</strong>, all'apertura. Per reagire a ciò che l'utente fa <em>dopo</em>, serve un <code>quando</code>. Questo codice, per esempio, <strong>non</strong> funziona come ci si aspetterebbe:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-179" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-179" class="libro-pre"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-flusso">se</span> <span class="c-testo_normale">CasellaTesto1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">==</span> <span class="c-testi">"Rosso"</span> <span class="c-flusso">allora</span>
+        <span class="c-testo_normale">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">colore</span> <span class="c-operatori">=</span> <span class="c-testi">"rosso"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<p>All'apertura la casella è vuota, la condizione è falsa, e non viene mai più ricontrollata. La versione giusta mette il controllo dentro un gestore che scatta <em>ogni volta che la casella cambia</em>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-180" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-180" class="libro-pre"><code><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">CasellaTesto1</span><span class="c-punteggiatura">.</span><span class="c-eventi">cambio</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-testo_normale">CasellaTesto1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">==</span> <span class="c-testi">"Rosso"</span> <span class="c-flusso">allora</span>
+        <span class="c-testo_normale">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">colore</span> <span class="c-operatori">=</span> <span class="c-testi">"rosso"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<p>Leo è così attento a questo errore che, se nel blocco iniziale leggi una proprietà che l'utente può cambiare, ti avvisa all'avvio suggerendoti l'evento giusto. Tienilo a mente: nelle finestre, <em>il tempo passa</em>, e il codice che reagisce deve stare dentro un <code>quando</code>.</p>
+<h2 id="più-finestre-nello-stesso-progetto">Più finestre nello stesso progetto</h2>
+<p>Un programma può avere più finestre, e ognuna vede i controlli di tutte. Con <code>apri_finestra("Nome")</code> e <code>chiudi_finestra("Nome")</code> passi dall'una all'altra. L'esempio <code>esempi/login_programma/</code> mostra uno schema ricorrente — una schermata di accesso che, se le credenziali sono giuste, apre la finestra del programma vero e proprio:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-181" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-181" class="libro-pre"><code><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">PulsanteAccedi</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-testo_normale">CasellaUtente</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">==</span> <span class="c-testo_normale">UTENTE</span> <span class="c-logici">e</span> <span class="c-testo_normale">CasellaSegreta</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">==</span> <span class="c-testo_normale">PAROLA_SEGRETA</span> <span class="c-flusso">allora</span>
+        <span class="c-testo_normale">EtichettaErrore</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">""</span>
+        <span class="c-libreria">apri_finestra</span><span class="c-punteggiatura">(</span><span class="c-testi">"Programma"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-testo_normale">EtichettaErrore</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Utente o password non corretti. Riprova."</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<p>Un'accortezza importante, spiegata nei commenti dell'esempio: non si chiude la finestra iniziale (quella del login), perché chiudere la finestra iniziale termina il programma. La si lascia aperta «sotto» e si apre la nuova sopra; per tornare indietro si chiude quella nuova e la prima riricompare.</p>
+<h2 id="il-grande-catalogo-dei-controlli">Il grande catalogo dei controlli</h2>
+<p>Leo Studio mette a disposizione oltre centoquaranta controlli, raccolti in schede tematiche: dalle basi (etichette, pulsanti, caselle) ai contenitori, dai dati (tabelle, grafici, alberi) al disegno, dai media (suono, video, fotocamera) ai controlli «Italia» (codice fiscale, IBAN, targa, calendario delle festività), fino a una scheda «Giochi» con sprite, fisica e scene, e una scheda «Telefono» con bussola, GPS e sensori. Non c'è spazio qui per elencarli; l'elenco completo, con le proprietà e gli eventi di ciascuno, è nella Guida al linguaggio e nella scheda <code>STUDIO.md</code>. La cosa da ricordare è che, quando ti servirà un certo mattone dell'interfaccia, quasi certamente c'è già.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<blockquote><p>Per questi esercizi serve Leo Studio installato (con PySide6).</p></blockquote>
+<ol><li>Apri Leo Studio, crea un progetto nuovo e ricostruisci il «Saluto»: una casella di testo, un pulsante e un'etichetta che saluta per nome al clic.</li><li>Aggiungi al tuo «Saluto» un secondo pulsante «Pulisci» che svuota la casella e l'etichetta.</li><li>Parti dall'esempio <code>login_programma</code>, cambia le credenziali e aggiungi alla finestra del programma un contatore di note salvate che cresce a ogni Salva.</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="16_tour_libreria.html"><span>Indietro</span><strong>Un tour della libreria</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="18_android.html"><span>Avanti</span><strong>App per Android</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10. Leo e Windows — Manuale di Leo</title>
+<meta name="description" content="Le funzioni di sistema: informazioni sul computer, programmi e processi, appunti, cestino, collegamenti, finestre delle altre applicazioni, schermi, notifiche, batteria, audio, rete, registro; con le regole di sicurezza e le conferme.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/windows.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/windows.html">
+<meta property="og:title" content="10. Leo e Windows — Manuale di Leo">
+<meta property="og:description" content="Le funzioni di sistema: informazioni sul computer, programmi e processi, appunti, cestino, collegamenti, finestre delle altre applicazioni, schermi, notifiche, batteria, audio, rete, registro; con le regole di sicurezza e le conferme.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Leo e Windows</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class="attuale"><a href="windows.html" aria-current="page"><span class="m-n">10</span><span>Leo e Windows</span></a><ol class="m-toc"><li><a href="#panoramica" data-toc="panoramica">Tre gruppi di funzioni</a></li><li><a href="#sicurezza" data-toc="sicurezza">Le regole di sicurezza</a></li><li><a href="#informazioni" data-toc="informazioni">Informazioni sul computer</a></li><li><a href="#programmi" data-toc="programmi">Programmi, comandi e processi</a></li><li><a href="#appunti" data-toc="appunti">Appunti, cestino, collegamenti</a></li><li><a href="#desktop" data-toc="desktop">Finestre, schermi e notifiche</a></li><li><a href="#computer" data-toc="computer">Batteria, audio, schermo, alimentazione</a></li><li><a href="#registro" data-toc="registro">Il registro di Windows</a></li><li><a href="#esempi" data-toc="esempi">Esempi completi</a></li></ol></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">10. Leo e Windows</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"10. Leo e Windows","item":"https://leoitalia.com/manuale/windows.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">10</span> Sezione 10 di 15</p>
+        <h1>Leo e Windows</h1>
+        <p class="m-sommario">Un programma Leo può parlare con Windows: sapere quanta batteria resta, aprire un programma, leggere gli appunti, mettere in ordine le finestre, mostrare una notifica. Le azioni delicate chiedono sempre conferma a chi usa il programma.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>5 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: intermedio</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>7 esempi verificati</li>
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="panoramica">Tre gruppi di funzioni<a class="m-ancora" href="#panoramica" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Le funzioni di sistema sono più di 160, divise in tre gruppi, sempre disponibili senza importare nulla:</p>
+<div class="m-griglia-2">
+  <div class="m-carta"><h4><span class="m-n">S1</span> Sistema</h4><p>Informazioni sul computer, cartelle speciali, variabili d'ambiente, processi, programmi e comandi, appunti, cestino, collegamenti, file recenti, avvio automatico.</p></div>
+  <div class="m-carta"><h4><span class="m-n">S2</span> Desktop</h4><p>Le finestre delle altre applicazioni, gli schermi, la cattura dello schermo, le notifiche, le finestre di dialogo native, lo sfondo, il tema, i suoni di avviso.</p></div>
+  <div class="m-carta"><h4><span class="m-n">S3</span> Computer</h4><p>Batteria, alimentazione, volume, luminosità, processore e memoria, dischi, rete e Wi-Fi, stampanti, registro, servizi, orologio, hardware e USB.</p></div>
+  <div class="m-carta"><h4><span class="m-n">!</span> Solo su Windows</h4><p>Quasi tutte usano Windows. Su macOS e Linux si fermano con <em>«<code>nome</code> funziona solo su Windows.»</em>, un <code>ErroreValore</code> che puoi catturare.</p></div>
+</div>
+
+<h2 id="sicurezza">Le regole di sicurezza<a class="m-ancora" href="#sicurezza" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Queste funzioni possono cambiare il computer, quindi Leo segue regole precise, pensate per proteggere chi usa il tuo programma:</p>
+<ul class="m-spunte">
+  <li><strong>Le azioni delicate chiedono conferma.</strong> Spegnere, riavviare, chiudere un programma, eseguire un comando, svuotare il cestino, scrivere nel registro, stampare: compare una finestra Sì/No (o la domanda <code>[s/n]</code> nel terminale). Se l'utente risponde No, o non può rispondere, non succede niente e la funzione restituisce <code>falso</code>.</li>
+  <li><strong>La conferma si salta solo per scelta esplicita</strong>, scrivendo <code>senza_conferma = vero</code>. Usalo solo quando sei tu stesso a usare il programma.</li>
+  <li><strong>Gli argomenti si controllano prima della domanda</strong>: una richiesta sbagliata non chiede niente e dà subito un errore chiaro.</li>
+  <li><strong>Niente tasti o clic simulati</strong>: nessuna funzione invia tasti o clic ad altre applicazioni né legge quello che scrivi.</li>
+  <li><strong>Il registro si scrive solo nella parte dell'utente</strong> (<code>HKCU</code>) e mai nelle chiavi usate per aggirare le protezioni di Windows o per far partire programmi di nascosto.</li>
+  <li><strong>I processi vitali di Windows non si chiudono</strong> (lsass, csrss, winlogon, svchost…), e nemmeno il programma stesso.</li>
+  <li><strong>Spegnere o riavviare non forza la chiusura</strong> degli altri programmi e avvisa di salvare il lavoro; uno spegnimento programmato si annulla con <code>annulla_spegnimento()</code>.</li>
+  <li><code>apri_indirizzo_web</code> accetta solo indirizzi <code>http</code>, <code>https</code> e <code>mailto</code>; il cestino rispetta la stessa guardia dei file (niente radice del disco, cartella personale, Documenti…).</li>
+</ul>
+<aside class="m-riquadro m-attenzione" role="note" aria-label="Attenzione"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Attenzione</p><p>Anche con tutte queste protezioni, un programma che spegne il computer o chiude le finestre degli altri va usato con giudizio. Prima di distribuirlo, provalo sul tuo PC e scrivi messaggi chiari che spieghino all'utente che cosa sta per succedere.</p></div></aside>
+
+<h2 id="informazioni">Informazioni sul computer<a class="m-ancora" href="#informazioni" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Queste funzionano anche fuori da Windows:</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">chi_sono.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Computer:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">nome_computer</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Utente:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">nome_utente</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Architettura:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">architettura</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Processori logici:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">numero_core</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Fuso orario:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">fuso_orario</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Cartella temporanea:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">leggi_variabile_ambiente</span><span class="c-punteggiatura">(</span><span class="c-testi">"TEMP"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"non impostata"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Suoni di avviso:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">suoni_di_sistema</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span></code></pre></figure>
+<p>E queste danno il quadro completo su Windows:</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">stato_pc.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">versione_windows</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Acceso da"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">tempo_accensione_testo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">se</span> <span class="c-libreria">ha_batteria</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Batteria: </span><span class="c-interpolazione">{</span><span class="c-libreria">percentuale_batteria</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">%"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">batteria_in_carica</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Memoria usata: </span><span class="c-interpolazione">{</span><span class="c-libreria">uso_memoria</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">%"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Spazio libero su C:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">dimensione_leggibile</span><span class="c-punteggiatura">(</span><span class="c-libreria">spazio_libero</span><span class="c-punteggiatura">(</span><span class="c-testi">"C:"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Wi-Fi:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">wifi_connesso</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"segnale"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">potenza_wifi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Processore:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">info_processore</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></span></code></pre></figure>
+
+<h2 id="programmi">Programmi, comandi e processi<a class="m-ancora" href="#programmi" aria-label="Collegamento a questa parte">#</a></h2>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Funzione</th><th>Che cosa fa</th></tr></thead>
+  <tbody>
+    <tr><td><code>avvia_programma(programma, argomenti)</code></td><td>avvia un programma; con <code>attendi = vero</code> aspetta la fine</td></tr>
+    <tr><td><code>apri_con_programma_predefinito(percorso)</code></td><td>apre un file come con il doppio clic</td></tr>
+    <tr><td><code>apri_in_esplora_file(cartella)</code></td><td>apre una cartella in Esplora file</td></tr>
+    <tr><td><code>apri_indirizzo_web(indirizzo)</code></td><td>apre una pagina nel browser</td></tr>
+    <tr><td><code>apri_impostazioni_windows("wifi")</code></td><td>apre una pagina delle Impostazioni</td></tr>
+    <tr><td><code>esegui_comando(comando)</code> <em>(conferma)</em></td><td>esegue un comando e restituisce uscita, errore e codice</td></tr>
+    <tr><td><code>elenca_processi(filtro)</code>, <code>processo_esiste(nome)</code></td><td>i programmi in esecuzione</td></tr>
+    <tr><td><code>termina_processo(nome)</code> <em>(conferma)</em></td><td>chiude un programma</td></tr>
+  </tbody>
+</table></div>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">blocco_note.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">avvia_programma</span><span class="c-punteggiatura">(</span><span class="c-testi">"notepad.exe"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">per ogni</span> <span class="c-variabili">p</span> <span class="c-logici">in</span> <span class="c-libreria">elenca_processi</span><span class="c-punteggiatura">(</span><span class="c-testi">"notepad"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">p</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span> <span class="c-variabili">p</span><span class="c-punteggiatura">[</span><span class="c-testi">"pid"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span> <span class="c-variabili">p</span><span class="c-punteggiatura">[</span><span class="c-testi">"memoria_mb"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span> <span class="c-testi">"MB"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">se</span> <span class="c-libreria">termina_processo</span><span class="c-punteggiatura">(</span><span class="c-testi">"notepad.exe"</span><span class="c-punteggiatura">)</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">0</span> <span class="c-flusso">allora</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Blocco note chiuso"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">altrimenti</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Hai risposto No: il Blocco note resta aperto"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+
+<h2 id="appunti">Appunti, cestino, collegamenti<a class="m-ancora" href="#appunti" aria-label="Collegamento a questa parte">#</a></h2>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">appunti.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">scrivi_appunti</span><span class="c-punteggiatura">(</span><span class="c-testi">"Testo copiato da Leo"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">leggi_appunti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">se</span> <span class="c-libreria">appunti_contiene_immagine</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span></span><span class="r">    <span class="c-libreria">salva_immagine_appunti</span><span class="c-punteggiatura">(</span><span class="c-testi">"cattura.png"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Nel cestino ci sono"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">elementi_nel_cestino</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"elementi"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">crea_collegamento</span><span class="c-punteggiatura">(</span><span class="c-testi">"C:\\Users\\ada\\Leo\\MioGioco.exe"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Il mio gioco"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">dove</span> <span class="c-operatori">=</span> <span class="c-testi">"desktop"</span><span class="c-punteggiatura">)</span></span></code></pre></figure>
+<p>Altre: <code>svuota_cestino()</code> <em>(conferma)</em>, <code>file_recenti()</code>, <code>aggiungi_all_avvio()</code> e <code>togli_dall_avvio()</code> <em>(conferma)</em>, <code>programma_predefinito(".pdf")</code>.</p>
+
+<h2 id="desktop">Finestre, schermi e notifiche<a class="m-ancora" href="#desktop" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Una finestra di un'altra applicazione si indica con un pezzo del suo titolo o con il nome del programma (<code>"Blocco note"</code>, <code>"notepad"</code>).</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">ordina_desktop.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-flusso">per ogni</span> <span class="c-variabili">f</span> <span class="c-logici">in</span> <span class="c-libreria">elenca_finestre</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"titolo"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span> <span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"larghezza"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span> <span class="c-testi">"x"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"altezza"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"><span class="c-libreria">affianca_finestre</span><span class="c-punteggiatura">(</span><span class="c-testi">"Blocco note"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Calcolatrice"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">60</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Schermi:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">numero_schermi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-libreria">risoluzione_schermo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">cattura_schermo</span><span class="c-punteggiatura">(</span><span class="c-testi">"schermo.png"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">mostra_notifica</span><span class="c-punteggiatura">(</span><span class="c-testi">"Leo"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Ho messo in ordine le finestre"</span><span class="c-punteggiatura">)</span></span></code></pre></figure>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Funzione</th><th>Che cosa fa</th></tr></thead>
+  <tbody>
+    <tr><td><code>trova_finestra(titolo)</code>, <code>finestra_attiva()</code></td><td>trova una finestra</td></tr>
+    <tr><td><code>minimizza_finestra</code>, <code>massimizza_finestra</code>, <code>ripristina_finestra</code></td><td>cambiano lo stato</td></tr>
+    <tr><td><code>sposta_finestra(f, x, y)</code>, <code>ridimensiona_finestra(f, l, a)</code></td><td>posizione e dimensioni</td></tr>
+    <tr><td><code>chiudi_finestra_programma(f)</code> <em>(conferma)</em></td><td>come premere la ✕: l'applicazione può chiedere di salvare</td></tr>
+    <tr><td><code>cattura_schermo</code>, <code>cattura_zona</code>, <code>cattura_finestra</code></td><td>immagini PNG dello schermo</td></tr>
+    <tr><td><code>scegli_file_da_aprire</code>, <code>scegli_cartella</code>, <code>chiedi_colore</code></td><td>le finestre di dialogo di Windows, anche dai programmi testuali</td></tr>
+    <tr><td><code>imposta_sfondo_desktop(percorso)</code>, <code>tema_scuro_attivo()</code></td><td>sfondo e tema di Windows</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="computer">Batteria, audio, schermo, alimentazione<a class="m-ancora" href="#computer" aria-label="Collegamento a questa parte">#</a></h2>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">pausa_caffe.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Volume:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">volume_principale</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">imposta_volume</span><span class="c-punteggiatura">(</span><span class="c-numeri">30</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">imposta_luminosita</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">impedisci_standby</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>              <span class="c-commenti"># il PC resta sveglio mentre il programma lavora</span></span><span class="r"><span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">consenti_standby</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">se</span> <span class="c-libreria">spegni_computer</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">ritardo</span> <span class="c-operatori">=</span> <span class="c-numeri">600</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il PC si spegnerà tra 10 minuti"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-libreria">annulla_spegnimento</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>        <span class="c-commenti"># ...anzi no</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+<p>Le funzioni di alimentazione (<code>blocca_computer</code>, <code>sospendi_computer</code>, <code>iberna_computer</code>, <code>spegni_computer</code>, <code>riavvia_computer</code>, <code>disconnetti_utente</code>) chiedono sempre conferma, accettano un <code>ritardo</code> in secondi e restituiscono <code>vero</code> se l'azione è stata fatta o programmata.</p>
+
+<h2 id="registro">Il registro di Windows<a class="m-ancora" href="#registro" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Il registro si <strong>legge</strong> ovunque; si <strong>scrive</strong> e si cancella solo in <code>HKCU</code> (la parte dell'utente), dopo conferma.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">registro.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">chiave</span> <span class="c-operatori">=</span> <span class="c-testi">"HKCU\\Software\\MioProgramma"</span></span><span class="r"><span class="c-flusso">se</span> <span class="c-libreria">scrivi_registro</span><span class="c-punteggiatura">(</span><span class="c-variabili">chiave</span><span class="c-punteggiatura">,</span> <span class="c-testi">"ultimo_avvio"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">testo</span><span class="c-punteggiatura">(</span><span class="c-libreria">adesso</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">leggi_registro</span><span class="c-punteggiatura">(</span><span class="c-variabili">chiave</span><span class="c-punteggiatura">,</span> <span class="c-testi">"ultimo_avvio"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">elenca_valori_registro</span><span class="c-punteggiatura">(</span><span class="c-variabili">chiave</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span></code></pre></figure>
+
+<h2 id="esempi">Esempi completi<a class="m-ancora" href="#esempi" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Nella cartella di Leo, in <code>esempi/sistema/</code>, trovi programmi pronti da provare: <code>s1_informazioni_sistema.leo</code>, <code>s1_comandi_e_collegamenti.leo</code>, <code>s2_organizza_desktop.leo</code>, <code>s2_dialoghi_e_sfondo.leo</code>, <code>s3_stato_del_computer.leo</code> (solo lettura) e <code>s3_pausa_caffe.leo</code>.</p>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="grafici-suoni.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">09</span>Grafici, suoni e animazioni</span></a><a class="m-succ" href="avanzata.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">11</span>Programmazione avanzata</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

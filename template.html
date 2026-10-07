@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esempi di codice in italiano — Leo, pronti da copiare</title>
+<meta name="description" content="Esempi di codice pronti da copiare in Leo, il linguaggio di programmazione in italiano: giochi, finestre, file, internet, Windows, grafici, suoni e animazioni. Tutti verificati.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/template.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/template.html">
+<meta property="og:title" content="Esempi di codice in italiano — Leo, pronti da copiare">
+<meta property="og:description" content="Esempi pronti da copiare: giochi, finestre, file, internet, Windows, grafici e suoni. Tutti in italiano, tutti verificati.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="stylesheet" href="css/stile.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html" aria-current="page">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="novita.html">Novità</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+  <section class="testa-pagina">
+    <div class="contenitore">
+      <p class="sopratitolo compari">Esempi</p>
+      <h1 class="parole">Programmi pronti, in italiano. <em class="testo-accento">Copia, incolla, premi Esegui.</em></h1>
+      <p class="introduzione compari r2"><span data-numero-modelli>28</span> programmi completi, dalle basi del linguaggio all'automazione dei file, dal server web locale al videogioco. Ognuno è spiegato con chiarezza e colorato come in Leo Studio; quelli che scrivono qualcosa mostrano anche il risultato che otterrai. Sono tutti provati con Leo, uno per uno.</p>
+      <ol class="come-usare compari r3">
+        <li><strong>Copia</strong> il codice con il pulsante in alto a destra.</li>
+        <li><strong>Incolla</strong> in Leo Studio (per i programmi a finestre, nel codice della finestra).</li>
+        <li><strong>Premi Esegui</strong> (F5) e cambialo come vuoi: è tuo.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="strumenti-galleria">
+    <div class="contenitore">
+      <div class="riga-strumenti">
+        <label class="cerca">
+          <span class="solo-lettori">Cerca tra i template</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="cerca-modelli" type="search" placeholder="Cerca: gioco, file, orologio, grafico..." autocomplete="off">
+        </label>
+        <div class="livelli" role="group" aria-label="Livello">
+          <button class="filtro" type="button" data-filtro-livello="tutti" aria-pressed="true">Tutti i livelli</button>
+          <button class="filtro" type="button" data-filtro-livello="facile" aria-pressed="false">Facile</button>
+          <button class="filtro" type="button" data-filtro-livello="medio" aria-pressed="false">Medio</button>
+          <button class="filtro" type="button" data-filtro-livello="avanzato" aria-pressed="false">Avanzato</button>
+        </div>
+      </div>
+      <div class="riga-strumenti">
+        <div class="filtri" role="group" aria-label="Categoria">
+<!--#filtri-->
+<button class="filtro" type="button" data-filtro-categoria="tutte" aria-pressed="true">Tutti<span class="quanti">28</span></button>
+<button class="filtro" type="button" data-filtro-categoria="primi-passi" aria-pressed="false">Primi passi<span class="quanti">3</span></button>
+<button class="filtro" type="button" data-filtro-categoria="finestre" aria-pressed="false">Finestre e pulsanti<span class="quanti">3</span></button>
+<button class="filtro" type="button" data-filtro-categoria="giochi" aria-pressed="false">Giochi<span class="quanti">3</span></button>
+<button class="filtro" type="button" data-filtro-categoria="testo-dati" aria-pressed="false">Testo e dati<span class="quanti">3</span></button>
+<button class="filtro" type="button" data-filtro-categoria="file" aria-pressed="false">File<span class="quanti">3</span></button>
+<button class="filtro" type="button" data-filtro-categoria="internet" aria-pressed="false">Internet<span class="quanti">2</span></button>
+<button class="filtro" type="button" data-filtro-categoria="windows" aria-pressed="false">Windows<span class="quanti">2</span></button>
+<button class="filtro" type="button" data-filtro-categoria="grafici-suoni" aria-pressed="false">Grafici e suoni<span class="quanti">3</span></button>
+<button class="filtro" type="button" data-filtro-categoria="animazioni" aria-pressed="false">Animazioni<span class="quanti">2</span></button>
+<button class="filtro" type="button" data-filtro-categoria="temporizzatori" aria-pressed="false">Temporizzatori<span class="quanti">2</span></button>
+<button class="filtro" type="button" data-filtro-categoria="test" aria-pressed="false">Test e verifiche<span class="quanti">2</span></button><!--/filtri-->
+        </div>
+        <p class="conteggio" id="conteggio-modelli" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenitore">
+    <div class="galleria">
+<!--#galleria-->
+<article class="scheda modello" id="primo-programma" data-categoria="primi-passi" data-livello="facile" data-cerca="Primi passi Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Primi passi</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Il primo programma</h2>
+    <p>Variabili, testo con valori calcolati e una decisione: il programma saluta, fa un calcolo sull&#x27;età e sceglie la risposta. Cambia i valori e guarda come cambia l&#x27;uscita.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-primo-programma" aria-label="Copia il codice di Il primo programma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-primo-programma"><span class="c-commenti"># Il tuo primo programma: ricorda, calcola e decide.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-testi">"Giulia"</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">anni</span> <span class="c-operatori">=</span> <span class="c-numeri">14</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Tra dieci anni avrai </span><span class="c-interpolazione">{</span><span class="c-variabili">anni</span> <span class="c-operatori">+</span> <span class="c-numeri">10</span><span class="c-interpolazione">}</span><span class="c-testi"> anni."</span><span class="c-punteggiatura">)</span>
+
+<span class="c-flusso">se</span> <span class="c-variabili">anni</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">18</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Sei maggiorenne."</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">altrimenti</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ti mancano </span><span class="c-interpolazione">{</span><span class="c-numeri">18</span> <span class="c-operatori">-</span> <span class="c-variabili">anni</span><span class="c-interpolazione">}</span><span class="c-testi"> anni per diventare maggiorenne."</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">Ciao, Giulia!
+Tra dieci anni avrai 24 anni.
+Ti mancano 4 anni per diventare maggiorenne.</pre>
+  </div>
+</article>
+<article class="scheda modello" id="media-voti" data-categoria="primi-passi" data-livello="facile" data-cerca="Primi passi Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Primi passi</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>La media dei voti</h2>
+    <p>Una lista di voti, un ciclo che li somma e il risultato: media e voto migliore. Lo schema di base di ogni elaborazione di dati.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-media-voti" aria-label="Copia il codice di La media dei voti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-media-voti"><span class="c-commenti"># Calcola la media e il voto migliore</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">]</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">v</span> <span class="c-logici">in</span> <span class="c-variabili">voti</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">totale</span> <span class="c-operatori">+=</span> <span class="c-variabili">v</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">media</span> <span class="c-operatori">=</span> <span class="c-variabili">totale</span> <span class="c-operatori">/</span> <span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Media: </span><span class="c-interpolazione">{</span><span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-variabili">media</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Voto migliore: </span><span class="c-interpolazione">{</span><span class="c-libreria">massimo</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Media: 27.8
+Voto migliore: 30</pre>
+  </div>
+</article>
+<article class="scheda modello" id="tabellina" data-categoria="primi-passi" data-livello="facile" data-cerca="Primi passi Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Primi passi</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Tabella di moltiplicazione</h2>
+    <p>Un ciclo con l&#x27;intervallo di valori e il testo formattato: il programma costruisce la tabella di moltiplicazione di un numero, riga per riga.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-tabellina" aria-label="Copia il codice di Tabella di moltiplicazione"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-tabellina"><span class="c-commenti"># La tabellina che vuoi: cambia il numero e riesegui.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">numero</span> <span class="c-operatori">=</span> <span class="c-numeri">7</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">per_quanto</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">10</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">numero</span><span class="c-interpolazione">}</span><span class="c-testi"> x </span><span class="c-interpolazione">{</span><span class="c-variabili">per_quanto</span><span class="c-interpolazione">}</span><span class="c-testi"> = </span><span class="c-interpolazione">{</span><span class="c-variabili">numero</span> <span class="c-operatori">*</span> <span class="c-variabili">per_quanto</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70</pre>
+  </div>
+</article>
+<article class="scheda modello" id="saluto" data-categoria="finestre" data-livello="facile" data-cerca="Finestre e pulsanti Facile Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Finestre e pulsanti</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>La finestra che saluta</h2>
+    <p>Il primo programma con una finestra: una casella di testo, un pulsante e l&#x27;evento clic che legge la casella e aggiorna l&#x27;etichetta.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-saluto" aria-label="Copia il codice di La finestra che saluta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-saluto"><span class="c-commenti"># Codice degli eventi di Finestra1</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span>
+    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Benvenuto! Come ti chiami?"</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteSaluta</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-libreria">vuota</span><span class="c-punteggiatura">(</span><span class="c-controlli">CasellaNome</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">messaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">"Scrivi prima il tuo nome"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-controlli">CasellaNome</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: un&#x27;Etichetta, una CasellaTesto (CasellaNome) e un Pulsante (PulsanteSaluta).</p>
+</article>
+<article class="scheda modello" id="convertitore" data-categoria="finestre" data-livello="medio" data-cerca="Finestre e pulsanti Medio Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Finestre e pulsanti</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>Convertitore di temperature</h2>
+    <p>Scrivi i gradi Celsius e premi Converti (o Invio): la finestra mostra i gradi Fahrenheit. Se il valore non è un numero, l&#x27;errore viene gestito e spiegato.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-convertitore" aria-label="Copia il codice di Convertitore di temperature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-convertitore"><span class="c-commenti"># Da gradi Celsius a gradi Fahrenheit, con il pulsante o con il tasto Invio.</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">converti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-errori">prova</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">celsius</span> <span class="c-operatori">=</span> <span class="c-libreria">decimale</span><span class="c-punteggiatura">(</span><span class="c-controlli">CasellaGradi</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-punteggiatura">.</span><span class="c-proprieta">sostituisci</span><span class="c-punteggiatura">(</span><span class="c-testi">","</span><span class="c-punteggiatura">,</span> <span class="c-testi">"."</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">fahrenheit</span> <span class="c-operatori">=</span> <span class="c-variabili">celsius</span> <span class="c-operatori">*</span> <span class="c-numeri">9</span> <span class="c-operatori">/</span> <span class="c-numeri">5</span> <span class="c-operatori">+</span> <span class="c-numeri">32</span>
+        <span class="c-controlli">EtichettaRisultato</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">celsius</span><span class="c-interpolazione">}</span><span class="c-testi"> °C sono </span><span class="c-interpolazione">{</span><span class="c-variabili">fahrenheit</span><span class="c-interpolazione">:1</span><span class="c-interpolazione">}</span><span class="c-testi"> °F"</span>
+    <span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span>
+        <span class="c-controlli">EtichettaRisultato</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Scrivi un numero, per esempio 21,5"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteConverti</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-funzioni_utente">converti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">CasellaGradi</span><span class="c-punteggiatura">.</span><span class="c-eventi">invio</span> <span class="c-flusso">fai</span>
+    <span class="c-funzioni_utente">converti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: due Etichette, una CasellaTesto (CasellaGradi) e un Pulsante (PulsanteConverti).</p>
+</article>
+<article class="scheda modello" id="lista-spesa" data-categoria="finestre" data-livello="medio" data-cerca="Finestre e pulsanti Medio Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Finestre e pulsanti</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>Lista della spesa</h2>
+    <p>Un&#x27;app completa con un elenco: aggiungi elementi, rimuovi quelli selezionati e tieni il conteggio aggiornato. Lo schema di ogni gestione di liste.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-lista-spesa" aria-label="Copia il codice di Lista della spesa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-lista-spesa"><span class="c-commenti"># Lista della spesa: aggiungi, togli e conta i prodotti.</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">aggiorna_totale</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">quanti</span> <span class="c-operatori">=</span> <span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-controlli">ElencoSpesa</span><span class="c-punteggiatura">.</span><span class="c-proprieta">elementi</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">quanti</span> <span class="c-operatori">==</span> <span class="c-numeri">1</span> <span class="c-flusso">allora</span>
+        <span class="c-controlli">EtichettaTotale</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"1 prodotto"</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-controlli">EtichettaTotale</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">quanti</span><span class="c-interpolazione">}</span><span class="c-testi"> prodotti"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">aggiungi_prodotto</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">prodotto</span> <span class="c-operatori">=</span> <span class="c-controlli">CasellaProdotto</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-punteggiatura">.</span><span class="c-proprieta">pulisci</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-libreria">vuota</span><span class="c-punteggiatura">(</span><span class="c-variabili">prodotto</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-controlli">CasellaProdotto</span><span class="c-punteggiatura">.</span><span class="c-proprieta">scuoti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+        <span class="c-dichiarazioni">restituisci</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-controlli">ElencoSpesa</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-variabili">prodotto</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">CasellaProdotto</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">""</span>
+    <span class="c-funzioni_utente">aggiorna_totale</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteAggiungi</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-funzioni_utente">aggiungi_prodotto</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">CasellaProdotto</span><span class="c-punteggiatura">.</span><span class="c-eventi">invio</span> <span class="c-flusso">fai</span>
+    <span class="c-funzioni_utente">aggiungi_prodotto</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteTogli</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-controlli">ElencoSpesa</span><span class="c-punteggiatura">.</span><span class="c-proprieta">indice_selezionato</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">0</span> <span class="c-flusso">allora</span>
+        <span class="c-controlli">ElencoSpesa</span><span class="c-punteggiatura">.</span><span class="c-proprieta">rimuovi</span><span class="c-punteggiatura">(</span><span class="c-controlli">ElencoSpesa</span><span class="c-punteggiatura">.</span><span class="c-proprieta">indice_selezionato</span><span class="c-punteggiatura">)</span>
+        <span class="c-funzioni_utente">aggiorna_totale</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-libreria">messaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">"Seleziona prima un prodotto dall'elenco."</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: una CasellaTesto, due Pulsanti, un Elenco (ElencoSpesa) e un&#x27;Etichetta.</p>
+</article>
+<article class="scheda modello" id="indovina-numero" data-categoria="giochi" data-livello="facile" data-cerca="Giochi Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Giochi</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Indovina il numero</h2>
+    <p>Numeri casuali, un ciclo con condizione d&#x27;uscita e input controllato: il programma sceglie un numero da 1 a 100 e guida i tentativi.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-indovina-numero" aria-label="Copia il codice di Indovina il numero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-indovina-numero"><span class="c-commenti"># Indovina il numero: il computer ne sceglie uno a caso tra 1 e 100.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">segreto</span> <span class="c-operatori">=</span> <span class="c-libreria">casuale</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">100</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">tentativi</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">trovato</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">falso</span>
+
+<span class="c-flusso">mentre</span> <span class="c-logici">non</span> <span class="c-variabili">trovato</span> <span class="c-flusso">fai</span>
+    <span class="c-errori">prova</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">n</span> <span class="c-operatori">=</span> <span class="c-libreria">intero</span><span class="c-punteggiatura">(</span><span class="c-libreria">chiedi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il tuo numero: "</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+        <span class="c-variabili">tentativi</span> <span class="c-operatori">+=</span> <span class="c-numeri">1</span>
+        <span class="c-flusso">se</span> <span class="c-variabili">n</span> <span class="c-operatori">&lt;</span> <span class="c-variabili">segreto</span> <span class="c-flusso">allora</span>
+            <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Più alto!"</span><span class="c-punteggiatura">)</span>
+        <span class="c-flusso">altrimenti se</span> <span class="c-variabili">n</span> <span class="c-operatori">&gt;</span> <span class="c-variabili">segreto</span> <span class="c-flusso">allora</span>
+            <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Più basso!"</span><span class="c-punteggiatura">)</span>
+        <span class="c-flusso">altrimenti</span>
+            <span class="c-variabili">trovato</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span>
+        <span class="c-flusso">fine</span>
+    <span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Scrivi un numero intero."</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Bravo! Hai indovinato in </span><span class="c-interpolazione">{</span><span class="c-variabili">tentativi</span><span class="c-interpolazione">}</span><span class="c-testi"> tentativi."</span><span class="c-punteggiatura">)</span></code></pre>
+  </div>
+  <p class="nota-file">Il numero segreto cambia a ogni partita: prova a indovinarlo con meno di 7 tentativi.</p>
+</article>
+<article class="scheda modello" id="sasso-carta-forbici" data-categoria="giochi" data-livello="medio" data-cerca="Giochi Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Giochi</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Sasso, carta, forbici</h2>
+    <p>Scelte casuali, confronti e punteggio su tre manche: un piccolo motore di regole contro il computer.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-sasso-carta-forbici" aria-label="Copia il codice di Sasso, carta, forbici"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-sasso-carta-forbici"><span class="c-commenti"># Sasso, carta, forbici: tre manche contro il computer.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">mosse</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"sasso"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"carta"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"forbici"</span><span class="c-punteggiatura">]</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">batte</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"sasso"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"forbici"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"carta"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"sasso"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"forbici"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"carta"</span><span class="c-punteggiatura">}</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">tuoi_punti</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">suoi_punti</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+
+<span class="c-flusso">ripeti</span> <span class="c-numeri">3</span> <span class="c-flusso">volte</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">mia</span> <span class="c-operatori">=</span> <span class="c-libreria">chiedi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Sasso, carta o forbici? "</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">minuscolo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">pulisci</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-logici">non</span> <span class="c-punteggiatura">(</span><span class="c-variabili">mia</span> <span class="c-logici">in</span> <span class="c-variabili">mosse</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Non conosco \"</span><span class="c-interpolazione">{</span><span class="c-variabili">mia</span><span class="c-interpolazione">}</span><span class="c-testi">\": gioco sasso per te."</span><span class="c-punteggiatura">)</span>
+        <span class="c-variabili">mia</span> <span class="c-operatori">=</span> <span class="c-testi">"sasso"</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">sua</span> <span class="c-operatori">=</span> <span class="c-libreria">scegli_a_caso</span><span class="c-punteggiatura">(</span><span class="c-variabili">mosse</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il computer gioca </span><span class="c-interpolazione">{</span><span class="c-variabili">sua</span><span class="c-interpolazione">}</span><span class="c-testi">."</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">mia</span> <span class="c-operatori">==</span> <span class="c-variabili">sua</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pareggio!"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti se</span> <span class="c-variabili">batte</span><span class="c-punteggiatura">[</span><span class="c-variabili">mia</span><span class="c-punteggiatura">]</span> <span class="c-operatori">==</span> <span class="c-variabili">sua</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Hai vinto la manche!"</span><span class="c-punteggiatura">)</span>
+        <span class="c-flusso">aumenta</span> <span class="c-variabili">tuoi_punti</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Vince il computer."</span><span class="c-punteggiatura">)</span>
+        <span class="c-flusso">aumenta</span> <span class="c-variabili">suoi_punti</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Risultato finale: tu </span><span class="c-interpolazione">{</span><span class="c-variabili">tuoi_punti</span><span class="c-interpolazione">}</span><span class="c-testi">, computer </span><span class="c-interpolazione">{</span><span class="c-variabili">suoi_punti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita" data-nota="le mosse del computer cambiano a ogni partita.">Sasso, carta o forbici? sasso
+Il computer gioca forbici.
+Hai vinto la manche!
+Sasso, carta o forbici? carta
+Il computer gioca carta.
+Pareggio!
+Sasso, carta o forbici? forbici
+Il computer gioca carta.
+Hai vinto la manche!
+Risultato finale: tu 2, computer 0</pre>
+  </div>
+  <p class="nota-file">Un esempio di uscita: le mosse del computer cambiano a ogni partita.</p>
+</article>
+<article class="scheda modello" id="raccogli-monete" data-categoria="giochi" data-livello="avanzato" data-cerca="Giochi Avanzato Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Giochi</span>
+      <span class="distintivo liv avanzato">Avanzato</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>Raccogli le monete</h2>
+    <p>Un videogioco con scena, sprite, tastiera e collisioni: muovi il personaggio con le frecce, raccogli le monete che compaiono in punti a caso e batti il record.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-raccogli-monete" aria-label="Copia il codice di Raccogli le monete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-raccogli-monete"><span class="c-commenti"># Raccogli le monete: frecce per muoversi, spazio per fermarsi.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">direzione_x</span> <span class="c-operatori">=</span> <span class="c-numeri">0.0</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">direzione_y</span> <span class="c-operatori">=</span> <span class="c-numeri">0.0</span>
+<span class="c-dichiarazioni">costante</span> <span class="c-costanti">VELOCITA</span> <span class="c-operatori">=</span> <span class="c-numeri">180</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">sposta_moneta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">SpriteMoneta</span><span class="c-punteggiatura">.</span><span class="c-proprieta">sinistra</span> <span class="c-operatori">=</span> <span class="c-libreria">casuale</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-controlli">ScenaGioco</span><span class="c-punteggiatura">.</span><span class="c-proprieta">larghezza</span> <span class="c-operatori">-</span> <span class="c-numeri">40</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">SpriteMoneta</span><span class="c-punteggiatura">.</span><span class="c-proprieta">alto</span> <span class="c-operatori">=</span> <span class="c-libreria">casuale</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-controlli">ScenaGioco</span><span class="c-punteggiatura">.</span><span class="c-proprieta">altezza</span> <span class="c-operatori">-</span> <span class="c-numeri">40</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span>
+    <span class="c-controlli">ScenaGioco</span><span class="c-punteggiatura">.</span><span class="c-proprieta">avvia</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-funzioni_utente">sposta_moneta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-commenti"># 60 volte al secondo: evento["tempo"] sono i secondi dall'ultimo fotogramma</span>
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">ScenaGioco</span><span class="c-punteggiatura">.</span><span class="c-eventi">fotogramma</span> <span class="c-flusso">fai</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dt</span> <span class="c-operatori">=</span> <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"tempo"</span><span class="c-punteggiatura">]</span>
+    <span class="c-controlli">SpriteGiocatore</span><span class="c-punteggiatura">.</span><span class="c-proprieta">sposta</span><span class="c-punteggiatura">(</span><span class="c-variabili">direzione_x</span> <span class="c-operatori">*</span> <span class="c-costanti">VELOCITA</span> <span class="c-operatori">*</span> <span class="c-variabili">dt</span><span class="c-punteggiatura">,</span> <span class="c-variabili">direzione_y</span> <span class="c-operatori">*</span> <span class="c-costanti">VELOCITA</span> <span class="c-operatori">*</span> <span class="c-variabili">dt</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-controlli">SpriteGiocatore</span><span class="c-punteggiatura">.</span><span class="c-eventi">tocca</span><span class="c-punteggiatura">(</span><span class="c-testi">"SpriteMoneta"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-controlli">PunteggioMonete</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">)</span>
+        <span class="c-funzioni_utente">sposta_moneta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">ScenaGioco</span><span class="c-punteggiatura">.</span><span class="c-eventi">tasto</span> <span class="c-flusso">fai</span>
+    scegli <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"tasto"</span><span class="c-punteggiatura">]</span>
+        caso <span class="c-testi">"Sinistra"</span> <span class="c-flusso">allora</span>
+            <span class="c-variabili">direzione_x</span> <span class="c-operatori">=</span> <span class="c-operatori">-</span><span class="c-numeri">1.0</span>
+        caso <span class="c-testi">"Destra"</span> <span class="c-flusso">allora</span>
+            <span class="c-variabili">direzione_x</span> <span class="c-operatori">=</span> <span class="c-numeri">1.0</span>
+        caso <span class="c-testi">"Su"</span> <span class="c-flusso">allora</span>
+            <span class="c-variabili">direzione_y</span> <span class="c-operatori">=</span> <span class="c-operatori">-</span><span class="c-numeri">1.0</span>
+        caso <span class="c-testi">"Giù"</span> <span class="c-flusso">allora</span>
+            <span class="c-variabili">direzione_y</span> <span class="c-operatori">=</span> <span class="c-numeri">1.0</span>
+        caso <span class="c-testi">"Spazio"</span> <span class="c-flusso">allora</span>
+            <span class="c-variabili">direzione_x</span> <span class="c-operatori">=</span> <span class="c-numeri">0.0</span>
+            <span class="c-variabili">direzione_y</span> <span class="c-operatori">=</span> <span class="c-numeri">0.0</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PunteggioMonete</span><span class="c-punteggiatura">.</span><span class="c-eventi">nuovo_record</span> <span class="c-flusso">fai</span>
+    <span class="c-controlli">EtichettaStato</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Nuovo record: </span><span class="c-interpolazione">{</span><span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"valore"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> monete!"</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: una Scena con due Sprite (SpriteGiocatore e SpriteMoneta), un Punteggio e un&#x27;Etichetta. Le immagini degli sprite le scegli tu in Leo Studio.</p>
+</article>
+<article class="scheda modello" id="conta-parole" data-categoria="testo-dati" data-livello="medio" data-cerca="Testo e dati Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Testo e dati</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Le parole più usate</h2>
+    <p>Analisi di un testo: normalizza le parole, conta le occorrenze con un dizionario e ordina il risultato per mostrare le tre più frequenti.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-conta-parole" aria-label="Copia il codice di Le parole più usate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-conta-parole"><span class="c-commenti"># Conta le parole di un testo e mostra le tre più usate.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">testo_da_contare</span> <span class="c-operatori">=</span> <span class="c-testi">"la vita è bella e la musica è bella e la vita è una sola"</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-punteggiatura">}</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">parola</span> <span class="c-logici">in</span> <span class="c-variabili">testo_da_contare</span><span class="c-punteggiatura">.</span><span class="c-proprieta">dividi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">conteggio</span><span class="c-punteggiatura">[</span><span class="c-variabili">parola</span><span class="c-punteggiatura">]</span> <span class="c-operatori">=</span> <span class="c-variabili">conteggio</span><span class="c-punteggiatura">.</span><span class="c-proprieta">prendi</span><span class="c-punteggiatura">(</span><span class="c-variabili">parola</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span> <span class="c-operatori">+</span> <span class="c-numeri">1</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">classifica</span> <span class="c-operatori">=</span> <span class="c-libreria">ordina_per</span><span class="c-punteggiatura">(</span><span class="c-variabili">conteggio</span><span class="c-punteggiatura">.</span><span class="c-proprieta">coppie</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-dichiarazioni">funzione</span> <span class="c-punteggiatura">(</span><span class="c-parametri">c</span><span class="c-punteggiatura">)</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">c</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fine</span><span class="c-punteggiatura">,</span> decrescente <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Parole diverse: </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">conteggio</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">posizione</span><span class="c-punteggiatura">,</span> <span class="c-variabili">coppia</span> <span class="c-logici">in</span> <span class="c-libreria">enumera</span><span class="c-punteggiatura">(</span><span class="c-variabili">classifica</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">posizione</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">3</span> <span class="c-flusso">allora</span>
+        <span class="c-flusso">interrompi</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">posizione</span><span class="c-interpolazione">}</span><span class="c-testi">. \"</span><span class="c-interpolazione">{</span><span class="c-variabili">coppia</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">\" compare </span><span class="c-interpolazione">{</span><span class="c-variabili">coppia</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> volte"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">Parole diverse: 8
+1. &quot;la&quot; compare 3 volte
+2. &quot;è&quot; compare 3 volte
+3. &quot;vita&quot; compare 2 volte</pre>
+  </div>
+</article>
+<article class="scheda modello" id="statistiche-classe" data-categoria="testo-dati" data-livello="medio" data-cerca="Testo e dati Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Testo e dati</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Statistiche su un elenco di voti</h2>
+    <p>Da un elenco di studenti e voti il programma ricava media, mediana, moda, promossi e rimandati, con le funzioni di statistica della libreria.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-statistiche-classe" aria-label="Copia il codice di Statistiche su un elenco di voti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-statistiche-classe"><span class="c-commenti"># Statistiche di una verifica: media, mediana, moda e promossi.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">classe</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"Ada"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">8</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Bruno"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">5</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Carla"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Dario"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Elena"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Fabio"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Gaia"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">4</span><span class="c-punteggiatura">}</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-variabili">classe</span><span class="c-punteggiatura">.</span><span class="c-proprieta">valori</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Media: </span><span class="c-interpolazione">{</span><span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-libreria">media</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Mediana: </span><span class="c-interpolazione">{</span><span class="c-libreria">mediana</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Voto più frequente: </span><span class="c-interpolazione">{</span><span class="c-libreria">moda</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">promossi</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-variabili">nome</span> <span class="c-flusso">per ogni</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">,</span> <span class="c-variabili">voto</span> <span class="c-logici">in</span> <span class="c-variabili">classe</span> <span class="c-flusso">se</span> <span class="c-variabili">voto</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">6</span><span class="c-punteggiatura">]</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">rimandati</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-variabili">nome</span> <span class="c-flusso">per ogni</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">,</span> <span class="c-variabili">voto</span> <span class="c-logici">in</span> <span class="c-variabili">classe</span> <span class="c-flusso">se</span> <span class="c-variabili">voto</span> <span class="c-operatori">&lt;</span> <span class="c-numeri">6</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Promossi (</span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">promossi</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">): "</span> <span class="c-operatori">+</span> <span class="c-testi">", "</span><span class="c-punteggiatura">.</span><span class="c-proprieta">unisci</span><span class="c-punteggiatura">(</span><span class="c-variabili">promossi</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Da recuperare: "</span> <span class="c-operatori">+</span> <span class="c-testi">", "</span><span class="c-punteggiatura">.</span><span class="c-proprieta">unisci</span><span class="c-punteggiatura">(</span><span class="c-variabili">rimandati</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Media: 6.57
+Mediana: 7
+Voto più frequente: 7
+Promossi (5): Ada, Carla, Dario, Elena, Fabio
+Da recuperare: Bruno, Gaia</pre>
+  </div>
+</article>
+<article class="scheda modello" id="cerca-nel-testo" data-categoria="testo-dati" data-livello="avanzato" data-cerca="Testo e dati Avanzato Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Testo e dati</span>
+      <span class="distintivo liv avanzato">Avanzato</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Trova email e numeri in un testo</h2>
+    <p>Espressioni regolari in italiano: da un testo lungo il programma estrae indirizzi email, date e numeri, e controlla il formato di un codice.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-cerca-nel-testo" aria-label="Copia il codice di Trova email e numeri in un testo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-cerca-nel-testo"><span class="c-commenti"># Modelli di testo: trovare email, date e numeri senza scrivere regole complicate.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">messaggio</span> <span class="c-operatori">=</span> <span class="c-testi">"""</span>
+<span class="c-testi">    Ciao! Il corso inizia il 12/10/2026 alle 18:30.</span>
+<span class="c-testi">    Iscrizioni a segreteria@scuola.it oppure a info@leo-corsi.it.</span>
+<span class="c-testi">    Posti disponibili: 24, costo 35 euro.</span>
+<span class="c-testi">    """</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Email:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">trova_tutti</span><span class="c-punteggiatura">(</span><span class="c-variabili">messaggio</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&lt;email&gt;"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Data:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">trova_primo</span><span class="c-punteggiatura">(</span><span class="c-variabili">messaggio</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&lt;data&gt;"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ora:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">trova_primo</span><span class="c-punteggiatura">(</span><span class="c-variabili">messaggio</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&lt;ora&gt;"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Numeri:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">trova_tutti</span><span class="c-punteggiatura">(</span><span class="c-variabili">messaggio</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&lt;cifre&gt;"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">codice</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">"AB123"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"12ABC"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-libreria">corrisponde</span><span class="c-punteggiatura">(</span><span class="c-variabili">codice</span><span class="c-punteggiatura">,</span> <span class="c-testi">"[A-Z][A-Z]&lt;cifre&gt;"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">codice</span><span class="c-interpolazione">}</span><span class="c-testi">: scritto bene"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">codice</span><span class="c-interpolazione">}</span><span class="c-testi">: servono due lettere maiuscole e poi delle cifre"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">Email: [&quot;segreteria@scuola.it&quot;, &quot;info@leo-corsi.it&quot;]
+Data: 12/10/2026
+Ora: 18:30
+Numeri: [&quot;12&quot;, &quot;10&quot;, &quot;2026&quot;, &quot;18&quot;, &quot;30&quot;, &quot;24&quot;, &quot;35&quot;]
+AB123: scritto bene
+12ABC: servono due lettere maiuscole e poi delle cifre</pre>
+  </div>
+</article>
+<article class="scheda modello" id="diario" data-categoria="file" data-livello="facile" data-cerca="File Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">File</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Note salvate su file</h2>
+    <p>Scrive in un file, aggiunge in fondo e rilegge tutto: i dati restano anche quando il programma si chiude. La base della persistenza.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-diario" aria-label="Copia il codice di Note salvate su file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-diario"><span class="c-commenti"># Un diario in un file di testo: scrivere, aggiungere, rileggere.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">diario</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-libreria">cartella_temporanea</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"diario.txt"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">diario</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Lunedì: ho scritto il mio primo programma.\n"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">aggiungi_a_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">diario</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Martedì: ho imparato i cicli."</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">aggiungi_a_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">diario</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mercoledì: ho salvato questo diario."</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">righe</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_righe</span><span class="c-punteggiatura">(</span><span class="c-variabili">diario</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il diario ha </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">righe</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> pagine:"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">numero</span><span class="c-punteggiatura">,</span> <span class="c-variabili">riga</span> <span class="c-logici">in</span> <span class="c-libreria">enumera</span><span class="c-punteggiatura">(</span><span class="c-variabili">righe</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"  </span><span class="c-interpolazione">{</span><span class="c-variabili">numero</span><span class="c-interpolazione">}</span><span class="c-testi">. </span><span class="c-interpolazione">{</span><span class="c-variabili">riga</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">Il diario ha 3 pagine:
+  1. Lunedì: ho scritto il mio primo programma.
+  2. Martedì: ho imparato i cicli.
+  3. Mercoledì: ho salvato questo diario.</pre>
+  </div>
+</article>
+<article class="scheda modello" id="registro-csv" data-categoria="file" data-livello="medio" data-cerca="File Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">File</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Tabella CSV per Excel</h2>
+    <p>Salva una tabella in un file CSV che Excel apre con le colonne giuste, poi la rilegge e calcola la media. Utile per l&#x27;ufficio e per i dati di lavoro.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-registro-csv" aria-label="Copia il codice di Tabella CSV per Excel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-registro-csv"><span class="c-commenti"># Una tabella CSV che Excel apre con le colonne giuste.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">tabella</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-libreria">cartella_temporanea</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voti.csv"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">classe</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Matematica"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">9.5</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Bruno"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Matematica"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">7</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Carla"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Storia"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">8</span><span class="c-punteggiatura">}</span>
+<span class="c-punteggiatura">]</span>
+
+<span class="c-libreria">scrivi_tabella</span><span class="c-punteggiatura">(</span><span class="c-variabili">tabella</span><span class="c-punteggiatura">,</span> <span class="c-variabili">classe</span><span class="c-punteggiatura">,</span> excel <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">aggiungi_a_tabella</span><span class="c-punteggiatura">(</span><span class="c-variabili">tabella</span><span class="c-punteggiatura">,</span> <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Dario"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Storia"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">6.5</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Righe nel file:"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">riga</span> <span class="c-logici">in</span> <span class="c-libreria">leggi_righe</span><span class="c-punteggiatura">(</span><span class="c-variabili">tabella</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"  "</span> <span class="c-operatori">+</span> <span class="c-variabili">riga</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_tabella</span><span class="c-punteggiatura">(</span><span class="c-variabili">tabella</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span><span class="c-variabili">studente</span><span class="c-punteggiatura">[</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">per ogni</span> <span class="c-variabili">studente</span> <span class="c-logici">in</span> <span class="c-variabili">voti</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Studenti: </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">, media: </span><span class="c-interpolazione">{</span><span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-variabili">totale</span> <span class="c-operatori">/</span> <span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Righe nel file:
+  nome;materia;voto
+  Ada;Matematica;9,5
+  Bruno;Matematica;7
+  Carla;Storia;8
+  Dario;Storia;6,5
+Studenti: 4, media: 7.75</pre>
+  </div>
+</article>
+<article class="scheda modello" id="riordina-cartella" data-categoria="file" data-livello="avanzato" data-cerca="File Avanzato Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">File</span>
+      <span class="distintivo liv avanzato">Avanzato</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Riordina una cartella</h2>
+    <p>Automazione dei file: crea una copia di sicurezza compressa, poi sposta ogni file nella cartella del suo tipo (foto, testi, tabelle).</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-riordina-cartella" aria-label="Copia il codice di Riordina una cartella"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-riordina-cartella"><span class="c-commenti"># Riordina una cartella: ogni file nella sottocartella della sua estensione.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">lavoro</span> <span class="c-operatori">=</span> <span class="c-libreria">cartella_temporanea</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">scrivania</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-testi">"scrivania"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">)</span>
+
+<span class="c-commenti"># alcuni file di prova</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">nome</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">"tema.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"appunti.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"gita.jpg"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"mare.jpg"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voti.csv"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">,</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"contenuto di "</span> <span class="c-operatori">+</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Prima:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-commenti"># 1. copia di sicurezza compressa</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">zip</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-testi">"sicurezza.zip"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"File nello ZIP:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">comprimi_zip</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">,</span> <span class="c-variabili">zip</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-commenti"># 2. ogni file nella cartella della sua estensione</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">nome</span> <span class="c-logici">in</span> <span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">destinazione</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">,</span> <span class="c-libreria">estensione_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-variabili">destinazione</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">sposta_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">,</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-variabili">destinazione</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Dopo:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">elenca_cartelle</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">cartella</span> <span class="c-logici">in</span> <span class="c-libreria">elenca_cartelle</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"  </span><span class="c-interpolazione">{</span><span class="c-variabili">cartella</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">scrivania</span><span class="c-punteggiatura">,</span> <span class="c-variabili">cartella</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">Prima: [&quot;appunti.txt&quot;, &quot;gita.jpg&quot;, &quot;mare.jpg&quot;, &quot;tema.txt&quot;, &quot;voti.csv&quot;]
+File nello ZIP: 5
+Dopo: [&quot;csv&quot;, &quot;jpg&quot;, &quot;txt&quot;]
+  csv: [&quot;voti.csv&quot;]
+  jpg: [&quot;gita.jpg&quot;, &quot;mare.jpg&quot;]
+  txt: [&quot;appunti.txt&quot;, &quot;tema.txt&quot;]</pre>
+  </div>
+  <p class="nota-file">Per sicurezza l&#x27;esempio lavora in una cartella temporanea creata apposta: per usarlo davvero cambia la cartella di partenza.</p>
+</article>
+<article class="scheda modello" id="indirizzi-web" data-categoria="internet" data-livello="medio" data-cerca="Internet Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Internet</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Costruire indirizzi web</h2>
+    <p>Codifica e decodifica degli indirizzi web: accenti, spazi e simboli trasformati nel formato corretto per gli URL, e ritorno.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-indirizzi-web" aria-label="Copia il codice di Costruire indirizzi web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-indirizzi-web"><span class="c-commenti"># Indirizzi web con accenti e spazi, scritti nel modo giusto.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">ricerca</span> <span class="c-operatori">=</span> <span class="c-libreria">componi_url</span><span class="c-punteggiatura">(</span><span class="c-testi">"https://www.esempio.it/cerca"</span><span class="c-punteggiatura">,</span> <span class="c-punteggiatura">{</span><span class="c-testi">"q"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"caffè e cornetto"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"pagina"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">2</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Indirizzo pronto:"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">ricerca</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Solo i parametri:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">codifica_url</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">{</span><span class="c-testi">"città"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Forlì"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"ordina"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"prezzo"</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"E al contrario:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">decodifica_url</span><span class="c-punteggiatura">(</span><span class="c-testi">"caff%C3%A8%20e%20cornetto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Indirizzo pronto: https://www.esempio.it/cerca?q=caff%C3%A8+e+cornetto&amp;pagina=2
+Solo i parametri: citt%C3%A0=Forl%C3%AC&amp;ordina=prezzo
+E al contrario: caffè e cornetto</pre>
+  </div>
+</article>
+<article class="scheda modello" id="mini-sito" data-categoria="internet" data-livello="avanzato" data-cerca="Internet Avanzato Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Internet</span>
+      <span class="distintivo liv avanzato">Avanzato</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Un server web locale</h2>
+    <p>In poche righe avvii un server web, poi il programma lo interroga come farebbe un browser e legge i dati in JSON. Tutto resta sul tuo computer.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-mini-sito" aria-label="Copia il codice di Un server web locale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-mini-sito"><span class="c-commenti"># Un piccolo sito su questo computer e le richieste web per leggerlo.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">sito</span> <span class="c-operatori">=</span> <span class="c-libreria">server_web</span><span class="c-punteggiatura">(</span><span class="c-numeri">0</span><span class="c-punteggiatura">,</span> pagina <span class="c-operatori">=</span> <span class="c-testi">"&lt;!doctype html&gt;&lt;h1&gt;Benvenuto nel sito di Leo&lt;/h1&gt;"</span><span class="c-punteggiatura">,</span> pagine <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span>
+    <span class="c-testi">"/orari"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"apertura"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"9:00"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"chiusura"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"18:30"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"giorni"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">[</span><span class="c-testi">"lun"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"mar"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"mer"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"gio"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"ven"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-testi">"/saluto"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ciao dal server!"</span>
+<span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">sito</span><span class="c-punteggiatura">.</span><span class="c-proprieta">avvia</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">scarica_pagina</span><span class="c-punteggiatura">(</span><span class="c-variabili">sito</span><span class="c-punteggiatura">.</span><span class="c-campi">indirizzo</span> <span class="c-operatori">+</span> <span class="c-testi">"saluto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">orari</span> <span class="c-operatori">=</span> <span class="c-libreria">scarica_json</span><span class="c-punteggiatura">(</span><span class="c-variabili">sito</span><span class="c-punteggiatura">.</span><span class="c-campi">indirizzo</span> <span class="c-operatori">+</span> <span class="c-testi">"orari"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Aperto dalle </span><span class="c-interpolazione">{</span><span class="c-variabili">orari</span><span class="c-punteggiatura">[</span><span class="c-testi">"apertura"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> alle </span><span class="c-interpolazione">{</span><span class="c-variabili">orari</span><span class="c-punteggiatura">[</span><span class="c-testi">"chiusura"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">, </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">orari</span><span class="c-punteggiatura">[</span><span class="c-testi">"giorni"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> giorni"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-commenti"># una pagina che non esiste non ferma il programma</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-libreria">richiesta_web</span><span class="c-punteggiatura">(</span><span class="c-variabili">sito</span><span class="c-punteggiatura">.</span><span class="c-campi">indirizzo</span> <span class="c-operatori">+</span> <span class="c-testi">"prezzi"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">se</span> <span class="c-logici">non</span> <span class="c-variabili">risposta</span><span class="c-punteggiatura">[</span><span class="c-testi">"riuscita"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">risposta</span><span class="c-punteggiatura">[</span><span class="c-testi">"spiegazione"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-variabili">sito</span><span class="c-punteggiatura">.</span><span class="c-proprieta">ferma</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Sito spento."</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Ciao dal server!
+Aperto dalle 9:00 alle 18:30, 5 giorni
+Pagina non trovata (404): la pagina non esiste: controlla l&#x27;indirizzo
+Sito spento.</pre>
+  </div>
+  <p class="nota-file">Il server ascolta solo su questo computer (127.0.0.1): nessun dato esce su Internet.</p>
+</article>
+<article class="scheda modello" id="informazioni-pc" data-categoria="windows" data-livello="facile" data-cerca="Windows Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Windows</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Informazioni sul sistema</h2>
+    <p>Il programma interroga Windows: utente, nome del computer, memoria, stato della batteria. Utile per inventari e diagnosi.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-informazioni-pc" aria-label="Copia il codice di Informazioni sul sistema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-informazioni-pc"><span class="c-commenti"># Chiedi a Windows qualche informazione sul tuo computer.</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Computer:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">nome_computer</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"- utente:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">nome_utente</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Processore:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">architettura</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"con"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">numero_core</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"core"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Acceso da"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">tempo_accensione_testo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-errori">prova</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Sistema:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">versione_windows</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">m</span> <span class="c-operatori">=</span> <span class="c-libreria">info_memoria</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Memoria: </span><span class="c-interpolazione">{</span><span class="c-libreria">dimensione_leggibile</span><span class="c-punteggiatura">(</span><span class="c-variabili">m</span><span class="c-punteggiatura">[</span><span class="c-testi">"usata"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> usati su </span><span class="c-interpolazione">{</span><span class="c-libreria">dimensione_leggibile</span><span class="c-punteggiatura">(</span><span class="c-variabili">m</span><span class="c-punteggiatura">[</span><span class="c-testi">"totale"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">b</span> <span class="c-operatori">=</span> <span class="c-libreria">info_batteria</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">b</span><span class="c-punteggiatura">[</span><span class="c-testi">"presente"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Batteria al </span><span class="c-interpolazione">{</span><span class="c-variabili">b</span><span class="c-punteggiatura">[</span><span class="c-testi">"percentuale"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">%"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Nessuna batteria: è un computer fisso"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Nota:"</span><span class="c-punteggiatura">,</span> <span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">messaggio</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Ogni computer risponde in modo diverso. Le funzioni di Windows funzionano su Windows 10 e 11; su altri sistemi danno un messaggio chiaro, che il programma mostra.</p>
+</article>
+<article class="scheda modello" id="organizza-desktop" data-categoria="windows" data-livello="medio" data-cerca="Windows Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Windows</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Assistente per il desktop</h2>
+    <p>Elenca le finestre aperte, legge il tema di Windows, cattura lo schermo e invia una notifica al termine.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-organizza-desktop" aria-label="Copia il codice di Assistente per il desktop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-organizza-desktop"><span class="c-commenti"># Un assistente per il desktop: finestre aperte, cattura dello schermo e notifica.</span>
+<span class="c-errori">prova</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Tema di Windows:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">tema_windows</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Finestre aperte:"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">per ogni</span> <span class="c-variabili">f</span> <span class="c-logici">in</span> <span class="c-libreria">elenca_finestre</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"  </span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"titolo"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> (</span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"programma"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">)"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">foto</span> <span class="c-operatori">=</span> <span class="c-libreria">cattura_schermo</span><span class="c-punteggiatura">(</span><span class="c-testi">"desktop.png"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Cattura dello schermo salvata in"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">foto</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">mostra_notifica</span><span class="c-punteggiatura">(</span><span class="c-testi">"Fatto!"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"La cattura è in "</span> <span class="c-operatori">+</span> <span class="c-variabili">foto</span><span class="c-punteggiatura">)</span>
+<span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Non ci sono riuscito:"</span><span class="c-punteggiatura">,</span> <span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">messaggio</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Dipende dalle finestre che hai aperto. Funziona su Windows 10 e 11. Non preme tasti e non muove il mouse: usa solo le richieste normali di Windows.</p>
+</article>
+<article class="scheda modello" id="grafico-vendite" data-categoria="grafici-suoni" data-livello="facile" data-cerca="Grafici e suoni Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Grafici e suoni</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Un grafico in tre righe</h2>
+    <p>Dati, tipo di grafico e un file: Leo disegna barre, linee o torta e le salva in un file che si apre con il browser.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-grafico-vendite" aria-label="Copia il codice di Un grafico in tre righe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-grafico-vendite"><span class="c-commenti"># Dai numeri a un grafico: barre e torta, salvati in SVG.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">vendite</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"Gen"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">120</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Feb"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">150</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mar"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">90</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Apr"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">210</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mag"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">180</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Giu"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">240</span><span class="c-punteggiatura">}</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">barre</span> <span class="c-operatori">=</span> <span class="c-libreria">grafico</span><span class="c-punteggiatura">(</span><span class="c-testi">"barre"</span><span class="c-punteggiatura">,</span> titolo <span class="c-operatori">=</span> <span class="c-testi">"Vendite del primo semestre"</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">barre</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi_serie</span><span class="c-punteggiatura">(</span><span class="c-testi">"Quest'anno"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">vendite</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">barre</span><span class="c-punteggiatura">.</span><span class="c-campi">mostra_valori</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Salvato: "</span> <span class="c-operatori">+</span> <span class="c-variabili">barre</span><span class="c-punteggiatura">.</span><span class="c-proprieta">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"vendite.svg"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">quote</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"Negozio"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">55</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Sito"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Telefono"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">15</span><span class="c-punteggiatura">}</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">torta</span> <span class="c-operatori">=</span> <span class="c-libreria">grafico_anello</span><span class="c-punteggiatura">(</span><span class="c-variabili">quote</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Da dove arrivano gli ordini"</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">torta</span><span class="c-punteggiatura">.</span><span class="c-campi">colori</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"oro"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"rosso"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"grigio"</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Salvato: "</span> <span class="c-operatori">+</span> <span class="c-libreria">salva_grafico</span><span class="c-punteggiatura">(</span><span class="c-variabili">torta</span><span class="c-punteggiatura">,</span> <span class="c-testi">"ordini.svg"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Salvato: vendite.svg
+Salvato: ordini.svg</pre>
+  </div>
+</article>
+<article class="scheda modello" id="tartaruga-stella" data-categoria="grafici-suoni" data-livello="facile" data-cerca="Grafici e suoni Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Grafici e suoni</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Grafica della tartaruga: una stella</h2>
+    <p>Grafica vettoriale con la tartaruga: cinque tratti e cinque rotazioni di 144 gradi disegnano una stella. Il modo più immediato per vedere cicli e geometria al lavoro.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-tartaruga-stella" aria-label="Copia il codice di Grafica della tartaruga: una stella"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-tartaruga-stella"><span class="c-commenti"># La stella a cinque punte: 5 punte, girando ogni volta di 144 gradi.</span>
+<span class="c-libreria">sfondo</span><span class="c-punteggiatura">(</span><span class="c-testi">"blu notte"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">velocità</span><span class="c-punteggiatura">(</span><span class="c-numeri">6</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">spessore</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">"oro"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">riempi</span><span class="c-punteggiatura">(</span><span class="c-testi">"giallo"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">ripeti</span> <span class="c-numeri">5</span> <span class="c-flusso">volte</span>
+    <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">200</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">destra</span><span class="c-punteggiatura">(</span><span class="c-numeri">144</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">fine_riempi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">penna_su</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">vai_a</span><span class="c-punteggiatura">(</span><span class="c-numeri">40</span><span class="c-punteggiatura">,</span> <span class="c-operatori">-</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">"bianco"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi_qui</span><span class="c-punteggiatura">(</span><span class="c-testi">"Che stella!"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">nascondi_tartaruga</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">salva_disegno</span><span class="c-punteggiatura">(</span><span class="c-testi">"stella.svg"</span><span class="c-punteggiatura">)</span></code></pre>
+    <pre class="uscita">Disegno salvato in &quot;stella.svg&quot; (si apre con il browser).</pre>
+  </div>
+  <p class="nota-file">Il disegno compare in una finestra; se le finestre non sono disponibili viene salvato in un file SVG.</p>
+</article>
+<article class="scheda modello" id="melodia" data-categoria="grafici-suoni" data-livello="medio" data-cerca="Grafici e suoni Medio Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Grafici e suoni</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Suona una melodia</h2>
+    <p>Sintesi del suono: le note si scrivono con il loro nome (do, re, mi), il programma compone una melodia, aggiunge un accordo e salva il brano in un file audio.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-melodia" aria-label="Copia il codice di Suona una melodia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-melodia"><span class="c-commenti"># Note, melodie e accordi: 4 = un battito, 2 = due battiti.</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il la centrale vibra </span><span class="c-interpolazione">{</span><span class="c-libreria">frequenza_nota</span><span class="c-punteggiatura">(</span><span class="c-testi">"la"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> volte al secondo."</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">fra_martino</span> <span class="c-operatori">=</span> <span class="c-libreria">melodia</span><span class="c-punteggiatura">(</span><span class="c-testi">"do4 re4 mi4 do4 do4 re4 mi4 do4 mi4 fa4 sol2 mi4 fa4 sol2"</span><span class="c-punteggiatura">,</span> tempo <span class="c-operatori">=</span> <span class="c-numeri">140</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Fra Martino dura </span><span class="c-interpolazione">{</span><span class="c-variabili">fra_martino</span><span class="c-punteggiatura">.</span><span class="c-campi">durata</span><span class="c-interpolazione">}</span><span class="c-testi"> secondi."</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">finale</span> <span class="c-operatori">=</span> <span class="c-libreria">accordo</span><span class="c-punteggiatura">(</span><span class="c-testi">"do maggiore"</span><span class="c-punteggiatura">,</span> battiti <span class="c-operatori">=</span> <span class="c-numeri">4</span><span class="c-punteggiatura">,</span> forma <span class="c-operatori">=</span> <span class="c-testi">"triangolo"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">dissolvenza</span><span class="c-punteggiatura">(</span>uscita <span class="c-operatori">=</span> <span class="c-numeri">1.5</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">brano</span> <span class="c-operatori">=</span> <span class="c-variabili">fra_martino</span><span class="c-punteggiatura">.</span><span class="c-proprieta">poi</span><span class="c-punteggiatura">(</span><span class="c-libreria">silenzio</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.3</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">poi</span><span class="c-punteggiatura">(</span><span class="c-variabili">finale</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Salvato: "</span> <span class="c-operatori">+</span> <span class="c-libreria">salva_suono</span><span class="c-punteggiatura">(</span><span class="c-variabili">brano</span><span class="c-punteggiatura">,</span> <span class="c-testi">"fra_martino.wav"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-commenti"># suona(brano, aspetta = vero)</span></code></pre>
+    <pre class="uscita">Il la centrale vibra 440.0 volte al secondo.
+Fra Martino dura 6.857 secondi.
+Salvato: fra_martino.wav</pre>
+  </div>
+  <p class="nota-file">Per ascoltarlo subito togli il # davanti all&#x27;ultima riga.</p>
+</article>
+<article class="scheda modello" id="pulsante-salta" data-categoria="animazioni" data-livello="medio" data-cerca="Animazioni Medio Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Animazioni</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>Il pulsante che salta</h2>
+    <p>Animazioni con la curva «rimbalzo»: il pulsante sale e ricade rimbalzando, mentre l&#x27;etichetta conta i salti. Le animazioni si scrivono come una frase.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-pulsante-salta" aria-label="Copia il codice di Il pulsante che salta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-pulsante-salta"><span class="c-commenti"># Il pulsante sale in fretta e ricade rimbalzando.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">salti</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">ricadi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">anima</span> <span class="c-controlli">PulsanteSalta</span><span class="c-punteggiatura">.</span><span class="c-proprieta">alto</span> <span class="c-flusso">a</span> <span class="c-numeri">150</span> <span class="c-flusso">in</span> <span class="c-numeri">0.6</span> <span class="c-flusso">secondi</span> <span class="c-flusso">con</span> <span class="c-flusso">curva</span> <span class="c-testi">"rimbalzo"</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteSalta</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">aumenta</span> <span class="c-variabili">salti</span>
+    <span class="c-controlli">EtichettaSalti</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Salti: </span><span class="c-interpolazione">{</span><span class="c-variabili">salti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+    <span class="c-libreria">anima</span><span class="c-punteggiatura">(</span><span class="c-controlli">PulsanteSalta</span><span class="c-punteggiatura">,</span> <span class="c-testi">"alto"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">60</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0.25</span><span class="c-punteggiatura">,</span> <span class="c-testi">"veloce"</span><span class="c-punteggiatura">,</span> poi <span class="c-operatori">=</span> <span class="c-funzioni_utente">ricadi</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">salti</span> <span class="c-operatori">%</span> <span class="c-numeri">5</span> <span class="c-operatori">==</span> <span class="c-numeri">0</span> <span class="c-flusso">allora</span>
+        <span class="c-controlli">EtichettaSalti</span><span class="c-punteggiatura">.</span><span class="c-proprieta">lampeggia</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: un Pulsante (PulsanteSalta) e un&#x27;Etichetta (EtichettaSalti).</p>
+</article>
+<article class="scheda modello" id="finestra-forma" data-categoria="animazioni" data-livello="avanzato" data-cerca="Animazioni Avanzato Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Animazioni</span>
+      <span class="distintivo liv avanzato">Avanzato</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>La finestra che cambia forma</h2>
+    <p>Finestre non rettangolari: a ogni clic la finestra cambia forma, da triangolo a esagono, stella e infine cerchio.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-finestra-forma" aria-label="Copia il codice di La finestra che cambia forma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-finestra-forma"><span class="c-commenti"># Da triangolo a ottagono, poi una stella e infine un cerchio.</span>
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteTrasforma</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">per ogni</span> <span class="c-variabili">lati</span> <span class="c-logici">in</span> <span class="c-numeri">3</span><span class="c-numeri">..</span><span class="c-numeri">8</span> <span class="c-flusso">fai</span>
+        <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">forma</span> <span class="c-operatori">=</span> <span class="c-libreria">forma_poligono</span><span class="c-punteggiatura">(</span><span class="c-variabili">lati</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.3</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">forma</span> <span class="c-operatori">=</span> <span class="c-libreria">forma_stella</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.6</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">forma</span> <span class="c-operatori">=</span> <span class="c-testi">"cerchio"</span>
+    <span class="c-controlli">PulsanteTrasforma</span><span class="c-punteggiatura">.</span><span class="c-proprieta">pulsa</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: un solo Pulsante (PulsanteTrasforma). Alt+F4 chiude la finestra qualunque forma abbia.</p>
+</article>
+<article class="scheda modello" id="conto-rovescia" data-categoria="temporizzatori" data-livello="facile" data-cerca="Temporizzatori Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Temporizzatori</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Conto alla rovescia</h2>
+    <p>Temporizzatori ed eventi a tempo: il programma conta i secondi e allo scadere esegue un&#x27;azione. Si scrive come lo diresti: ogni secondo fai, dopo tre secondi fai.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-conto-rovescia" aria-label="Copia il codice di Conto alla rovescia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-conto-rovescia"><span class="c-commenti"># Temporizzatori: `ogni` ripete, `dopo` aspetta una volta sola.</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">secondi</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+
+<span class="c-dichiarazioni">inizio</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pronti..."</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">ogni</span> <span class="c-numeri">1</span> <span class="c-flusso">secondo</span> <span class="c-flusso">fai</span>
+        <span class="c-variabili">secondi</span> <span class="c-operatori">+=</span> <span class="c-numeri">1</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">secondi</span><span class="c-interpolazione">}</span><span class="c-testi">..."</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-flusso">dopo</span> <span class="c-numeri">3.5</span> <span class="c-flusso">secondi</span> <span class="c-flusso">fai</span>
+        <span class="c-libreria">ferma_temporizzatori</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Via! Sono passati </span><span class="c-interpolazione">{</span><span class="c-variabili">secondi</span><span class="c-interpolazione">}</span><span class="c-testi"> secondi."</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">Pronti...
+1...
+2...
+3...
+Via! Sono passati 3 secondi.</pre>
+  </div>
+</article>
+<article class="scheda modello" id="orologio" data-categoria="temporizzatori" data-livello="facile" data-cerca="Temporizzatori Facile Programma a finestre">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Temporizzatori</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma a finestre</span>
+    </div>
+    <h2>Orologio digitale</h2>
+    <p>Un orologio che si aggiorna ogni secondo con un Timer e mostra anche la data di oggi, scritta in italiano.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>Finestra1.leo</span><button class="copia" type="button" data-copia="codice-orologio" aria-label="Copia il codice di Orologio digitale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-orologio"><span class="c-commenti"># Un orologio che si aggiorna da solo ogni secondo.</span>
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">aggiorna</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">EtichettaOra</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-libreria">ora</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">EtichettaData</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-libreria">adesso</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">in_lettere</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span>
+    <span class="c-funzioni_utente">aggiorna</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">Timer1</span><span class="c-punteggiatura">.</span><span class="c-eventi">scatto</span> <span class="c-flusso">fai</span>
+    <span class="c-funzioni_utente">aggiorna</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+  </div>
+  <p class="nota-file">Nella finestra: due Etichette e un Timer (Timer1) con intervallo di 1000 millisecondi.</p>
+</article>
+<article class="scheda modello" id="errori-gestiti" data-categoria="test" data-livello="facile" data-cerca="Test e verifiche Facile Programma testuale">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Test e verifiche</span>
+      <span class="distintivo liv facile">Facile</span>
+      <span class="distintivo tipo">Programma testuale</span>
+    </div>
+    <h2>Gestione degli errori</h2>
+    <p>Un programma robusto non si blocca davanti a un errore: lo cattura con prova e cattura, lo spiega e prosegue. Qui una divisione per zero e una conversione non valida.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>programma.leo</span><button class="copia" type="button" data-copia="codice-errori-gestiti" aria-label="Copia il codice di Gestione degli errori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-errori-gestiti"><span class="c-commenti"># prova ... cattura: il programma gestisce gli errori e continua.</span>
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">dividi</span><span class="c-punteggiatura">(</span><span class="c-parametri">a</span><span class="c-punteggiatura">,</span> <span class="c-parametri">b</span><span class="c-punteggiatura">)</span>
+    <span class="c-errori">prova</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">a</span> <span class="c-operatori">/</span> <span class="c-parametri">b</span>
+    <span class="c-errori">cattura</span> <span class="c-errori">ErroreDivisione</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Non si può dividere </span><span class="c-interpolazione">{</span><span class="c-parametri">a</span><span class="c-interpolazione">}</span><span class="c-testi"> per zero."</span><span class="c-punteggiatura">)</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-valori_speciali">nulla</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">dividi</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">4</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">dividi</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">risposta</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">"42"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"quarantadue"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-errori">prova</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Hai scritto il numero"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">intero</span><span class="c-punteggiatura">(</span><span class="c-variabili">risposta</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+    <span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"\"</span><span class="c-interpolazione">{</span><span class="c-variabili">risposta</span><span class="c-interpolazione">}</span><span class="c-testi">\" non è un numero:"</span><span class="c-punteggiatura">,</span> <span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">messaggio</span><span class="c-punteggiatura">)</span>
+    <span class="c-errori">infine</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"(controllo finito)"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">2.5
+Non si può dividere 10 per zero.
+nulla
+Hai scritto il numero 42
+(controllo finito)
+&quot;quarantadue&quot; non è un numero: Non posso trasformare il testo &quot;quarantadue&quot; in un intero.
+(controllo finito)</pre>
+  </div>
+</article>
+<article class="scheda modello" id="verifiche" data-categoria="test" data-livello="medio" data-cerca="Test e verifiche Medio Verifiche">
+  <header>
+    <div class="meta">
+      <span class="distintivo cat">Test e verifiche</span>
+      <span class="distintivo liv medio">Medio</span>
+      <span class="distintivo tipo">Verifiche</span>
+    </div>
+    <h2>Verifiche automatiche</h2>
+    <p>Test automatici in italiano: verifica, aspettati. Il comando leo verifica li esegue tutti e riporta quelli che falliscono.</p>
+  </header>
+  <div class="finestra-codice">
+    <div class="barra"><i></i><i></i><i></i><span>verifiche.leo</span><button class="copia" type="button" data-copia="codice-verifiche" aria-label="Copia il codice di Verifiche automatiche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+    <pre class="codice" tabindex="0"><code id="codice-verifiche"><span class="c-commenti"># Verifiche incorporate: si eseguono con `leo verifica verifiche.leo`.</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">doppio</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">n</span> <span class="c-operatori">*</span> <span class="c-numeri">2</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">media_voti</span><span class="c-punteggiatura">(</span><span class="c-parametri">voti</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-libreria">vuota</span><span class="c-punteggiatura">(</span><span class="c-parametri">voti</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+        <span class="c-errori">lancia</span> <span class="c-errori">ErroreValore</span><span class="c-punteggiatura">(</span><span class="c-testi">"Servono dei voti per fare la media"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-parametri">voti</span><span class="c-punteggiatura">)</span> <span class="c-operatori">/</span> <span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-parametri">voti</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-flusso">verifica</span> <span class="c-testi">"doppio di un numero"</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">aspettati</span> <span class="c-funzioni_utente">doppio</span><span class="c-punteggiatura">(</span><span class="c-numeri">21</span><span class="c-punteggiatura">)</span> <span class="c-operatori">==</span> <span class="c-numeri">42</span>
+    <span class="c-flusso">aspettati</span> <span class="c-funzioni_utente">doppio</span><span class="c-punteggiatura">(</span><span class="c-numeri">0</span><span class="c-punteggiatura">)</span> <span class="c-operatori">==</span> <span class="c-numeri">0</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-flusso">verifica</span> <span class="c-testi">"media dei voti"</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">aspettati</span> <span class="c-funzioni_utente">media_voti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span><span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">8</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span> <span class="c-operatori">==</span> <span class="c-numeri">8</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-flusso">verifica</span> <span class="c-testi">"media senza voti"</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">aspettati</span> <span class="c-flusso">errore</span> <span class="c-errori">ErroreValore</span> <span class="c-flusso">fai</span>
+        <span class="c-funzioni_utente">media_voti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">inizio</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il doppio di 21 è </span><span class="c-interpolazione">{</span><span class="c-funzioni_utente">doppio</span><span class="c-punteggiatura">(</span><span class="c-numeri">21</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+    <pre class="uscita">$ leo verifica verifiche.leo
+verifiche.leo
+  ok  doppio di un numero
+  ok  media dei voti
+  ok  media senza voti
+
+3 verifiche: 3 riuscite.</pre>
+  </div>
+  <p class="nota-file">Si esegue con: leo verifica verifiche.leo (con leo verifiche.leo parte solo il programma).</p>
+</article><!--/galleria-->
+    </div>
+    <div class="nessun-risultato" id="nessun-modello" hidden>
+      <p>Nessun template corrisponde alla ricerca. Prova con un'altra parola o scegli «Tutti».</p>
+    </div>
+  </div>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html" aria-current="page">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

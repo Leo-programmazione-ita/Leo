@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendice B — Errori comuni e come risolverli — Leo, il manuale</title>
+<meta name="description" content="Gli errori di Leo sono fatti per essere letti: dicono dove, cosa e spesso come rimediare. Questa appendice raccoglie quelli in cui inciampano tutti,…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/B_errori_comuni.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/B_errori_comuni.html">
+<meta property="og:title" content="Appendice B — Errori comuni e come risolverli — Leo, il manuale">
+<meta property="og:description" content="Gli errori di Leo sono fatti per essere letti: dicono dove, cosa e spesso come rimediare. Questa appendice raccoglie quelli in cui inciampano tutti,…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html" aria-current="page">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Appendici</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#print-non-è-definito-il-riflesso-di-un-altro-linguaggio">«<code>print</code> non è definito» — il riflesso di un altro linguaggio</a></li><li><a href="#manca-fine-un-blocco-non-chiuso">«manca <code>fine</code>» — un blocco non chiuso</a></li><li><a href="#non-si-può-unire-un-testo-e-un-numero-tipi-non-mescolati">«non si può unire un testo e un numero» — tipi non mescolati</a></li><li><a href="#una-variabile-nuova-si-crea-con-variabile-il-refuso-protetto">«una variabile nuova si crea con <code>variabile</code>» — il refuso protetto</a></li><li><a href="#stampa-la-parola-invece-del-valore-le-parentesi-che-calcolano">«stampa la parola invece del valore» — le parentesi che calcolano</a></li><li><a href="#indice-fuori-dalla-lista">«indice fuori dalla lista»</a></li><li><a href="#la-chiave-non-è-nel-dizionario">«la chiave non è nel dizionario»</a></li><li><a href="#la-condizione-deve-essere-vero-o-falso">«la condizione deve essere vero o falso»</a></li><li><a href="#divisione-per-zero">«divisione per zero»</a></li><li><a href="#una-strategia-generale">Una strategia generale</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Appendice B — Errori comuni e come risolverli</h1>
+<p>Gli errori di Leo sono fatti per essere letti: dicono <em>dove</em>, <em>cosa</em> e spesso <em>come rimediare</em>. Questa appendice raccoglie quelli in cui inciampano tutti, all'inizio, con il messaggio reale e la soluzione. Imparali: ti faranno risparmiare ore.</p>
+<h2 id="print-non-è-definito-il-riflesso-di-un-altro-linguaggio">«<code>print</code> non è definito» — il riflesso di un altro linguaggio</h2>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-207" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-207" class="libro-pre"><code>print("ciao")</code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-208" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-208" class="libro-pre"><code>ErroreNome alla riga 1, colonna 1 di programma.leo
+
+    1 | print("ciao")
+      | ^^^^^
+
+`print` non è definito.
+Suggerimento: In Leo si scrive `stampa`.
+
+Riga corretta proposta:
+    1 | stampa("ciao")</code></pre></figure>
+<p>Leo riconosce le parole degli altri linguaggi e ti indica la traduzione. Vale per <code>print</code> → <code>stampa</code>, <code>if</code> → <code>se</code>, <code>for</code> → <code>per ogni</code>, <code>def</code> → <code>funzione</code>, e molte altre. <strong>Soluzione:</strong> usa la parola italiana (qui <code>stampa</code> o <code>scrivi</code>).</p>
+<h2 id="manca-fine-un-blocco-non-chiuso">«manca <code>fine</code>» — un blocco non chiuso</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-209" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-209" class="libro-pre"><code><span class="c-flusso">se</span> <span class="c-numeri">3</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">2</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"si"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-210" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-210" class="libro-pre"><code>ErroreSintassi ...
+Il blocco `se` aperto alla riga 1 non è mai chiuso: manca `fine`.
+Suggerimento: Ogni blocco si chiude con `fine`.</code></pre></figure>
+<p>Ogni <code>se</code>, <code>mentre</code>, <code>per ogni</code>, <code>funzione</code>, <code>classe</code>, <code>prova</code> va chiuso con <code>fine</code>. <strong>Soluzione:</strong> aggiungi il <code>fine</code> mancante. Un trucco: rientra sempre il codice di quattro spazi, così i blocchi aperti si vedono a colpo d'occhio.</p>
+<h2 id="non-si-può-unire-un-testo-e-un-numero-tipi-non-mescolati">«non si può unire un testo e un numero» — tipi non mescolati</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-211" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-211" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">"3"</span> <span class="c-operatori">+</span> <span class="c-numeri">4</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-212" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-212" class="libro-pre"><code>ErroreTipo ...
+Con `+` non si può unire un testo e un numero (`4`).
+Suggerimento: Metti il valore dentro il testo tra graffe, `{4}`: `scrivi("3{4}")`.</code></pre></figure>
+<p>Leo non converte i tipi di nascosto. <strong>Soluzione:</strong> usa l'interpolazione (<code>"3{4}"</code>) oppure converti a mano (<code>"3" + testo(4)</code>). È la stessa idea vista nel Capitolo 4.</p>
+<h2 id="una-variabile-nuova-si-crea-con-variabile-il-refuso-protetto">«una variabile nuova si crea con <code>variabile</code>» — il refuso protetto</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-213" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-213" class="libro-pre"><code><span class="c-variabili">pnuti</span> <span class="c-operatori">=</span> <span class="c-numeri">3</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-214" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-214" class="libro-pre"><code>ErroreNome ...
+`pnuti` non esiste ancora: una variabile nuova si crea con `variabile`.</code></pre></figure>
+<p>Assegnare a un nome mai dichiarato è un errore apposta: così un refuso non crea di nascosto una variabile sbagliata. <strong>Soluzione:</strong> se è una variabile nuova, scrivi <code>variabile pnuti = 3</code>; se volevi <code>punti</code>, correggi il nome.</p>
+<h2 id="stampa-la-parola-invece-del-valore-le-parentesi-che-calcolano">«stampa la parola invece del valore» — le parentesi che calcolano</h2>
+<p>Questo non dà errore, e proprio per questo inganna:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-215" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-215" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">12</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">totale</span>        <span class="c-commenti"># stampa la parola: totale</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">totale</span><span class="c-punteggiatura">)</span>       <span class="c-commenti"># stampa il valore: 12</span></code></pre></figure>
+<p><code>scrivi</code> senza parentesi tratta ciò che segue come testo letterale. <strong>Soluzione:</strong> usa le parentesi <code>scrivi(totale)</code> o l'interpolazione <code>scrivi "Il totale è {totale}"</code>.</p>
+<h2 id="indice-fuori-dalla-lista">«indice fuori dalla lista»</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-216" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-216" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">l</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">l</span><span class="c-punteggiatura">[</span><span class="c-numeri">5</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-217" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-217" class="libro-pre"><code>ErroreIndice ...
+L'indice 5 è fuori dalla lista: gli indici vanno da 0 a 2.</code></pre></figure>
+<p>Gli indici partono da 0, quindi una lista di 3 elementi ha indici 0, 1, 2. <strong>Soluzione:</strong> controlla con <code>lunghezza(l)</code> prima di indicizzare, o usa un indice valido. Ricorda che le <em>fette</em> (<code>l[0..100]</code>) invece non danno errore: si accostano ai limiti.</p>
+<h2 id="la-chiave-non-è-nel-dizionario">«la chiave non è nel dizionario»</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-218" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-218" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">d</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"a"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1</span><span class="c-punteggiatura">}</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">d</span><span class="c-punteggiatura">[</span><span class="c-testi">"b"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-219" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-219" class="libro-pre"><code>ErroreChiave ...
+La chiave "b" non è nel dizionario.
+Suggerimento: Usa `.prendi(chiave, predefinito)` o controlla con `.ha(chiave)`.</code></pre></figure>
+<p><strong>Soluzione:</strong> usa <code>d.prendi("b", valore_di_riserva)</code> quando la chiave potrebbe mancare, oppure controlla con <code>d.ha("b")</code>.</p>
+<h2 id="la-condizione-deve-essere-vero-o-falso">«la condizione deve essere vero o falso»</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-220" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-220" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">l</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span>
+<span class="c-flusso">se</span> <span class="c-variabili">l</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"x"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-221" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-221" class="libro-pre"><code>ErroreTipo ...
+La condizione di `se` deve essere `vero` o `falso`, non un valore di tipo `lista`.
+Suggerimento: Per controllare se non è vuoto scrivi `se non vuota(...)`.</code></pre></figure>
+<p>In <code>se</code> e <code>mentre</code> Leo vuole una condizione vera o falsa, non «qualcosa che assomiglia al vero». <strong>Soluzione:</strong> scrivi <code>se non vuota(l)</code> per «se la lista non è vuota».</p>
+<h2 id="divisione-per-zero">«divisione per zero»</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-222" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-222" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span> <span class="c-operatori">/</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-223" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-223" class="libro-pre"><code>ErroreDivisione ...
+Divisione per zero.</code></pre></figure>
+<p><strong>Soluzione:</strong> controlla che il divisore non sia zero prima di dividere, oppure racchiudi l'operazione in un <code>prova</code>/<code>cattura ErroreDivisione</code>.</p>
+<h2 id="una-strategia-generale">Una strategia generale</h2>
+<p>Quando incontri un errore che non capisci:</p>
+<ol><li><strong>Leggi il tipo e la riga.</strong> Leo ti dice esattamente dove guardare.</li><li><strong>Leggi la spiegazione e il suggerimento.</strong> Molto spesso contengono già la soluzione, o persino la riga corretta.</li><li><strong>Guarda la riga <em>sopra</em>.</strong> Alcuni errori (parentesi, <code>fine</code>) si manifestano una riga dopo la vera causa.</li><li><strong>Semplifica.</strong> Se non capisci, togli pezzi finché l'errore non sparisce: l'ultimo pezzo tolto era il colpevole.</li><li><strong>Prova in piccolo.</strong> Apri il REPL (<code>leo</code>) e ricrea il problema in una riga.</li></ol>
+<p>Gli strumenti <code>leo controlla</code> (controlli statici senza eseguire) e <code>leo formatta</code> (riscrive nella forma canonica) sono due alleati preziosi per scovare i problemi prima ancora di lanciare il programma.</p>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="A_riferimento_sintassi.html"><span>Indietro</span><strong>A — Riferimento rapido della sintassi</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="C_confronto_python.html"><span>Avanti</span><strong>C — Un confronto onesto con Python</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

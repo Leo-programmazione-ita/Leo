@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 13 — File e cartelle — Leo, il manuale</title>
+<meta name="description" content="I programmi visti finora dimenticano tutto quando finiscono: i dati vivono in memoria e svaniscono alla chiusura. Per ricordare tra un&#x27;esecuzione e…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/13_file_cartelle.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/13_file_cartelle.html">
+<meta property="og:title" content="Capitolo 13 — File e cartelle — Leo, il manuale">
+<meta property="og:description" content="I programmi visti finora dimenticano tutto quando finiscono: i dati vivono in memoria e svaniscono alla chiusura. Per ricordare tra un&#x27;esecuzione e…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html" aria-current="page">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte III — Organizzare</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#leggere-e-scrivere-testo">Leggere e scrivere testo</a></li><li><a href="#json-e-csv-dati-strutturati">JSON e CSV: dati strutturati</a></li><li><a href="#lavorare-con-le-cartelle">Lavorare con le cartelle</a></li><li><a href="#un-esempio-che-mette-tutto-insieme">Un esempio che mette tutto insieme</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 13 — File e cartelle</h1>
+<p>I programmi visti finora dimenticano tutto quando finiscono: i dati vivono in memoria e svaniscono alla chiusura. Per <em>ricordare</em> tra un'esecuzione e l'altra — salvare una lista di cose da fare, leggere un file di configurazione, produrre un rapporto — bisogna scrivere su disco. Leo rende l'operazione diretta, con qualche attenzione in più che ti risparmia grattacapi.</p>
+<p>Una nota prima di cominciare: i percorsi relativi (<code>"nota.txt"</code>) partono dalla cartella da cui lanci il programma. Le cartelle si separano con la barra <code>/</code>, anche su Windows.</p>
+<h2 id="leggere-e-scrivere-testo">Leggere e scrivere testo</h2>
+<p>Le due operazioni fondamentali sono scrivere un testo in un file e rileggerlo:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-134" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-134" class="libro-pre"><code><span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"nota.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Prima riga\nSeconda riga"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">aggiungi_a_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"nota.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Terza riga"</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">contenuto</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"nota.txt"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"--- contenuto ---"</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">contenuto</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"--- righe ---"</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">riga</span> <span class="c-logici">in</span> <span class="c-libreria">leggi_righe</span><span class="c-punteggiatura">(</span><span class="c-testi">"nota.txt"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"&gt; </span><span class="c-interpolazione">{</span><span class="c-variabili">riga</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Esiste nota.txt? </span><span class="c-interpolazione">{</span><span class="c-libreria">esiste</span><span class="c-punteggiatura">(</span><span class="c-testi">"nota.txt"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Esiste manca.txt? </span><span class="c-interpolazione">{</span><span class="c-libreria">esiste</span><span class="c-punteggiatura">(</span><span class="c-testi">"manca.txt"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-135" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-135" class="libro-pre"><code>--- contenuto ---
+Prima riga
+Seconda riga
+Terza riga
+
+--- righe ---
+&gt; Prima riga
+&gt; Seconda riga
+&gt; Terza riga
+Esiste nota.txt? vero
+Esiste manca.txt? falso</code></pre></figure>
+<p><code>scrivi_file(percorso, testo)</code> crea il file (o ne sostituisce il contenuto, se esiste già). <code>aggiungi_a_file(percorso, testo)</code> aggiunge in fondo senza cancellare — comodo per un registro che cresce nel tempo — e va a capo da sé. <code>leggi_file(percorso)</code> restituisce tutto il contenuto come un unico testo; <code>leggi_righe(percorso)</code> lo dà invece come lista di righe, già senza i caratteri di a-capo, perfetto per scorrerle con <code>per ogni</code>. Infine <code>esiste(percorso)</code> controlla se un file (o una cartella) c'è prima di toccarlo.</p>
+<p>Dietro questa semplicità c'è parecchia cura. <code>leggi_file</code> riconosce da solo la codifica del testo (UTF-8, i formati Unicode del Blocco note, la codifica di Excel su Windows) e normalizza gli a-capo di Windows. Se provi a leggere come testo un file che non lo è — un'immagine, un programma — ottieni un <code>ErroreFile</code> in italiano invece di caratteri illeggibili. E su Windows i nomi di file vietati vengono rifiutati con una spiegazione, prima ancora di aprire il file.</p>
+<h2 id="json-e-csv-dati-strutturati">JSON e CSV: dati strutturati</h2>
+<p>Il testo libero va bene per le note; per i dati <em>strutturati</em> — liste di dizionari, tabelle — ci sono formati dedicati, e Leo li legge e scrive con una riga. Il <strong>JSON</strong> è lo standard per scambiare dati tra programmi:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-136" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-136" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">persone</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"eta"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">36</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Marco"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"eta"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">29</span><span class="c-punteggiatura">}</span>
+<span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi_json</span><span class="c-punteggiatura">(</span><span class="c-testi">"persone.json"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">persone</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">lette</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_json</span><span class="c-punteggiatura">(</span><span class="c-testi">"persone.json"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">p</span> <span class="c-logici">in</span> <span class="c-variabili">lette</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">p</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> ha </span><span class="c-interpolazione">{</span><span class="c-variabili">p</span><span class="c-punteggiatura">[</span><span class="c-testi">"eta"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> anni"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-137" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-137" class="libro-pre"><code>Ada ha 36 anni
+Marco ha 29 anni</code></pre></figure>
+<p><code>scrivi_json</code> trasforma una struttura Leo (liste, dizionari, numeri, testi) in un file JSON ben formattato, e <code>leggi_json</code> fa il percorso inverso, restituendo di nuovo liste e dizionari pronti all'uso. Il bello è che il dato che rileggi è <em>identico</em> a quello che hai salvato: niente conversioni manuali.</p>
+<p>Per le tabelle in stile foglio di calcolo c'è il <strong>CSV</strong>, che Excel e gli altri programmi d'ufficio capiscono:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-138" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-138" class="libro-pre"><code><span class="c-libreria">scrivi_tabella</span><span class="c-punteggiatura">(</span><span class="c-testi">"persone.csv"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">persone</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">leggi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"persone.csv"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-139" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-139" class="libro-pre"><code>nome,eta
+Ada,36
+Marco,29</code></pre></figure>
+<p><code>scrivi_tabella</code> prende una lista di dizionari e ne fa un CSV, mettendo in cima i nomi delle colonne. C'è anche <code>leggi_tabella</code>, che fa il contrario e indovina da solo il separatore (virgola, punto e virgola o tabulazione). Vedremo nel tour della libreria che esiste anche un tipo <code>tabella</code> più potente, con filtri, ordinamenti e raggruppamenti.</p>
+<h2 id="lavorare-con-le-cartelle">Lavorare con le cartelle</h2>
+<p>Oltre ai singoli file, puoi creare cartelle ed elencarne il contenuto:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-140" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-140" class="libro-pre"><code><span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-testi">"sotto"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"sotto/a.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"a"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"sotto/b.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"b"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"sotto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-141" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-141" class="libro-pre"><code>["a.txt", "b.txt"]</code></pre></figure>
+<p><code>crea_cartella</code> crea la cartella (e quelle intermedie, se nel percorso ce ne sono di mancanti). <code>elenca_file(cartella)</code> restituisce i nomi dei file in ordine alfabetico; puoi anche filtrarli per estensione. C'è il gemello <code>elenca_cartelle</code> per le sottocartelle. Con questi mattoni puoi scrivere programmi che riordinano una cartella, elaborano tutti i file di un certo tipo o costruiscono un indice.</p>
+<h2 id="un-esempio-che-mette-tutto-insieme">Un esempio che mette tutto insieme</h2>
+<p>Pensa a un piccolo diario: a ogni esecuzione aggiunge una riga con la data e un pensiero, e poi mostra tutto quello che hai scritto finora. Scrivere, aggiungere, rileggere e scorrere: con <code>aggiungi_a_file</code> e <code>leggi_righe</code> lo costruisci in pochissime righe. Questo è il momento in cui i tuoi programmi smettono di essere esercizi e cominciano a <em>servire a qualcosa</em>, perché ricordano.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Scrivi un programma «diario» che chiede un pensiero all'utente, lo aggiunge a un file con la data di oggi (usa <code>oggi()</code>), poi stampa tutte le righe scritte finora.</li><li>Salva in JSON una piccola rubrica (nome, telefono, email per ogni contatto), poi scrivi un secondo programma che la rilegge e la stampa ordinata per nome.</li><li>Scrivi un programma che crea una cartella <code>backup</code>, vi copia dentro il contenuto di un file di testo esistente, e conferma stampando l'elenco dei file nella cartella.</li></ol>
+<hr>
+<p>Con questo si chiude la Parte III. Sai organizzare il codice in oggetti e moduli, e far sì che i tuoi programmi ricordino i dati su disco. Nella Parte IV alziamo il tiro: parallelismo, sequenze pigre e il grande catalogo della libreria.</p>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="12_moduli.html"><span>Indietro</span><strong>Dividere in moduli</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="14_parallelismo.html"><span>Avanti</span><strong>Fare più cose insieme</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

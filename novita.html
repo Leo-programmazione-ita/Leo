@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novità di Leo — gli ultimi aggiornamenti</title>
+<meta name="description" content="Le novità di Leo: comandi senza parentesi, Leo scrive con te, nuove aree della libreria, galleria dei giochi, app Android ed exe con un comando, sicurezza, VS Code.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/novita.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/novita.html">
+<meta property="og:title" content="Novità di Leo — gli ultimi aggiornamenti">
+<meta property="og:description" content="Le novità di Leo: comandi senza parentesi, Leo scrive con te, nuove aree della libreria, galleria dei giochi, app Android ed exe con un comando, sicurezza, VS Code.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="stylesheet" href="css/stile.css">
+<link rel="stylesheet" href="css/manuale.css">
+<link rel="stylesheet" href="css/riferimento.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+<script src="js/riferimento.js" defer></script>
+</head>
+<body class="pagina-riferimento pagina-novita">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="novita.html" aria-current="page">Novità</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<main id="contenuto">
+<section class="testa-pagina nv-testa">
+  <div class="contenitore stretto">
+    <p class="sopratitolo">Novità</p>
+    <h1>Che cosa c'è di nuovo in Leo</h1>
+    <p class="introduzione">Gli ultimi aggiornamenti del linguaggio, della libreria, di Leo Studio e dell'app per il telefono. Ogni voce porta alla pagina che la spiega.</p>
+  </div>
+</section>
+<div class="contenitore stretto nv-elenco">
+<section class="nv-mese" aria-labelledby="m-ottobre-2026"><h2 id="m-ottobre-2026">Ottobre 2026</h2><article class="nv-voce" id="comandi-senza-parentesi">
+  <div class="nv-testo">
+    <p class="nv-area">Linguaggio</p>
+    <h3>Comandi senza parentesi</h3>
+    <p class="nv-breve">Le parentesi vogliono dire «calcola». Un comando a inizio riga si scrive senza parentesi e quello che sta tra parentesi si calcola.</p>
+    <ul class="nv-punti"><li><code>stampa Ciao (nome), hai (anni + 1) anni</code> scrive il testo e calcola solo le parti tra parentesi.</li><li>La tartaruga, i colori e le attese con le unità: <code>avanti 100 passi</code>, <code>attendi 2 secondi</code>.</li><li>La forma classica <code>stampa("Ciao {nome}")</code> resta valida e identica.</li></ul>
+    <p class="nv-link"><a class="link-freccia" href="riferimento/linguaggio/comandi.html">La regola nel riferimento</a></p>
+  </div>
+  <div class="nv-codice"><figure class="m-codice"><div class="m-codice-barra"><span class="m-file">esempio.leo</span><span class="m-verificato" title="Questo esempio è stato controllato con Leo mentre il sito veniva preparato"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-testi">"Giulia"</span></span><span class="r"><span class="c-libreria">stampa</span> <span class="c-testi">Ciao </span><span class="c-interpolazione">(</span><span class="c-variabili">nome</span><span class="c-interpolazione">)</span><span class="c-testi">, benvenuta!</span></span></code></pre></figure></div>
+</article><article class="nv-voce" id="leo-scrive-con-te">
+  <div class="nv-testo">
+    <p class="nv-area">Editor</p>
+    <h3>Leo scrive con te</h3>
+    <p class="nv-breve">Nell'editor del telefono e in Leo Studio, accanto a ogni riga Leo dice in italiano che cosa ha capito e propone solo correzioni che funzionano.</p>
+    <ul class="nv-punti"><li>«Scrive: Ciao Giulia», «Ripete 5 volte quello che c'è sotto», «Attento: t è un testo, segreto è un numero».</li><li>Colori diversi per il testo e per le parti calcolate.</li><li>Il correttore non propone mai una riga che Leo non accetterebbe.</li></ul>
+    
+  </div>
+  
+</article><article class="nv-voce" id="libreria">
+  <div class="nv-testo">
+    <p class="nv-area">Libreria</p>
+    <h3>La libreria cresce: ufficio, tabelle, web, immagini, scienza</h3>
+    <p class="nv-breve">Nuove aree della libreria, tutte in italiano e già incluse: niente da scaricare.</p>
+    <ul class="nv-punti"><li>Documenti, fogli di calcolo e PDF; tabelle di dati con filtri e totali.</li><li>Web, database, rete, immagini, testo e lingua, scienza, dati binari, programmi.</li><li>Ogni funzione ha la sua voce nel riferimento, con gli esempi eseguiti.</li></ul>
+    <p class="nv-link"><a class="link-freccia" href="riferimento/libreria/index.html">Le aree della libreria</a></p>
+  </div>
+  
+</article><article class="nv-voce" id="riferimento">
+  <div class="nv-testo">
+    <p class="nv-area">Sito</p>
+    <h3>Il nuovo riferimento, generato dal codice</h3>
+    <p class="nv-breve">Una pagina per ogni concetto del linguaggio, ogni oggetto delle finestre e ogni area della libreria, con ricerca istantanea in tutto il sito.</p>
+    <ul class="nv-punti"><li>Si apre con il tasto / o con Ctrl+K da qualunque pagina, anche senza internet.</li><li>Ogni controllo ha la foto vera, l'esempio provato, proprietà, eventi e metodi.</li><li>Gli esempi della libreria sono eseguiti con Leo mentre il sito viene preparato.</li></ul>
+    <p class="nv-link"><a class="link-freccia" href="riferimento/index.html">Apri il riferimento</a></p>
+  </div>
+  
+</article><article class="nv-voce" id="da-python-a-leo">
+  <div class="nv-testo">
+    <p class="nv-area">Imparare</p>
+    <h3>Corso «Impara Leo»: il percorso Da Python a Leo</h3>
+    <p class="nv-breve">Otto lezioni per chi programma già: i costrutti di Python accanto a quelli di Leo, con esercizi verificati in automatico.</p>
+    <ul class="nv-punti"><li>Variabili, condizioni, cicli e comprensioni di lista; funzioni, valori predefiniti e funzioni anonime.</li><li>Eccezioni con <code>prova</code>, <code>cattura</code> e <code>lancia</code>; file, CSV e JSON con la libreria inclusa.</li><li>Sicurezza (impronte, password con scrypt, firme HMAC), finestre ed eventi, un'app completa da distribuire.</li><li>Tutto il corso ha ora un tono professionale, con esempi di lavoro; si segue con <code>leo impara</code> o nell'app.</li></ul>
+    <p class="nv-link"><a class="link-freccia" href="index.html#python">Leo e Python a confronto</a></p>
+  </div>
+  <div class="nv-codice"><figure class="m-codice"><div class="m-codice-barra"><span class="m-file">esempio.leo</span><span class="m-verificato" title="Questo esempio è stato controllato con Leo mentre il sito veniva preparato"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">prezzi</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">12.5</span><span class="c-punteggiatura">,</span> <span class="c-numeri">80</span><span class="c-punteggiatura">,</span> <span class="c-numeri">230</span><span class="c-punteggiatura">,</span> <span class="c-numeri">45</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1200</span><span class="c-punteggiatura">]</span></span><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">alti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-variabili">p</span> <span class="c-flusso">per ogni</span> <span class="c-variabili">p</span> <span class="c-logici">in</span> <span class="c-variabili">prezzi</span> <span class="c-flusso">se</span> <span class="c-variabili">p</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">50</span><span class="c-punteggiatura">]</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Totale: </span><span class="c-interpolazione">{</span><span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-variabili">alti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></span></code></pre></figure></div>
+</article><article class="nv-voce" id="giochi">
+  <div class="nv-testo">
+    <p class="nv-area">Giochi</p>
+    <h3>Galleria dei giochi</h3>
+    <p class="nv-breve">Migliaia di risorse pronte per i giochi (personaggi, nemici, oggetti, piastrelle, sfondi, suoni e musiche) con le loro licenze, e nuove dinamiche.</p>
+    
+    <p class="nv-link"><a class="link-freccia" href="riferimento/giochi/index.html">Gli oggetti da gioco</a></p>
+  </div>
+  
+</article><article class="nv-voce" id="sicurezza">
+  <div class="nv-testo">
+    <p class="nv-area">Sicurezza</p>
+    <h3>Permessi e firme</h3>
+    <p class="nv-breve">Un programma dichiara che cosa può fare (file, rete, fotocamera) e chi lo usa lo vede prima di eseguirlo; gli eseguibili si firmano con la firma digitale di Windows.</p>
+    
+    
+  </div>
+  
+</article><article class="nv-voce" id="vscode">
+  <div class="nv-testo">
+    <p class="nv-area">Strumenti</p>
+    <h3>Leo in Visual Studio Code</h3>
+    <p class="nv-breve">L'estensione per VS Code porta colori, completamento ed errori mentre scrivi, con gli stessi messaggi di Leo Studio.</p>
+    
+    
+  </div>
+  
+</article><article class="nv-voce" id="nero-e-rosso">
+  <div class="nv-testo">
+    <p class="nv-area">Aspetto</p>
+    <h3>Nero e rosso, su tutto</h3>
+    <p class="nv-breve">Il nuovo aspetto di Leo: nero e rosso di serie, tema chiaro nelle impostazioni, uguale su telefono, Leo Studio, installatore e sito.</p>
+    
+    
+  </div>
+  
+</article></section><section class="nv-mese" aria-labelledby="m-settembre-2026"><h2 id="m-settembre-2026">Settembre 2026</h2><article class="nv-voce" id="videoteca">
+  <div class="nv-testo">
+    <p class="nv-area">Imparare</p>
+    <h3>Videoteca con 97 video</h3>
+    <p class="nv-breve">Video brevi con i sottotitoli, divisi in percorsi: primi passi, finestre, telefono, hardware, effetti, trucchi in un minuto ed errori comuni.</p>
+    
+    <p class="nv-link"><a class="link-freccia" href="video.html">Apri la videoteca</a></p>
+  </div>
+  
+</article><article class="nv-voce" id="corso">
+  <div class="nv-testo">
+    <p class="nv-area">App Android</p>
+    <h3>Il corso «Impara Leo» nell'app</h3>
+    <p class="nv-breve">Le lezioni di <code>leo impara</code> anche sul telefono, con gli esercizi da provare subito.</p>
+    
+    
+  </div>
+  
+</article><article class="nv-voce" id="leggeri">
+  <div class="nv-testo">
+    <p class="nv-area">Distribuzione</p>
+    <h3>Eseguibili e app più leggeri e veloci</h3>
+    <p class="nv-breve">Gli .exe per Windows e gli APK creati con Leo pesano meno e si avviano prima.</p>
+    
+    
+  </div>
+  
+</article><article class="nv-voce" id="studio-telefono">
+  <div class="nv-testo">
+    <p class="nv-area">Leo Studio</p>
+    <h3>Leo Studio alla pari del telefono</h3>
+    <p class="nv-breve">App pronte, stile dell'app, sistemazione automatica degli oggetti, formato telefono e «Crea app Android» anche da Leo Studio.</p>
+    
+    
+  </div>
+  
+</article></section>
+</div>
+</main>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html" aria-current="page">Novità</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

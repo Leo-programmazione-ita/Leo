@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13. Leo sul telefono — Manuale di Leo</title>
+<meta name="description" content="L&#x27;app Leo per Android: scrivere ed eseguire programmi, creare app con finestre dai modelli pronti, il disegnatore, gli stili, l&#x27;hardware del telefono (bussola, sensori, fotocamera, voce), creare l&#x27;APK e la guida offline.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/telefono.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/telefono.html">
+<meta property="og:title" content="13. Leo sul telefono — Manuale di Leo">
+<meta property="og:description" content="L&#x27;app Leo per Android: scrivere ed eseguire programmi, creare app con finestre dai modelli pronti, il disegnatore, gli stili, l&#x27;hardware del telefono (bussola, sensori, fotocamera, voce), creare l&#x27;APK e la guida offline.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Leo sul telefono</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class="attuale"><a href="telefono.html" aria-current="page"><span class="m-n">13</span><span>Leo sul telefono</span></a><ol class="m-toc"><li><a href="#app" data-toc="app">L'app Leo per Android</a></li><li><a href="#programmi" data-toc="programmi">Scrivere ed eseguire un programma</a></li><li><a href="#app-finestre" data-toc="app-finestre">Un'app con le finestre</a></li><li><a href="#hardware" data-toc="hardware">L'hardware del telefono</a></li><li><a href="#apk" data-toc="apk">Creare l'app da installare (APK)</a></li><li><a href="#guida" data-toc="guida">Guida e sito, anche offline</a></li><li><a href="#differenze" data-toc="differenze">Che cosa cambia rispetto al PC</a></li></ol></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">13. Leo sul telefono</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"13. Leo sul telefono","item":"https://leoitalia.com/manuale/telefono.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">13</span> Sezione 13 di 15</p>
+        <h1>Leo sul telefono</h1>
+        <p class="m-sommario">Con l'app Leo per Android programmi direttamente dal telefono: scrivi ed esegui programmi, disegni app con finestre usando le dita, usi bussola, sensori, fotocamera e voce e trasformi il tuo lavoro in un'app da installare. Senza computer.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>7 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: base</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 esempi verificati</li>
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="app">L'app Leo per Android<a class="m-ancora" href="#app" aria-label="Collegamento a questa parte">#</a></h2>
+<p>L'app Leo contiene tutto quello che serve: il linguaggio (lo stesso del PC), gli esempi, il disegnatore di finestre e la creazione delle app. Funziona su <strong>Android 7.0 e successivi</strong>, senza account e senza computer. Dalla schermata iniziale, <em>I miei programmi</em>, hai tre strade:</p>
+<ul class="m-spunte">
+  <li><strong>Nuovo programma</strong>: un programma di testo, con <code>stampa</code> e <code>chiedi</code>, da scrivere ed eseguire subito;</li>
+  <li><strong>Nuova app con finestre</strong>: un'app con pulsanti, caselle ed elenchi, da disegnare con le dita;</li>
+  <li><strong>Guida e sito</strong>: questo manuale, gli esempi pronti e il sito di Leo, <strong>anche senza internet</strong>.</li>
+</ul>
+<p>Sotto trovi i programmi recenti (con la ricerca) e gli <strong>esempi</strong>: toccane uno per aprirlo. Tenendo premuto un programma compaiono le altre azioni: rinomina, duplica, condividi, elimina, crea app Android.</p>
+
+<h2 id="programmi">Scrivere ed eseguire un programma<a class="m-ancora" href="#programmi" aria-label="Collegamento a questa parte">#</a></h2>
+<p>L'editor colora il codice come Leo Studio e numera le righe. Sopra la tastiera ci sono <strong>due file di tasti</strong>: i simboli che sulla tastiera del telefono sono scomodi (<code>( ) " = : [ ]</code>…) e le parole di Leo più usate (<code>stampa</code>, <code>variabile</code>, <code>se</code>, <code>allora</code>, <code>fine</code>…). Il programma si salva da solo.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">saluto.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-libreria">chiedi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Come ti chiami? "</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">ripeti</span> <span class="c-numeri">3</span> <span class="c-flusso">volte</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Benvenuto in Leo"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Uscita</span><pre>Come ti chiami? <span class="m-risposta">Giulia</span>
+Ciao, Giulia!
+Benvenuto in Leo
+Benvenuto in Leo
+Benvenuto in Leo</pre></div></figure>
+<p>Tocca <strong>Esegui</strong>: l'uscita compare in un pannello che sale dal basso; quando il programma chiede qualcosa, rispondi nella casella in fondo. Se c'è un errore, Leo lo spiega in italiano, ti propone la <strong>riga corretta</strong> e con <strong>Correggi</strong> la sistema al posto tuo; <strong>Vai alla riga</strong> ti porta dove serve.</p>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">La guida rapida</p><p>In <em>Impostazioni</em> (l'ingranaggio in alto) trovi la <strong>guida rapida</strong> delle parole di Leo, con un esempio per ognuna, e la dimensione del carattere dell'editor.</p></div></aside>
+
+<h2 id="app-finestre">Un'app con le finestre<a class="m-ancora" href="#app-finestre" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Tocca <strong>Nuova app con finestre</strong> e scegli da cosa partire. Ogni modello è un'app completa e funzionante, con il suo codice già scritto: il modo più veloce per imparare è aprirne uno e cambiarlo.</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Modello</th><th>Che cosa fa</th></tr></thead>
+  <tbody>
+    <tr><td>Saluto</td><td>Una casella e un pulsante: il primo passo</td></tr>
+    <tr><td>Contatore</td><td>Un numero grande con +1, −1 e Azzera</td></tr>
+    <tr><td>Lista della spesa</td><td>Aggiungi, togli e svuota una lista</td></tr>
+    <tr><td>Timer da cucina</td><td>Conto alla rovescia con allarme (e il telefono vibra alla fine)</td></tr>
+    <tr><td>Quiz</td><td>Domande con tre risposte e i punti</td></tr>
+    <tr><td>Scheda dati</td><td>Codice fiscale, comune e IBAN che si controllano da soli</td></tr>
+    <tr><td>Pappagallo</td><td>Parli e il telefono ripete quello che hai detto</td></tr>
+    <tr><td>Bussola e livella</td><td>Bussola, livella a bolla e torcia del telefono</td></tr>
+  </tbody>
+</table></div>
+<p>Si apre il <strong>disegnatore</strong>: la finestra dentro una cornice da telefono, con gli oggetti che puoi toccare.</p>
+<ol class="m-passi">
+  <li><p><strong>Sposta e ridimensiona.</strong> Tocca un oggetto per sceglierlo, trascinalo, allargalo dalle maniglie. Le guide lo allineano agli altri; <em>Sistema gli oggetti da solo</em> mette in ordine tutta la finestra.</p></li>
+  <li><p><strong>Aggiungi un oggetto.</strong> Il pulsante in basso apre la tavolozza, divisa per schede: Base, Inserimento, Scelta, Contenitori, Telefono, Italia, Produttività e le altre.</p></li>
+  <li><p><strong>Cambia le proprietà.</strong> Nome, testo, posizione, dimensioni, colori, immagine: ogni oggetto ha le sue, in italiano.</p></li>
+  <li><p><strong>Dai lo stile.</strong> Il pannello <em>Stile</em> cambia tutti gli oggetti insieme: Leo, Notte, Oceano, Pastello, Neon, Prato, Classico.</p></li>
+  <li><p><strong>Scrivi il codice.</strong> <em>Codice</em> apre gli eventi della finestra. È lo stesso codice di Leo Studio: <code>quando PulsantePiu.clic fai</code> … <code>fine</code>.</p></li>
+  <li><p><strong>Prova.</strong> L'app parte a tutto schermo; la ✕ in alto la chiude e ti riporta al disegnatore.</p></li>
+</ol>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-controlli">Numero</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">conteggio</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsantePiu</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-variabili">conteggio</span> <span class="c-operatori">+</span> <span class="c-numeri">1</span></span><span class="r">    <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteMeno</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-variabili">conteggio</span> <span class="c-operatori">-</span> <span class="c-numeri">1</span></span><span class="r">    <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Numero.testo = "1"</pre></div></figure>
+
+<h2 id="hardware">L'hardware del telefono<a class="m-ancora" href="#hardware" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Nella scheda <strong>Telefono</strong> della tavolozza ci sono gli oggetti che usano il telefono vero:</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Oggetto</th><th>Che cosa fa</th><th>Evento principale</th></tr></thead>
+  <tbody>
+    <tr><td><code>Bussola</code></td><td>Bussola disegnata che gira con il telefono: <code>direzione</code> in gradi, <code>punto_cardinale</code> (N, NE, E…)</td><td><code>cambio</code></td></tr>
+    <tr><td><code>Livella</code></td><td>Livella a bolla: la bolla si sposta quando inclini il telefono</td><td><code>cambio</code></td></tr>
+    <tr><td><code>Vibrazione</code></td><td>Invisibile: <code>vibra(millisecondi)</code></td><td>—</td></tr>
+    <tr><td><code>Torcia</code></td><td>Invisibile: accende e spegne la luce del flash (<code>commuta()</code>, <code>accesa</code>)</td><td>—</td></tr>
+    <tr><td><code>Posizione</code></td><td>Invisibile: dove ti trovi, con il GPS</td><td><code>cambio</code></td></tr>
+    <tr><td><code>Batteria</code></td><td>Invisibile: quanta carica resta e se il telefono è in carica</td><td><code>cambio</code></td></tr>
+    <tr><td><code>Condivisione</code></td><td>Invisibile: manda un testo con WhatsApp, posta, messaggi…</td><td>—</td></tr>
+  </tbody>
+</table></div>
+<p>Funzionano sul telefono anche <code>Sensore</code> (accelerometro, giroscopio, bussola, magnetometro, luce, prossimità, pressione, passi, orientamento, gravità: <code>valore</code>, <code>x</code>, <code>y</code>, <code>z</code>), <code>Fotocamera</code>, <code>LettoreQR</code> (anche i codici a barre), <code>Dettatura</code>, <code>Voce</code>, <code>Suono</code> e <code>Notifica</code>, che fa comparire una vera notifica del telefono. Questo è il codice del modello <em>Bussola e livella</em>:</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">era_in_piano</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Bussola1</span><span class="c-punteggiatura">.</span><span class="c-eventi">cambio</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Stato</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Guardi verso </span><span class="c-interpolazione">{</span><span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"punto_cardinale"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Livella1</span><span class="c-punteggiatura">.</span><span class="c-eventi">cambio</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-commenti"># quando il telefono torna in piano fa un colpetto</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"in_piano"</span><span class="c-punteggiatura">]</span> <span class="c-logici">e</span> <span class="c-logici">non</span> <span class="c-variabili">era_in_piano</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-controlli">Vibrazione1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">vibra</span><span class="c-punteggiatura">(</span><span class="c-numeri">80</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r">    <span class="c-variabili">era_in_piano</span> <span class="c-operatori">=</span> <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"in_piano"</span><span class="c-punteggiatura">]</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteTorcia</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Torcia1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">commuta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-controlli">Torcia1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">accesa</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-controlli">PulsanteTorcia</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Spegni la torcia"</span></span><span class="r">    <span class="c-flusso">altrimenti</span></span><span class="r">        <span class="c-controlli">PulsanteTorcia</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Accendi la torcia"</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+<p>E con una <code>Dettatura</code> e una <code>Voce</code> il telefono ripete quello che dici:</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Dettatura1</span><span class="c-punteggiatura">.</span><span class="c-eventi">frase_riconosciuta</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Voce1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">leggi</span><span class="c-punteggiatura">(</span><span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"testo"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+<aside class="m-riquadro m-nota" role="note" aria-label="Nota"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Permessi</p><p>La prima volta il telefono chiede il permesso (fotocamera, microfono, posizione). Se la risposta è no, il programma riceve un errore spiegato in italiano e continua. Se il telefono non ha un sensore, il controllo lo scrive al posto del valore.</p></div></aside>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">E sul PC?</p><p>In Leo Studio gli oggetti della scheda <em>Telefono</em> ci sono lo stesso, per disegnare e provare: bussola e livella si muovono trascinandole con il mouse, la posizione è quella di Roma, la batteria è quella del portatile, la vibrazione è un bip e la condivisione copia il testo negli appunti.</p></div></aside>
+
+<h2 id="apk">Creare l'app da installare (APK)<a class="m-ancora" href="#apk" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Quando la tua app ti piace, menu <strong>⋯</strong> → <strong>Crea app Android</strong> (o tieni premuto il programma nell'elenco). Scegli il <strong>nome</strong>, l'<strong>icona</strong> (anche una tua immagine), il <strong>colore</strong> e lo <strong>sfondo</strong> chiaro o scuro, poi <strong>Crea</strong>. Alla fine puoi:</p>
+<ul class="m-spunte">
+  <li><strong>Installa su questo telefono</strong>: la prima volta Android chiede di consentire a Leo di installare app;</li>
+  <li><strong>Condividi l'app</strong>: mandi l'APK con WhatsApp, posta o Drive; chi lo riceve lo installa e l'app parte direttamente, senza Leo;</li>
+  <li><strong>Copia di sicurezza della chiave</strong>: la chiave con cui Leo firma le tue app.</li>
+</ul>
+<aside class="m-riquadro m-attenzione" role="note" aria-label="Attenzione"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Conserva la chiave</p><p>Per aggiornare un'app già installata serve la stessa chiave con cui l'hai creata. Fai la copia di sicurezza e tienila in un posto sicuro: se la perdi, per installare una nuova versione bisognerà prima disinstallare la vecchia.</p></div></aside>
+<p>Le app create sono <strong>un solo APK</strong> che va su tutti i telefoni Android. Anche dal PC si può creare l'APK di un programma, con <code>leo compila programma.leo --apk</code>.</p>
+
+<h2 id="guida">Guida e sito, anche offline<a class="m-ancora" href="#guida" aria-label="Collegamento a questa parte">#</a></h2>
+<p>La voce <strong>Guida e sito</strong> della schermata iniziale (e delle Impostazioni) apre dentro l'app il sito di Leo: questo manuale, i programmi pronti da copiare, le pagine sul telefono. I file sono nell'app, quindi funziona anche in aereo. Il tasto <strong>Indietro</strong> torna alla pagina precedente e, dalla prima, all'app; la casetta in alto torna all'inizio del sito, la ✕ chiude la guida.</p>
+<p>I <strong>video</strong> non sono dentro l'app, per tenerla leggera: con la rete si guardano dal sito, senza la rete la videoteca lo dice. I collegamenti verso altri siti, la posta e il telefono si aprono fuori dall'app. Anche Leo Studio ha la stessa voce, nel menu <em>Aiuto → Guida e sito di Leo</em>, che apre il sito nel browser del PC.</p>
+
+<h2 id="differenze">Che cosa cambia rispetto al PC<a class="m-ancora" href="#differenze" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Il linguaggio è lo stesso e i progetti con finestre di Leo Studio girano anche sul telefono: la finestra si adatta alla larghezza dello schermo e segue il tema chiaro o scuro. Alcune cose però esistono solo sul PC:</p>
+<ul class="m-spunte">
+  <li>i controlli per l'hardware del PC (<code>SchedaPico</code>, <code>Led</code>, <code>PulsanteFisico</code>, <code>PortaSeriale</code>…) e <code>Scena</code>, <code>Sprite</code>, <code>Fisica</code>: sul telefono compaiono come un riquadro che lo spiega;</li>
+  <li>le funzioni per Windows, le finestre di dialogo native e <code>apri_indirizzo_web</code>: se un programma le chiama, Leo lo dice con un errore chiaro (<em>non è disponibile su Android</em>);</li>
+  <li>la creazione dei file <code>.exe</code>, che si fa sul PC (vedi <a href="exe.html">Creare il .exe</a>).</li>
+</ul>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="exe.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">12</span>Creare il .exe e distribuire</span></a><a class="m-succ" href="licenza.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">14</span>Licenza e aggiornamenti</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

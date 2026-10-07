@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leo — il linguaggio di programmazione in italiano, sul PC e sul telefono</title>
+<meta name="description" content="Leo, il linguaggio di programmazione professionale in italiano: potente come un linguaggio professionale, facile come l'italiano. Automazioni, dati, sicurezza, giochi e app, con .exe per Windows e app Android.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/">
+<meta property="og:title" content="Leo — il linguaggio di programmazione in italiano">
+<meta property="og:description" content="Potente come un linguaggio professionale, facile come l&#x27;italiano. Automazioni, dati, sicurezza, giochi e app: sul PC con Leo Studio e sul telefono con l&#x27;app Leo per Android.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="stylesheet" href="css/stile.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"SoftwareApplication","name":"Leo Studio","applicationCategory":"DeveloperApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"0.1.0","inLanguage":"it","url":"https://leoitalia.com/","image":"https://leoitalia.com/img/og.png","downloadUrl":"https://leoitalia.com/scarica.html","description":"Linguaggio di programmazione in italiano con l'ambiente visuale Leo Studio: 914 funzioni, classi con ereditarietà, slicing, sequenze pigre, sicurezza informatica, finestre, giochi, automazioni e creazione dei file .exe.","featureList":"914 funzioni e oltre 300 metodi in italiano, classi con ereditarietà, slicing, sequenze pigre, sicurezza (SHA-256, HMAC, scrypt), finestre e giochi, creazione di .exe e APK","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Rosario Zappalà"},"publisher":{"@type":"Person","name":"Rosario Zappalà"}},
+{"@type":"MobileApplication","name":"Leo per Android","applicationCategory":"DeveloperApplication","operatingSystem":"Android 7.0 o successivo","softwareVersion":"0.1.0","inLanguage":"it","url":"https://leoitalia.com/telefono.html","description":"Scrivi ed esegui programmi Leo in italiano sul telefono, disegna app con finestre e crea l'APK da installare.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Rosario Zappalà"}},
+{"@type":"WebSite","name":"Leo","url":"https://leoitalia.com/","inLanguage":"it"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Leo è adatto a progetti professionali?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Leo ha moduli, eccezioni, funzioni come valori, classi con ereditarietà, verifiche automatiche, una libreria di oltre 900 funzioni (file, dati, web, database, sicurezza, Windows) e crea eseguibili per Windows e app Android. Gira su Python e ne eredita la solidità; i messaggi d'errore danno posizione, causa e riga corretta. Dove Python resta più adatto (calcolo numerico pesante, ecosistema di pacchetti) lo diciamo nel confronto."}}, {"@type": "Question", "name": "Serve sapere l'inglese o avere già programmato?", "acceptedAnswer": {"@type": "Answer", "text": "No. Parole chiave, messaggi d'errore, manuale e video sono in italiano: chi comincia legge il codice come una frase. Chi programma già ritrova i concetti di sempre (variabili, cicli, funzioni, eccezioni, moduli, eventi) e nel corso «Impara Leo» c'è il percorso «Da Python a Leo»."}}, {"@type": "Question", "name": "Su quali dispositivi funziona?", "acceptedAnswer": {"@type": "Answer", "text": "Leo Studio e il programma di installazione sono per Windows 10 e 11 a 64 bit. L'app Leo per il telefono funziona su Android 7.0 e successivi. Non servono altri programmi: Python e le librerie sono già inclusi."}}, {"@type": "Question", "name": "Quanto costa?", "acceptedAnswer": {"@type": "Answer", "text": "Questa versione è gratuita e senza scadenza: niente chiave, niente carta di credito. Gli aggiornamenti futuri saranno a pagamento (un acquisto unico per versione), ma chi tiene questa versione resta gratis per sempre. Tutti i dettagli nella pagina Licenza."}}, {"@type": "Question", "name": "Posso creare app per il telefono?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Dall'app Leo disegni la finestra, scrivi il codice e con «Crea app Android» ottieni un APK con nome, icona e colore che scegli tu, da installare sul tuo telefono o da condividere. Un solo APK va su tutti i telefoni."}}, {"@type": "Question", "name": "I programmi che creo sono miei?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. I programmi scritti in Leo, gli .exe e le app create appartengono ai loro autori e continuano a funzionare sempre, anche senza Leo Studio installato."}}, {"@type": "Question", "name": "Il sito funziona senza internet?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Il sito è dentro l'app Leo e dentro Leo Studio («Guida e sito»): manuale, esempi e pagine si aprono anche offline. Solo i video che non sono sul dispositivo e i download hanno bisogno della rete."}}, {"@type": "Question", "name": "Va bene per le scuole superiori e l'università?", "acceptedAnswer": {"@type": "Answer", "text": "Sì: niente barriera della lingua, errori che spiegano la causa e propongono la correzione, esempi eseguiti, manuale, corso e video divisi per livello. Gli stessi concetti valgono in Python, Java e C, quindi il passaggio agli altri linguaggi è naturale. Per le classi intere trovi i contatti nella pagina della licenza."}}]}
+</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+<script src="js/video.js" defer></script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="novita.html">Novità</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="home">
+
+<!-- =================================================================== APERTURA: Leo scrive con te -->
+<section class="h-apertura" aria-labelledby="titolo-hero">
+  <div class="contenitore h-apertura-griglia">
+    <div class="h-apertura-testo">
+      <p class="h-sopra"><span class="h-punto" aria-hidden="true"></span>Per chi comincia e per chi programma già</p>
+      <h1 id="titolo-hero">Il linguaggio di programmazione in italiano.<br><span class="h-grigio">Potente come un professionista. Facile come parlare.</span></h1>
+      <p class="h-sottotitolo">Un linguaggio completo e moderno: <strong>classi con ereditarietà</strong>, slicing, sequenze pigre e <strong><!--conta:funzioni-tonde-->1200<!--/conta--> funzioni e metodi inclusi</strong> — file, dati, web, database, sicurezza, finestre e giochi. Con un comando il programma diventa un <strong>.exe</strong> per Windows o un'<strong>app Android</strong>.</p>
+      <div class="azioni">
+        <a class="pulsante grande" href="scarica.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+          Scarica Leo
+        </a>
+        <a class="pulsante grande secondario" href="prova.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+          Prova nel browser
+        </a>
+      </div>
+      <ul class="h-note">
+        <li>Windows 10 e 11</li><li>App per Android</li><li>Questa versione gratis per sempre</li><li>Funziona senza internet</li>
+      </ul>
+    </div>
+
+    <figure class="h-editor" data-scrive aria-label="Esempio: Leo scrive con te. Accanto a ogni riga di codice Leo dice che cosa ha capito.">
+      <div class="h-editor-barra"><i></i><i></i><i></i><span>fatture.leo</span><span class="h-editor-stato"><span class="h-punto" aria-hidden="true"></span>Leo scrive con te</span></div>
+      <ol class="h-righe">
+        <li><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">file</span> <span class="c-operatori">=</span> <span class="c-libreria">chiedi</span> <span class="h-pastiglia-testo">File da analizzare:</span></code><span class="h-capito">Chiede il nome del file e lo mette in <b>file</b></span></li>
+        <li><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">fatture</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_tabella</span><span class="c-punteggiatura">(</span><span class="c-variabili">file</span><span class="c-punteggiatura">)</span></code><span class="h-capito">Legge il CSV: ogni riga diventa un dizionario</span></li>
+        <li><code><span class="c-flusso">per ogni</span> <span class="c-variabili">f</span> <span class="c-logici">in</span> <span class="c-variabili">fatture</span></code><span class="h-capito">Ripete per ogni fattura</span></li>
+        <li><code>    <span class="c-flusso">se</span> <span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"importo"</span><span class="c-punteggiatura">]</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">1000</span></code><span class="h-capito">Solo se l'importo supera 1000</span></li>
+        <li><code>        <span class="c-libreria">stampa</span> <span class="h-pastiglia-testo">Cliente</span> <span class="h-pastiglia-calcolo">(<span class="c-variabili">f</span>[<span class="c-testi">"cliente"</span>])</span><span class="h-pastiglia-testo">:</span> <span class="h-pastiglia-calcolo">(<span class="c-variabili">f</span>[<span class="c-testi">"importo"</span>])</span> <span class="h-pastiglia-testo">euro</span></code><span class="h-capito">Scrive: Cliente Verdi: 3100 euro</span></li>
+        <li><code>    <span class="c-flusso">fine</span></code><span class="h-capito">Chiude il blocco di <b>se</b></span></li>
+        <li><code><span class="c-flusso">fine</span></code><span class="h-capito">Chiude il blocco di <b>per ogni</b></span></li>
+      </ol>
+      <div class="h-editor-uscita">
+        <pre>File da analizzare: <u>fatture.csv</u>
+Cliente Bianchi Spa: 1250 euro
+Cliente Verdi: 3100 euro</pre>
+      </div>
+      <figcaption class="solo-lettori">Il programma chiede il nome di un file CSV, legge le fatture e scrive i clienti con un importo superiore a 1000 euro. Le parentesi tonde indicano le parti da calcolare; il resto è testo.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =================================================================== PER CHI E' -->
+<section class="h-sezione" id="per-chi" aria-labelledby="titolo-per-chi">
+  <div class="contenitore">
+    <div class="h-testa-sezione">
+      <h2 id="titolo-per-chi">Per chi fa sul serio.</h2>
+      <p>Leo è uno strumento di lavoro: la facilità dell'italiano non toglie nulla alla potenza. Lo si legge come una frase, ma dentro ci sono un linguaggio completo, una libreria professionale e la distribuzione su PC e telefono.</p>
+    </div>
+    <div class="h-pubblico">
+      <article class="h-tessera">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 3 12l5 6M16 6l5 6-5 6"/></svg>
+        <h3>Programmatori</h3>
+        <p>Classi con ereditarietà, moduli, eccezioni, funzioni come valori, comprensioni di lista, slicing, sequenze pigre, esecuzione in parallelo, verifiche automatiche, riga di comando ed estensione per VS Code. Chi viene da Python ritrova gli stessi concetti, con parole italiane e messaggi d'errore precisi.</p>
+        <a class="link-freccia" href="riferimento/linguaggio/index.html">Il linguaggio, voce per voce</a>
+      </article>
+      <article class="h-tessera">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+        <h3>Professionisti e aziende</h3>
+        <p>Automazioni d'ufficio e strumenti interni: tabelle CSV, documenti, file e cartelle, web, database, Windows. Con le finestre disegnate in Leo Studio e un .exe da distribuire ai colleghi.</p>
+        <a class="link-freccia" href="riferimento/libreria/index.html">Le aree della libreria</a>
+      </article>
+      <article class="h-tessera">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6z"/><path d="M9.5 11.5V10a2.5 2.5 0 0 1 5 0v1.5M9 11.5h6v4H9z"/></svg>
+        <h3>Sicurezza informatica</h3>
+        <p>Impronte SHA-256, HMAC, password con scrypt, numeri casuali crittografici, Base64 ed esadecimale, confronti a tempo costante. Programmi con permessi dichiarati ed eseguibili firmati. Per usi legittimi e difensivi.</p>
+        <a class="link-freccia" href="riferimento/libreria/sicurezza.html">La libreria di sicurezza</a>
+      </article>
+      <article class="h-tessera">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4"/><circle cx="16" cy="11.5" r="1"/><circle cx="18" cy="14" r="1"/></svg>
+        <h3>Sviluppo di giochi</h3>
+        <p>Scena, sprite, fisica, collisioni, joystick e punteggio come oggetti delle finestre, con una galleria di migliaia di risorse pronte e le loro licenze.</p>
+        <a class="link-freccia" href="riferimento/giochi/index.html">Gli oggetti da gioco</a>
+      </article>
+      <article class="h-tessera">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <h3>App per PC e telefono</h3>
+        <p><!--conta:controlli-->146<!--/conta--> controlli, un disegnatore visuale e lo stesso codice su Windows e Android. Sensori, fotocamera, GPS e notifiche del telefono, con le stesse parole di sempre.</p>
+        <a class="link-freccia" href="telefono.html">Leo sul telefono</a>
+      </article>
+      <article class="h-tessera">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9 12 4l10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg>
+        <h3>Scuole superiori e università</h3>
+        <p>Informatica senza la barriera dell'inglese: errori che spiegano la causa, esempi eseguiti, un corso con esercizi verificati. I concetti sono quelli di ogni linguaggio: il passaggio a Python, C o Java è immediato.</p>
+        <a class="link-freccia" href="manuale/index.html">Il manuale</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== COSA RENDE LEO DIVERSO -->
+<section class="h-sezione" id="perche" aria-labelledby="titolo-perche">
+  <div class="contenitore">
+    <div class="h-testa-sezione">
+      <h2 id="titolo-perche">Che cosa ha Leo che gli altri non hanno.</h2>
+      <p>Facile da leggere come una frase, potente come un linguaggio professionale. Tutto quello che serve è già dentro: niente pacchetti da cercare, niente inglese da tradurre.</p>
+    </div>
+
+    <div class="h-mosaico">
+      <article class="h-tessera h-t-italiano">
+        <h3>In italiano, dalla prima parola all'ultimo messaggio d'errore</h3>
+        <p><code>se</code>, <code>ripeti</code>, <code>per ogni</code>, <code>funzione</code>, <code>prova</code>. E quando qualcosa non va, Leo spiega dove e perché, e propone la riga già corretta.</p>
+        <div class="finestra-codice h-errore">
+          <div class="barra"><i></i><i></i><i></i><span>Messaggio di Leo</span></div>
+<pre><span class="e-tipo">ErroreNome</span> alla riga 2, colonna 8 di saluto.leo
+
+<span class="e-num">    2 |</span> stampa(nme)
+<span class="e-num">      |</span>        <span class="e-car">^^^</span>
+
+`nme` non è definito.
+Suggerimento: forse intendevi `nome` (definito alla riga 1)?
+
+Riga corretta proposta:
+<span class="e-num">    2 |</span> <span class="e-ok">stampa(nome)</span></pre>
+        </div>
+      </article>
+
+      <article class="h-tessera h-t-parentesi">
+        <h3>Le parentesi vogliono dire «calcola»</h3>
+        <p>I comandi si scrivono senza parentesi; quello che sta tra parentesi si calcola.</p>
+        <dl class="h-regola">
+          <div><dt><code>stampa Ciao mondo!</code></dt><dd>Ciao mondo!</dd></div>
+          <div><dt><code>stampa Hai (anni + 1) anni</code></dt><dd>Hai 15 anni</dd></div>
+          <div><dt><code>stampa (3 + 4)</code></dt><dd>7</dd></div>
+        </dl>
+        <a class="link-freccia" href="riferimento/linguaggio/comandi.html">La regola completa</a>
+      </article>
+
+      <article class="h-tessera h-t-libreria">
+        <p class="h-numero"><!--conta:funzioni-tonde-->1200<!--/conta--><span>+</span></p>
+        <h3>funzioni e metodi inclusi, senza scaricare nulla</h3>
+        <ul class="h-aree">
+          <li><a href="riferimento/libreria/file.html">File e cartelle</a></li>
+          <li><a href="riferimento/libreria/testi.html">Testi</a></li>
+          <li><a href="riferimento/libreria/numeri.html">Numeri</a></li>
+          <li><a href="riferimento/libreria/tempo.html">Date e tempo</a></li>
+          <li><a href="riferimento/libreria/web.html">Web</a></li>
+          <li><a href="riferimento/libreria/database.html">Database</a></li>
+          <li><a href="riferimento/libreria/sicurezza.html">Sicurezza</a></li>
+          <li><a href="riferimento/libreria/grafici.html">Grafici</a></li>
+          <li><a href="riferimento/libreria/suoni.html">Suoni</a></li>
+          <li><a href="riferimento/libreria/windows.html">Windows</a></li>
+          <li><a href="riferimento/libreria/index.html">Tutte le aree</a></li>
+        </ul>
+      </article>
+
+      <article class="h-tessera h-t-compila">
+        <h3>Un .exe o un'app Android, con un comando</h3>
+        <p>Il programma diventa un eseguibile per Windows che si apre con un doppio clic, o un APK da installare su qualunque telefono. Anche con le finestre disegnate in Leo Studio o sul telefono.</p>
+        <div class="finestra-codice h-terminale">
+          <div class="barra"><i></i><i></i><i></i><span>Prompt dei comandi</span></div>
+<pre><span class="h-prompt">&gt;</span> leo compila gioco.leo
+  <span class="h-ok">Creato</span> gioco.exe
+<span class="h-prompt">&gt;</span> leo compila gioco --apk
+  <span class="h-ok">Creato</span> gioco.apk</pre>
+        </div>
+      </article>
+
+      <article class="h-tessera h-t-oggetti">
+        <p class="h-numero"><!--conta:controlli-->146<!--/conta--></p>
+        <h3>oggetti per le finestre</h3>
+        <p>Pulsanti, tabelle, grafici, mappe, codice fiscale e IBAN, bussola, fotocamera. Ognuno con la sua pagina, l'esempio e la foto.</p>
+        <a class="link-freccia" href="riferimento/finestre/index.html">Tutti gli oggetti</a>
+      </article>
+      <article class="h-tessera h-t-giochi">
+        <div class="h-t-giochi-testo">
+          <h3>Giochi, con una galleria pronta</h3>
+          <p>Scena, personaggi, fisica, collisioni, joystick e punteggio sono oggetti delle finestre. La galleria porta migliaia di risorse (personaggi, nemici, piastrelle, sfondi, suoni e musiche) e dinamiche pronte da usare.</p>
+          <a class="link-freccia" href="riferimento/giochi/index.html">Gli oggetti da gioco</a>
+        </div>
+        <div class="telefono piccolo" aria-hidden="true"><div class="schermo"><img src="img/app/giochi-390.webp" width="390" height="844" loading="lazy" decoding="async" alt=""></div></div>
+      </article>
+
+      <article class="h-tessera h-t-sicurezza">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>
+        <h3>Sicurezza: permessi chiari e firme</h3>
+        <p>Un programma dice che cosa può fare (file, rete, fotocamera) e chi lo usa lo vede prima. Gli eseguibili si firmano con la firma digitale di Windows.</p>
+      </article>
+
+      <article class="h-tessera h-t-editor">
+        <svg class="h-icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 3 12l5 6M16 6l5 6-5 6"/></svg>
+        <h3>Leo Studio, il telefono e VS Code</h3>
+        <p>Leo Studio per Windows con il disegnatore delle finestre, l'app Android con lo stesso motore, e l'estensione per Visual Studio Code con colori, completamento ed errori mentre scrivi.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== ESEMPI VIVI -->
+<section class="h-sezione h-scura" id="esempi" aria-labelledby="titolo-esempi">
+  <div class="contenitore">
+    <div class="h-testa-sezione">
+      <h2 id="titolo-esempi">Codice vero, eseguito.</h2>
+      <p>Questi programmi sono stati eseguiti con Leo mentre il sito veniva preparato: quello che vedi sotto il codice è l'uscita vera. Copiali, incollali, premi Esegui.</p>
+    </div>
+    <div class="schede-codice h-esempi" data-schede>
+      <div class="schede-codice-voci" role="tablist" aria-label="Esempi di codice">
+        <button role="tab" id="sc-1" aria-controls="sp-1" aria-selected="true">Dati da un file</button>
+        <button role="tab" id="sc-2" aria-controls="sp-2" aria-selected="false" tabindex="-1">Testi e date</button>
+        <button role="tab" id="sc-3" aria-controls="sp-3" aria-selected="false" tabindex="-1">Errori gestiti</button>
+        <button role="tab" id="sc-4" aria-controls="sp-4" aria-selected="false" tabindex="-1">Un'app con i pulsanti</button>
+      </div>
+      <div role="tabpanel" id="sp-1" aria-labelledby="sc-1" class="scheda-codice-pannello">
+<!--vivo:voti--><div class="finestra-codice"><div class="barra"><i></i><i></i><i></i><span>voti.leo</span><button class="copia" type="button" data-copia="cod-voti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+<pre class="codice" id="cod-voti"><code><span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"voti.csv"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"nome;voto\nAda;30\nBruno;27\nCarla;29\n"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">righe</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_tabella</span><span class="c-punteggiatura">(</span><span class="c-testi">"voti.csv"</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">voto</span><span class="c-punteggiatura">(</span><span class="c-parametri">r</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">]</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">r</span> <span class="c-logici">in</span> <span class="c-libreria">ordina_per</span><span class="c-punteggiatura">(</span><span class="c-variabili">righe</span><span class="c-punteggiatura">,</span> <span class="c-funzioni_utente">voto</span><span class="c-punteggiatura">,</span> decrescente <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Media: </span><span class="c-interpolazione">{</span><span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-libreria">media</span><span class="c-punteggiatura">(</span><span class="c-libreria">mappa</span><span class="c-punteggiatura">(</span><span class="c-variabili">righe</span><span class="c-punteggiatura">,</span> <span class="c-funzioni_utente">voto</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">Ada: 30
+Carla: 29
+Bruno: 27
+Media: 28.7</pre></div><!--/vivo-->
+      </div>
+      <div role="tabpanel" id="sp-2" aria-labelledby="sc-2" class="scheda-codice-pannello" hidden>
+<!--vivo:testi--><div class="finestra-codice"><div class="barra"><i></i><i></i><i></i><span>testi.leo</span><button class="copia" type="button" data-copia="cod-testi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+<pre class="codice" id="cod-testi"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">frase</span> <span class="c-operatori">=</span> <span class="c-testi">"  leo parla italiano  "</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">frase</span><span class="c-punteggiatura">.</span><span class="c-proprieta">pulisci</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">maiuscolo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">parole</span> <span class="c-operatori">=</span> <span class="c-testi">"rosso,verde,blu"</span><span class="c-punteggiatura">.</span><span class="c-proprieta">dividi</span><span class="c-punteggiatura">(</span><span class="c-testi">","</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">p</span> <span class="c-logici">in</span> <span class="c-variabili">parole</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"- </span><span class="c-interpolazione">{</span><span class="c-variabili">p</span><span class="c-interpolazione">}</span><span class="c-testi"> (</span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">p</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> lettere)"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">e_codice_fiscale</span><span class="c-punteggiatura">(</span><span class="c-testi">"RSSMRA80A01H501U"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">LEO PARLA ITALIANO
+- rosso (5 lettere)
+- verde (5 lettere)
+- blu (3 lettere)
+vero</pre></div><!--/vivo-->
+      </div>
+      <div role="tabpanel" id="sp-3" aria-labelledby="sc-3" class="scheda-codice-pannello" hidden>
+<!--vivo:errori--><div class="finestra-codice"><div class="barra"><i></i><i></i><i></i><span>conto.leo</span><button class="copia" type="button" data-copia="cod-errori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+<pre class="codice" id="cod-errori"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">preleva</span><span class="c-punteggiatura">(</span><span class="c-parametri">saldo</span><span class="c-punteggiatura">,</span> <span class="c-parametri">cifra</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-parametri">cifra</span> <span class="c-operatori">&gt;</span> <span class="c-parametri">saldo</span> <span class="c-flusso">allora</span>
+        <span class="c-errori">lancia</span> <span class="c-errori">ErroreValore</span><span class="c-punteggiatura">(</span><span class="c-testi">"Mancano </span><span class="c-interpolazione">{</span><span class="c-parametri">cifra</span> <span class="c-operatori">-</span> <span class="c-parametri">saldo</span><span class="c-interpolazione">}</span><span class="c-testi"> euro"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">saldo</span> <span class="c-operatori">-</span> <span class="c-parametri">cifra</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-flusso">per ogni</span> <span class="c-variabili">cifra</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">80</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-errori">prova</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Resta: </span><span class="c-interpolazione">{</span><span class="c-funzioni_utente">preleva</span><span class="c-punteggiatura">(</span><span class="c-numeri">50</span><span class="c-punteggiatura">,</span> <span class="c-variabili">cifra</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> euro"</span><span class="c-punteggiatura">)</span>
+    <span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Non si può: </span><span class="c-interpolazione">{</span><span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">messaggio</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Resta: 20 euro
+Non si può: Mancano 30 euro</pre></div><!--/vivo-->
+      </div>
+      <div role="tabpanel" id="sp-4" aria-labelledby="sc-4" class="scheda-codice-pannello" hidden>
+        <div class="codice-con-telefono">
+<!--vivo:contatore--><div class="finestra-codice"><div class="barra"><i></i><i></i><i></i><span>Contatore · Finestra1.leo</span><button class="copia" type="button" data-copia="cod-contatore"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="etichetta">Copia</span></button></div>
+<pre class="codice" id="cod-contatore"><code data-controlli="Numero PulsantePiu PulsanteMeno PulsanteAzzera" data-eventi="PulsantePiu.clic;PulsantePiu.clic;PulsanteMeno.clic" data-stampa="Numero.testo"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-controlli">Numero</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">conteggio</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsantePiu</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">conteggio</span> <span class="c-operatori">+=</span> <span class="c-numeri">1</span>
+    <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteMeno</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">conteggio</span> <span class="c-operatori">-=</span> <span class="c-numeri">1</span>
+    <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteAzzera</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+    <span class="c-funzioni_utente">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Numero.testo = "1"</pre></div><!--/vivo-->
+          <div class="telefono piccolo" aria-hidden="true"><div class="schermo"><img src="img/app/contatore-app-390.webp" width="390" height="844" loading="lazy" decoding="async" alt=""></div></div>
+        </div>
+        <p class="nota-codice">È il codice del modello <strong>Contatore</strong> dell'app Leo: la finestra la disegni con le dita, il codice dice cosa fa ogni pulsante. L'uscita qui sopra viene dai controlli simulati: due clic su +1 e uno su −1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== CONFRONTO CON PYTHON -->
+<section class="h-sezione" id="python" aria-labelledby="titolo-python">
+  <div class="contenitore">
+    <div class="h-testa-sezione">
+      <h2 id="titolo-python">Leo e Python, senza giri di parole.</h2>
+      <p>Leo gira su Python e ne eredita la solidità. Dove Leo è più comodo lo diciamo, e diciamo anche dove Python resta la scelta migliore.</p>
+    </div>
+    <div class="confronto confronto-py h-py-codice">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>media.py</span></div>
+<pre class="codice"><code><span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">]</span>
+<span class="c-flusso">for</span> <span class="c-variabili">v</span> <span class="c-flusso">in</span> <span class="c-variabili">voti</span><span class="c-punteggiatura">:</span>
+    <span class="c-flusso">if</span> <span class="c-variabili">v</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">28</span><span class="c-punteggiatura">:</span>
+        <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Ottimo: </span><span class="c-interpolazione">{</span><span class="c-variabili">v</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-libreria">round</span><span class="c-punteggiatura">(</span><span class="c-libreria">sum</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span> <span class="c-operatori">/</span> <span class="c-libreria">len</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">),</span> <span class="c-numeri">1</span><span class="c-punteggiatura">))</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+<!--vivo:python--><div class="finestra-codice"><div class="barra"><i></i><i></i><i></i><span>media.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">]</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">v</span> <span class="c-logici">in</span> <span class="c-variabili">voti</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">v</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">28</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ottimo: </span><span class="c-interpolazione">{</span><span class="c-variabili">v</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-libreria">media</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">Ottimo: 28
+Ottimo: 30
+27.3</pre></div><!--/vivo-->
+      </div>
+    </div>
+    <div class="m-tabella h-tabella-py" tabindex="0">
+      <table>
+        <caption class="solo-lettori">Confronto tra Leo e Python</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Leo</th><th scope="col">Python</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Lingua</th><td data-etichetta="Leo" class="meglio">Parole chiave, messaggi e documentazione in italiano</td><td data-etichetta="Python">Inglese</td></tr>
+          <tr><th scope="row">Errori</th><td data-etichetta="Leo" class="meglio">Spiegati, con la riga corretta proposta</td><td data-etichetta="Python">Traceback tecnico, suggerimenti brevi</td></tr>
+          <tr><th scope="row">Finestre e app</th><td data-etichetta="Leo" class="meglio"><!--conta:controlli-->146<!--/conta--> controlli, disegnatore visuale, stesso codice su PC e telefono</td><td data-etichetta="Python">Librerie esterne da scegliere e installare</td></tr>
+          <tr><th scope="row">Distribuire</th><td data-etichetta="Leo" class="meglio"><code>.exe</code> e APK con un comando</td><td data-etichetta="Python">Strumenti di terze parti, spesso complessi</td></tr>
+          <tr><th scope="row">Libreria inclusa</th><td data-etichetta="Leo">File, testi, tabelle, web, database, suoni, Windows: in italiano</td><td data-etichetta="Python">Molto ampia, in inglese</td></tr>
+          <tr><th scope="row">Pacchetti di terzi</th><td data-etichetta="Leo">Pochi, curati</td><td data-etichetta="Python" class="meglio">Centinaia di migliaia (PyPI)</td></tr>
+          <tr><th scope="row">Velocità</th><td data-etichetta="Leo">Come un programma Python interpretato: adatta ad app, automazioni e giochi 2D</td><td data-etichetta="Python" class="meglio">Più veloce sui calcoli pesanti (con le librerie numeriche)</td></tr>
+          <tr><th scope="row">Lavoro e comunità</th><td data-etichetta="Leo">Nuova, in italiano</td><td data-etichetta="Python" class="meglio">Enorme, standard dell'industria</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="h-nota">I concetti sono gli stessi: chi conosce Python legge Leo al primo sguardo, e chi impara con Leo passa a Python senza ricominciare da capo. <a href="riferimento/linguaggio/index.html">Il linguaggio, voce per voce</a>.</p>
+    <p class="h-nota"><a class="link-freccia" href="confronto.html">Leo e Python su 11 compiti reali, fianco a fianco <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<!-- =================================================================== PC E TELEFONO -->
+<section class="h-sezione h-scura" id="due-mondi" aria-labelledby="titolo-mondi">
+  <div class="contenitore">
+    <div class="h-testa-sezione">
+      <h2 id="titolo-mondi">Sulla scrivania e in tasca.</h2>
+      <p>Lo stesso linguaggio, le stesse parole. Sul PC hai tutta la potenza di Leo Studio; sul telefono scrivi, provi e trasformi il tuo programma in un'app, anche in autobus.</p>
+    </div>
+    <div class="mondi">
+      <article class="mondo scheda">
+        <div class="mondo-testa">
+          <span class="mondo-icona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <div><p class="mondo-sopra">Windows 10 e 11</p><h3>Leo Studio sul PC</h3></div>
+        </div>
+        <p>Un ambiente completo, come il vecchio Visual Basic: disegni la finestra, scrivi cosa deve succedere, premi Esegui.</p>
+        <ul class="elenco-spunte">
+          <li><!--conta:controlli-->146<!--/conta--> controlli da trascinare, in <!--conta:schede-->21<!--/conta--> schede</li>
+          <li>Esecuzione passo passo, con cinque velocità</li>
+          <li>Più di <!--conta:funzioni-tonde-->1200<!--/conta--> funzioni e metodi, con nomi italiani</li>
+          <li>Il tuo programma diventa un <strong>.exe</strong> da distribuire</li>
+        </ul>
+        <div class="azioni"><a class="pulsante" href="scarica.html">Scarica per Windows</a><a class="link-freccia" href="manuale/leo-studio.html">Il manuale di Studio</a></div>
+      </article>
+      <article class="mondo scheda">
+        <div class="mondo-testa">
+          <span class="mondo-icona" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+          <div><p class="mondo-sopra">App per Android</p><h3>Leo sul telefono</h3></div>
+        </div>
+        <p>Scrivi ed esegui programmi con una tastiera pensata per il codice, e crea app con finestre disegnandole con le dita.</p>
+        <ul class="elenco-spunte">
+          <li>Modelli pronti: Saluto, Contatore, Quiz, Timer…</li>
+          <li>Lo stile di tutta l'app con un tocco</li>
+          <li>Bussola, sensori, fotocamera e voce del telefono</li>
+          <li>Oggetti per l'Italia: codice fiscale, IBAN, comuni</li>
+          <li>Crei l'<strong>APK</strong> e lo installi, o lo condividi</li>
+        </ul>
+        <div class="azioni"><a class="pulsante" href="telefono.html">Scopri l'app</a><a class="link-freccia" href="scarica.html#android">Scaricala</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== NOVITA' -->
+<section class="h-sezione" id="novita" aria-labelledby="titolo-novita">
+  <div class="contenitore">
+    <div class="h-testa-sezione h-testa-con-azione">
+      <div>
+        <h2 id="titolo-novita">Le novità.</h2>
+        <p>Gli ultimi aggiornamenti del linguaggio, della libreria, di Leo Studio e dell'app.</p>
+      </div>
+      <a class="pulsante secondario" href="novita.html">Tutte le novità</a>
+    </div>
+    <ul class="h-novita"><!--novita--><li class="h-novita-voce"><a href="novita.html#comandi-senza-parentesi"><span class="h-novita-data">Ottobre 2026</span><strong>Comandi senza parentesi</strong><span>Le parentesi vogliono dire «calcola». Un comando a inizio riga si scrive senza parentesi e quello che sta tra parentesi si calcola.</span></a></li><li class="h-novita-voce"><a href="novita.html#leo-scrive-con-te"><span class="h-novita-data">Ottobre 2026</span><strong>Leo scrive con te</strong><span>Nell'editor del telefono e in Leo Studio, accanto a ogni riga Leo dice in italiano che cosa ha capito e propone solo correzioni che funzionano.</span></a></li><li class="h-novita-voce"><a href="novita.html#libreria"><span class="h-novita-data">Ottobre 2026</span><strong>La libreria cresce: ufficio, tabelle, web, immagini, scienza</strong><span>Nuove aree della libreria, tutte in italiano e già incluse: niente da scaricare.</span></a></li><li class="h-novita-voce"><a href="novita.html#riferimento"><span class="h-novita-data">Ottobre 2026</span><strong>Il nuovo riferimento, generato dal codice</strong><span>Una pagina per ogni concetto del linguaggio, ogni oggetto delle finestre e ogni area della libreria, con ricerca istantanea in tutto il sito.</span></a></li><!--/novita--></ul>
+  </div>
+</section>
+
+<!-- =================================================================== VIDEO -->
+<section class="h-sezione h-scura" id="video" aria-labelledby="titolo-video">
+  <div class="contenitore">
+    <div class="h-testa-sezione h-testa-con-azione">
+      <div>
+        <h2 id="titolo-video">Impara a programmare in italiano, guardando.</h2>
+        <p>Video brevi, con i sottotitoli, divisi in percorsi: dai primi passi alle app sul telefono, dalla grafica ai progetti completi.</p>
+      </div>
+      <a class="pulsante secondario" href="video.html">Apri la videoteca</a>
+    </div>
+    <div class="anteprime-video" data-anteprime-video data-quanti="6">
+      <p class="nota-rete">I video sono nella <a href="video.html">videoteca</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== PROVA E LICENZA -->
+<section class="h-sezione" id="prova" aria-labelledby="titolo-prova">
+  <div class="contenitore h-prova">
+    <div>
+      <h2 id="titolo-prova">Gratis, senza scadenza.</h2>
+      <p>Questa versione di Leo è completa e gratuita: niente chiave, niente carta di credito, nessuna scadenza. Gli aggiornamenti futuri saranno a pagamento, ma chi tiene questa versione resta gratis per sempre. I programmi che crei sono e restano tuoi.</p>
+      <p><a class="link-freccia" href="licenza.html">Come funziona la licenza</a></p>
+    </div>
+    <ol class="h-passi-prova">
+      <li><strong>Oggi</strong><span>Scarichi e usi tutto: finestre, editor, esecuzione passo passo, libreria completa, creazione dei .exe.</span></li>
+      <li><strong>Per sempre</strong><span>Chi tiene questa versione continua a usarla senza limiti e senza costi.</span></li>
+      <li><strong>Versioni future</strong><span>Gli aggiornamenti saranno a pagamento: un acquisto unico per versione. Aggiornare è una scelta.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =================================================================== DOMANDE -->
+<section class="h-sezione h-scura" id="domande" aria-labelledby="titolo-domande">
+  <div class="contenitore domande-griglia">
+    <div>
+      <h2 id="titolo-domande" class="h-titolo-domande">Domande frequenti.</h2>
+      <p class="introduzione">Non trovi la risposta? Nel <a href="manuale/domande.html">manuale</a> ce ne sono molte altre.</p>
+    </div>
+    <div class="domande">
+      <details><summary>Leo è adatto a progetti professionali?</summary><p>Sì. Leo ha moduli, eccezioni, funzioni come valori, classi con ereditarietà, verifiche automatiche, una libreria di oltre 900 funzioni (file, dati, web, database, sicurezza, Windows) e crea eseguibili per Windows e app Android. Gira su Python e ne eredita la solidità; i messaggi d&#x27;errore danno posizione, causa e riga corretta. Dove Python resta più adatto (calcolo numerico pesante, ecosistema di pacchetti) lo diciamo nel <a href="#python">confronto</a>.</p></details>
+      <details><summary>Serve sapere l&#x27;inglese o avere già programmato?</summary><p>No. Parole chiave, messaggi d&#x27;errore, manuale e video sono in italiano: chi comincia legge il codice come una frase. Chi programma già ritrova i concetti di sempre (variabili, cicli, funzioni, eccezioni, moduli, eventi) e nel corso «Impara Leo» c&#x27;è il percorso «Da Python a Leo».</p></details>
+      <details><summary>Su quali dispositivi funziona?</summary><p>Leo Studio e il programma di installazione sono per Windows 10 e 11 a 64 bit. L&#x27;app Leo per il telefono funziona su Android 7.0 e successivi. Non servono altri programmi: Python e le librerie sono già inclusi.</p></details>
+      <details><summary>Quanto costa?</summary><p>Questa versione è gratuita e senza scadenza: niente chiave, niente carta di credito. Gli aggiornamenti futuri saranno a pagamento (un acquisto unico per versione), ma chi tiene questa versione resta gratis per sempre. Tutti i dettagli nella pagina <a href="licenza.html">Licenza</a>.</p></details>
+      <details><summary>Posso creare app per il telefono?</summary><p>Sì. Dall&#x27;app Leo disegni la finestra, scrivi il codice e con «Crea app Android» ottieni un APK con nome, icona e colore che scegli tu, da installare sul tuo telefono o da condividere. Un solo APK va su tutti i telefoni.</p></details>
+      <details><summary>I programmi che creo sono miei?</summary><p>Sì. I programmi scritti in Leo, gli .exe e le app create appartengono ai loro autori e continuano a funzionare sempre, anche senza Leo Studio installato.</p></details>
+      <details><summary>Il sito funziona senza internet?</summary><p>Sì. Il sito è dentro l&#x27;app Leo e dentro Leo Studio («Guida e sito»): manuale, esempi e pagine si aprono anche offline. Solo i video che non sono sul dispositivo e i download hanno bisogno della rete.</p></details>
+      <details><summary>Va bene per le scuole superiori e l&#x27;università?</summary><p>Sì: niente barriera della lingua, errori che spiegano la causa e propongono la correzione, esempi eseguiti, manuale, corso e video divisi per livello. Gli stessi concetti valgono in Python, Java e C, quindi il passaggio agli altri linguaggi è naturale. Per le classi intere trovi i contatti nella pagina della licenza.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== INVITO -->
+<section class="h-invito" aria-labelledby="titolo-invito">
+  <div class="contenitore">
+    <img class="h-invito-stemma" src="img/stemma.svg" alt="" width="72" height="72" loading="lazy">
+    <h2 id="titolo-invito">Il tuo prossimo programma, in italiano.</h2>
+    <p>Scarica Leo, apri Leo Studio e in pochi minuti hai il primo programma con le finestre che funziona. Poi lo trasformi in un .exe o in un'app Android.</p>
+    <div class="azioni">
+      <a class="pulsante grande" href="scarica.html">Scarica Leo</a>
+      <a class="pulsante grande secondario" href="prova.html">Prova nel browser</a>
+      <a class="link-freccia" href="manuale/index.html">Leggi il manuale</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

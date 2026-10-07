@@ -1,0 +1,6 @@
+# Scritto da strumenti/sito_template/dominio.py
+User-agent: *
+Allow: /
+Disallow: /_modello_pagina.html
+
+Sitemap: https://leoitalia.com/sitemap.xml

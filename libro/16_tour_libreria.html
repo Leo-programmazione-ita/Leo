@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 16 — Un tour della libreria — Leo, il manuale</title>
+<meta name="description" content="Un linguaggio non è solo la sua grammatica: è anche tutto ciò che porta già in dotazione. Leo include oltre novecento funzioni di libreria, sempre…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/16_tour_libreria.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/16_tour_libreria.html">
+<meta property="og:title" content="Capitolo 16 — Un tour della libreria — Leo, il manuale">
+<meta property="og:description" content="Un linguaggio non è solo la sua grammatica: è anche tutto ciò che porta già in dotazione. Leo include oltre novecento funzioni di libreria, sempre…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html" aria-current="page">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte IV — Potenza</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#testo-e-lingua-italiana">Testo e lingua italiana</a></li><li><a href="#date-e-tempo">Date e tempo</a></li><li><a href="#calcolo-e-statistica">Calcolo e statistica</a></li><li><a href="#tabelle-di-dati">Tabelle di dati</a></li><li><a href="#formati-json-csv-e-dintorni">Formati: JSON, CSV e dintorni</a></li><li><a href="#modelli-di-testo">Modelli di testo</a></li><li><a href="#geometria-e-giochi">Geometria e giochi</a></li><li><a href="#sicurezza">Sicurezza</a></li><li><a href="#caso-e-cronometro">Caso e cronometro</a></li><li><a href="#e-molto-altro">E molto altro</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 16 — Un tour della libreria</h1>
+<p>Un linguaggio non è solo la sua grammatica: è anche tutto ciò che porta già in dotazione. Leo include <strong>oltre novecento funzioni</strong> di libreria, sempre disponibili senza installare nulla. Questo capitolo non le elenca tutte — per quello ci sono le schede <code>LIBRERIA_*.md</code> in <code>docs/</code> — ma ti accompagna, area per area, a vedere cosa c'è e come si usa, con esempi veri. Pensalo come una passeggiata in una grande bottega: non per comprare tutto, ma per sapere cosa c'è sugli scaffali, così da ricordartene quando ti servirà.</p>
+<p>Una sola avvertenza: alcune funzioni (quelle che pescano a caso o misurano il tempo) danno un risultato diverso a ogni esecuzione. Dove capita, lo segnaliamo.</p>
+<h2 id="testo-e-lingua-italiana">Testo e lingua italiana</h2>
+<p>Qui Leo dà il meglio di sé, perché è un linguaggio italiano fin nelle ossa. Sa scrivere i numeri in lettere, fare plurali e articoli, dividere in sillabe:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-158" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-158" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">numero_in_lettere</span><span class="c-punteggiatura">(</span><span class="c-numeri">123</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">euro_in_lettere</span><span class="c-punteggiatura">(</span><span class="c-numeri">12.50</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">plurale</span><span class="c-punteggiatura">(</span><span class="c-testi">"casa"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">femminile</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">con_articolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"zaino"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">sillabe</span><span class="c-punteggiatura">(</span><span class="c-testi">"programmare"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">separatore</span> <span class="c-operatori">=</span> <span class="c-testi">"-"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-159" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-159" class="libro-pre"><code>centoventitré
+dodici euro e cinquanta centesimi
+case
+lo zaino
+pro-gram-ma-re</code></pre></figure>
+<p><code>con_articolo</code> sa che davanti a «zaino» va «lo», non «il»: piccole cose che, in un programma che parla a persone italiane, fanno la differenza tra un robot e un testo scritto bene. Nella stessa area ci sono funzioni per Markdown, XML e YAML, e l'inverso <code>lettere_in_numero</code>.</p>
+<h2 id="date-e-tempo">Date e tempo</h2>
+<p>Il tipo <code>data</code> conosce il calendario e si stampa all'italiana. Puoi fare aritmetica tra date, sapere che giorno della settimana cade una certa data, contare i giorni che mancano:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-160" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-160" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">natale</span> <span class="c-operatori">=</span> <span class="c-libreria">data</span><span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">12</span><span class="c-punteggiatura">,</span> <span class="c-numeri">25</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">oggi_data</span> <span class="c-operatori">=</span> <span class="c-libreria">data</span><span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">5</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">natale</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Giorni al Natale: </span><span class="c-interpolazione">{</span><span class="c-libreria">giorni_tra</span><span class="c-punteggiatura">(</span><span class="c-variabili">oggi_data</span><span class="c-punteggiatura">,</span> <span class="c-variabili">natale</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">nome_giorno</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Natale cade di </span><span class="c-interpolazione">{</span><span class="c-variabili">natale</span><span class="c-punteggiatura">.</span><span class="c-campi">nome_giorno</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-161" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-161" class="libro-pre"><code>25/12/2026
+Giorni al Natale: 81
+venerdì
+Natale cade di venerdì</code></pre></figure>
+<p>Una <code>data</code> ha proprietà come <code>giorno</code>, <code>mese</code>, <code>anno</code>, <code>nome_giorno</code>, <code>fine_settimana</code>, e metodi come <code>aggiungi_giorni</code>. Come i testi, le date non si modificano: aggiungere giorni restituisce una data nuova. Per il tempo che scorre ci sono <code>oggi()</code>, <code>ora()</code>, <code>adesso()</code> e <code>attendi(secondi)</code>.</p>
+<h2 id="calcolo-e-statistica">Calcolo e statistica</h2>
+<p>Oltre alle funzioni matematiche di base, Leo porta la statistica pronta all'uso. Niente librerie da installare: media, mediana, deviazione e un riepilogo completo sono a portata di mano:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-162" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-162" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">18</span><span class="c-punteggiatura">,</span> <span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">22</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Media: </span><span class="c-interpolazione">{</span><span class="c-libreria">media</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Mediana: </span><span class="c-interpolazione">{</span><span class="c-libreria">mediana</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Deviazione: </span><span class="c-interpolazione">{</span><span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-libreria">deviazione</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">r</span> <span class="c-operatori">=</span> <span class="c-libreria">riepilogo_numeri</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Minimo </span><span class="c-interpolazione">{</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"minimo"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">, massimo </span><span class="c-interpolazione">{</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"massimo"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-163" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-163" class="libro-pre"><code>Media: 24.6
+Mediana: 25
+Deviazione: 4.27
+Minimo 18, massimo 30</code></pre></figure>
+<p><code>riepilogo_numeri</code> dà in un colpo solo conteggio, media, mediana, quartili, minimo, massimo e deviazione: perfetto per farsi un'idea veloce di un insieme di dati. Nella scheda scientifica trovi anche unità di misura, calcoli finanziari e qualche strumento di intelligenza artificiale elementare.</p>
+<h2 id="tabelle-di-dati">Tabelle di dati</h2>
+<p>Quando i dati sono tanti e strutturati, il tipo <code>tabella</code> è una piccola meraviglia: filtra, ordina, raggruppa, come un foglio di calcolo ma scritto in italiano.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-164" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-164" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-libreria">tabella</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">30</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Marco"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">24</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Lia"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">28</span><span class="c-punteggiatura">}</span>
+<span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">bravi</span> <span class="c-operatori">=</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-proprieta">filtra</span><span class="c-punteggiatura">(</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&gt;"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">ordina</span><span class="c-punteggiatura">(</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">decrescente</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">bravi</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-165" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-165" class="libro-pre"><code> nome | voto
+------+------
+ Ada  |   30
+ Lia  |   28
+(2 righe, 2 colonne)</code></pre></figure>
+<p>Una tabella si stampa già allineata e leggibile; si legge da un CSV con <code>tabella_da_file</code>, si salva, si disegna in un grafico. Per chi lavora con i dati, è lo strumento che evita mille cicli scritti a mano.</p>
+<h2 id="formati-json-csv-e-dintorni">Formati: JSON, CSV e dintorni</h2>
+<p>Abbiamo già usato JSON e CSV nel Capitolo 13. La libreria sa anche produrre JSON ben formattato per l'occhio umano, con il rientro:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-166" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-166" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dati</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voti"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">[</span><span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">28</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">}</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">a_json</span><span class="c-punteggiatura">(</span><span class="c-variabili">dati</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-167" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-167" class="libro-pre"><code>{
+  "nome": "Ada",
+  "voti": [
+    30,
+    28
+  ]
+}</code></pre></figure>
+<p>Nella stessa famiglia ci sono il lavoro sui dati binari, la compressione, e la lettura del «tipo vero» di un file (capire se un file è davvero un'immagine, indipendentemente dall'estensione).</p>
+<h2 id="modelli-di-testo">Modelli di testo</h2>
+<p>Per cercare e validare schemi dentro un testo — numeri, email, date — Leo offre i <strong>modelli</strong>, un'alternativa leggibile alle espressioni regolari, con scorciatoie come <code>&lt;cifre&gt;</code>, <code>&lt;email&gt;</code>, <code>&lt;data&gt;</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-168" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-168" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">trova_tutti</span><span class="c-punteggiatura">(</span><span class="c-testi">"3 gatti e 12 pesci"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&lt;cifre&gt;"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">corrisponde</span><span class="c-punteggiatura">(</span><span class="c-testi">"mario@esempio.it"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"&lt;email&gt;"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-169" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-169" class="libro-pre"><code><span class="c-punteggiatura">[</span><span class="c-testi">"3"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"12"</span><span class="c-punteggiatura">]</span>
+<span class="c-valori_speciali">vero</span></code></pre></figure>
+<p><code>trova_tutti</code> estrae tutti i pezzi che seguono il modello; <code>corrisponde</code> dice se <em>tutto</em> il testo lo rispetta — perfetto per validare un campo inserito da un utente.</p>
+<h2 id="geometria-e-giochi">Geometria e giochi</h2>
+<p>C'è un'intera area dedicata alla geometria vettoriale, utile per i giochi, le animazioni e i disegni: punti, vettori, distanze, angoli.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-170" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-170" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">a</span> <span class="c-operatori">=</span> <span class="c-libreria">crea_punto</span><span class="c-punteggiatura">(</span><span class="c-numeri">0</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">b</span> <span class="c-operatori">=</span> <span class="c-libreria">crea_punto</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">4</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Distanza: </span><span class="c-interpolazione">{</span><span class="c-libreria">distanza_punti</span><span class="c-punteggiatura">(</span><span class="c-variabili">a</span><span class="c-punteggiatura">,</span> <span class="c-variabili">b</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">somma_punti</span><span class="c-punteggiatura">(</span><span class="c-variabili">a</span><span class="c-punteggiatura">,</span> <span class="c-variabili">b</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-171" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-171" class="libro-pre"><code>Distanza: 5.0
+[3, 4]</code></pre></figure>
+<p>(Sì, è il triangolo 3-4-5 della scuola.) Su queste fondamenta, Leo Studio costruisce una ricca scheda «Giochi» con sprite, fisica, collisioni e scene, che incontreremo nella Parte V.</p>
+<h2 id="sicurezza">Sicurezza</h2>
+<p>Leo prende sul serio la sicurezza, con un'area pensata per la difesa (ne faremo un capitolo intero nella Parte V). Qui un assaggio: l'impronta crittografica di un dato, la valutazione della robustezza di una password, la generazione di password memorizzabili.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-172" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-172" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">impronta</span><span class="c-punteggiatura">(</span><span class="c-testi">"password"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">f</span> <span class="c-operatori">=</span> <span class="c-libreria">misura_forza_password</span><span class="c-punteggiatura">(</span><span class="c-testi">"password"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Livello: </span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"livello"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">, punteggio </span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"punteggio"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-173" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-173" class="libro-pre"><code>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+Livello: pessima, punteggio 0</code></pre></figure>
+<p><code>impronta</code> calcola l'impronta SHA-256 (la stessa password dà sempre la stessa impronta, ma dall'impronta non si risale alla password). <code>misura_forza_password</code> giudica una password senza pietà: <code>"password"</code> è, giustamente, «pessima». E <code>genera_frase_password(4)</code> crea una frase-password robusta e facile da ricordare — mettendo in fila parole a caso, quindi il risultato cambia a ogni esecuzione (qualcosa come <code>zucca-latte-tetto-gradino-27</code>).</p>
+<h2 id="caso-e-cronometro">Caso e cronometro</h2>
+<p>Per i giochi, le simulazioni e le misure ci sono le funzioni del caso e del tempo:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-174" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-174" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">estratti</span> <span class="c-operatori">=</span> <span class="c-libreria">scegli_a_caso</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">90</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">quanti</span> <span class="c-operatori">=</span> <span class="c-numeri">6</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Estratti </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">estratti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> numeri tra 1 e 90"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-175" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-175" class="libro-pre"><code>Estratti 6 numeri tra 1 e 90</code></pre></figure>
+<p><code>scegli_a_caso</code> pesca elementi a caso (qui sei numeri diversi del lotto); <code>mescola</code> rimescola una lista; <code>casuale(da, a)</code> dà un intero a caso. E <code>cronometro()</code> misura quanto impiega un pezzo di programma, utile per capire dove conviene ottimizzare.</p>
+<h2 id="e-molto-altro">E molto altro</h2>
+<p>Abbiamo toccato le aree più comuni, ma la bottega è grande. Ci sono funzioni per le <strong>immagini</strong> (apri una foto, applica filtri, crea collage e GIF), per il <strong>web</strong> (scarica pagine, leggi feed, parla con API; le funzioni offline come <code>html_in_testo</code> e <code>proteggi_html</code> lavorano su HTML che hai già), per la <strong>rete</strong> e il <strong>sistema</strong> su ogni piattaforma, per l'<strong>ufficio</strong> (Excel, Word, PDF, stampa unione), per i <strong>database</strong> senza SQL, per i <strong>media</strong> (suoni, voce). Quando ti troverai davanti un problema, è probabile che un pezzo della soluzione sia già sullo scaffale: la prima mossa, prima di scrivere codice, è dare un'occhiata alle schede <code>LIBRERIA_*.md</code>.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Chiedi all'utente un importo e stampalo in lettere con <code>euro_in_lettere</code>, poi anche la sua impronta SHA-256 con <code>impronta</code>.</li><li>Costruisci una <code>tabella</code> con i tuoi film preferiti (titolo, anno, voto), filtra quelli con voto alto e ordinali per anno.</li><li>Scrivi un «estrattore del lotto» che pesca sei numeri con <code>scegli_a_caso</code> e li stampa ordinati. Eseguilo due volte e osserva che cambiano.</li></ol>
+<hr>
+<p>Finisce qui la Parte IV. Hai visto come far lavorare Leo in parallelo, come ragionare su sequenze infinite e quanto ti regala già la libreria. Nella Parte V usciamo dal terminale: finestre, telefono, sicurezza e distribuzione.</p>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="15_sequenze_pigre.html"><span>Indietro</span><strong>Le sequenze pigre</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="17_finestre_studio.html"><span>Avanti</span><strong>Finestre e Leo Studio</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

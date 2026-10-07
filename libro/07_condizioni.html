@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 7 — Prendere decisioni — Leo, il manuale</title>
+<meta name="description" content="Finora i nostri programmi eseguivano le istruzioni una dopo l&#x27;altra, sempre tutte, sempre nello stesso ordine. Ma un programma utile deve scegliere: se il…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/07_condizioni.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/07_condizioni.html">
+<meta property="og:title" content="Capitolo 7 — Prendere decisioni — Leo, il manuale">
+<meta property="og:description" content="Finora i nostri programmi eseguivano le istruzioni una dopo l&#x27;altra, sempre tutte, sempre nello stesso ordine. Ma un programma utile deve scegliere: se il…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html" aria-current="page">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte II — Il flusso</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#se-altrimenti-se-altrimenti"><code>se</code>, <code>altrimenti se</code>, <code>altrimenti</code></a></li><li><a href="#confrontare-e-combinare">Confrontare e combinare</a></li><li><a href="#tanti-casi-scegli">Tanti casi: <code>scegli</code></a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 7 — Prendere decisioni</h1>
+<p>Finora i nostri programmi eseguivano le istruzioni una dopo l'altra, sempre tutte, sempre nello stesso ordine. Ma un programma utile deve <em>scegliere</em>: se il voto è alto, promuovi; altrimenti, rimanda. Questo è il <strong>controllo di flusso</strong>, e il suo primo strumento è la condizione.</p>
+<h2 id="se-altrimenti-se-altrimenti"><code>se</code>, <code>altrimenti se</code>, <code>altrimenti</code></h2>
+<p>La condizione più semplice è <code>se</code>: esegue un blocco di codice solo se qualcosa è vero. Spesso si accompagna ad <code>altrimenti</code>, che copre il caso contrario, e ad <code>altrimenti se</code>, per i casi intermedi:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-79" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-79" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voto</span> <span class="c-operatori">=</span> <span class="c-numeri">16</span>
+<span class="c-flusso">se</span> <span class="c-variabili">voto</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">18</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Promosso"</span>
+<span class="c-flusso">altrimenti se</span> <span class="c-variabili">voto</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">15</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Orale di recupero"</span>
+<span class="c-flusso">altrimenti</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Respinto"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-80" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-80" class="libro-pre"><code>Orale di recupero</code></pre></figure>
+<p>La struttura si legge da sola. Leo controlla la prima condizione (<code>voto &gt;= 18</code>): è falsa, perché 16 non è almeno 18. Passa alla seconda (<code>voto &gt;= 15</code>): è vera, e allora esegue il suo blocco e <strong>salta tutto il resto</strong>. Se nessuna condizione fosse vera, scatterebbe <code>altrimenti</code>. Nota la forma: ogni condizione apre il blocco con <code>allora</code>, e un <strong>solo</strong> <code>fine</code> chiude l'intera catena. Puoi avere quanti <code>altrimenti se</code> vuoi, e sia <code>altrimenti se</code> sia <code>altrimenti</code> sono facoltativi.</p>
+<p>Due piccole comodità. Se <code>allora</code> è l'ultima cosa sulla riga, puoi anche ometterlo: la condizione va a capo da sola. E dentro la condizione di un <code>se</code> puoi scrivere <code>=</code> al posto di <code>==</code> per il confronto, perché lì non c'è ambiguità:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-81" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-81" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-testi">"si"</span>
+<span class="c-flusso">se</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-testi">"si"</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Evviva!"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-82" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-82" class="libro-pre"><code>Evviva!</code></pre></figure>
+<p>(Fuori dalle condizioni, ricordiamolo, <code>=</code> assegna un valore e <code>==</code> confronta: sono due cose diverse. Dentro <code>se</code> e <code>mentre</code>, Leo accetta <code>=</code> come se fosse <code>==</code> per gentilezza, ma se vuoi puoi sempre scrivere <code>==</code>.)</p>
+<h2 id="confrontare-e-combinare">Confrontare e combinare</h2>
+<p>Le condizioni nascono da <strong>confronti</strong>. Gli operatori sono quelli attesi: <code>==</code> (uguale), <code>!=</code> (diverso), <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>. A questi si aggiungono <code>in</code> (per cercare un elemento in una lista o un pezzo in un testo) ed <code>è</code>/<code>non è</code> (per confrontare con <code>nulla</code>).</p>
+<p>Più confronti si combinano con gli operatori logici, scritti a parole: <code>e</code> (entrambi veri), <code>o</code> (almeno uno vero), <code>non</code> (nega). E Leo ha un paio di tocchi che rendono le condizioni quasi italiane:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-83" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-83" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">eta</span> <span class="c-operatori">=</span> <span class="c-numeri">20</span>
+<span class="c-flusso">se</span> <span class="c-variabili">eta</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">18</span> <span class="c-logici">e</span> <span class="c-variabili">eta</span> <span class="c-operatori">&lt;</span> <span class="c-numeri">65</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Adulto in età lavorativa"</span>
+<span class="c-flusso">fine</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">x</span> <span class="c-operatori">=</span> <span class="c-numeri">5</span>
+<span class="c-flusso">se</span> <span class="c-numeri">0</span> <span class="c-operatori">&lt;</span> <span class="c-variabili">x</span> <span class="c-operatori">&lt;</span> <span class="c-numeri">10</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"x è tra 0 e 10"</span>
+<span class="c-flusso">fine</span>
+<span class="c-flusso">se</span> <span class="c-logici">non</span> <span class="c-punteggiatura">(</span><span class="c-variabili">x</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"x non è tra i primi tre"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-84" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-84" class="libro-pre"><code>Adulto in età lavorativa
+x è tra 0 e 10
+x non è tra i primi tre</code></pre></figure>
+<p>La riga <code>0 &lt; x &lt; 10</code> è esattamente ciò che scriveresti in matematica: Leo concatena i confronti e li interpreta come «x maggiore di 0 <strong>e</strong> minore di 10». Attenzione a <code>non</code>: vale solo per il valore subito dopo, quindi per negare un confronto intero servono le parentesi, come in <code>non (x in [1, 2, 3])</code>.</p>
+<p>Un dettaglio che conta nei programmi seri: <code>e</code> e <code>o</code> si fermano appena conoscono il risultato. In <code>a e b</code>, se <code>a</code> è falso, <code>b</code> non viene nemmeno calcolato (tanto il risultato è già falso). Questo si chiama <em>valutazione pigra</em> e permette di scrivere condizioni come <code>se lista ha elementi e lista[0] &gt; 0</code> senza rischiare errori sul secondo pezzo.</p>
+<p>Infine, una regola di Leo che fa da guardrail: in <code>se</code> e <code>mentre</code> sono ammessi <strong>solo</strong> <code>vero</code> e <code>falso</code>, non «qualcosa che assomiglia al vero». Per sapere se una lista è vuota non scrivi <code>se lista</code> ma <code>se non vuota(lista)</code>. È una riga in più che toglie una categoria intera di malintesi.</p>
+<h2 id="tanti-casi-scegli">Tanti casi: <code>scegli</code></h2>
+<p>Quando uno stesso valore va confrontato con molte possibilità, una catena di <code>altrimenti se</code> diventa pesante. Per questi casi c'è <code>scegli</code>, più ordinato e più leggibile:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-85" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-85" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voto</span> <span class="c-operatori">=</span> <span class="c-numeri">7</span>
+<span class="c-testo_normale">scegli</span> <span class="c-variabili">voto</span>
+    <span class="c-testo_normale">caso</span> <span class="c-numeri">10</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">scrivi</span> <span class="c-testi">"eccellente"</span>
+    <span class="c-testo_normale">caso</span> <span class="c-numeri">8</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">scrivi</span> <span class="c-testi">"molto bene"</span>
+    <span class="c-testo_normale">caso</span> <span class="c-numeri">6</span><span class="c-numeri">..</span><span class="c-numeri">7</span> <span class="c-flusso">allora</span>
+        <span class="c-libreria">scrivi</span> <span class="c-testi">"sufficiente"</span>
+    <span class="c-flusso">altrimenti</span>
+        <span class="c-libreria">scrivi</span> <span class="c-testi">"da ripassare"</span>
+<span class="c-flusso">fine</span> <span class="c-flusso">scegli</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-86" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-86" class="libro-pre"><code>sufficiente</code></pre></figure>
+<p>Il valore dopo <code>scegli</code> si calcola una volta sola, poi si confronta con ogni <code>caso</code>: vince il primo che corrisponde. Ogni <code>caso</code> può essere un valore singolo, più valori separati da virgole (<code>8, 9</code>), un intervallo (<code>6..7</code>, estremi compresi) o una lista di alternative. L'<code>altrimenti</code> finale, facoltativo, cattura tutto ciò che non ha trovato posto. Puoi chiudere con <code>fine</code> o, se preferisci la chiarezza, con <code>fine scegli</code>: Leo controlla che corrisponda.</p>
+<p><code>scegli</code> è un ottimo esempio della filosofia del linguaggio: la stessa logica si potrebbe scrivere con tanti <code>se</code>, ma una forma dedicata, quando il caso lo chiede, rende l'intenzione evidente a colpo d'occhio.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Scrivi un programma che chiede l'ora (un numero da 0 a 23) e saluta con «Buongiorno», «Buon pomeriggio», «Buonasera» o «Buonanotte» secondo la fascia oraria.</li><li>Chiedi un voto da 1 a 10 e usa <code>scegli</code> per stampare il giudizio corrispondente (inventa tu i giudizi per i voti bassi).</li><li>Scrivi una condizione che stampa «Numero valido» solo se un numero è compreso tra 1 e 90 <strong>e</strong> non è uno dei numeri <code>[13, 17]</code>. Prova diversi valori.</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="06_slicing.html"><span>Indietro</span><strong>Intervalli e fette</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="08_cicli.html"><span>Avanti</span><strong>Ripetere</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

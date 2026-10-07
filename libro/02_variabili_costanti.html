@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 2 — Variabili e costanti — Leo, il manuale</title>
+<meta name="description" content="Un programma che non ricorda nulla può fare ben poco. Le variabili sono i cassetti in cui il programma mette i dati per ritrovarli più tardi: un…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/02_variabili_costanti.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/02_variabili_costanti.html">
+<meta property="og:title" content="Capitolo 2 — Variabili e costanti — Leo, il manuale">
+<meta property="og:description" content="Un programma che non ricorda nulla può fare ben poco. Le variabili sono i cassetti in cui il programma mette i dati per ritrovarli più tardi: un…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html" aria-current="page">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte I — Le basi</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#dichiarare-e-cambiare">Dichiarare e cambiare</a></li><li><a href="#stampare-il-valore-non-il-nome">Stampare il valore, non il nome</a></li><li><a href="#le-costanti-valori-che-non-devono-cambiare">Le costanti: valori che non devono cambiare</a></li><li><a href="#più-valori-in-una-volta-sola">Più valori in una volta sola</a></li><li><a href="#aumentare-e-diminuire-a-parole">Aumentare e diminuire a parole</a></li><li><a href="#dove-vive-una-variabile">Dove vive una variabile</a></li><li><a href="#i-nomi">I nomi</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 2 — Variabili e costanti</h1>
+<p>Un programma che non ricorda nulla può fare ben poco. Le <strong>variabili</strong> sono i cassetti in cui il programma mette i dati per ritrovarli più tardi: un punteggio, un nome, una lista della spesa. Ogni cassetto ha un nome che scegli tu, e dentro ci metti un valore.</p>
+<h2 id="dichiarare-e-cambiare">Dichiarare e cambiare</h2>
+<p>In Leo una variabile si <strong>dichiara</strong> la prima volta con la parola <code>variabile</code>, seguita dal nome, un segno di uguale e il valore iniziale. Dopo, per cambiarle valore, basta il nome e il segno di uguale:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-19" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-19" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">punti</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"All'inizio: </span><span class="c-interpolazione">{</span><span class="c-variabili">punti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-variabili">punti</span> <span class="c-operatori">=</span> <span class="c-numeri">10</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Dopo aver segnato: </span><span class="c-interpolazione">{</span><span class="c-variabili">punti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-variabili">punti</span> <span class="c-operatori">+=</span> <span class="c-numeri">5</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Con il bonus: </span><span class="c-interpolazione">{</span><span class="c-variabili">punti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-20" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-20" class="libro-pre"><code>All'inizio: 0
+Dopo aver segnato: 10
+Con il bonus: 15</code></pre></figure>
+<p>Nota la differenza: la <strong>prima</strong> volta serve <code>variabile</code> (stai creando il cassetto); le volte successive no (il cassetto esiste già, lo stai solo riempiendo di nuovo). L'ultima riga usa <code>+=</code>, una scorciatoia che vuol dire «aggiungi a quello che c'è già»: <code>punti += 5</code> è identico a <code>punti = punti + 5</code>. Esistono anche <code>-=</code>, <code>*=</code> e <code>/=</code>, con lo stesso senso.</p>
+<p>Questa regola — <code>variabile</code> solo alla nascita — non è una formalità noiosa. Serve a proteggerti dai refusi. Se scrivi per sbaglio <code>pnuti = 3</code> pensando a <code>punti</code>, Leo non crea di nascosto una variabile nuova: si ferma e te lo dice.</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-21" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-21" class="libro-pre"><code>ErroreNome alla riga 1, colonna 1 di programma.leo
+
+    1 | pnuti = 3
+      | ^^^^^
+
+`pnuti` non esiste ancora: una variabile nuova si crea con `variabile`.
+Suggerimento: Scrivi `variabile pnuti = 3`; dopo, per cambiarle valore, basta `pnuti = ...`.</code></pre></figure>
+<p>In un linguaggio che crea le variabili al volo, quel refuso sarebbe passato inosservato e il bug si sarebbe manifestato molto più tardi, molto più lontano.</p>
+<h2 id="stampare-il-valore-non-il-nome">Stampare il valore, non il nome</h2>
+<p>Qui c'è una trappola gentile in cui tutti inciampano una volta. Ricordi che <code>scrivi</code> senza parentesi tratta quello che segue come testo? Allora questa riga:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-22" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-22" class="libro-pre"><code><span class="c-libreria">scrivi</span> <span class="c-testi">punti</span></code></pre></figure>
+<p>...non stampa il valore di <code>punti</code>: stampa la parola <code>punti</code>. Per mostrare il <em>valore</em> hai due strade, entrambe corrette:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-23" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-23" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">punti</span><span class="c-punteggiatura">)</span>              <span class="c-commenti"># forma con parentesi: calcola e stampa il valore</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Punti: </span><span class="c-interpolazione">{</span><span class="c-testo_normale">punti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>    <span class="c-commenti"># interpolazione: il valore entra nel testo</span></code></pre></figure>
+<p>Tienilo a mente: <strong>le parentesi (o le graffe dentro un testo) vogliono dire «calcola»</strong>. Senza di esse, <code>scrivi</code> prende le parole alla lettera. È la stessa regola del capitolo scorso, vista da un'altra angolazione; dopo un po' diventa naturale.</p>
+<h2 id="le-costanti-valori-che-non-devono-cambiare">Le costanti: valori che non devono cambiare</h2>
+<p>A volte un valore non deve mai cambiare per tutta la vita del programma: l'aliquota IVA, il numero di giocatori, il titolo di una finestra. Per questi casi c'è la <strong>costante</strong>, che si dichiara con <code>costante</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-24" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-24" class="libro-pre"><code><span class="c-dichiarazioni">costante</span> <span class="c-costanti">IVA</span> <span class="c-operatori">=</span> <span class="c-numeri">22</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">prezzo</span> <span class="c-operatori">=</span> <span class="c-numeri">100</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Prezzo con IVA: </span><span class="c-interpolazione">{</span><span class="c-variabili">prezzo</span> <span class="c-operatori">+</span> <span class="c-variabili">prezzo</span> <span class="c-operatori">*</span> <span class="c-costanti">IVA</span> <span class="c-operatori">/</span> <span class="c-numeri">100</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-25" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-25" class="libro-pre"><code>Prezzo con IVA: 122.0</code></pre></figure>
+<p>(Il risultato è <code>122.0</code>, con il punto e lo zero: la divisione <code>/</code> in Leo dà sempre un numero decimale. Ne parleremo nel prossimo capitolo.)</p>
+<p>La differenza con una variabile è che una costante, una volta dichiarata, <strong>non si può più cambiare</strong>. Se ci provi, Leo ti ferma:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-26" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-26" class="libro-pre"><code>ErroreValore alla riga 2, colonna 1 di programma.leo
+
+    2 | IVA = 10
+      | ^^^
+
+`IVA` è una costante: non si può cambiare il suo valore.
+Suggerimento: Se deve cambiare, dichiarala con `variabile` invece di `costante`.</code></pre></figure>
+<p>Non è una punizione: è una rete di sicurezza. Dichiarare costante un valore che non deve cambiare documenta la tua intenzione e impedisce che un errore distratto lo modifichi. Usa <code>costante</code> ogni volta che puoi; <code>variabile</code> solo quando il valore deve davvero cambiare.</p>
+<h2 id="più-valori-in-una-volta-sola">Più valori in una volta sola</h2>
+<p>Una dichiarazione (o un'assegnazione) può riguardare più nomi insieme, separati da virgole. È comodo quando i valori arrivano da una lista o quando vuoi assegnarne diversi in una riga:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-27" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-27" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">,</span> <span class="c-variabili">anni</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"Beatrice"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi"> ha </span><span class="c-interpolazione">{</span><span class="c-variabili">anni</span><span class="c-interpolazione">}</span><span class="c-testi"> anni"</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">a</span><span class="c-punteggiatura">,</span> <span class="c-variabili">b</span> <span class="c-operatori">=</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span>
+<span class="c-variabili">a</span><span class="c-punteggiatura">,</span> <span class="c-variabili">b</span> <span class="c-operatori">=</span> <span class="c-variabili">b</span><span class="c-punteggiatura">,</span> <span class="c-variabili">a</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"a vale </span><span class="c-interpolazione">{</span><span class="c-variabili">a</span><span class="c-interpolazione">}</span><span class="c-testi">, b vale </span><span class="c-interpolazione">{</span><span class="c-variabili">b</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-28" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-28" class="libro-pre"><code>Beatrice ha 24 anni
+a vale 2, b vale 1</code></pre></figure>
+<p>L'ultima riga merita attenzione: <code>a, b = b, a</code> <strong>scambia</strong> i due valori senza bisogno di una variabile d'appoggio. Funziona perché Leo calcola prima tutti i valori a destra e solo dopo li assegna. Se nomi e valori non sono lo stesso numero, l'errore te lo dice con precisione: <em>«Ci sono 2 nomi ma 3 valori.»</em></p>
+<h2 id="aumentare-e-diminuire-a-parole">Aumentare e diminuire a parole</h2>
+<p>Oltre a <code>+=</code> e <code>-=</code>, Leo offre due parole che si leggono come una frase: <code>aumenta</code> e <code>diminuisci</code>. Dopo <code>di</code> scrivi di quanto; senza <code>di</code>, vuol dire di uno:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-29" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-29" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">punti</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">vite</span> <span class="c-operatori">=</span> <span class="c-numeri">3</span>
+<span class="c-flusso">aumenta</span> <span class="c-variabili">punti</span> <span class="c-flusso">di</span> <span class="c-numeri">10</span>
+<span class="c-flusso">diminuisci</span> <span class="c-variabili">vite</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Punti: </span><span class="c-interpolazione">{</span><span class="c-variabili">punti</span><span class="c-interpolazione">}</span><span class="c-testi">, vite: </span><span class="c-interpolazione">{</span><span class="c-variabili">vite</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-30" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-30" class="libro-pre"><code>Punti: 10, vite: 2</code></pre></figure>
+<p>Sono perfettamente equivalenti a <code>punti += 10</code> e <code>vite -= 1</code>: scegli la forma che in quel punto si legge meglio.</p>
+<h2 id="dove-vive-una-variabile">Dove vive una variabile</h2>
+<p>Ogni blocco di codice — lo vedremo meglio parlando di cicli e funzioni — ha un suo spazio. Una variabile dichiarata <em>dentro</em> un blocco con <code>variabile</code> esiste solo lì dentro; fuori non si vede. Per cambiare invece una variabile che esisteva già prima, basta il segno di uguale (senza <code>variabile</code>):</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-31" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-31" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">n</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">doppio</span> <span class="c-operatori">=</span> <span class="c-variabili">n</span> <span class="c-operatori">*</span> <span class="c-numeri">2</span>     <span class="c-commenti"># esiste solo dentro il ciclo</span>
+    <span class="c-variabili">totale</span> <span class="c-operatori">+=</span> <span class="c-variabili">doppio</span>             <span class="c-commenti"># cambia la variabile di fuori</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Il totale è </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-32" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-32" class="libro-pre"><code>Il totale è 12</code></pre></figure>
+<p>La variabile <code>doppio</code> nasce e muore a ogni giro del ciclo; <code>totale</code>, dichiarata fuori, sopravvive e accumula. Questa separazione — che si chiama <strong>visibilità</strong> o <em>ambito</em> — tiene i programmi ordinati: le variabili temporanee non «sporcano» il resto del codice. Torneremo sull'argomento quando parleremo di funzioni, dove conta davvero.</p>
+<h2 id="i-nomi">I nomi</h2>
+<p>Qualche parola sui nomi delle variabili, perché nomi buoni valgono più di molti commenti. Un nome inizia con una lettera o un trattino basso <code>_</code> e prosegue con lettere, cifre e trattini bassi. Le lettere accentate sono ammesse, quindi <code>età</code> e <code>città</code> sono nomi legittimi. Scegli nomi che dicono <em>cosa contengono</em>: <code>media_voti</code> è meglio di <code>m</code>, <code>prezzo_finale</code> è meglio di <code>x</code>. Il tuo io del mese prossimo ti ringrazierà.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Dichiara una costante con il tuo anno di nascita e una variabile con l'anno corrente, poi stampa quanti anni compi quest'anno.</li><li>Crea tre variabili <code>a</code>, <code>b</code>, <code>c</code> con tre valori a tuo piacere su una riga sola, poi ruotale: <code>a</code> prende il valore di <code>b</code>, <code>b</code> quello di <code>c</code>, <code>c</code> quello di <code>a</code>. Stampa i tre valori prima e dopo.</li><li>Prova a scrivere <code>scrivi prezzo</code> (senza parentesi) in uno degli esempi e guarda cosa succede. Poi correggilo in <code>scrivi(prezzo)</code>. Hai capito la differenza?</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="01_primo_programma.html"><span>Indietro</span><strong>Il primo programma</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="03_numeri.html"><span>Avanti</span><strong>I numeri</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. Finestre e controlli — Manuale di Leo</title>
+<meta name="description" content="Proprietà dei controlli, eventi quando...fai, la variabile evento, nome e testo, più finestre, colori, forme, stili pronti e animazioni.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/finestre.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/finestre.html">
+<meta property="og:title" content="5. Finestre e controlli — Manuale di Leo">
+<meta property="og:description" content="Proprietà dei controlli, eventi quando...fai, la variabile evento, nome e testo, più finestre, colori, forme, stili pronti e animazioni.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Finestre e controlli</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class="attuale"><a href="finestre.html" aria-current="page"><span class="m-n">05</span><span>Finestre e controlli</span></a><ol class="m-toc"><li><a href="#progetto" data-toc="progetto">Com'è fatto un progetto con le finestre</a></li><li><a href="#eventi" data-toc="eventi">Gli eventi: quando … fai</a></li><li><a href="#proprieta" data-toc="proprieta">Leggere e cambiare le proprietà</a></li><li><a href="#nome-testo" data-toc="nome-testo">Nome e testo: l'errore più comune</a></li><li><a href="#dialoghi" data-toc="dialoghi">Messaggi, domande e più finestre</a></li><li><a href="#colori" data-toc="colori">Colori</a></li><li><a href="#finestra" data-toc="finestra">L'aspetto della finestra</a></li><li><a href="#stili" data-toc="stili">Stili pronti per pulsanti ed etichette</a></li><li><a href="#animazioni" data-toc="animazioni">Animazioni in una frase</a></li><li><a href="#controlli" data-toc="controlli">I 146 controlli</a></li><li><a href="#ancoraggi" data-toc="ancoraggi">Finestre che si allargano: gli ancoraggi</a></li></ol></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">5. Finestre e controlli</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"5. Finestre e controlli","item":"https://leoitalia.com/manuale/finestre.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">05</span> Sezione 5 di 15</p>
+        <h1>Finestre e controlli</h1>
+        <p class="m-sommario">I programmi con le finestre sono fatti di controlli (pulsanti, caselle, elenchi…) e di eventi (un clic, un tasto, un valore che cambia). Qui impari a leggere e cambiare i controlli dal codice e a rispondere a ciò che fa l'utente.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>10 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: base e intermedio</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10 esempi verificati</li>
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="progetto">Com'è fatto un progetto con le finestre<a class="m-ancora" href="#progetto" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Un progetto è una cartella. Per ogni finestra ci sono due file: la <strong>maschera</strong> (<code>Finestra1.maschera</code>), con i controlli e le loro proprietà, che disegni in Leo Studio, e il <strong>codice</strong> (<code>Finestra1.leo</code>), che scrivi tu. In più c'è <code>progetto.toml</code>, con il nome del progetto e la finestra da aprire all'avvio.</p>
+<p>Il codice di una finestra è fatto soprattutto di <strong>gestori di eventi</strong>: pezzi di codice che partono quando succede qualcosa.</p>
+
+<h2 id="eventi">Gli eventi: quando … fai<a class="m-ancora" href="#eventi" aria-label="Collegamento a questa parte">#</a></h2>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Benvenuto!"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Timer1</span><span class="c-punteggiatura">.</span><span class="c-eventi">scatto</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Orologio</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-libreria">ora</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Etichetta1.testo = "Benvenuto!"</pre></div></figure>
+<p><code>quando Controllo.evento fai … fine</code> si legge <em>«quando il controllo riceve l'evento, fai…»</em>. Le regole:</p>
+<ul>
+  <li>si scrive al livello più esterno del file, non dentro una funzione;</li>
+  <li>per ogni coppia controllo-evento c'è un solo gestore;</li>
+  <li>il modo più veloce per crearlo è il <strong>doppio clic</strong> sul controllo in Leo Studio (evento principale) o sull'evento nel pannello Proprietà;</li>
+  <li>un errore dentro un gestore compare in una finestra con il messaggio completo, e il programma continua.</li>
+</ul>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Evento</th><th>Quando arriva</th></tr></thead>
+  <tbody>
+    <tr><td><code>apertura</code>, <code>chiusura</code></td><td>la finestra si apre / si chiude</td></tr>
+    <tr><td><code>clic</code>, <code>doppio_clic</code></td><td>un clic del mouse sul controllo</td></tr>
+    <tr><td><code>cambio</code></td><td>il valore cambia (casella di testo, casella di spunta, cursore…)</td></tr>
+    <tr><td><code>invio</code></td><td>l'utente preme Invio in una casella</td></tr>
+    <tr><td><code>selezione</code></td><td>si sceglie un elemento in un <code>Elenco</code> o in un <code>MenuATendina</code></td></tr>
+    <tr><td><code>tasto</code></td><td>un tasto premuto nella finestra</td></tr>
+    <tr><td><code>scatto</code></td><td>il <code>Timer</code> è arrivato al suo intervallo</td></tr>
+    <tr><td><code>ridimensionamento</code></td><td>la finestra cambia dimensioni</td></tr>
+  </tbody>
+</table></div>
+
+<h3 id="i-dati-dell-evento">I dati dell'evento<a class="m-ancora" href="#i-dati-dell-evento" aria-label="Collegamento a questa parte">#</a></h3>
+<p>Dentro un gestore esiste la variabile <strong><code>evento</code></strong>, un dizionario con i dati di ciò che è successo: per un <code>clic</code> la posizione (<code>evento["x"]</code>, <code>evento["y"]</code>), per un <code>cambio</code> il nuovo valore (<code>evento["valore"]</code>), per una <code>selezione</code> <code>evento["indice"]</code> ed <code>evento["elemento"]</code>.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Elenco1</span><span class="c-punteggiatura">.</span><span class="c-eventi">selezione</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Hai scelto </span><span class="c-interpolazione">{</span><span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"elemento"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">tasto</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"ctrl"</span><span class="c-punteggiatura">]</span> <span class="c-logici">e</span> <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"tasto"</span><span class="c-punteggiatura">]</span> <span class="c-operatori">==</span> <span class="c-testi">"S"</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Hai premuto Ctrl+S"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Hai premuto Ctrl+S
+Etichetta1.testo = "Hai scelto Milano"</pre></div></figure>
+<p>I tasti hanno nomi italiani: le lettere maiuscole (<code>"A"</code>), le cifre, <code>"F1"</code>…<code>"F12"</code>, <code>"Invio"</code>, <code>"Esc"</code>, <code>"Spazio"</code>, <code>"Tab"</code>, <code>"Canc"</code>, <code>"Sinistra"</code>, <code>"Destra"</code>, <code>"Su"</code>, <code>"Giù"</code>…</p>
+
+<h2 id="proprieta">Leggere e cambiare le proprietà<a class="m-ancora" href="#proprieta" aria-label="Collegamento a questa parte">#</a></h2>
+<p>I controlli sono <strong>oggetti</strong>: con il punto leggi e cambi le loro proprietà e chiami i loro metodi.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Elenco1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Voce </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-controlli">Elenco1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">elementi</span><span class="c-punteggiatura">)</span> <span class="c-operatori">+</span> <span class="c-numeri">1</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Nell'elenco ci sono </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-controlli">Elenco1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">elementi</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> voci"</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">colore_testo</span> <span class="c-operatori">=</span> <span class="c-testi">"verde"</span></span><span class="r">    <span class="c-flusso">aumenta</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">larghezza</span> <span class="c-flusso">di</span> <span class="c-numeri">10</span></span><span class="r">    <span class="c-controlli">CasellaSpunta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">abilitato</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">falso</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Etichetta1.testo = "Nell'elenco ci sono 2 voci"
+Pulsante1.larghezza = 110
+Elenco1.elementi = ["Voce 1", "Voce 2"]</pre></div></figure>
+<p>Le proprietà che quasi tutti i controlli visibili hanno:</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Proprietà</th><th>Tipo</th><th>Significato</th></tr></thead>
+  <tbody>
+    <tr><td><code>testo</code></td><td>testo</td><td>la scritta del controllo (per la finestra, il titolo)</td></tr>
+    <tr><td><code>sinistra</code>, <code>alto</code></td><td>intero</td><td>posizione in pixel dall'angolo in alto a sinistra</td></tr>
+    <tr><td><code>larghezza</code>, <code>altezza</code></td><td>intero</td><td>dimensioni in pixel</td></tr>
+    <tr><td><code>visibile</code></td><td>logico</td><td>se <code>falso</code> il controllo non si vede</td></tr>
+    <tr><td><code>abilitato</code></td><td>logico</td><td>se <code>falso</code> non risponde a mouse e tastiera</td></tr>
+    <tr><td><code>suggerimento</code></td><td>testo</td><td>il fumetto che compare passandoci sopra</td></tr>
+    <tr><td><code>colore_testo</code>, <code>colore_sfondo</code></td><td>colore</td><td><code>""</code> = colore predefinito (la finestra ha <code>sfondo</code>)</td></tr>
+    <tr><td><code>carattere</code>, <code>dimensione_carattere</code></td><td>testo, intero</td><td>tipo e grandezza delle lettere</td></tr>
+    <tr><td><code>opacità</code></td><td>intero</td><td>da 0 (invisibile) a 100 (pieno)</td></tr>
+    <tr><td><code>ancoraggio</code></td><td>lista</td><td>i bordi a cui il controllo resta agganciato quando la finestra si allarga</td></tr>
+  </tbody>
+</table></div>
+<p>Leo capisce anche alcuni nomi alternativi naturali: <code>colore</code>, <code>scritta</code>, <code>titolo</code>, <code>x</code>, <code>y</code>, e non fa caso alle maiuscole o agli accenti (<code>Pulsante1.Testo</code>, <code>opacita</code>). Se scrivi una proprietà che non esiste, l'errore elenca quelle disponibili.</p>
+<p>Ogni controllo ha anche le sue proprietà speciali: un <code>Elenco</code> ha <code>elementi</code> e <code>indice_selezionato</code>, un <code>Timer</code> ha <code>intervallo</code> (in millisecondi) e <code>attivo</code>, una <code>BarraAvanzamento</code> ha <code>valore</code>, <code>minimo</code> e <code>massimo</code>. Le trovi tutte nel pannello Proprietà di Leo Studio.</p>
+
+<h2 id="nome-testo">Nome e testo: l'errore più comune<a class="m-ancora" href="#nome-testo" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Nel codice si usa il <strong>nome</strong> del controllo (<code>Etichetta1</code>), non il suo <strong>tipo</strong> (<code>Etichetta</code>) e non la scritta che mostra. Anche le maiuscole contano: il controllo si chiama <code>Pulsante1</code>, non <code>pulsante1</code>.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Sbagliato</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-testo_normale">etichetta</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao"</span>       <span class="c-commenti"># "etichetta" è il tipo, non il nome</span></span></code></pre></figure>
+<p>Leo se ne accorge e spiega: <em>«<code>etichetta</code> è il tipo di controllo, non il suo nome: nella finestra c'è <code>Etichetta1</code>. Scrivi <code>Etichetta1.testo</code>.»</em>; la correzione automatica propone il nome giusto.</p>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>Rinomina subito i controlli importanti con nomi che dicono a che cosa servono: <code>PulsanteSalva</code>, <code>CasellaNome</code>, <code>ElencoCitta</code>. Con <kbd>F2</kbd> il nome cambia anche in tutto il codice già scritto.</p></div></aside>
+
+<h2 id="dialoghi">Messaggi, domande e più finestre<a class="m-ancora" href="#dialoghi" aria-label="Collegamento a questa parte">#</a></h2>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Funzione</th><th>Che cosa fa</th></tr></thead>
+  <tbody>
+    <tr><td><code>messaggio(testo)</code></td><td>una finestrella con il testo e il pulsante OK</td></tr>
+    <tr><td><code>domanda(testo)</code></td><td>una finestrella Sì/No: restituisce <code>vero</code> o <code>falso</code></td></tr>
+    <tr><td><code>apri_finestra("Finestra2")</code></td><td>mostra un'altra finestra del progetto</td></tr>
+    <tr><td><code>chiudi_finestra("Finestra2")</code></td><td>la chiude; chiudere la finestra iniziale termina il programma</td></tr>
+    <tr><td><code>attendi(secondi)</code></td><td>aspetta, senza bloccare la finestra</td></tr>
+  </tbody>
+</table></div>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteElimina</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-libreria">domanda</span><span class="c-punteggiatura">(</span><span class="c-testi">"Vuoi davvero svuotare l'elenco?"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-controlli">Elenco1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">svuota</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">        <span class="c-libreria">messaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">"Fatto!"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>[Leo] Vuoi davvero svuotare l'elenco? [s/n] <span class="m-risposta">s</span>
+[Leo] Fatto!
+Elenco1.elementi = []</pre></div></figure>
+<p>Ogni finestra vede i controlli di tutte le altre finestre del progetto.</p>
+
+<h2 id="colori">Colori<a class="m-ancora" href="#colori" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Un colore si scrive in quattro modi: un nome italiano (<code>"rosso"</code>, <code>"grigio_scuro"</code>, <code>"blu_notte"</code>…), un codice <code>"#E0182D"</code>, i tre numeri da 0 a 255 con <code>rgb(255, 136, 0)</code>, oppure, per comodità, un nome senza virgolette (<code>Finestra1.sfondo = nero</code>). <code>""</code> torna al colore predefinito.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">sfondo</span> <span class="c-operatori">=</span> <span class="c-testi">"blu_notte"</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">colore_testo</span> <span class="c-operatori">=</span> <span class="c-testi">"#F2CF7A"</span></span><span class="r">    <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">colore_sfondo</span> <span class="c-operatori">=</span> <span class="c-libreria">rgb</span><span class="c-punteggiatura">(</span><span class="c-numeri">255</span><span class="c-punteggiatura">,</span> <span class="c-numeri">136</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Finestra1.sfondo = "#191970"
+Etichetta1.colore_testo = "#F2CF7A"
+Pulsante1.colore_sfondo = "#FF8800"</pre></div></figure>
+<p>I nomi italiani sono 55, da <code>nero</code>, <code>antracite</code> e <code>grafite</code> fino a <code>indaco</code>, <code>viola</code>, <code>lilla</code>, <code>lavanda</code> e <code>trasparente</code>: in Leo Studio li trovi tutti nella <strong>Tavolozza</strong>.</p>
+
+<h2 id="finestra">L'aspetto della finestra<a class="m-ancora" href="#finestra" aria-label="Collegamento a questa parte">#</a></h2>
+<p>La finestra può avere quasi ogni aspetto, anche una forma diversa dal rettangolo. Tutto si imposta dal pannello Proprietà o dal codice, anche mentre il programma gira.</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Forma</th><th>Da codice</th></tr></thead>
+  <tbody>
+    <tr><td>rettangolo arrotondato</td><td><code>Finestra1.forma = "arrotondata"</code> e <code>Finestra1.raggio_angoli = 24</code></td></tr>
+    <tr><td>cerchio, ellisse</td><td><code>Finestra1.forma = "cerchio"</code></td></tr>
+    <tr><td>poligono regolare</td><td><code>Finestra1.forma = forma_poligono(6)</code></td></tr>
+    <tr><td>stella</td><td><code>Finestra1.forma = forma_stella(5)</code></td></tr>
+    <tr><td>da un'immagine PNG</td><td><code>Finestra1.forma = forma_immagine("gatto.png")</code></td></tr>
+  </tbody>
+</table></div>
+<p>Altre proprietà della finestra: <code>opacità</code>, <code>bordo</code> (<code>"nessuno"</code>, <code>"linea"</code>, <code>"doppio"</code>, <code>"luminoso"</code>), <code>ombra</code>, <code>barra_titolo</code>, <code>sempre_in_primo_piano</code>, <code>ridimensionabile</code>, <code>icona</code>, <code>animazione_apertura</code> e <code>animazione_chiusura</code> (<code>"dissolvenza"</code>, <code>"zoom"</code>, <code>"scorrimento"</code>, <code>"rimbalzo"</code>).</p>
+<p>Con <code>tema_controlli</code> scegli l'aspetto di pulsanti, caselle e menu: <code>"moderno"</code> (predefinito), <code>"classico"</code> (come il vecchio Windows), <code>"piatto"</code> o <code>"futuristico"</code> (nero e rosso, come Leo Studio).</p>
+<aside class="m-riquadro m-attenzione" role="note" aria-label="Attenzione"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Per non restare bloccati</p><p>Qualunque forma abbia la finestra, <kbd>Alt</kbd>+<kbd>F4</kbd> la chiude sempre, e il tasto destro apre un menu con <em>Sposta</em>, <em>Riduci</em> e <em>Chiudi</em>.</p></div></aside>
+
+<h2 id="stili">Stili pronti per pulsanti ed etichette<a class="m-ancora" href="#stili" aria-label="Collegamento a questa parte">#</a></h2>
+<p><code>Pulsante</code>, <code>PulsanteImmagine</code> ed <code>Etichetta</code> hanno la proprietà <code>stile</code>, che dà colori, angoli, effetto al passaggio del mouse e al clic, sempre leggibili e coerenti con il tema della finestra.</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Stile</th><th>Quando usarlo</th></tr></thead>
+  <tbody>
+    <tr><td><code>"normale"</code></td><td>l'aspetto del tema (predefinito)</td></tr>
+    <tr><td><code>"principale"</code></td><td>l'azione più importante della finestra</td></tr>
+    <tr><td><code>"secondario"</code></td><td>le azioni di contorno</td></tr>
+    <tr><td><code>"pericolo"</code></td><td>eliminare, annullare qualcosa di importante (rosso)</td></tr>
+    <tr><td><code>"successo"</code></td><td>confermare, salvare (verde)</td></tr>
+    <tr><td><code>"contorno"</code></td><td>solo il bordo e la scritta</td></tr>
+    <tr><td><code>"testo"</code></td><td>solo la scritta, come un collegamento</td></tr>
+  </tbody>
+</table></div>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">PulsanteSalva</span><span class="c-punteggiatura">.</span><span class="c-proprieta">stile</span> <span class="c-operatori">=</span> <span class="c-testi">"principale"</span></span><span class="r">    <span class="c-controlli">PulsanteElimina</span><span class="c-punteggiatura">.</span><span class="c-proprieta">stile</span> <span class="c-operatori">=</span> <span class="c-testi">"pericolo"</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">stile</span> <span class="c-operatori">=</span> <span class="c-testi">"testo"</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>PulsanteSalva.stile = "principale"
+PulsanteElimina.stile = "pericolo"</pre></div></figure>
+<p>Vanno bene anche dei sinonimi: <code>"primario"</code> per <code>"principale"</code>, <code>"elimina"</code> per <code>"pericolo"</code>, <code>"ok"</code> per <code>"successo"</code>…</p>
+
+<h2 id="animazioni">Animazioni in una frase<a class="m-ancora" href="#animazioni" aria-label="Collegamento a questa parte">#</a></h2>
+<p>La frase <code>anima</code> porta pian piano una proprietà di un controllo a un nuovo valore: posizione, dimensioni, opacità, colori.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-flusso">anima</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">sinistra</span> <span class="c-flusso">a</span> <span class="c-numeri">300</span> <span class="c-flusso">in</span> <span class="c-numeri">0.5</span> <span class="c-flusso">secondi</span></span><span class="r">    <span class="c-flusso">anima</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">alto</span> <span class="c-flusso">a</span> <span class="c-numeri">40</span> <span class="c-flusso">in</span> <span class="c-numeri">800</span> <span class="c-flusso">millisecondi</span> <span class="c-flusso">con</span> <span class="c-flusso">curva</span> <span class="c-testi">"rimbalzo"</span></span><span class="r">    <span class="c-flusso">anima</span> <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">colore_testo</span> <span class="c-flusso">a</span> <span class="c-testi">"rosso"</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Pulsante1.sinistra = 300
+Pulsante1.alto = 40
+Etichetta1.colore_testo = "#FF0000"</pre></div></figure>
+<p>La forma completa è <code>anima Oggetto.proprietà a VALORE in DURATA secondi con curva "nome"</code>; durata (predefinita 0,3 secondi) e curva sono facoltative. Le curve sono <code>"morbida"</code> (predefinita), <code>"lineare"</code>, <code>"veloce"</code>, <code>"lenta"</code>, <code>"rimbalzo"</code> ed <code>"elastica"</code>. L'animazione non ferma il programma, e una nuova animazione della stessa proprietà sostituisce quella in corso.</p>
+<p>Ci sono anche cinque <strong>effetti pronti</strong>, come funzioni o come metodi del controllo: <code>lampeggia</code>, <code>scuoti</code>, <code>pulsa</code>, <code>dissolvi</code> e <code>compari</code>.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">mostra_benvenuto</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Benvenuto!"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteAccedi</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-controlli">CasellaPassword</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">!=</span> <span class="c-testi">"segreta"</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-controlli">CasellaPassword</span><span class="c-punteggiatura">.</span><span class="c-proprieta">scuoti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">altrimenti</span></span><span class="r">        <span class="c-libreria">dissolvi</span><span class="c-punteggiatura">(</span><span class="c-controlli">PannelloAccesso</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">poi</span> <span class="c-operatori">=</span> <span class="c-funzioni_utente">mostra_benvenuto</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+<p>Con <code>poi = funzione</code> fai qualcosa quando l'animazione finisce. Se chi usa il programma ha scelto di <em>ridurre le animazioni</em>, ogni animazione salta subito allo stato finale: il programma funziona nello stesso modo. Tutti i dettagli sono nella sezione <a href="grafici-suoni.html#animazioni">Grafici, suoni e animazioni</a>.</p>
+
+<h3 id="effetti">Effetti senza codice e comandi degli effetti<a class="m-ancora" href="#effetti" aria-label="Collegamento a questa parte">#</a></h3>
+<p>Nel pannello delle proprietà ogni controllo visibile ha il gruppo <strong>Effetti</strong>, per dare vita all'app senza scrivere codice: <code>animazione_entrata</code> (come compare quando si apre la finestra: <code>"dissolvenza"</code>, <code>"scorri_su"</code>, <code>"zoom"</code>, <code>"rimbalzo"</code>, <code>"elastico"</code>, <code>"caduta"</code>, <code>"ruota"</code>, <code>"capovolgi"</code>...), con <code>ritardo_entrata</code> e <code>durata_entrata</code> in millisecondi per farli entrare uno dopo l'altro; <code>effetto_continuo</code> (un effetto che si ripete sempre: <code>"pulsa"</code>, <code>"respira"</code>, <code>"galleggia"</code>, <code>"oscilla"</code>, <code>"ruota"</code>, <code>"brilla"</code>, <code>"arcobaleno"</code>, <code>"battito"</code>...) con la sua <code>velocità_effetto</code>; <code>effetto_tocco</code> (cosa fa quando lo tocchi: <code>"rimbalzo"</code>, <code>"affonda"</code>, <code>"onda"</code>, <code>"brilla"</code>...). Nel disegnatore del telefono il pulsante <em>Prova l'effetto</em> li fa vedere subito.</p>
+<p>Dal codice, ogni controllo visibile ha anche i comandi <code>rimbalza()</code>, <code>ruota(giri)</code>, <code>capovolgi()</code>, <code>brilla()</code>, <code>dondola()</code>, <code>trema()</code>, <code>vola_a(x, y)</code>, <code>ingrandisci(fattore)</code>, <code>cambia_colore(colore)</code>, <code>cambia_sfondo(colore)</code>, <code>mostra_con(effetto)</code> e <code>nascondi_con(effetto)</code>, tutti con <code>poi = funzione</code>.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">PulsanteGioca</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-testo_normale">Palla</span><span class="c-punteggiatura">.</span><span class="c-proprieta">rimbalza</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-testo_normale">Stella</span><span class="c-punteggiatura">.</span><span class="c-proprieta">ruota</span><span class="c-punteggiatura">(</span><span class="c-numeri">2</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-testo_normale">Titolo</span><span class="c-punteggiatura">.</span><span class="c-proprieta">cambia_colore</span><span class="c-punteggiatura">(</span><span class="c-testi">"verde"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-testo_normale">Palla</span><span class="c-punteggiatura">.</span><span class="c-proprieta">vola_a</span><span class="c-punteggiatura">(</span><span class="c-numeri">20</span><span class="c-punteggiatura">,</span> <span class="c-numeri">400</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0.8</span><span class="c-punteggiatura">,</span> <span class="c-testi">"rimbalzo"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">PulsanteNascondi</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-testo_normale">Cuore</span><span class="c-punteggiatura">.</span><span class="c-proprieta">nascondi_con</span><span class="c-punteggiatura">(</span><span class="c-testi">"zoom"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+<p>Sul PC le rotazioni diventano un «giro di moneta» (Qt non ruota i controlli); con <em>ridurre le animazioni</em> gli effetti non si muovono. Un progetto d'esempio con tutti gli effetti è in <code>esempi/controlli/effetti/</code>.</p>
+
+<h2 id="controlli">I 146 controlli<a class="m-ancora" href="#controlli" aria-label="Collegamento a questa parte">#</a></h2>
+<p>La barra dei controlli di Leo Studio ha 146 controlli in 21 categorie: i 40 «classici», come quelli di Visual Basic, quelli inventati per Leo, i 22 oggetti da gioco della scheda <em>Giochi</em>, i 20 di <em>Tutti i giorni</em> (calendario, chat, firma, PIN, carosello, meteo…) e quelli della scheda <em>Telefono</em> (bussola, livella, torcia, posizione, batteria, contapassi, fonometro, registratore…: vedi <a href="telefono.html#hardware">Leo sul telefono</a>). In <code>esempi/controlli/</code> c'è un progetto d'esempio per ogni categoria.</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Categoria</th><th>Controlli</th></tr></thead>
+  <tbody>
+    <tr><td>Base</td><td>Finestra, Etichetta, Pulsante, PulsanteImmagine, Collegamento</td></tr>
+    <tr><td>Inserimento</td><td>CasellaTesto, CasellaPassword, AreaTesto, CasellaNumero, SelettoreData, SelettoreColore, Cursore</td></tr>
+    <tr><td>Scelta</td><td>CasellaSpunta, Scelta, Interruttore, Elenco, MenuATendina</td></tr>
+    <tr><td>Contenitori</td><td>Riquadro, Schede, PannelloScorrevole, Divisore</td></tr>
+    <tr><td>Visualizzazione</td><td>Immagine, BarraAvanzamento, BarraStato, Suggerimento</td></tr>
+    <tr><td>Dati</td><td>Tabella, Albero, Grafico</td></tr>
+    <tr><td>Disegno</td><td>Tela, Linea, Forma</td></tr>
+    <tr><td>Media</td><td>Suono, Video, Fotocamera, Dettatura, Voce, LettoreQR, GeneratoreQR, Galleria</td></tr>
+    <tr><td>Menu</td><td>BarraMenu, VoceMenu, MenuContestuale, BarraStrumenti</td></tr>
+    <tr><td>Invisibili</td><td>Timer, DialogoFile, Appunti</td></tr>
+    <tr><td>Italia</td><td>CasellaCodiceFiscale, CasellaIBAN, CasellaTarga, SelettoreComune, CasellaImporto, CalendarioFestività</td></tr>
+    <tr><td>Hardware</td><td>SchedaPico, Led, PulsanteFisico, Sensore, Oscilloscopio, PortaSeriale</td></tr>
+    <tr><td>Telefono</td><td>Bussola, Livella, Vibrazione, Torcia, Posizione, Batteria, Condivisione</td></tr>
+    <tr><td>Giochi</td><td>Scena, Sprite, Fisica, Joystick, Punteggio</td></tr>
+    <tr><td>Dati e rete</td><td>BancaDati, ModuloAutomatico, RichiestaWeb, ServerWeb, Mappa</td></tr>
+    <tr><td>Sicurezza</td><td>Cifratura, MisuratorePassword, Registro</td></tr>
+    <tr><td>Produttività</td><td>Lavagna, Kanban, Diagramma, ContoAllaRovescia, Notifica</td></tr>
+    <tr><td>Indicatori</td><td>Quadrante, Semaforo, Valutazione</td></tr>
+    <tr><td>Sviluppo</td><td>Terminale, EditorCodice</td></tr>
+    <tr><td>Didattica</td><td>Tutor, Assistente</td></tr>
+  </tbody>
+</table></div>
+<p>I controlli <strong>invisibili</strong> (Timer, DialogoFile, Appunti, Suono…) non hanno posizione: in Leo Studio stanno nella striscia sotto la finestra. I <strong>contenitori</strong> (Riquadro, Schede, PannelloScorrevole, Divisore, Scena) contengono altri controlli, e la posizione dei figli si misura dal contenitore.</p>
+<aside class="m-riquadro m-nota" role="note" aria-label="Nota"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Controlli personalizzati</p><p>Hai costruito un gruppo di controlli che ti serve spesso? Selezionali e scegli <em>Strumenti → Crea controllo dalla selezione</em>: diventa un nuovo controllo nella categoria <em>Personalizzati</em>.</p></div></aside>
+
+<h2 id="ancoraggi">Finestre che si allargano: gli ancoraggi<a class="m-ancora" href="#ancoraggi" aria-label="Collegamento a questa parte">#</a></h2>
+<p>I controlli si posizionano in pixel. Quando la finestra si ingrandisce, la proprietà <code>ancoraggio</code> decide che cosa fa ogni controllo: ancorato a <code>sinistra</code> e <code>destra</code> si allarga con lei; ancorato solo a <code>destra</code> si sposta; senza né <code>sinistra</code> né <code>destra</code> resta centrato. Lo stesso vale in verticale con <code>alto</code> e <code>basso</code>.</p>
+<p>Esempio tipico: una casella di testo con <code>["alto", "sinistra", "destra"]</code> si allarga; il pulsante <em>OK</em> con <code>["basso", "destra"]</code> resta nell'angolo. In Leo Studio l'ancoraggio si imposta con un piccolo editor a quattro stanghette nel pannello Proprietà.</p>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="basi.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">04</span>Le basi del linguaggio</span></a><a class="m-succ" href="errori.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">06</span>Errori e come leggerli</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

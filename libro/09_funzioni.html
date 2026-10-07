@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 9 — Le funzioni — Leo, il manuale</title>
+<meta name="description" content="Man mano che un programma cresce, cominci a ripetere gli stessi gruppi di istruzioni. Le funzioni servono a dare un nome a un blocco di codice, così da…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/09_funzioni.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/09_funzioni.html">
+<meta property="og:title" content="Capitolo 9 — Le funzioni — Leo, il manuale">
+<meta property="og:description" content="Man mano che un programma cresce, cominci a ripetere gli stessi gruppi di istruzioni. Le funzioni servono a dare un nome a un blocco di codice, così da…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html" aria-current="page">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte II — Il flusso</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#definire-e-chiamare">Definire e chiamare</a></li><li><a href="#le-funzioni-come-comandi">Le funzioni come comandi</a></li><li><a href="#le-funzioni-sono-valori">Le funzioni sono valori</a></li><li><a href="#le-chiusure-funzioni-che-ricordano">Le chiusure: funzioni che ricordano</a></li><li><a href="#quanti-argomenti-vuoi">Quanti argomenti vuoi</a></li><li><a href="#la-ricorsione">La ricorsione</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 9 — Le funzioni</h1>
+<p>Man mano che un programma cresce, cominci a ripetere gli stessi gruppi di istruzioni. Le <strong>funzioni</strong> servono a dare un nome a un blocco di codice, così da poterlo richiamare quando serve invece di riscriverlo. Sono il mattone con cui si costruiscono i programmi grandi: ogni funzione fa <em>una cosa</em>, la fa bene, e il resto del programma la usa senza doversi preoccupare di <em>come</em>.</p>
+<h2 id="definire-e-chiamare">Definire e chiamare</h2>
+<p>Una funzione si definisce con <code>funzione</code>, seguita dal nome e, tra parentesi, dai <strong>parametri</strong> — i dati che riceve. Dentro, <code>restituisci</code> dice quale valore mandare indietro:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-99" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-99" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-parametri">nome</span><span class="c-punteggiatura">,</span> <span class="c-parametri">saluto</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao"</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-parametri">saluto</span><span class="c-interpolazione">}</span><span class="c-testi">, </span><span class="c-interpolazione">{</span><span class="c-parametri">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-testi">"Giulia"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-testi">"Marco"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">saluto</span> <span class="c-operatori">=</span> <span class="c-testi">"Buongiorno"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-100" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-100" class="libro-pre"><code>Ciao, Giulia!
+Buongiorno, Marco!</code></pre></figure>
+<p>Guarda il parametro <code>saluto = "Ciao"</code>: è un <strong>valore predefinito</strong>. Se chi chiama la funzione non lo fornisce (come nel primo caso), vale <code>"Ciao"</code>; se lo fornisce (secondo caso), vince il suo. E nota come, nella seconda chiamata, l'abbiamo passato <strong>per nome</strong>: <code>saluto = "Buongiorno"</code>. Passare gli argomenti per nome rende le chiamate leggibili, specie quando i parametri sono tanti.</p>
+<p>Una regola da ricordare: una funzione va <strong>definita prima di essere chiamata</strong>. Se la metti dopo il punto in cui la usi, spostala sopra — oppure usa il blocco <code>inizio</code> del Capitolo 1, che parte quando tutto il file è già stato letto.</p>
+<h2 id="le-funzioni-come-comandi">Le funzioni come comandi</h2>
+<p>Hai notato nel Capitolo 1 che <code>scrivi</code> si usa senza parentesi? La stessa cortesia vale per le tue funzioni, a una condizione: che <strong>non abbiano <code>restituisci</code></strong>, cioè che facciano qualcosa invece di calcolare un valore. In quel caso puoi chiamarle come comandi, con gli argomenti separati da virgole e senza parentesi:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-101" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-101" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-parametri">nome</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-parametri">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-funzioni_utente">saluta</span> <span class="c-testi">"Ada Lovelace"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-102" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-102" class="libro-pre"><code>Ciao, Ada Lovelace!</code></pre></figure>
+<p>Le funzioni che invece <strong>restituiscono</strong> un valore vogliono le parentesi, come in un foglio di calcolo: <code>saluta("Giulia")</code>, <code>radice(16)</code>, <code>media_di(voti...)</code>. La regola è coerente con tutto il resto: le parentesi dicono «calcola e dammi un valore».</p>
+<h2 id="le-funzioni-sono-valori">Le funzioni sono valori</h2>
+<p>Ecco un'idea che all'inizio spiazza e poi diventa indispensabile: in Leo una funzione è un <strong>valore</strong> come un numero o un testo. Puoi metterla in una variabile, passarla a un'altra funzione, restituirla. Puoi anche creare una funzione <em>senza nome</em> — una funzione anonima — al volo:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-103" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-103" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">doppio</span> <span class="c-operatori">=</span> <span class="c-dichiarazioni">funzione</span> <span class="c-punteggiatura">(</span><span class="c-parametri">x</span><span class="c-punteggiatura">)</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">x</span> <span class="c-operatori">*</span> <span class="c-numeri">2</span> <span class="c-flusso">fine</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">doppio</span><span class="c-punteggiatura">(</span><span class="c-numeri">21</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">mappa</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">,</span> <span class="c-variabili">doppio</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">filtra</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">,</span> <span class="c-dichiarazioni">funzione</span> <span class="c-punteggiatura">(</span><span class="c-parametri">v</span><span class="c-punteggiatura">)</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">v</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">6</span> <span class="c-flusso">fine</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-104" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-104" class="libro-pre"><code>42
+[8, 12, 14, 18, 20]
+[6, 7, 9, 10]</code></pre></figure>
+<p><code>mappa(lista, funzione)</code> applica una funzione a ogni elemento e restituisce la nuova lista; <code>filtra(lista, funzione)</code> tiene solo gli elementi per cui la funzione dà <code>vero</code>. A entrambe passiamo una funzione: nel primo caso <code>doppio</code> (per nome), nel secondo una funzione anonima scritta sul posto. Questo stile — passare comportamenti, non solo dati — è potentissimo, e lo ritroveremo parlando della libreria.</p>
+<h2 id="le-chiusure-funzioni-che-ricordano">Le chiusure: funzioni che ricordano</h2>
+<p>Quando definisci una funzione dentro un'altra, quella interna <strong>ricorda</strong> le variabili del posto in cui è nata, anche dopo che la funzione esterna è terminata. Questo meccanismo si chiama <strong>chiusura</strong>, ed è più facile vederlo che spiegarlo:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-105" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-105" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">crea_contatore</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">conteggio</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+    <span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">incrementa</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+        <span class="c-variabili">conteggio</span> <span class="c-operatori">+=</span> <span class="c-numeri">1</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-variabili">conteggio</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-funzioni_utente">incrementa</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">conta</span> <span class="c-operatori">=</span> <span class="c-funzioni_utente">crea_contatore</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">conta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">conta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">conta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-106" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-106" class="libro-pre"><code>3</code></pre></figure>
+<p><code>crea_contatore</code> crea una variabile <code>conteggio</code> e restituisce la funzione <code>incrementa</code>, che la usa. Anche se <code>crea_contatore</code> è già finita, la funzione <code>conta</code> continua ad avere accesso al <em>suo</em> <code>conteggio</code>, che cresce a ogni chiamata. Ogni contatore creato così ha un conteggio tutto suo, indipendente dagli altri. Le chiusure sono il modo elegante di «incapsulare» uno stato senza bisogno di variabili globali.</p>
+<h2 id="quanti-argomenti-vuoi">Quanti argomenti vuoi</h2>
+<p>A volte non sai in anticipo quanti argomenti riceverà una funzione. Tre puntini dopo l'ultimo parametro li raccolgono tutti in una lista; e tre puntini nella <em>chiamata</em> fanno il contrario, srotolando una lista in tanti argomenti:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-107" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-107" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">media_di</span><span class="c-punteggiatura">(</span><span class="c-parametri">valori</span><span class="c-operatori">...</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-parametri">valori</span><span class="c-punteggiatura">)</span> <span class="c-operatori">/</span> <span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-parametri">valori</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">media_di</span><span class="c-punteggiatura">(</span><span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">8</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">5</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">media_di</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-operatori">...</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-108" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-108" class="libro-pre"><code>7.0
+7.0</code></pre></figure>
+<p>La stessa funzione accetta sia argomenti sciolti (<code>media_di(6, 7, 8)</code>) sia una lista già pronta srotolata con i puntini (<code>media_di(voti...)</code>).</p>
+<h2 id="la-ricorsione">La ricorsione</h2>
+<p>Una funzione può chiamare <strong>sé stessa</strong>. Sembra un gioco di prestigio, ma è il modo naturale per risolvere i problemi che si definiscono in termini di sé stessi — come il fattoriale, dove <code>5!</code> è <code>5 x 4!</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-109" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-109" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">fattoriale</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">se</span> <span class="c-parametri">n</span> <span class="c-operatori">&lt;=</span> <span class="c-numeri">1</span> <span class="c-flusso">allora</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-numeri">1</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">n</span> <span class="c-operatori">*</span> <span class="c-funzioni_utente">fattoriale</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span> <span class="c-operatori">-</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">fattoriale</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-110" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-110" class="libro-pre"><code>120</code></pre></figure>
+<p>La chiave di ogni ricorsione è il <strong>caso base</strong> — qui <code>se n &lt;= 1</code>, che ferma la discesa. Senza di esso, la funzione si richiamerebbe all'infinito; Leo ti protegge fermandosi dopo 1000 chiamate annidate con un <code>ErroreRicorsione</code>, ma il caso base devi sempre scriverlo tu.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Scrivi una funzione <code>area_rettangolo(base, altezza)</code> che restituisce l'area, e una <code>perimetro_rettangolo(base, altezza)</code> che restituisce il perimetro. Stampale per un paio di rettangoli.</li><li>Scrivi una funzione <code>applica_sconto(prezzo, percento = 10)</code> con uno sconto predefinito del 10%, e provala sia con lo sconto predefinito sia con uno diverso passato per nome.</li><li>Usando <code>filtra</code> e una funzione anonima, estrai da una lista di numeri solo quelli maggiori della loro media. (Suggerimento: calcola prima la <code>media</code>, poi filtra.)</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="08_cicli.html"><span>Indietro</span><strong>Ripetere</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="10_errori.html"><span>Avanti</span><strong>Quando qualcosa va storto</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

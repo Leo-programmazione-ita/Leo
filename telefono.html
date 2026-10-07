@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leo sul telefono — programmi e app con finestre, dal tuo Android</title>
+<meta name="description" content="L'app Leo per Android: scrivi ed esegui programmi in italiano, disegna app con finestre con le dita, usa bussola, sensori, fotocamera e voce, crea l'APK da installare. Anche senza PC.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/telefono.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/telefono.html">
+<meta property="og:title" content="Leo sul telefono — app vere, create dal telefono">
+<meta property="og:description" content="Modelli pronti, disegnatore di finestre, stili con un tocco, bussola, sensori, fotocamera e voce, e l&#x27;APK da installare. Tutto in italiano.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="preload" as="image" href="img/app/bussola-390.webp" imagesrcset="img/app/bussola-390.webp 390w, img/app/bussola-780.webp 780w" imagesizes="280px">
+<link rel="stylesheet" href="css/stile.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Leo per Android","applicationCategory":"DeveloperApplication","operatingSystem":"Android 7.0 o successivo","inLanguage":"it","url":"https://leoitalia.com/telefono.html","image":"https://leoitalia.com/img/og.png","description":"Scrivi ed esegui programmi Leo sul telefono, disegna app con finestre, usa l'hardware del telefono e crea l'APK da installare.","author":{"@type":"Person","name":"Rosario Zappalà"},"publisher":{"@type":"Person","name":"Rosario Zappalà"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Serve il computer per usare Leo sul telefono?","acceptedAnswer":{"@type":"Answer","text":"No. L'app Leo ha dentro tutto: il linguaggio, gli esempi, il disegnatore di finestre e la creazione dell'APK. Il PC con Leo Studio è un'aggiunta, non un obbligo."}},
+{"@type":"Question","name":"Su quali telefoni funziona?","acceptedAnswer":{"@type":"Answer","text":"Su Android 7.0 e successivi. Le app che crei sono un solo APK che va su tutti i telefoni Android."}},
+{"@type":"Question","name":"L'app usa fotocamera, microfono e posizione?","acceptedAnswer":{"@type":"Answer","text":"Solo se il tuo programma li usa. La prima volta Android chiede il permesso; se rispondi di no, il programma riceve un errore spiegato in italiano e continua."}},
+{"@type":"Question","name":"La guida funziona senza internet?","acceptedAnswer":{"@type":"Answer","text":"Sì. Nell'app c'è «Guida e sito»: manuale, esempi e pagine del sito si aprono anche offline. Solo i video hanno bisogno della rete."}}
+]}
+</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<div class="avanzamento" aria-hidden="true"></div>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html" aria-current="page">Telefono</a></li>
+        <li><a href="novita.html">Novità</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+
+<!-- =================================================================== HERO -->
+<section class="hero tel-hero" aria-labelledby="titolo-tel">
+  <div class="hero-sfondo" aria-hidden="true"><span class="alone"></span><span class="griglia"></span></div>
+  <div class="contenitore hero-griglia">
+    <div class="hero-testo">
+      <p class="sopratitolo compari">L'app Leo per Android</p>
+      <h1 id="titolo-tel" class="manifesto parole">Leo in tasca. <em class="testo-accento">App vere, dal telefono.</em></h1>
+      <p class="sottotitolo compari r4">Lo stesso linguaggio e lo stesso motore di Leo Studio, in tasca. Scrivi codice con una tastiera pensata per programmare, disegna app con finestre, usa sensori, fotocamera, GPS e voce, e crea l'APK da installare o distribuire. Senza computer.</p>
+      <div class="azioni compari r5">
+        <a class="pulsante grande solo-fuori-app" href="scarica.html#android">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+          Scarica l'app
+        </a>
+        <a class="pulsante grande secondario" href="video.html#serie=telefono-hardware">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+          I video sul telefono
+        </a>
+      </div>
+      <ul class="nota-azioni compari r6">
+        <li>Android 7.0 e successivi</li><li>Un solo APK per tutti i telefoni</li><li>Niente account</li><li>Tutto in italiano</li>
+      </ul>
+    </div>
+    <div class="ventaglio compari ingrandisci r2" aria-label="Tre schermate vere dell'app Leo">
+      <figure class="telefono t-sinistra"><div class="schermo"><img src="img/app/home-390.webp" srcset="img/app/home-390.webp 390w, img/app/home-780.webp 780w" sizes="220px" width="390" height="844" decoding="async" alt="La schermata iniziale dell'app Leo: I miei programmi, Nuovo programma e Nuova app con finestre"></div></figure>
+      <figure class="telefono t-destra"><div class="schermo"><img src="img/app/bussola-disegnatore-390.webp" srcset="img/app/bussola-disegnatore-390.webp 390w, img/app/bussola-disegnatore-780.webp 780w" sizes="220px" width="390" height="844" decoding="async" alt="Il disegnatore di finestre con l'app Bussola e livella: bussola, livella a bolla e pulsante della torcia"></div></figure>
+      <figure class="telefono t-centro"><div class="schermo"><img src="img/app/bussola-390.webp" srcset="img/app/bussola-390.webp 390w, img/app/bussola-780.webp 780w" sizes="280px" width="390" height="844" fetchpriority="high" decoding="async" alt="L'app Bussola e livella in esecuzione: la bussola segna 46 gradi nord-est e la livella mostra l'inclinazione"></div></figure>
+      <p class="bollino b1"><span class="segno" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span><span>quando Bussola1.cambio fai<small>l'hardware vero del telefono</small></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== DUE MODI -->
+<section class="sezione" aria-labelledby="titolo-modi">
+  <div class="contenitore">
+    <div class="intestazione-sezione centro">
+      <p class="sopratitolo compari">Due modi di programmare</p>
+      <h2 id="titolo-modi" class="titolo-sezione parole">Un programma di dieci righe <em class="testo-accento">o un'app intera.</em></h2>
+      <p class="introduzione compari r2">Dalla schermata iniziale scegli: <strong>Nuovo programma</strong>, per scrivere codice e vedere subito il risultato, o <strong>Nuova app con finestre</strong>, per costruire un'app con pulsanti, caselle ed elenchi.</p>
+    </div>
+    <div class="due-modi">
+      <article class="modo scheda compari da-sinistra">
+        <div class="modo-foto">
+          <figure class="telefono"><div class="schermo"><img src="img/app/codice-390.webp" srcset="img/app/codice-390.webp 390w, img/app/codice-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="L'editor dell'app con il codice del Contatore colorato e la tastiera con simboli e parole di Leo"></div></figure>
+          <figure class="telefono"><div class="schermo"><img src="img/app/errore-390.webp" srcset="img/app/errore-390.webp 390w, img/app/errore-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="Un errore spiegato in italiano: tottale non è definito, forse intendevi totale, con la riga corretta proposta e il pulsante Correggi"></div></figure>
+        </div>
+        <div class="modo-testo">
+          <p class="mondo-sopra">Nuovo programma</p>
+          <h3>Scrivi, premi Esegui, leggi</h3>
+          <ul class="elenco-spunte">
+            <li>Due file di tasti sopra la tastiera: i simboli (<code>( ) " = :</code>) e le parole di Leo (<code>stampa</code>, <code>se</code>, <code>allora</code>…)</li>
+            <li>Il codice colorato come in Leo Studio, con i numeri di riga</li>
+            <li>Errori in italiano, con la riga corretta proposta: un tocco su <strong>Correggi</strong></li>
+            <li>Esempi pronti da aprire e i tuoi programmi salvati nell'app</li>
+          </ul>
+        </div>
+      </article>
+      <article class="modo scheda compari da-destra r2">
+        <div class="modo-foto">
+          <figure class="telefono"><div class="schermo"><img src="img/app/disegnatore-390.webp" srcset="img/app/disegnatore-390.webp 390w, img/app/disegnatore-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="Il disegnatore: il pulsante +1 selezionato con le maniglie per spostarlo e ridimensionarlo"></div></figure>
+          <figure class="telefono"><div class="schermo"><img src="img/app/contatore-app-390.webp" srcset="img/app/contatore-app-390.webp 390w, img/app/contatore-app-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="L'app Contatore in esecuzione: il numero 3 e i pulsanti meno uno, più uno e Azzera"></div></figure>
+        </div>
+        <div class="modo-testo">
+          <p class="mondo-sopra">Nuova app con finestre</p>
+          <h3>Disegna, scrivi il codice, prova</h3>
+          <ul class="elenco-spunte">
+            <li>Parti da un modello o da una finestra vuota</li>
+            <li>Sposti e ridimensioni gli oggetti con le dita; le guide li allineano</li>
+            <li>A ogni oggetto dici cosa fare: <code>quando PulsantePiu.clic fai</code></li>
+            <li><strong>Prova</strong> e l'app parte a tutto schermo, sul tuo telefono</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== PERCORSO: DALL'IDEA ALL'APK -->
+<section class="sezione scura" id="percorso" aria-labelledby="titolo-percorso">
+  <div class="contenitore">
+    <div class="intestazione-sezione intestazione-con-azione">
+      <div>
+        <p class="sopratitolo compari">Dall'idea all'app</p>
+        <h2 id="titolo-percorso" class="titolo-sezione parole">Sei tocchi. <em class="testo-accento">Un'app da installare.</em></h2>
+        <p class="introduzione compari r2">Sono schermate vere dell'app Leo, nell'ordine in cui le incontri. Scorri per seguirle tutte.</p>
+      </div>
+      <div class="frecce-striscia compari"><button type="button" data-scorri="-1" aria-controls="striscia-app" aria-label="Schermate precedenti">←</button><button type="button" data-scorri="1" aria-controls="striscia-app" aria-label="Schermate successive">→</button></div>
+    </div>
+  </div>
+  <ol class="striscia" id="striscia-app" data-striscia tabindex="0" aria-label="I passi per creare un'app, uno per schermata">
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/modelli-390.webp" srcset="img/app/modelli-390.webp 390w, img/app/modelli-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Nuova app con finestre: i modelli Saluto, Contatore, Lista della spesa, Timer da cucina, Quiz, Scheda dati, Pappagallo e Bussola e livella"></div></figure>
+      <div><span class="num-passo">1</span><h3>Scegli un modello</h3><p>Otto app già funzionanti: Saluto, Contatore, Lista della spesa, Timer, Quiz, Scheda dati, Pappagallo, Bussola e livella.</p></div></li>
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/disegnatore-390.webp" srcset="img/app/disegnatore-390.webp 390w, img/app/disegnatore-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Il disegnatore con un pulsante selezionato e le sue maniglie"></div></figure>
+      <div><span class="num-passo">2</span><h3>Sistemala con le dita</h3><p>Trascina, allarga, allinea. «Sistema gli oggetti da solo» mette tutto in ordine per te.</p></div></li>
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/proprieta-390.webp" srcset="img/app/proprieta-390.webp 390w, img/app/proprieta-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Le proprietà del pulsante: nome, posizione, dimensioni, testo e immagine"></div></figure>
+      <div><span class="num-passo">3</span><h3>Cambia testi e colori</h3><p>Nome, testo, posizione, immagine: le proprietà di ogni oggetto, in italiano.</p></div></li>
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/codice-390.webp" srcset="img/app/codice-390.webp 390w, img/app/codice-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Il codice degli eventi della finestra, colorato"></div></figure>
+      <div><span class="num-passo">4</span><h3>Scrivi cosa succede</h3><p>Il codice degli eventi è già pronto nei modelli: leggilo, cambialo, aggiungi il tuo.</p></div></li>
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/contatore-app-390.webp" srcset="img/app/contatore-app-390.webp 390w, img/app/contatore-app-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="L'app Contatore in prova a tutto schermo"></div></figure>
+      <div><span class="num-passo">5</span><h3>Premi Prova</h3><p>L'app parte a tutto schermo. Se c'è un errore, Leo lo spiega e ti porta alla riga.</p></div></li>
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/crea-apk-390.webp" srcset="img/app/crea-apk-390.webp 390w, img/app/crea-apk-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Crea app Android: nome, icona, colore e sfondo, con l'anteprima"></div></figure>
+      <div><span class="num-passo">6</span><h3>Crea l'APK</h3><p>Nome, icona, colore, sfondo chiaro o scuro. Poi installala sul telefono o condividila.</p></div></li>
+    <li class="passo-app"><figure class="telefono"><div class="schermo"><img src="img/app/apk-pronta-390.webp" srcset="img/app/apk-pronta-390.webp 390w, img/app/apk-pronta-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="App Contatore pronta: installa su questo telefono, condividi l'app, copia di sicurezza della chiave"></div></figure>
+      <div><span class="num-passo">✓</span><h3>È tua</h3><p>L'app si installa accanto a Leo e parte direttamente, con il suo nome e la sua icona.</p></div></li>
+  </ol>
+</section>
+
+<!-- =================================================================== STILI -->
+<section class="sezione" id="stili" aria-labelledby="titolo-stili">
+  <div class="contenitore stili-griglia">
+    <div>
+      <p class="sopratitolo compari">Lo stile con un tocco</p>
+      <h2 id="titolo-stili" class="titolo-sezione parole">Stessa app, <em class="testo-accento">sette vestiti.</em></h2>
+      <p class="introduzione compari r2">Il pannello <strong>Stile</strong> cambia insieme tutti gli oggetti della finestra: pulsanti, caselle, testi, sfondo. Prova, e se non ti piace torni indietro con un tocco.</p>
+      <ul class="gettoni stili-gettoni compari r3" aria-label="Gli stili pronti">
+        <li><i style="background:#E0182D"></i>Leo</li><li><i style="background:#3A4BD8"></i>Notte</li><li><i style="background:#1E9BE0"></i>Oceano</li><li><i style="background:#F5B38A"></i>Pastello</li><li><i style="background:#0A0A0A;box-shadow:0 0 0 2px #FF3BD4"></i>Neon</li><li><i style="background:#2FA84F"></i>Prato</li><li><i style="background:#8E8E93"></i>Classico</li>
+      </ul>
+    </div>
+    <div class="stili-telefoni compari ingrandisci r2">
+      <figure class="telefono"><div class="schermo"><img src="img/app/stile-leo-390.webp" srcset="img/app/stile-leo-390.webp 390w, img/app/stile-leo-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="La Lista della spesa con lo stile Leo: rosso e nero"></div><figcaption>Leo</figcaption></figure>
+      <figure class="telefono"><div class="schermo"><img src="img/app/stile-oceano-390.webp" srcset="img/app/stile-oceano-390.webp 390w, img/app/stile-oceano-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="La stessa Lista della spesa con lo stile Oceano: azzurro"></div><figcaption>Oceano</figcaption></figure>
+      <figure class="telefono"><div class="schermo"><img src="img/app/stile-neon-390.webp" srcset="img/app/stile-neon-390.webp 390w, img/app/stile-neon-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="La stessa Lista della spesa con lo stile Neon: contorni luminosi sul nero"></div><figcaption>Neon</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== HARDWARE -->
+<section class="sezione scura hardware" id="hardware" aria-labelledby="titolo-hw">
+  <span class="alone-idea" aria-hidden="true"></span>
+  <div class="contenitore">
+    <div class="intestazione-sezione centro">
+      <p class="sopratitolo compari">Novità · L'hardware del telefono</p>
+      <h2 id="titolo-hw" class="titolo-sezione parole">Il telefono diventa <em class="testo-accento">uno strumento.</em></h2>
+      <p class="introduzione compari r2">Bussola, livella, sensori, fotocamera, codici QR, voce, vibrazione, torcia, GPS: li trovi tra gli oggetti, nella scheda <strong>Telefono</strong>, e li usi con le stesse parole di sempre.</p>
+    </div>
+    <div class="hw-griglia">
+      <div class="hw-telefoni compari da-sinistra">
+        <figure class="telefono"><div class="schermo"><img src="img/app/oggetti-telefono-390.webp" srcset="img/app/oggetti-telefono-390.webp 390w, img/app/oggetti-telefono-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Aggiungi un oggetto, scheda Telefono: Batteria, Bussola, Condivisione, Livella, Posizione, Torcia, Vibrazione"></div></figure>
+        <figure class="telefono"><div class="schermo"><img src="img/app/hardware-390.webp" srcset="img/app/hardware-390.webp 390w, img/app/hardware-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="L'esempio Telefono: bussola, livella, fotocamera, lettore di codici, dettatura, sensori di luce e accelerometro, pulsanti Vibra, Torcia, Dove sono, Condividi e Notifica"></div></figure>
+      </div>
+      <ul class="hw-voci" role="list">
+        <li class="compari"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span><div><h3>Bussola e Livella</h3><p>Disegnate e vive: l'ago cerca il nord, la bolla si sposta quando inclini il telefono.</p></div></li>
+        <li class="compari r1"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16c2-6 4-9 8-9s6 3 8 9"/><path d="M12 7V3M8 20h8"/></svg></span><div><h3>Sensori</h3><p>Accelerometro, giroscopio, bussola, luce, prossimità, pressione, passi, orientamento, gravità: valore, x, y, z.</p></div></li>
+        <li class="compari r2"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><div><h3>Fotocamera e codici</h3><p>Scatti una foto, leggi un codice QR o un codice a barre: il risultato arriva con un evento.</p></div></li>
+        <li class="compari r3"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span><div><h3>Dettatura e Voce</h3><p>Il telefono capisce quello che dici e legge ad alta voce con la voce italiana.</p></div></li>
+        <li class="compari r1"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M3 9v6M21 9v6"/></svg></span><div><h3>Vibrazione e Torcia</h3><p>Un colpetto quando la livella è in piano, la luce del flash con un pulsante.</p></div></li>
+        <li class="compari r2"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><div><h3>Posizione e Batteria</h3><p>Dove ti trovi con il GPS, quanta carica resta e se il telefono è in carica.</p></div></li>
+        <li class="compari r3"><span class="hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v11M8 7l4-4 4 4M6 11H5v9h14v-9h-1"/></svg></span><div><h3>Condivisione e Notifiche</h3><p>Manda un testo con WhatsApp, posta o messaggi; fai comparire una vera notifica.</p></div></li>
+      </ul>
+    </div>
+
+    <div class="hw-codice">
+      <div class="finestra-codice compari da-sinistra">
+        <div class="barra"><i></i><i></i><i></i><span>Pappagallo · il modello che ripete quello che dici</span></div>
+<!--leo--><pre class="codice"><code data-controlli="Dettatura1 Voce1"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Dettatura1</span><span class="c-punteggiatura">.</span><span class="c-eventi">frase_riconosciuta</span> <span class="c-flusso">fai</span>
+    <span class="c-controlli">Voce1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">leggi</span><span class="c-punteggiatura">(</span><span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"testo"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre><!--/leo-->
+      </div>
+      <div class="finestra-codice compari da-destra r2">
+        <div class="barra"><i></i><i></i><i></i><span>Una scossa? Il telefono vibra</span></div>
+<!--leo--><pre class="codice"><code data-controlli="Sensore1 Vibrazione1"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Sensore1</span><span class="c-punteggiatura">.</span><span class="c-eventi">lettura</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-parametri">evento</span><span class="c-punteggiatura">[</span><span class="c-testi">"valore"</span><span class="c-punteggiatura">]</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">18</span> <span class="c-flusso">allora</span>     <span class="c-commenti"># una scossa!</span>
+        <span class="c-controlli">Vibrazione1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">vibra</span><span class="c-punteggiatura">(</span><span class="c-numeri">200</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre><!--/leo-->
+      </div>
+    </div>
+    <div class="hw-note">
+      <p class="compari"><strong>Permessi, con garbo.</strong> La prima volta il telefono chiede il permesso (fotocamera, microfono, posizione). Se la risposta è no, il programma riceve un errore spiegato in italiano e va avanti.</p>
+      <p class="compari r1"><strong>Anche sul PC.</strong> In Leo Studio questi oggetti ci sono lo stesso: bussola e livella si provano con il mouse, la posizione è simulata, la vibrazione è un bip.</p>
+      <p class="compari r2"><strong>E non finisce qui.</strong> Nuovi effetti e animazioni per le app arriveranno con i prossimi aggiornamenti, un pezzo alla volta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== OGGETTI SPECIALI -->
+<section class="sezione" id="oggetti" aria-labelledby="titolo-oggetti">
+  <div class="contenitore oggetti-griglia">
+    <div class="oggetti-telefoni compari ingrandisci">
+      <figure class="telefono"><div class="schermo"><img src="img/app/oggetti-390.webp" srcset="img/app/oggetti-390.webp 390w, img/app/oggetti-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Aggiungi un oggetto, schede Italia e Produttività: calendario delle festività, codice fiscale, IBAN, importo, targa, comune, conto alla rovescia, Kanban, lavagna, notifica"></div></figure>
+      <figure class="telefono"><div class="schermo"><img src="img/app/scheda-dati-390.webp" srcset="img/app/scheda-dati-390.webp 390w, img/app/scheda-dati-780.webp 780w" sizes="240px" width="390" height="844" loading="lazy" decoding="async" alt="Il modello Scheda dati: codice fiscale, comune di Catania e IBAN controllati, con data di nascita e comune ricavati dal codice fiscale"></div></figure>
+    </div>
+    <div>
+      <p class="sopratitolo compari">Oggetti speciali</p>
+      <h2 id="titolo-oggetti" class="titolo-sezione parole">Pensati per l'Italia. <em class="testo-accento">Pronti da usare.</em></h2>
+      <p class="introduzione compari r2">Nella tavolozza del telefono ci sono più di 70 oggetti. Non solo pulsanti e caselle: oggetti che fanno già il lavoro difficile, e che nelle app vere servono davvero.</p>
+      <dl class="oggetti-elenco compari r3">
+        <div><dt>Italia</dt><dd>Codice fiscale che si controlla da solo, IBAN, targa, importo in euro, comuni italiani, calendario con le festività</dd></div>
+        <div><dt>Produttività</dt><dd>Conto alla rovescia, Kanban, lavagna, notifiche</dd></div>
+        <div><dt>Dati e disegno</dt><dd>Tabelle, grafici, alberi, forme, linee, tela</dd></div>
+        <div><dt>Giochi e indicatori</dt><dd>Joystick, punteggio, quadrante, semaforo, stelle di valutazione</dd></div>
+        <div><dt>Media e sicurezza</dt><dd>Galleria, generatore di codici QR, misuratore di password, cifratura, editor di codice</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== GALLERIA DI APP -->
+<section class="sezione scura" id="app-pronte" aria-labelledby="titolo-app-pronte">
+  <div class="contenitore">
+    <div class="intestazione-sezione centro">
+      <p class="sopratitolo compari">Fatte con Leo, sul telefono</p>
+      <h2 id="titolo-app-pronte" class="titolo-sezione parole">App complete, <em class="testo-accento">scritte sul telefono.</em></h2>
+    </div>
+    <div class="galleria-app">
+      <figure class="compari"><div class="telefono"><div class="schermo"><img src="img/app/timer-390.webp" srcset="img/app/timer-390.webp 390w, img/app/timer-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="Il Timer da cucina: 5 minuti, pulsanti Avvia, Pausa, Azzera"></div></div><figcaption>Timer da cucina<small>vibra davvero alla fine</small></figcaption></figure>
+      <figure class="compari r1"><div class="telefono"><div class="schermo"><img src="img/app/quiz-390.webp" srcset="img/app/quiz-390.webp 390w, img/app/quiz-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="Il Quiz: qual è la capitale d'Italia? Milano, Roma, Napoli"></div></div><figcaption>Quiz<small>domande, risposte, punti</small></figcaption></figure>
+      <figure class="compari r2"><div class="telefono"><div class="schermo"><img src="img/app/disegnatore-chiaro-390.webp" srcset="img/app/disegnatore-chiaro-390.webp 390w, img/app/disegnatore-chiaro-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="La Lista della spesa nel disegnatore, in tema chiaro: casella, pulsante più, elenco e pulsanti Togli e Svuota"></div></div><figcaption>Lista della spesa<small>aggiungi, togli, svuota</small></figcaption></figure>
+      <figure class="compari r3"><div class="telefono"><div class="schermo"><img src="img/app/contatore-390.webp" srcset="img/app/contatore-390.webp 390w, img/app/contatore-780.webp 780w" sizes="200px" width="390" height="844" loading="lazy" decoding="async" alt="Il Contatore nel disegnatore, con i pulsanti meno uno, più uno e Azzera"></div></div><figcaption>Contatore<small>il primo passo</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== GUIDA OFFLINE -->
+<section class="sezione" id="guida-offline" aria-labelledby="titolo-offline">
+  <div class="contenitore offline-griglia">
+    <div>
+      <p class="sopratitolo compari">Guida e sito</p>
+      <h2 id="titolo-offline" class="titolo-sezione parole">Il manuale in tasca, <em class="testo-accento">anche senza rete.</em></h2>
+      <p class="introduzione compari r2">Nell'app c'è la voce <strong>Guida e sito</strong>: questo sito, con il manuale, gli esempi pronti e le pagine sul telefono, si apre dentro Leo anche in aereo o in montagna. Il tasto Indietro ti riporta alla pagina di prima e poi all'app.</p>
+      <ul class="elenco-spunte compari r3">
+        <li>Il manuale completo, con la ricerca</li>
+        <li>I programmi pronti da copiare nell'editor</li>
+        <li>I video, quando c'è la rete: senza, il sito lo dice con garbo</li>
+        <li>Anche Leo Studio sul PC ha «Guida e sito» nel menu Aiuto</li>
+      </ul>
+    </div>
+    <div class="offline-scena compari ingrandisci r2" aria-hidden="true">
+      <div class="telefono"><div class="schermo schermo-sito">
+        <div class="ss-barra"><span>‹</span><b>Guida e sito</b><span>✕</span></div>
+        <div class="ss-pagina">
+          <div class="ss-testata"><img src="img/stemma_32.png" alt="" width="16" height="16"><b>LEO</b></div>
+          <p class="ss-sopra">Manuale</p>
+          <p class="ss-titolo">Tutto Leo, <em>una pagina alla volta.</em></p>
+          <div class="ss-schede"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="ss-offline"><span></span>Senza internet · funziona lo stesso</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== DOMANDE -->
+<section class="sezione scura" id="domande-tel" aria-labelledby="titolo-dt">
+  <div class="contenitore domande-griglia">
+    <div class="compari">
+      <p class="sopratitolo">Domande</p>
+      <h2 id="titolo-dt" class="titolo-sezione">Leo sul telefono, <em class="testo-accento">in breve.</em></h2>
+      <p class="introduzione">Altre risposte nelle <a href="manuale/domande.html">domande frequenti</a> del manuale.</p>
+    </div>
+    <div class="domande compari r2">
+      <details><summary>Serve il computer per usare Leo sul telefono?</summary><p>No. L'app Leo ha dentro tutto: il linguaggio, gli esempi, il disegnatore di finestre e la creazione dell'APK. Il PC con Leo Studio è un'aggiunta, non un obbligo.</p></details>
+      <details><summary>Su quali telefoni funziona?</summary><p>Su Android 7.0 e successivi. Le app che crei sono un solo APK che va su tutti i telefoni Android.</p></details>
+      <details><summary>L'app usa fotocamera, microfono e posizione?</summary><p>Solo se il tuo programma li usa. La prima volta Android chiede il permesso; se rispondi di no, il programma riceve un errore spiegato in italiano e continua.</p></details>
+      <details><summary>Posso distribuire le app che creo?</summary><p>Sì: «Condividi l'app» manda l'APK con WhatsApp, posta o Drive. Chi lo riceve lo installa e l'app parte direttamente, senza Leo. Le app che crei sono tue: puoi distribuirle e venderle.</p></details>
+      <details><summary>La guida funziona senza internet?</summary><p>Sì. Nell'app c'è «Guida e sito»: manuale, esempi e pagine del sito si aprono anche offline. Solo i video hanno bisogno della rete.</p></details>
+      <details><summary>Lo stesso programma va sul PC e sul telefono?</summary><p>Il linguaggio è lo stesso e i progetti con finestre di Leo Studio girano anche sul telefono. Alcuni oggetti sono solo per il PC (per esempio quelli per le schede elettroniche) e al loro posto il telefono mostra un riquadro che lo spiega.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== INVITO -->
+<section class="sezione invito" aria-labelledby="titolo-invito-tel">
+  <div class="anelli" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="contenitore">
+    <img class="invito-stemma compari" src="img/stemma.svg" alt="" width="96" height="96" loading="lazy">
+    <h2 id="titolo-invito-tel" class="parole">La tua prossima app <em class="testo-accento">sta in una tasca.</em></h2>
+    <p class="introduzione compari r2">Scarica l'app, tocca «Nuova app con finestre» e parti da un modello: in pochi minuti la tua app è installata sul telefono.</p>
+    <div class="azioni compari r3">
+      <a class="pulsante grande solo-fuori-app" href="scarica.html#android">Scarica l'app Android</a>
+      <a class="pulsante grande secondario" href="manuale/telefono.html">Il manuale del telefono</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="telefono.html" aria-current="page">Leo sul telefono</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Grafici, suoni e animazioni — Manuale di Leo</title>
+<meta name="description" content="Grafici a barre, linee, torta e istogrammi; note, melodie e accordi; animazioni ed effetti dei controlli; la tartaruga che disegna.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/grafici-suoni.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/grafici-suoni.html">
+<meta property="og:title" content="9. Grafici, suoni e animazioni — Manuale di Leo">
+<meta property="og:description" content="Grafici a barre, linee, torta e istogrammi; note, melodie e accordi; animazioni ed effetti dei controlli; la tartaruga che disegna.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Grafici, suoni, animazioni</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class="attuale"><a href="grafici-suoni.html" aria-current="page"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a><ol class="m-toc"><li><a href="#grafici" data-toc="grafici">Il primo grafico</a></li><li><a href="#suoni" data-toc="suoni">Suoni e musica</a></li><li><a href="#animazioni" data-toc="animazioni">Animazioni dei controlli</a></li><li><a href="#tartaruga" data-toc="tartaruga">La tartaruga che disegna</a></li></ol></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">9. Grafici, suoni, animazioni</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"9. Grafici, suoni, animazioni","item":"https://leoitalia.com/manuale/grafici-suoni.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">09</span> Sezione 9 di 15</p>
+        <h1>Grafici, suoni e animazioni</h1>
+        <p class="m-sommario">Un programma diventa molto più bello quando mostra i dati con un grafico, suona una melodia o fa muovere i suoi controlli. In Leo bastano poche righe, sempre in italiano.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>5 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: intermedio</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>7 esempi verificati</li>
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="grafici">Il primo grafico<a class="m-ancora" href="#grafici" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Un grafico si crea con una funzione, gli si danno i dati e poi lo si mostra in una finestra o lo si salva come immagine.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">studio.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">g</span> <span class="c-operatori">=</span> <span class="c-libreria">grafico_barre</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">{</span><span class="c-testi">"Lun"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mar"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">5</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mer"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Gio"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Ven"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">6</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Ore di studio"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-campi">titolo_y</span> <span class="c-operatori">=</span> <span class="c-testi">"ore"</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-campi">mostra_valori</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-proprieta">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"studio.svg"</span><span class="c-punteggiatura">)</span>     <span class="c-commenti"># oppure "studio.png"</span></span></code></pre><div class="m-svg" role="img" aria-label="Grafico a barre delle ore di studio da lunedì a venerdì"><span class="m-uscita-titolo">studio.svg &middot; creato eseguendo il programma</span><svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Ore di studio</title>
+  <rect x="0" y="0" width="640" height="400" fill="#0B0B0D"/>
+  <text x="320" y="31.3" font-size="18" text-anchor="middle" fill="#ECECEF" font-weight="bold">Ore di studio</text>
+  <line x1="32.72" y1="362" x2="624" y2="362" stroke="#24242A" stroke-width="1"/>
+  <text x="24.72" y="365.85" font-size="11" text-anchor="end" fill="#9C9CA6">0</text>
+  <line x1="32.72" y1="263.33" x2="624" y2="263.33" stroke="#24242A" stroke-width="1"/>
+  <text x="24.72" y="267.18" font-size="11" text-anchor="end" fill="#9C9CA6">2</text>
+  <line x1="32.72" y1="164.67" x2="624" y2="164.67" stroke="#24242A" stroke-width="1"/>
+  <text x="24.72" y="168.52" font-size="11" text-anchor="end" fill="#9C9CA6">4</text>
+  <line x1="32.72" y1="66" x2="624" y2="66" stroke="#24242A" stroke-width="1"/>
+  <text x="24.72" y="69.85" font-size="11" text-anchor="end" fill="#9C9CA6">6</text>
+  <text x="24.72" y="57.85" font-size="11" text-anchor="start" fill="#9C9CA6">ore</text>
+  <text x="91.85" y="377.85" font-size="11" text-anchor="middle" fill="#9C9CA6">Lun</text>
+  <text x="210.1" y="377.85" font-size="11" text-anchor="middle" fill="#9C9CA6">Mar</text>
+  <text x="328.36" y="377.85" font-size="11" text-anchor="middle" fill="#9C9CA6">Mer</text>
+  <text x="446.62" y="377.85" font-size="11" text-anchor="middle" fill="#9C9CA6">Gio</text>
+  <text x="564.87" y="377.85" font-size="11" text-anchor="middle" fill="#9C9CA6">Ven</text>
+  <rect x="49.28" y="214" width="83.14" height="148" fill="#E0182D"/>
+  <text x="91.85" y="208.85" font-size="11" text-anchor="middle" fill="#ECECEF">3</text>
+  <rect x="167.53" y="115.33" width="83.14" height="246.67" fill="#E0182D"/>
+  <text x="210.1" y="110.18" font-size="11" text-anchor="middle" fill="#ECECEF">5</text>
+  <rect x="285.79" y="263.33" width="83.14" height="98.67" fill="#E0182D"/>
+  <text x="328.36" y="258.18" font-size="11" text-anchor="middle" fill="#ECECEF">2</text>
+  <rect x="404.04" y="164.67" width="83.14" height="197.33" fill="#E0182D"/>
+  <text x="446.62" y="159.52" font-size="11" text-anchor="middle" fill="#ECECEF">4</text>
+  <rect x="522.3" y="66" width="83.14" height="296" fill="#E0182D"/>
+  <text x="564.87" y="60.85" font-size="11" text-anchor="middle" fill="#ECECEF">6</text>
+  <line x1="32.72" y1="362" x2="624" y2="362" stroke="#6E6E78" stroke-width="1"/>
+  <line x1="32.72" y1="66" x2="32.72" y2="362" stroke="#6E6E78" stroke-width="1"/>
+</svg></div></figure>
+<p>Con <code>g.mostra()</code> il grafico si apre in una finestra che si adatta alle dimensioni: <kbd>S</kbd> lo salva in PNG accanto al programma, <kbd>Esc</kbd> chiude.</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Funzione</th><th>Grafico</th></tr></thead>
+  <tbody>
+    <tr><td><code>grafico_barre(dati, titolo)</code></td><td>barre verticali (più serie = barre affiancate)</td></tr>
+    <tr><td><code>grafico_linee(dati, titolo)</code></td><td>linee con i punti</td></tr>
+    <tr><td><code>grafico_area(dati, titolo)</code></td><td>linee con l'area colorata sotto</td></tr>
+    <tr><td><code>grafico_torta(dati, titolo)</code>, <code>grafico_anello(dati, titolo)</code></td><td>torta con le percentuali, anello con il totale al centro</td></tr>
+    <tr><td><code>grafico_dispersione(dati, titolo)</code></td><td>punti sparsi da coppie <code>[x, y]</code></td></tr>
+    <tr><td><code>istogramma(valori, classi, titolo)</code></td><td>conta i valori per intervalli</td></tr>
+  </tbody>
+</table></div>
+<p>I <strong>dati</strong> possono essere una lista di numeri, un dizionario <code>{"Gen": 12, "Feb": 18}</code> o una lista di coppie. Le proprietà più utili: <code>titolo</code>, <code>titolo_x</code>, <code>titolo_y</code>, <code>tema</code> (<code>"scuro"</code> o <code>"chiaro"</code>), <code>colori</code>, <code>legenda</code>, <code>griglia</code>, <code>mostra_valori</code>, <code>larghezza</code> e <code>altezza</code>.</p>
+
+<h3 id="piu-serie-e-tema-chiaro">Più serie e tema chiaro<a class="m-ancora" href="#piu-serie-e-tema-chiaro" aria-label="Collegamento a questa parte">#</a></h3>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">vendite.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">g</span> <span class="c-operatori">=</span> <span class="c-libreria">grafico</span><span class="c-punteggiatura">(</span><span class="c-testi">"barre"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">titolo</span> <span class="c-operatori">=</span> <span class="c-testi">"Vendite"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi_serie</span><span class="c-punteggiatura">(</span><span class="c-testi">"2025"</span><span class="c-punteggiatura">,</span> <span class="c-punteggiatura">{</span><span class="c-testi">"Gen"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">100</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Feb"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">110</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mar"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">130</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi_serie</span><span class="c-punteggiatura">(</span><span class="c-testi">"2026"</span><span class="c-punteggiatura">,</span> <span class="c-punteggiatura">{</span><span class="c-testi">"Gen"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">120</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Feb"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">150</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Mar"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">90</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span> <span class="c-testi">"oro"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-campi">tema</span> <span class="c-operatori">=</span> <span class="c-testi">"chiaro"</span></span><span class="r"><span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-proprieta">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"vendite.svg"</span><span class="c-punteggiatura">)</span></span></code></pre><div class="m-svg" role="img" aria-label="Grafico a barre con due serie, vendite 2025 e 2026"><span class="m-uscita-titolo">vendite.svg &middot; creato eseguendo il programma</span><svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Vendite</title>
+  <rect x="0" y="0" width="640" height="400" fill="#FFFFFF"/>
+  <text x="320" y="31.3" font-size="18" text-anchor="middle" fill="#111114" font-weight="bold">Vendite</text>
+  <line x1="46.16" y1="362" x2="555.12" y2="362" stroke="#E6E6EA" stroke-width="1"/>
+  <text x="38.16" y="365.85" font-size="11" text-anchor="end" fill="#5C5C66">0</text>
+  <line x1="46.16" y1="258.67" x2="555.12" y2="258.67" stroke="#E6E6EA" stroke-width="1"/>
+  <text x="38.16" y="262.52" font-size="11" text-anchor="end" fill="#5C5C66">50</text>
+  <line x1="46.16" y1="155.33" x2="555.12" y2="155.33" stroke="#E6E6EA" stroke-width="1"/>
+  <text x="38.16" y="159.18" font-size="11" text-anchor="end" fill="#5C5C66">100</text>
+  <line x1="46.16" y1="52" x2="555.12" y2="52" stroke="#E6E6EA" stroke-width="1"/>
+  <text x="38.16" y="55.85" font-size="11" text-anchor="end" fill="#5C5C66">150</text>
+  <text x="130.99" y="377.85" font-size="11" text-anchor="middle" fill="#5C5C66">Gen</text>
+  <text x="300.64" y="377.85" font-size="11" text-anchor="middle" fill="#5C5C66">Feb</text>
+  <text x="470.29" y="377.85" font-size="11" text-anchor="middle" fill="#5C5C66">Mar</text>
+  <rect x="69.91" y="155.33" width="59.08" height="206.67" fill="#C8102E"/>
+  <rect x="239.56" y="134.67" width="59.08" height="227.33" fill="#C8102E"/>
+  <rect x="409.22" y="93.33" width="59.08" height="268.67" fill="#C8102E"/>
+  <rect x="130.99" y="114" width="59.08" height="248" fill="#FFD700"/>
+  <rect x="300.64" y="52" width="59.08" height="310" fill="#FFD700"/>
+  <rect x="470.29" y="176" width="59.08" height="186" fill="#FFD700"/>
+  <line x1="46.16" y1="362" x2="555.12" y2="362" stroke="#9A9AA4" stroke-width="1"/>
+  <line x1="46.16" y1="52" x2="46.16" y2="362" stroke="#9A9AA4" stroke-width="1"/>
+  <rect x="567.12" y="52" width="12" height="12" fill="#C8102E"/>
+  <text x="587.12" y="62.2" font-size="12" text-anchor="start" fill="#111114">2025</text>
+  <rect x="567.12" y="72" width="12" height="12" fill="#FFD700"/>
+  <text x="587.12" y="82.2" font-size="12" text-anchor="start" fill="#111114">2026</text>
+</svg></div></figure>
+
+<h3 id="un-grafico-dentro-la-finestra">Un grafico dentro la finestra<a class="m-ancora" href="#un-grafico-dentro-la-finestra" aria-label="Collegamento a questa parte">#</a></h3>
+<p>Metti una <code>Tela</code> sulla finestra (categoria <em>Disegno</em>) e disegnaci dentro il grafico: prende le dimensioni della tela.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">g</span> <span class="c-operatori">=</span> <span class="c-libreria">grafico_torta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">{</span><span class="c-testi">"Rosso"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">5</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Nero"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Bianco"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">2</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Voti"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-controlli">Tela1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">pulisci</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-variabili">g</span><span class="c-punteggiatura">.</span><span class="c-proprieta">disegna_su</span><span class="c-punteggiatura">(</span><span class="c-controlli">Tela1</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+
+<h2 id="suoni">Suoni e musica<a class="m-ancora" href="#suoni" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Le note si scrivono in italiano: <code>do re mi fa sol la si</code>, con <code>#</code> per il diesis e <code>b</code> per il bemolle (<code>do#</code>, <code>sib</code>). In una <strong>melodia</strong> ogni nota ha la durata attaccata, come nel solfeggio: <code>do4</code> è un quarto, <code>do2</code> una metà, <code>do8</code> un ottavo; <code>p4</code> è una pausa.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">musica.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">suona</span><span class="c-punteggiatura">(</span><span class="c-libreria">nota</span><span class="c-punteggiatura">(</span><span class="c-testi">"la"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>                           <span class="c-commenti"># il la centrale, 440 Hz</span></span><span class="r"><span class="c-libreria">suona</span><span class="c-punteggiatura">(</span><span class="c-libreria">melodia</span><span class="c-punteggiatura">(</span><span class="c-testi">"do4 re4 mi4 do4 mi2"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-libreria">aspetta</span> <span class="c-operatori">=</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">fra_martino</span> <span class="c-operatori">=</span> <span class="c-libreria">melodia</span><span class="c-punteggiatura">(</span><span class="c-testi">"do4 re4 mi4 do4 do4 re4 mi4 do4 mi4 fa4 sol2"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">tempo</span> <span class="c-operatori">=</span> <span class="c-numeri">140</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">finale</span> <span class="c-operatori">=</span> <span class="c-libreria">accordo</span><span class="c-punteggiatura">(</span><span class="c-testi">"do maggiore"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">battiti</span> <span class="c-operatori">=</span> <span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">forma</span> <span class="c-operatori">=</span> <span class="c-testi">"triangolo"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">dissolvenza</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">uscita</span> <span class="c-operatori">=</span> <span class="c-numeri">1.5</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">brano</span> <span class="c-operatori">=</span> <span class="c-variabili">fra_martino</span><span class="c-punteggiatura">.</span><span class="c-proprieta">poi</span><span class="c-punteggiatura">(</span><span class="c-libreria">silenzio</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.3</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">poi</span><span class="c-punteggiatura">(</span><span class="c-variabili">finale</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">salva_suono</span><span class="c-punteggiatura">(</span><span class="c-variabili">brano</span><span class="c-punteggiatura">,</span> <span class="c-testi">"brano.wav"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Durata del brano:"</span><span class="c-punteggiatura">,</span> <span class="c-libreria">arrotonda</span><span class="c-punteggiatura">(</span><span class="c-variabili">brano</span><span class="c-punteggiatura">.</span><span class="c-campi">durata</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">"secondi"</span><span class="c-punteggiatura">)</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Uscita</span><pre>Durata del brano: 7.4 secondi</pre></div></figure>
+<ul>
+  <li><code>suona</code> <strong>non blocca</strong>: il programma va avanti mentre il suono si sente (con <code>aspetta = vero</code> aspetta la fine); <code>ferma_suoni()</code> smette subito;</li>
+  <li><code>accordo("la minore")</code>, <code>tono(1000, 0.2)</code> (un bip), <code>rumore(3, "marrone")</code> (come il mare), <code>silenzio(0.5)</code>;</li>
+  <li>le <strong>forme d'onda</strong> cambiano il timbro: <code>"sinusoide"</code> (dolce), <code>"quadra"</code> (videogiochi anni '80), <code>"triangolo"</code> (flauto), <code>"dente_di_sega"</code>;</li>
+  <li>un suono si combina con <code>poi</code>, <code>insieme</code>, <code>ripeti</code>, <code>con_volume</code>, <code>dissolvenza</code>, <code>al_contrario</code>, e si salva in WAV. Per gli MP3 usa il controllo <code>Suono</code> in una finestra.</li>
+</ul>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>Chi scrive le note all'inglese (<code>"C"</code>, <code>"A4"</code>) riceve un suggerimento gentile: <em>«In Leo le note si scrivono in italiano: <code>do</code> invece di <code>C</code>.»</em></p></div></aside>
+
+<h2 id="animazioni">Animazioni dei controlli<a class="m-ancora" href="#animazioni" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Nei programmi con le finestre i controlli si muovono, si ingrandiscono, sfumano e cambiano colore pian piano, senza fermare il programma. Tre modi equivalenti di scrivere la stessa animazione:</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-flusso">anima</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">alto</span> <span class="c-flusso">a</span> <span class="c-numeri">50</span> <span class="c-flusso">in</span> <span class="c-numeri">0.3</span> <span class="c-flusso">secondi</span> <span class="c-flusso">con</span> <span class="c-flusso">curva</span> <span class="c-testi">"rimbalzo"</span></span><span class="r">    <span class="c-libreria">anima</span><span class="c-punteggiatura">(</span><span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">,</span> <span class="c-testi">"alto"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">50</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0.3</span><span class="c-punteggiatura">,</span> <span class="c-testi">"rimbalzo"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">anima</span><span class="c-punteggiatura">(</span><span class="c-testi">"alto"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">50</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0.3</span><span class="c-punteggiatura">,</span> <span class="c-testi">"rimbalzo"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Pulsante1.alto = 50</pre></div></figure>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Curva</th><th>Come si muove</th></tr></thead>
+  <tbody>
+    <tr><td><code>"lineare"</code></td><td>sempre alla stessa velocità</td></tr>
+    <tr><td><code>"morbida"</code></td><td>parte piano, accelera e arriva piano (predefinita)</td></tr>
+    <tr><td><code>"veloce"</code></td><td>parte veloce e frena all'arrivo</td></tr>
+    <tr><td><code>"lenta"</code></td><td>parte piano e accelera</td></tr>
+    <tr><td><code>"rimbalzo"</code></td><td>arriva e rimbalza, come una palla</td></tr>
+    <tr><td><code>"elastica"</code></td><td>va un po' oltre e torna indietro, come una molla</td></tr>
+  </tbody>
+</table></div>
+<p>Si animano le proprietà numeriche (<code>sinistra</code>, <code>alto</code>, <code>larghezza</code>, <code>altezza</code>, <code>opacità</code>, <code>dimensione_carattere</code>, il <code>valore</code> di una barra…) e i colori. Durante l'animazione, leggere la proprietà dà il valore di quel momento; alla fine, esattamente il valore d'arrivo.</p>
+<h3 id="fare-qualcosa-alla-fine-poi">Fare qualcosa alla fine: poi<a class="m-ancora" href="#fare-qualcosa-alla-fine-poi" aria-label="Collegamento a questa parte">#</a></h3>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">ricadi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">anima</span> <span class="c-controlli">PulsanteSalta</span><span class="c-punteggiatura">.</span><span class="c-proprieta">alto</span> <span class="c-flusso">a</span> <span class="c-numeri">150</span> <span class="c-flusso">in</span> <span class="c-numeri">0.6</span> <span class="c-flusso">secondi</span> <span class="c-flusso">con</span> <span class="c-flusso">curva</span> <span class="c-testi">"rimbalzo"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">PulsanteSalta</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-libreria">anima</span><span class="c-punteggiatura">(</span><span class="c-controlli">PulsanteSalta</span><span class="c-punteggiatura">,</span> <span class="c-testi">"alto"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">90</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0.25</span><span class="c-punteggiatura">,</span> <span class="c-testi">"veloce"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">poi</span> <span class="c-operatori">=</span> <span class="c-funzioni_utente">ricadi</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>PulsanteSalta.alto = 150</pre></div></figure>
+<h3 id="effetti-pronti">Effetti pronti<a class="m-ancora" href="#effetti-pronti" aria-label="Collegamento a questa parte">#</a></h3>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Effetto</th><th>Che cosa fa</th></tr></thead>
+  <tbody>
+    <tr><td><code>lampeggia(c, volte = 3)</code></td><td>il controllo sparisce e ricompare</td></tr>
+    <tr><td><code>scuoti(c)</code></td><td>scuote a destra e a sinistra, come un «no»</td></tr>
+    <tr><td><code>pulsa(c)</code></td><td>si ingrandisce un poco e torna com'era</td></tr>
+    <tr><td><code>dissolvi(c)</code></td><td>sfuma fino a sparire (alla fine <code>visibile</code> è <code>falso</code>)</td></tr>
+    <tr><td><code>compari(c)</code></td><td>lo rende visibile sfumando</td></tr>
+  </tbody>
+</table></div>
+<p>Tutti esistono anche come metodi (<code>Etichetta1.pulsa()</code>) e accettano <code>poi = funzione</code>. <code>aspetta_animazioni()</code> aspetta che finiscano tutte; <code>ferma_animazioni()</code> le ferma dove sono.</p>
+<aside class="m-riquadro m-nota" role="note" aria-label="Nota"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Nota</p><p>Se chi usa il programma ha chiesto di <strong>ridurre le animazioni</strong> (in Leo Studio, o con la variabile d'ambiente <code>LEO_RIDUCI_ANIMAZIONI=1</code>), ogni animazione salta subito allo stato finale e <code>poi</code> viene chiamato lo stesso. Senza finestre le animazioni non si possono usare: Leo lo spiega con un messaggio.</p></div></aside>
+
+<h2 id="tartaruga">La tartaruga che disegna<a class="m-ancora" href="#tartaruga" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Ogni programma ha una <strong>tartaruga</strong> con una penna: parte dal centro, guarda in alto e disegna mentre cammina. È il modo più immediato per vedere all'opera cicli, funzioni e trasformazioni geometriche. A fine programma il disegno compare in una finestra (o viene salvato in SVG).</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">stella.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-libreria">sfondo</span><span class="c-punteggiatura">(</span><span class="c-testi">"nero"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">spessore</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">"oro"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">riempi</span><span class="c-punteggiatura">(</span><span class="c-testi">"#3A2A08"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">ripeti</span> <span class="c-numeri">5</span> <span class="c-flusso">volte</span></span><span class="r">    <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">160</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-libreria">destra</span><span class="c-punteggiatura">(</span><span class="c-numeri">144</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"><span class="c-libreria">fine_riempi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">penna_su</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">vai_a</span><span class="c-punteggiatura">(</span><span class="c-numeri">0</span><span class="c-punteggiatura">,</span> <span class="c-operatori">-</span><span class="c-numeri">120</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">penna_giu</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">"rosso"</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">cerchio</span><span class="c-punteggiatura">(</span><span class="c-numeri">40</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">nascondi_tartaruga</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">salva_disegno</span><span class="c-punteggiatura">(</span><span class="c-testi">"stella_disegno.svg"</span><span class="c-punteggiatura">)</span></span></code></pre><div class="m-svg" role="img" aria-label="Una stella dorata a cinque punte e un cerchio rosso disegnati dalla tartaruga"><span class="m-uscita-titolo">stella_disegno.svg &middot; creato eseguendo il programma</span><svg xmlns="http://www.w3.org/2000/svg" width="220.05" height="366" viewBox="0 0 220.05 366">
+  <title>Disegno della tartaruga di Leo</title>
+  <rect width="100%" height="100%" fill="#000000"/>
+  <polygon points="103,183 103,23 197.05,152.44 44.88,103 197.05,53.56 103,183" fill="#3A2A08" stroke="none"/>
+  <line x1="103" y1="183" x2="103" y2="23" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="103" y1="23" x2="197.05" y2="152.44" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="197.05" y1="152.44" x2="44.88" y2="103" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="44.88" y1="103" x2="197.05" y2="53.56" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="197.05" y1="53.56" x2="103" y2="183" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="103" y1="303" x2="101.64" y2="292.65" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="101.64" y1="292.65" x2="97.64" y2="283" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="97.64" y1="283" x2="91.28" y2="274.72" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="91.28" y1="274.72" x2="83" y2="268.36" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="83" y1="268.36" x2="73.35" y2="264.36" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="73.35" y1="264.36" x2="63" y2="263" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="63" y1="263" x2="52.65" y2="264.36" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="52.65" y1="264.36" x2="43" y2="268.36" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="43" y1="268.36" x2="34.72" y2="274.72" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="34.72" y1="274.72" x2="28.36" y2="283" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="28.36" y1="283" x2="24.36" y2="292.65" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="24.36" y1="292.65" x2="23" y2="303" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="23" y1="303" x2="24.36" y2="313.35" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="24.36" y1="313.35" x2="28.36" y2="323" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="28.36" y1="323" x2="34.72" y2="331.28" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="34.72" y1="331.28" x2="43" y2="337.64" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="43" y1="337.64" x2="52.65" y2="341.64" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="52.65" y1="341.64" x2="63" y2="343" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="63" y1="343" x2="73.35" y2="341.64" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="73.35" y1="341.64" x2="83" y2="337.64" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="83" y1="337.64" x2="91.28" y2="331.28" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="91.28" y1="331.28" x2="97.64" y2="323" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="97.64" y1="323" x2="101.64" y2="313.35" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+  <line x1="101.64" y1="313.35" x2="103" y2="303" stroke="#FF0000" stroke-width="3" stroke-linecap="round"/>
+</svg></div></figure>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Comando</th><th>Che cosa fa</th></tr></thead>
+  <tbody>
+    <tr><td><code>avanti(passi)</code>, <code>indietro(passi)</code></td><td>cammina (100 passi se non indicato)</td></tr>
+    <tr><td><code>destra(gradi)</code>, <code>sinistra(gradi)</code></td><td>gira (90 gradi se non indicato)</td></tr>
+    <tr><td><code>penna_su()</code>, <code>penna_giu()</code></td><td>smette / ricomincia di disegnare</td></tr>
+    <tr><td><code>colore(c)</code>, <code>spessore(n)</code>, <code>sfondo(c)</code></td><td>colore e spessore della penna, colore del foglio</td></tr>
+    <tr><td><code>riempi(c)</code> … <code>fine_riempi()</code></td><td>colora l'interno della figura</td></tr>
+    <tr><td><code>cerchio(raggio)</code>, <code>vai_a(x, y)</code>, <code>casa()</code></td><td>cerchi e spostamenti</td></tr>
+    <tr><td><code>velocità(n)</code></td><td>da 1 (lenta) a 10 (veloce); 0 = subito</td></tr>
+    <tr><td><code>scrivi_qui(testo)</code>, <code>salva_disegno(percorso)</code></td><td>scrive un testo / salva in SVG</td></tr>
+  </tbody>
+</table></div>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>In Leo Studio c'è il modello <strong>Disegno vettoriale con la Tartaruga</strong>, con poligoni, stelle e spirali già pronti da modificare. E con <code>leo impara</code> trovi lezioni guidate passo passo.</p></div></aside>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="internet-database.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">08</span>Internet e database</span></a><a class="m-succ" href="windows.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">10</span>Leo e Windows</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

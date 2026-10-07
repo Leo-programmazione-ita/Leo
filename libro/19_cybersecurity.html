@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 19 — Cybersecurity difensiva — Leo, il manuale</title>
+<meta name="description" content="Leo porta in dotazione un&#x27;area ricca di strumenti di sicurezza. Il taglio è dichiaratamente difensivo: proteggere i propri dati, i propri account, i…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/19_cybersecurity.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/19_cybersecurity.html">
+<meta property="og:title" content="Capitolo 19 — Cybersecurity difensiva — Leo, il manuale">
+<meta property="og:description" content="Leo porta in dotazione un&#x27;area ricca di strumenti di sicurezza. Il taglio è dichiaratamente difensivo: proteggere i propri dati, i propri account, i…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html" aria-current="page">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte V — Fare cose vere</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#password-misurarle-e-generarle">Password: misurarle e generarle</a></li><li><a href="#integrità-accorgersi-delle-modifiche">Integrità: accorgersi delle modifiche</a></li><li><a href="#riservatezza-cifrare-per-un-destinatario">Riservatezza: cifrare per un destinatario</a></li><li><a href="#autenticazione-i-codici-a-tempo">Autenticazione: i codici a tempo</a></li><li><a href="#forense-di-base-il-file-dice-la-verità">Forense di base: il file dice la verità?</a></li><li><a href="#una-nota-di-responsabilità">Una nota di responsabilità</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 19 — Cybersecurity difensiva</h1>
+<p>Leo porta in dotazione un'area ricca di strumenti di sicurezza. Il taglio è dichiaratamente <strong>difensivo</strong>: proteggere i propri dati, i propri account, i propri file. Non si tratta di attaccare sistemi altrui, ma di costruire programmi che custodiscono bene ciò che gli affidi e di capire, con mano, i concetti che reggono la sicurezza di tutti i giorni. In questo capitolo tocchiamo i quattro pilastri: password robuste, integrità, riservatezza e autenticazione.</p>
+<h2 id="password-misurarle-e-generarle">Password: misurarle e generarle</h2>
+<p>La prima linea di difesa di qualunque account è la password. Leo sa giudicarne la robustezza senza pietà e senza illusioni:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-184" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-184" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">f</span> <span class="c-operatori">=</span> <span class="c-libreria">misura_forza_password</span><span class="c-punteggiatura">(</span><span class="c-testi">"ciao123"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Livello: </span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"livello"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">, punteggio </span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"punteggio"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> su 4"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"È tra le più comuni? </span><span class="c-interpolazione">{</span><span class="c-variabili">f</span><span class="c-punteggiatura">[</span><span class="c-testi">"comune"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-185" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-185" class="libro-pre"><code>Livello: pessima, punteggio 0 su 4
+È tra le più comuni? vero</code></pre></figure>
+<p><code>misura_forza_password</code> restituisce un dizionario con il livello, un punteggio da 0 a 4, i bit di casualità stimati, il tempo che ci vorrebbe a indovinarla e se è fra le password più usate al mondo. C'è anche <code>spiega_forza_password</code>, che dà un verdetto in italiano con i problemi puntati uno per uno — ottimo da mostrare a un utente che sta scegliendo una password.</p>
+<p>E le password robuste Leo le sa anche <em>creare</em>, in forme pensate per essere davvero usabili: <code>genera_frase_password(6)</code> mette in fila parole italiane a caso (come <code>zucca-latte-tetto-gradino-...</code>), facili da ricordare e difficilissime da indovinare; <code>genera_password_pronunciabile()</code> ne crea una leggibile ad alta voce; <code>genera_pin()</code> evita gli schemi deboli come <code>1234</code> o gli anni. Una frase di sei parole generata così raggiunge una robustezza «ottima» — centinaia di bit di casualità — restando qualcosa che un essere umano può ricordare.</p>
+<h2 id="integrità-accorgersi-delle-modifiche">Integrità: accorgersi delle modifiche</h2>
+<p>Come fai a sapere che un file non è stato alterato? Calcolando la sua <strong>impronta</strong> crittografica: un codice che cambia completamente anche per la più piccola modifica, ma dal quale non si può risalire al contenuto. Lo abbiamo già visto con <code>impronta</code>; qui lo usiamo per il suo scopo tipico, verificare l'integrità:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-186" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-186" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">originale</span> <span class="c-operatori">=</span> <span class="c-libreria">impronta</span><span class="c-punteggiatura">(</span><span class="c-testi">"contratto versione 1"</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">modificato</span> <span class="c-operatori">=</span> <span class="c-libreria">impronta</span><span class="c-punteggiatura">(</span><span class="c-testi">"contratto versione 1 "</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Uguali? </span><span class="c-interpolazione">{</span><span class="c-variabili">originale</span> <span class="c-operatori">==</span> <span class="c-variabili">modificato</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-187" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-187" class="libro-pre"><code>Uguali? falso</code></pre></figure>
+<p>Abbiamo aggiunto un solo spazio in fondo, e l'impronta è completamente diversa. Su questo principio si fonda la verifica dei download, il controllo che un file non sia stato manomesso, e — nell'area forense di Leo — funzioni come <code>impronta_albero</code>, che fotografa una cartella intera (impronta, dimensione e data di ogni file) e <code>confronta_alberi</code>, che dice esattamente cosa è cambiato tra due fotografie. È lo strumento con cui, per esempio, accorgersi che qualcosa in una cartella di sistema è stato toccato.</p>
+<h2 id="riservatezza-cifrare-per-un-destinatario">Riservatezza: cifrare per un destinatario</h2>
+<p>Per tenere un messaggio segreto agli occhi di tutti tranne il destinatario, si usa la crittografia a <strong>chiave pubblica</strong>. L'idea è elegante: ciascuno ha una coppia di chiavi, una <em>pubblica</em> (che può dare a tutti) e una <em>privata</em> (che tiene per sé). Chiunque può cifrare un messaggio con la tua chiave pubblica, ma solo tu, con la privata, puoi aprirlo.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-188" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-188" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">chiavi</span> <span class="c-operatori">=</span> <span class="c-libreria">crea_chiavi_riservatezza</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">busta</span> <span class="c-operatori">=</span> <span class="c-libreria">cifra_per</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il codice del caveau è 4821"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">chiavi</span><span class="c-punteggiatura">[</span><span class="c-testi">"pubblica"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">aperto</span> <span class="c-operatori">=</span> <span class="c-libreria">decifra_da</span><span class="c-punteggiatura">(</span><span class="c-variabili">busta</span><span class="c-punteggiatura">,</span> <span class="c-variabili">chiavi</span><span class="c-punteggiatura">[</span><span class="c-testi">"privata"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Messaggio aperto: </span><span class="c-interpolazione">{</span><span class="c-variabili">aperto</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-189" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-189" class="libro-pre"><code>Messaggio aperto: Il codice del caveau è 4821</code></pre></figure>
+<p><code>crea_chiavi_riservatezza</code> genera la coppia; <code>cifra_per(dati, pubblica)</code> chiude il messaggio in una «busta» leggibile solo con la privata corrispondente; <code>decifra_da(busta, privata)</code> la riapre. Ci sono anche le versioni per i file (<code>cifra_file_per</code>, <code>decifra_file_da</code>) e per più destinatari insieme (<code>busta_per_molti</code>). Nota bene: nell'esempio generiamo le chiavi sul momento; nel mondo reale la chiave privata va custodita con cura — se la perdi, perdi l'accesso; se te la rubano, perdi il segreto.</p>
+<h2 id="autenticazione-i-codici-a-tempo">Autenticazione: i codici a tempo</h2>
+<p>I codici OTP — quelli che leggi sull'app di autenticazione e che cambiano ogni trenta secondi — sono il secondo fattore che protegge i tuoi account. Leo li sa calcolare. Qui chiediamo il codice valido a un istante <em>preciso</em> (così il risultato è riproducibile):</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-190" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-190" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">segreto</span> <span class="c-operatori">=</span> <span class="c-testi">"JBSWY3DPEHPK3PXP"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Codice alle 1700000000: </span><span class="c-interpolazione">{</span><span class="c-libreria">codice_otp_a</span><span class="c-punteggiatura">(</span><span class="c-variabili">segreto</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1700000000</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-191" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-191" class="libro-pre"><code>Codice alle 1700000000: 324550</code></pre></figure>
+<p>A partire da un segreto condiviso, <code>codice_otp_a(segreto, istante)</code> calcola il codice valido in quel momento. Nell'uso reale si usa <code>codice_otp(segreto)</code> per il codice <em>di adesso</em> e <code>verifica_codice_otp(segreto, codice)</code> per controllarlo. Leo sa anche produrre il codice QR (<code>qr_otp_svg</code>, <code>salva_qr_otp</code>) con cui configurare l'app di autenticazione. Con questi pezzi puoi costruire, per capire come funziona, il tuo piccolo sistema a due fattori.</p>
+<h2 id="forense-di-base-il-file-dice-la-verità">Forense di base: il file dice la verità?</h2>
+<p>Chiudiamo con uno strumento investigativo: capire il <em>vero</em> tipo di un file, indipendentemente dall'estensione. Un malware si traveste spesso cambiando l'estensione; Leo guarda il contenuto.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-192" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-192" class="libro-pre"><code><span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"finto.png"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Questo non è un PNG, è testo"</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">esito</span> <span class="c-operatori">=</span> <span class="c-libreria">estensione_coerente</span><span class="c-punteggiatura">(</span><span class="c-testi">"finto.png"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Coerente? </span><span class="c-interpolazione">{</span><span class="c-variabili">esito</span><span class="c-punteggiatura">[</span><span class="c-testi">"coerente"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">esito</span><span class="c-punteggiatura">[</span><span class="c-testi">"avviso"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<p>Il programma crea un file chiamato <code>finto.png</code> che in realtà contiene testo, e <code>estensione_coerente</code> lo smaschera: restituisce <code>coerente: falso</code> e un avviso che spiega che il file, malgrado l'estensione <code>.png</code>, è in realtà testo. Su questo si costruiscono il triage dei file e le regole di scansione in stile YARA della scheda <code>LIBRERIA_FORENSE.md</code>.</p>
+<h2 id="una-nota-di-responsabilità">Una nota di responsabilità</h2>
+<p>Questi strumenti sono potenti e servono a proteggere. Usali per quello: le tue password, i tuoi file, i sistemi che amministri o per cui hai un permesso esplicito. La crittografia e l'analisi sono conoscenze preziose proprio perché chi le capisce sa difendersi meglio. Impararle su te stesso — cifrando i tuoi appunti, verificando le tue cartelle — è il modo giusto per farle tue.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Scrivi un «controllore di password» che chiede una password all'utente e stampa il verdetto di <code>spiega_forza_password</code>, poi gli propone una <code>genera_frase_password</code> come alternativa robusta.</li><li>Cifra un piccolo file con <code>cifra_file_per</code> usando una coppia di chiavi appena creata, poi riaprilo con <code>decifra_file_da</code> e verifica che il contenuto coincida.</li><li>Crea un file <code>relazione.pdf</code> che in realtà contiene testo e usa <code>estensione_coerente</code> per smascherarlo; stampa l'avviso che Leo restituisce.</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="18_android.html"><span>Indietro</span><strong>App per Android</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="20_distribuzione.html"><span>Avanti</span><strong>Distribuire i programmi</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

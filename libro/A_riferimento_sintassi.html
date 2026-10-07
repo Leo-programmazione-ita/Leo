@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendice A — Riferimento rapido della sintassi — Leo, il manuale</title>
+<meta name="description" content="Una pagina sola da tenere sottomano. Tutte le forme qui elencate sono trattate per esteso nei capitoli; qui le ritrovi in forma compatta.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/A_riferimento_sintassi.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/A_riferimento_sintassi.html">
+<meta property="og:title" content="Appendice A — Riferimento rapido della sintassi — Leo, il manuale">
+<meta property="og:description" content="Una pagina sola da tenere sottomano. Tutte le forme qui elencate sono trattate per esteso nei capitoli; qui le ritrovi in forma compatta.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html" aria-current="page">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Appendici</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#commenti-e-struttura">Commenti e struttura</a></li><li><a href="#dati">Dati</a></li><li><a href="#operatori">Operatori</a></li><li><a href="#testi">Testi</a></li><li><a href="#condizioni">Condizioni</a></li><li><a href="#cicli">Cicli</a></li><li><a href="#funzioni">Funzioni</a></li><li><a href="#errori">Errori</a></li><li><a href="#classi">Classi</a></li><li><a href="#moduli">Moduli</a></li><li><a href="#parallelismo-e-sequenze-pigre">Parallelismo e sequenze pigre</a></li><li><a href="#esecuzione">Esecuzione</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Appendice A — Riferimento rapido della sintassi</h1>
+<p>Una pagina sola da tenere sottomano. Tutte le forme qui elencate sono trattate per esteso nei capitoli; qui le ritrovi in forma compatta.</p>
+<h2 id="commenti-e-struttura">Commenti e struttura</h2>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-196" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-196" class="libro-pre"><code># commento di riga
+#[ commento
+   su più righe ]#</code></pre></figure>
+<p>I blocchi si aprono con <code>allora</code> (dopo <code>se</code>, <code>altrimenti se</code>, <code>caso</code>) o con <code>fai</code> (dopo <code>mentre</code>, <code>per ogni</code>, <code>quando</code>) e si chiudono <strong>sempre</strong> con <code>fine</code>. A fine riga <code>allora</code>/<code>fai</code> si possono omettere. <code>ripeti N volte</code> non vuole né l'uno né l'altro.</p>
+<h2 id="dati">Dati</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-197" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-197" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">x</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>          <span class="c-commenti"># dichiara (poi: x = 5, x += 1)</span>
+<span class="c-dichiarazioni">costante</span> <span class="c-costanti">PI</span> <span class="c-operatori">=</span> <span class="c-numeri">3.14</span>       <span class="c-commenti"># non si può più cambiare</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">a</span><span class="c-punteggiatura">,</span> <span class="c-variabili">b</span> <span class="c-operatori">=</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span>    <span class="c-commenti"># più nomi insieme; scambio: a, b = b, a</span></code></pre></figure>
+<div class="libro-tabella"><table><thead><tr><th>Tipo</th><th>Esempio</th></tr></thead><tbody><tr><td>intero</td><td><code>42</code>, <code>-7</code>, <code>1_000_000</code>, <code>2 ^ 100</code></td></tr><tr><td>decimale</td><td><code>3.14</code> (punto, non virgola)</td></tr><tr><td>testo</td><td><code>"ciao"</code>, <code>"""su più righe"""</code></td></tr><tr><td>logico</td><td><code>vero</code>, <code>falso</code></td></tr><tr><td>nulla</td><td><code>nulla</code></td></tr><tr><td>lista</td><td><code>[1, 2, 3]</code></td></tr><tr><td>dizionario</td><td><code>{"nome": "Ada"}</code></td></tr><tr><td>soldi / frazione</td><td><code>soldi("1.50")</code>, <code>frazione(1, 3)</code></td></tr></tbody></table></div>
+<h2 id="operatori">Operatori</h2>
+<p>Aritmetici: <code>+ - * /</code> (sempre decimale) <code>//</code> (quoziente intero) <code>%</code> (resto) <code>^</code> (potenza). Confronto: <code>== != &lt; &lt;= &gt; &gt;=</code>, <code>in</code>, <code>è</code> / <code>non è</code> (con <code>nulla</code>). Logici: <code>e</code>, <code>o</code>, <code>non</code>. Catena: <code>valore |&gt; funzione</code>.</p>
+<h2 id="testi">Testi</h2>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-198" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-198" class="libro-pre"><code>"Ciao {nome}, hai {anni + 1} anni"     # interpolazione
+"{prezzo:2}"          # due decimali
+"{n:migliaia}"        # punti delle migliaia
+"{importo:migliaia 2}"   # entrambi (all'italiana)
+testo[0]  testo[-1]  testo[0..2]       # indici e fette</code></pre></figure>
+<h2 id="condizioni">Condizioni</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-199" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-199" class="libro-pre"><code><span class="c-flusso">se</span> <span class="c-testo_normale">condizione</span> <span class="c-flusso">allora</span>
+    <span class="c-operatori">...</span>
+<span class="c-flusso">altrimenti se</span> <span class="c-testo_normale">altra</span> <span class="c-flusso">allora</span>
+    <span class="c-operatori">...</span>
+<span class="c-flusso">altrimenti</span>
+    <span class="c-operatori">...</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-testo_normale">scegli</span> <span class="c-testo_normale">valore</span>
+    <span class="c-testo_normale">caso</span> <span class="c-numeri">10</span> <span class="c-flusso">allora</span> <span class="c-operatori">...</span>
+    <span class="c-testo_normale">caso</span> <span class="c-numeri">8</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span> <span class="c-flusso">allora</span> <span class="c-operatori">...</span>
+    <span class="c-testo_normale">caso</span> <span class="c-numeri">6</span><span class="c-numeri">..</span><span class="c-numeri">7</span> <span class="c-flusso">allora</span> <span class="c-operatori">...</span>
+    <span class="c-flusso">altrimenti</span> <span class="c-operatori">...</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<h2 id="cicli">Cicli</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-200" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-200" class="libro-pre"><code><span class="c-flusso">mentre</span> <span class="c-testo_normale">condizione</span> <span class="c-flusso">fai</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">x</span> <span class="c-logici">in</span> <span class="c-testo_normale">sequenza</span> <span class="c-flusso">fai</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">chiave</span><span class="c-punteggiatura">,</span> <span class="c-variabili">valore</span> <span class="c-logici">in</span> <span class="c-testo_normale">dizionario</span> <span class="c-flusso">fai</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>
+<span class="c-flusso">ripeti</span> <span class="c-numeri">3</span> <span class="c-flusso">volte</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>
+<span class="c-flusso">ripeti</span> <span class="c-testo_normale">per</span> <span class="c-testo_normale">sempre</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>        <span class="c-commenti"># con interrompi</span>
+<span class="c-testo_normale">ogni</span> <span class="c-numeri">1</span> <span class="c-testo_normale">secondo</span> <span class="c-flusso">fai</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>       <span class="c-commenti"># temporizzato</span>
+<span class="c-testo_normale">dopo</span> <span class="c-numeri">3</span> <span class="c-testo_normale">secondi</span> <span class="c-flusso">fai</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span></code></pre></figure>
+<p><code>interrompi</code> esce dal ciclo; <code>continua</code> salta al giro dopo.</p>
+<h2 id="funzioni">Funzioni</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-201" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-201" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">nome</span><span class="c-punteggiatura">(</span><span class="c-parametri">a</span><span class="c-punteggiatura">,</span> <span class="c-parametri">b</span> <span class="c-operatori">=</span> <span class="c-numeri">10</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">a</span> <span class="c-operatori">+</span> <span class="c-parametri">b</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">f</span> <span class="c-operatori">=</span> <span class="c-dichiarazioni">funzione</span> <span class="c-punteggiatura">(</span><span class="c-parametri">x</span><span class="c-punteggiatura">)</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">x</span> <span class="c-operatori">*</span> <span class="c-numeri">2</span> <span class="c-flusso">fine</span>   <span class="c-commenti"># anonima</span>
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">tutti</span><span class="c-punteggiatura">(</span><span class="c-parametri">valori</span><span class="c-operatori">...</span><span class="c-punteggiatura">)</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>                  <span class="c-commenti"># quanti argomenti vuoi</span>
+<span class="c-funzioni_utente">nome</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">voti</span><span class="c-operatori">...</span><span class="c-punteggiatura">)</span>                                       <span class="c-commenti"># srotola una lista</span></code></pre></figure>
+<p>Senza <code>restituisci</code>, una funzione si chiama anche come comando: <code>saluta Ada</code>.</p>
+<h2 id="errori">Errori</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-202" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-202" class="libro-pre"><code><span class="c-errori">prova</span>
+    <span class="c-operatori">...</span>
+<span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+    <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">messaggio</span><span class="c-punteggiatura">)</span>
+<span class="c-errori">cattura</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+    <span class="c-operatori">...</span>
+<span class="c-errori">infine</span>
+    <span class="c-operatori">...</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-errori">lancia</span> <span class="c-errori">ErroreValore</span><span class="c-punteggiatura">(</span><span class="c-testi">"messaggio"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-flusso">verifica</span> <span class="c-testi">"nome"</span> <span class="c-flusso">fai</span>          <span class="c-commenti"># test, eseguiti con `leo verifica`</span>
+    <span class="c-flusso">aspettati</span> <span class="c-testo_normale">doppio</span><span class="c-punteggiatura">(</span><span class="c-numeri">21</span><span class="c-punteggiatura">)</span> <span class="c-operatori">==</span> <span class="c-numeri">42</span>
+    <span class="c-flusso">aspettati</span> <span class="c-testo_normale">errore</span> <span class="c-errori">ErroreValore</span> <span class="c-flusso">fai</span> <span class="c-operatori">...</span> <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<h2 id="classi">Classi</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-203" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-203" class="libro-pre"><code><span class="c-testo_normale">classe</span> <span class="c-testo_normale">Persona</span>
+    <span class="c-testo_normale">ha</span> <span class="c-testo_normale">nome</span>
+    <span class="c-testo_normale">ha</span> <span class="c-variabili">eta</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+    <span class="c-dichiarazioni sinonimo" title="sinonimo di funzione">azione</span> <span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao, sono </span><span class="c-interpolazione">{</span><span class="c-testo_normale">questo</span><span class="c-punteggiatura">.</span><span class="c-proprieta">nome</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">p</span> <span class="c-operatori">=</span> <span class="c-testo_normale">Persona</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">36</span><span class="c-punteggiatura">)</span>      <span class="c-commenti"># oppure: nuovo Persona(...)</span>
+
+<span class="c-testo_normale">classe</span> <span class="c-testo_normale">Cane</span> <span class="c-testo_normale">estende</span> <span class="c-testo_normale">Animale</span>
+    <span class="c-dichiarazioni sinonimo" title="sinonimo di funzione">azione</span> <span class="c-funzioni_utente">verso</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">dà</span> <span class="c-libreria">testo</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-testo_normale">genitore</span><span class="c-punteggiatura">.</span><span class="c-proprieta">verso</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-operatori">+</span> <span class="c-testi">"!"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<h2 id="moduli">Moduli</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-204" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-204" class="libro-pre"><code><span class="c-testo_normale">importa</span> <span class="c-testi">"forme.leo"</span>            <span class="c-commenti"># porta dentro i nomi</span>
+<span class="c-testo_normale">importa</span> <span class="c-testo_normale">forme</span> <span class="c-errori">come</span> <span class="c-testo_normale">f</span>           <span class="c-commenti"># usa con il punto: f.area(2)</span>
+<span class="c-testo_normale">importa</span> <span class="c-testo_normale">matematica</span> <span class="c-errori">come</span> <span class="c-testo_normale">m</span>      <span class="c-commenti"># anche i gruppi della libreria</span></code></pre></figure>
+<h2 id="parallelismo-e-sequenze-pigre">Parallelismo e sequenze pigre</h2>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-205" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-205" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">l</span> <span class="c-operatori">=</span> <span class="c-flusso">in</span> <span class="c-flusso">parallelo</span> <span class="c-flusso">fai</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-testo_normale">calcolo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fine</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">aspetta</span><span class="c-punteggiatura">(</span><span class="c-variabili">l</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">c</span> <span class="c-operatori">=</span> <span class="c-libreria">canale</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>   <span class="c-commenti"># c.invia(x), c.ricevi(), c.chiudi()</span>
+<span class="c-libreria">aspetta_tutti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span><span class="c-testo_normale">l1</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">l2</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>  <span class="c-libreria">aspetta_il_primo</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span><span class="c-testo_normale">l1</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">l2</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>  <span class="c-libreria">annulla</span><span class="c-punteggiatura">(</span><span class="c-variabili">l</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">numeri_infiniti</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">mappa</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">f</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">filtra</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">g</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">prendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">a_lista</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">pigra</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">lista</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">finche</span><span class="c-punteggiatura">(</span><span class="c-testo_normale">f</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">a_lista</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<h2 id="esecuzione">Esecuzione</h2>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-206" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-206" class="libro-pre"><code>leo programma.leo           # esegui
+leo verifica programma.leo  # esegui i blocchi `verifica`
+leo controlla progetto      # controlli statici (senza eseguire)
+leo formatta programma.leo  # riscrive nella forma canonica
+leo compila programma.leo   # eseguibile Windows
+leo                         # REPL interattivo</code></pre></figure>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="20_distribuzione.html"><span>Indietro</span><strong>Distribuire i programmi</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="B_errori_comuni.html"><span>Avanti</span><strong>B — Errori comuni e come risolverli</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

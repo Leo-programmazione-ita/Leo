@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12. Creare il .exe e distribuire — Manuale di Leo</title>
+<meta name="description" content="Trasformare un programma o un progetto in un .exe per Windows, da Leo Studio o con leo compila: requisiti, opzioni, cartella o file unico, autore e versione, firma digitale e SmartScreen.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/exe.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/exe.html">
+<meta property="og:title" content="12. Creare il .exe e distribuire — Manuale di Leo">
+<meta property="og:description" content="Trasformare un programma o un progetto in un .exe per Windows, da Leo Studio o con leo compila: requisiti, opzioni, cartella o file unico, autore e versione, firma digitale e SmartScreen.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Creare il .exe</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class="attuale"><a href="exe.html" aria-current="page"><span class="m-n">12</span><span>Creare il .exe</span></a><ol class="m-toc"><li><a href="#cosa" data-toc="cosa">Che cosa ottieni</a></li><li><a href="#requisiti" data-toc="requisiti">Che cosa serve</a></li><li><a href="#studio" data-toc="studio">Da Leo Studio</a></li><li><a href="#comando" data-toc="comando">Dalla riga di comando: leo compila</a></li><li><a href="#cartella-o-file" data-toc="cartella-o-file">Cartella o file unico?</a></li><li><a href="#autore" data-toc="autore">Autore, descrizione e versione</a></li><li><a href="#file-dati" data-toc="file-dati">I file che il programma legge e scrive</a></li><li><a href="#smartscreen" data-toc="smartscreen">Firma digitale e l'avviso di SmartScreen</a></li><li><a href="#comportamento" data-toc="comportamento">Come si comporta l'eseguibile</a></li></ol></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">12. Creare il .exe</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"12. Creare il .exe","item":"https://leoitalia.com/manuale/exe.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">12</span> Sezione 12 di 15</p>
+        <h1>Creare il .exe e distribuire</h1>
+        <p class="m-sommario">Hai finito il tuo programma e vuoi distribuirlo a colleghi, studenti o clienti? Leo lo trasforma in un file .exe che parte con un doppio clic, senza che chi lo riceve debba installare Leo o Python.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>5 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: intermedio</li>
+          
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="cosa">Che cosa ottieni<a class="m-ancora" href="#cosa" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Un <strong>eseguibile Windows</strong> (<code>.exe</code>) che contiene il tuo programma, la parte di Leo che gli serve e, se ha finestre, la grafica. Chi lo riceve non installa niente: basta un doppio clic. L'eseguibile contiene <strong>solo ciò che il programma usa</strong>, quindi resta il più leggero possibile.</p>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Il programma è tuo</p><p>I programmi scritti in Leo e gli eseguibili creati con Leo <strong>appartengono ai loro autori</strong>. Il nome dell'autore di Leo non compare mai negli eseguibili che crei.</p></div></aside>
+
+<h2 id="requisiti">Che cosa serve<a class="m-ancora" href="#requisiti" aria-label="Collegamento a questa parte">#</a></h2>
+<ul class="m-spunte">
+  <li><strong>Windows</strong>: un <code>.exe</code> per Windows si crea su Windows.</li>
+  <li><strong>Leo installato nella versione con Python</strong> (la «versione cartella», con <code>installa.bat</code>: vedi <a href="installazione.html#installazione-con-python">Installazione con Python</a>), perché la creazione degli eseguibili usa <strong>PyInstaller</strong>.</li>
+  <li><strong>PyInstaller</strong> nello stesso ambiente di Leo. Si installa una volta sola: <code>leo compila</code> lo dice e mostra il comando esatto, oppure aggiungi <code>--installa</code> e Leo lo installa dopo averti chiesto conferma.</li>
+  <li><strong>Leo Studio</strong>: questa versione è gratuita e crea i <code>.exe</code> senza chiave (vedi <a href="licenza.html">Licenza e aggiornamenti</a>).</li>
+</ul>
+<aside class="m-riquadro m-attenzione" role="note" aria-label="Attenzione"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Attenzione</p><p>Nella versione di Leo installata con il programma di installazione (<code>Setup_Leo….exe</code>) Python è «chiuso» dentro Leo e la creazione dei <code>.exe</code> non è disponibile: Leo lo dice con un messaggio chiaro. Per creare eseguibili usa la versione cartella.</p></div></aside>
+<figure class="m-codice m-terminale"><div class="m-codice-barra"><span class="m-file">Prompt dei comandi</span><button class="m-copia" type="button" aria-label="Copia i comandi"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>.venv\Scripts\python.exe -m pip install pyinstaller<span class=c-commenti>      # una volta sola</span></span></code></pre></figure>
+
+<h2 id="studio">Da Leo Studio<a class="m-ancora" href="#studio" aria-label="Collegamento a questa parte">#</a></h2>
+<ol class="m-passi">
+  <li><p>Apri il progetto e scegli <em>Esegui → Crea eseguibile (.exe)…</em> (oppure <strong>Crea .exe</strong> nella barra a sinistra, o <kbd>Ctrl</kbd>+<kbd>K</kbd> e <em>eseguibile</em>).</p></li>
+  <li><p>Leo Studio salva il progetto e crea l'eseguibile in un processo separato: puoi continuare a lavorare. L'avanzamento compare riga per riga nel pannello <strong>Uscita</strong>.</p></li>
+  <li><p>Alla fine una notifica ti avvisa e il pannello <em>Uscita</em> dice dove si trova il file: di solito nella cartella <code>eseguibile</code> del progetto.</p></li>
+</ol>
+<p>Non si può creare l'eseguibile mentre il programma è in esecuzione: prima fermalo.</p>
+
+<h2 id="comando">Dalla riga di comando: leo compila<a class="m-ancora" href="#comando" aria-label="Collegamento a questa parte">#</a></h2>
+<figure class="m-codice m-terminale"><div class="m-codice-barra"><span class="m-file">Prompt dei comandi</span><button class="m-copia" type="button" aria-label="Copia i comandi"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>leo compila saluto.leo</span><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>leo compila Rubrica</span><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>leo compila Rubrica --nome "Rubrica 2026" --icona rubrica.ico</span><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>leo compila Rubrica --autore "Anna Rossi" --descrizione "Rubrica dei contatti" --versione-programma 1.2</span><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>leo compila Rubrica --un-file</span></code></pre></figure>
+<p>Alla fine Leo scrive dove si trova l'eseguibile e un <strong>rapporto</strong>: il formato, la dimensione, le parti incluse e quelle tolte perché non servivano.</p>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Opzione</th><th>Significato</th></tr></thead>
+  <tbody>
+    <tr><td><code>--nome NOME</code></td><td>nome dell'eseguibile (predefinito: il nome del progetto o del file)</td></tr>
+    <tr><td><code>--icona FILE.ico</code></td><td>icona dell'eseguibile e delle sue finestre (predefinita: lo stemma di Leo)</td></tr>
+    <tr><td><code>--uscita CARTELLA</code></td><td>dove metterlo (predefinita: la cartella <code>eseguibile</code> accanto al programma)</td></tr>
+    <tr><td><code>--cartella</code> / <code>--un-file</code></td><td>una cartella con l'<code>.exe</code> (predefinito) oppure un solo file</td></tr>
+    <tr><td><code>--console</code> / <code>--finestra</code></td><td>con o senza la finestra nera della console (scelta automatica)</td></tr>
+    <tr><td><code>--autore</code>, <code>--descrizione</code>, <code>--versione-programma</code></td><td>i dati che Windows mostra nelle proprietà del file</td></tr>
+    <tr><td><code>--firma CERTIFICATO.pfx</code></td><td>firma digitale (vedi sotto)</td></tr>
+    <tr><td><code>--installa</code></td><td>installa PyInstaller se manca, dopo conferma</td></tr>
+    <tr><td><code>--upx</code></td><td>comprime ancora di più, se il programma UPX è installato</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="cartella-o-file">Cartella o file unico?<a class="m-ancora" href="#cartella-o-file" aria-label="Collegamento a questa parte">#</a></h2>
+<div class="m-griglia-2">
+  <div class="m-carta"><h4><span class="m-n">A</span> Cartella (predefinito)</h4><p>Una cartella con l'<code>.exe</code> (circa 2 MB) e le librerie accanto. <strong>Parte subito.</strong> Va distribuita tutta la cartella: comprimila in uno <code>.zip</code>.</p></div>
+  <div class="m-carta"><h4><span class="m-n">B</span> Un solo file (<code>--un-file</code>)</h4><p>Un unico <code>.exe</code>, comodo da spedire. Però a ogni avvio si decomprime in una cartella temporanea, quindi <strong>parte più lentamente</strong> (qualche secondo con le finestre).</p></div>
+</div>
+<p>Come ordine di grandezza: un progetto semplice con le finestre occupa circa 50–60 MB come cartella (25 MB circa come file unico); un programma solo testuale circa 20 MB.</p>
+
+<h2 id="autore">Autore, descrizione e versione<a class="m-ancora" href="#autore" aria-label="Collegamento a questa parte">#</a></h2>
+<p>In <em>Esplora file → clic destro sull'exe → Proprietà → Dettagli</em> Windows mostra nome, descrizione, versione e copyright. Invece di scriverli ogni volta nel comando, mettili nella sezione <code>[progetto]</code> di <code>progetto.toml</code>:</p>
+<figure class="m-codice m-semplice"><div class="m-codice-barra"><span class="m-file">progetto.toml</span></div><pre class="m-pre"><code>[progetto]
+nome = "Rubrica"
+autore = "Anna Rossi"            # oppure ["Anna Rossi", "Bruno Neri"]
+descrizione = "Rubrica dei contatti"
+versione = "1.2"</code></pre></figure>
+
+<h2 id="file-dati">I file che il programma legge e scrive<a class="m-ancora" href="#file-dati" aria-label="Collegamento a questa parte">#</a></h2>
+<ul>
+  <li>Maschere, immagini, suoni e moduli importati sono <strong>dentro</strong> l'eseguibile e si trovano sempre.</li>
+  <li>I file che il programma apre con un percorso relativo (<code>leggi_file("parole.txt")</code>) si cercano nella <strong>cartella dell'eseguibile</strong>; lì finiscono anche i file che scrive.</li>
+  <li>I file di dati del progetto (<code>.txt</code>, <code>.csv</code>, <code>.json</code>, <code>.db</code>…) vengono copiati accanto all'eseguibile, <strong>senza mai sovrascrivere</strong> quelli già presenti: le modifiche dell'utente restano.</li>
+  <li>Se nella cartella dell'eseguibile non si può scrivere (per esempio in <code>C:\Programmi</code>), si usa una cartella con il nome del programma in quella dell'utente.</li>
+</ul>
+<p>Prima di compilare Leo controlla gli errori di sintassi di tutti i file, che le maschere si leggano e che le immagini usate siano davvero dentro la cartella del progetto: se qualcosa non va, te lo dice prima di perdere minuti.</p>
+
+<h2 id="smartscreen">Firma digitale e l'avviso di SmartScreen<a class="m-ancora" href="#smartscreen" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Quando qualcuno avvia un programma scaricato da Internet e <strong>non firmato</strong>, Windows mostra l'avviso blu <em>«Windows ha protetto il PC — App non riconosciuta»</em>. La firma digitale dice a Windows chi ha creato il programma e garantisce che non è stato modificato.</p>
+<figure class="m-codice m-terminale"><div class="m-codice-barra"><span class="m-file">Prompt dei comandi</span><button class="m-copia" type="button" aria-label="Copia i comandi"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>set LEO_PASSWORD_CERTIFICATO=la-password</span><span class="r"><span class="m-prompt" aria-hidden="true">&gt;</span>leo compila Rubrica --firma C:\Certificati\anna.pfx</span></code></pre></figure>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Tipo di certificato</th><th>Costo</th><th>Toglie l'avviso agli altri?</th></tr></thead>
+  <tbody>
+    <tr><td>personale (auto-firmato)</td><td>gratis</td><td>no: vale solo sul tuo PC</td></tr>
+    <tr><td>di un'autorità di certificazione</td><td>a pagamento, ogni anno</td><td>sì, dopo che il programma si è fatto una «reputazione»</td></tr>
+    <tr><td>Microsoft Trusted Signing</td><td>abbonamento mensile</td><td>sì (richiede la verifica dell'identità)</td></tr>
+  </tbody>
+</table></div>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>Senza firma il programma funziona lo stesso: spiega a chi lo riceve che deve premere <em>Ulteriori informazioni → Esegui comunque</em>, come hai fatto tu con Leo (vedi <a href="installazione.html#smartscreen">L'avviso blu di Windows</a>). Metti la password del certificato in una variabile d'ambiente, non nel comando: resterebbe nella cronologia.</p></div></aside>
+
+<h2 id="comportamento">Come si comporta l'eseguibile<a class="m-ancora" href="#comportamento" aria-label="Collegamento a questa parte">#</a></h2>
+<ul>
+  <li><strong>Programmi testuali</strong>: quando la console è stata aperta con un doppio clic, alla fine aspetta <kbd>Invio</kbd>, così i risultati restano leggibili.</li>
+  <li><strong>Programmi con le finestre</strong>: gli errori compaiono in una finestra di messaggio.</li>
+  <li>La correzione automatica è spenta: l'eseguibile non fa domande sul codice.</li>
+  <li>Un eseguibile già creato <strong>funziona per sempre</strong>, anche senza Leo Studio installato: non contiene nessun controllo della licenza.</li>
+</ul>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="avanzata.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">11</span>Programmazione avanzata</span></a><a class="m-succ" href="telefono.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">13</span>Leo sul telefono</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

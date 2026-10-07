@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. Leo Studio in un colpo d'occhio — Manuale di Leo</title>
+<meta name="description" content="Le zone di Leo Studio: barra dei controlli, strumenti, progettazione, proprietà e tavolozza, codice, uscita e passo passo, con le scorciatoie.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/leo-studio.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/leo-studio.html">
+<meta property="og:title" content="2. Leo Studio in un colpo d&#x27;occhio — Manuale di Leo">
+<meta property="og:description" content="Le zone di Leo Studio: barra dei controlli, strumenti, progettazione, proprietà e tavolozza, codice, uscita e passo passo, con le scorciatoie.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Leo Studio</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class="attuale"><a href="leo-studio.html" aria-current="page"><span class="m-n">02</span><span>Leo Studio</span></a><ol class="m-toc"><li><a href="#panoramica" data-toc="panoramica">La finestra di Leo Studio</a></li><li><a href="#menu" data-toc="menu">1 · I menu</a></li><li><a href="#barra-controlli" data-toc="barra-controlli">2 · La barra dei controlli (in alto)</a></li><li><a href="#barra-strumenti" data-toc="barra-strumenti">3 · La barra degli strumenti (a sinistra)</a></li><li><a href="#progettazione" data-toc="progettazione">4 · L'area di progettazione</a></li><li><a href="#proprieta" data-toc="proprieta">5 · Proprietà e tavolozza (a destra)</a></li><li><a href="#codice" data-toc="codice">6 · Codice, Uscita, Passo passo</a></li><li><a href="#barra-stato" data-toc="barra-stato">7 · La barra di stato</a></li><li><a href="#essenziale" data-toc="essenziale">La modalità essenziale</a></li><li><a href="#impostazioni" data-toc="impostazioni">Le impostazioni</a></li><li><a href="#scorciatoie" data-toc="scorciatoie">Le scorciatoie da tastiera</a></li></ol></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">2. Leo Studio</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"2. Leo Studio","item":"https://leoitalia.com/manuale/leo-studio.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">02</span> Sezione 2 di 15</p>
+        <h1>Leo Studio in un colpo d'occhio</h1>
+        <p class="m-sommario">Leo Studio è l'ambiente in cui disegni le finestre e scrivi il codice, come nel vecchio Visual Basic. Qui impari dove si trova ogni cosa, a che cosa serve e quali tasti fanno risparmiare tempo.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>8 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: base</li>
+          
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="panoramica">La finestra di Leo Studio<a class="m-ancora" href="#panoramica" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Quando apri o crei un progetto, Leo Studio mostra tutte le sue zone. Passa con il mouse sulle voci sotto lo schema per accendere la zona corrispondente.</p>
+
+<!--noconta--><div class="m-studio" role="img" aria-label="Schema di Leo Studio: in alto i menu e la barra dei controlli; a sinistra la barra degli strumenti; al centro l'area di progettazione; a destra proprietà e tavolozza; in basso codice e uscita; in fondo la barra di stato.">
+  <div class="m-studio-titolo"><i></i><i></i><i></i><span>Leo Studio — Saluto</span></div>
+  <div class="m-studio-griglia">
+    <div class="m-zona m-z-menu" id="z-menu"><span>File</span><span>Modifica</span><span>Visualizza</span><span>Formato</span><span>Esegui</span><span>Strumenti</span><span>Aiuto</span><span class="m-bolla">1</span></div>
+    <div class="m-zona m-z-ctrl" id="z-ctrl"><span class="on">Base</span><span>Inserimento</span><span>Scelta</span><span>Contenitori</span><span>Media</span><span>…</span><span>Cerca controllo…</span><span class="m-bolla">2</span></div>
+    <div class="m-zona m-z-stru" id="z-stru"><span>NUOVO</span><span>APRI</span><span>SALVA</span><span>CODICE</span><span class="esegui">ESEGUI</span><span>STOP</span><span class="m-bolla">3</span></div>
+    <div class="m-zona m-z-prog" id="z-prog">
+      <div class="m-finta-finestra"><div class="barra">Finestra1</div><div class="dentro"><span class="etichetta">Etichetta1</span><span class="pulsante-finto">Saluta</span></div></div>
+      <span class="m-bolla">4</span>
+    </div>
+    <div class="m-zona m-z-prop" id="z-prop">
+      <b>Proprietà</b>
+      <div class="riga"><span>nome</span><em>Pulsante1</em></div>
+      <div class="riga"><span>testo</span><em>Saluta</em></div>
+      <div class="riga"><span>larghezza</span><em>90</em></div>
+      <b style="margin-top:6px">Tavolozza</b>
+      <div class="tav"><i style="background:#000"></i><i style="background:#555"></i><i style="background:#aaa"></i><i style="background:#fff"></i><i style="background:#E0182D"></i><i style="background:#FF8800"></i><i style="background:#FFD000"></i><i style="background:#2E9E4F"></i><i style="background:#1F6FEB"></i><i style="background:#00B7C3"></i><i style="background:#7B3FBF"></i><i style="background:#FF6FA8"></i><i style="background:#8B4513"></i><i style="background:#D4A64A"></i><i style="background:#F5DEB3"></i><i style="background:#1B2A4A"></i></div>
+      <span class="m-bolla">5</span>
+    </div>
+    <div class="m-zona m-z-cod" id="z-cod">
+      <div><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao!"</span><br><span class="c-flusso">fine</span></div>
+      <div><b>Uscita</b> · Passo passo · Cronologia<br><span style="color:var(--m-oro)">›</span> programma avviato</div>
+      <span class="m-bolla">6</span>
+    </div>
+    <div class="m-zona m-z-stato" id="z-stato"><span>Pronto</span><span class="prova">Versione gratuita</span><span class="m-bolla">7</span></div>
+  </div>
+</div>
+<ul class="m-legenda-studio">
+  <li><a href="#menu" data-zona="z-menu"><span class="m-bolla">1</span>Menu</a></li>
+  <li><a href="#barra-controlli" data-zona="z-ctrl"><span class="m-bolla">2</span>Barra dei controlli (in alto)</a></li>
+  <li><a href="#barra-strumenti" data-zona="z-stru"><span class="m-bolla">3</span>Barra degli strumenti (a sinistra)</a></li>
+  <li><a href="#progettazione" data-zona="z-prog"><span class="m-bolla">4</span>Area di progettazione</a></li>
+  <li><a href="#proprieta" data-zona="z-prop"><span class="m-bolla">5</span>Proprietà e tavolozza</a></li>
+  <li><a href="#codice" data-zona="z-cod"><span class="m-bolla">6</span>Codice, uscita e passo passo</a></li>
+  <li><a href="#barra-stato" data-zona="z-stato"><span class="m-bolla">7</span>Barra di stato</a></li>
+</ul><!--/noconta-->
+<p>Ogni zona è un <strong>pannello</strong>: lo puoi spostare trascinandone la barra del titolo, chiudere e riaprire da <em>Visualizza → Pannelli</em>. Se la disposizione si scombina, <em>Visualizza → Ripristina disposizione</em> rimette tutto al suo posto. Con <kbd>F6</kbd> passi al pannello successivo: Leo Studio si usa anche solo con la tastiera.</p>
+<aside class="m-riquadro m-nota" role="note" aria-label="Nota"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Nota</p><p>L'interfaccia è <strong>nera e rossa</strong>, sobria, con contrasti sempre leggibili. Se preferisci, <em>Visualizza → Tema dell'interfaccia</em> la rende chiara; in <em>Strumenti → Impostazioni</em> ci sono anche i temi <em>Nero e oro</em>, <em>Antracite e blu</em> e <em>Grafite e verde</em>.</p></div></aside>
+
+<h2 id="menu">1 · I menu<a class="m-ancora" href="#menu" aria-label="Collegamento a questa parte">#</a></h2>
+<p>In cima ci sono i menu classici: <em>File</em> (nuovo, apri, salva), <em>Modifica</em> (annulla, copia, incolla), <em>Visualizza</em> (pannelli, temi, modalità essenziale), <em>Formato</em> (allineare e uniformare i controlli, forma della finestra), <em>Esegui</em> (esegui, passo passo, formatta, crea eseguibile), <em>Strumenti</em> (editor dei menu, stile del codice, impostazioni) e <em>Aiuto</em> (guida, scorciatoie, licenza).</p>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">La barra dei comandi</p><p>Non ricordi dove sta un comando? Premi <kbd>Ctrl</kbd>+<kbd>K</kbd> e scrivi in italiano che cosa vuoi fare: <em>aggiungi pulsante</em>, <em>tema chiaro</em>, <em>esegui</em>, <em>modello gioco</em>, <em>passo passo</em>… Le lettere trovate si accendono in rosso, accanto a ogni comando c'è la sua scorciatoia; <kbd>Invio</kbd> esegue, <kbd>Esc</kbd> chiude.</p></div></aside>
+
+<h2 id="barra-controlli">2 · La barra dei controlli (in alto)<a class="m-ancora" href="#barra-controlli" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Sotto i menu trovi un pulsante per ogni <strong>categoria di controlli</strong>: Base, Inserimento, Scelta, Contenitori… fino ai <em>Personalizzati</em>, più <em>Preferiti</em> e <em>Recenti</em> quando ci sono. I controlli sono 146, divisi in 21 schede.</p>
+<p>Un clic sulla categoria (o il mouse fermo sopra per un attimo) apre una <strong>tendina</strong> con icona, nome e una breve descrizione di ogni controllo. Poi:</p>
+<ul>
+  <li><strong>clic</strong> (o <kbd>Invio</kbd>) su un controllo: va subito in un posto libero della finestra;</li>
+  <li><strong>trascina</strong> la voce sulla finestra per metterla esattamente dove vuoi;</li>
+  <li><kbd>Maiusc</kbd>+clic: disegni tu il rettangolo del controllo sulla finestra;</li>
+  <li><kbd>Alt</kbd>+lettera apre una categoria (per esempio <kbd>Alt</kbd>+<kbd>B</kbd> = Base).</li>
+</ul>
+<p>In fondo alla barra c'è <strong>Cerca controllo…</strong>: scrivi anche con parole tue, come <em>bottone</em> o <em>foto</em>, e premi <kbd>Invio</kbd> per inserire il risultato migliore.</p>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>Preferisci la vecchia <em>casella degli strumenti</em> di Visual Basic, con tutti i controlli in un pannello? Aprila con <kbd>Alt</kbd>+<kbd>1</kbd> (o <em>Visualizza → Pannelli → Controlli</em>).</p></div></aside>
+
+<h2 id="barra-strumenti">3 · La barra degli strumenti (a sinistra)<a class="m-ancora" href="#barra-strumenti" aria-label="Collegamento a questa parte">#</a></h2>
+<p>La colonna stretta a sinistra contiene i comandi di tutti i giorni, con l'icona e un'etichetta corta: <strong>Nuovo</strong>, <strong>Apri</strong>, <strong>Salva</strong> · <strong>Annulla</strong>, <strong>Ripeti</strong> · <strong>Codice</strong> · <strong>ESEGUI</strong> (in rosso), <strong>Passo passo</strong>, <strong>STOP</strong> · <strong>Crea .exe</strong>, e in fondo <em>Comandi</em> (<kbd>Ctrl</kbd>+<kbd>K</kbd>).</p>
+
+<h2 id="progettazione">4 · L'area di progettazione<a class="m-ancora" href="#progettazione" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Al centro c'è la finestra che stai disegnando, su un fondo scuro con una griglia a puntini (ogni 8 pixel).</p>
+<ul>
+  <li><strong>Selezionare</strong>: clic su un controllo; <kbd>Ctrl</kbd>+clic o un rettangolo trascinato per sceglierne più di uno. Il controllo scelto ha un bordo rosso e le maniglie per ridimensionarlo.</li>
+  <li><strong>Spostare e ridimensionare</strong>: con il mouse, oppure con le frecce (un pixel alla volta); <kbd>Maiusc</kbd>+frecce salta sulla griglia, <kbd>Ctrl</kbd>+frecce ridimensiona. Mentre trascini compaiono le <strong>guide di allineamento</strong> rosse con le distanze in pixel.</li>
+  <li><strong>Doppio clic</strong> su un controllo: Leo Studio scrive per te il gestore del suo evento principale (per un pulsante <code>quando Pulsante1.clic fai</code>) e ti porta nel codice.</li>
+  <li><kbd>F2</kbd>: rinomina il controllo. Il nuovo nome cambia anche nel codice.</li>
+  <li><strong>Controlli invisibili</strong> come <em>Timer</em>, <em>DialogoFile</em> e <em>Suono</em> non stanno sulla finestra: li trovi nella striscia <em>Controlli invisibili</em> sotto di essa.</li>
+</ul>
+<p>Con <kbd>Ctrl</kbd>+<kbd>Maiusc</kbd>+<kbd>A</kbd> apri l'<strong>anteprima dal vivo</strong>: la finestra com'è davvero, senza eseguire il codice, che si aggiorna mentre la modifichi. <kbd>Esc</kbd> la chiude.</p>
+
+<h2 id="proprieta">5 · Proprietà e tavolozza (a destra)<a class="m-ancora" href="#proprieta" aria-label="Collegamento a questa parte">#</a></h2>
+<h3 id="il-pannello-proprieta">Il pannello Proprietà<a class="m-ancora" href="#il-pannello-proprieta" aria-label="Collegamento a questa parte">#</a></h3>
+<p>Mostra il <strong>nome</strong> del controllo scelto, il suo tipo e tutte le sue proprietà, divise in gruppi (<em>Aspetto</em>, <em>Posizione</em>, <em>Comportamento</em>, <em>Dati</em>), con una casella per cercarle. Un valore non valido si colora d'ambra e non viene applicato. Nella parte <strong>Eventi</strong> gli eventi che hanno già un gestore sono in rosso grassetto: un doppio clic apre il gestore (o lo crea). Ci arrivi in fretta con <kbd>F4</kbd>.</p>
+<h3 id="la-tavolozza-dei-colori">La tavolozza dei colori<a class="m-ancora" href="#la-tavolozza-dei-colori" aria-label="Collegamento a questa parte">#</a></h3>
+<p>Sotto le proprietà c'è la <strong>Tavolozza</strong>, come in Visual Basic:</p>
+<ol class="m-passi">
+  <li><p>scegli in alto se colorare lo <strong>SFONDO</strong> o il <strong>TESTO</strong>;</p></li>
+  <li><p>fai clic su uno dei 48 colori italiani (passando sopra vedi il nome): il colore va a <strong>tutti i controlli selezionati</strong> o, se non ne hai selezionato nessuno, alla finestra;</p></li>
+  <li><p>oppure scrivi un colore nella casella <em>Codice</em>: <code>#FF8800</code>, <code>255, 136, 0</code> o un nome come <code>arancione</code>. Vuoto o <code>predefinito</code> toglie il colore.</p></li>
+</ol>
+<p>Ogni colorazione si annulla con un solo <kbd>Ctrl</kbd>+<kbd>Z</kbd>, anche quando hai colorato più controlli insieme.</p>
+
+<h2 id="codice">6 · Codice, Uscita, Passo passo<a class="m-ancora" href="#codice" aria-label="Collegamento a questa parte">#</a></h2>
+<h3 id="l-editor-del-codice">L'editor del codice<a class="m-ancora" href="#l-editor-del-codice" aria-label="Collegamento a questa parte">#</a></h3>
+<p>In basso scrivi il codice degli eventi. L'editor ti aiuta mentre scrivi:</p>
+<ul>
+  <li><strong>ogni parola ha il colore della sua categoria</strong>: le parole di struttura (<code>se</code>, <code>mentre</code>, <code>fine</code>) in rosso, i testi in ambra, le variabili in giallo tenue, le costanti in verde, gli eventi in rosso chiaro… Sono gli stessi colori degli esempi di questo manuale. <kbd>F12</kbd> passa ai temi <em>bianco</em> e <em>alto contrasto</em>;</li>
+  <li>gli <strong>errori</strong> sono sottolineati in ambra mentre scrivi e una <strong>lampadina</strong> propone la correzione;</li>
+  <li>le coppie di blocco (<code>se</code> … <code>fine</code>) si accendono insieme;</li>
+  <li><kbd>Ctrl</kbd>+<kbd>Maiusc</kbd>+<kbd>F</kbd> <strong>formatta</strong> il codice: rientra i blocchi e riporta le parole alla forma consigliata;</li>
+  <li>scrivendo <code>inizio</code> e premendo <kbd>Tab</kbd> ottieni lo schema del programma principale.</li>
+</ul>
+<h3 id="uscita">Uscita<a class="m-ancora" href="#uscita" aria-label="Collegamento a questa parte">#</a></h3>
+<p><strong>Esegui</strong> (<kbd>F5</kbd>) salva e avvia il programma in una finestra a parte; <strong>Stop</strong> (<kbd>Maiusc</kbd>+<kbd>F5</kbd>) lo ferma. Quello che il programma scrive con <code>stampa</code> compare nel pannello <strong>Uscita</strong>, un terminale con il prompt <code>›</code>: le domande di <code>chiedi</code> si rispondono lì. Gli errori appaiono con il messaggio completo di Leo.</p>
+<h3 id="passo-passo">Passo passo<a class="m-ancora" href="#passo-passo" aria-label="Collegamento a questa parte">#</a></h3>
+<p>Il pannello <strong>Passo passo</strong> (<kbd>F10</kbd>) esegue il programma <strong>un'istruzione alla volta</strong>: la riga che sta per partire si illumina in arancione, le variabili che cambiano lampeggiano in rosso e un riepilogo dice che cosa è successo (<em>«x passa da 1 a 2»</em>). Con <strong>Continua</strong> (<kbd>Ctrl</kbd>+<kbd>F10</kbd>) avanza da solo, a cinque velocità, da <em>Molto lenta</em> a <em>Massima</em>. Un doppio clic su una variabile ne mostra la storia. È il modo migliore per capire perché un programma fa quello che fa: lo trovi spiegato meglio in <a href="errori.html#passo-passo">Errori e come leggerli</a>.</p>
+<p>Accanto c'è la <strong>Cronologia</strong>: l'elenco delle modifiche fatte alla finestra, per tornare indietro di più passi.</p>
+
+<h2 id="barra-stato">7 · La barra di stato<a class="m-ancora" href="#barra-stato" aria-label="Collegamento a questa parte">#</a></h2>
+<p>In fondo alla finestra, in maiuscolo, c'è lo stato di Leo Studio: mentre un programma gira l'indicatore diventa arancione. A destra trovi lo stato della licenza (<em>«Versione gratuita»</em>): un clic apre le informazioni sulla licenza.</p>
+
+<h2 id="essenziale">La modalità essenziale<a class="m-ancora" href="#essenziale" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Se stai iniziando, o vuoi lavorare senza distrazioni, accendi la <strong>modalità essenziale</strong> da <em>Visualizza</em>. Restano solo gli strumenti principali:</p>
+<ul>
+  <li>i controlli <em>Pulsante</em>, <em>Etichetta</em>, <em>CasellaTesto</em>, <em>Immagine</em>, <em>CasellaSpunta</em>, <em>Tela</em>, <em>Timer</em> e <em>Suono</em>;</li>
+  <li>nella barra solo Nuovo, Apri, Salva, Annulla, Passo passo, Esegui e Stop;</li>
+  <li>testo più grande e brevi suggerimenti al momento giusto.</li>
+</ul>
+<p>Le scorciatoie restano tutte attive. Nella barra di stato compare <strong>ESSENZIALE</strong>.</p>
+
+<h2 id="impostazioni">Le impostazioni<a class="m-ancora" href="#impostazioni" aria-label="Collegamento a questa parte">#</a></h2>
+<p><em>Strumenti → Impostazioni</em> (<kbd>Ctrl</kbd>+<kbd>,</kbd>) ha tre schede:</p>
+<ul>
+  <li><strong>Aspetto</strong>: tema dell'editor e dell'interfaccia, dimensione dell'interfaccia (dall'80% al 200%), <em>Riduci animazioni</em>, modalità essenziale, schermo di riposo;</li>
+  <li><strong>Progettazione</strong>: passo della griglia e griglia visibile o no;</li>
+  <li><strong>Stile del codice</strong>: come si scrivono dichiarazioni, parametri ed eventi (vedi <a href="avanzata.html#stile">Programmazione avanzata</a>).</li>
+</ul>
+<p>Nella pagina <strong>Editor</strong>, alla voce <em>Colori del codice</em>, puoi cambiare il colore, il grassetto e il corsivo di ogni categoria di parole, vedendo subito il risultato.</p>
+
+<h2 id="scorciatoie">Le scorciatoie da tastiera<a class="m-ancora" href="#scorciatoie" aria-label="Collegamento a questa parte">#</a></h2>
+<div class="m-tabella" tabindex="0"><table>
+  <thead><tr><th>Tasti</th><th>Che cosa fanno</th></tr></thead>
+  <tbody>
+    <tr><td><kbd>F5</kbd> / <kbd>Maiusc</kbd>+<kbd>F5</kbd></td><td>esegui il programma / fermalo</td></tr>
+    <tr><td><kbd>F10</kbd> / <kbd>Ctrl</kbd>+<kbd>F10</kbd></td><td>passo passo: un passo / continua da solo</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>barra dei comandi: scrivi che cosa vuoi fare</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>N</kbd> / <kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>nuovo progetto / apri progetto</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd> / <kbd>Ctrl</kbd>+<kbd>Maiusc</kbd>+<kbd>S</kbd></td><td>salva la finestra / salva tutto</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>annulla / ripeti</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd>, <kbd>Canc</kbd></td><td>duplica / elimina i controlli selezionati</td></tr>
+    <tr><td><kbd>F2</kbd></td><td>rinomina il controllo (anche nel codice)</td></tr>
+    <tr><td><kbd>F7</kbd> / <kbd>Maiusc</kbd>+<kbd>F7</kbd></td><td>vai al codice / alla progettazione</td></tr>
+    <tr><td><kbd>F4</kbd></td><td>pannello Proprietà</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd></td><td>cerca nel codice</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Maiusc</kbd>+<kbd>F</kbd></td><td>formatta il codice</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Maiusc</kbd>+<kbd>A</kbd></td><td>anteprima dal vivo della finestra</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>editor dei menu</td></tr>
+    <tr><td><kbd>F12</kbd></td><td>cambia il tema dei colori del codice</td></tr>
+    <tr><td><kbd>Alt</kbd>+<kbd>1</kbd> … <kbd>Alt</kbd>+<kbd>7</kbd>, <kbd>F6</kbd></td><td>vai a un pannello / al pannello successivo</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>,</kbd></td><td>impostazioni</td></tr>
+    <tr><td><kbd>F1</kbd></td><td>guida del linguaggio</td></tr>
+  </tbody>
+</table></div>
+<p>L'elenco completo, sempre aggiornato, è in <em>Aiuto → Scorciatoie da tastiera</em>.</p>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="installazione.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">01</span>Installazione e primo avvio</span></a><a class="m-succ" href="primo-programma.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">03</span>Il tuo primo programma</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

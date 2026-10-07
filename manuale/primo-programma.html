@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Il tuo primo programma — Manuale di Leo</title>
+<meta name="description" content="Passo passo: crei un progetto, disegni una finestra con un&#x27;etichetta e un pulsante, scrivi il codice del clic ed esegui con F5.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/primo-programma.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/primo-programma.html">
+<meta property="og:title" content="3. Il tuo primo programma — Manuale di Leo">
+<meta property="og:description" content="Passo passo: crei un progetto, disegni una finestra con un&#x27;etichetta e un pulsante, scrivi il codice del clic ed esegui con F5.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Primo programma</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class="attuale"><a href="primo-programma.html" aria-current="page"><span class="m-n">03</span><span>Primo programma</span></a><ol class="m-toc"><li><a href="#obiettivo" data-toc="obiettivo">Che cosa costruiamo</a></li><li><a href="#passo-1" data-toc="passo-1">Passo 1 — Crea il progetto</a></li><li><a href="#passo-2" data-toc="passo-2">Passo 2 — Metti un'etichetta e un pulsante</a></li><li><a href="#passo-3" data-toc="passo-3">Passo 3 — Cambia le scritte</a></li><li><a href="#passo-4" data-toc="passo-4">Passo 4 — Scrivi il codice del clic</a></li><li><a href="#passo-5" data-toc="passo-5">Passo 5 — Esegui con F5</a></li><li><a href="#passo-6" data-toc="passo-6">Passo 6 — Miglioralo: chiedi il nome</a></li><li><a href="#file" data-toc="file">Dove finisce il tuo lavoro</a></li><li><a href="#senza-finestre" data-toc="senza-finestre">E senza finestre?</a></li></ol></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class=""><a href="domande.html"><span class="m-n">15</span><span>Domande e problemi</span></a></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">3. Primo programma</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"3. Primo programma","item":"https://leoitalia.com/manuale/primo-programma.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">03</span> Sezione 3 di 15</p>
+        <h1>Il tuo primo programma</h1>
+        <p class="m-sommario">In questa sezione costruisci, un clic alla volta, un vero programma con una finestra: un'etichetta, un pulsante e una casella in cui scrivere il nome. Alla fine saprai già come funziona ogni programma con le finestre.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>5 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: base</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 esempi verificati</li>
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="obiettivo">Che cosa costruiamo<a class="m-ancora" href="#obiettivo" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Un programma con una finestra che saluta: premi il pulsante e l'etichetta cambia. Poi lo miglioriamo con una casella in cui scrivere il proprio nome.</p>
+<!--noconta--><div class="m-anteprima" aria-hidden="true">
+  <div>
+    <div class="m-win">
+      <div class="m-win-barra"><img src="../img/stemma_32.png" alt="" width="16" height="16">Saluto<span class="x">— ☐ ✕</span></div>
+      <div class="m-win-dentro"><div class="m-win-etichetta">Premi il pulsante</div><div class="m-win-pulsante">Saluta</div></div>
+    </div>
+    <p class="m-win-didascalia">Prima del clic</p>
+  </div>
+  <div>
+    <div class="m-win">
+      <div class="m-win-barra"><img src="../img/stemma_32.png" alt="" width="16" height="16">Saluto<span class="x">— ☐ ✕</span></div>
+      <div class="m-win-dentro"><div class="m-win-etichetta">Ciao! Benvenuto in Leo.</div><div class="m-win-pulsante">Saluta</div></div>
+    </div>
+    <p class="m-win-didascalia">Dopo il clic</p>
+  </div>
+</div><!--/noconta-->
+
+<h2 id="passo-1">Passo 1 — Crea il progetto<a class="m-ancora" href="#passo-1" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Un programma con le finestre, in Leo, è un <strong>progetto</strong>: una cartella che contiene le finestre e il loro codice.</p>
+<ol class="m-passi">
+  <li><p>In Leo Studio scegli <em>File → Nuovo progetto…</em> (oppure <kbd>Ctrl</kbd>+<kbd>N</kbd>, o <strong>Applicazione vuota</strong> nella schermata di benvenuto).</p></li>
+  <li><p>Scegli la cartella in cui creare il progetto, per esempio <em>Documenti</em>.</p></li>
+  <li><p>Scrivi il nome del progetto: <code>Saluto</code>. Premi <em>OK</em>.</p></li>
+</ol>
+<p>Al centro compare <code>Finestra1</code>, vuota: è la finestra del tuo programma.</p>
+
+<h2 id="passo-2">Passo 2 — Metti un'etichetta e un pulsante<a class="m-ancora" href="#passo-2" aria-label="Collegamento a questa parte">#</a></h2>
+<ol class="m-passi">
+  <li><p>Nella <strong>barra dei controlli</strong> in alto apri la categoria <strong>Base</strong>.</p></li>
+  <li><p>Trascina un'<strong>Etichetta</strong> sulla finestra, in alto. Si chiama <code>Etichetta1</code>.</p></li>
+  <li><p>Trascina un <strong>Pulsante</strong> sotto l'etichetta. Si chiama <code>Pulsante1</code>.</p></li>
+  <li><p>Sistema posizione e dimensioni con il mouse: le guide rosse ti aiutano ad allineare.</p></li>
+</ol>
+
+<h2 id="passo-3">Passo 3 — Cambia le scritte<a class="m-ancora" href="#passo-3" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Seleziona il pulsante e, nel pannello <strong>Proprietà</strong> a destra, cambia <code>testo</code> in <code>Saluta</code>. Fai lo stesso con l'etichetta: <code>Premi il pulsante</code>. Le modifiche si vedono subito sulla finestra.</p>
+<aside class="m-riquadro m-attenzione" role="note" aria-label="Attenzione"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Nome e testo sono due cose diverse</p><p>Il <strong>testo</strong> è la scritta che vede chi usa il programma (<code>Saluta</code>). Il <strong>nome</strong> è come il controllo si chiama <em>nel codice</em> (<code>Pulsante1</code>) e non si vede nella finestra. Nel codice userai sempre il nome.</p></div></aside>
+
+<h2 id="passo-4">Passo 4 — Scrivi il codice del clic<a class="m-ancora" href="#passo-4" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Fai <strong>doppio clic sul pulsante</strong>. Leo Studio apre l'editor del codice e scrive per te lo scheletro del <em>gestore</em>, cioè il pezzo di codice che parte quando il pulsante riceve un clic:</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato controllato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>controllato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r"> </span><span class="r"><span class="c-flusso">fine</span></span></code></pre></figure>
+<p>Si legge come una frase: <em>«quando Pulsante1 riceve un clic, fai…»</em>. Il cursore è già sulla riga vuota: scrivi l'istruzione che cambia il testo dell'etichetta.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao! Benvenuto in Leo."</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Etichetta1.testo = "Ciao! Benvenuto in Leo."</pre></div></figure>
+<p><code>Etichetta1.testo</code> vuol dire <em>«la proprietà testo di Etichetta1»</em>; il segno <code>=</code> le dà un nuovo valore. Il testo va sempre tra virgolette.</p>
+<aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>Mentre scrivi, l'editor ti propone i nomi dei controlli e delle loro proprietà. Se sbagli qualcosa, la parola viene sottolineata in ambra: passa sopra con il mouse per leggere il perché.</p></div></aside>
+
+<h2 id="passo-5">Passo 5 — Esegui con F5<a class="m-ancora" href="#passo-5" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Premi <kbd>F5</kbd> (o <strong>ESEGUI</strong> nella barra a sinistra). Leo Studio salva e apre la tua finestra: premi <em>Saluta</em> e l'etichetta cambia. Per chiudere il programma usa la <strong>✕</strong> della finestra oppure <strong>STOP</strong> (<kbd>Maiusc</kbd>+<kbd>F5</kbd>).</p>
+<p>Il primo programma con le finestre è pronto: una finestra, un controllo e un gestore d'evento. Ogni programma con le finestre, anche il più grande, segue questo stesso schema.</p>
+
+<h2 id="passo-6">Passo 6 — Miglioralo: chiedi il nome<a class="m-ancora" href="#passo-6" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Ora facciamo salutare per nome, e contiamo quante volte si preme il pulsante.</p>
+<ol class="m-passi">
+  <li><p>Dalla categoria <strong>Inserimento</strong> trascina una <strong>CasellaTesto</strong> sotto l'etichetta.</p></li>
+  <li><p>Con la casella selezionata premi <kbd>F2</kbd>: nel pannello Proprietà si seleziona il suo <strong>nome</strong>. Scrivi <code>CasellaNome</code> e premi <kbd>Invio</kbd>. Un nome che dice a che cosa serve il controllo rende il codice più facile da leggere (e se il nome compare già nel codice, Leo Studio lo cambia anche lì).</p></li>
+  <li><p>Scrivi il codice qui sotto al posto di quello di prima.</p></li>
+</ol>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">Finestra1.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato provato con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>provato con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">clic</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Come ti chiami?"</span></span><span class="r"><span class="c-flusso">fine</span></span><span class="r"> </span><span class="r"><span class="c-dichiarazioni">quando</span> <span class="c-controlli">Pulsante1</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-libreria">vuota</span><span class="c-punteggiatura">(</span><span class="c-controlli">CasellaNome</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-punteggiatura">)</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-libreria">messaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">"Scrivi prima il tuo nome"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">altrimenti</span></span><span class="r">        <span class="c-flusso">aumenta</span> <span class="c-variabili">clic</span></span><span class="r">        <span class="c-controlli">Etichetta1</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-controlli">CasellaNome</span><span class="c-punteggiatura">.</span><span class="c-proprieta">testo</span><span class="c-interpolazione">}</span><span class="c-testi">! Clic numero </span><span class="c-interpolazione">{</span><span class="c-variabili">clic</span><span class="c-interpolazione">}</span><span class="c-testi">."</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Risultato (controlli simulati)</span><pre>Etichetta1.testo = "Ciao, Ada! Clic numero 2."</pre></div></figure>
+<p>Che cosa c'è di nuovo:</p>
+<ul>
+  <li><code>variabile clic = 0</code> crea una <strong>variabile</strong>, una scatola con un nome che ricorda un valore;</li>
+  <li><code>quando Finestra1.apertura fai</code> parte una volta sola, quando la finestra si apre;</li>
+  <li><code>se … allora … altrimenti … fine</code> sceglie che cosa fare: se la casella è vuota mostra un messaggio, altrimenti saluta;</li>
+  <li><code>aumenta clic</code> aggiunge 1 alla variabile;</li>
+  <li>dentro un testo, <code>{CasellaNome.testo}</code> e <code>{clic}</code> vengono sostituiti dal loro valore.</li>
+</ul>
+<p>Qui sopra, nel riquadro del risultato, vedi che cosa succede con <code>Ada</code> nella casella dopo due clic: il manuale ha eseguito davvero questo codice con i controlli simulati.</p>
+
+<h2 id="file">Dove finisce il tuo lavoro<a class="m-ancora" href="#file" aria-label="Collegamento a questa parte">#</a></h2>
+<p><kbd>Ctrl</kbd>+<kbd>S</kbd> salva. Nella cartella <code>Saluto</code> trovi tre file:</p>
+<figure class="m-codice m-semplice"><div class="m-codice-barra"><span class="m-file">Cartella del progetto</span></div><pre class="m-pre"><code>Saluto/
+    progetto.toml        nome del progetto, finestra iniziale, stile del codice
+    Finestra1.maschera   posizione e proprietà dei controlli (la scrive Leo Studio)
+    Finestra1.leo        il codice degli eventi, scritto da te</code></pre></figure>
+<p>Per riaprire il progetto usa <em>File → Apri progetto…</em> (<kbd>Ctrl</kbd>+<kbd>O</kbd>) o i progetti recenti della schermata di benvenuto. Per darlo a chi non ha Leo puoi trasformarlo in un file <code>.exe</code>: vedi <a href="exe.html">Creare il .exe</a>.</p>
+
+<h2 id="senza-finestre">E senza finestre?<a class="m-ancora" href="#senza-finestre" aria-label="Collegamento a questa parte">#</a></h2>
+<p>Non tutti i programmi hanno bisogno di una finestra. Un programma <strong>testuale</strong> scrive e legge nel terminale: in Leo Studio l'uscita compare nel pannello <em>Uscita</em>. È il modo più rapido per imparare il linguaggio.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">principale.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">inizio</span></span><span class="r">    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-libreria">chiedi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Come ti chiami? "</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">se</span> <span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">nome</span><span class="c-punteggiatura">)</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">5</span> <span class="c-flusso">allora</span></span><span class="r">        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Che nome lungo!"</span><span class="c-punteggiatura">)</span></span><span class="r">    <span class="c-flusso">fine</span></span><span class="r"><span class="c-flusso">fine</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Uscita</span><pre>Come ti chiami? <span class="m-risposta">Beatrice</span>
+Ciao, Beatrice!
+Che nome lungo!</pre></div></figure>
+<ul>
+  <li><code>chiedi</code> fa una domanda e restituisce quello che l'utente scrive;</li>
+  <li><code>stampa</code> scrive una riga;</li>
+  <li><code>inizio … fine</code> racchiude il <strong>programma principale</strong>, il codice che parte subito (è facoltativo, ma rende il programma più ordinato).</li>
+</ul>
+<p>Un progetto testuale si crea dalla riga di comando con <code>leo nuovo MioProgramma --testuale</code>; un singolo file <code>.leo</code> si esegue con <code>leo programma.leo</code>. Nella prossima sezione impari tutte le basi del linguaggio con programmi come questo.</p>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="leo-studio.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">02</span>Leo Studio in un colpo d'occhio</span></a><a class="m-succ" href="basi.html" rel="next"><span class="m-ps-dir">Successiva &rarr;</span><span class="m-ps-tit"><span class="m-n">04</span>Le basi del linguaggio</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

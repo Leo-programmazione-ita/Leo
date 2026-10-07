@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 1 — Il primo programma — Leo, il manuale</title>
+<meta name="description" content="Un programma è un testo che dà istruzioni al computer. In Leo, questo testo si salva in un file con estensione .leo e si esegue con un comando. Non serve…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/01_primo_programma.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/01_primo_programma.html">
+<meta property="og:title" content="Capitolo 1 — Il primo programma — Leo, il manuale">
+<meta property="og:description" content="Un programma è un testo che dà istruzioni al computer. In Leo, questo testo si salva in un file con estensione .leo e si esegue con un comando. Non serve…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html" aria-current="page">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte I — Le basi</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#scrivi-il-comando-per-parlare"><code>scrivi</code>: il comando per parlare</a></li><li><a href="#i-commenti-note-per-gli-umani">I commenti: note per gli umani</a></li><li><a href="#inserire-valori-nel-testo">Inserire valori nel testo</a></li><li><a href="#chiedere-qualcosa-a-chi-usa-il-programma">Chiedere qualcosa a chi usa il programma</a></li><li><a href="#dove-comincia-un-programma-inizio-fine">Dove comincia un programma: <code>inizio</code> ... <code>fine</code></a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 1 — Il primo programma</h1>
+<p>Un programma è un testo che dà istruzioni al computer. In Leo, questo testo si salva in un file con estensione <code>.leo</code> e si esegue con un comando. Non serve compilare nulla a mano, non serve configurare niente: scrivi, salvi, esegui.</p>
+<p>Cominciamo dalla tradizione. Apri un editor di testo — va bene qualunque cosa, anche il Blocco note, purché salvi in <strong>UTF-8</strong> — scrivi questa riga e salva il file come <code>ciao.leo</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-3" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-3" class="libro-pre"><code><span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao, mondo!"</span></code></pre></figure>
+<p>Ora apri un terminale nella cartella dove hai salvato il file ed esegui:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-4" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-4" class="libro-pre"><code>leo ciao.leo</code></pre></figure>
+<p>Il programma stampa:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-5" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-5" class="libro-pre"><code>Ciao, mondo!</code></pre></figure>
+<p>Congratulazioni: hai scritto ed eseguito il tuo primo programma. Ora smontiamolo, pezzo per pezzo, perché in quella riga c'è già parecchio.</p>
+<h2 id="scrivi-il-comando-per-parlare"><code>scrivi</code>: il comando per parlare</h2>
+<p><code>scrivi</code> è il comando che mostra qualcosa sullo schermo. (Ha anche un nome più tecnico, <code>stampa</code>: sono la stessa identica cosa, due parole per lo stesso comando. Nel libro useremo quasi sempre <code>scrivi</code>, perché si legge meglio.) Quello che segue <code>scrivi</code> è ciò che vuoi mostrare.</p>
+<p>In Leo i comandi all'inizio di una riga <strong>non hanno bisogno delle parentesi</strong>: la regola, che approfondiremo via via, è che <em>le parentesi vogliono dire «calcola»</em>. Quindi puoi scrivere il testo così com'è, senza nemmeno le virgolette:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-6" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-6" class="libro-pre"><code><span class="c-libreria">scrivi</span> <span class="c-testi">Ciao, mondo!</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">Oggi imparo a programmare.</span></code></pre></figure>
+<p>Questo stampa:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-7" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-7" class="libro-pre"><code>Ciao, mondo!
+Oggi imparo a programmare.</code></pre></figure>
+<p>Esiste anche la <strong>forma classica</strong>, con le parentesi e le virgolette — <code>scrivi("Ciao, mondo!")</code> — ed è perfettamente valida: fa esattamente la stessa cosa. La vedrai spesso, perché quando il testo contiene caratteri particolari (parentesi, segni di punteggiatura usati per calcolare) le virgolette tolgono ogni ambiguità. Per ora tieni a mente che entrambe vanno bene; sceglieremo di volta in volta la più chiara.</p>
+<p>Ogni <code>scrivi</code> manda a capo dopo aver stampato. Più righe di programma diventano più righe sullo schermo:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-8" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-8" class="libro-pre"><code><span class="c-libreria">scrivi</span> <span class="c-testi">"Riga uno"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Riga due"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-9" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-9" class="libro-pre"><code>Riga uno
+Riga due</code></pre></figure>
+<h2 id="i-commenti-note-per-gli-umani">I commenti: note per gli umani</h2>
+<p>Non tutto quello che scrivi in un file è destinato al computer. A volte vuoi lasciare una nota a te stesso o a chi leggerà il codice dopo. Questi appunti si chiamano <strong>commenti</strong> e Leo li ignora completamente durante l'esecuzione.</p>
+<p>Un commento comincia con <code>#</code> e arriva fino a fine riga. Per un commento su più righe si usano <code>#[</code> e <code>]#</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-10" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-10" class="libro-pre"><code><span class="c-commenti"># Questo è un commento: Leo lo ignora</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Il commento qui sopra non viene stampato"</span>
+<span class="c-commenti">#[ Un commento</span>
+<span class="c-commenti">   su più righe ]#</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Fatto"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-11" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-11" class="libro-pre"><code>Il commento qui sopra non viene stampato
+Fatto</code></pre></figure>
+<p>I commenti sembrano inutili quando il programma è di tre righe, ma diventano preziosi quando è di trecento. Prendi l'abitudine di spiegare <em>perché</em> fai una cosa, non <em>cosa</em> fai: il «cosa» lo dice già il codice.</p>
+<h2 id="inserire-valori-nel-testo">Inserire valori nel testo</h2>
+<p>Finché scriviamo solo frasi fisse, il programma dice sempre la stessa cosa. La vita diventa interessante quando il testo cambia a seconda dei dati. In Leo, dentro un testo tra virgolette, puoi inserire un valore mettendolo tra <strong>graffe</strong> <code>{…}</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-12" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-12" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-testi">"Giulia"</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">anni</span> <span class="c-operatori">=</span> <span class="c-numeri">10</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao </span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi">, hai </span><span class="c-interpolazione">{</span><span class="c-variabili">anni</span> <span class="c-operatori">+</span> <span class="c-numeri">1</span><span class="c-interpolazione">}</span><span class="c-testi"> anni"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-13" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-13" class="libro-pre"><code>Ciao Giulia, hai 11 anni</code></pre></figure>
+<p>Tra le graffe puoi mettere non solo una variabile ma qualunque calcolo: <code>{anni + 1}</code> viene calcolato e il risultato prende il suo posto. Questo si chiama <strong>interpolazione</strong> e sarà il nostro pane quotidiano; gli dedicheremo più spazio nel capitolo sui testi.</p>
+<p>Nella forma senza virgolette lo stesso risultato si ottiene con le parentesi tonde, che — ricordi? — vogliono dire «calcola»:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-14" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-14" class="libro-pre"><code><span class="c-libreria">scrivi</span> <span class="c-testi">Ciao </span><span class="c-interpolazione">(</span><span class="c-testo_normale">nome</span><span class="c-interpolazione">)</span><span class="c-testi">, hai </span><span class="c-interpolazione">(</span><span class="c-testo_normale">anni</span> <span class="c-operatori">+</span> <span class="c-numeri">1</span><span class="c-interpolazione">)</span><span class="c-testi"> anni</span></code></pre></figure>
+<p>Le due forme producono la stessa riga. Useremo di solito quella con le graffe, perché mostra a colpo d'occhio dove finisce il testo e dove comincia il valore.</p>
+<h2 id="chiedere-qualcosa-a-chi-usa-il-programma">Chiedere qualcosa a chi usa il programma</h2>
+<p>Un programma che parla soltanto è un monologo. Per ascoltare c'è <code>chiedi</code>: mostra una domanda e restituisce, come testo, quello che la persona digita e invia con Invio.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-15" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-15" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-libreria">chiedi</span> <span class="c-testi">"Come ti chiami?"</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Piacere di conoscerti, </span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span></code></pre></figure>
+<p>Eseguendo e rispondendo <code>Ada</code>, il programma stampa:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-16" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-16" class="libro-pre"><code>Piacere di conoscerti, Ada!</code></pre></figure>
+<p><code>chiedi</code> restituisce <strong>sempre un testo</strong>, anche se la persona scrive un numero. Per trasformarlo in un numero vero useremo <code>intero(...)</code> o <code>decimale(...)</code>: lo vedremo tra pochi capitoli. Per ora ci basta sapere che il programma può dialogare.</p>
+<h2 id="dove-comincia-un-programma-inizio-fine">Dove comincia un programma: <code>inizio</code> ... <code>fine</code></h2>
+<p>I programmi piccoli si leggono dall'alto in basso e partono dalla prima riga. Man mano che crescono, conviene segnare con chiarezza <em>da dove</em> parte il programma, tenendo le funzioni (che vedremo nel Capitolo 9) separate. Per questo Leo offre il blocco <code>inizio</code> ... <code>fine</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-17" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-17" class="libro-pre"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Il programma parte da qui."</span>
+    <span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-testi">"Leo"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-parametri">nome</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao, </span><span class="c-interpolazione">{</span><span class="c-parametri">nome</span><span class="c-interpolazione">}</span><span class="c-testi">!"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-18" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-18" class="libro-pre"><code>Il programma parte da qui.
+Ciao, Leo!</code></pre></figure>
+<p>Il codice dentro <code>inizio</code> è quello che deve partire subito; le funzioni stanno fuori, prima o dopo, e sono pronte quando il blocco le chiama (nota che <code>saluta</code> è definita <em>sotto</em> <code>inizio</code> ma viene usata lo stesso: il blocco parte dopo che tutto il file è stato letto). Il blocco <code>inizio</code> è facoltativo — i programmi senza di esso funzionano benissimo — ma è la forma consigliata per i programmi nuovi, ed è quella che adotteremo quando le cose si faranno serie.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Scrivi un programma che saluta te stesso per nome e poi stampa, su una riga separata, in che anno pensi di finire questo libro.</li><li>Modifica l'esempio di <code>chiedi</code> perché faccia due domande — il nome e la città — e poi stampi una frase sola che usa entrambe le risposte, con l'interpolazione <code>{…}</code>.</li><li>Prendi uno qualunque dei programmi di questo capitolo, togli una virgoletta di chiusura e rieseguilo. Leggi con calma il messaggio d'errore: su quale riga ti manda? Che cosa ti propone? Poi rimetti la virgoletta a posto.</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="00_introduzione.html"><span>Indietro</span><strong>Introduzione</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="02_variabili_costanti.html"><span>Avanti</span><strong>Variabili e costanti</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

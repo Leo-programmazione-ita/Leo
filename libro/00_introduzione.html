@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduzione — Leo, il manuale</title>
+<meta name="description" content="Benvenuto. Questo è un libro su Leo, un linguaggio di programmazione pensato e scritto in italiano. Se non hai mai programmato, sei nel posto giusto:…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/00_introduzione.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/00_introduzione.html">
+<meta property="og:title" content="Introduzione — Leo, il manuale">
+<meta property="og:description" content="Benvenuto. Questo è un libro su Leo, un linguaggio di programmazione pensato e scritto in italiano. Se non hai mai programmato, sei nel posto giusto:…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html" aria-current="page">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Introduzione</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#che-cos-è-leo">Che cos'è Leo</a></li><li><a href="#la-filosofia">La filosofia</a></li><li><a href="#come-è-fatto-questo-libro">Come è fatto questo libro</a></li><li><a href="#che-cosa-ti-serve">Che cosa ti serve</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Introduzione</h1>
+<p>Benvenuto. Questo è un libro su <strong>Leo</strong>, un linguaggio di programmazione pensato e scritto in italiano. Se non hai mai programmato, sei nel posto giusto: cominceremo dalla prima riga e non daremo nulla per scontato. Se programmi già in altri linguaggi, troverai lo stesso un terreno familiare — funzioni, classi, moduli, eccezioni, parallelismo — ma raccontato in una lingua che probabilmente parli ogni giorno.</p>
+<h2 id="che-cos-è-leo">Che cos'è Leo</h2>
+<p>Leo è un linguaggio di programmazione completo in cui le parole chiave, i messaggi d'errore, la libreria e la documentazione sono <strong>tutti in italiano</strong>. Un programma Leo si legge quasi come una frase:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-1" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-1" class="libro-pre"><code><span class="c-flusso">se</span> <span class="c-testo_normale">voto</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">18</span> <span class="c-flusso">allora</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Promosso"</span>
+<span class="c-flusso">altrimenti</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Da ripassare"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<p>Non c'è bisogno di tradurre mentalmente <code>if</code>, <code>then</code>, <code>else</code>: le istruzioni dicono quello che fanno, nella lingua in cui pensi. Questo non è uno scherzo né un giocattolo. Dentro Leo ci sono i tipi di dato seri (interi senza limiti, decimali, denaro esatto, frazioni, date), le funzioni come valori, le chiusure, le eccezioni, i moduli, gli oggetti con l'ereditarietà, il parallelismo su più processori, le sequenze pigre e oltre novecento funzioni di libreria già pronte, dalla statistica al web, dalla crittografia alle immagini.</p>
+<p>Leo <strong>gira sull'interprete Python</strong>. È una scelta importante e la raccontiamo con onestà: Leo non reinventa la macchina sottostante, si appoggia a una delle piattaforme più solide e collaudate al mondo. Da lì eredita stabilità, portabilità e la possibilità — per chi un giorno la vorrà — di attingere all'immenso ecosistema di pacchetti Python. Ma il linguaggio che scrivi e leggi è Leo: pulito, in italiano, coerente dall'inizio alla fine.</p>
+<h2 id="la-filosofia">La filosofia</h2>
+<p>Tre idee guidano tutto il progetto, e vale la pena nominarle subito perché tornano in ogni capitolo.</p>
+<p><strong>L'italiano non è una decorazione.</strong> Programmare è, prima di tutto, scrivere per essere capiti — dal computer e dalle persone. Una lingua vicina rende il codice più leggibile a chi lo scrive per la prima volta e più chiaro a chi lo rilegge dopo mesi. Quando un programma Leo si rompe, non ti trovi davanti un muro di inglese tecnico: l'errore ti spiega in italiano che cosa è successo, su quale riga, e spesso ti propone già la correzione.</p>
+<p><strong>La semplicità è una qualità, non una mancanza.</strong> In Leo le cose comuni si scrivono in modo breve e diretto. Stampare a schermo è <code>scrivi</code>; sommare i numeri di una lista è <code>somma</code>; scrivere un importo in lettere è <code>euro_in_lettere</code>. Ma semplice non vuol dire limitato: quando serve potenza, c'è. Il punto è che non devi pagare la complessità in anticipo, prima ancora di averne bisogno.</p>
+<p><strong>Niente magia nascosta.</strong> Leo preferisce dirti le cose. Non converte i tipi di nascosto (<code>"3" + 4</code> è un errore, non un risultato a sorpresa); non crea variabili per un refuso; non lascia che un calcolo sbagliato passi inosservato. Molti controlli avvengono <em>prima</em> di eseguire il programma, così tanti errori si scoprono subito invece che a metà di un lavoro lungo.</p>
+<h2 id="come-è-fatto-questo-libro">Come è fatto questo libro</h2>
+<p>Questo è un libro che si legge <strong>in ordine</strong>. Non è un elenco di riferimento da consultare a salti (per quello ci sono la <a href="../riferimento/index.html">Guida al linguaggio</a> e le schede di libreria in <code>docs/</code>); è un percorso che parte dal primo <code>scrivi</code> e arriva, pagina dopo pagina, a costruire applicazioni con finestre, app per il telefono e programmi distribuibili.</p>
+<p>Il viaggio è diviso in cinque parti e un gruppo di appendici:</p>
+<ul><li><strong>Parte I — Le basi.</strong> Il primo programma, le variabili e le costanti, i numeri in tutte le loro forme, i testi, le liste e i dizionari, e come prendere una "fetta" di una sequenza.</li><li><strong>Parte II — Il flusso.</strong> Come il programma decide (<code>se</code>, <code>scegli</code>) e ripete (<code>per ogni</code>, <code>mentre</code>, <code>ripeti</code>), come si scrivono le funzioni e come si gestiscono gli errori.</li><li><strong>Parte III — Organizzare.</strong> Classi e oggetti, l'ereditarietà, la divisione del codice in moduli, e il lavoro con file e cartelle.</li><li><strong>Parte IV — Potenza.</strong> Il parallelismo, le sequenze pigre e un tour ragionato della libreria, area per area.</li><li><strong>Parte V — Fare cose vere.</strong> Le interfacce grafiche con Leo Studio, le app per Android, la cybersecurity difensiva e la distribuzione dei programmi.</li><li><strong>Appendici.</strong> Un riferimento rapido della sintassi, un catalogo degli errori più comuni, un confronto onesto con Python e un glossario.</li></ul>
+<p>Ogni capitolo ha la stessa forma: una spiegazione chiara, esempi che puoi copiare, e in fondo un piccolo <strong>«prova tu»</strong> per mettere subito le mani in pasta. Tutti gli esempi di questo libro sono stati <strong>eseguiti davvero</strong> con <code>python3 -m leo</code> prima di finire in queste pagine: quando leggi un output, è l'output reale del programma, non una ricostruzione a memoria.</p>
+<h2 id="che-cosa-ti-serve">Che cosa ti serve</h2>
+<p>Per seguire la prima metà del libro basta Python 3.10 o successivo e la cartella di Leo. Dalla riga di comando, un programma si esegue così:</p>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-2" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-2" class="libro-pre"><code>python3 -m leo saluto.leo</code></pre></figure>
+<p>Nel resto del libro scriveremo semplicemente <code>leo saluto.leo</code>: su Windows è il collegamento <em>Leo - riga di comando</em> (o <code>leo.bat</code>), altrove è <code>python3 -m leo</code>. Per i capitoli con le finestre serve in più <strong>PySide6</strong>; lo installeremo a tempo debito. Per ora, apri un editor di testo qualunque: stiamo per scrivere il primo programma.</p>
+<hr>
+<p>Una nota di metodo, prima di partire. Imparare a programmare non è imparare a memoria una lista di comandi: è prendere l'abitudine di provare. Tieni aperto un terminale accanto al libro. Quando incontri un esempio, scrivilo (non copiarlo e basta: scriverlo a mano fa la differenza), eseguilo, poi <strong>rompilo</strong> di proposito — cambia un numero, togli una parentesi, scambia due righe — e guarda che cosa dice Leo. Gli errori, in questo libro, non sono nemici: sono il modo più veloce per capire come funziona davvero il linguaggio.</p>
+<p>Buona lettura, e buon divertimento.</p>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="index.html"><span>Indietro</span><strong>Copertina</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="01_primo_programma.html"><span>Avanti</span><strong>Il primo programma</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

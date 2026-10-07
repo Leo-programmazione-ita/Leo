@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 8 — Ripetere — Leo, il manuale</title>
+<meta name="description" content="L&#x27;altra metà del controllo di flusso è la ripetizione. I computer sono instancabili: fanno la stessa cosa un milione di volte senza annoiarsi. Il nostro…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/08_cicli.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/08_cicli.html">
+<meta property="og:title" content="Capitolo 8 — Ripetere — Leo, il manuale">
+<meta property="og:description" content="L&#x27;altra metà del controllo di flusso è la ripetizione. I computer sono instancabili: fanno la stessa cosa un milione di volte senza annoiarsi. Il nostro…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html" aria-current="page">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte II — Il flusso</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#mentre-finché-una-condizione-regge"><code>mentre</code>: finché una condizione regge</a></li><li><a href="#per-ogni-scorrere-una-sequenza"><code>per ogni</code>: scorrere una sequenza</a></li><li><a href="#ripeti-un-numero-fisso-di-volte"><code>ripeti</code>: un numero fisso di volte</a></li><li><a href="#uscire-e-saltare-interrompi-e-continua">Uscire e saltare: <code>interrompi</code> e <code>continua</code></a></li><li><a href="#ripetere-nel-tempo-ogni">Ripetere nel tempo: <code>ogni</code></a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 8 — Ripetere</h1>
+<p>L'altra metà del controllo di flusso è la <strong>ripetizione</strong>. I computer sono instancabili: fanno la stessa cosa un milione di volte senza annoiarsi. Il nostro compito è dire <em>cosa</em> ripetere e <em>quando fermarsi</em>. Leo offre tre modi di ciclare, ciascuno con il suo carattere.</p>
+<h2 id="mentre-finché-una-condizione-regge"><code>mentre</code>: finché una condizione regge</h2>
+<p><code>mentre</code> ripete un blocco <em>finché</em> una condizione resta vera. Controlla la condizione prima di ogni giro; appena diventa falsa, esce.</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-87" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-87" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">n</span> <span class="c-operatori">=</span> <span class="c-numeri">3</span>
+<span class="c-flusso">mentre</span> <span class="c-variabili">n</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">0</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Manca </span><span class="c-interpolazione">{</span><span class="c-variabili">n</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+    <span class="c-variabili">n</span> <span class="c-operatori">-=</span> <span class="c-numeri">1</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">scrivi</span> <span class="c-testi">"Via!"</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-88" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-88" class="libro-pre"><code>Manca 3
+Manca 2
+Manca 1
+Via!</code></pre></figure>
+<p>Il blocco si apre con <code>fai</code> (che, come <code>allora</code>, puoi omettere se è l'ultima cosa sulla riga) e si chiude con <code>fine</code>. Attenzione a una cosa: dentro il ciclo deve succedere <em>qualcosa</em> che prima o poi renda la condizione falsa — qui <code>n -= 1</code>. Se te ne dimentichi, il ciclo gira per sempre. È il classico «ciclo infinito», e capita a tutti: se un programma sembra bloccato, è il primo sospetto.</p>
+<h2 id="per-ogni-scorrere-una-sequenza"><code>per ogni</code>: scorrere una sequenza</h2>
+<p>Molto spesso non vuoi ripetere «finché», ma «per ciascun elemento» di una sequenza — una lista, un testo, un intervallo, le chiavi di un dizionario. Per questo c'è <code>per ogni</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-89" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-89" class="libro-pre"><code><span class="c-flusso">per ogni</span> <span class="c-variabili">frutto</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">"mela"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"pera"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"fico"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Mi piace la </span><span class="c-interpolazione">{</span><span class="c-variabili">frutto</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-flusso">fine</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">i</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">3</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">i</span> <span class="c-operatori">*</span> <span class="c-variabili">i</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-90" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-90" class="libro-pre"><code>Mi piace la mela
+Mi piace la pera
+Mi piace la fico
+1
+4
+9</code></pre></figure>
+<p>A ogni giro, la variabile dopo <code>per ogni</code> (qui <code>frutto</code>, poi <code>i</code>) prende il valore dell'elemento successivo. Con un intervallo <code>1..3</code> ottieni il classico ciclo a conteggio. Dopo il nome va <em>sempre</em> <code>in</code>: se scrivi per sbaglio <code>per ogni i da 1 a 3</code>, Leo capisce l'intenzione e ti propone <code>in 1..3</code>.</p>
+<p><code>per ogni</code> sa anche scorrere <strong>due cose insieme</strong>. Su un dizionario prende chiave e valore; su una lista di coppie, i due elementi di ciascuna:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-91" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-91" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">capitali</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"Italia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Roma"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Francia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Parigi"</span><span class="c-punteggiatura">}</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">paese</span><span class="c-punteggiatura">,</span> <span class="c-variabili">capitale</span> <span class="c-logici">in</span> <span class="c-variabili">capitali</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">capitale</span><span class="c-interpolazione">}</span><span class="c-testi"> è la capitale di </span><span class="c-interpolazione">{</span><span class="c-variabili">paese</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-flusso">fine</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">x</span><span class="c-punteggiatura">,</span> <span class="c-variabili">y</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span> <span class="c-punteggiatura">[</span><span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">4</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">x</span> <span class="c-operatori">+</span> <span class="c-variabili">y</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-92" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-92" class="libro-pre"><code>Roma è la capitale di Italia
+Parigi è la capitale di Francia
+3
+7</code></pre></figure>
+<h2 id="ripeti-un-numero-fisso-di-volte"><code>ripeti</code>: un numero fisso di volte</h2>
+<p>Quando vuoi solo ripetere <em>n</em> volte e non ti importa di un indice, <code>ripeti</code> è il più diretto:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-93" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-93" class="libro-pre"><code><span class="c-flusso">ripeti</span> <span class="c-numeri">3</span> <span class="c-flusso">volte</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao!"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-94" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-94" class="libro-pre"><code>Ciao!
+Ciao!
+Ciao!</code></pre></figure>
+<p>Nota che <code>ripeti 3 volte</code> non vuole né <code>allora</code> né <code>fai</code>: è già completo così. Esiste anche <code>ripeti per sempre</code>, per i cicli che vanno avanti finché non li fermi dall'interno — utile nei giochi e nei programmi interattivi.</p>
+<h2 id="uscire-e-saltare-interrompi-e-continua">Uscire e saltare: <code>interrompi</code> e <code>continua</code></h2>
+<p>Dentro un ciclo hai due comandi per alterarne il corso. <code>interrompi</code> esce subito dal ciclo; <code>continua</code> salta al giro successivo senza eseguire il resto del blocco:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-95" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-95" class="libro-pre"><code><span class="c-flusso">per ogni</span> <span class="c-variabili">i</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">100</span> <span class="c-flusso">fai</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">i</span> <span class="c-operatori">%</span> <span class="c-numeri">2</span> <span class="c-operatori">==</span> <span class="c-numeri">0</span> <span class="c-flusso">allora</span>
+        <span class="c-flusso">continua</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">i</span> <span class="c-operatori">&gt;</span> <span class="c-numeri">9</span> <span class="c-flusso">allora</span>
+        <span class="c-flusso">interrompi</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">i</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-96" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-96" class="libro-pre"><code>1
+3
+5
+7
+9</code></pre></figure>
+<p>Seguiamo il ragionamento: per ogni numero da 1 a 100, se è pari (<code>continua</code>) saltiamo; se ha superato il 9 (<code>interrompi</code>) usciamo del tutto; altrimenti lo stampiamo. Risultato: i numeri dispari da 1 a 9. Entrambi i comandi agiscono sul ciclo più interno, quello che li contiene direttamente.</p>
+<h2 id="ripetere-nel-tempo-ogni">Ripetere nel tempo: <code>ogni</code></h2>
+<p>I cicli visti finora girano il più velocemente possibile. A volte, invece, vuoi che qualcosa accada a intervalli regolari <em>mentre il tempo scorre</em> — un orologio, un conto alla rovescia, l'aggiornamento di una schermata. Per questo c'è <code>ogni</code>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-97" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-97" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">secondi</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-flusso">ogni</span> <span class="c-numeri">1</span> <span class="c-flusso">secondo</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">secondi</span> <span class="c-operatori">+=</span> <span class="c-numeri">1</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">secondi</span><span class="c-interpolazione">}</span><span class="c-testi">..."</span>
+    <span class="c-flusso">se</span> <span class="c-variabili">secondi</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">3</span> <span class="c-flusso">allora</span>
+        <span class="c-testo_normale">ferma_temporizzatori</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-98" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-98" class="libro-pre"><code>1...
+2...
+3...</code></pre></figure>
+<p><code>ogni 1 secondo</code> esegue il blocco una volta al secondo. Il programma resta vivo finché c'è un temporizzatore attivo; qui lo fermiamo noi dopo tre giri con <code>ferma_temporizzatori()</code>. Esiste anche <code>dopo</code>, gemello di <code>ogni</code>, che esegue il blocco una sola volta, più tardi (<code>dopo 3 secondi fai ... fine</code>). Questi strumenti diventano centrali nei programmi con le finestre, dove li ritroveremo nella Parte V. Per ora ti basti sapere che esistono e che si misurano in <code>secondi</code>, <code>millisecondi</code> e <code>minuti</code>.</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Stampa la tavola pitagorica del 7 (da <code>7 x 1</code> a <code>7 x 10</code>) con un <code>per ogni</code> su <code>1..10</code>.</li><li>Chiedi all'utente una parola e stampala lettera per lettera, una per riga, con <code>per ogni lettera in parola</code>.</li><li>Usa un <code>mentre</code> per trovare il primo numero il cui quadrato supera 1000. (Suggerimento: parti da 1 e aumenta finché <code>n * n</code> non supera 1000, poi stampa <code>n</code>.)</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="07_condizioni.html"><span>Indietro</span><strong>Prendere decisioni</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="09_funzioni.html"><span>Avanti</span><strong>Le funzioni</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

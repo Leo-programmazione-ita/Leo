@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15. Domande frequenti e risoluzione problemi — Manuale di Leo</title>
+<meta name="description" content="Le risposte alle domande più comuni e le soluzioni ai problemi di installazione, di Leo Studio, del codice, delle finestre, dei file e degli eseguibili.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/domande.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/domande.html">
+<meta property="og:title" content="15. Domande frequenti e risoluzione problemi — Manuale di Leo">
+<meta property="og:description" content="Le risposte alle domande più comuni e le soluzioni ai problemi di installazione, di Leo Studio, del codice, delle finestre, dei file e degli eseguibili.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<div class="m-progresso" aria-hidden="true"><span></span></div>
+<main id="contenuto" class="manuale">
+  <div class="m-barra-mobile">
+    <button class="m-apri-indice" type="button" aria-expanded="false" aria-controls="m-lato">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      <span>Indice</span><span class="m-barra-dove" aria-hidden="true">Domande e problemi</span>
+    </button>
+  </div>
+  <div class="m-guscio">
+    <aside class="m-lato" id="m-lato" aria-label="Indice del manuale">
+      <div class="m-lato-interno">
+        <div class="m-cerca" role="search">
+  <label class="solo-lettori" for="m-cerca-lato">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-lato" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca nel manuale"
+         aria-controls="m-cerca-lato-risultati" aria-describedby="m-cerca-lato-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-lato-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-lato-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+        <p class="m-lato-titolo">Manuale di utilizzo</p>
+        <nav aria-label="Sezioni del manuale"><ol class="m-sezioni"><li class=""><a href="installazione.html"><span class="m-n">01</span><span>Installazione</span></a></li><li class=""><a href="leo-studio.html"><span class="m-n">02</span><span>Leo Studio</span></a></li><li class=""><a href="primo-programma.html"><span class="m-n">03</span><span>Primo programma</span></a></li><li class=""><a href="basi.html"><span class="m-n">04</span><span>Le basi</span></a></li><li class=""><a href="finestre.html"><span class="m-n">05</span><span>Finestre e controlli</span></a></li><li class=""><a href="errori.html"><span class="m-n">06</span><span>Errori</span></a></li><li class=""><a href="libreria.html"><span class="m-n">07</span><span>Testo, numeri, date, file</span></a></li><li class=""><a href="internet-database.html"><span class="m-n">08</span><span>Internet e database</span></a></li><li class=""><a href="grafici-suoni.html"><span class="m-n">09</span><span>Grafici, suoni, animazioni</span></a></li><li class=""><a href="windows.html"><span class="m-n">10</span><span>Leo e Windows</span></a></li><li class=""><a href="avanzata.html"><span class="m-n">11</span><span>Avanzata</span></a></li><li class=""><a href="exe.html"><span class="m-n">12</span><span>Creare il .exe</span></a></li><li class=""><a href="telefono.html"><span class="m-n">13</span><span>Leo sul telefono</span></a></li><li class=""><a href="licenza.html"><span class="m-n">14</span><span>Licenza e aggiornamenti</span></a></li><li class="attuale"><a href="domande.html" aria-current="page"><span class="m-n">15</span><span>Domande e problemi</span></a><ol class="m-toc"><li><a href="#generali" data-toc="generali">Domande generali</a></li><li><a href="#installazione" data-toc="installazione">Installazione e avvio</a></li><li><a href="#studio" data-toc="studio">Leo Studio</a></li><li><a href="#codice" data-toc="codice">Il codice</a></li><li><a href="#finestre" data-toc="finestre">Finestre e controlli</a></li><li><a href="#exe" data-toc="exe">Eseguibili</a></li><li><a href="#aiuto" data-toc="aiuto">Ancora bloccato?</a></li></ol></li></ol></nav>
+      </div>
+    </aside>
+    <div class="m-velo" hidden></div>
+    <article class="m-articolo">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Manuale</a></li>
+          <li><span aria-current="page">15. Domande e problemi</span></li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"},{"@type":"ListItem","position":3,"name":"15. Domande e problemi","item":"https://leoitalia.com/manuale/domande.html"}]}</script>
+      <header class="m-testa">
+        <p class="m-sopra"><span class="m-sopra-n">15</span> Sezione 15 di 15</p>
+        <h1>Domande frequenti e risoluzione problemi</h1>
+        <p class="m-sommario">Qualcosa non va come ti aspetti? Qui trovi i problemi più comuni, raccolti per argomento, con la soluzione pronta. Apri una domanda per leggere la risposta, oppure usa la ricerca in alto a sinistra.</p>
+        <ul class="m-meta">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>8 minuti di lettura</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Livello: tutti</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 esempio verificato</li>
+        </ul>
+      </header>
+      <div class="m-corpo">
+<h2 id="generali">Domande generali<a class="m-ancora" href="#generali" aria-label="Collegamento a questa parte">#</a></h2>
+<details class="m-domanda"><summary>Serve sapere programmare per usare Leo?</summary><div class="m-risposta-corpo">
+<p>No. Leo è facile come l'italiano: parole chiave in italiano, messaggi d'errore che spiegano che cosa fare, sviste comuni riconosciute e corrette. Allo stesso tempo è un linguaggio completo, con moduli, eccezioni, funzioni come valori, verifiche automatiche e una libreria di oltre 650 funzioni: chi programma già ritrova tutto ciò che conosce. Parti da <a href="primo-programma.html">Il tuo primo programma</a> e poi da <a href="basi.html">Le basi del linguaggio</a>. Per esercitarti ci sono anche <code>leo impara</code> (lezioni guidate) e <code>leo sfida</code> (esercizi a livelli).</p>
+</div></details>
+<details class="m-domanda"><summary>Leo funziona su macOS e Linux?</summary><div class="m-risposta-corpo">
+<p>Sì, con la versione cartella e Python 3.10 o successivo (vedi <a href="installazione.html#installazione-con-python">Installazione con Python</a>). Le funzioni di sistema dedicate a Windows (<a href="windows.html">Leo e Windows</a>) lì si fermano con un messaggio chiaro, e i file <code>.exe</code> si creano solo su Windows.</p>
+</div></details>
+<details class="m-domanda"><summary>Leo si chiamava Dante: i miei vecchi programmi funzionano?</summary><div class="m-risposta-corpo">
+<p>Sì. I file <code>.dante</code> si eseguono, si aprono in Leo Studio e si importano come i <code>.leo</code>; i progetti vecchi funzionano senza modifiche e le impostazioni vengono copiate nella nuova cartella di Leo al primo avvio. I file nuovi si salvano come <code>.leo</code>.</p>
+</div></details>
+<details class="m-domanda"><summary>Posso vendere i programmi che scrivo con Leo?</summary><div class="m-risposta-corpo">
+<p>I programmi che scrivi e gli eseguibili che ne ricavi appartengono a te: il titolare di Leo non rivendica diritti su di essi. Vedi <a href="licenza.html#proprieta">Di chi sono i tuoi programmi</a>.</p>
+</div></details>
+<details class="m-domanda"><summary>Devo pagare per usare Leo?</summary><div class="m-risposta-corpo">
+<p>No. Questa versione di Leo è gratuita e senza scadenza: niente chiave, niente carta di credito, anche per creare i <code>.exe</code>. Gli aggiornamenti futuri saranno a pagamento (un acquisto unico per versione), ma chi tiene questa versione resta gratis per sempre. Tutti i dettagli in <a href="licenza.html">Licenza e aggiornamenti</a>.</p>
+</div></details>
+
+<h2 id="installazione">Installazione e avvio<a class="m-ancora" href="#installazione" aria-label="Collegamento a questa parte">#</a></h2>
+<details class="m-domanda"><summary>Windows dice «Windows ha protetto il PC» e non fa partire l'installazione</summary><div class="m-risposta-corpo">
+<p>È l'avviso di SmartScreen per i programmi scaricati da poco. Premi <em>Ulteriori informazioni</em>, controlla che il file sia <code>Setup_Leo_….exe</code> scaricato dal sito ufficiale e premi <em>Esegui comunque</em>.</p>
+</div></details>
+<details class="m-domanda"><summary>L'antivirus blocca il programma di installazione</summary><div class="m-risposta-corpo">
+<p>Capita con gli eseguibili nuovi. Scarica di nuovo il file dal sito ufficiale; se l'antivirus insiste, consenti quel file nelle sue impostazioni.</p>
+</div></details>
+<details class="m-domanda"><summary>Durante l'installazione compare «Leo Studio è aperto»</summary><div class="m-risposta-corpo">
+<p>Per aggiornare Leo, Leo Studio deve essere chiuso. Chiudilo (anche dall'area di notifica, se serve) e riprova.</p>
+</div></details>
+<details class="m-domanda"><summary>Il comando <code>leo</code> non viene trovato nel Prompt dei comandi</summary><div class="m-risposta-corpo">
+<p>Il comando funziona nei prompt aperti <strong>dopo</strong> l'installazione: chiudi e riapri il Prompt dei comandi. Se non basta, rilancia il programma di installazione lasciando attiva l'opzione che aggiunge <code>leo</code> al PATH.</p>
+</div></details>
+<details class="m-domanda"><summary>Il doppio clic su un file <code>.leo</code> apre il Blocco note</summary><div class="m-risposta-corpo">
+<p>Windows usa ancora il programma scelto in passato. Tasto destro sul file → <em>Apri con</em> → <em>Scegli un'altra app</em> → Leo, con <em>Usa sempre questa app</em>; oppure cambialo da <em>Impostazioni → App → App predefinite</em>.</p>
+</div></details>
+<details class="m-domanda"><summary>(Versione cartella) «Non trovo Python» durante l'installazione</summary><div class="m-risposta-corpo">
+<p>Installa Python da <a href="https://www.python.org/downloads/">python.org</a> spuntando <strong>Add python.exe to PATH</strong>, poi rilancia <code>installa.bat</code>. Se scrivendo <code>python</code> si apre il Microsoft Store, quello non è Python ma un collegamento allo Store: Leo lo ignora.</p>
+</div></details>
+<details class="m-domanda"><summary>(Versione cartella) «Installa PySide6» quando apro Leo Studio o un progetto con finestre</summary><div class="m-risposta-corpo">
+<p>Rilancia <code>installa.bat</code> e rispondi sì al passo 3, oppure scrivi <code>.venv\Scripts\python -m pip install PySide6</code> nella cartella di Leo. Serve Internet (circa 100 MB) e Windows 10 o successivo a 64 bit.</p>
+</div></details>
+
+<h2 id="studio">Leo Studio<a class="m-ancora" href="#studio" aria-label="Collegamento a questa parte">#</a></h2>
+<details class="m-domanda"><summary>I pannelli sono finiti in posti strani</summary><div class="m-risposta-corpo">
+<p><em>Visualizza → Ripristina disposizione</em> rimette tutto al suo posto.</p>
+</div></details>
+<details class="m-domanda"><summary>Il testo è troppo piccolo (o troppo grande)</summary><div class="m-risposta-corpo">
+<p><em>Strumenti → Impostazioni → Aspetto → Dimensione dell'interfaccia</em>, dall'80% al 200%.</p>
+</div></details>
+<details class="m-domanda"><summary>Le animazioni mi danno fastidio</summary><div class="m-risposta-corpo">
+<p><em>Strumenti → Impostazioni → Aspetto → Riduci animazioni</em>. La stessa scelta vale anche per le animazioni dei programmi che esegui da Leo Studio.</p>
+</div></details>
+<details class="m-domanda"><summary>Non trovo la casella dei controlli a sinistra, come in Visual Basic</summary><div class="m-risposta-corpo">
+<p>I controlli sono nella <strong>barra dei controlli</strong> in alto. Se preferisci il pannello classico, aprilo con <kbd>Alt</kbd>+<kbd>1</kbd> (<em>Visualizza → Pannelli → Controlli</em>).</p>
+</div></details>
+<details class="m-domanda"><summary>Preferisco i cursori del mouse normali invece di quelli rossi</summary><div class="m-risposta-corpo">
+<p><em>Visualizza → Cursori rossi</em>: togli il segno.</p>
+</div></details>
+<details class="m-domanda"><summary>Leo Studio si è chiuso con un errore imprevisto</summary><div class="m-risposta-corpo">
+<p>I dettagli sono nel file <code>studio_errori.txt</code> nella cartella <code>Leo</code> del tuo utente (<code>%USERPROFILE%\Leo</code>): allegalo quando segnali il problema.</p>
+</div></details>
+
+<h2 id="codice">Il codice<a class="m-ancora" href="#codice" aria-label="Collegamento a questa parte">#</a></h2>
+<details class="m-domanda"><summary>«<code>x</code> non è definito», ma l'ho scritto!</summary><div class="m-risposta-corpo">
+<p>Di solito è un errore di battitura (leggi il suggerimento: <em>«forse intendevi…»</em>), oppure la variabile è stata dichiarata dentro un blocco (un <code>se</code>, un ciclo, una funzione) e fuori non esiste. Dichiarala prima del blocco. Ricorda anche che una funzione va definita prima di chiamarla, oppure usa <code>inizio … fine</code>.</p>
+</div></details>
+<details class="m-domanda"><summary><code>3,14</code> dà un errore</summary><div class="m-risposta-corpo">
+<p>In Leo i decimali si scrivono con il punto: <code>3.14</code>. La virgola separa i valori.</p>
+</div></details>
+<details class="m-domanda"><summary>«Non posso sommare un <code>testo</code> e un <code>intero</code>»</summary><div class="m-risposta-corpo">
+<p>Leo non converte mai da solo. Quello che arriva da <code>chiedi</code> o da una casella di testo è sempre un testo: trasformalo con <code>intero(...)</code> o <code>decimale(...)</code>. Per mettere un numero dentro un testo usa le graffe: <code>"Hai {anni} anni"</code>.</p>
+<figure class="m-codice"><div class="m-codice-barra"><span class="m-file">conversione.leo</span><span class="m-verificato" title="Questo esempio e&#39; stato eseguito con Leo durante la preparazione del manuale"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>eseguito con Leo</span><button class="m-copia" type="button" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre class="m-pre"><code><span class="r"><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">anni</span> <span class="c-operatori">=</span> <span class="c-libreria">intero</span><span class="c-punteggiatura">(</span><span class="c-libreria">chiedi</span><span class="c-punteggiatura">(</span><span class="c-testi">"Quanti anni hai? "</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></span><span class="r"><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"L'anno prossimo avrai </span><span class="c-interpolazione">{</span><span class="c-variabili">anni</span> <span class="c-operatori">+</span> <span class="c-numeri">1</span><span class="c-interpolazione">}</span><span class="c-testi"> anni"</span><span class="c-punteggiatura">)</span></span></code></pre><div class="m-uscita"><span class="m-uscita-titolo">Uscita</span><pre>Quanti anni hai? <span class="m-risposta">16</span>
+L'anno prossimo avrai 17 anni</pre></div></figure>
+</div></details>
+<details class="m-domanda"><summary>Un nome come <code>vuoto</code>, <code>basta</code> o <code>esci</code> dà errore</summary><div class="m-risposta-corpo">
+<p>Sono sinonimi di parole chiave, quindi riservati: scegli un altro nome (per esempio <code>vuota_lista</code>, <code>fermo</code>).</p>
+</div></details>
+<details class="m-domanda"><summary>«<code>finché</code> non è definito» o «Manca <code>allora</code>» con <code>se x fai</code></summary><div class="m-risposta-corpo">
+<p>Sei in <strong>modalità rigorosa</strong> (<code>--rigoroso</code>, <code>rigoroso = true</code> nel progetto o <code>LEO_RIGOROSO=1</code>): sinonimi e tolleranze sono spenti. Usa le parole canoniche (<code>mentre</code>, <code>allora</code> dopo <code>se</code>, <code>fai</code> dopo <code>mentre</code> e <code>per ogni</code>) o spegni la modalità rigorosa.</p>
+</div></details>
+<details class="m-domanda"><summary>«Troppe chiamate annidate»</summary><div class="m-risposta-corpo">
+<p>Una funzione che chiama se stessa non si ferma mai: controlla il <em>caso base</em>, per esempio <code>se n &lt;= 1 allora restituisci 1 fine</code>.</p>
+</div></details>
+<details class="m-domanda"><summary>Il programma non finisce mai</summary><div class="m-risposta-corpo">
+<p>Probabilmente un ciclo <code>mentre</code> la cui condizione resta sempre vera. Fermalo con <strong>STOP</strong> (<kbd>Maiusc</kbd>+<kbd>F5</kbd>) o <kbd>Ctrl</kbd>+<kbd>C</kbd>, poi seguilo con il <a href="errori.html#passo-passo">passo passo</a> per vedere quale variabile non cambia.</p>
+</div></details>
+<details class="m-domanda"><summary>Le lettere accentate escono come <code>Ã¨</code></summary><div class="m-risposta-corpo">
+<p>Salva i file <code>.leo</code> in UTF-8 (nel Blocco note: <em>Salva con nome → Codifica: UTF-8</em>). Leo Studio salva già così. I file di dati letti con <code>leggi_file</code> o <code>leggi_tabella</code> possono essere anche UTF-16 o nella vecchia codifica di Windows: Leo la riconosce da solo.</p>
+</div></details>
+<details class="m-domanda"><summary>Nel terminale compaiono caratteri strani come <code>←[31m</code></summary><div class="m-risposta-corpo">
+<p>La vecchia console non capisce i colori. Usa il <em>Terminale Windows</em> oppure scrivi <code>set NO_COLOR=1</code> prima di lanciare Leo.</p>
+</div></details>
+
+<h2 id="finestre">Finestre e controlli<a class="m-ancora" href="#finestre" aria-label="Collegamento a questa parte">#</a></h2>
+<details class="m-domanda"><summary>Clicco il pulsante ma non succede niente</summary><div class="m-risposta-corpo">
+<p>Controlla che il nome nel gestore sia <strong>esattamente</strong> quello del controllo, maiuscole comprese: <code>quando Pulsante1.clic fai</code>, non <code>quando pulsante1.clic fai</code>. Il modo più sicuro per non sbagliare è creare il gestore con il doppio clic sul pulsante. Nel pannello Proprietà, gli eventi che hanno un gestore sono in rosso grassetto.</p>
+</div></details>
+<details class="m-domanda"><summary>«<code>etichetta</code> è il tipo di controllo, non il suo nome»</summary><div class="m-risposta-corpo">
+<p>Nel codice si usa il nome (<code>Etichetta1</code>), non il tipo (<code>Etichetta</code>). Vedi <a href="finestre.html#nome-testo">Nome e testo</a>.</p>
+</div></details>
+<details class="m-domanda"><summary>Un controllo non si vede quando eseguo il programma</summary><div class="m-risposta-corpo">
+<p>Controlla <code>visibile</code> e <code>opacità</code>. Se la finestra ha una forma speciale (cerchio, stella…), il controllo potrebbe essere fuori dalla forma: in Leo Studio i controlli fuori forma sono evidenziati in ambra.</p>
+</div></details>
+<details class="m-domanda"><summary>La finestra a forma libera non si chiude</summary><div class="m-risposta-corpo">
+<p><kbd>Alt</kbd>+<kbd>F4</kbd> la chiude sempre; il tasto destro apre un menu con <em>Sposta</em>, <em>Riduci</em> e <em>Chiudi</em>.</p>
+</div></details>
+<details class="m-domanda"><summary>La scheda Raspberry Pi Pico non si collega</summary><div class="m-risposta-corpo">
+<p>Chiudi Thonny (tiene occupata la porta USB), scollega e ricollega la Pico e controlla che sulla scheda ci sia <code>main.py</code> (il programma <code>dati/pico/leo_pico.py</code> fornito con Leo). Prova a scrivere la porta a mano (per esempio <code>COM3</code>) nella proprietà <code>porta</code> della <code>SchedaPico</code>. Per provare senza scheda: <code>simulata = vero</code>.</p>
+</div></details>
+
+<h2 id="exe">Eseguibili<a class="m-ancora" href="#exe" aria-label="Collegamento a questa parte">#</a></h2>
+<details class="m-domanda"><summary>«La compilazione non è disponibile da un programma già compilato»</summary><div class="m-risposta-corpo">
+<p>Stai usando la versione di Leo installata con il programma di installazione: per creare file <code>.exe</code> serve la versione cartella con Python e PyInstaller. Vedi <a href="exe.html#requisiti">Che cosa serve</a>.</p>
+</div></details>
+<details class="m-domanda"><summary>«PyInstaller non è installato»</summary><div class="m-risposta-corpo">
+<p>Aggiungi <code>--installa</code> al comando (<code>leo compila MioProgetto --installa</code>) oppure scrivi <code>.venv\Scripts\python.exe -m pip install pyinstaller</code> nella cartella di Leo.</p>
+</div></details>
+<details class="m-domanda"><summary>Ho mandato solo il file <code>.exe</code> e al mio amico non parte</summary><div class="m-risposta-corpo">
+<p>Con il formato predefinito va distribuita <strong>tutta la cartella</strong> dell'eseguibile (per esempio compressa in uno <code>.zip</code>). Se vuoi un file solo, compila con <code>--un-file</code>.</p>
+</div></details>
+<details class="m-domanda"><summary>Il mio programma, sul computer di un altro, mostra l'avviso di SmartScreen</summary><div class="m-risposta-corpo">
+<p>Succede con tutti gli eseguibili nuovi non firmati. Chi lo avvia può premere <em>Ulteriori informazioni → Esegui comunque</em>; per togliere l'avviso serve una firma digitale con un certificato riconosciuto (vedi <a href="exe.html#smartscreen">Firma digitale</a>).</p>
+</div></details>
+
+<h2 id="aiuto">Ancora bloccato?<a class="m-ancora" href="#aiuto" aria-label="Collegamento a questa parte">#</a></h2>
+<ul>
+  <li>Usa la <strong>ricerca</strong> del manuale (tasto <kbd>/</kbd>) con il testo del messaggio d'errore.</li>
+  <li>In Leo Studio premi <kbd>F1</kbd> per la guida del linguaggio, o <kbd>Ctrl</kbd>+<kbd>K</kbd> per trovare un comando.</li>
+  <li>Prova <code>leo spiega programma.leo</code>: racconta in italiano che cosa fa il tuo programma.</li>
+  <li>Guarda gli esempi pronti nella cartella <code>esempi</code> di Leo: ce n'è uno per ogni categoria di controlli.</li>
+</ul>
+      </div>
+      <nav class="m-precsucc" aria-label="Sezioni vicine"><a class="m-prec" href="licenza.html" rel="prev"><span class="m-ps-dir">&larr; Precedente</span><span class="m-ps-tit"><span class="m-n">14</span>Licenza e aggiornamenti</span></a><a class="m-succ" href="index.html" rel="next"><span class="m-ps-dir">Fine &rarr;</span><span class="m-ps-tit">Torna all&#39;indice del manuale</span></a></nav>
+    </article>
+  </div>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Playground "Prova Leo nel browser" (sito/prova.html).
+   Usa i colori e i caratteri del sito (css/stile.css): niente nuovi colori. */
+
+.prova-intro { margin-bottom: 26px; }
+.prova-intro h1 { margin-bottom: 10px; }
+.prova-intro p { color: var(--testo-2); max-width: 65ch; }
+
+/* --- barra degli strumenti --------------------------------------------- */
+.prova-barra {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.prova-barra .prova-esempi { display: flex; align-items: center; gap: 8px; margin-right: auto; }
+.prova-barra label { color: var(--testo-2); font-size: 14.5px; }
+
+select.prova-scelta {
+  font: inherit; font-size: 15px; color: var(--testo);
+  background: var(--superficie); border: 1px solid var(--bordo-forte);
+  border-radius: var(--r-piccolo); padding: 9px 12px; cursor: pointer;
+  max-width: 100%;
+}
+select.prova-scelta:hover { border-color: var(--testo-3); }
+select.prova-scelta:focus-visible { outline: 2px solid var(--accento-vivo); outline-offset: 2px; }
+
+/* --- editor e output: due colonne che su telefono diventano una ------- */
+.prova-griglia {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch;
+}
+@media (max-width: 860px) { .prova-griglia { grid-template-columns: 1fr; } }
+
+.prova-pannello {
+  display: flex; flex-direction: column;
+  background: var(--superficie); border: 1px solid var(--bordo-forte);
+  border-radius: var(--r-grande); overflow: hidden; min-height: 340px;
+}
+.prova-pannello > h2 {
+  font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--testo-3); font-weight: 700;
+  padding: 12px 16px; border-bottom: 1px solid var(--bordo);
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* editor di testo */
+textarea.prova-editor {
+  flex: 1; width: 100%; resize: vertical; min-height: 300px;
+  font-family: var(--car-codice); font-size: 15px; line-height: 1.7;
+  color: var(--testo); background: var(--fondo-2, var(--fondo));
+  border: 0; padding: 16px; tab-size: 4; -moz-tab-size: 4;
+  white-space: pre; overflow: auto;
+}
+textarea.prova-editor:focus { outline: none; }
+textarea.prova-editor:focus-visible { outline: 2px solid var(--accento-linea); outline-offset: -2px; }
+
+/* area di uscita */
+.prova-uscita {
+  flex: 1; margin: 0; padding: 16px; overflow: auto; min-height: 300px;
+  font-family: var(--car-codice); font-size: 14.5px; line-height: 1.7;
+  color: var(--testo); background: var(--fondo-2, var(--fondo));
+  white-space: pre-wrap; word-break: break-word;
+}
+.prova-uscita:empty::before {
+  content: "Qui comparirà quello che il tuo programma scrive.";
+  color: var(--testo-3); font-family: var(--car);
+}
+.prova-uscita .prova-errore { color: var(--accento-vivo); }
+.prova-uscita .prova-nota { color: var(--testo-3); font-family: var(--car); }
+
+/* --- pulsanti e stato -------------------------------------------------- */
+.prova-azioni { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
+
+button.prova-esegui[disabled] { opacity: .55; cursor: progress; }
+
+.prova-stato {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: var(--testo-2); font-size: 14.5px;
+}
+.prova-stato .prova-spinner {
+  width: 15px; height: 15px; border-radius: 50%;
+  border: 2px solid var(--bordo-forte); border-top-color: var(--accento-vivo);
+  animation: prova-gira .8s linear infinite; flex: none;
+}
+.prova-stato[data-stato="pronto"] .prova-spinner { display: none; }
+.prova-stato[data-stato="errore"] { color: var(--accento-vivo); }
+.prova-stato[data-stato="errore"] .prova-spinner { display: none; }
+@keyframes prova-gira { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .prova-stato .prova-spinner { animation: none; } }
+
+.prova-avviso {
+  margin-top: 18px; padding: 14px 16px; border-radius: var(--r-piccolo);
+  background: var(--accento-tenue); border: 1px solid var(--accento-linea);
+  color: var(--testo-2); font-size: 14.5px; max-width: 72ch;
+}
+.prova-avviso strong { color: var(--testo); }
+
+.prova-nota-sotto { margin-top: 22px; color: var(--testo-3); font-size: 14px; max-width: 72ch; }
+.prova-nota-sotto code { font-size: .92em; }

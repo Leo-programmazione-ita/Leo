@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leo e Python a confronto — stesso compito, due linguaggi</title>
+<meta name="description" content="Undici compiti concreti scritti in Leo e in Python, fianco a fianco: dove Leo è più comodo (italiano, numeri esatti, errori chiari, zero installazioni) e, onestamente, dove Python resta avanti (velocità, ecosistema, async).">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/confronto.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/confronto.html">
+<meta property="og:title" content="Leo e Python a confronto — stesso compito, due linguaggi">
+<meta property="og:description" content="Undici compiti concreti scritti in Leo e in Python, fianco a fianco: dove Leo è più comodo e, onestamente, dove Python resta avanti.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="stylesheet" href="css/stile.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+
+<style>
+  .cf-intro { padding-top: 0; }
+  .cf-intro .contenitore { padding-bottom: clamp(20px, 4vw, 40px); }
+  .cf-intro p { color: var(--testo-2); font-size: clamp(16px, 1.3vw, 18.5px); line-height: 1.7; max-width: 62ch; }
+  .cf-intro .cf-legenda { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; font-size: 14.5px; color: var(--testo-3); }
+  .cf-intro .cf-legenda b { color: var(--testo); font-weight: 600; }
+
+  .cf-indice { margin-top: 26px; }
+  .cf-indice ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: cf; }
+  .cf-indice li { counter-increment: cf; }
+  .cf-indice a { display: inline-flex; align-items: baseline; gap: 7px; padding: 7px 13px; border: 1px solid var(--bordo); border-radius: 999px; font-size: 13.5px; color: var(--testo-2); text-decoration: none; transition: border-color .2s var(--curva), color .2s var(--curva); }
+  .cf-indice a::before { content: counter(cf); font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accento-vivo); font-size: 12px; }
+  .cf-indice a:hover { border-color: var(--accento-linea); color: var(--testo); }
+
+  .cf-caso { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--bordo); scroll-margin-top: 76px; }
+  .cf-testa-caso { max-width: 70ch; }
+  .cf-testa-caso h2 { font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -.03em; margin: 6px 0 0; }
+  .cf-compito { color: var(--testo-2); margin: 12px 0 0; font-size: clamp(15.5px, 1.2vw, 17.5px); line-height: 1.6; }
+  .cf-caso .confronto { margin-top: 30px; align-items: start; }
+  .cf-caso pre.codice { font-size: 13.5px; line-height: 1.7; }
+  .cf-caso pre.uscita { font-size: 13px; }
+
+  .cf-note { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+  .cf-nota { border: 1px solid var(--bordo); border-radius: var(--r); padding: 18px 20px; background: var(--superficie); }
+  .cf-nota p { margin: 0; color: var(--testo-2); font-size: 14.8px; line-height: 1.62; }
+  .cf-nota code { font-size: .92em; }
+  .cf-nota-tit { font: 700 12px/1 var(--car); letter-spacing: .04em; text-transform: uppercase; margin-bottom: 10px !important; }
+  .cf-meglio { border-color: var(--accento-linea); background: var(--accento-tenue); }
+  .cf-meglio .cf-nota-tit { color: var(--accento-vivo); }
+  .cf-python .cf-nota-tit { color: var(--testo-3); }
+
+  .cf-quando { padding: clamp(56px, 8vw, 110px) 0; border-top: 1px solid var(--bordo); background: var(--fondo-2); }
+  .cf-quando-griglia { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 34px; }
+  .cf-colonna { border: 1px solid var(--bordo); border-radius: var(--r-grande); padding: 26px 26px 30px; background: var(--superficie); }
+  .cf-colonna h3 { font-size: 20px; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .cf-colonna-leo { border-color: var(--accento-linea); }
+  .cf-colonna-leo h3 strong { color: var(--accento-vivo); }
+  .cf-colonna ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .cf-colonna li { position: relative; padding-left: 26px; color: var(--testo-2); font-size: 15.3px; line-height: 1.55; }
+  .cf-colonna li::before { content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--testo-3); }
+  .cf-colonna-leo li::before { background: var(--accento); }
+  .cf-fondo-nota { margin-top: 30px; color: var(--testo-2); font-size: 15.5px; line-height: 1.7; max-width: 76ch; }
+
+  .cf-prova { padding: clamp(64px, 9vw, 120px) 0; text-align: center; }
+  .cf-prova h2 { font-size: clamp(30px, 4.4vw, 52px); letter-spacing: -.035em; margin: 0 auto; max-width: 18ch; }
+  .cf-prova p { color: var(--testo-2); margin: 18px auto 0; max-width: 54ch; font-size: clamp(16px, 1.3vw, 18.5px); line-height: 1.6; }
+  .cf-prova .cf-azioni { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 34px; }
+  .cf-prova pre.codice { display: inline-block; text-align: left; margin: 30px auto 0; border: 1px solid var(--bordo); border-radius: 12px; font-size: 14px; }
+
+  @media (max-width: 760px) {
+    .cf-note { grid-template-columns: 1fr; }
+    .cf-quando-griglia { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="pagina-confronto">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="novita.html">Novità</a></li>
+        <li><a href="confronto.html" aria-current="page">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<main id="contenuto">
+<section class="testa-pagina">
+  <div class="contenitore stretto">
+    <p class="sopratitolo">Leo vs Python</p>
+    <h1>Stesso compito, due linguaggi</h1>
+    <p class="introduzione">Undici programmi concreti, scritti in Leo e in Python uno accanto all'altro. Per ciascuno diciamo dove Leo è più comodo e, senza giri di parole, dove Python resta la scelta migliore. Ogni esempio Leo qui sotto è stato <strong>eseguito davvero</strong>: l'uscita che vedi è quella vera.</p>
+  </div>
+</section>
+<section class="cf-intro">
+  <div class="contenitore stretto">
+    <p>Leo gira sopra Python, quindi non è una gara fra motori: è lo stesso motore con un volante italiano. La domanda vera non è «chi è più potente», ma «con quale dei due <em>questo</em> lavoro viene più semplice, più chiaro e più sicuro».</p>
+    <div class="cf-legenda">
+      <span><b>Italiano</b> nelle parole e negli errori</span>
+      <span><b>Zero installazioni</b>: tutto incluso</span>
+      <span><b>Numeri esatti</b> su denaro e misure</span>
+      <span><b>Onestà</b>: dove Python vince lo scriviamo</span>
+    </div>
+    <nav class="cf-indice" aria-label="I casi a confronto"><ol><li><a href="#ciao-mondo">Ciao, mondo</a></li><li><a href="#classe">Una classe con ereditarietà</a></li><li><a href="#slicing">Fette di testi e liste</a></li><li><a href="#denaro">Denaro esatto</a></li><li><a href="#errori">Errori leggibili</a></li><li><a href="#csv">Leggere un CSV</a></li><li><a href="#json">Leggere un JSON</a></li><li><a href="#web">Un piccolo server web</a></li><li><a href="#parallelo">Parallelismo</a></li><li><a href="#password">Una password sicura</a></li><li><a href="#date">Una data e una durata</a></li></ol></nav>
+  </div>
+</section>
+<section class="cf-caso" id="ciao-mondo" aria-labelledby="t-ciao-mondo">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 1 di 11</p>
+      <h2 id="t-ciao-mondo">Ciao, mondo</h2>
+      <p class="cf-compito">Il primo programma: una riga di saluto a schermo.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>ciao.py</span></div>
+<pre class="codice"><code><span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>ciao.leo</span></div>
+<pre class="codice"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">Ciao, mondo!</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p>La parola <code>stampa</code> è italiana e il programma si avvia con <code>python3 -m leo ciao.leo</code>: Python e tutta la libreria sono già dentro Leo, non si installa nulla.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p><code>print</code> è conosciuto da chiunque e gira ovunque ci sia Python, senza passare da Leo. L'avvio di Python “nudo” è anche più rapido di qualche millisecondo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="classe" aria-labelledby="t-classe">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 2 di 11</p>
+      <h2 id="t-classe">Una classe con ereditarietà</h2>
+      <p class="cf-compito">Definire un tipo di oggetto, con campi, metodi e una sottoclasse che specializza il genitore.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>veicoli.py</span></div>
+<pre class="codice"><code><span class="c-flusso">class</span> Veicolo<span class="c-punteggiatura">:</span>
+    <span class="c-flusso">def</span> __init__<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">,</span> nome<span class="c-punteggiatura">,</span> ruote<span class="c-operatori">=</span><span class="c-numeri">4</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+        self<span class="c-punteggiatura">.</span>nome <span class="c-operatori">=</span> nome
+        self<span class="c-punteggiatura">.</span>ruote <span class="c-operatori">=</span> ruote
+
+    <span class="c-flusso">def</span> descrivi<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+        <span class="c-flusso">return</span> <span class="c-testi">f"</span><span class="c-interpolazione">{</span><span class="c-variabili">self.nome</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">self.ruote</span><span class="c-interpolazione">}</span><span class="c-testi"> ruote"</span>
+
+
+<span class="c-flusso">class</span> Moto<span class="c-punteggiatura">(</span>Veicolo<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+    <span class="c-flusso">def</span> __init__<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">,</span> nome<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+        <span class="c-libreria">super</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>__init__<span class="c-punteggiatura">(</span>nome<span class="c-punteggiatura">,</span> ruote<span class="c-operatori">=</span><span class="c-numeri">2</span><span class="c-punteggiatura">)</span>
+
+    <span class="c-flusso">def</span> descrivi<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+        <span class="c-flusso">return</span> <span class="c-libreria">super</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>descrivi<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-operatori">+</span> <span class="c-testi">" (una moto)"</span>
+
+
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span>Veicolo<span class="c-punteggiatura">(</span><span class="c-testi">"Panda"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>descrivi<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span>Moto<span class="c-punteggiatura">(</span><span class="c-testi">"Vespa"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>descrivi<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>veicoli.leo</span></div>
+<pre class="codice"><code>classe Veicolo
+    ha nome
+    ha <span class="c-variabili">ruote</span> <span class="c-operatori">=</span> <span class="c-numeri">4</span>
+    <span class="c-dichiarazioni">azione</span> <span class="c-funzioni_utente">descrivi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">dà</span> <span class="c-libreria">testo</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span>questo<span class="c-punteggiatura">.</span><span class="c-proprieta">nome</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span>questo<span class="c-punteggiatura">.</span><span class="c-proprieta">ruote</span><span class="c-interpolazione">}</span><span class="c-testi"> ruote"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+classe Moto estende Veicolo
+    ha <span class="c-variabili">ruote</span> <span class="c-operatori">=</span> <span class="c-numeri">2</span>
+    <span class="c-dichiarazioni">azione</span> <span class="c-funzioni_utente">descrivi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">dà</span> <span class="c-libreria">testo</span>
+        <span class="c-dichiarazioni">restituisci</span> genitore<span class="c-punteggiatura">.</span><span class="c-proprieta">descrivi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-operatori">+</span> <span class="c-testi">" (una moto)"</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">v</span> <span class="c-operatori">=</span> Veicolo<span class="c-punteggiatura">(</span><span class="c-testi">"Panda"</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">m</span> <span class="c-operatori">=</span> Moto<span class="c-punteggiatura">(</span><span class="c-testi">"Vespa"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">v</span><span class="c-punteggiatura">.</span><span class="c-proprieta">descrivi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">m</span><span class="c-punteggiatura">.</span><span class="c-proprieta">descrivi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">Panda: 4 ruote
+Vespa: 2 ruote (una moto)</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p>I campi si dichiarano con <code>ha</code>, i metodi con <code>azione</code>, <code>questo</code> è l'oggetto corrente e <code>genitore</code> richiama il metodo del genitore. Il costruttore è automatico: <code>Veicolo("Panda")</code> basta e avanza, niente <code>__init__</code> né <code>self</code> da ripetere.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>La programmazione a oggetti di Python è più profonda: <code>self</code> esplicito, metodi speciali (<code>__len__</code>, <code>__eq__</code>…), proprietà, classi astratte, ereditarietà multipla e decoratori. Per librerie grandi quella ricchezza conta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="slicing" aria-labelledby="t-slicing">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 3 di 11</p>
+      <h2 id="t-slicing">Fette di testi e liste</h2>
+      <p class="cf-compito">Prendere una porzione di una stringa o di una lista con un solo taglio.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>fette.py</span></div>
+<pre class="codice"><code>parola <span class="c-operatori">=</span> <span class="c-testi">"primavera"</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span>parola<span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-punteggiatura">:</span><span class="c-numeri">5</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>      <span class="c-commenti"># primi 5 caratteri</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span>parola<span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">3</span><span class="c-punteggiatura">:</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>      <span class="c-commenti"># ultimi 3</span>
+
+numeri <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">40</span><span class="c-punteggiatura">,</span> <span class="c-numeri">50</span><span class="c-punteggiatura">,</span> <span class="c-numeri">60</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span>numeri<span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">:</span><span class="c-numeri">4</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span>numeri<span class="c-punteggiatura">[</span><span class="c-numeri">3</span><span class="c-punteggiatura">:</span><span class="c-numeri">6</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>fette.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">parola</span> <span class="c-operatori">=</span> <span class="c-testi">"primavera"</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">parola</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-numeri">4</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">parola</span><span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">3</span><span class="c-numeri">..</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">numeri</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">40</span><span class="c-punteggiatura">,</span> <span class="c-numeri">50</span><span class="c-punteggiatura">,</span> <span class="c-numeri">60</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">3</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">[</span><span class="c-numeri">3</span><span class="c-numeri">..</span><span class="c-numeri">5</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">prima
+era
+[20, 30, 40]
+[40, 50, 60]</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p>Leo usa l'intervallo <code>da..a</code> con <strong>estremi inclusi</strong>, come quando diciamo “dal 1º al 5”: <code>parola[0..4]</code> sono i caratteri da 0 a 4, tutti e cinque. Funzionano anche gli indici negativi.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Lo slicing di Python (<code>[inizio:fine:passo]</code>) ha il <strong>passo</strong>: <code>lista[::-1]</code> inverte, <code>lista[::2]</code> prende uno sì e uno no. Leo oggi non ha il passo; per invertire usa <code>inverti</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="denaro" aria-labelledby="t-denaro">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 4 di 11</p>
+      <h2 id="t-denaro">Denaro esatto</h2>
+      <p class="cf-compito">Sommare dei prezzi e applicare uno sconto senza gli errori dei decimali.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>prezzi.py</span></div>
+<pre class="codice"><code><span class="c-commenti"># Con i float normali i centesimi non tornano:</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.1</span> <span class="c-operatori">+</span> <span class="c-numeri">0.2</span><span class="c-punteggiatura">)</span>        <span class="c-commenti"># 0.30000000000000004</span>
+
+<span class="c-flusso">from</span> decimal <span class="c-flusso">import</span> Decimal
+carrello <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span>Decimal<span class="c-punteggiatura">(</span><span class="c-testi">"4.99"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> Decimal<span class="c-punteggiatura">(</span><span class="c-testi">"0.90"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> Decimal<span class="c-punteggiatura">(</span><span class="c-testi">"12.50"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">]</span>
+totale <span class="c-operatori">=</span> <span class="c-libreria">sum</span><span class="c-punteggiatura">(</span>carrello<span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Totale: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">}</span><span class="c-testi"> EUR"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Con sconto 20%: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale * Decimal('0.8')</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>prezzi.leo</span></div>
+<pre class="codice"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Con i decimali normali: </span><span class="c-interpolazione">{</span><span class="c-numeri">0.1</span> <span class="c-operatori">+</span> <span class="c-numeri">0.2</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">carrello</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"4.99"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"0.90"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"12.50"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">]</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"0.00"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">prezzo</span> <span class="c-logici">in</span> <span class="c-variabili">carrello</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-variabili">totale</span><span class="c-punteggiatura">.</span><span class="c-proprieta">piu</span><span class="c-punteggiatura">(</span><span class="c-variabili">prezzo</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Totale carrello: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Con lo sconto del 20%: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-punteggiatura">.</span><span class="c-proprieta">per</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.8</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="uscita">Con i decimali normali: 0.30000000000000004
+Totale carrello: 18,39 €
+Con lo sconto del 20%: 14,71 €</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>soldi(...)</code> è nel linguaggio di serie, senza import: calcola al centesimo esatto e stampa all'italiana (virgola e simbolo €). In Python per evitare lo <code>0.30000000000000004</code> devi ricordarti di <code>from decimal import Decimal</code>.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Il modulo <code>decimal</code> di Python è uno standard maturo, con arrotondamenti configurabili, contesti e precisione arbitraria usati in ambito bancario da anni. La base su cui Leo poggia è proprio quella.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="errori" aria-labelledby="t-errori">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 5 di 11</p>
+      <h2 id="t-errori">Errori leggibili</h2>
+      <p class="cf-compito">Gestire un dato sbagliato e mostrare un messaggio comprensibile.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>eta.py</span></div>
+<pre class="codice"><code><span class="c-flusso">def</span> eta_da_testo<span class="c-punteggiatura">(</span>testo<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+    <span class="c-flusso">return</span> <span class="c-libreria">int</span><span class="c-punteggiatura">(</span>testo<span class="c-punteggiatura">)</span>
+
+<span class="c-flusso">try</span><span class="c-punteggiatura">:</span>
+    eta <span class="c-operatori">=</span> eta_da_testo<span class="c-punteggiatura">(</span><span class="c-testi">"trenta"</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Hai </span><span class="c-interpolazione">{</span><span class="c-variabili">eta</span><span class="c-interpolazione">}</span><span class="c-testi"> anni"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">except</span> ValueError <span class="c-flusso">as</span> e<span class="c-punteggiatura">:</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Non è un numero valido."</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Python dice: </span><span class="c-interpolazione">{</span><span class="c-variabili">e</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>eta.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">eta_da_testo</span><span class="c-punteggiatura">(</span><span class="c-parametri">testo</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-libreria">intero</span><span class="c-punteggiatura">(</span><span class="c-parametri">testo</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">inizio</span>
+    <span class="c-errori">prova</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">eta</span> <span class="c-operatori">=</span> <span class="c-funzioni_utente">eta_da_testo</span><span class="c-punteggiatura">(</span><span class="c-testi">"trenta"</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Hai </span><span class="c-interpolazione">{</span><span class="c-variabili">eta</span><span class="c-interpolazione">}</span><span class="c-testi"> anni"</span><span class="c-punteggiatura">)</span>
+    <span class="c-errori">cattura</span> <span class="c-errori">ErroreValore</span> <span class="c-errori">come</span> <span class="c-logici">e</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Non è un numero valido."</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Leo dice: </span><span class="c-interpolazione">{</span><span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">messaggio</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Alla riga </span><span class="c-interpolazione">{</span><span class="c-logici">e</span><span class="c-punteggiatura">.</span><span class="c-proprieta">riga</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Non è un numero valido.
+Leo dice: Non posso trasformare il testo "trenta" in un intero.
+Alla riga 2</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p>Il messaggio è in italiano e discorsivo, e l'errore porta con sé <code>.messaggio</code>, <code>.riga</code> e <code>.colonna</code>: puoi leggerli dal programma. Anche a terminale Leo mostra la riga col segnalino <code>^^^</code> e spesso un suggerimento.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Il messaggio di Python (<code>invalid literal for int() with base 10: 'trenta'</code>) è in inglese, ma la gerarchia delle eccezioni è ampia e documentatissima, e il <em>traceback</em> completo con tutte le chiamate è uno strumento di debug potente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="csv" aria-labelledby="t-csv">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 6 di 11</p>
+      <h2 id="t-csv">Leggere un CSV</h2>
+      <p class="cf-compito">Aprire un file CSV della spesa e calcolare il totale.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>spesa.py</span></div>
+<pre class="codice"><code><span class="c-flusso">import</span> csv
+
+<span class="c-flusso">with</span> <span class="c-libreria">open</span><span class="c-punteggiatura">(</span><span class="c-testi">"spesa.csv"</span><span class="c-punteggiatura">,</span> encoding<span class="c-operatori">=</span><span class="c-testi">"utf-8"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">as</span> f<span class="c-punteggiatura">:</span>
+    righe <span class="c-operatori">=</span> <span class="c-libreria">list</span><span class="c-punteggiatura">(</span>csv<span class="c-punteggiatura">.</span>DictReader<span class="c-punteggiatura">(</span>f<span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+
+totale <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-flusso">for</span> r <span class="c-flusso">in</span> righe<span class="c-punteggiatura">:</span>
+    costo <span class="c-operatori">=</span> <span class="c-libreria">float</span><span class="c-punteggiatura">(</span>r<span class="c-punteggiatura">[</span><span class="c-testi">"prezzo"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span> <span class="c-operatori">*</span> <span class="c-libreria">float</span><span class="c-punteggiatura">(</span>r<span class="c-punteggiatura">[</span><span class="c-testi">"quantita"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"</span><span class="c-interpolazione">{</span><span class="c-variabili">r['prodotto']</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">costo</span><span class="c-testi">:.2f</span><span class="c-interpolazione">}</span><span class="c-testi"> EUR"</span><span class="c-punteggiatura">)</span>
+    totale <span class="c-operatori">+=</span> costo
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Spesa totale: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-testi">:.2f</span><span class="c-interpolazione">}</span><span class="c-testi"> EUR"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>spesa.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">righe</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_tabella</span><span class="c-punteggiatura">(</span><span class="c-testi">"spesa.csv"</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+    <span class="c-flusso">per ogni</span> <span class="c-variabili">r</span> <span class="c-logici">in</span> <span class="c-variabili">righe</span> <span class="c-flusso">fai</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">costo</span> <span class="c-operatori">=</span> <span class="c-libreria">decimale</span><span class="c-punteggiatura">(</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"prezzo"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span> <span class="c-operatori">*</span> <span class="c-libreria">decimale</span><span class="c-punteggiatura">(</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"quantita"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"prodotto"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">costo</span><span class="c-interpolazione">:migliaia 2</span><span class="c-interpolazione">}</span><span class="c-testi"> €"</span><span class="c-punteggiatura">)</span>
+        <span class="c-variabili">totale</span> <span class="c-operatori">+=</span> <span class="c-variabili">costo</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Spesa totale: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">:migliaia 2</span><span class="c-interpolazione">}</span><span class="c-testi"> €"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Mele: 20,00 €
+Pane: 3,60 €
+Latte: 8,70 €
+Spesa totale: 32,30 €</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>leggi_tabella</code> apre il file, riconosce le intestazioni e restituisce righe già pronte come dizionari, in una riga sola. L'accesso ai file passa dai permessi di Leo, quindi di serie è più sicuro.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Il modulo <code>csv</code> di Python gestisce dialetti, separatori strani, virgolette e file enormi in streaming; con <code>pandas</code> l'analisi di tabelle grandi è di un altro livello. Leo copre i casi comuni, non quelli estremi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="json" aria-labelledby="t-json">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 7 di 11</p>
+      <h2 id="t-json">Leggere un JSON</h2>
+      <p class="cf-compito">Interpretare una risposta JSON, per esempio quella di un servizio web.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>meteo.py</span></div>
+<pre class="codice"><code><span class="c-flusso">import</span> json
+
+risposta <span class="c-operatori">=</span> <span class="c-testi">'{"citta": "Bologna", "gradi": 19, "venti": ["N", "NE"]}'</span>
+meteo <span class="c-operatori">=</span> json<span class="c-punteggiatura">.</span>loads<span class="c-punteggiatura">(</span>risposta<span class="c-punteggiatura">)</span>
+venti <span class="c-operatori">=</span> <span class="c-testi">", "</span><span class="c-punteggiatura">.</span>join<span class="c-punteggiatura">(</span>meteo<span class="c-punteggiatura">[</span><span class="c-testi">"venti"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"A </span><span class="c-interpolazione">{</span><span class="c-variabili">meteo['citta']</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">meteo['gradi']</span><span class="c-interpolazione">}</span><span class="c-testi"> gradi, venti da </span><span class="c-interpolazione">{</span><span class="c-variabili">venti</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>meteo.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-testi">"\{\"citta\": \"Bologna\", \"gradi\": 19, \"venti\": [\"N\", \"NE\"]}"</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">meteo</span> <span class="c-operatori">=</span> <span class="c-libreria">da_json</span><span class="c-punteggiatura">(</span><span class="c-variabili">risposta</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"A </span><span class="c-interpolazione">{</span><span class="c-variabili">meteo</span><span class="c-punteggiatura">[</span><span class="c-testi">"citta"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">meteo</span><span class="c-punteggiatura">[</span><span class="c-testi">"gradi"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> gradi, venti da </span><span class="c-interpolazione">{</span><span class="c-testi">", "</span><span class="c-punteggiatura">.</span><span class="c-proprieta">unisci</span><span class="c-punteggiatura">(</span><span class="c-variabili">meteo</span><span class="c-punteggiatura">[</span><span class="c-testi">"venti"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">A Bologna: 19 gradi, venti da N, NE</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>da_json</code> è globale, senza import, e i dati diventano dizionari e liste come in Python. Se il testo non è valido, l'errore dice <em>dove</em> (riga e colonna) e che cosa manca, in italiano.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Il modulo <code>json</code> è nella libreria standard di Python e scrivere una stringa JSON a mano è più pulito: Leo interpola ogni testo tra <code>{ }</code>, così le graffe del JSON vanno protette con <code>\{</code>. Da un file o da una risposta web il problema non si pone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="web" aria-labelledby="t-web">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 8 di 11</p>
+      <h2 id="t-web">Un piccolo server web</h2>
+      <p class="cf-compito">Esporre due rotte JSON su un server locale e interrogarle.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>servizio.py</span></div>
+<pre class="codice"><code><span class="c-flusso">from</span> http<span class="c-punteggiatura">.</span>server <span class="c-flusso">import</span> BaseHTTPRequestHandler<span class="c-punteggiatura">,</span> HTTPServer
+<span class="c-flusso">import</span> json<span class="c-punteggiatura">,</span> threading<span class="c-punteggiatura">,</span> urllib<span class="c-punteggiatura">.</span>request
+
+PAGINE <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span>
+    <span class="c-testi">"/api/saluto"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"messaggio"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ciao da Python!"</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-testi">"/api/ora"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"servizio"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"orologio"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"attivo"</span><span class="c-punteggiatura">:</span> <span class="c-costanti">True</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+<span class="c-punteggiatura">}</span>
+
+<span class="c-flusso">class</span> Gestore<span class="c-punteggiatura">(</span>BaseHTTPRequestHandler<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+    <span class="c-flusso">def</span> do_GET<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+        corpo <span class="c-operatori">=</span> json<span class="c-punteggiatura">.</span>dumps<span class="c-punteggiatura">(</span>PAGINE<span class="c-punteggiatura">.</span>get<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">.</span>path<span class="c-punteggiatura">,</span> <span class="c-punteggiatura">{</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>encode<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+        self<span class="c-punteggiatura">.</span>send_response<span class="c-punteggiatura">(</span><span class="c-numeri">200</span> <span class="c-flusso">if</span> self<span class="c-punteggiatura">.</span>path <span class="c-flusso">in</span> PAGINE <span class="c-flusso">else</span> <span class="c-numeri">404</span><span class="c-punteggiatura">)</span>
+        self<span class="c-punteggiatura">.</span>send_header<span class="c-punteggiatura">(</span><span class="c-testi">"Content-Type"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"application/json"</span><span class="c-punteggiatura">)</span>
+        self<span class="c-punteggiatura">.</span>end_headers<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+        self<span class="c-punteggiatura">.</span>wfile<span class="c-punteggiatura">.</span>write<span class="c-punteggiatura">(</span>corpo<span class="c-punteggiatura">)</span>
+    <span class="c-flusso">def</span> log_message<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">,</span> <span class="c-operatori">*</span>a<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span> <span class="c-flusso">pass</span>
+
+server <span class="c-operatori">=</span> HTTPServer<span class="c-punteggiatura">(</span><span class="c-punteggiatura">(</span><span class="c-testi">"127.0.0.1"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> Gestore<span class="c-punteggiatura">)</span>
+threading<span class="c-punteggiatura">.</span>Thread<span class="c-punteggiatura">(</span>target<span class="c-operatori">=</span>server<span class="c-punteggiatura">.</span>serve_forever<span class="c-punteggiatura">,</span> daemon<span class="c-operatori">=</span><span class="c-costanti">True</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>start<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+porta <span class="c-operatori">=</span> server<span class="c-punteggiatura">.</span>server_address<span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span>
+<span class="c-flusso">with</span> urllib<span class="c-punteggiatura">.</span>request<span class="c-punteggiatura">.</span>urlopen<span class="c-punteggiatura">(</span><span class="c-testi">f"http://127.0.0.1:</span><span class="c-interpolazione">{</span><span class="c-variabili">porta</span><span class="c-interpolazione">}</span><span class="c-testi">/api/saluto"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">as</span> r<span class="c-punteggiatura">:</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span>json<span class="c-punteggiatura">.</span>load<span class="c-punteggiatura">(</span>r<span class="c-punteggiatura">)</span><span class="c-punteggiatura">[</span><span class="c-testi">"messaggio"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+server<span class="c-punteggiatura">.</span>shutdown<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>servizio.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">servizio</span> <span class="c-operatori">=</span> <span class="c-libreria">server_web</span><span class="c-punteggiatura">(</span><span class="c-numeri">0</span><span class="c-punteggiatura">,</span> pagine <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span>
+        <span class="c-testi">"/api/saluto"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"messaggio"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ciao da Leo!"</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+        <span class="c-testi">"/api/ora"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"servizio"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"orologio"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"attivo"</span><span class="c-punteggiatura">:</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">}</span>
+    <span class="c-punteggiatura">}</span><span class="c-punteggiatura">)</span>
+    <span class="c-variabili">servizio</span><span class="c-punteggiatura">.</span><span class="c-proprieta">avvia</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Server avviato, solo su questo computer (127.0.0.1)."</span><span class="c-punteggiatura">)</span>
+
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">r</span> <span class="c-operatori">=</span> <span class="c-libreria">scarica_json</span><span class="c-punteggiatura">(</span><span class="c-variabili">servizio</span><span class="c-punteggiatura">.</span><span class="c-campi">indirizzo</span> <span class="c-operatori">+</span> <span class="c-testi">"api/saluto"</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"La rotta /api/saluto risponde: </span><span class="c-interpolazione">{</span><span class="c-variabili">r</span><span class="c-punteggiatura">[</span><span class="c-testi">"messaggio"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+
+    <span class="c-variabili">servizio</span><span class="c-punteggiatura">.</span><span class="c-proprieta">ferma</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Server spento."</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Server avviato, solo su questo computer (127.0.0.1).
+La rotta /api/saluto risponde: Ciao da Leo!
+Server spento.</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>server_web</code> trasforma un dizionario di rotte in un servizio JSON: niente classi gestore, header o thread da scrivere a mano. <code>server_web(0, ...)</code> sceglie una porta libera e ascolta solo in locale.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Per il web vero Python ha un ecosistema insuperabile: Flask, Django e FastAPI, con rotte, template, autenticazione, database e un server <code>async</code> capace di reggere molte connessioni insieme. <code>server_web</code> di Leo è pensato per demo e strumenti, non per siti in produzione.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="parallelo" aria-labelledby="t-parallelo">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 9 di 11</p>
+      <h2 id="t-parallelo">Parallelismo</h2>
+      <p class="cf-compito">Avviare un calcolo lungo senza bloccare il resto del programma.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>parallelo.py</span></div>
+<pre class="codice"><code><span class="c-flusso">from</span> concurrent<span class="c-punteggiatura">.</span>futures <span class="c-flusso">import</span> ThreadPoolExecutor
+
+<span class="c-flusso">def</span> somma_fino<span class="c-punteggiatura">(</span>n<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+    totale <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+    <span class="c-flusso">for</span> i <span class="c-flusso">in</span> <span class="c-libreria">range</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> n <span class="c-operatori">+</span> <span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+        totale <span class="c-operatori">+=</span> i
+    <span class="c-flusso">return</span> totale
+
+<span class="c-flusso">with</span> ThreadPoolExecutor<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">as</span> pool<span class="c-punteggiatura">:</span>
+    lavoro <span class="c-operatori">=</span> pool<span class="c-punteggiatura">.</span>submit<span class="c-punteggiatura">(</span>somma_fino<span class="c-punteggiatura">,</span> <span class="c-numeri">1_000_000</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il calcolo è partito; intanto vado avanti..."</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Risultato: </span><span class="c-interpolazione">{</span><span class="c-variabili">lavoro.result()</span><span class="c-testi">:,</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>parallelo.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">somma_fino</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+    <span class="c-flusso">per ogni</span> <span class="c-variabili">i</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-parametri">n</span> <span class="c-flusso">fai</span>
+        <span class="c-variabili">totale</span> <span class="c-operatori">+=</span> <span class="c-variabili">i</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-dichiarazioni">restituisci</span> <span class="c-variabili">totale</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-dichiarazioni">inizio</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">lavoro</span> <span class="c-operatori">=</span> <span class="c-flusso">in</span> <span class="c-flusso">parallelo</span> <span class="c-flusso">fai</span>
+        <span class="c-dichiarazioni">restituisci</span> <span class="c-funzioni_utente">somma_fino</span><span class="c-punteggiatura">(</span><span class="c-numeri">1_000_000</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">fine</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il calcolo è partito; intanto vado avanti..."</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Risultato: </span><span class="c-interpolazione">{</span>aspetta<span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">:migliaia</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Il calcolo è partito; intanto vado avanti...
+Risultato: 500.000.500.000</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>in parallelo ... fine</code> è un costrutto del linguaggio: avvia il blocco di fianco e con <code>aspetta</code> ne raccogli il risultato. Leo controlla anche che il lavoro non modifichi di nascosto le variabili di fuori.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Python ha il parallelismo più maturo e vario: <code>threading</code>, <code>concurrent.futures</code>, <code>multiprocessing</code> per usare davvero tutti i core, e <code>asyncio</code> per decine di migliaia di operazioni di rete insieme. Leo non ha ancora <code>async/await</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="password" aria-labelledby="t-password">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 10 di 11</p>
+      <h2 id="t-password">Una password sicura</h2>
+      <p class="cf-compito">Conservare una password nel modo giusto: mai in chiaro, solo l'impronta.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>accesso.py</span></div>
+<pre class="codice"><code><span class="c-flusso">import</span> hashlib<span class="c-punteggiatura">,</span> os
+
+<span class="c-flusso">def</span> impronta<span class="c-punteggiatura">(</span>password<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+    sale <span class="c-operatori">=</span> os<span class="c-punteggiatura">.</span>urandom<span class="c-punteggiatura">(</span><span class="c-numeri">16</span><span class="c-punteggiatura">)</span>
+    chiave <span class="c-operatori">=</span> hashlib<span class="c-punteggiatura">.</span>scrypt<span class="c-punteggiatura">(</span>password<span class="c-punteggiatura">.</span>encode<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> salt<span class="c-operatori">=</span>sale<span class="c-punteggiatura">,</span>
+                            n<span class="c-operatori">=</span><span class="c-numeri">16384</span><span class="c-punteggiatura">,</span> r<span class="c-operatori">=</span><span class="c-numeri">8</span><span class="c-punteggiatura">,</span> p<span class="c-operatori">=</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> dklen<span class="c-operatori">=</span><span class="c-numeri">32</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">return</span> sale<span class="c-punteggiatura">.</span><span class="c-libreria">hex</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-operatori">+</span> <span class="c-testi">":"</span> <span class="c-operatori">+</span> chiave<span class="c-punteggiatura">.</span><span class="c-libreria">hex</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+
+<span class="c-flusso">def</span> verifica<span class="c-punteggiatura">(</span>password<span class="c-punteggiatura">,</span> salvata<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+    sale_hex<span class="c-punteggiatura">,</span> chiave_hex <span class="c-operatori">=</span> salvata<span class="c-punteggiatura">.</span>split<span class="c-punteggiatura">(</span><span class="c-testi">":"</span><span class="c-punteggiatura">)</span>
+    sale <span class="c-operatori">=</span> bytes<span class="c-punteggiatura">.</span>fromhex<span class="c-punteggiatura">(</span>sale_hex<span class="c-punteggiatura">)</span>
+    chiave <span class="c-operatori">=</span> hashlib<span class="c-punteggiatura">.</span>scrypt<span class="c-punteggiatura">(</span>password<span class="c-punteggiatura">.</span>encode<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> salt<span class="c-operatori">=</span>sale<span class="c-punteggiatura">,</span>
+                            n<span class="c-operatori">=</span><span class="c-numeri">16384</span><span class="c-punteggiatura">,</span> r<span class="c-operatori">=</span><span class="c-numeri">8</span><span class="c-punteggiatura">,</span> p<span class="c-operatori">=</span><span class="c-numeri">1</span><span class="c-punteggiatura">,</span> dklen<span class="c-operatori">=</span><span class="c-numeri">32</span><span class="c-punteggiatura">)</span>
+    <span class="c-flusso">return</span> chiave<span class="c-punteggiatura">.</span><span class="c-libreria">hex</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-operatori">==</span> chiave_hex
+
+scelta <span class="c-operatori">=</span> <span class="c-testi">"Cavallo-Batteria-Pinzatrice-42"</span>
+salvata <span class="c-operatori">=</span> impronta<span class="c-punteggiatura">(</span>scelta<span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Login con password giusta:"</span><span class="c-punteggiatura">,</span> verifica<span class="c-punteggiatura">(</span>scelta<span class="c-punteggiatura">,</span> salvata<span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Login con password sbagliata:"</span><span class="c-punteggiatura">,</span> verifica<span class="c-punteggiatura">(</span><span class="c-testi">"123456"</span><span class="c-punteggiatura">,</span> salvata<span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>accesso.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">scelta</span> <span class="c-operatori">=</span> <span class="c-testi">"Cavallo-Batteria-Pinzatrice-42"</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">forza</span> <span class="c-operatori">=</span> <span class="c-libreria">misura_forza_password</span><span class="c-punteggiatura">(</span><span class="c-variabili">scelta</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Robustezza: </span><span class="c-interpolazione">{</span><span class="c-variabili">forza</span><span class="c-punteggiatura">[</span><span class="c-testi">"livello"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> (circa </span><span class="c-interpolazione">{</span><span class="c-variabili">forza</span><span class="c-punteggiatura">[</span><span class="c-testi">"bit"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> bit)"</span><span class="c-punteggiatura">)</span>
+
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">salvata</span> <span class="c-operatori">=</span> <span class="c-libreria">impronta_password</span><span class="c-punteggiatura">(</span><span class="c-variabili">scelta</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Salvo solo l'impronta scrypt, irreversibile (</span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">salvata</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> caratteri)."</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Login con password giusta: </span><span class="c-interpolazione">{</span><span class="c-libreria">verifica_password</span><span class="c-punteggiatura">(</span><span class="c-variabili">scelta</span><span class="c-punteggiatura">,</span> <span class="c-variabili">salvata</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Login con password sbagliata: </span><span class="c-interpolazione">{</span><span class="c-libreria">verifica_password</span><span class="c-punteggiatura">(</span><span class="c-testi">"123456"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">salvata</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Robustezza: ottima (circa 184.1 bit)
+Salvo solo l'impronta scrypt, irreversibile (83 caratteri).
+Login con password giusta: vero
+Login con password sbagliata: falso</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>impronta_password</code> e <code>verifica_password</code> usano scrypt con sale casuale e confronto a tempo costante: la cosa giusta, in due righe e senza poterla sbagliare. In più <code>misura_forza_password</code> stima la robustezza senza mandare nulla in rete.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>In Python gli stessi mattoni ci sono (<code>hashlib.scrypt</code>), ma vanno montati a mano; in cambio hai la scelta fra tanti algoritmi provati (<code>bcrypt</code>, <code>argon2</code>) e librerie di sicurezza mantenute da esperti e aggiornate di continuo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-caso" id="date" aria-labelledby="t-date">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">Caso 11 di 11</p>
+      <h2 id="t-date">Una data e una durata</h2>
+      <p class="cf-compito">Calcolare quanto tempo passa fra due momenti e dire che giorno cade.</p>
+    </div>
+    <div class="confronto">
+      <div>
+        <div class="etichetta-confronto"><span>Python</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>scadenze.py</span></div>
+<pre class="codice"><code><span class="c-flusso">from</span> datetime <span class="c-flusso">import</span> datetime
+
+avvio <span class="c-operatori">=</span> datetime<span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span>
+consegna <span class="c-operatori">=</span> datetime<span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">,</span> <span class="c-numeri">17</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">)</span>
+giorni <span class="c-operatori">=</span> <span class="c-punteggiatura">(</span>consegna <span class="c-operatori">-</span> avvio<span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span>days
+giorno <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"lunedì"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"martedì"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"mercoledì"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"giovedì"</span><span class="c-punteggiatura">,</span>
+          <span class="c-testi">"venerdì"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"sabato"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"domenica"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">[</span>consegna<span class="c-punteggiatura">.</span>weekday<span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Dal </span><span class="c-interpolazione">{</span><span class="c-variabili">avvio</span><span class="c-testi">:%d/%m/%Y</span><span class="c-interpolazione">}</span><span class="c-testi"> al </span><span class="c-interpolazione">{</span><span class="c-variabili">consegna</span><span class="c-testi">:%d/%m/%Y</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"Giorni di calendario: </span><span class="c-interpolazione">{</span><span class="c-variabili">giorni</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">f"La consegna cade di </span><span class="c-interpolazione">{</span><span class="c-variabili">giorno</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+        </div>
+      </div>
+      <div class="leo">
+        <div class="etichetta-confronto"><span>Leo</span></div>
+        <div class="finestra-codice">
+          <div class="barra"><i></i><i></i><i></i><span>scadenze.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">avvio</span> <span class="c-operatori">=</span> <span class="c-libreria">data</span><span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> ore <span class="c-operatori">=</span> <span class="c-numeri">9</span><span class="c-punteggiatura">)</span>
+    <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">consegna</span> <span class="c-operatori">=</span> <span class="c-libreria">data</span><span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">,</span> ore <span class="c-operatori">=</span> <span class="c-numeri">17</span><span class="c-punteggiatura">,</span> minuti <span class="c-operatori">=</span> <span class="c-numeri">30</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Dal </span><span class="c-interpolazione">{</span><span class="c-libreria">formatta_data</span><span class="c-punteggiatura">(</span><span class="c-variabili">avvio</span><span class="c-punteggiatura">,</span> <span class="c-testi">"medio"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> al </span><span class="c-interpolazione">{</span><span class="c-libreria">formatta_data</span><span class="c-punteggiatura">(</span><span class="c-variabili">consegna</span><span class="c-punteggiatura">,</span> <span class="c-testi">"medio"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Giorni di calendario: </span><span class="c-interpolazione">{</span><span class="c-libreria">giorni_tra</span><span class="c-punteggiatura">(</span><span class="c-variabili">avvio</span><span class="c-punteggiatura">,</span> <span class="c-variabili">consegna</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Durata esatta: </span><span class="c-interpolazione">{</span><span class="c-libreria">differenza_tra</span><span class="c-punteggiatura">(</span><span class="c-variabili">avvio</span><span class="c-punteggiatura">,</span> <span class="c-variabili">consegna</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"La consegna cade di </span><span class="c-interpolazione">{</span><span class="c-variabili">consegna</span><span class="c-punteggiatura">.</span><span class="c-campi">nome_giorno</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+<pre class="uscita">Dal 2 mar 2026 al 20 mar 2026
+Giorni di calendario: 18
+Durata esatta: 18 giorni, 8 ore e 30 minuti
+La consegna cade di venerdì</pre>
+        </div>
+      </div>
+    </div>
+    <div class="cf-note">
+      <div class="cf-nota cf-meglio">
+        <p class="cf-nota-tit">Dove Leo è più comodo</p>
+        <p><code>giorni_tra</code>, <code>differenza_tra</code> e <code>nome_giorno</code> parlano italiano: la durata esce già scritta in parole (“18 giorni, 8 ore e 30 minuti”) e i nomi dei giorni sono in italiano, senza tabelle da costruire né codici di formato da ricordare.</p>
+      </div>
+      <div class="cf-nota cf-python">
+        <p class="cf-nota-tit">Dove Python resta avanti</p>
+        <p>Il modulo <code>datetime</code> di Python, con <code>zoneinfo</code> per i fusi orari e librerie come <code>dateutil</code>, copre fusi, calendari e parsing di date in qualunque formato con una precisione che a Leo oggi manca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cf-quando" id="quando" aria-labelledby="t-quando">
+  <div class="contenitore stretto">
+    <div class="cf-testa-caso">
+      <p class="sopratitolo">In sintesi</p>
+      <h2 id="t-quando">Quando scegliere Leo, quando Python</h2>
+      <p class="cf-compito">Nessuno dei due “vince” sempre: dipende da che cosa stai facendo. Ecco la regola pratica.</p>
+    </div>
+    <div class="cf-quando-griglia">
+      <div class="cf-colonna cf-colonna-leo">
+        <h3>Scegli <strong>Leo</strong> se…</h3>
+        <ul><li>Vuoi programmare (o insegnare) in italiano, senza la barriera dell'inglese.</li><li>Ti servono numeri esatti su denaro e misure senza pensarci.</li><li>Vuoi errori chiari che dicono dove e perché, con un suggerimento.</li><li>Fai app con finestre, giochi 2D, automazioni, strumenti interni.</li><li>Vuoi un <code>.exe</code> per Windows o un'app Android con un comando.</li><li>Vuoi tutto incluso: niente <code>pip install</code>, niente ambienti da configurare.</li></ul>
+      </div>
+      <div class="cf-colonna cf-colonna-py">
+        <h3>Scegli <strong>Python</strong> se…</h3>
+        <ul><li>Hai bisogno della massima velocità su calcoli pesanti e numerici.</li><li>Ti serve l'enorme ecosistema di pacchetti (PyPI): IA, dati, scienza, web.</li><li>Costruisci servizi web in produzione o molta rete con <code>async/await</code>.</li><li>Lavori in team dove Python è lo standard e la comunità è sterminata.</li><li>Ti servono librerie di nicchia mantenute da esperti del settore.</li><li>Cerchi un linguaggio con vent'anni di documentazione e corsi in ogni lingua.</li></ul>
+      </div>
+    </div>
+    <p class="cf-fondo-nota">Leo gira <em>sopra</em> Python e ne eredita la solidità: i concetti sono gli stessi, chi conosce Python legge Leo al primo sguardo e chi impara con Leo passa a Python senza ricominciare da capo.</p>
+  </div>
+</section>
+<section class="cf-prova">
+  <div class="contenitore stretto">
+    <h2>Il modo migliore per decidere è provarlo</h2>
+    <p>Installa Leo Studio o apri l'app sul telefono, incolla uno di questi esempi e premi Esegui. In trenta secondi hai la tua risposta.</p>
+<pre class="codice"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
+    <div class="cf-azioni">
+      <a class="pulsante grande" href="scarica.html">Scarica Leo</a>
+      <a class="pulsante grande secondario" href="template.html">Vedi altri esempi</a>
+    </div>
+  </div>
+</section>
+</main>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuale di Leo — imparare a programmare in italiano</title>
+<meta name="description" content="Il manuale di Leo e Leo Studio, il linguaggio di programmazione in italiano: installazione, primo programma, linguaggio, finestre, libreria, Windows, .exe e licenza. Con ricerca istantanea.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuale/index.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/manuale/index.html">
+<meta property="og:title" content="Manuale di Leo — imparare a programmare in italiano">
+<meta property="og:description" content="Il manuale di Leo e Leo Studio, il linguaggio di programmazione in italiano: installazione, primo programma, linguaggio, finestre, libreria, Windows, .exe e licenza. Con ricerca istantanea.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/manuale.css">
+<script>document.documentElement.classList.add("m-js");</script>
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+<script src="../js/indice_manuale.js" defer></script>
+<script src="../js/manuale.js" defer></script>
+</head>
+<body class="pagina-manuale indice-manuale">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+<main id="contenuto" class="manuale">
+  <section class="m-eroe">
+    <div class="m-eroe-sfondo" aria-hidden="true"></div>
+    <div class="contenitore m-eroe-interno">
+      <nav class="m-briciole" aria-label="Sei qui">
+        <ol><li><a href="../index.html">Home</a></li><li><span aria-current="page">Manuale</span></li></ol>
+      </nav>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://leoitalia.com/"},{"@type":"ListItem","position":2,"name":"Manuale","item":"https://leoitalia.com/manuale/index.html"}]}</script>
+      <p class="m-sopra"><span class="m-sopra-n">15</span> sezioni &middot; circa 100 minuti di lettura</p>
+      <h1>Manuale di utilizzo di <em>Leo</em></h1>
+      <p class="m-sommario">Tutto quello che serve per programmare in italiano con Leo e Leo Studio: dall'installazione al primo programma con le finestre, fino al file <code>.exe</code> da distribuire. Spiegato in modo chiaro e completo, con 106 esempi di codice provati uno per uno.</p>
+      <div class="m-cerca m-cerca-grande" role="search">
+  <label class="solo-lettori" for="m-cerca-grande">Cerca nel manuale</label>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+  <input id="m-cerca-grande" class="m-cerca-campo" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Cerca una parola, una funzione, un errore…"
+         aria-controls="m-cerca-grande-risultati" aria-describedby="m-cerca-grande-aiuto">
+  <kbd class="m-cerca-tasto" aria-hidden="true">/</kbd>
+  <p id="m-cerca-grande-aiuto" class="solo-lettori">Scrivi per cercare; i risultati compaiono sotto. Frecce su e giù per scegliere, Invio per aprire.</p>
+  <div id="m-cerca-grande-risultati" class="m-risultati" role="listbox" aria-label="Risultati della ricerca" hidden></div>
+  <p class="m-cerca-stato solo-lettori" aria-live="polite"></p>
+</div>
+      <p class="m-cerca-prove">Prova a cercare:
+        <button type="button" data-prova-ricerca="per ogni">per ogni</button>
+        <button type="button" data-prova-ricerca="Pulsante1.clic">Pulsante1.clic</button>
+        <button type="button" data-prova-ricerca="leggi_tabella">leggi_tabella</button>
+        <button type="button" data-prova-ricerca="SmartScreen">SmartScreen</button>
+        <button type="button" data-prova-ricerca="passo passo">passo passo</button>
+      </p>
+    </div>
+  </section>
+
+  <section class="m-blocco">
+    <div class="contenitore">
+      <div class="m-blocco-testa">
+        <p class="m-sopra">Da dove comincio?</p>
+        <h2>Tre percorsi consigliati</h2>
+      </div>
+      <div class="m-percorsi"><div class="m-percorso compari-scorrendo"><h3>Comincio con Leo</h3><p>Installa Leo, conosci Leo Studio e scrivi il primo programma con una finestra e un pulsante.</p><ol><li><a href="installazione.html"><span class="m-n">01</span>Installazione</a></li><li><a href="leo-studio.html"><span class="m-n">02</span>Leo Studio</a></li><li><a href="primo-programma.html"><span class="m-n">03</span>Primo programma</a></li></ol></div><div class="m-percorso compari-scorrendo"><h3>Programmo già in un altro linguaggio</h3><p>Il linguaggio in sintesi, la libreria inclusa e le funzioni avanzate: moduli, parallelismo, verifiche, riga di comando.</p><ol><li><a href="basi.html"><span class="m-n">04</span>Le basi</a></li><li><a href="libreria.html"><span class="m-n">07</span>Testo, numeri, date, file</a></li><li><a href="avanzata.html"><span class="m-n">11</span>Avanzata</a></li></ol></div><div class="m-percorso compari-scorrendo"><h3>Voglio padroneggiare il linguaggio</h3><p>Variabili, condizioni, cicli e funzioni; poi le finestre e la gestione degli errori.</p><ol><li><a href="basi.html"><span class="m-n">04</span>Le basi</a></li><li><a href="finestre.html"><span class="m-n">05</span>Finestre e controlli</a></li><li><a href="errori.html"><span class="m-n">06</span>Errori</a></li></ol></div><div class="m-percorso compari-scorrendo"><h3>Voglio distribuire un programma</h3><p>Dal progetto al file .exe da dare agli altri, con la licenza in regola.</p><ol><li><a href="exe.html"><span class="m-n">12</span>Creare il .exe</a></li><li><a href="telefono.html"><span class="m-n">13</span>Leo sul telefono</a></li><li><a href="licenza.html"><span class="m-n">14</span>Licenza e aggiornamenti</a></li></ol></div></div>
+    </div>
+  </section>
+
+  <section class="m-blocco" aria-labelledby="titolo-sezioni">
+    <div class="contenitore">
+      <div class="m-blocco-testa">
+        <p class="m-sopra">Tutte le sezioni</p>
+        <h2 id="titolo-sezioni">Il manuale, capitolo per capitolo</h2>
+      </div>
+      <ol class="m-schede">
+<li class="m-scheda compari-scorrendo">
+  <a href="installazione.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">01</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg></span>
+    <h3>Installazione e primo avvio</h3>
+    <p>Scarica Leo, superi l'avviso di SmartScreen, installi in cinque passi e apri Leo Studio per la prima volta.</p>
+    <ul class="m-argomenti"><li>Che cosa ti serve</li><li>Scaricare Leo</li><li>L'avviso blu di Windows (SmartScreen)</li><li>L'installazione in cinque passi</li></ul>
+    <span class="m-scheda-piede"><span>6 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="leo-studio.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">02</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 8h18M8 8v12M16 8v12"/></svg></span>
+    <h3>Leo Studio in un colpo d'occhio</h3>
+    <p>Le zone di Leo Studio: barra dei controlli, strumenti, progettazione, proprietà e tavolozza, codice, uscita e passo passo, con le scorciatoie.</p>
+    <ul class="m-argomenti"><li>La finestra di Leo Studio</li><li>1 · I menu</li><li>2 · La barra dei controlli (in alto)</li><li>3 · La barra degli strumenti (a sinistra)</li></ul>
+    <span class="m-scheda-piede"><span>8 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="primo-programma.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">03</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5"/><path d="M14 5h5v5"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></span>
+    <h3>Il tuo primo programma</h3>
+    <p>Passo passo: crei un progetto, disegni una finestra con un'etichetta e un pulsante, scrivi il codice del clic ed esegui con F5.</p>
+    <ul class="m-argomenti"><li>Che cosa costruiamo</li><li>Passo 1 — Crea il progetto</li><li>Passo 2 — Metti un'etichetta e un pulsante</li><li>Passo 3 — Cambia le scritte</li></ul>
+    <span class="m-scheda-piede"><span>5 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="basi.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">04</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6 3 12l5 6M16 6l5 6-5 6M13.5 4l-3 16"/></svg></span>
+    <h3>Le basi del linguaggio</h3>
+    <p>Variabili, costanti, testi, numeri, liste, dizionari, se/altrimenti, scegli, cicli, funzioni, inizio...fine, aumenta e diminuisci.</p>
+    <ul class="m-argomenti"><li>La forma del codice</li><li>Variabili</li><li>Costanti</li><li>Aumenta e diminuisci</li></ul>
+    <span class="m-scheda-piede"><span>10 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="finestre.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">05</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 8.5h18"/><rect x="7" y="12" width="6" height="4" rx="1"/></svg></span>
+    <h3>Finestre e controlli</h3>
+    <p>Proprietà dei controlli, eventi quando...fai, la variabile evento, nome e testo, più finestre, colori, forme, stili pronti e animazioni.</p>
+    <ul class="m-argomenti"><li>Com'è fatto un progetto con le finestre</li><li>Gli eventi: quando … fai</li><li>Leggere e cambiare le proprietà</li><li>Nome e testo: l'errore più comune</li></ul>
+    <span class="m-scheda-piede"><span>10 min</span><span>base e intermedio</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="errori.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">06</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/></svg></span>
+    <h3>Errori e come leggerli</h3>
+    <p>Come leggere un messaggio d'errore, i tipi di errore, la tolleranza verso le sviste, la modalità rigorosa, la correzione automatica, prova/cattura e il passo passo.</p>
+    <ul class="m-argomenti"><li>Com'è fatto un messaggio d'errore</li><li>I tipi di errore</li><li>Messaggi più brevi per chi inizia</li><li>Leo perdona le sviste più comuni</li></ul>
+    <span class="m-scheda-piede"><span>7 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="libreria.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">07</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4v16H5zM10 4h4v16h-4z"/><path d="m15 5 3.8-1 3 15.5-3.8 1z"/></svg></span>
+    <h3>Libreria: testo, numeri, date, file e formati</h3>
+    <p>Le funzioni pronte di Leo per testi, numeri e statistica, soldi e frazioni, date e festività, file e cartelle (con il cestino), CSV per Excel, JSON, INI, TOML e ZIP.</p>
+    <ul class="m-argomenti"><li>Come si usano</li><li>Testi</li><li>Numeri e statistica</li><li>Date e orari</li></ul>
+    <span class="m-scheda-piede"><span>7 min</span><span>intermedio</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="internet-database.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">08</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+    <h3>Internet e database</h3>
+    <p>Scaricare pagine, dati JSON e file, richieste web complete, email, un piccolo server web; database SQLite in italiano, sicuri contro la SQL injection, con transazioni e CSV.</p>
+    <ul class="m-argomenti"><li>Scaricare pagine e dati</li><li>Richieste web complete</li><li>Errori di rete in parole semplici</li><li>Inviare email</li></ul>
+    <span class="m-scheda-piede"><span>7 min</span><span>intermedio</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="grafici-suoni.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">09</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+    <h3>Grafici, suoni e animazioni</h3>
+    <p>Grafici a barre, linee, torta e istogrammi; note, melodie e accordi; animazioni ed effetti dei controlli; la tartaruga che disegna.</p>
+    <ul class="m-argomenti"><li>Il primo grafico</li><li>Suoni e musica</li><li>Animazioni dei controlli</li><li>La tartaruga che disegna</li></ul>
+    <span class="m-scheda-piede"><span>5 min</span><span>intermedio</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="windows.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">10</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></span>
+    <h3>Leo e Windows</h3>
+    <p>Le funzioni di sistema: informazioni sul computer, programmi e processi, appunti, cestino, collegamenti, finestre delle altre applicazioni, schermi, notifiche, batteria, audio, rete, registro; con le regole di sicurezza e le conferme.</p>
+    <ul class="m-argomenti"><li>Tre gruppi di funzioni</li><li>Le regole di sicurezza</li><li>Informazioni sul computer</li><li>Programmi, comandi e processi</li></ul>
+    <span class="m-scheda-piede"><span>5 min</span><span>intermedio</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="avanzata.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">11</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+    <h3>Programmazione avanzata</h3>
+    <p>Verifiche e test con leo verifica, temporizzatori ogni/dopo, lavori in parallelo, modelli di testo, la catena |&gt;, funzioni come valori, moduli con importa, stile delle dichiarazioni.</p>
+    <ul class="m-argomenti"><li>Verifiche e test</li><li>Temporizzatori: ogni e dopo</li><li>Lavori lunghi: in parallelo</li><li>Modelli di testo</li></ul>
+    <span class="m-scheda-piede"><span>7 min</span><span>avanzato</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="exe.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">12</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span>
+    <h3>Creare il .exe e distribuire</h3>
+    <p>Trasformare un programma o un progetto in un .exe per Windows, da Leo Studio o con leo compila: requisiti, opzioni, cartella o file unico, autore e versione, firma digitale e SmartScreen.</p>
+    <ul class="m-argomenti"><li>Che cosa ottieni</li><li>Che cosa serve</li><li>Da Leo Studio</li><li>Dalla riga di comando: leo compila</li></ul>
+    <span class="m-scheda-piede"><span>5 min</span><span>intermedio</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="telefono.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">13</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+    <h3>Leo sul telefono</h3>
+    <p>L'app Leo per Android: scrivere ed eseguire programmi, creare app con finestre dai modelli pronti, il disegnatore, gli stili, l'hardware del telefono (bussola, sensori, fotocamera, voce), creare l'APK e la guida offline.</p>
+    <ul class="m-argomenti"><li>L'app Leo per Android</li><li>Scrivere ed eseguire un programma</li><li>Un'app con le finestre</li><li>L'hardware del telefono</li></ul>
+    <span class="m-scheda-piede"><span>7 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="licenza.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">14</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2"/></svg></span>
+    <h3>Licenza e aggiornamenti</h3>
+    <p>Questa versione di Leo è gratuita e senza scadenza; gli aggiornamenti futuri saranno a pagamento. Come attivare una chiave nelle versioni a pagamento, in Leo Studio o dalla riga di comando, e i messaggi possibili.</p>
+    <ul class="m-argomenti"><li>Le regole in breve</li><li>In questa versione</li><li>Le versioni a pagamento</li><li>Attivare una chiave in Leo Studio</li></ul>
+    <span class="m-scheda-piede"><span>3 min</span><span>base</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+<li class="m-scheda compari-scorrendo">
+  <a href="domande.html">
+    <span class="m-scheda-testa"><span class="m-scheda-n">15</span><svg class="m-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8v.5M12 17v.2"/></svg></span>
+    <h3>Domande frequenti e risoluzione problemi</h3>
+    <p>Le risposte alle domande più comuni e le soluzioni ai problemi di installazione, di Leo Studio, del codice, delle finestre, dei file e degli eseguibili.</p>
+    <ul class="m-argomenti"><li>Domande generali</li><li>Installazione e avvio</li><li>Leo Studio</li><li>Il codice</li></ul>
+    <span class="m-scheda-piede"><span>8 min</span><span>tutti</span><span class="m-freccia" aria-hidden="true">&rarr;</span></span>
+  </a>
+</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="m-blocco">
+    <div class="contenitore m-come-leggere">
+      <div>
+        <p class="m-sopra">Come leggere il manuale</p>
+        <h2>Gli esempi sono veri, i colori sono quelli di Leo Studio</h2>
+        <p>Ogni esempio di codice di questo manuale è stato <strong>eseguito con Leo</strong> mentre il manuale veniva preparato: se lo copi (pulsante <em>Copia</em>) e lo incolli in Leo Studio, funziona. Sotto molti esempi trovi anche l'<strong>uscita</strong>, cioè quello che il programma scrive.</p>
+        <p>Le parole del codice hanno gli stessi colori dell'editor di Leo Studio (tema <em>Nero</em>): così impari a riconoscerle a colpo d'occhio.</p>
+        <div class="m-riquadri-demo">
+          <aside class="m-riquadro m-suggerimento" role="note" aria-label="Suggerimento"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Suggerimento</p><p>Un consiglio pratico per lavorare meglio o più in fretta.</p></div></aside>
+          <aside class="m-riquadro m-attenzione" role="note" aria-label="Attenzione"><div class="m-riquadro-icona"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></div><div class="m-riquadro-corpo"><p class="m-riquadro-titolo">Attenzione</p><p>Un errore frequente, o qualcosa da fare con cura.</p></div></aside>
+        </div>
+      </div>
+      <div class="m-legenda-box">
+        <p class="m-lato-titolo">I colori del codice</p>
+        <ul class="m-legenda"><li><code class="c-flusso">se, mentre, fine</code><span>struttura del programma</span></li><li><code class="c-dichiarazioni">variabile, funzione</code><span>dichiarazioni</span></li><li><code class="c-variabili">totale</code><span>variabili</span></li><li><code class="c-costanti">IVA</code><span>costanti</span></li><li><code class="c-parametri">nome</code><span>parametri</span></li><li><code class="c-testi">"ciao"</code><span>testi</span></li><li><code class="c-interpolazione">{nome}</code><span>valori dentro un testo</span></li><li><code class="c-numeri">42</code><span>numeri</span></li><li><code class="c-libreria">stampa</code><span>funzioni di Leo</span></li><li><code class="c-funzioni_utente">saluta</code><span>funzioni tue</span></li><li><code class="c-controlli">Pulsante1</code><span>controlli</span></li><li><code class="c-eventi">clic</code><span>eventi</span></li><li><code class="c-commenti"># nota</code><span>commenti</span></li><li><code class="c-errori">prova, cattura</code><span>gestione degli errori</span></li></ul>
+      </div>
+    </div>
+  </section>
+</main>
+<a class="m-su" href="#contenuto" aria-label="Torna su">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<!--
+  PROVA LEO NEL BROWSER — playground con Pyodide (Python in WebAssembly).
+
+  COME COLLAUDARLO (serve un server statico: `fetch` e Pyodide non funzionano
+  aprendo il file con doppio clic, per via delle regole del browser su file://):
+
+      cd sito
+      python3 -m http.server 8000
+      # poi apri  http://localhost:8000/prova.html
+
+  Prima però costruisci l'archivio di Leo che la pagina scarica:
+
+      python3 strumenti/sito_template/costruisci_prova.py
+      # crea sito/prova/leo_pyodide.zip (leo/ senza Qt/Studio + dati minimi)
+      # con --prova lo collauda anche in locale (esegui_sorgente("scrivi(1+1)") -> 2)
+
+  La pagina scarica Pyodide dal CDN jsdelivr (serve internet la prima volta);
+  l'archivio di Leo invece è servito dal sito stesso (prova/leo_pyodide.zip).
+  Intestazione e piede sono allineati da strumenti/sito_template/allinea_testate.py.
+-->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prova Leo nel browser — scrivi ed esegui senza installare nulla</title>
+<meta name="description" content="Il playground di Leo: scrivi un programma in italiano ed eseguilo subito nel browser, senza installare nulla. Esempi pronti, output e messaggi d'errore in italiano.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/prova.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/prova.html">
+<meta property="og:title" content="Prova Leo nel browser">
+<meta property="og:description" content="Scrivi ed esegui programmi Leo nel browser, senza installare nulla.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, direttamente nel browser">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="stylesheet" href="css/stile.css">
+<link rel="stylesheet" href="css/prova.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+<script src="js/prova.js" defer></script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="novita.html">Novità</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+  <section class="sezione">
+    <div class="contenitore">
+      <div class="prova-intro">
+        <p class="sopratitolo">Prova subito</p>
+        <h1>Prova Leo nel browser</h1>
+        <p>Scrivi un programma in italiano e premi <strong>Esegui</strong>: gira
+          qui, nel tuo browser, senza installare nulla. Scegli un esempio dalla
+          tendina per iniziare, poi modificalo come vuoi.</p>
+      </div>
+
+      <div class="prova-barra">
+        <div class="prova-esempi">
+          <label for="prova-esempi">Esempi:</label>
+          <select id="prova-esempi" class="prova-scelta" aria-label="Scegli un esempio">
+            <option value="saluto">Saluto (variabili e condizioni)</option>
+            <option value="ciclo">Un ciclo (la tabellina)</option>
+            <option value="numeri">Numeri e slicing</option>
+            <option value="classe">Una classe (con ereditarietà)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="prova-griglia">
+        <div class="prova-pannello">
+          <h2>Il tuo programma</h2>
+          <textarea id="prova-editor" class="prova-editor" spellcheck="false"
+            autocomplete="off" autocorrect="off" autocapitalize="off" wrap="off"
+            aria-label="Scrivi qui il tuo programma Leo"></textarea>
+        </div>
+        <div class="prova-pannello">
+          <h2>Risultato</h2>
+          <pre id="prova-uscita" class="prova-uscita" aria-live="polite" role="status"></pre>
+        </div>
+      </div>
+
+      <div class="prova-azioni">
+        <button id="prova-esegui" class="pulsante prova-esegui" type="button" disabled>Esegui</button>
+        <span id="prova-stato" class="prova-stato" data-stato="carico">
+          <span class="prova-spinner" aria-hidden="true"></span>
+          <span class="prova-stato-testo">Carico Leo…</span>
+        </span>
+      </div>
+
+      <p class="prova-avviso">
+        <strong>Che cosa gira qui.</strong> Il playground esegue il testo e i
+        calcoli: stampe, numeri, liste, testo, funzioni, classi, errori. Le
+        <strong>finestre</strong>, le animazioni e i disegni della
+        <strong>tartaruga</strong> non si vedono nel browser: per quelli scarica
+        <a href="scarica.html">Leo Studio</a>. La prima esecuzione richiede
+        qualche secondo (si scarica Python) e la connessione a internet.
+      </p>
+
+      <p class="prova-nota-sotto">
+        Suggerimento: premi <kbd>Ctrl</kbd>+<kbd>Invio</kbd> (su Mac
+        <kbd>Cmd</kbd>+<kbd>Invio</kbd>) per eseguire. Vuoi Leo sul tuo computer,
+        con le finestre e molto altro? Vai alla pagina
+        <a href="scarica.html">Scarica</a>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

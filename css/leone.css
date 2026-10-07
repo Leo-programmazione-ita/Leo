@@ -1,0 +1,287 @@
+/* Leone dorato del sito di Leo: scena, entrata, respiro, ruggito.
+   Uso: <div class="leone-scena" data-leone="hero"></div> + css/leone.css + js/leone.js.
+   Le animazioni continue girano solo quando la scena e' visibile (.lg-visibile, messa dal js
+   con IntersectionObserver); con prefers-reduced-motion il leone resta fermo. */
+
+.leone-scena {
+  --lg-oro: #D4A64A;
+  --lg-oro-chiaro: #F2CF7A;
+  --lg-oro-scuro: #8A6A2A;
+  --lg-nero: #07070A;
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 920 / 700;
+  max-height: 100%;
+  background: transparent;
+  color: var(--lg-oro);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.leone-palco {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  outline: none;
+  border-radius: 12px;
+}
+.leone-palco:focus-visible {
+  box-shadow: 0 0 0 2px var(--lg-nero), 0 0 0 4px var(--lg-oro-chiaro);
+}
+
+.leone-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---------- pulsante audio ---------- */
+.leone-audio {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(212, 166, 74, .35);
+  border-radius: 50%;
+  background: rgba(7, 7, 10, .72);
+  color: var(--lg-oro-chiaro);
+  cursor: pointer;
+  opacity: .72;
+  transition: opacity .2s, border-color .2s, transform .2s, background .2s;
+}
+.leone-audio:hover,
+.leone-audio:focus-visible {
+  opacity: 1;
+  border-color: var(--lg-oro-chiaro);
+  background: rgba(20, 16, 8, .9);
+}
+.leone-audio:focus-visible {
+  outline: 2px solid var(--lg-oro-chiaro);
+  outline-offset: 3px;
+}
+.leone-audio:active { transform: scale(.94); }
+.leone-audio svg { width: 20px; height: 20px; display: block; }
+.leone-audio .lg-muto { display: none; }
+.leone-audio[aria-pressed="false"] .lg-onda { display: none; }
+.leone-audio[aria-pressed="false"] .lg-muto { display: inline; }
+.leone-audio[aria-pressed="false"] { color: var(--lg-oro); }
+
+/* ---------- trasformazioni (origini) ---------- */
+.lg-testa-anim,
+.lg-criniera,
+.lg-mascella,
+.lg-torso,
+.lg-coda,
+.lg-ciuffo,
+.lg-occhio,
+.lg-pupilla,
+.lg-bagliore,
+.lg-leone,
+.lg-scena {
+  transform-box: fill-box;
+}
+.lg-testa-anim { transform-origin: 50% 55%; }
+.lg-criniera   { transform-origin: 50% 50%; }
+.lg-mascella   { transform-origin: 50% 0%; transform: translateY(-50px); }
+.lg-torso      { transform-origin: 50% 100%; }
+.lg-coda       { transform-origin: 0% 0%; }
+.lg-ciuffo     { transform-origin: 0% 50%; }
+.lg-occhio, .lg-bagliore, .lg-pupilla { transform-origin: 50% 50%; }
+.lg-bagliore   { opacity: 0; }
+.lg-leone      { transform-origin: 30% 60%; }
+.lg-scena      { transform-origin: 50% 50%; }
+.lg-pupilla    { transform: translateX(var(--lg-sx, 0px)); transition: transform .35s ease-out; }
+
+/* ---------- prima dell'entrata: il leone e' al buio ---------- */
+.leone-scena.lg-attesa .lg-scena { opacity: 0; }
+
+/* ---------- entrata: i contorni si accendono d'oro, poi i piani emergono dal buio ---------- */
+.leone-scena.lg-entra .lg-tr {
+  stroke-dasharray: 1 1;
+  animation: lg-disegna 2.1s cubic-bezier(.55, .1, .3, 1) both;
+}
+.leone-scena.lg-entra .lg-criniera .lg-tr { animation-delay: .15s; }
+.leone-scena.lg-entra .lg-coda .lg-tr { animation-delay: .35s; }
+.leone-scena.lg-entra .lg-scena path:not(.lg-tr):not(.lg-bagliore) {
+  animation: lg-emergi 1.1s ease-out 1.05s both;
+}
+.leone-scena.lg-entra .lg-alone { animation: lg-emergi 2.4s ease-out .3s both; }
+.leone-scena.lg-entra .lg-occhio { animation: lg-accendi 1.4s ease-out 1.5s both; }
+
+@keyframes lg-disegna {
+  0%   { stroke: var(--lg-oro-chiaro); stroke-width: 2.4px; stroke-dashoffset: 1; fill-opacity: 0; }
+  55%  { stroke: var(--lg-oro-chiaro); stroke-width: 2.4px; stroke-dashoffset: 0; fill-opacity: 0; }
+  100% { stroke: var(--lg-nero); stroke-dashoffset: 0; fill-opacity: 1; }
+}
+@keyframes lg-emergi {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lg-accendi {
+  0%   { opacity: 0; }
+  40%  { opacity: 1; filter: brightness(1.8); }
+  100% { opacity: 1; filter: none; }
+}
+
+/* ---------- vita: respiro, coda, battito di ciglia (solo se visibile) ---------- */
+.leone-scena .lg-torso     { animation: lg-respiro 4.8s ease-in-out infinite; }
+.leone-scena .lg-criniera  { animation: lg-respiro-criniera 4.8s ease-in-out infinite; }
+.leone-scena .lg-coda      { animation: lg-coda 3.6s ease-in-out infinite; }
+.leone-scena .lg-ciuffo    { animation: lg-ciuffo 3.6s ease-in-out infinite; }
+.leone-scena .lg-occhio    { animation: lg-palpebra 7s ease-in-out 3s infinite; }
+.leone-scena .lg-scena *,
+.leone-scena .lg-scena {
+  animation-play-state: paused;
+}
+.leone-scena.lg-visibile .lg-scena *,
+.leone-scena.lg-visibile .lg-scena {
+  animation-play-state: running;
+}
+
+@keyframes lg-respiro {
+  0%, 100% { transform: scale(1, 1); }
+  50%      { transform: scale(1.006, 1.022); }
+}
+@keyframes lg-respiro-criniera {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%      { transform: scale(1.012) translateY(-3px); }
+}
+@keyframes lg-coda {
+  0%, 100% { transform: rotate(-3deg); }
+  30%      { transform: rotate(4deg); }
+  60%      { transform: rotate(-1deg); }
+  80%      { transform: rotate(5deg); }
+}
+@keyframes lg-ciuffo {
+  0%, 100% { transform: rotate(0deg); }
+  35%      { transform: rotate(14deg); }
+  70%      { transform: rotate(-10deg); }
+}
+@keyframes lg-palpebra {
+  0%, 94%, 100% { transform: scaleY(1); }
+  96.5%         { transform: scaleY(.08); }
+}
+
+/* ---------- ruggito ---------- */
+.leone-scena.lg-ruggisce .lg-testa-anim { animation: lg-scatto 1.9s cubic-bezier(.2, .9, .25, 1) both; }
+.leone-scena.lg-ruggisce .lg-mascella  { animation: lg-fauci 1.9s cubic-bezier(.2, .9, .25, 1) both; }
+.leone-scena.lg-ruggisce .lg-criniera  { animation: lg-arruffa 1.9s ease-out both; }
+.leone-scena.lg-ruggisce .lg-bagliore  { animation: lg-bagliore 1.9s ease-out both; }
+.leone-scena.lg-ruggisce .lg-occhio    { animation: none; }
+.leone-scena.lg-ruggisce .lg-leone     { animation: lg-tremolio 1.9s linear both; }
+.leone-scena.lg-ruggisce .lg-coda      { animation: lg-coda-frusta 1.9s ease-in-out both; }
+.leone-scena.lg-ruggisce .lg-torso     { animation: lg-torso-ruggito 1.9s ease-out both; }
+.leone-scena.lg-ruggisce .lg-alone     { animation: lg-alone 1.9s ease-out both; }
+
+@keyframes lg-scatto {
+  0%   { transform: none; }
+  9%   { transform: translate(6px, 10px) scale(.97); }
+  20%  { transform: translate(-14px, -16px) scale(1.09); }
+  72%  { transform: translate(-12px, -12px) scale(1.08); }
+  100% { transform: none; }
+}
+@keyframes lg-fauci {
+  0%   { transform: translateY(-50px); }
+  9%   { transform: translateY(-58px); }
+  20%  { transform: translateY(30px); }
+  70%  { transform: translateY(22px); }
+  100% { transform: translateY(-50px); }
+}
+@keyframes lg-arruffa {
+  0%   { transform: none; }
+  20%  { transform: scale(1.06); }
+  70%  { transform: scale(1.045); }
+  100% { transform: none; }
+}
+@keyframes lg-bagliore {
+  0%, 10% { opacity: 0; }
+  22%     { opacity: .95; }
+  70%     { opacity: .7; }
+  100%    { opacity: 0; }
+}
+@keyframes lg-tremolio {
+  0%, 18%, 76%, 100% { transform: translate(0, 0); }
+  21% { transform: translate(-2px, 1px); }
+  25% { transform: translate(2px, -1px); }
+  29% { transform: translate(-1.5px, -1px); }
+  33% { transform: translate(1.5px, 1px); }
+  38% { transform: translate(-2px, 0); }
+  43% { transform: translate(1px, 1px); }
+  49% { transform: translate(-1px, -1px); }
+  56% { transform: translate(1.5px, 0); }
+  63% { transform: translate(-1px, 1px); }
+  70% { transform: translate(.5px, -.5px); }
+}
+@keyframes lg-coda-frusta {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-12deg); }
+  50%  { transform: rotate(8deg); }
+  75%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes lg-torso-ruggito {
+  0%   { transform: none; }
+  12%  { transform: scale(1.01, 1.05); }
+  70%  { transform: scale(1.004, 1.0); }
+  100% { transform: none; }
+}
+@keyframes lg-alone {
+  0%   { opacity: 1; }
+  22%  { opacity: 1; filter: brightness(2.2); }
+  100% { opacity: 1; filter: none; }
+}
+
+/* anelli sonori e particelle (creati dal js solo durante il ruggito) */
+.lg-anello {
+  fill: none;
+  stroke: var(--lg-oro-chiaro);
+  stroke-width: 2.2px;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: lg-anello 1.45s cubic-bezier(.15, .6, .3, 1) both;
+}
+.lg-anello.lg-sottile { stroke-width: 1.2px; stroke: var(--lg-oro); }
+@keyframes lg-anello {
+  0%   { transform: scale(.25); opacity: 0; }
+  12%  { opacity: .95; }
+  100% { transform: scale(var(--lg-s, 5)); opacity: 0; }
+}
+.lg-particella {
+  fill: var(--lg-oro-chiaro);
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: lg-particella var(--lg-t, 1.4s) cubic-bezier(.1, .7, .3, 1) both;
+}
+@keyframes lg-particella {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translate(var(--lg-dx), var(--lg-dy)) scale(.2); opacity: 0; }
+}
+
+/* ---------- movimento ridotto: leone fermo, ruggito = suono + piccoli anelli ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .leone-scena .lg-scena,
+  .leone-scena .lg-scena * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .leone-scena.lg-attesa .lg-scena { opacity: 1; }
+  .leone-scena .lg-mascella { transform: translateY(-50px); }
+  .leone-scena .lg-anello {
+    animation: lg-anello-piccolo 1.2s ease-out both !important;
+  }
+  @keyframes lg-anello-piccolo {
+    0%   { transform: scale(.6); opacity: 0; }
+    20%  { opacity: .8; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+}

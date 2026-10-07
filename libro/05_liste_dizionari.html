@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capitolo 5 — Liste e dizionari — Leo, il manuale</title>
+<meta name="description" content="Una variabile sola tiene un valore. Ma spesso i dati arrivano in gruppo: i voti di una classe, la spesa della settimana, l&#x27;anagrafica di una persona. Per…">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/libro/05_liste_dizionari.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/libro/05_liste_dizionari.html">
+<meta property="og:title" content="Capitolo 5 — Liste e dizionari — Leo, il manuale">
+<meta property="og:description" content="Una variabile sola tiene un valore. Ma spesso i dati arrivano in gruppo: i voti di una classe, la spesa della settimana, l&#x27;anagrafica di una persona. Per…">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/libro.css">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js" defer></script>
+<script src="../js/cerca.js" defer></script>
+</head>
+<body class="pagina-libro">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../riferimento/index.html">Riferimento</a></li>
+        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../template.html">Esempi</a></li>
+        <li><a href="../video.html">Video</a></li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li><a href="../novita.html">Novità</a></li>
+        <li><a href="../confronto.html">Confronto</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto" class="libro-guscio">
+  <aside class="libro-lato">
+    <div class="libro-lato-interno">
+      <nav class="libro-lato-nav" aria-label="Indice del libro">
+<a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Introduzione</p>
+<ul>
+<li><a href="00_introduzione.html">Introduzione</a></li>
+<p class="libro-lato-parte">Parte I — Le basi</p>
+<ul>
+<li><a href="01_primo_programma.html">Il primo programma</a></li>
+<li><a href="02_variabili_costanti.html">Variabili e costanti</a></li>
+<li><a href="03_numeri.html">I numeri</a></li>
+<li><a href="04_testi.html">I testi</a></li>
+<li><a href="05_liste_dizionari.html" aria-current="page">Liste e dizionari</a></li>
+<li><a href="06_slicing.html">Intervalli e fette</a></li>
+<p class="libro-lato-parte">Parte II — Il flusso</p>
+<ul>
+<li><a href="07_condizioni.html">Prendere decisioni</a></li>
+<li><a href="08_cicli.html">Ripetere</a></li>
+<li><a href="09_funzioni.html">Le funzioni</a></li>
+<li><a href="10_errori.html">Quando qualcosa va storto</a></li>
+<p class="libro-lato-parte">Parte III — Organizzare</p>
+<ul>
+<li><a href="11_classi.html">Classi e oggetti</a></li>
+<li><a href="12_moduli.html">Dividere in moduli</a></li>
+<li><a href="13_file_cartelle.html">File e cartelle</a></li>
+<p class="libro-lato-parte">Parte IV — Potenza</p>
+<ul>
+<li><a href="14_parallelismo.html">Fare più cose insieme</a></li>
+<li><a href="15_sequenze_pigre.html">Le sequenze pigre</a></li>
+<li><a href="16_tour_libreria.html">Un tour della libreria</a></li>
+<p class="libro-lato-parte">Parte V — Fare cose vere</p>
+<ul>
+<li><a href="17_finestre_studio.html">Finestre e Leo Studio</a></li>
+<li><a href="18_android.html">App per Android</a></li>
+<li><a href="19_cybersecurity.html">Cybersecurity difensiva</a></li>
+<li><a href="20_distribuzione.html">Distribuire i programmi</a></li>
+<p class="libro-lato-parte">Appendici</p>
+<ul>
+<li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
+<li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
+<li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
+</ul>
+</nav>
+    </div>
+  </aside>
+  <article class="libro-articolo">
+    <p class="libro-parte">Parte I — Le basi</p>
+    <nav class="libro-mini" aria-label="In questo capitolo"><p>In questo capitolo</p><ul><li><a href="#le-liste-cose-in-fila">Le liste: cose in fila</a></li><li><a href="#i-metodi-delle-liste">I metodi delle liste</a></li><li><a href="#i-dizionari-cose-con-un-etichetta">I dizionari: cose con un'etichetta</a></li><li><a href="#costruire-liste-in-una-riga">Costruire liste in una riga</a></li><li><a href="#prova-tu">Prova tu</a></li></ul></nav>
+    <div class="libro-testo">
+<h1>Capitolo 5 — Liste e dizionari</h1>
+<p>Una variabile sola tiene un valore. Ma spesso i dati arrivano in gruppo: i voti di una classe, la spesa della settimana, l'anagrafica di una persona. Per questi casi Leo ha due contenitori fondamentali, che userai in ogni programma di una certa dimensione: le <strong>liste</strong> e i <strong>dizionari</strong>.</p>
+<h2 id="le-liste-cose-in-fila">Le liste: cose in fila</h2>
+<p>Una lista è una sequenza ordinata di valori, scritti tra parentesi quadre e separati da virgole. Gli elementi sono numerati a partire da <strong>zero</strong>; con le quadre prendi quello alla posizione che vuoi, e un indice negativo conta dalla fine:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-61" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-61" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-62" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-62" class="libro-pre"><code>28
+24</code></pre></figure>
+<p>A differenza dei testi, le liste <strong>si possono modificare</strong>. Puoi cambiare un elemento, aggiungerne, toglierne:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-63" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-63" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">]</span>
+<span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span> <span class="c-operatori">=</span> <span class="c-numeri">29</span>
+<span class="c-variabili">voti</span><span class="c-punteggiatura">.</span><span class="c-proprieta">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-numeri">27</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-numeri">27</span> <span class="c-logici">in</span> <span class="c-variabili">voti</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-64" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-64" class="libro-pre"><code><span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">29</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">]</span>
+<span class="c-numeri">4</span>
+<span class="c-valori_speciali">vero</span>
+<span class="c-numeri">108</span></code></pre></figure>
+<p>Qui vedi quattro operazioni molto comuni: <code>voti[1] = 29</code> sostituisce il secondo elemento; <code>voti.aggiungi(27)</code> ne attacca uno in fondo; <code>lunghezza(voti)</code> conta gli elementi; <code>27 in voti</code> controlla se un valore è presente (dà <code>vero</code> o <code>falso</code>); <code>somma(voti)</code> addiziona tutti i numeri. La parolina <code>in</code> è preziosa: la ritroverai nei cicli e nelle condizioni.</p>
+<h2 id="i-metodi-delle-liste">I metodi delle liste</h2>
+<p>Oltre ad <code>aggiungi</code>, le liste hanno diversi metodi per rimescolare e cercare:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-65" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-65" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">numeri</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">]</span>
+<span class="c-variabili">numeri</span><span class="c-punteggiatura">.</span><span class="c-proprieta">ordina</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">numeri</span><span class="c-punteggiatura">.</span><span class="c-proprieta">inverti</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">.</span><span class="c-proprieta">trova</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">numeri</span><span class="c-punteggiatura">.</span><span class="c-proprieta">rimuovi</span><span class="c-punteggiatura">(</span><span class="c-numeri">3</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">.</span><span class="c-proprieta">estrai</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">numeri</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-66" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-66" class="libro-pre"><code>[1, 2, 3]
+[3, 2, 1]
+0
+[2, 1]
+1
+[2]</code></pre></figure>
+<p><code>.ordina()</code> mette in ordine (crescente di serie), <code>.inverti()</code> rovescia, <code>.trova(x)</code> dà la posizione del primo elemento uguale a <code>x</code>, <code>.rimuovi(x)</code> toglie la prima occorrenza di <code>x</code>, <code>.estrai()</code> toglie e restituisce l'ultimo elemento (o quello all'indice che indichi). Attenzione a una sottigliezza: questi metodi <strong>cambiano la lista sul posto</strong> e non restituiscono la lista modificata. Per questo scriviamo <code>numeri.ordina()</code> su una riga e poi <code>scrivi(numeri)</code> su un'altra, e non <code>scrivi(numeri.ordina())</code> (che stamperebbe <code>nulla</code>). È il contrario dei metodi dei testi, che invece restituiscono sempre un valore nuovo; la ragione è proprio che i testi non si modificano e le liste sì.</p>
+<h2 id="i-dizionari-cose-con-un-etichetta">I dizionari: cose con un'etichetta</h2>
+<p>In una lista ritrovi un valore sapendo la sua <em>posizione</em>. In un dizionario lo ritrovi sapendo la sua <em>etichetta</em> — che si chiama <strong>chiave</strong>. Un dizionario è un insieme di coppie «chiave → valore», scritte tra graffe:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-67" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-67" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">persona</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"eta"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">36</span><span class="c-punteggiatura">}</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">persona</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">persona</span><span class="c-punteggiatura">[</span><span class="c-testi">"citta"</span><span class="c-punteggiatura">]</span> <span class="c-operatori">=</span> <span class="c-testi">"Londra"</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">persona</span><span class="c-punteggiatura">.</span><span class="c-proprieta">prendi</span><span class="c-punteggiatura">(</span><span class="c-testi">"email"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"-"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">persona</span><span class="c-punteggiatura">.</span><span class="c-proprieta">ha</span><span class="c-punteggiatura">(</span><span class="c-testi">"eta"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">chiave</span> <span class="c-logici">in</span> <span class="c-variabili">persona</span> <span class="c-flusso">fai</span>
+    <span class="c-libreria">scrivi</span> <span class="c-testi">"</span><span class="c-interpolazione">{</span><span class="c-variabili">chiave</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">persona</span><span class="c-punteggiatura">[</span><span class="c-variabili">chiave</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">"</span>
+<span class="c-flusso">fine</span></code></pre></figure>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-68" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-68" class="libro-pre"><code><span class="c-testo_normale">Ada</span>
+<span class="c-operatori">-</span>
+<span class="c-valori_speciali">vero</span>
+<span class="c-testo_normale">nome</span><span class="c-punteggiatura">:</span> <span class="c-testo_normale">Ada</span>
+<span class="c-testo_normale">eta</span><span class="c-punteggiatura">:</span> <span class="c-numeri">36</span>
+<span class="c-testo_normale">citta</span><span class="c-punteggiatura">:</span> <span class="c-testo_normale">Londra</span></code></pre></figure>
+<p>Con le quadre e la chiave leggi un valore (<code>persona["nome"]</code>) e, assegnando a una chiave nuova, la aggiungi (<code>persona["citta"] = "Londra"</code>). Ma cosa succede se chiedi una chiave che non esiste? <code>persona["email"]</code> darebbe un errore (<code>ErroreChiave</code>). Per questo esistono due vie sicure: <code>.prendi(chiave, predefinito)</code> restituisce il valore o, se la chiave manca, il valore di riserva che indichi (qui <code>"-"</code>); e <code>.ha(chiave)</code> dice semplicemente se la chiave c'è. Infine, un ciclo <code>per ogni chiave in persona</code> scorre tutte le chiavi: lo vedremo nel dettaglio nel prossimo capitolo.</p>
+<p>Le chiavi di un dizionario sono di solito testi, ma possono anche essere interi o valori logici. I valori, invece, possono essere qualunque cosa: numeri, testi, altre liste, altri dizionari. Annidando liste e dizionari si rappresentano dati anche molto ricchi — pensa a una rubrica, dove ogni contatto è un dizionario e tutti i contatti stanno in una lista.</p>
+<h2 id="costruire-liste-in-una-riga">Costruire liste in una riga</h2>
+<p>Capita spesso di voler costruire una lista calcolando ogni elemento a partire da un'altra sequenza. Leo ha una forma compatta ed elegante per farlo, la <strong>comprensione di lista</strong>:</p>
+<figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-69" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-69" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">quadrati</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-variabili">n</span> <span class="c-operatori">*</span> <span class="c-variabili">n</span> <span class="c-flusso">per ogni</span> <span class="c-variabili">n</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">5</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">quadrati</span><span class="c-punteggiatura">)</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">pari</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-variabili">n</span> <span class="c-flusso">per ogni</span> <span class="c-variabili">n</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-numeri">10</span> <span class="c-flusso">se</span> <span class="c-variabili">n</span> <span class="c-operatori">%</span> <span class="c-numeri">2</span> <span class="c-operatori">==</span> <span class="c-numeri">0</span><span class="c-punteggiatura">]</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">pari</span><span class="c-punteggiatura">)</span></code></pre></figure>
+<figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-70" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-70" class="libro-pre"><code>[1, 4, 9, 16, 25]
+[2, 4, 6, 8, 10]</code></pre></figure>
+<p>Si legge quasi come una frase: «<code>n * n</code>, per ogni <code>n</code> da 1 a 5» costruisce la lista dei quadrati; e aggiungendo una condizione <code>se</code> tieni solo gli elementi che vuoi — qui i numeri pari da 1 a 10. È una scrittura che condensa in una riga quello che altrimenti richiederebbe un ciclo di tre o quattro. All'inizio può sembrare densa; con un po' di pratica diventa una delle cose che renderanno i tuoi programmi più leggibili.</p>
+<p>(Hai notato <code>1..5</code> e <code>1..10</code>? Sono <strong>intervalli</strong>: un modo breve per dire «tutti i numeri da qui a lì». Li incontreremo di nuovo, da protagonisti, nel prossimo capitolo.)</p>
+<h2 id="prova-tu">Prova tu</h2>
+<ol><li>Parti da una lista della spesa con quattro voci. Aggiungine una, togline una, ordina la lista in ordine alfabetico e stampa quante voci sono rimaste.</li><li>Costruisci un dizionario che descrive un libro (titolo, autore, anno), poi stampalo in una frase sola usando l'interpolazione. Aggiungi la chiave <code>pagine</code> e ristampalo.</li><li>Usando una comprensione, costruisci la lista dei multipli di 3 da 1 a 30. Poi modificala perché tenga solo quelli che sono anche multipli di 2.</li></ol>
+    </div>
+    <nav class="libro-sfoglia" aria-label="Capitoli">
+<a class="libro-prec" href="04_testi.html"><span>Indietro</span><strong>I testi</strong></a>
+<a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="06_slicing.html"><span>Avanti</span><strong>Intervalli e fette</strong></a>
+</nav>
+  </article>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../telefono.html">Leo sul telefono</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../template.html">Esempi pronti</a></li>
+          <li><a href="../video.html">Videoteca</a></li>
+          <li><a href="../manuale/domande.html">Domande frequenti</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

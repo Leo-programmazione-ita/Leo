@@ -1,0 +1,321 @@
+/* STILE DEL LIBRO DI LEO  (sito/css/libro.css)
+   Generato da strumenti/libro/genera.py — non modificare a mano.
+   Usa i colori del sito (css/stile.css) e i colori del codice del manuale. */
+
+.pagina-libro {
+  --libro-larghezza: 72ch;
+  --libro-lato: 264px;
+  background: var(--fondo);
+  color: var(--testo);
+}
+
+/* ---------------------------------------------------------- impaginazione */
+.libro-guscio {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 40px);
+  display: grid;
+  grid-template-columns: var(--libro-lato) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 60px);
+  align-items: start;
+}
+.libro-guscio-cover { display: block; }
+.libro-articolo {
+  min-width: 0;
+  width: 100%;
+  max-width: var(--libro-larghezza);
+  margin: 0 auto;
+  padding: 36px 0 90px;
+}
+.libro-articolo-cover { max-width: 860px; }
+
+/* ---------------------------------------------------------- barra laterale */
+.libro-lato {
+  position: sticky;
+  top: calc(var(--altezza-testata, 68px) + 1px);
+  align-self: start;
+}
+.libro-lato-interno {
+  max-height: calc(100vh - var(--altezza-testata, 68px) - 1px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 30px 12px 48px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bordo-forte) transparent;
+}
+.libro-lato-interno::-webkit-scrollbar { width: 8px; }
+.libro-lato-interno::-webkit-scrollbar-thumb { background: var(--bordo-forte); border-radius: 8px; }
+.libro-lato-cop {
+  display: block; font-weight: 700; color: var(--testo); text-decoration: none;
+  padding: 6px 10px; border-radius: 7px; margin-bottom: 6px;
+}
+.libro-lato-cop:hover { background: var(--superficie); }
+.libro-lato-parte {
+  margin: 20px 0 6px; font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--testo-3);
+  display: flex; align-items: center; gap: 9px;
+}
+.libro-lato-parte::before { content: ""; width: 13px; height: 2px; background: var(--accento); }
+.libro-lato-nav ul { list-style: none; margin: 0 0 4px; padding: 0; }
+.libro-lato-nav li a {
+  display: block; padding: 6px 10px; border-radius: 7px; text-decoration: none;
+  color: var(--testo-2); font-size: 14.5px; line-height: 1.4;
+  border-left: 2px solid transparent;
+}
+.libro-lato-nav li a:hover { color: var(--testo); background: var(--superficie); }
+.libro-lato-nav li a[aria-current="page"] {
+  color: var(--accento-vivo); background: var(--accento-tenue);
+  border-left-color: var(--accento); font-weight: 600;
+}
+
+/* ---------------------------------------------------------- tipografia */
+.libro-parte {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--accento-vivo); margin: 0 0 6px;
+}
+.libro-parte-stacco { margin-top: 10px; }
+.libro-testo { font-size: 18px; line-height: 1.72; color: var(--testo); }
+.libro-testo h1 {
+  font-family: var(--car-titoli); font-size: clamp(30px, 4.2vw, 42px); line-height: 1.12;
+  letter-spacing: -.015em; margin: .1em 0 .5em;
+}
+.libro-testo h2 {
+  font-family: var(--car-titoli); font-size: clamp(23px, 3vw, 29px); line-height: 1.2;
+  letter-spacing: -.01em; margin: 1.9em 0 .55em; padding-top: .3em;
+  border-top: 1px solid var(--bordo); padding-top: 1.1em;
+}
+.libro-testo h3 { font-size: 20px; line-height: 1.3; margin: 1.5em 0 .4em; color: var(--testo); }
+.libro-testo h4 { font-size: 17px; margin: 1.3em 0 .35em; color: var(--testo-2); }
+.libro-testo p { margin: 0 0 1.05em; }
+.libro-testo a { color: var(--accento-vivo); text-underline-offset: 2px; }
+.libro-testo strong { color: var(--testo); font-weight: 700; }
+.libro-testo ul, .libro-testo ol { margin: 0 0 1.1em; padding-left: 1.4em; }
+.libro-testo li { margin: .3em 0; }
+.libro-testo li::marker { color: var(--accento); }
+.libro-testo code {
+  font-family: var(--car-codice); font-size: .88em;
+  background: var(--superficie); border: 1px solid var(--bordo);
+  border-radius: 5px; padding: .08em .36em; color: var(--testo);
+}
+.libro-testo blockquote {
+  margin: 1.2em 0; padding: .3em 0 .3em 1.1em; border-left: 3px solid var(--accento);
+  color: var(--testo-2); font-style: italic;
+}
+.libro-testo blockquote p { margin: .3em 0; }
+.libro-testo hr { border: 0; border-top: 1px solid var(--bordo); margin: 2em 0; }
+
+/* ---------------------------------------------------------- tabelle */
+.libro-tabella { overflow-x: auto; margin: 1.3em 0; }
+.libro-tabella table { border-collapse: collapse; width: 100%; font-size: 15.5px; }
+.libro-tabella th, .libro-tabella td {
+  text-align: left; padding: 9px 14px; border-bottom: 1px solid var(--bordo); vertical-align: top;
+}
+.libro-tabella thead th {
+  color: var(--accento-vivo); font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em;
+  border-bottom: 1px solid var(--bordo-forte);
+}
+.libro-tabella code { white-space: nowrap; }
+
+/* ---------------------------------------------------------- codice */
+/* I riquadri di codice sono SEMPRE scuri (anche nel tema chiaro): i colori del
+   codice sono pensati per uno sfondo scuro, come nell'editor di Leo Studio. */
+.libro-codice {
+  margin: 1.4em 0; border: 1px solid #1E1E25; border-radius: 12px;
+  overflow: hidden; background: #0A0A0C;
+}
+.libro-cod-barra {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 7px 12px 7px 14px; background: #121217;
+  border-bottom: 1px solid #1E1E25;
+}
+.libro-cod-nome { font-size: 12.5px; font-weight: 600; color: #8A8A94; letter-spacing: .02em; }
+.libro-codice-leo .libro-cod-nome { color: #FF4D5E; }
+.libro-copia {
+  display: inline-flex; align-items: center; gap: 6px; border: 1px solid #2B2B31;
+  background: transparent; color: #BDB8AC; border-radius: 7px; padding: 4px 9px;
+  font-size: 12.5px; cursor: pointer; font-family: inherit;
+}
+.libro-copia:hover { color: #F5F3EF; border-color: #3A3A42; background: #16161C; }
+.libro-copia svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.libro-pre {
+  margin: 0; padding: 16px 18px; overflow-x: auto;
+  font-family: var(--car-codice); font-size: 14.5px; line-height: 1.62;
+  color: #E6E6EA; tab-size: 4;
+}
+.libro-pre code { font: inherit; background: none; border: 0; padding: 0; }
+.libro-codice-out .libro-pre { color: #B6B6C0; }
+
+/* colori del codice Leo (presi dal sito) */
+.c-testo_normale { color: #E6E6EA; }
+.c-flusso { color: #FF3B4E; font-weight: 700; }
+.c-dichiarazioni { color: #FF8A9A; font-weight: 700; }
+.c-errori { color: #FF5C8A; font-weight: 700; }
+.c-logici { color: #D9A3AA; }
+.c-valori_speciali { color: #FF8C42; font-style: italic; }
+.c-numeri { color: #FFBE8C; }
+.c-testi { color: #FFB020; }
+.c-interpolazione { color: #FFE08A; }
+.c-libreria { color: #FFC7CE; }
+.c-funzioni_utente { color: #FFC7CE; font-style: italic; }
+.c-controlli { color: #D2D2D8; }
+.c-proprieta { color: #A8A8B3; }
+.c-commenti { color: #8A8A94; font-style: italic; }
+.c-variabili { color: #F2C94C; }
+.c-costanti { color: #6FCF97; }
+.c-parametri { color: #FF9E7A; }
+.c-campi { color: #A6C8FF; }
+.c-eventi { color: #FF7B72; }
+.c-operatori { color: #C4C4CC; }
+.c-punteggiatura { color: #9A9AA6; }
+
+/* ---------------------------------------------------------- copertina */
+.libro-cover { text-align: center; padding: clamp(28px, 6vw, 72px) 0 10px; }
+.libro-cover-sopra {
+  color: var(--accento-vivo); font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
+  font-size: 13px; margin: 0 0 10px;
+}
+.libro-cover h1 {
+  font-family: var(--car-titoli); font-size: clamp(64px, 16vw, 150px); line-height: .9;
+  margin: 0; letter-spacing: -.03em;
+  background: linear-gradient(180deg, var(--testo), var(--accento-vivo) 180%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.libro-cover-sotto {
+  max-width: 44ch; margin: 18px auto 0; font-size: 19px; line-height: 1.6; color: var(--testo-2);
+}
+.libro-cover-azioni { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 28px 0 8px; }
+.libro-cover-nota {
+  max-width: 54ch; margin: 24px auto 0; font-size: 14.5px; color: var(--testo-3); line-height: 1.6;
+}
+.libro-cover-nota code {
+  font-family: var(--car-codice); font-size: .9em; background: var(--superficie);
+  padding: .05em .35em; border-radius: 4px; border: 1px solid var(--bordo);
+}
+
+/* ---------------------------------------------------------- indice */
+.libro-indice { margin-top: clamp(24px, 5vw, 48px); }
+.libro-indice-parte { margin: 0 0 30px; }
+.libro-indice-parte h2 {
+  font-family: var(--car-titoli); font-size: 15px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--testo-3); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--bordo);
+}
+.libro-indice-voci { list-style: none; margin: 0; padding: 0; counter-reset: voce; }
+.libro-indice-voci li { margin: 0 0 4px; }
+.libro-indice-voci li a {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; align-items: baseline;
+  padding: 12px 14px; border-radius: 10px; text-decoration: none; color: var(--testo);
+  border: 1px solid transparent;
+}
+.libro-indice-voci li a:hover { background: var(--superficie); border-color: var(--bordo); }
+.libro-indice-tit { font-weight: 600; font-size: 17px; }
+.libro-indice-tit::before {
+  counter-increment: voce; content: counter(voce) ".";
+  color: var(--accento); font-weight: 700; margin-right: 8px;
+}
+.libro-indice-desc { grid-column: 2; color: var(--testo-2); font-size: 14.5px; line-height: 1.5; }
+@media (max-width: 620px) {
+  .libro-indice-voci li a { grid-template-columns: 1fr; }
+  .libro-indice-desc { grid-column: 1; }
+}
+
+/* ---------------------------------------------------------- navigazione / mini-indice */
+.libro-mini {
+  margin: 0 0 26px; padding: 16px 18px; border: 1px solid var(--bordo);
+  border-radius: 12px; background: var(--superficie);
+}
+.libro-mini p { margin: 0 0 8px; font-size: 12.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--testo-3); }
+.libro-mini ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 24px; }
+.libro-mini li { margin: 0 0 5px; break-inside: avoid; }
+.libro-mini a { color: var(--testo-2); text-decoration: none; font-size: 14.5px; }
+.libro-mini a:hover { color: var(--accento-vivo); }
+@media (max-width: 620px) { .libro-mini ul { columns: 1; } }
+
+.libro-sfoglia {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch;
+  margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--bordo);
+}
+.libro-sfoglia a {
+  text-decoration: none; border: 1px solid var(--bordo); border-radius: 12px; padding: 12px 16px;
+  color: var(--testo); background: var(--superficie); transition: border-color .15s, background .15s;
+}
+.libro-sfoglia a:hover { border-color: var(--accento); background: var(--superficie-2); }
+.libro-sfoglia span { display: block; font-size: 12px; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--testo-3); margin-bottom: 3px; }
+.libro-sfoglia strong { font-size: 15px; color: var(--testo); }
+.libro-succ { text-align: right; }
+.libro-su {
+  display: flex; align-items: center; justify-content: center; font-size: 14px;
+  color: var(--testo-2); white-space: nowrap;
+}
+@media (max-width: 620px) {
+  .libro-sfoglia { grid-template-columns: 1fr 1fr; }
+  .libro-su { grid-column: 1 / -1; order: -1; }
+}
+
+.libro-completa-testa { margin-bottom: 20px; }
+.libro-completa-nota { color: var(--testo-2); }
+.libro-capitolo { scroll-margin-top: calc(var(--altezza-testata, 68px) + 12px); }
+
+/* ---------------------------------------------------------- telefono/tablet */
+@media (max-width: 920px) {
+  .libro-guscio { grid-template-columns: 1fr; }
+  .libro-lato {
+    position: static; max-height: none; margin: 0 auto; width: 100%; max-width: var(--libro-larghezza);
+  }
+  .libro-lato-interno { max-height: none; overflow: visible; padding: 16px 0 8px; }
+  .libro-lato-nav {
+    border: 1px solid var(--bordo); border-radius: 12px; padding: 14px 16px; background: var(--superficie);
+  }
+}
+
+/* ====================================================================== STAMPA */
+@media print {
+  .testata, .piede, .avviso-rete, .salta, .libro-lato, .libro-sfoglia,
+  .libro-mini, .libro-copia, .libro-cod-barra, .libro-cover-azioni { display: none !important; }
+  html, body { background: #fff !important; color: #111 !important; }
+  .libro-guscio { display: block; max-width: none; padding: 0; }
+  .libro-articolo { max-width: 100%; padding: 0; margin: 0; }
+  .libro-testo { font-size: 11.5pt; line-height: 1.55; color: #111; }
+  .libro-testo h1, .libro-testo h2, .libro-testo h3, .libro-testo h4 { color: #111; border: 0; }
+  .libro-testo h2 { padding-top: 0; }
+  .libro-testo a { color: #111; text-decoration: underline; }
+  .libro-testo strong { color: #111 !important; }
+  .libro-testo em { color: #111; }
+  .libro-testo blockquote { color: #333; border-left-color: #8C0A1A; }
+  .libro-parte { color: #8C0A1A; }
+  .libro-capitolo, .libro-parte-stacco { break-before: page; page-break-before: always; }
+  .libro-completa-testa { break-after: avoid; }
+  .libro-codice {
+    border: 1px solid #ccc; background: #fafafa; break-inside: avoid; page-break-inside: avoid;
+  }
+  .libro-pre { color: #111; font-size: 9.5pt; white-space: pre-wrap; word-wrap: break-word; }
+  .libro-testo code { background: #f2f2f2; border-color: #ddd; color: #111; }
+  .libro-tabella th { color: #111; }
+  .libro-cover { padding: 0; min-height: 60vh; }
+  .libro-cover h1 { color: #111 !important; -webkit-text-fill-color: #111; background: none; }
+  .libro-indice-voci li a { break-inside: avoid; }
+.c-testo_normale { color: #111114 !important; }
+  .c-flusso { color: #C8102E !important; }
+  .c-dichiarazioni { color: #B0304F !important; }
+  .c-errori { color: #A3124F !important; }
+  .c-logici { color: #8A4A55 !important; }
+  .c-valori_speciali { color: #B34700 !important; }
+  .c-numeri { color: #A84E00 !important; }
+  .c-testi { color: #8A5A00 !important; }
+  .c-interpolazione { color: #6F5200 !important; }
+  .c-libreria { color: #7A1F2B !important; }
+  .c-funzioni_utente { color: #7A1F2B !important; }
+  .c-controlli { color: #3C3C46 !important; }
+  .c-proprieta { color: #5A5A66 !important; }
+  .c-commenti { color: #6A6A75 !important; }
+  .c-variabili { color: #6E5E00 !important; }
+  .c-costanti { color: #1A7F37 !important; }
+  .c-parametri { color: #B2451F !important; }
+  .c-campi { color: #1F5FA8 !important; }
+  .c-eventi { color: #C0392B !important; }
+  .c-operatori { color: #4A4A55 !important; }
+  .c-punteggiatura { color: #5F5F6B !important; }
+
+}
