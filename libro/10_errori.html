@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 10 — Quando qualcosa va storto</h1>
 <p>Gli errori non sono un incidente raro: sono parte della vita di ogni programma. Un file non c'è, un utente scrive «trenta» invece di «30», una divisione cade su uno zero. Un buon programma non pretende che il mondo sia perfetto: <em>prevede</em> gli imprevisti e li gestisce con grazia. Leo ha strumenti chiari per farlo, e — cosa non scontata — messaggi d'errore pensati per essere letti.</p>
+<blockquote><p><strong>💡 L'idea — Un allarme antifumo</strong></p>
+<p>Pensa a un'eccezione come all'allarme antifumo di casa: quando sente il pericolo interrompe tutto e lo segnala subito, con un suono che non puoi ignorare. È molto meglio di una casa che brucia in silenzio. Un errore che si fa sentire al momento giusto ti permette di intervenire prima che il guaio si propaghi.</p></blockquote>
 <h2 id="leggere-un-errore">Leggere un errore</h2>
 <p>Partiamo da un errore <em>non</em> gestito, per imparare a leggerlo. Questo programma divide per zero:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-111" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-111" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">dividi</span><span class="c-punteggiatura">(</span><span class="c-parametri">a</span><span class="c-punteggiatura">,</span> <span class="c-parametri">b</span><span class="c-punteggiatura">)</span>
@@ -137,6 +141,8 @@ Chiamate (dalla più recente):
     programma.leo:2  dentro `dividi(a = 10, b = 0)`
     programma.leo:4  nel programma principale</code></pre></figure>
 <p>Ogni messaggio di Leo ha la stessa struttura, e vale la pena imparare a leggerla. In alto: il <strong>tipo</strong> di errore (<code>ErroreDivisione</code>) e <em>dove</em> è successo (riga 2, colonna 19). Poi la riga di codice incriminata, con un accento circonflesso sotto il punto esatto. Poi la <strong>spiegazione</strong> in italiano («Divisione per zero.»). E infine, cosa rara e preziosa, l'elenco delle <strong>chiamate</strong>: da dove è partito tutto. Qui leggiamo che <code>dividi</code> è stato chiamato con <code>a = 10, b = 0</code> dalla riga 4 del programma principale. Nei programmi grandi questa traccia è una bussola: ti porta dritto all'origine del problema.</p>
+<blockquote><p><strong>🦁 Curiosità — Il primo «bug» era un insetto vero</strong></p>
+<p>Nel 1947, cercando un guasto nel calcolatore Harvard Mark II, i tecnici del gruppo di Grace Hopper trovarono una falena incastrata in un relè: la staccarono, la incollarono nel registro di bordo e annotarono «primo caso reale di bug trovato». Da lì chiamiamo «bug» un errore e «debugging» il lavoro di scovarlo. Per onestà: la parola «bug» per un difetto tecnico girava già ai tempi di Edison; questo è però il caso famoso dell'insetto preso con le mani nel sacco.</p></blockquote>
 <p>I tipi di errore più comuni hanno nomi che si spiegano da soli: <code>ErroreNome</code> (una variabile che non esiste), <code>ErroreTipo</code> (operazioni tra tipi incompatibili, come <code>"3" + 4</code>), <code>ErroreValore</code> (il tipo è giusto ma il valore no, come <code>intero("ciao")</code>), <code>ErroreIndice</code> (fuori dai limiti di una lista), <code>ErroreChiave</code> (chiave assente in un dizionario), <code>ErroreFile</code> (file che non si apre).</p>
 <h2 id="prova-cattura-infine"><code>prova</code>, <code>cattura</code>, <code>infine</code></h2>
 <p>Per <em>gestire</em> un errore invece di subirlo, si racchiude il codice rischioso in un blocco <code>prova</code>, e si dice con <code>cattura</code> cosa fare se qualcosa va storto:</p>
@@ -231,7 +237,7 @@ Ho finito di provare.</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

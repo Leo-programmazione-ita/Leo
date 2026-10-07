@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -132,6 +134,8 @@
 Dopo aver segnato: 10
 Con il bonus: 15</code></pre></figure>
 <p>Nota la differenza: la <strong>prima</strong> volta serve <code>variabile</code> (stai creando il cassetto); le volte successive no (il cassetto esiste già, lo stai solo riempiendo di nuovo). L'ultima riga usa <code>+=</code>, una scorciatoia che vuol dire «aggiungi a quello che c'è già»: <code>punti += 5</code> è identico a <code>punti = punti + 5</code>. Esistono anche <code>-=</code>, <code>*=</code> e <code>/=</code>, con lo stesso senso.</p>
+<blockquote><p><strong>💡 L'idea — L'etichetta e il contenuto</strong></p>
+<p>Una variabile è come un armadietto con un'etichetta. Il nome che scegli è l'etichetta incollata sullo sportello; il valore è ciò che hai messo dentro. Quando scrivi <code>punti = 10</code> stai cambiando il contenuto dell'armadietto, non l'etichetta: il nome resta lo stesso, cambia solo quello che custodisce. Ecco perché puoi riempirlo e svuotarlo quante volte vuoi senza doverlo ri-dichiarare.</p></blockquote>
 <p>Questa regola — <code>variabile</code> solo alla nascita — non è una formalità noiosa. Serve a proteggerti dai refusi. Se scrivi per sbaglio <code>pnuti = 3</code> pensando a <code>punti</code>, Leo non crea di nascosto una variabile nuova: si ferma e te lo dice.</p>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-21" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-21" class="libro-pre"><code>ErroreNome alla riga 1, colonna 1 di programma.leo
 
@@ -164,6 +168,8 @@ Suggerimento: Scrivi `variabile pnuti = 3`; dopo, per cambiarle valore, basta `p
 `IVA` è una costante: non si può cambiare il suo valore.
 Suggerimento: Se deve cambiare, dichiarala con `variabile` invece di `costante`.</code></pre></figure>
 <p>Non è una punizione: è una rete di sicurezza. Dichiarare costante un valore che non deve cambiare documenta la tua intenzione e impedisce che un errore distratto lo modifichi. Usa <code>costante</code> ogni volta che puoi; <code>variabile</code> solo quando il valore deve davvero cambiare.</p>
+<blockquote><p><strong>🦁 Curiosità — La costante che definisce il metro</strong></p>
+<p>La velocità della luce nel vuoto vale esattamente 299.792.458 metri al secondo. «Esattamente» non è un modo di dire: dal 1983 quel numero è fissato per convenzione, e il metro viene definito a partire da esso, come la distanza che la luce percorre in una frazione precisa di secondo. In natura come nel codice, una costante serve proprio a questo: dare un nome stabile a un valore su cui tutto il resto può appoggiarsi.</p></blockquote>
 <h2 id="più-valori-in-una-volta-sola">Più valori in una volta sola</h2>
 <p>Una dichiarazione (o un'assegnazione) può riguardare più nomi insieme, separati da virgole. È comodo quando i valori arrivano da una lista o quando vuoi assegnarne diversi in una riga:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-27" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-27" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">,</span> <span class="c-variabili">anni</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"Beatrice"</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">]</span>
@@ -231,7 +237,7 @@ a vale 2, b vale 1</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

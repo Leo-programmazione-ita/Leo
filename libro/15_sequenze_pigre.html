@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -126,6 +128,8 @@
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">primi5</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-151" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-151" class="libro-pre"><code>[1, 2, 3, 4, 5]</code></pre></figure>
 <p>La chiave è che, fino al <code>.prendi(5)</code>, non è stato calcolato <em>niente</em>: la sequenza infinita è solo una <em>ricetta</em> per produrre numeri. Solo quando chiedi i primi cinque, Leo ne genera cinque e si ferma. Questo è il senso della pigrizia: il lavoro si fa all'ultimo momento utile, e solo quel tanto che serve.</p>
+<blockquote><p><strong>💡 L'idea — Come un rubinetto</strong></p>
+<p>Una sequenza pigra è come un rubinetto: l'acqua esce solo quando apri, e nella quantità che ti serve, non tutta insieme ad allagare la stanza. I valori si calcolano uno alla volta, nel momento in cui li chiedi. È per questo che puoi perfino avere sequenze infinite e prenderne tranquillamente solo i primi pezzi.</p></blockquote>
 <h2 id="trasformare-senza-materializzare">Trasformare senza materializzare</h2>
 <p>Il bello arriva quando concateni trasformazioni. <code>.mappa(...)</code> e <code>.filtra(...)</code> funzionano come le loro versioni sulle liste (Capitolo 9), ma restano pigre: non producono una lista intermedia, descrivono soltanto <em>come</em> trasformare ogni elemento quando verrà il suo turno.</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-152" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-152" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">quadrati</span> <span class="c-operatori">=</span> <span class="c-libreria">numeri_infiniti</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">mappa</span><span class="c-punteggiatura">(</span><span class="c-dichiarazioni">funzione</span> <span class="c-punteggiatura">(</span><span class="c-parametri">x</span><span class="c-punteggiatura">)</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">x</span> <span class="c-operatori">*</span> <span class="c-parametri">x</span> <span class="c-flusso">fine</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">prendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">5</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">a_lista</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
@@ -135,6 +139,8 @@
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-153" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-153" class="libro-pre"><code>[1, 4, 9, 16, 25]
 [2, 4, 6, 8]</code></pre></figure>
 <p>Rifletti su cosa succede nella seconda riga: stiamo filtrando i pari <em>di una sequenza infinita</em> e ne prendiamo quattro. Con le liste normali sarebbe impossibile — non puoi filtrare una lista infinita, non finiresti mai. Con le sequenze pigre funziona perché Leo genera numeri solo finché non ne ha trovati quattro pari, poi si ferma.</p>
+<blockquote><p><strong>🦁 Curiosità — Più grande della memoria</strong></p>
+<p>Proprio perché ogni elemento si calcola solo nell'istante in cui serve, una sequenza pigra ti permette di lavorare con elenchi più grandi della memoria stessa del computer. Nessuno chiede mai di tenere tutto in mano nello stesso momento: si legge un valore, lo si usa e lo si lascia andare. È la differenza tra leggere un libro pagina per pagina e pretendere di tenerne a mente tutte le pagine in una volta sola.</p></blockquote>
 <h2 id="fermarsi-al-momento-giusto">Fermarsi al momento giusto</h2>
 <p>Oltre a <code>.prendi(n)</code>, ci sono modi più espressivi per decidere dove fermarsi o da dove partire:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-154" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-154" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">piccoli</span> <span class="c-operatori">=</span> <span class="c-libreria">numeri_infiniti</span><span class="c-punteggiatura">(</span><span class="c-numeri">1</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">finche</span><span class="c-punteggiatura">(</span><span class="c-dichiarazioni">funzione</span> <span class="c-punteggiatura">(</span><span class="c-parametri">x</span><span class="c-punteggiatura">)</span> <span class="c-dichiarazioni">restituisci</span> <span class="c-parametri">x</span> <span class="c-operatori">&lt;</span> <span class="c-numeri">6</span> <span class="c-flusso">fine</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-proprieta">a_lista</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
@@ -196,7 +202,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 4 — I testi</h1>
 <p>Un <strong>testo</strong> (gli informatici lo chiamano <em>stringa</em>) è una sequenza di caratteri: una parola, una frase, un intero paragrafo. In Leo i testi vanno tra virgolette doppie e sono tra i tipi che userai di più, perché quasi ogni programma, prima o poi, deve dire o leggere qualcosa.</p>
+<blockquote><p><strong>💡 L'idea — Una collana di perline</strong></p>
+<p>Immagina un testo come una collana di perline: ogni perlina è un carattere, infilato in un ordine preciso. La parola «Leo» è tre perline — <code>L</code>, <code>e</code>, <code>o</code> — in quella sequenza e non in un'altra. Da questa immagine seguono due cose naturali: puoi contare le perline (la lunghezza del testo) e puoi sfilarne un tratto (una «fetta» di caratteri), proprio come faremo più avanti.</p></blockquote>
 <h2 id="l-interpolazione-testi-che-si-riempiono-da-soli">L'interpolazione: testi che si riempiono da soli</h2>
 <p>L'abbiamo già incontrata, ma ora le diamo il posto che merita. Dentro un testo tra virgolette, tutto ciò che metti tra <strong>graffe</strong> <code>{…}</code> viene calcolato, e il risultato prende quel posto. Questo si chiama <strong>interpolazione</strong>:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-51" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-51" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">nome</span> <span class="c-operatori">=</span> <span class="c-testi">"Beatrice"</span>
@@ -161,6 +165,8 @@ Graffe vere: {ciao}</code></pre></figure>
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">nome</span><span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-58" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-58" class="libro-pre"><code><span class="c-testo_normale">B</span>
 <span class="c-logici">e</span></code></pre></figure>
+<blockquote><p><strong>🦁 Curiosità — Ogni emoji ha un numero</strong></p>
+<p>Dietro ogni carattere che vedi c'è un numero, stabilito da uno standard internazionale chiamato Unicode. Non solo le lettere dell'alfabeto: anche gli ideogrammi cinesi, l'alfabeto greco, i simboli matematici e persino le emoji hanno ciascuno il proprio codice. I caratteri definiti da Unicode sono oltre centomila, e crescono a ogni nuova versione. Quando Leo conta le lettere di una parola, in fondo conta questi caratteri, qualunque sia la lingua.</p></blockquote>
 <p>Una cosa importante, che all'inizio sorprende: in Leo <strong>i testi non si modificano</strong>. Non puoi cambiare una lettera «sul posto». Tutti i metodi che sembrano cambiare un testo in realtà ne restituiscono uno <em>nuovo</em>, lasciando intatto l'originale. È una scelta che rende i programmi più prevedibili.</p>
 <h2 id="i-metodi-dei-testi">I metodi dei testi</h2>
 <p>Un <strong>metodo</strong> è una funzione che appartiene a un valore e si chiama con il punto. I testi ne hanno parecchi; ecco i più usati:</p>
@@ -217,7 +223,7 @@ Graffe vere: {ciao}</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

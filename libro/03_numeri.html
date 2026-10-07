@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -122,6 +124,8 @@
 <p>I numeri sono ovunque: punteggi, prezzi, misure, conteggi. Leo li prende sul serio e offre più tipi di numero, ciascuno adatto a un mestiere. In questo capitolo li incontriamo tutti: gli interi, i decimali, il denaro e le frazioni.</p>
 <h2 id="interi-e-decimali">Interi e decimali</h2>
 <p>Un <strong>intero</strong> è un numero senza virgola: <code>42</code>, <code>-7</code>, <code>0</code>. Un <strong>decimale</strong> ha la virgola — anzi, in Leo, il <strong>punto</strong>: si scrive <code>3.14</code>, non <code>3,14</code>. È una regola che vale in quasi tutti i linguaggi di programmazione, e ci si abitua in fretta: la virgola, in Leo, serve a separare le cose (gli elementi di una lista, gli argomenti di una funzione), mai a scrivere i decimali.</p>
+<blockquote><p><strong>💡 L'idea — Contare o misurare</strong></p>
+<p>Gli interi sono come contare oggetti: tre mele sono tre mele, un numero netto, senza sfumature. I decimali sono come misurare con un righello: dici «2,7 centimetri», ma sotto la tacca c'è sempre un pelo in più o in meno che non riesci a leggere. Per questo gli interi sono esatti per natura, mentre i decimali portano con sé, quasi sempre, una piccola approssimazione — come vedremo tra poco con i soldi.</p></blockquote>
 <p>Le operazioni sono quelle che conosci dalla scuola:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-33" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-33" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-numeri">7</span> <span class="c-operatori">+</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span>
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-numeri">7</span> <span class="c-operatori">-</span> <span class="c-numeri">2</span><span class="c-punteggiatura">)</span>
@@ -184,6 +188,8 @@
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-44" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-44" class="libro-pre"><code>6,50 €
 0,30 €</code></pre></figure>
 <p>Niente code di zeri: trenta centesimi sono trenta centesimi. Nota due cose. Si crea un importo da un testo (<code>soldi("10.00")</code>), così non si eredita l'imprecisione dei decimali fin dalla nascita; e le operazioni si scrivono a parole — <code>.piu(...)</code>, <code>.meno(...)</code> — perché non stiamo facendo aritmetica qualunque, stiamo facendo i conti della serva, e vogliamo che siano giusti al centesimo. Il risultato si stampa già all'italiana, con la virgola e il simbolo dell'euro.</p>
+<blockquote><p><strong>🦁 Curiosità — Quando un'unità sbagliata costa una sonda</strong></p>
+<p>Nel 1999 la NASA perse la sonda Mars Climate Orbiter, un progetto da circa 327 milioni di dollari, proprio mentre si avvicinava a Marte. La causa fu banale e amara: un gruppo di lavoro aveva usato le unità di misura anglosassoni e un altro il sistema metrico, e nessuno dei due convertì i numeri. I conti erano «giusti», ma nelle unità sbagliate. È il promemoria perfetto del perché, con i numeri, contano tanto il tipo e l'unità quanto il valore.</p></blockquote>
 <p>C'è anche un tocco di eleganza tutto italiano: <code>euro_in_lettere</code> scrive un importo in parole, come sugli assegni.</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-45" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-45" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">euro_in_lettere</span><span class="c-punteggiatura">(</span><span class="c-numeri">19.90</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-46" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-46" class="libro-pre"><code>diciannove euro e novanta centesimi</code></pre></figure>
@@ -245,7 +251,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 12 — Dividere il programma in moduli</h1>
 <p>Un file solo va benissimo per i programmi piccoli. Ma quando un progetto cresce, tenere tutto in un unico file diventa come vivere in una stanza sola: si trova sempre peggio ogni cosa. La soluzione è dividere il codice in più file, ciascuno con un suo tema — le forme geometriche di qua, la gestione dei dati di là — e poi comporli. In Leo questo si fa con <code>importa</code>.</p>
+<blockquote><p><strong>💡 L'idea — I cassetti della cucina</strong></p>
+<p>Dividere il codice in moduli è come organizzare una cucina in cassetti: le posate in uno, le spezie in un altro, gli strofinacci in un terzo. Non è che tu abbia più roba, ma sai sempre dove mettere le mani e non rovisti nel caos a ogni ricetta. Un modulo è esattamente questo: un cassetto con dentro le cose che stanno bene insieme.</p></blockquote>
 <h2 id="importare-un-file">Importare un file</h2>
 <p>Immagina di avere un file <code>forme.leo</code> con un po' di funzioni geometriche:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-129" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-129" class="libro-pre"><code><span class="c-commenti"># forme.leo</span>
@@ -150,6 +154,8 @@ Radice: 3.0</code></pre></figure>
 <h2 id="le-regole-del-gioco">Le regole del gioco</h2>
 <p><code>importa</code> è semplice, ma ha qualche regola che vale la pena conoscere, perché ti protegge da errori sottili.</p>
 <ul><li><strong>Ogni file si esegue una volta sola</strong>, anche se lo importi da più punti. Non rischi di ripetere effetti collaterali o di rallentare il programma reimportando lo stesso codice.</li><li><strong>I giri circolari sono vietati.</strong> Se <code>a</code> importa <code>b</code> che a sua volta importa <code>a</code>, Leo se ne accorge e si ferma subito con un messaggio che mostra il giro (<em>«Importazione circolare: a → b → a»</em>). È un invito a ripensare la divisione: di solito la parte comune va estratta in un terzo file che entrambi importano.</li><li><strong>Costanti e funzioni importate restano tali.</strong> Non puoi riassegnare una costante presa da un modulo; le funzioni restano funzioni. Le variabili del modulo, invece, si possono cambiare.</li><li>Se un nome del modulo <strong>esiste già</strong> nel tuo programma, l'errore te lo dice e ti suggerisce la forma <code>importa "..." come nome</code> per tenerli separati.</li></ul>
+<blockquote><p><strong>🦁 Curiosità — Non ripeterti (DRY)</strong></p>
+<p>Uno dei principi più citati di tutta la programmazione si riassume in tre lettere: DRY, «Don't Repeat Yourself», cioè «non ripeterti». L'espressione fu resa celebre dal libro <em>The Pragmatic Programmer</em> (1999) di Andrew Hunt e David Thomas. L'idea è semplice: una cosa va scritta in un posto solo e poi riusata, così quando cambia la correggi una volta e non dieci. I moduli servono proprio a questo.</p></blockquote>
 <h2 id="oltre-la-libreria-python-per-chi-vuole">Oltre: la libreria Python, per chi vuole</h2>
 <p>Leo include già quasi tutto ciò che serve per l'uso normale — lo scopriremo nel tour del Capitolo 15. Ma per chi, un giorno, avesse bisogno di un pacchetto dell'immenso ecosistema Python, la porta c'è: <code>importa python "nome"</code>. È una funzionalità da esperti, e non ne avrai bisogno per un bel pezzo; la citiamo solo perché tu sappia che il tetto, sopra la tua testa, è molto alto. Quando quel momento verrà, la Guida al linguaggio e la scheda <code>PACCHETTI.md</code> ti accompagneranno.</p>
 <h2 id="prova-tu">Prova tu</h2>
@@ -188,7 +194,7 @@ Radice: 3.0</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

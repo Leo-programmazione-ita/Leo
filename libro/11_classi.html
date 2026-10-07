@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 11 — Classi e oggetti</h1>
 <p>Finora abbiamo tenuto i dati da una parte (variabili, liste, dizionari) e il comportamento dall'altra (funzioni). Spesso, però, le due cose vanno insieme: un conto in banca <em>ha</em> un saldo e <em>sa</em> versare e prelevare; una persona <em>ha</em> un nome e <em>sa</em> salutare. Le <strong>classi</strong> permettono di unire dati e comportamento in un unico stampo, da cui creare tanti <strong>oggetti</strong> indipendenti. È il cuore della cosiddetta «programmazione a oggetti», e in Leo ha una forma particolarmente leggibile.</p>
+<blockquote><p><strong>🦁 Curiosità — Nata in Norvegia, battezzata pensando alle cellule</strong></p>
+<p>Le idee alla base della programmazione a oggetti nascono negli anni '60 col linguaggio Simula, creato a Oslo da Ole-Johan Dahl e Kristen Nygaard. L'espressione «object-oriented» la coniò invece Alan Kay, che raccontò di essersi ispirato alle cellule biologiche: tante unità autonome, ciascuna coi propri dati, che collaborano scambiandosi messaggi. Non è poi così diverso da quello che facciamo noi con gli oggetti.</p></blockquote>
 <h2 id="definire-una-classe">Definire una classe</h2>
 <p>Una classe si definisce con <code>classe</code>. Dentro, i dati si dichiarano con <code>ha</code> e i comportamenti con <code>azione</code>. All'interno di un'azione, l'oggetto su cui stai lavorando si chiama <code>questo</code>:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-120" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-120" class="libro-pre"><code><span class="c-testo_normale">classe</span> <span class="c-testo_normale">Persona</span>
@@ -145,6 +149,8 @@ Ciao, sono Marco e ho 0 anni</code></pre></figure>
 <p>Smontiamo con calma. <code>ha nome</code> dichiara un dato (un <em>campo</em>) obbligatorio; <code>ha eta = 0</code> dichiara un campo con valore predefinito, che puoi quindi omettere alla creazione. Le <code>azione</code> sono funzioni che appartengono all'oggetto: dentro, <code>questo.nome</code> e <code>questo.eta</code> leggono e cambiano i dati di <em>quel</em> particolare oggetto.</p>
 <p>Per creare un oggetto — un'<em>istanza</em> della classe — scrivi il nome della classe con i valori tra parentesi: <code>Persona("Ada", 36)</code>. Se preferisci una forma più discorsiva, Leo accetta anche <code>nuovo Persona("Marco")</code>: le due scritture sono equivalenti, scegli quella che si legge meglio. L'oggetto creato risponde ai metodi con il punto: <code>p.saluta()</code>, <code>p.compleanno()</code>.</p>
 <p>Nota che <code>p</code> e <code>q</code> sono <strong>indipendenti</strong>: il compleanno di Ada non tocca Marco. Ogni oggetto porta con sé la propria copia dei dati. È questo che rende le classi così utili: uno stampo, infiniti oggetti distinti.</p>
+<blockquote><p><strong>💡 L'idea — Lo stampino dei biscotti</strong></p>
+<p>Una classe è come lo stampino per i biscotti, e gli oggetti sono i biscotti. Lo stampino decide la forma — quali campi e quali azioni ci saranno — ma non è qualcosa che si mangia; ogni biscotto che ne esce è invece concreto, con la sua glassa e le sue decorazioni. Allo stesso modo <code>Persona</code> descrive la forma, e Ada e Marco sono due biscotti ben distinti usciti dallo stesso stampino.</p></blockquote>
 <h2 id="campi-tipi-e-protezioni">Campi, tipi e protezioni</h2>
 <p>I campi possono avere un <strong>tipo</strong>, che Leo controlla alla creazione:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-122" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-122" class="libro-pre"><code><span class="c-testo_normale">classe</span> <span class="c-testo_normale">Punto</span>
@@ -264,7 +270,7 @@ Misterioso fa ...</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

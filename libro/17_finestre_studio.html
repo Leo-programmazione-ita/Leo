@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -132,6 +134,8 @@
 <h2 id="leo-studio-disegnare-invece-di-descrivere">Leo Studio: disegnare invece di descrivere</h2>
 <p>Le finestre complete, con pulsanti, caselle, elenchi e grafici, non si scrivono a mano: si <strong>disegnano</strong>. Lo strumento per farlo è <strong>Leo Studio</strong>, l'ambiente visuale di Leo, nello spirito dei vecchi Visual Basic e Delphi. Trascini un pulsante dove lo vuoi, imposti le sue proprietà in un pannello, e Leo Studio registra tutto in un file <code>.maschera</code>. Tu scrivi solo la parte interessante: cosa succede <em>quando</em> l'utente agisce.</p>
 <p>Leo Studio richiede PySide6 (la libreria grafica) e si avvia con il comando <code>leo studio</code> o dal menu del sistema operativo. Un programma con finestre è una <strong>cartella</strong> — un <em>progetto</em> — con un file <code>progetto.toml</code> che lo descrive, un file <code>.maschera</code> per ogni finestra (i controlli e il loro aspetto) e un file <code>.leo</code> per ogni finestra (il codice degli eventi). La cosa bella: un progetto disegnato sul computer gira identico sul telefono, e viceversa, perché il formato è lo stesso.</p>
+<blockquote><p><strong>🦁 Curiosità — La madre di tutte le demo</strong></p>
+<p>Mouse, finestre e puntatore sullo schermo furono mostrati al mondo da Douglas Engelbart il 9 dicembre 1968, in una presentazione passata alla storia come «la madre di tutte le demo». L'idea di costruire interfacce trascinando i componenti si diffuse poi tra il grande pubblico con strumenti come Visual Basic. Quando trascini un pulsante in Leo Studio, stai ripetendo un gesto che ha più di mezzo secolo.</p></blockquote>
 <h2 id="gli-eventi-reagire-con-quando">Gli eventi: reagire con <code>quando</code></h2>
 <p>Il cuore di un programma a finestre è il gestore di eventi, introdotto dalla parola <code>quando</code>. Si legge come una frase: «quando il pulsante riceve un clic, fai...». Ecco il codice reale del progetto di esempio «Saluto», che trovi in <code>esempi/progetto_saluto/</code>:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-178" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-178" class="libro-pre"><code><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">Finestra1</span><span class="c-punteggiatura">.</span><span class="c-eventi">apertura</span> <span class="c-flusso">fai</span>
@@ -146,6 +150,8 @@
     <span class="c-flusso">fine</span>
 <span class="c-flusso">fine</span></code></pre></figure>
 <p>Due gestori, due momenti. Il primo scatta all'<strong>apertura</strong> della finestra e imposta il testo di un'etichetta. Il secondo scatta al <strong>clic</strong> del pulsante: legge quello che l'utente ha scritto nella casella (<code>CasellaNome.testo</code>), e se è vuoto protesta con un <code>messaggio</code>, altrimenti saluta. I controlli sono <strong>oggetti</strong>: leggi e cambi le loro proprietà con il punto, come hai fatto con gli oggetti del Capitolo 11.</p>
+<blockquote><p><strong>💡 L'idea — Il campanello</strong></p>
+<p>Un evento come <code>quando PulsanteSaluta.clic fai</code> è come il campanello di casa: il programma se ne sta tranquillo, senza fare nulla, finché qualcuno non suona. Solo allora esegue la risposta che hai preparato. Non devi stare tu a controllare di continuo se c'è qualcuno alla porta: ci pensa il campanello ad avvisarti al momento giusto.</p></blockquote>
 <h2 id="la-regola-d-oro-delle-finestre">La regola d'oro delle finestre</h2>
 <p>C'è un principio che all'inizio confonde e poi diventa ovvio. Il codice «fuori» dai gestori (il blocco <code>inizio</code>, le variabili) gira <strong>una volta sola</strong>, all'apertura. Per reagire a ciò che l'utente fa <em>dopo</em>, serve un <code>quando</code>. Questo codice, per esempio, <strong>non</strong> funziona come ci si aspetterebbe:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-179" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-179" class="libro-pre"><code><span class="c-dichiarazioni">inizio</span>
@@ -210,7 +216,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

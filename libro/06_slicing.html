@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -132,6 +134,8 @@
 5</code></pre></figure>
 <p><code>1..5</code> sono i numeri 1, 2, 3, 4, 5 — cinque numeri, estremi inclusi. Questa è una scelta deliberata di Leo: l'intervallo <code>1..5</code> contiene esattamente i numeri che un italiano direbbe «da uno a cinque», senza i trucchi del «fino a cinque escluso» di altri linguaggi. Gli intervalli funzionano anche all'indietro: <code>10..1</code> conta da dieci a uno.</p>
 <p>Un intervallo non è solo per i cicli: puoi usarlo ovunque serva una sequenza di numeri, per esempio <code>somma(1..100)</code> o <code>media(1..10)</code>.</p>
+<blockquote><p><strong>🦁 Curiosità — Dove finisce una fetta</strong></p>
+<p>Leo include entrambi gli estremi, ma molti linguaggi diffusi fanno il contrario: la fetta parte dall'inizio indicato e si ferma <em>appena prima</em> del fondo. La ragione è elegante quanto la scelta di Leo: con gli intervalli «mezzi aperti» una fetta <code>da 0 a 3</code> e una <code>da 3 a 5</code> combaciano alla perfezione, senza sovrapporsi né lasciare buchi. Due filosofie diverse, ciascuna con la sua logica.</p></blockquote>
 <h2 id="le-fette-slicing">Le fette (slicing)</h2>
 <p>Lo stesso <code>..</code>, messo tra le parentesi quadre, prende una <strong>fetta</strong> di una lista o di un testo. Gli estremi sono — di nuovo — entrambi inclusi e contati da zero; un estremo negativo conta dalla fine:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-73" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-73" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span>
@@ -147,6 +151,8 @@ Bea
 atrice</code></pre></figure>
 <p>Leggiamole. <code>voti[0..2]</code> prende dall'elemento 0 all'elemento 2 compreso — i primi tre. <code>voti[2..-1]</code> va dall'elemento 2 fino all'ultimo (<code>-1</code>), cioè tutta la coda. <code>voti[0..-1]</code> è una scorciatoia utilissima: «dal primo all'ultimo», cioè <strong>tutta</strong> la sequenza. E poiché la stessa notazione vale per i testi, <code>"Beatrice"[0..2]</code> è <code>"Bea"</code> e <code>"Beatrice"[2..-1]</code> è <code>"atrice"</code>.</p>
 <p>Una fetta <strong>mantiene il tipo</strong>: una fetta di lista è una lista, una fetta di testo è un testo.</p>
+<blockquote><p><strong>💡 L'idea — Come affettare il pane</strong></p>
+<p>Prendere una fetta di una lista o di un testo è come tagliare una fetta di pane: dici da dove a dove vuoi tagliare e ottieni esattamente quel pezzo, mentre il resto della pagnotta resta lì, intero, pronto per la prossima fetta. L'originale non si rovina: ne esce solo il pezzo che hai chiesto.</p></blockquote>
 <h2 id="i-bordi-senza-drammi">I bordi, senza drammi</h2>
 <p>Che succede se chiedi una fetta più grande della sequenza, o «al contrario»? Leo non va in errore: si comporta nel modo più ragionevole.</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-75" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-75" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">4</span><span class="c-punteggiatura">,</span> <span class="c-numeri">6</span><span class="c-punteggiatura">,</span> <span class="c-numeri">7</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">10</span><span class="c-punteggiatura">]</span>
@@ -204,7 +210,7 @@ atrice</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

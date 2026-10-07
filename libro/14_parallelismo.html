@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 14 — Fare più cose insieme</h1>
 <p>I computer di oggi hanno più processori, capaci di lavorare contemporaneamente. Un programma «normale» ne usa uno solo e fa una cosa alla volta; quando quella cosa è lunga — un calcolo pesante, lo scaricamento di un file — tutto il resto aspetta. Il <strong>parallelismo</strong> permette di avviare un lavoro e intanto continuare, o di dividere un compito su più processori. Leo lo offre con una sintassi tanto semplice che quasi non sembra parallelismo.</p>
+<blockquote><p><strong>💡 L'idea — Più casse al supermercato</strong></p>
+<p>Il parallelismo è come aprire più casse al supermercato. Con una cassa sola la fila avanza lentamente e tutti aspettano; con quattro casse aperte la stessa fila si smaltisce in circa un quarto del tempo, perché quattro clienti vengono serviti insieme. Dividere il lavoro su più processori è esattamente questo: più «casse» che lavorano nello stesso momento invece di una coda unica.</p></blockquote>
 <h2 id="in-parallelo-avvia-e-continua"><code>in parallelo</code>: avvia e continua</h2>
 <p>Il mattone fondamentale è il blocco <code>in parallelo fai ... fine</code>. Avvia un lavoro che gira per conto suo e restituisce un «segnaposto»; il programma prosegue senza aspettare. Quando ti serve il risultato, lo chiedi con <code>aspetta(lavoro)</code>:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-142" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-142" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">lavoro_lungo</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span><span class="c-punteggiatura">)</span>
@@ -182,6 +186,8 @@ Risultato: 500000500000</code></pre></figure>
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">risultati</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-149" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-149" class="libro-pre"><code>[1, 4, 9, 16]</code></pre></figure>
 <p>Si usa come <code>mappa</code> (Capitolo 9), ma dietro le quinte sfrutta più processori davvero. Per sapere quanti ne hai a disposizione c'è <code>processori()</code> (il numero dipende dalla macchina). Attenzione a non aspettarti miracoli con calcoli leggeri: avviare e coordinare i lavori ha un costo, e conviene solo quando ogni singolo calcolo è abbastanza pesante da ripagare quel costo. Per i dettagli e le misure c'è la scheda <code>PARALLELISMO.md</code>.</p>
+<blockquote><p><strong>🦁 Curiosità — Nove donne non fanno un bambino in un mese</strong></p>
+<p>Non tutto si può accelerare mettendo più «lavoratori» sul problema. Lo ricorda una battuta celebre dell'ingegneria del software, legata alla <em>legge di Brooks</em> del libro <em>The Mythical Man-Month</em> (Fred Brooks, 1975): una gravidanza dura nove mesi, e non c'è modo di ridurli a uno assegnando nove donne al compito. Alcuni passi vanno fatti in sequenza, per forza, uno dopo l'altro — e nessun numero di processori li renderà simultanei.</p></blockquote>
 <h2 id="prova-tu">Prova tu</h2>
 <ol><li>Avvia due lavori <code>in parallelo</code> che calcolano due somme lunghe diverse, poi raccogline i risultati con <code>aspetta_tutti</code> e stampane il totale.</li><li>Scrivi un lavoro che invia su un canale i numeri primi fino a 50, e un programma principale che li riceve e li conta.</li><li>Prova <code>mappa_in_parallelo</code> su una lista di numeri con una funzione che fa un calcolo abbastanza pesante, e confronta — a occhio — il tempo con la versione <code>mappa</code> normale.</li></ol>
     </div>
@@ -218,7 +224,7 @@ Risultato: 500000500000</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

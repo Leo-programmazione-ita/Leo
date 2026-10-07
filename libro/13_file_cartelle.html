@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,7 +122,11 @@
     <div class="libro-testo">
 <h1>Capitolo 13 — File e cartelle</h1>
 <p>I programmi visti finora dimenticano tutto quando finiscono: i dati vivono in memoria e svaniscono alla chiusura. Per <em>ricordare</em> tra un'esecuzione e l'altra — salvare una lista di cose da fare, leggere un file di configurazione, produrre un rapporto — bisogna scrivere su disco. Leo rende l'operazione diretta, con qualche attenzione in più che ti risparmia grattacapi.</p>
+<blockquote><p><strong>🦁 Curiosità — Un disco da una tonnellata per 5 MB</strong></p>
+<p>Il primo disco rigido della storia, l'IBM 350 del 1956, era alto come un armadio e pesava quasi una tonnellata, eppure conteneva soltanto circa 5 MB: oggi una singola foto scattata col telefono può occupare più spazio di così. Per spostarlo serviva un carrello elevatore; per spostare le tue foto basta un dito. La capacità di «ricordare su disco» è diventata enormemente più leggera in meno di settant'anni.</p></blockquote>
 <p>Una nota prima di cominciare: i percorsi relativi (<code>"nota.txt"</code>) partono dalla cartella da cui lanci il programma. Le cartelle si separano con la barra <code>/</code>, anche su Windows.</p>
+<blockquote><p><strong>💡 L'idea — Il percorso è un indirizzo</strong></p>
+<p>Il percorso di un file (la sua <em>path</em>) funziona come l'indirizzo di casa: provincia, città, via, numero civico restringono il campo un pezzo alla volta, finché non arrivi alla porta giusta. Così <code>documenti/2026/nota.txt</code> è «cartella documenti, dentro la cartella 2026, il file nota.txt». Una volta che leggi un percorso come un indirizzo, non ti perdi più nell'albero delle cartelle.</p></blockquote>
 <h2 id="leggere-e-scrivere-testo">Leggere e scrivere testo</h2>
 <p>Le due operazioni fondamentali sono scrivere un testo in un file e rileggerlo:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-134" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-134" class="libro-pre"><code><span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"nota.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"Prima riga\nSeconda riga"</span><span class="c-punteggiatura">)</span>
@@ -176,6 +182,8 @@ Marco,29</code></pre></figure>
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-testi">"sotto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-141" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-141" class="libro-pre"><code>["a.txt", "b.txt"]</code></pre></figure>
 <p><code>crea_cartella</code> crea la cartella (e quelle intermedie, se nel percorso ce ne sono di mancanti). <code>elenca_file(cartella)</code> restituisce i nomi dei file in ordine alfabetico; puoi anche filtrarli per estensione. C'è il gemello <code>elenca_cartelle</code> per le sottocartelle. Con questi mattoni puoi scrivere programmi che riordinano una cartella, elaborano tutti i file di un certo tipo o costruiscono un indice.</p>
+<blockquote><p><strong>🦁 Curiosità — Nomi presi in prestito dall'ufficio di carta</strong></p>
+<p>Parole come «file» (in inglese, l'archivio di documenti), «cartella» e «cestino» non sono nate col computer: vengono dritte dall'ufficio di carta. Chi progettò le prime interfacce grafiche copiò di proposito la scrivania, le cartelline e il cestino della spazzatura, per rendere familiare una cosa del tutto nuova. Ancora oggi buttiamo i file nel «cestino»: una metafora di carta sopravvissuta dentro lo schermo.</p></blockquote>
 <h2 id="un-esempio-che-mette-tutto-insieme">Un esempio che mette tutto insieme</h2>
 <p>Pensa a un piccolo diario: a ogni esecuzione aggiunge una riga con la data e un pensiero, e poi mostra tutto quello che hai scritto finora. Scrivere, aggiungere, rileggere e scorrere: con <code>aggiungi_a_file</code> e <code>leggi_righe</code> lo costruisci in pochissime righe. Questo è il momento in cui i tuoi programmi smettono di essere esercizi e cominciano a <em>servire a qualcosa</em>, perché ricordano.</p>
 <h2 id="prova-tu">Prova tu</h2>
@@ -216,7 +224,7 @@ Marco,29</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

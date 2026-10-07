@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -122,6 +124,8 @@
 <p>Leo non vive solo sul computer. Con l'app <strong>Leo per Android</strong> puoi scrivere ed eseguire programmi direttamente sul telefono, disegnare app con le finestre toccando lo schermo e trasformarle in <strong>app vere</strong> da installare. E non è una versione ridotta: è lo stesso interprete, la stessa libreria, lo stesso linguaggio. Un progetto fatto sul PC gira sul telefono, e viceversa.</p>
 <h2 id="lo-stesso-linguaggio-un-nuovo-mondo">Lo stesso linguaggio, un nuovo mondo</h2>
 <p>Tutto quello che hai imparato finora vale identico sul telefono. Un progetto con finestre ha lo stesso formato di Leo Studio — <code>progetto.toml</code>, i file <code>.maschera</code>, i file <code>.leo</code> — quindi puoi cominciare un'app sul computer e rifinirla sul telefono, o il contrario. La differenza non è nel linguaggio: è in ciò che il telefono <em>ha in più</em>. Un computer non ha una bussola, un accelerometro, un GPS, una torcia. Un telefono sì, e Leo ti ci fa parlare con la stessa naturalezza con cui, sul PC, parli a un pulsante.</p>
+<blockquote><p><strong>💡 L'idea — Un computer con i sensi</strong></p>
+<p>Uno smartphone è un piccolo computer tascabile dotato di sensi: la fotocamera sono i suoi occhi, il microfono le orecchie, il GPS il senso dell'orientamento, l'accelerometro l'equilibrio dell'orecchio interno. Programmarlo significa dargli istruzioni su come usare questi sensi. Leo ti lascia parlare a ciascuno di essi con la stessa naturalezza con cui, sul computer, parli a un pulsante.</p></blockquote>
 <h2 id="l-hardware-a-portata-di-quando">L'hardware a portata di <code>quando</code></h2>
 <p>I sensori e i dispositivi del telefono sono controlli come gli altri, con le loro proprietà e i loro eventi. Vibrazione, torcia, batteria, bussola, livella, posizione, condivisione: ognuno è un mattone pronto. Ecco, per esempio, un programma che calcola quanto sei lontano da un punto noto usando il GPS (è codice reale dalla documentazione dell'app):</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-182" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-182" class="libro-pre"><code><span class="c-dichiarazioni">quando</span> <span class="c-testo_normale">PulsanteDove</span><span class="c-punteggiatura">.</span><span class="c-eventi">clic</span> <span class="c-flusso">fai</span>
@@ -151,6 +155,8 @@
 <p>Quasi tutto funziona uguale, ma qualche controllo è legato al mondo del PC e sul telefono non c'è (ancora): i giochi con la fisica (<code>Scena</code>, <code>Sprite</code>), l'hardware da banco (<code>SchedaPico</code>, <code>PortaSeriale</code>), il server web. Quando un programma li incontra sul telefono, al loro posto compare un riquadro «non disponibile» e l'esecuzione continua. Viceversa, molte cose funzionano su entrambi: video, mappe disegnate senza Internet, cruscotti, grafici dal vivo e tutti i sensori del telefono. La tabella completa, controllo per controllo, è nella scheda <code>CONTROLLI.md</code>; la scheda <code>TELEFONO.md</code> è la guida dedicata all'app.</p>
 <h2 id="dall-idea-all-apk">Dall'idea all'APK</h2>
 <p>Quando l'app è pronta, diventa un file <code>.apk</code> — il formato delle applicazioni Android — che puoi installare sul tuo telefono e passare ad altri. L'app Leo per Android stessa è un unico APK che gira su tutti i telefoni dalla versione 7.0 in su. La costruzione dell'APK si fa sul computer; i passi dettagliati sono nelle schede <code>TELEFONO.md</code> e <code>android/LEGGIMI.md</code>, e torneremo sul tema della distribuzione nel prossimo... anzi, tra due capitoli, quando parleremo di come consegnare i programmi a chi non ha Leo.</p>
+<blockquote><p><strong>🦁 Curiosità — Cosa c'è dentro un APK</strong></p>
+<p>Un'app Android non è altro che un file con estensione <code>.apk</code>: in pratica un pacchetto compresso, parente stretto di uno zip, che contiene tutto il necessario per installarla — codice, immagini, suoni e istruzioni. Quando tocchi «installa», il telefono apre il pacchetto e monta l'app al posto giusto. È un po' come ricevere un mobile in scatola: tutti i pezzi sono lì dentro, pronti per essere montati.</p></blockquote>
 <p>Il punto da portare a casa è questo: l'italiano, la semplicità e la libreria completa di Leo non restano chiusi in un terminale. Lo stesso programma che hai scritto per imparare può diventare un'app che porti in tasca, che usa la bussola e il GPS, e che regali a un amico con un file solo.</p>
 <h2 id="prova-tu">Prova tu</h2>
 <blockquote><p>Questi esercizi richiedono l'app Leo per Android installata sul telefono.</p></blockquote>
@@ -189,7 +195,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

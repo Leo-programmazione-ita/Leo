@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 9 — Le funzioni</h1>
 <p>Man mano che un programma cresce, cominci a ripetere gli stessi gruppi di istruzioni. Le <strong>funzioni</strong> servono a dare un nome a un blocco di codice, così da poterlo richiamare quando serve invece di riscriverlo. Sono il mattone con cui si costruiscono i programmi grandi: ogni funzione fa <em>una cosa</em>, la fa bene, e il resto del programma la usa senza doversi preoccupare di <em>come</em>.</p>
+<blockquote><p><strong>🦁 Curiosità — Una parola presa in prestito</strong></p>
+<p>Il termine «funzione» arriva dalla matematica, dove indica una regola che a ogni ingresso associa un'uscita: dai un numero, ne ottieni un altro. In programmazione l'idea è la stessa, con un vantaggio pratico enorme: scrivi una cosa <em>una volta</em> e la riusi cento. Questo principio ha persino un nome e una sigla, DRY, da «Don't Repeat Yourself» — non ripeterti — reso celebre dal libro <em>The Pragmatic Programmer</em> del 1999.</p></blockquote>
 <h2 id="definire-e-chiamare">Definire e chiamare</h2>
 <p>Una funzione si definisce con <code>funzione</code>, seguita dal nome e, tra parentesi, dai <strong>parametri</strong> — i dati che riceve. Dentro, <code>restituisci</code> dice quale valore mandare indietro:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-99" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-99" class="libro-pre"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-parametri">nome</span><span class="c-punteggiatura">,</span> <span class="c-parametri">saluto</span> <span class="c-operatori">=</span> <span class="c-testi">"Ciao"</span><span class="c-punteggiatura">)</span>
@@ -130,6 +134,8 @@
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-funzioni_utente">saluta</span><span class="c-punteggiatura">(</span><span class="c-testi">"Marco"</span><span class="c-punteggiatura">,</span> <span class="c-testo_normale">saluto</span> <span class="c-operatori">=</span> <span class="c-testi">"Buongiorno"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-100" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-100" class="libro-pre"><code>Ciao, Giulia!
 Buongiorno, Marco!</code></pre></figure>
+<blockquote><p><strong>💡 L'idea — Come un distributore automatico</strong></p>
+<p>Una funzione è come un distributore automatico: inserisci qualcosa (gli argomenti), premi il pulsante e ne esce un risultato. Non hai bisogno di sapere come funziona dentro — ti fidi di quello che restituisce. È questo il bello delle funzioni: una volta scritte bene, le usi senza più pensare a <em>come</em> fanno il loro mestiere.</p></blockquote>
 <p>Guarda il parametro <code>saluto = "Ciao"</code>: è un <strong>valore predefinito</strong>. Se chi chiama la funzione non lo fornisce (come nel primo caso), vale <code>"Ciao"</code>; se lo fornisce (secondo caso), vince il suo. E nota come, nella seconda chiamata, l'abbiamo passato <strong>per nome</strong>: <code>saluto = "Buongiorno"</code>. Passare gli argomenti per nome rende le chiamate leggibili, specie quando i parametri sono tanti.</p>
 <p>Una regola da ricordare: una funzione va <strong>definita prima di essere chiamata</strong>. Se la metti dopo il punto in cui la usi, spostala sopra — oppure usa il blocco <code>inizio</code> del Capitolo 1, che parte quando tutto il file è già stato letto.</p>
 <h2 id="le-funzioni-come-comandi">Le funzioni come comandi</h2>
@@ -229,7 +235,7 @@ Buongiorno, Marco!</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

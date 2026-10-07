@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -121,6 +123,8 @@
 <h1>Capitolo 16 — Un tour della libreria</h1>
 <p>Un linguaggio non è solo la sua grammatica: è anche tutto ciò che porta già in dotazione. Leo include <strong>oltre novecento funzioni</strong> di libreria, sempre disponibili senza installare nulla. Questo capitolo non le elenca tutte — per quello ci sono le schede <code>LIBRERIA_*.md</code> in <code>docs/</code> — ma ti accompagna, area per area, a vedere cosa c'è e come si usa, con esempi veri. Pensalo come una passeggiata in una grande bottega: non per comprare tutto, ma per sapere cosa c'è sugli scaffali, così da ricordartene quando ti servirà.</p>
 <p>Una sola avvertenza: alcune funzioni (quelle che pescano a caso o misurano il tempo) danno un risultato diverso a ogni esecuzione. Dove capita, lo segnaliamo.</p>
+<blockquote><p><strong>🦁 Curiosità — Batterie incluse</strong></p>
+<p>Tra i programmatori si dice che un buon linguaggio arrivi «con le batterie incluse» (<em>batteries included</em>): tante funzioni già pronte all'uso, senza doverle cercare o installare altrove. L'espressione è stata resa celebre dal mondo di Python ed è diventata un complimento ambito. Con le sue oltre novecento funzioni di libreria, Leo prende la cosa molto sul serio.</p></blockquote>
 <h2 id="testo-e-lingua-italiana">Testo e lingua italiana</h2>
 <p>Qui Leo dà il meglio di sé, perché è un linguaggio italiano fin nelle ossa. Sa scrivere i numeri in lettere, fare plurali e articoli, dividere in sillabe:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-158" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-158" class="libro-pre"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">numero_in_lettere</span><span class="c-punteggiatura">(</span><span class="c-numeri">123</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
@@ -217,6 +221,8 @@ Livello: pessima, punteggio 0</code></pre></figure>
 <span class="c-libreria">scrivi</span> <span class="c-testi">"Estratti </span><span class="c-interpolazione">{</span><span class="c-libreria">lunghezza</span><span class="c-punteggiatura">(</span><span class="c-variabili">estratti</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> numeri tra 1 e 90"</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-175" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-175" class="libro-pre"><code>Estratti 6 numeri tra 1 e 90</code></pre></figure>
 <p><code>scegli_a_caso</code> pesca elementi a caso (qui sei numeri diversi del lotto); <code>mescola</code> rimescola una lista; <code>casuale(da, a)</code> dà un intero a caso. E <code>cronometro()</code> misura quanto impiega un pezzo di programma, utile per capire dove conviene ottimizzare.</p>
+<blockquote><p><strong>💡 L'idea — La cassetta degli attrezzi</strong></p>
+<p>La libreria è una cassetta degli attrezzi ben fornita: invece di forgiarti il martello ogni volta che ti serve, apri il cassetto giusto e prendi lo strumento già pronto. Il mestiere non sta nel rifare gli attrezzi, ma nel sapere quale c'è e quando usarlo. Ecco perché conviene farsi un giro tra gli scaffali prima di mettersi a scrivere tutto da capo.</p></blockquote>
 <h2 id="e-molto-altro">E molto altro</h2>
 <p>Abbiamo toccato le aree più comuni, ma la bottega è grande. Ci sono funzioni per le <strong>immagini</strong> (apri una foto, applica filtri, crea collage e GIF), per il <strong>web</strong> (scarica pagine, leggi feed, parla con API; le funzioni offline come <code>html_in_testo</code> e <code>proteggi_html</code> lavorano su HTML che hai già), per la <strong>rete</strong> e il <strong>sistema</strong> su ogni piattaforma, per l'<strong>ufficio</strong> (Excel, Word, PDF, stampa unione), per i <strong>database</strong> senza SQL, per i <strong>media</strong> (suoni, voce). Quando ti troverai davanti un problema, è probabile che un pezzo della soluzione sia già sullo scaffale: la prima mossa, prima di scrivere codice, è dare un'occhiata alle schede <code>LIBRERIA_*.md</code>.</p>
 <h2 id="prova-tu">Prova tu</h2>
@@ -257,7 +263,7 @@ Livello: pessima, punteggio 0</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

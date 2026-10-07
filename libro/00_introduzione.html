@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html" aria-current="page">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Introduzione</h1>
 <p>Benvenuto. Questo è un libro su <strong>Leo</strong>, un linguaggio di programmazione pensato e scritto in italiano. Se non hai mai programmato, sei nel posto giusto: cominceremo dalla prima riga e non daremo nulla per scontato. Se programmi già in altri linguaggi, troverai lo stesso un terreno familiare — funzioni, classi, moduli, eccezioni, parallelismo — ma raccontato in una lingua che probabilmente parli ogni giorno.</p>
+<blockquote><p><strong>💡 L'idea — Il programma è una ricetta</strong></p>
+<p>Pensa a una ricetta di cucina: elenca gli ingredienti e i passi nell'ordine giusto, e chi la segue ottiene il piatto. Un programma è la stessa cosa, con una differenza importante: il computer esegue i passi alla lettera, senza mai «capire cosa intendi». Se la ricetta dice «aggiungi il sale» ma non dice quanto, una persona improvvisa; il computer, no. Imparare a programmare è soprattutto imparare a essere precisi.</p></blockquote>
 <h2 id="che-cos-è-leo">Che cos'è Leo</h2>
 <p>Leo è un linguaggio di programmazione completo in cui le parole chiave, i messaggi d'errore, la libreria e la documentazione sono <strong>tutti in italiano</strong>. Un programma Leo si legge quasi come una frase:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-1" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-1" class="libro-pre"><code><span class="c-flusso">se</span> <span class="c-testo_normale">voto</span> <span class="c-operatori">&gt;=</span> <span class="c-numeri">18</span> <span class="c-flusso">allora</span>
@@ -129,6 +133,8 @@
 <span class="c-flusso">fine</span></code></pre></figure>
 <p>Non c'è bisogno di tradurre mentalmente <code>if</code>, <code>then</code>, <code>else</code>: le istruzioni dicono quello che fanno, nella lingua in cui pensi. Questo non è uno scherzo né un giocattolo. Dentro Leo ci sono i tipi di dato seri (interi senza limiti, decimali, denaro esatto, frazioni, date), le funzioni come valori, le chiusure, le eccezioni, i moduli, gli oggetti con l'ereditarietà, il parallelismo su più processori, le sequenze pigre e oltre novecento funzioni di libreria già pronte, dalla statistica al web, dalla crittografia alle immagini.</p>
 <p>Leo <strong>gira sull'interprete Python</strong>. È una scelta importante e la raccontiamo con onestà: Leo non reinventa la macchina sottostante, si appoggia a una delle piattaforme più solide e collaudate al mondo. Da lì eredita stabilità, portabilità e la possibilità — per chi un giorno la vorrà — di attingere all'immenso ecosistema di pacchetti Python. Ma il linguaggio che scrivi e leggi è Leo: pulito, in italiano, coerente dall'inizio alla fine.</p>
+<blockquote><p><strong>🦁 Curiosità — Il primo programma aveva quasi due secoli</strong></p>
+<p>Nel 1843 la matematica Ada Lovelace pubblicò, in appendice a una memoria tradotta dal francese, quello che è considerato il primo algoritmo pensato per essere eseguito da una macchina: una procedura per calcolare i numeri di Bernoulli sulla macchina analitica di Charles Babbage. Quella macchina non fu mai completata, e per vedere un vero computer si dovette aspettare circa un secolo. Il primo «programma», insomma, fu scritto per un calcolatore che non esisteva ancora.</p></blockquote>
 <h2 id="la-filosofia">La filosofia</h2>
 <p>Tre idee guidano tutto il progetto, e vale la pena nominarle subito perché tornano in ogni capitolo.</p>
 <p><strong>L'italiano non è una decorazione.</strong> Programmare è, prima di tutto, scrivere per essere capiti — dal computer e dalle persone. Una lingua vicina rende il codice più leggibile a chi lo scrive per la prima volta e più chiaro a chi lo rilegge dopo mesi. Quando un programma Leo si rompe, non ti trovi davanti un muro di inglese tecnico: l'errore ti spiega in italiano che cosa è successo, su quale riga, e spesso ti propone già la correzione.</p>
@@ -148,7 +154,7 @@
 <p>Buona lettura, e buon divertimento.</p>
     </div>
     <nav class="libro-sfoglia" aria-label="Capitoli">
-<a class="libro-prec" href="index.html"><span>Indietro</span><strong>Copertina</strong></a>
+<a class="libro-prec" href="00_prefazione.html"><span>Indietro</span><strong>Prefazione</strong></a>
 <a class="libro-su" href="index.html">Indice</a>
 <a class="libro-succ" href="01_primo_programma.html"><span>Avanti</span><strong>Il primo programma</strong></a>
 </nav>
@@ -180,7 +186,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

@@ -1,0 +1,289 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.147
+Con questo video comincia la serie sul linguaggio.
+
+2
+00:00:04.147 --> 00:00:08.298
+In questo video impariamo la cosa più importante di tutte:
+
+3
+00:00:08.298 --> 00:00:11.442
+come un programma ricorda le informazioni.
+
+4
+00:00:11.442 --> 00:00:16.536
+Parleremo di variabili, di costanti e dei tipi di valore che Leo conosce.
+
+5
+00:00:16.536 --> 00:00:22.133
+Alla fine saprai anche perché Leo non somma mai un testo e un numero per sbaglio.
+
+6
+00:00:23.433 --> 00:00:27.963
+Immagina una scatola con un'etichetta: dentro metti un valore,
+
+7
+00:00:27.963 --> 00:00:31.070
+e con il nome dell'etichetta lo ritrovi.
+
+8
+00:00:31.070 --> 00:00:36.377
+In Leo la prima volta la scatola si crea con la parola variabile, il nome,
+
+9
+00:00:36.377 --> 00:00:39.290
+il segno uguale e il valore iniziale.
+
+10
+00:00:39.290 --> 00:00:43.950
+Poi, per cambiare il contenuto, basta il nome e il segno uguale.
+
+11
+00:00:43.950 --> 00:00:48.739
+E puoi usare le lettere accentate: età e città sono nomi perfetti.
+
+12
+00:00:50.039 --> 00:00:51.921
+Ecco quattro variabili.
+
+13
+00:00:51.921 --> 00:00:54.775
+Nome contiene un testo, tra virgolette.
+
+14
+00:00:54.775 --> 00:00:57.142
+Anni contiene un numero intero.
+
+15
+00:00:57.142 --> 00:01:02.303
+Altezza contiene un numero con la virgola, che in Leo si scrive con il punto:
+
+16
+00:01:02.303 --> 00:01:04.185
+uno punto cinquantadue.
+
+17
+00:01:04.185 --> 00:01:07.160
+Promossa contiene un valore logico: vero.
+
+18
+00:01:07.160 --> 00:01:11.592
+Stampa le scrive tutte sulla stessa riga, separate da uno spazio.
+
+19
+00:01:11.592 --> 00:01:16.570
+E la funzione tipo ci dice di che tipo è un valore: altezza è un decimale.
+
+20
+00:01:17.870 --> 00:01:20.348
+Ricapitoliamo i tipi principali.
+
+21
+00:01:20.348 --> 00:01:23.261
+Gli interi sono i numeri senza virgola,
+
+22
+00:01:23.261 --> 00:01:28.899
+e per leggerli meglio puoi separare le cifre a gruppi di tre con il trattino basso.
+
+23
+00:01:28.899 --> 00:01:32.059
+I decimali si scrivono sempre con il punto.
+
+24
+00:01:32.059 --> 00:01:34.847
+I testi stanno tra virgolette doppie.
+
+25
+00:01:34.847 --> 00:01:37.636
+I logici sono solo due: vero e falso.
+
+26
+00:01:37.636 --> 00:01:40.114
+E nulla vuol dire nessun valore.
+
+27
+00:01:40.114 --> 00:01:43.584
+Liste e dizionari li vedremo nei prossimi video.
+
+28
+00:01:44.884 --> 00:01:47.667
+Ora cambiamo il valore di una variabile.
+
+29
+00:01:47.667 --> 00:01:50.276
+Partiamo da zero, poi mettiamo dieci.
+
+30
+00:01:50.276 --> 00:01:53.987
+Più uguale cinque aggiunge cinque al valore che c'è già.
+
+31
+00:01:53.987 --> 00:01:59.148
+Leo ha anche due comandi a parole, comodi per chi inizia: aumenta punti di dieci,
+
+32
+00:01:59.148 --> 00:02:02.395
+e diminuisci punti, che senza numero toglie uno.
+
+33
+00:02:02.395 --> 00:02:05.700
+Zero, dieci, quindici, venticinque, ventiquattro.
+
+34
+00:02:07.000 --> 00:02:09.853
+Alcuni valori non devono cambiare mai,
+
+35
+00:02:09.853 --> 00:02:14.257
+come l'aliquota dell'IVA o il numero di giorni della settimana.
+
+36
+00:02:14.257 --> 00:02:16.738
+Per loro c'è la parola costante.
+
+37
+00:02:16.738 --> 00:02:22.010
+Di solito il nome si scrive in maiuscolo, così si riconosce a colpo d'occhio.
+
+38
+00:02:22.010 --> 00:02:27.468
+Se più avanti proviamo a cambiarla, Leo ci ferma subito con un messaggio chiaro,
+
+39
+00:02:27.468 --> 00:02:32.306
+e ci suggerisce di usare variabile se il valore deve davvero cambiare.
+
+40
+00:02:33.606 --> 00:02:38.826
+Adesso un punto fondamentale: Leo non trasforma mai i valori di nascosto.
+
+41
+00:02:38.826 --> 00:02:42.564
+Il testo tre, tra virgolette, non è il numero tre.
+
+42
+00:02:42.564 --> 00:02:47.656
+Se proviamo a sommarlo a quattro, Leo si ferma e ci spiega il problema,
+
+43
+00:02:47.656 --> 00:02:50.749
+invece di inventare un risultato strano.
+
+44
+00:02:52.049 --> 00:02:58.055
+Per passare da un tipo all'altro ci sono le funzioni con il nome del tipo: intero,
+
+45
+00:02:58.055 --> 00:03:00.257
+decimale, testo e logico.
+
+46
+00:03:00.257 --> 00:03:05.061
+Intero di quantità dà il numero tre, e tre più quattro fa sette.
+
+47
+00:03:05.061 --> 00:03:10.867
+Testo di quattro, unito al testo tre, dà trentaquattro: attenzione, è un testo!
+
+48
+00:03:10.867 --> 00:03:16.539
+E intero di tre virgola nove dà tre: taglia la parte decimale, non arrotonda.
+
+49
+00:03:17.839 --> 00:03:21.081
+Se conosci già Python, ecco le differenze.
+
+50
+00:03:21.081 --> 00:03:26.656
+In Leo la prima volta si scrive variabile: così, se sbagli a scrivere un nome,
+
+51
+00:03:26.656 --> 00:03:30.741
+Leo se ne accorge invece di creare una variabile nuova.
+
+52
+00:03:30.741 --> 00:03:33.269
+Le costanti sono vere costanti.
+
+53
+00:03:33.269 --> 00:03:35.798
+E al posto di print c'è stampa.
+
+54
+00:03:37.098 --> 00:03:41.277
+Un consiglio che vale per tutta la vita da programmatore:
+
+55
+00:03:41.277 --> 00:03:45.198
+dai alle variabili nomi che spiegano cosa contengono.
+
+56
+00:03:45.198 --> 00:03:49.826
+Totale spesa, con il trattino basso in mezzo, si capisce subito.
+
+57
+00:03:49.826 --> 00:03:53.362
+Ts, fra un mese, non lo capirai più nemmeno tu.
+
+58
+00:03:53.362 --> 00:03:59.212
+E un regalo di Leo: se scrivi un nome sbagliato, per esempio pnuti invece di punti,
+
+59
+00:03:59.212 --> 00:04:02.812
+il messaggio d'errore ti propone il nome giusto.
+
+60
+00:04:04.112 --> 00:04:06.179
+E ora un piccolo quiz.
+
+61
+00:04:06.179 --> 00:04:09.418
+Quale di queste tre righe dà un errore?
+
+62
+00:04:13.718 --> 00:04:16.549
+La risposta giusta è la seconda.
+
+63
+00:04:16.549 --> 00:04:21.858
+I decimali si scrivono con il punto, e Leo te lo dice proprio così:
+
+64
+00:04:21.858 --> 00:04:25.963
+in Leo i numeri decimali si scrivono con il punto.
+
+65
+00:04:27.263 --> 00:04:28.652
+Ricapitoliamo.
+
+66
+00:04:28.652 --> 00:04:33.136
+Una variabile si dichiara con variabile e si cambia con uguale.
+
+67
+00:04:33.136 --> 00:04:35.915
+Le costanti non si possono cambiare.
+
+68
+00:04:35.915 --> 00:04:41.661
+Ogni valore ha un tipo, e Leo non li mescola mai da solo: le conversioni le fai tu,
+
+69
+00:04:41.661 --> 00:04:43.998
+con intero, decimale e testo.
+
+70
+00:04:45.298 --> 00:04:48.155
+Nel prossimo video lavoriamo con i testi:
+
+71
+00:04:48.155 --> 00:04:52.995
+vedremo come mettere le variabili dentro una frase con le parentesi graffe.
+
+72
+00:04:52.995 --> 00:04:54.278
+Ci vediamo lì!

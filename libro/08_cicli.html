@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 8 — Ripetere</h1>
 <p>L'altra metà del controllo di flusso è la <strong>ripetizione</strong>. I computer sono instancabili: fanno la stessa cosa un milione di volte senza annoiarsi. Il nostro compito è dire <em>cosa</em> ripetere e <em>quando fermarsi</em>. Leo offre tre modi di ciclare, ciascuno con il suo carattere.</p>
+<blockquote><p><strong>💡 L'idea — Giri di pista</strong></p>
+<p>Un ciclo è come correre dei giri attorno a una pista: ripeti sempre lo stesso percorso e, a ogni giro, controlli se è il momento di fermarti — hai finito i giri previsti, oppure è successo qualcosa che ti dice basta. Senza quel controllo continueresti a girare all'infinito.</p></blockquote>
 <h2 id="mentre-finché-una-condizione-regge"><code>mentre</code>: finché una condizione regge</h2>
 <p><code>mentre</code> ripete un blocco <em>finché</em> una condizione resta vera. Controlla la condizione prima di ogni giro; appena diventa falsa, esce.</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-87" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-87" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">n</span> <span class="c-operatori">=</span> <span class="c-numeri">3</span>
@@ -133,6 +137,8 @@ Manca 2
 Manca 1
 Via!</code></pre></figure>
 <p>Il blocco si apre con <code>fai</code> (che, come <code>allora</code>, puoi omettere se è l'ultima cosa sulla riga) e si chiude con <code>fine</code>. Attenzione a una cosa: dentro il ciclo deve succedere <em>qualcosa</em> che prima o poi renda la condizione falsa — qui <code>n -= 1</code>. Se te ne dimentichi, il ciclo gira per sempre. È il classico «ciclo infinito», e capita a tutti: se un programma sembra bloccato, è il primo sospetto.</p>
+<blockquote><p><strong>🦁 Curiosità — Insapona, risciacqua, ripeti</strong></p>
+<p>C'è una classica battuta tra programmatori: le istruzioni sul flacone dello shampoo — «insapona, risciacqua, ripeti» — descrivono un ciclo infinito, perché non dicono mai <em>quando</em> smettere. Preso alla lettera, resteresti sotto la doccia per sempre. È esattamente l'errore di un <code>mentre</code> senza una via d'uscita: la morale è che ogni ciclo ha bisogno di un modo per fermarsi.</p></blockquote>
 <h2 id="per-ogni-scorrere-una-sequenza"><code>per ogni</code>: scorrere una sequenza</h2>
 <p>Molto spesso non vuoi ripetere «finché», ma «per ciascun elemento» di una sequenza — una lista, un testo, un intervallo, le chiavi di un dizionario. Per questo c'è <code>per ogni</code>:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-89" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-89" class="libro-pre"><code><span class="c-flusso">per ogni</span> <span class="c-variabili">frutto</span> <span class="c-logici">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">"mela"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"pera"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"fico"</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
@@ -236,7 +242,7 @@ Ciao!</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

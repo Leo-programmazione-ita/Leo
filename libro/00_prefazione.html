@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Appendice D — Glossario — Leo, il manuale</title>
-<meta name="description" content="Le parole che tornano in tutto il libro, spiegate in breve. In corsivo i rimandi ad altre voci.">
+<title>Prefazione — Leo, il manuale</title>
+<meta name="description" content="Prova a contare, in una giornata qualunque, quante volte un programma decide qualcosa al posto tuo. Sveglia la mattina, il percorso che eviti il traffico,…">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
-<link rel="canonical" href="https://leoitalia.com/libro/D_glossario.html">
+<link rel="canonical" href="https://leoitalia.com/libro/00_prefazione.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/libro/D_glossario.html">
-<meta property="og:title" content="Appendice D — Glossario — Leo, il manuale">
-<meta property="og:description" content="Le parole che tornano in tutto il libro, spiegate in breve. In corsivo i rimandi ad altre voci.">
+<meta property="og:url" content="https://leoitalia.com/libro/00_prefazione.html">
+<meta property="og:title" content="Prefazione — Leo, il manuale">
+<meta property="og:description" content="Prova a contare, in una giornata qualunque, quante volte un programma decide qualcosa al posto tuo. Sveglia la mattina, il percorso che eviti il traffico,…">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -72,7 +72,7 @@
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
 <p class="libro-lato-parte">Prefazione</p>
 <ul>
-<li><a href="00_prefazione.html">Prefazione</a></li>
+<li><a href="00_prefazione.html" aria-current="page">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -111,58 +111,30 @@
 <li><a href="A_riferimento_sintassi.html">A — Riferimento rapido della sintassi</a></li>
 <li><a href="B_errori_comuni.html">B — Errori comuni e come risolverli</a></li>
 <li><a href="C_confronto_python.html">C — Un confronto onesto con Python</a></li>
-<li><a href="D_glossario.html" aria-current="page">D — Glossario</a></li>
+<li><a href="D_glossario.html">D — Glossario</a></li>
 </ul>
 </nav>
     </div>
   </aside>
   <article class="libro-articolo">
-    <p class="libro-parte">Appendici</p>
+    <p class="libro-parte">Prefazione</p>
     
     <div class="libro-testo">
-<h1>Appendice D — Glossario</h1>
-<p>Le parole che tornano in tutto il libro, spiegate in breve. In <em>corsivo</em> i rimandi ad altre voci.</p>
-<p><strong>Ambito (o visibilità).</strong> La zona del programma in cui una <em>variabile</em> esiste ed è utilizzabile. Una variabile dichiarata dentro un <em>blocco</em> vive solo lì.</p>
-<p><strong>Argomento.</strong> Il valore che passi a una <em>funzione</em> quando la chiami. Da non confondere con il <em>parametro</em>, che è il nome con cui la funzione lo riceve.</p>
-<p><strong>Blocco.</strong> Un gruppo di istruzioni che stanno insieme, aperto da <code>allora</code> o <code>fai</code> e chiuso da <code>fine</code> (o senza aperture, come in <code>ripeti N volte</code>).</p>
-<p><strong>Canale.</strong> Un «tubo» per scambiare messaggi tra <em>lavori</em> che girano <em>in parallelo</em>: uno invia, l'altro riceve, in ordine.</p>
-<p><strong>Chiave.</strong> L'etichetta con cui ritrovi un valore in un <em>dizionario</em>.</p>
-<p><strong>Chiusura.</strong> Una <em>funzione</em> che ricorda le <em>variabili</em> del posto in cui è nata, anche dopo che quel posto ha terminato l'esecuzione.</p>
-<p><strong>Classe.</strong> Lo stampo da cui si creano gli <em>oggetti</em>: unisce <em>dati</em> (campi, dichiarati con <code>ha</code>) e <em>comportamenti</em> (azioni, con <code>azione</code>).</p>
-<p><strong>Comprensione.</strong> La forma compatta per costruire una <em>lista</em> calcolando ogni elemento: <code>[n * n per ogni n in 1..5]</code>.</p>
-<p><strong>Condizione.</strong> Un'espressione che vale <code>vero</code> o <code>falso</code>, usata da <code>se</code> e <code>mentre</code> per decidere.</p>
-<p><strong>Costante.</strong> Un valore con un nome che, una volta dichiarato con <code>costante</code>, non si può più cambiare.</p>
-<p><strong>Decimale.</strong> Un numero con la virgola, scritto in Leo con il <strong>punto</strong> (<code>3.14</code>). Soggetto all'imprecisione IEEE-754: per il denaro usa <em>soldi</em>.</p>
-<p><strong>Dizionario.</strong> Un contenitore di coppie <em>chiave</em> → valore: <code>{"nome": "Ada"}</code>.</p>
-<p><strong>Ereditarietà.</strong> Il meccanismo per cui una <em>classe</em> (<code>estende</code> un'altra) ne riceve dati e comportamenti, potendone ridefinire alcuni.</p>
-<p><strong>Eccezione (errore).</strong> Un evento anomalo durante l'esecuzione (<code>ErroreValore</code>, <code>ErroreIndice</code>...), che si può gestire con <code>prova</code>/<code>cattura</code>.</p>
-<p><strong>Evento.</strong> Qualcosa che accade in un programma a finestre (un clic, l'apertura, un tasto), a cui si reagisce con un gestore <code>quando</code>.</p>
-<p><strong>Funzione.</strong> Un blocco di codice con un nome, che riceve <em>argomenti</em> e può restituire un valore con <code>restituisci</code>. In Leo è anche un <em>valore</em>.</p>
-<p><strong>Impronta.</strong> Un codice crittografico (SHA-256) che riassume un dato: cambia del tutto per la minima modifica, ma non permette di risalire al dato. Si calcola con <code>impronta</code>.</p>
-<p><strong>Interpolazione.</strong> L'inserimento di un valore dentro un <em>testo</em> tramite le graffe: <code>"Ciao {nome}"</code>.</p>
-<p><strong>Intero.</strong> Un numero senza virgola, di dimensione illimitata in Leo.</p>
-<p><strong>Intervallo.</strong> Una sequenza di numeri da un estremo all'altro, estremi compresi: <code>1..5</code>. Tra le quadre indica una <em>fetta</em>.</p>
-<p><strong>Interprete.</strong> Il programma che legge ed esegue il tuo codice. Quello di Leo è costruito su Python.</p>
-<p><strong>Lavoro.</strong> Un'unità di calcolo avviata <em>in parallelo</em>, isolata dagli altri.</p>
-<p><strong>Lista.</strong> Una sequenza ordinata di valori, numerati da 0: <code>[1, 2, 3]</code>. Si può modificare.</p>
-<p><strong>Metodo.</strong> Una <em>funzione</em> che appartiene a un valore e si chiama con il punto: <code>testo.maiuscolo()</code>, <code>lista.aggiungi(x)</code>.</p>
-<p><strong>Modulo.</strong> Un file <code>.leo</code> importato in un altro con <code>importa</code>, per dividere il programma.</p>
-<p><strong>Oggetto.</strong> Un singolo esemplare creato da una <em>classe</em>, con i propri <em>dati</em>.</p>
-<p><strong>Parametro.</strong> Il nome con cui una <em>funzione</em> riceve un <em>argomento</em>.</p>
-<p><strong>Parola chiave.</strong> Una parola riservata del linguaggio (<code>se</code>, <code>mentre</code>, <code>funzione</code>...), che non si può usare come nome.</p>
-<p><strong>REPL.</strong> L'ambiente interattivo (<code>leo</code> senza file) in cui provi il codice una riga alla volta.</p>
-<p><strong>Ricorsione.</strong> Una <em>funzione</em> che chiama sé stessa; richiede sempre un <em>caso base</em> che la fermi.</p>
-<p><strong>Sequenza pigra.</strong> Una sequenza che produce i suoi elementi uno alla volta, solo quando servono: può essere anche infinita (<code>numeri_infiniti</code>).</p>
-<p><strong>Sinonimo.</strong> Una parola che Leo interpreta come una <em>parola chiave</em> (per esempio <code>finché</code> per <code>mentre</code>, <code>azione</code> per <code>funzione</code>).</p>
-<p><strong>Slicing (fetta).</strong> Prendere un pezzo di una <em>lista</em> o di un <em>testo</em> con un <em>intervallo</em>: <code>voti[0..2]</code>.</p>
-<p><strong>Soldi.</strong> Il tipo per il denaro, che tiene i centesimi esatti: <code>soldi("1.50")</code>.</p>
-<p><strong>Testo (stringa).</strong> Una sequenza di caratteri tra virgolette: <code>"ciao"</code>. Non si modifica.</p>
-<p><strong>Tipo.</strong> La natura di un valore: intero, decimale, testo, logico, lista, dizionario, funzione, e altri. Leo è a <em>tipizzazione forte</em>: non mescola i tipi di nascosto.</p>
-<p><strong>Variabile.</strong> Un nome a cui è associato un valore, che può cambiare. Si dichiara con <code>variabile</code>.</p>
+<h1>Prefazione</h1>
+<h2 id="l-alfabeto-di-questo-secolo">L'alfabeto di questo secolo</h2>
+<p>Prova a contare, in una giornata qualunque, quante volte un programma decide qualcosa al posto tuo. Sveglia la mattina, il percorso che eviti il traffico, il pagamento alla cassa, la notizia che ti compare per prima, la pratica che un ufficio accetta o respinge, la diagnosi che una macchina suggerisce al medico. Il mondo, oggi, è scritto in software. Non è un'esagerazione da entusiasti: è la condizione ordinaria in cui viviamo e lavoriamo.</p>
+<p>Eppure, se in una stanza piena di persone chiedi chi sa <em>scrivere</em> un programma — non usarlo, scriverlo — si alzano pochissime mani. È una delle sproporzioni più strane del nostro tempo: dipendiamo da qualcosa che quasi nessuno sa fare. Saper leggere e far di conto, un secolo fa, divideva chi poteva partecipare pienamente alla vita civile da chi ne restava ai margini. Oggi una nuova alfabetizzazione disegna una linea simile, più silenziosa ma altrettanta netta.</p>
+<p>La spiegazione comoda è che programmare sia roba per pochi, per menti particolari. Non è vero, e questo libro parte proprio dal rifiutare quell'idea. La vera ragione è un'altra, più banale e più ingiusta: per decenni programmare ha preteso, insieme, due fatiche. Imparare a <em>pensare</em> in modo nuovo — e contemporaneamente combattere con una lingua straniera e con strumenti ostici. Parole chiave in inglese, messaggi d'errore incomprensibili, simboli da decifrare prima ancora di capire l'idea che c'è sotto. Tante persone capaci si sono fermate lì, convinte di non essere portate, quando in realtà stavano solo pagando due volte lo stesso biglietto.</p>
+<p>Perché il cuore della programmazione non è la lingua in cui la scrivi. È la <strong>logica</strong>. Prendere un problema grande e spezzarlo in passi piccoli. Dire le cose con precisione, senza "più o meno". Prevedere cosa può andare storto prima che accada. Distinguere la causa dall'effetto. Ripetere senza stancarsi e cambiare rotta quando i dati cambiano. Chi impara a programmare, prima ancora di imparare un linguaggio, impara a pensare così — e quel modo di pensare non resta chiuso dentro il computer: torna utile quando organizzi un lavoro, quando smonti un ragionamento sbagliato, quando prendi una decisione guardando i fatti.</p>
+<p>Da qui nasce <strong>Leo</strong>, e da qui nasce questo libro. Leo è un linguaggio di programmazione completo in cui tutto — le parole, gli errori, la libreria — è in italiano. Non per vezzo nazionale, ma per togliere di mezzo una delle due fatiche e lasciarti tutta l'energia per quella che conta: imparare a pensare da programmatore. Quando l'ostacolo della lingua sparisce, la logica resta nuda, visibile, e diventa sorprendentemente più facile da afferrare. E siccome Leo non è un giocattolo didattico ma un linguaggio vero — con i numeri esatti, gli oggetti, il parallelismo, novecento funzioni pronte — quello che impari qui è reale e si porta dietro: domani, se vorrai, passare a un altro linguaggio sarà solo cambiare le parole, non reimparare a ragionare.</p>
+<p>Questo libro, allora, ha due anime che non si contraddicono. È un corso per <strong>imparare a programmare</strong> partendo da zero, una riga alla volta, senza dare nulla per scontato. Ed è, nello stesso movimento, un modo per <strong>allenare la logica</strong> — per lo studente che vuole un vantaggio, per il professionista che vuole capire gli strumenti che usa ogni giorno, per chiunque abbia sempre pensato "io non sono capace" e meriti di scoprire che non era vero.</p>
+<p>Non ti prometto che sarà senza sforzo: imparare qualcosa che vale non lo è mai. Ti prometto però che lo sforzo andrà tutto dove serve. Niente lingua straniera da combattere, niente muri inutili. Solo tu, un problema, e il piacere preciso di vederlo risolversi, passo dopo passo, con parole che già conosci.</p>
+<p>Si comincia dalla prima riga.</p>
     </div>
     <nav class="libro-sfoglia" aria-label="Capitoli">
-<a class="libro-prec" href="C_confronto_python.html"><span>Indietro</span><strong>C — Un confronto onesto con Python</strong></a>
+<a class="libro-prec" href="index.html"><span>Indietro</span><strong>Copertina</strong></a>
 <a class="libro-su" href="index.html">Indice</a>
+<a class="libro-succ" href="00_introduzione.html"><span>Avanti</span><strong>Introduzione</strong></a>
 </nav>
   </article>
 </main>

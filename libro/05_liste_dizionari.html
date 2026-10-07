@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -127,6 +129,8 @@
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-62" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-62" class="libro-pre"><code>28
 24</code></pre></figure>
+<blockquote><p><strong>🦁 Curiosità — Perché si conta da zero</strong></p>
+<p>Non è un capriccio di Leo: in quasi tutti i linguaggi il primo elemento di una lista ha indice 0, non 1. Nel 1982 il grande informatico Edsger Dijkstra scrisse un breve e celebre appunto (siglato EWD831) per spiegare perché contare da zero rende i conti più puliti, soprattutto quando si lavora con gli intervalli. Una volta fattaci l'abitudine, tornare indietro sembra scomodo.</p></blockquote>
 <p>A differenza dei testi, le liste <strong>si possono modificare</strong>. Puoi cambiare un elemento, aggiungerne, toglierne:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-63" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-63" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">24</span><span class="c-punteggiatura">]</span>
 <span class="c-variabili">voti</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span> <span class="c-operatori">=</span> <span class="c-numeri">29</span>
@@ -161,6 +165,8 @@
 <p><code>.ordina()</code> mette in ordine (crescente di serie), <code>.inverti()</code> rovescia, <code>.trova(x)</code> dà la posizione del primo elemento uguale a <code>x</code>, <code>.rimuovi(x)</code> toglie la prima occorrenza di <code>x</code>, <code>.estrai()</code> toglie e restituisce l'ultimo elemento (o quello all'indice che indichi). Attenzione a una sottigliezza: questi metodi <strong>cambiano la lista sul posto</strong> e non restituiscono la lista modificata. Per questo scriviamo <code>numeri.ordina()</code> su una riga e poi <code>scrivi(numeri)</code> su un'altra, e non <code>scrivi(numeri.ordina())</code> (che stamperebbe <code>nulla</code>). È il contrario dei metodi dei testi, che invece restituiscono sempre un valore nuovo; la ragione è proprio che i testi non si modificano e le liste sì.</p>
 <h2 id="i-dizionari-cose-con-un-etichetta">I dizionari: cose con un'etichetta</h2>
 <p>In una lista ritrovi un valore sapendo la sua <em>posizione</em>. In un dizionario lo ritrovi sapendo la sua <em>etichetta</em> — che si chiama <strong>chiave</strong>. Un dizionario è un insieme di coppie «chiave → valore», scritte tra graffe:</p>
+<blockquote><p><strong>💡 L'idea — Come una rubrica</strong></p>
+<p>Un dizionario funziona proprio come un vero dizionario di carta, o come la rubrica del telefono: non scorri tutte le pagine una per una. Vai diritto alla parola che cerchi — la chiave — e leggi la sua definizione, cioè il valore. È questa la differenza con la lista, dove a contare è invece la posizione.</p></blockquote>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-67" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-67" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">persona</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ada"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"eta"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">36</span><span class="c-punteggiatura">}</span>
 <span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">persona</span><span class="c-punteggiatura">[</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
 <span class="c-variabili">persona</span><span class="c-punteggiatura">[</span><span class="c-testi">"citta"</span><span class="c-punteggiatura">]</span> <span class="c-operatori">=</span> <span class="c-testi">"Londra"</span>
@@ -223,7 +229,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

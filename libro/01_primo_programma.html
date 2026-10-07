@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 1 — Il primo programma</h1>
 <p>Un programma è un testo che dà istruzioni al computer. In Leo, questo testo si salva in un file con estensione <code>.leo</code> e si esegue con un comando. Non serve compilare nulla a mano, non serve configurare niente: scrivi, salvi, esegui.</p>
+<blockquote><p><strong>💡 L'idea — Chi esegue non sottintende nulla</strong></p>
+<p>Immagina di dare indicazioni stradali a qualcuno che fa esattamente quello che dici, parola per parola, senza aggiungere niente di suo. Se dimentichi di dire «gira a destra», tira dritto; se dici due volte «prosegui», prosegue due volte. Il computer è questo esecutore fedele e letterale. Non è cattiveria: è l'assenza totale di sottinteso, ed è anche ciò che rende i programmi affidabili una volta scritti bene.</p></blockquote>
 <p>Cominciamo dalla tradizione. Apri un editor di testo — va bene qualunque cosa, anche il Blocco note, purché salvi in <strong>UTF-8</strong> — scrivi questa riga e salva il file come <code>ciao.leo</code>:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-3" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-3" class="libro-pre"><code><span class="c-libreria">scrivi</span> <span class="c-testi">"Ciao, mondo!"</span></code></pre></figure>
 <p>Ora apri un terminale nella cartella dove hai salvato il file ed esegui:</p>
@@ -127,6 +131,8 @@
 <p>Il programma stampa:</p>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-5" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-5" class="libro-pre"><code>Ciao, mondo!</code></pre></figure>
 <p>Congratulazioni: hai scritto ed eseguito il tuo primo programma. Ora smontiamolo, pezzo per pezzo, perché in quella riga c'è già parecchio.</p>
+<blockquote><p><strong>🦁 Curiosità — «Ciao, mondo» viene da lontano</strong></p>
+<p>L'usanza di far scrivere al principiante un programma che stampa «Hello, World» risale a un tutorial del linguaggio B scritto da Brian Kernighan nei primi anni Settanta, e divenne celebre con il libro sul linguaggio C che Kernighan firmò con Dennis Ritchie nel 1978. Da allora quasi ogni manuale di programmazione comincia così, in ogni lingua. Il nostro «Ciao, mondo!» è l'edizione italiana di una tradizione lunga mezzo secolo.</p></blockquote>
 <h2 id="scrivi-il-comando-per-parlare"><code>scrivi</code>: il comando per parlare</h2>
 <p><code>scrivi</code> è il comando che mostra qualcosa sullo schermo. (Ha anche un nome più tecnico, <code>stampa</code>: sono la stessa identica cosa, due parole per lo stesso comando. Nel libro useremo quasi sempre <code>scrivi</code>, perché si legge meglio.) Quello che segue <code>scrivi</code> è ciò che vuoi mostrare.</p>
 <p>In Leo i comandi all'inizio di una riga <strong>non hanno bisogno delle parentesi</strong>: la regola, che approfondiremo via via, è che <em>le parentesi vogliono dire «calcola»</em>. Quindi puoi scrivere il testo così com'è, senza nemmeno le virgolette:</p>
@@ -218,7 +224,7 @@ Ciao, Leo!</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

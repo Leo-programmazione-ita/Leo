@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 19 — Cybersecurity difensiva</h1>
 <p>Leo porta in dotazione un'area ricca di strumenti di sicurezza. Il taglio è dichiaratamente <strong>difensivo</strong>: proteggere i propri dati, i propri account, i propri file. Non si tratta di attaccare sistemi altrui, ma di costruire programmi che custodiscono bene ciò che gli affidi e di capire, con mano, i concetti che reggono la sicurezza di tutti i giorni. In questo capitolo tocchiamo i quattro pilastri: password robuste, integrità, riservatezza e autenticazione.</p>
+<blockquote><p><strong>🦁 Curiosità — Il verme che svegliò tutti</strong></p>
+<p>Nel novembre del 1988 un piccolo programma sperimentale sfuggì di mano e divenne il primo a diffondersi da solo su vasta scala attraverso Internet, rallentando migliaia di computer collegati alla rete. L'episodio mostrò al mondo quanto contasse la sicurezza e portò, pochi mesi dopo, alla nascita dei primi centri di risposta agli incidenti informatici. Da allora la difesa ha smesso di essere un pensiero secondario.</p></blockquote>
 <h2 id="password-misurarle-e-generarle">Password: misurarle e generarle</h2>
 <p>La prima linea di difesa di qualunque account è la password. Leo sa giudicarne la robustezza senza pietà e senza illusioni:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-184" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-184" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">f</span> <span class="c-operatori">=</span> <span class="c-libreria">misura_forza_password</span><span class="c-punteggiatura">(</span><span class="c-testi">"ciao123"</span><span class="c-punteggiatura">)</span>
@@ -144,6 +148,8 @@
 <span class="c-libreria">scrivi</span> <span class="c-testi">"Messaggio aperto: </span><span class="c-interpolazione">{</span><span class="c-variabili">aperto</span><span class="c-interpolazione">}</span><span class="c-testi">"</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-189" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-189" class="libro-pre"><code>Messaggio aperto: Il codice del caveau è 4821</code></pre></figure>
 <p><code>crea_chiavi_riservatezza</code> genera la coppia; <code>cifra_per(dati, pubblica)</code> chiude il messaggio in una «busta» leggibile solo con la privata corrispondente; <code>decifra_da(busta, privata)</code> la riapre. Ci sono anche le versioni per i file (<code>cifra_file_per</code>, <code>decifra_file_da</code>) e per più destinatari insieme (<code>busta_per_molti</code>). Nota bene: nell'esempio generiamo le chiavi sul momento; nel mondo reale la chiave privata va custodita con cura — se la perdi, perdi l'accesso; se te la rubano, perdi il segreto.</p>
+<blockquote><p><strong>💡 L'idea — La cassaforte e il sigillo</strong></p>
+<p>Cifrare un messaggio è come chiuderlo in una cassaforte di cui solo il destinatario ha la chiave: chiunque può vedere la cassaforte, ma nessun altro può aprirla. L'impronta crittografica, invece, è come il sigillo di ceralacca su una busta: non nasconde il contenuto, ma rivela subito se qualcuno l'ha aperta o modificata. Riservatezza e integrità rispondono a due domande diverse — «chi può leggere?» e «è stato toccato?» — ed è per questo che si usano strumenti diversi.</p></blockquote>
 <h2 id="autenticazione-i-codici-a-tempo">Autenticazione: i codici a tempo</h2>
 <p>I codici OTP — quelli che leggi sull'app di autenticazione e che cambiano ogni trenta secondi — sono il secondo fattore che protegge i tuoi account. Leo li sa calcolare. Qui chiediamo il codice valido a un istante <em>preciso</em> (così il risultato è riproducibile):</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-190" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-190" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">segreto</span> <span class="c-operatori">=</span> <span class="c-testi">"JBSWY3DPEHPK3PXP"</span>
@@ -195,7 +201,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

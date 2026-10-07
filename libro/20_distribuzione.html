@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -120,6 +122,8 @@
     <div class="libro-testo">
 <h1>Capitolo 20 — Distribuire i programmi</h1>
 <p>Hai scritto un programma utile. Ora vuoi darlo a qualcuno che non ha Leo installato — un collega, un amico, un'intera classe. Non puoi pretendere che chi lo riceve sappia aprire un terminale, installare Python e lanciare <code>python3 -m leo</code>. La distribuzione risolve proprio questo: impacchetta il programma in qualcosa che si avvia con un doppio clic. Su Windows è un eseguibile <code>.exe</code>; su Android, l'APK del capitolo scorso.</p>
+<blockquote><p><strong>🦁 Curiosità — «Funziona sulla mia macchina»</strong></p>
+<p>È diventata proverbiale, tra i programmatori, la frase pronunciata davanti a un programma che gira benissimo sul computer di chi l'ha scritto e da nessun'altra parte: «funziona sulla mia macchina». Di solito la si dice con un sorriso rassegnato, perché il problema è proprio quello. Distribuire bene un programma serve esattamente a questo: far sì che funzioni anche sulle macchine di tutti gli altri.</p></blockquote>
 <h2 id="un-eseguibile-windows-con-leo-compila">Un eseguibile Windows con <code>leo compila</code></h2>
 <p>Il comando <code>leo compila</code> trasforma un programma <code>.leo</code>, o un intero progetto con finestre, in un <strong>eseguibile Windows autonomo</strong>. Chi lo riceve non deve installare niente — né Python, né Leo, né la libreria grafica:</p>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-193" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-193" class="libro-pre"><code>leo compila saluto.leo
@@ -141,6 +145,8 @@ leo compila Rubrica --un-file</code></pre></figure>
 <p>Sul fronte Android, la storia è quella del capitolo scorso: un progetto a finestre diventa un file <code>.apk</code> da installare sul telefono. La costruzione si fa sul computer, e il risultato è un singolo file che gira su tutti i telefoni dalla versione 7.0 in su. Puoi passarlo come qualunque altro file — via messaggio, via e-mail, su una chiavetta — e chi lo riceve lo installa consentendo l'installazione «da origini sconosciute». I passi precisi sono nelle schede <code>TELEFONO.md</code>, <code>android/LEGGIMI.md</code> e <code>ANDROID_PLAY.md</code> (quest'ultima per chi punta al Play Store).</p>
 <h2 id="pensare-a-chi-riceve">Pensare a chi riceve</h2>
 <p>La distribuzione è il momento in cui il tuo programma smette di essere tuo e diventa di chi lo usa. Vale la pena curarlo: un nome chiaro, un'icona, una versione, e — se il programma legge o scrive file — istruzioni semplici su dove mette le sue cose. Un buon programma mal consegnato frustra; un programma onesto ben impacchettato si fa ricordare. Le schede <code>DISTRIBUZIONE.md</code> e <code>COMPILAZIONE.md</code> raccolgono tutti i dettagli, dalle impronte SHA-256 alle installazioni silenziose.</p>
+<blockquote><p><strong>💡 L'idea — Il prodotto sullo scaffale</strong></p>
+<p>Distribuire un programma è come confezionare un prodotto per lo scaffale di un negozio: non basta che funzioni in laboratorio. Deve arrivare chiuso, completo e pronto all'uso tra le mani di chi lo installa, senza che debba procurarsi i pezzi mancanti. Un'etichetta chiara, una confezione ordinata e il nome ben visibile fanno la differenza tra un prodotto che si prende con fiducia e uno che si lascia sullo scaffale.</p></blockquote>
 <h2 id="prova-tu">Prova tu</h2>
 <blockquote><p>Gli esercizi di compilazione richiedono Windows con l'ambiente di Leo e PyInstaller.</p></blockquote>
 <ol><li>Prendi un programma testuale che hai scritto nei primi capitoli e compilalo in un <code>.exe</code> con un nome e una descrizione tua. Provalo con un doppio clic.</li><li>Compila lo stesso programma due volte, una con <code>--un-file</code> e una senza, e confronta le dimensioni e la velocità di avvio.</li><li>Progetta — anche solo sulla carta — come consegneresti la tua app a una classe di trenta studenti: file unico o cartella? Con quali istruzioni? Con quale icona?</li></ol>
@@ -180,7 +186,7 @@ leo compila Rubrica --un-file</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

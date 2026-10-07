@@ -1,0 +1,253 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.055
+Oggi parliamo di testi, cioè delle frasi che il tuo programma scrive.
+
+2
+00:00:05.055 --> 00:00:09.078
+Scopriremo il trucco più comodo di Leo: le parentesi graffe,
+
+3
+00:00:09.078 --> 00:00:12.568
+che mettono i valori direttamente dentro una frase.
+
+4
+00:00:12.568 --> 00:00:16.827
+E vedremo anche come sistemare, tagliare e trasformare un testo.
+
+5
+00:00:18.127 --> 00:00:19.927
+Ecco il punto chiave.
+
+6
+00:00:19.927 --> 00:00:25.263
+Dentro un testo, tra parentesi graffe, puoi scrivere il nome di una variabile,
+
+7
+00:00:25.263 --> 00:00:27.932
+e Leo al suo posto mette il valore.
+
+8
+00:00:27.932 --> 00:00:32.834
+Ma non solo una variabile: tra le graffe va bene qualunque espressione.
+
+9
+00:00:32.834 --> 00:00:35.316
+Un calcolo, come anni più dieci.
+
+10
+00:00:35.316 --> 00:00:40.653
+Oppure una chiamata di funzione, come lunghezza di nome, che conta le lettere.
+
+11
+00:00:40.653 --> 00:00:43.880
+Niente più testi spezzati e tanti segni più:
+
+12
+00:00:43.880 --> 00:00:47.107
+la frase si legge esattamente come apparirà.
+
+13
+00:00:48.407 --> 00:00:51.481
+Chi conosce Python riconoscerà le effe stringhe.
+
+14
+00:00:51.481 --> 00:00:54.611
+In Leo non serve la effe davanti alle virgolette:
+
+15
+00:00:54.611 --> 00:00:57.795
+ogni testo può contenere parentesi graffe, sempre.
+
+16
+00:00:59.095 --> 00:01:03.136
+Dopo l'espressione puoi mettere i due punti e un formato.
+
+17
+00:01:03.136 --> 00:01:06.803
+Due punti due vuol dire: sempre due cifre decimali.
+
+18
+00:01:06.803 --> 00:01:11.279
+Così tre e mezzo diventa tre e cinquanta, come su uno scontrino.
+
+19
+00:01:11.279 --> 00:01:15.941
+Due punti migliaia aggiunge i puntini delle migliaia, all'italiana.
+
+20
+00:01:15.941 --> 00:01:20.728
+E migliaia due fa entrambe le cose: perfetto per gli importi in euro.
+
+21
+00:01:22.028 --> 00:01:26.256
+Alcuni caratteri si scrivono con la barra rovesciata davanti.
+
+22
+00:01:26.256 --> 00:01:30.238
+Barra enne va a capo, barra ti inserisce una tabulazione,
+
+23
+00:01:30.238 --> 00:01:34.159
+e barra virgolette scrive le virgolette dentro un testo.
+
+24
+00:01:34.159 --> 00:01:37.039
+Siccome le graffe servono per i valori,
+
+25
+00:01:37.039 --> 00:01:42.308
+per scrivere una graffa vera si mette la barra rovesciata anche davanti a lei.
+
+26
+00:01:42.308 --> 00:01:46.842
+E un trucco comodo: un testo moltiplicato per un numero si ripete.
+
+27
+00:01:46.842 --> 00:01:49.783
+Uguale per venti disegna una bella riga.
+
+28
+00:01:51.083 --> 00:01:55.923
+I testi hanno dei metodi, cioè delle azioni che si chiamano con il punto.
+
+29
+00:01:55.923 --> 00:01:59.269
+Pulisci toglie gli spazi all'inizio e alla fine:
+
+30
+00:01:59.269 --> 00:02:03.451
+le parentesi quadre nella stampa ci mostrano che sono spariti.
+
+31
+00:02:03.451 --> 00:02:06.439
+Maiuscolo e minuscolo cambiano le lettere.
+
+32
+00:02:06.439 --> 00:02:09.367
+Sostituisci cambia un pezzo con un altro.
+
+33
+00:02:09.367 --> 00:02:11.697
+Contiene risponde vero o falso.
+
+34
+00:02:11.697 --> 00:02:15.043
+E dividi spezza la frase in una lista di parole.
+
+35
+00:02:15.043 --> 00:02:17.971
+Attenzione: un testo non si modifica mai.
+
+36
+00:02:17.971 --> 00:02:22.512
+Ogni metodo restituisce un testo nuovo, e l'originale resta com'era.
+
+37
+00:02:23.812 --> 00:02:28.326
+Un testo è una fila di caratteri, numerati a partire da zero.
+
+38
+00:02:28.326 --> 00:02:32.055
+Nome, parentesi quadra, zero, è la prima lettera.
+
+39
+00:02:32.055 --> 00:02:35.327
+Con meno uno si parte dal fondo: l'ultima.
+
+40
+00:02:35.327 --> 00:02:39.710
+E con per ogni possiamo visitare le lettere una alla volta.
+
+41
+00:02:39.710 --> 00:02:41.738
+Qui contiamo le vocali:
+
+42
+00:02:41.738 --> 00:02:46.383
+la parola in controlla se la lettera è una delle cinque vocali.
+
+43
+00:02:46.383 --> 00:02:51.159
+I cicli li vedremo bene tra qualche video: per ora goditi l'idea.
+
+44
+00:02:52.459 --> 00:02:54.362
+Un consiglio pratico.
+
+45
+00:02:54.362 --> 00:02:58.102
+Se provi a unire un testo e un numero con il più,
+
+46
+00:02:58.102 --> 00:03:00.924
+Leo si ferma con un errore di tipo.
+
+47
+00:03:00.924 --> 00:03:05.321
+Potresti convertire il numero con la funzione testo, certo.
+
+48
+00:03:05.321 --> 00:03:09.520
+Ma quasi sempre la soluzione migliore è la più semplice:
+
+49
+00:03:09.520 --> 00:03:12.867
+metti il numero tra graffe dentro la frase.
+
+50
+00:03:14.167 --> 00:03:14.817
+Quiz.
+
+51
+00:03:14.817 --> 00:03:16.616
+Che cosa stampa questa riga?
+
+52
+00:03:20.916 --> 00:03:23.876
+La risposta giusta è: Stampa cinque gatti.
+
+53
+00:03:23.876 --> 00:03:28.671
+Tra le graffe Leo calcola l'espressione e mette il risultato nella frase.
+
+54
+00:03:29.971 --> 00:03:31.274
+Ricapitoliamo.
+
+55
+00:03:31.274 --> 00:03:34.770
+Le graffe mettono qualunque valore dentro un testo,
+
+56
+00:03:34.770 --> 00:03:37.259
+anche con un formato per i numeri.
+
+57
+00:03:37.259 --> 00:03:41.110
+I caratteri speciali si scrivono con la barra rovesciata.
+
+58
+00:03:41.110 --> 00:03:45.079
+I metodi trasformano un testo e ne restituiscono uno nuovo.
+
+59
+00:03:45.079 --> 00:03:48.338
+E con gli indici leggi i caratteri uno per uno.
+
+60
+00:03:49.638 --> 00:03:52.670
+Finora i nostri programmi parlavano da soli.
+
+61
+00:03:52.670 --> 00:03:56.285
+Nel prossimo video impariamo ad ascoltare: con chiedi,
+
+62
+00:03:56.285 --> 00:03:59.667
+il programma fa una domanda e usa la tua risposta.
+
+63
+00:03:59.667 --> 00:04:00.658
+A presto!

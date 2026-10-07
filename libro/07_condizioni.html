@@ -18,7 +18,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../img/stemma_180.png">
@@ -41,7 +40,7 @@
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
         <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html">Manuale</a></li>
+        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
         <li><a href="../template.html">Esempi</a></li>
         <li><a href="../video.html">Video</a></li>
         <li><a href="../telefono.html">Telefono</a></li>
@@ -71,6 +70,9 @@
     <div class="libro-lato-interno">
       <nav class="libro-lato-nav" aria-label="Indice del libro">
 <a class="libro-lato-cop" href="index.html">Copertina e indice</a>
+<p class="libro-lato-parte">Prefazione</p>
+<ul>
+<li><a href="00_prefazione.html">Prefazione</a></li>
 <p class="libro-lato-parte">Introduzione</p>
 <ul>
 <li><a href="00_introduzione.html">Introduzione</a></li>
@@ -131,7 +133,11 @@
     <span class="c-libreria">scrivi</span> <span class="c-testi">"Respinto"</span>
 <span class="c-flusso">fine</span></code></pre></figure>
 <figure class="libro-codice libro-codice-out"><div class="libro-cod-barra"><span class="libro-cod-nome">Risultato</span><button class="libro-copia" type="button" data-copia="cod-80" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-80" class="libro-pre"><code>Orale di recupero</code></pre></figure>
+<blockquote><p><strong>💡 L'idea — Il buttafuori all'ingresso</strong></p>
+<p>Una condizione è come il buttafuori davanti a un locale: controlla un requisito — hai l'età giusta? sei sulla lista? — e in base alla risposta ti manda di qua o di là. Il <code>se</code> è il primo controllo, gli <code>altrimenti se</code> sono i controlli successivi, e <code>altrimenti</code> è la porta che resta aperta per tutti gli altri.</p></blockquote>
 <p>La struttura si legge da sola. Leo controlla la prima condizione (<code>voto &gt;= 18</code>): è falsa, perché 16 non è almeno 18. Passa alla seconda (<code>voto &gt;= 15</code>): è vera, e allora esegue il suo blocco e <strong>salta tutto il resto</strong>. Se nessuna condizione fosse vera, scatterebbe <code>altrimenti</code>. Nota la forma: ogni condizione apre il blocco con <code>allora</code>, e un <strong>solo</strong> <code>fine</code> chiude l'intera catena. Puoi avere quanti <code>altrimenti se</code> vuoi, e sia <code>altrimenti se</code> sia <code>altrimenti</code> sono facoltativi.</p>
+<blockquote><p><strong>🦁 Curiosità — Una frase quasi italiana</strong></p>
+<p>Il costrutto «se... altrimenti» è vecchio quanto la programmazione stessa: c'era già nei primissimi linguaggi degli anni Cinquanta, e da allora non se n'è più andato. Quello che cambia, da un linguaggio all'altro, è soltanto la forma. Leo ha scelto parole nostre, così che <code>se voto &gt;= 18 allora</code> si legga quasi come una frase in italiano, al posto del classico <code>if ... then</code> inglese.</p></blockquote>
 <p>Due piccole comodità. Se <code>allora</code> è l'ultima cosa sulla riga, puoi anche ometterlo: la condizione va a capo da sola. E dentro la condizione di un <code>se</code> puoi scrivere <code>=</code> al posto di <code>==</code> per il confronto, perché lì non c'è ambiguità:</p>
 <figure class="libro-codice libro-codice-leo"><div class="libro-cod-barra"><span class="libro-cod-nome">Leo</span><button class="libro-copia" type="button" data-copia="cod-81" aria-label="Copia il codice"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copia</span></button></div><pre id="cod-81" class="libro-pre"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-testi">"si"</span>
 <span class="c-flusso">se</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-testi">"si"</span>
@@ -211,7 +217,7 @@ x non è tra i primi tre</code></pre></figure>
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html">Manuale</a></li>
+          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>
