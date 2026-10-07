@@ -1,0 +1,105 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.006
+Oggi sette piccole scorciatoie che rendono il codice più corto e, soprattutto,
+
+2
+00:00:05.006 --> 00:00:06.578
+più facile da leggere.
+
+3
+00:00:06.578 --> 00:00:07.364
+Pronto?
+
+4
+00:00:07.364 --> 00:00:08.255
+Si parte.
+
+5
+00:00:09.555 --> 00:00:13.847
+Uno: meno uno come indice ti dà l'ultimo elemento della lista,
+
+6
+00:00:13.847 --> 00:00:15.931
+senza contare quanti sono.
+
+7
+00:00:15.931 --> 00:00:19.181
+Due: punti più uguale cinque aggiunge cinque.
+
+8
+00:00:19.181 --> 00:00:21.756
+Vale anche con meno, per e diviso.
+
+9
+00:00:21.756 --> 00:00:25.680
+Tre: i confronti si mettono in fila, come in matematica:
+
+10
+00:00:25.680 --> 00:00:29.849
+tredici minore o uguale a età, minore o uguale a diciannove.
+
+11
+00:00:29.849 --> 00:00:34.938
+Quattro: uno punto punto tre è l'intervallo da uno a tre, estremi compresi.
+
+12
+00:00:34.938 --> 00:00:38.126
+Funziona anche all'indietro, da dieci a uno.
+
+13
+00:00:39.426 --> 00:00:43.108
+Cinque: una lista nuova in una riga sola.
+
+14
+00:00:43.108 --> 00:00:49.195
+Tra quadre scrivi cosa vuoi, poi per ogni: v per due, per ogni v in voti.
+
+15
+00:00:49.195 --> 00:00:54.456
+E puoi aggiungere un filtro con se: solo i voti da otto in su.
+
+16
+00:00:54.456 --> 00:01:00.242
+Sei: due variabili in un colpo solo, prendendo i valori da una lista.
+
+17
+00:01:01.542 --> 00:01:04.103
+E sette, la mia preferita: la catena,
+
+18
+00:01:04.103 --> 00:01:07.575
+una sbarretta verticale seguita dal simbolo maggiore.
+
+19
+00:01:07.575 --> 00:01:12.242
+Passa il valore alla funzione successiva, e si legge da sinistra a destra,
+
+20
+00:01:12.242 --> 00:01:15.828
+come una frase: prendi ciao, fallo maiuscolo, stampalo.
+
+21
+00:01:17.128 --> 00:01:22.007
+Eccole tutte e sette in una schermata: l'ultimo elemento, più uguale,
+
+22
+00:01:22.007 --> 00:01:26.190
+i confronti in fila, gli intervalli, le liste in una riga,
+
+23
+00:01:26.190 --> 00:01:28.725
+le variabili doppie e la catena.
+
+24
+00:01:28.725 --> 00:01:31.006
+Fai una foto a questa slide!
+
+25
+00:01:32.306 --> 00:01:37.304
+Non devi usarle tutte subito: scegline una e provala nel tuo prossimo programma.
+
+26
+00:01:37.304 --> 00:01:38.837
+Al prossimo trucco.

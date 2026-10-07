@@ -1,0 +1,117 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.472
+In italiano la stessa cosa si dice in tanti modi.
+
+2
+00:00:04.472 --> 00:00:05.866
+E Leo lo sa.
+
+3
+00:00:05.866 --> 00:00:11.929
+Vediamo i sinonimi delle parole chiave, e le piccole sviste che Leo ti perdona.
+
+4
+00:00:13.229 --> 00:00:18.134
+Qui al posto di mentre c'è finché, il primo fine è diventato termina,
+
+5
+00:00:18.134 --> 00:00:20.427
+e il se è diventato qualora.
+
+6
+00:00:20.427 --> 00:00:24.249
+Il programma funziona benissimo: tre, due, uno, via!
+
+7
+00:00:25.549 --> 00:00:27.050
+Ecco i più utili.
+
+8
+00:00:27.050 --> 00:00:32.516
+Se si può dire qualora o nel caso, altrimenti diventa sennò, mentre diventa finché.
+
+9
+00:00:32.516 --> 00:00:36.660
+Fine si può dire termina o basta, funzione diventa procedura,
+
+10
+00:00:36.660 --> 00:00:40.864
+restituisci diventa ritorna, e vero e falso diventano sì e no.
+
+11
+00:00:40.864 --> 00:00:44.347
+Attenzione però: i sinonimi sono parole riservate.
+
+12
+00:00:44.347 --> 00:00:47.590
+Non puoi chiamare una variabile vuoto o basta.
+
+13
+00:00:48.890 --> 00:00:51.295
+E poi ci sono le tolleranze.
+
+14
+00:00:51.295 --> 00:00:54.836
+Qui c'è fai dopo il se, dove andrebbe allora.
+
+15
+00:00:54.836 --> 00:00:59.914
+C'è Contatore con la C maiuscola, anche se la variabile è minuscola.
+
+16
+00:00:59.914 --> 00:01:03.255
+E c'è un fai in più dopo ripeti due volte.
+
+17
+00:01:03.255 --> 00:01:05.259
+Leo capisce lo stesso.
+
+18
+00:01:05.259 --> 00:01:11.339
+C'è anche una terza tolleranza, per le app: un colore senza virgolette, come rosso.
+
+19
+00:01:12.639 --> 00:01:16.995
+E se sei un insegnante e vuoi che tutti scrivano allo stesso modo,
+
+20
+00:01:16.995 --> 00:01:19.115
+magari durante una verifica?
+
+21
+00:01:19.115 --> 00:01:23.706
+Esegui con meno meno rigoroso: sinonimi e tolleranze diventano errori,
+
+22
+00:01:23.706 --> 00:01:26.591
+e il messaggio spiega quale parola usare.
+
+23
+00:01:26.591 --> 00:01:31.006
+E ricorda: Formatta riporta tutto alla forma canonica con un tocco.
+
+24
+00:01:32.306 --> 00:01:32.714
+Quiz.
+
+25
+00:01:37.014 --> 00:01:41.096
+Quale di questi nomi non puoi usare per una variabile?
+
+26
+00:01:44.096 --> 00:01:48.475
+La risposta giusta è la B, vuoto: è un sinonimo di nulla,
+
+27
+00:01:48.475 --> 00:01:51.035
+quindi è una parola riservata.
+
+28
+00:01:52.335 --> 00:01:55.677
+Scrivi come ti viene più naturale: Leo ti capisce.
+
+29
+00:01:55.677 --> 00:01:57.233
+Al prossimo trucco.

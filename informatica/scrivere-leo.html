@@ -1,0 +1,157 @@
+<title>Scrivere in Leo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C; --accent:#E6111A; --ok:#49C27A; --az:#86C1FF;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:50px}
+b{color:#fff;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin:16px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin-top:12px}
+pre.code{font-family:var(--mono);font-size:14px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA;margin:0}
+pre.code .kw{color:var(--accent)} pre.code .st{color:var(--az)} pre.code .cm{color:var(--faint)}
+.runbar{display:flex;align-items:center;gap:12px;margin-top:10px}
+button.run{font-family:var(--body);font-weight:600;font-size:14px;border-radius:10px;padding:9px 16px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;transition:.15s}
+button.run:hover{box-shadow:0 0 18px -6px var(--accent)}
+button.run:disabled{opacity:.5;cursor:default;box-shadow:none}
+.term{font-family:var(--mono);font-size:13.5px;background:#07110b;border:1px solid #16311f;border-radius:12px;
+  padding:12px 14px;margin-top:12px;color:var(--ok);white-space:pre-wrap;min-height:20px}
+.term .ph{color:#2f6a46}
+.term .cur{color:var(--ok)}
+.map{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:16px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;flex-wrap:wrap}
+.row .en{color:var(--muted);text-decoration:line-through;min-width:92px}
+.row .ar{color:var(--faint)}
+.row .it{color:#fff;font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+a.btn{font-family:var(--body);font-weight:600;font-size:15px;border-radius:10px;padding:11px 18px;border:1px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none}
+a.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.foot{color:var(--faint);font-size:13px;margin-top:54px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+  <span class="eyebrow">Informatica interattiva · Sezione 8</span>
+  <h1>Scrivere in Leo</h1>
+  <p class="lead">Hai visto i bit, la logica, gli algoritmi, i dati. Ora li <b style="color:var(--fg)">fai</b>: scrivi programmi veri, in italiano. Premi <b style="color:var(--fg)">Esegui</b> e guarda il risultato — è quello vero di Leo.</p>
+  <p>Un programma Leo si legge quasi come una frase. Non devi tradurre mentalmente l'inglese: le istruzioni dicono quello che fanno, nella lingua in cui pensi. Cominciamo dal classico primo programma.</p>
+
+  <section>
+    <h2><span class="n">01</span>Il primo programma</h2>
+    <p>Una riga. <code class="mono">stampa</code> scrive a schermo quello che gli dai tra parentesi.</p>
+    <div class="card">
+      <pre class="code"><span class="kw">stampa</span>(<span class="st">"Ciao, mondo!"</span>)</pre>
+      <div class="runbar"><button class="run" data-out="o1">Esegui ▸</button></div>
+      <div class="term" id="o1"><span class="ph">premi Esegui…</span></div>
+      <p class="take">Nessun contorno, nessuna cerimonia. Scrivi, esegui, vedi.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Si scrive come si pensa</h2>
+    <p>Le parole chiave che in altri linguaggi sono in inglese, in Leo sono in italiano. Stessa logica, lingua tua.</p>
+    <div class="card">
+      <div class="map">
+        <div class="row"><span class="en">print</span><span class="ar">→</span><span class="it">stampa</span></div>
+        <div class="row"><span class="en">for</span><span class="ar">→</span><span class="it">per ogni</span></div>
+        <div class="row"><span class="en">if</span><span class="ar">→</span><span class="it">se</span></div>
+        <div class="row"><span class="en">while</span><span class="ar">→</span><span class="it">mentre</span></div>
+        <div class="row"><span class="en">function</span><span class="ar">→</span><span class="it">funzione</span></div>
+        <div class="row"><span class="en">class</span><span class="ar">→</span><span class="it">classe</span></div>
+      </div>
+      <p class="take">Imparare la logica senza combattere anche la lingua: è tutto il punto.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Ripetere</h2>
+    <p>Un ciclo <code class="mono">per ogni</code> ripete qualcosa per ogni numero di un intervallo. Qui la tabellina.</p>
+    <div class="card">
+      <pre class="code"><span class="kw">per ogni</span> n <span class="kw">in</span> 1..5 <span class="kw">fai</span>
+    <span class="kw">stampa</span>(<span class="st">"{n} per {n} = {n*n}"</span>)
+<span class="kw">fine</span></pre>
+      <div class="runbar"><button class="run" data-out="o3">Esegui ▸</button></div>
+      <div class="term" id="o3"><span class="ph">premi Esegui…</span></div>
+      <p class="take">Le graffe <code class="mono">{...}</code> infilano un valore dentro il testo. Comodo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>Oggetti, in italiano</h2>
+    <p>Una <b>classe</b> è uno stampo: definisce cosa un oggetto <i>ha</i> e cosa sa <i>fare</i>. `questo` è l'oggetto corrente.</p>
+    <div class="card">
+      <pre class="code"><span class="kw">classe</span> Gatto
+    <span class="kw">ha</span> nome
+    <span class="kw">azione</span> verso()
+        <span class="kw">stampa</span>(<span class="st">"{questo.nome}: miao!"</span>)
+    <span class="kw">fine</span>
+<span class="kw">fine</span>
+
+<span class="kw">variabile</span> g = Gatto(<span class="st">"Milo"</span>)
+g.verso()</pre>
+      <div class="runbar"><button class="run" data-out="o4">Esegui ▸</button></div>
+      <div class="term" id="o4"><span class="ph">premi Esegui…</span></div>
+      <p class="take">Classi, ereditarietà, oggetti: tutta la programmazione moderna, leggibile.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span>Provalo davvero</h2>
+    <p>Questi esempi girano con il Leo di oggi. Scaricalo (Windows e Android) e scrivi la tua prima riga — gratis.</p>
+    <div class="card">
+      <div class="cta">
+        <a class="btn" href="https://leoitalia.com">Scarica Leo</a>
+        <a class="btn ghost" href="index.html">↩ Torna all'indice</a>
+      </div>
+      <p class="take">Dal concetto al codice vero, senza magia e senza inglese. Questo è il punto di tutto il libro.</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
+    <a href="https://leoitalia.com">leoitalia.com</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var OUT = {
+    o1: ["Ciao, mondo!"],
+    o3: ["1 per 1 = 1","2 per 2 = 4","3 per 3 = 9","4 per 4 = 16","5 per 5 = 25"],
+    o4: ["Milo: miao!"]
+  };
+  function run(btn){
+    var id=btn.getAttribute('data-out'), box=document.getElementById(id), lines=OUT[id];
+    btn.disabled=true; box.innerHTML='<span class="ph">esecuzione…</span>';
+    var i=0; box.textContent='';
+    function step(){
+      if(i<lines.length){
+        box.textContent += (i?'\n':'') + lines[i]; i++;
+        if(reduce){ while(i<lines.length){box.textContent+='\n'+lines[i];i++;} finish(); return; }
+        setTimeout(step, 260);
+      } else finish();
+    }
+    function finish(){ btn.disabled=false; btn.textContent='Esegui di nuovo ↺'; }
+    step();
+  }
+  [].forEach.call(document.querySelectorAll('button.run'),function(b){b.addEventListener('click',function(){run(b);});});
+})();
+</script>
