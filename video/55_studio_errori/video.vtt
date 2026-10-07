@@ -1,0 +1,301 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.040
+Scrivere codice è metà del lavoro.
+
+2
+00:00:03.040 --> 00:00:08.421
+L'altra metà è eseguirlo, scoprire che non fa quello che volevi, e capire perché.
+
+3
+00:00:08.421 --> 00:00:11.505
+Leo Studio ha strumenti precisi per questo:
+
+4
+00:00:11.505 --> 00:00:15.194
+la correzione con un clic e l'esecuzione passo passo,
+
+5
+00:00:15.194 --> 00:00:18.459
+che ti fa vedere il programma al rallentatore.
+
+6
+00:00:19.759 --> 00:00:22.577
+Il pulsante rosso Esegui, o il tasto F5,
+
+7
+00:00:22.577 --> 00:00:26.744
+salva la finestra e avvia il programma in una finestra a parte.
+
+8
+00:00:26.744 --> 00:00:31.793
+Mentre il programma gira, l'indicatore nella barra di stato diventa arancione.
+
+9
+00:00:31.793 --> 00:00:36.371
+Stop, oppure maiuscolo F5, lo ferma: utilissimo con un ciclo infinito.
+
+10
+00:00:36.371 --> 00:00:40.657
+Tutto quello che il programma stampa compare nel pannello Uscita,
+
+11
+00:00:40.657 --> 00:00:42.476
+un terminale integrato.
+
+12
+00:00:42.476 --> 00:00:45.881
+E se il programma usa chiedi, rispondi proprio lì.
+
+13
+00:00:47.181 --> 00:00:50.679
+Non serve nemmeno eseguire per trovare molti errori.
+
+14
+00:00:50.679 --> 00:00:53.828
+L'editor li sottolinea in ambra mentre scrivi,
+
+15
+00:00:53.828 --> 00:00:57.035
+e passando il mouse sopra leggi la spiegazione.
+
+16
+00:00:57.035 --> 00:01:01.875
+La lampadina, o control punto, propone le correzioni degli errori di forma:
+
+17
+00:01:01.875 --> 00:01:04.965
+un fine dimenticato, una virgoletta mancante.
+
+18
+00:01:04.965 --> 00:01:08.347
+Ti mostra le differenze e aspetta la tua conferma.
+
+19
+00:01:08.347 --> 00:01:13.303
+E dal menu Esegui, Controlla il codice cerca gli errori in tutta la finestra.
+
+20
+00:01:14.603 --> 00:01:19.997
+Quando Leo sa già come sistemare la riga dell'errore, lo dice in fondo al messaggio:
+
+21
+00:01:19.997 --> 00:01:21.814
+riga corretta proposta.
+
+22
+00:01:21.814 --> 00:01:25.215
+In Leo Studio questa proposta diventa un pulsante.
+
+23
+00:01:26.515 --> 00:01:28.971
+Nell'editor, in basso a destra,
+
+24
+00:01:28.971 --> 00:01:33.569
+compare una barretta con la riga proposta e il pulsante Correggi.
+
+25
+00:01:33.569 --> 00:01:38.293
+Dopo un'esecuzione, lo stesso pulsante compare nel pannello Uscita,
+
+26
+00:01:38.293 --> 00:01:41.064
+accanto a Svuota: Correggi riga sei.
+
+27
+00:01:41.064 --> 00:01:45.095
+Un clic, oppure alt e Invio, e la riga viene sostituita.
+
+28
+00:01:45.095 --> 00:01:50.764
+Si illumina per un attimo di verde, e se cambi idea, control Z la rimette com'era.
+
+29
+00:01:50.764 --> 00:01:54.417
+E nel messaggio d'errore, un clic su riga, numero,
+
+30
+00:01:54.417 --> 00:01:57.944
+di file punto leo ti porta dritto a quella riga.
+
+31
+00:01:59.244 --> 00:02:03.216
+Un codice ben rientrato è molto più facile da correggere,
+
+32
+00:02:03.216 --> 00:02:08.044
+perché si vede a colpo d'occhio dove inizia e dove finisce ogni blocco.
+
+33
+00:02:08.044 --> 00:02:11.038
+Control, maiuscolo, F lo sistema da solo:
+
+34
+00:02:11.038 --> 00:02:15.805
+rientra i blocchi di quattro spazi e riscrive i sinonimi, come finché,
+
+35
+00:02:15.805 --> 00:02:18.066
+nella forma canonica, mentre.
+
+36
+00:02:18.066 --> 00:02:20.877
+Anche questo si annulla con control Z.
+
+37
+00:02:22.177 --> 00:02:25.118
+E ora l'attrezzo più bello: il passo passo.
+
+38
+00:02:25.118 --> 00:02:29.212
+Proviamolo con questo programma, che trovi negli esempi di Leo,
+
+39
+00:02:29.212 --> 00:02:31.403
+nella cartella novità, studio.
+
+40
+00:02:31.403 --> 00:02:34.055
+Si apre con File, Apri file di codice.
+
+41
+00:02:34.055 --> 00:02:37.688
+Il programma cerca il voto migliore e calcola la media.
+
+42
+00:02:37.688 --> 00:02:39.418
+Il risultato è giusto.
+
+43
+00:02:39.418 --> 00:02:40.917
+Ma come ci arriva?
+
+44
+00:02:40.917 --> 00:02:42.993
+Guardiamolo al rallentatore.
+
+45
+00:02:44.293 --> 00:02:45.402
+Premi F10.
+
+46
+00:02:45.402 --> 00:02:48.790
+Il programma parte e si ferma sulla prima riga.
+
+47
+00:02:48.790 --> 00:02:51.501
+Ogni F10 esegue una sola istruzione.
+
+48
+00:02:51.501 --> 00:02:55.752
+La riga che sta per essere eseguita si illumina in arancione,
+
+49
+00:02:55.752 --> 00:02:57.970
+con una freccia nel margine.
+
+50
+00:02:57.970 --> 00:03:00.311
+Nella tabella delle variabili,
+
+51
+00:03:00.311 --> 00:03:05.302
+quelle che cambiano lampeggiano e restano rosse fino al passo successivo,
+
+52
+00:03:05.302 --> 00:03:10.169
+e sotto leggi un riepilogo in italiano: migliore passa da sette a nove.
+
+53
+00:03:10.169 --> 00:03:14.420
+Con un doppio clic su una variabile vedi tutta la sua storia,
+
+54
+00:03:14.420 --> 00:03:16.946
+cioè tutti i valori che ha avuto.
+
+55
+00:03:18.246 --> 00:03:21.051
+Premere F10 cento volte è noioso.
+
+56
+00:03:21.051 --> 00:03:24.815
+Control F10 fa continuare il programma da solo,
+
+57
+00:03:24.815 --> 00:03:29.810
+alla velocità che scegli con il cursore Velocità: da molto lenta,
+
+58
+00:03:29.810 --> 00:03:33.505
+un passo ogni secondo e mezzo, fino a massima.
+
+59
+00:03:33.505 --> 00:03:39.252
+E se ti interessa solo un punto preciso, mettici un punto di arresto con F9,
+
+60
+00:03:39.252 --> 00:03:44.384
+o con un clic nel margine: il programma corre fino a lì e si ferma.
+
+61
+00:03:44.384 --> 00:03:50.269
+Il passo passo è perfetto per i programmi testuali e per capire gli algoritmi.
+
+62
+00:03:50.269 --> 00:03:53.348
+Per i programmi a finestre si usa F5.
+
+63
+00:03:54.648 --> 00:03:55.321
+Quiz.
+
+64
+00:03:55.321 --> 00:03:58.321
+Quale tasto esegue una sola istruzione alla volta?
+
+65
+00:04:02.621 --> 00:04:04.736
+La risposta giusta è: F10.
+
+66
+00:04:04.736 --> 00:04:09.152
+F5 esegue tutto il programma, e F12 cambia il tema dell'editor.
+
+67
+00:04:10.452 --> 00:04:11.780
+Ricapitoliamo.
+
+68
+00:04:11.780 --> 00:04:14.133
+F5 esegue e maiuscolo F5 ferma.
+
+69
+00:04:14.133 --> 00:04:16.728
+Gli errori si vedono mentre scrivi,
+
+70
+00:04:16.728 --> 00:04:20.530
+e la riga proposta si applica con Correggi o alt Invio.
+
+71
+00:04:20.530 --> 00:04:25.962
+E con F10 segui il programma un passo alla volta, guardando le variabili cambiare.
+
+72
+00:04:27.262 --> 00:04:29.179
+Il tuo programma funziona?
+
+73
+00:04:29.179 --> 00:04:31.659
+Allora è il momento di distribuirlo.
+
+74
+00:04:31.659 --> 00:04:35.944
+Nel prossimo video lo trasformiamo in un vero programma per Windows,
+
+75
+00:04:35.944 --> 00:04:37.466
+con un doppio clic.

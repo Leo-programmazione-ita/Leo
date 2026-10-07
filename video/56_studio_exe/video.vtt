@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.063
+Il tuo programma funziona, e vuoi farlo usare a qualcun altro.
+
+2
+00:00:05.063 --> 00:00:07.670
+Ma sul suo computer Leo non c'è.
+
+3
+00:00:07.670 --> 00:00:11.842
+Niente paura: oggi lo trasformiamo in un file punto exe,
+
+4
+00:00:11.842 --> 00:00:14.710
+il formato dei programmi di Windows.
+
+5
+00:00:14.710 --> 00:00:17.643
+Chi lo riceve fa doppio clic e basta.
+
+6
+00:00:18.943 --> 00:00:22.095
+Dentro il file punto exe c'è il tuo codice,
+
+7
+00:00:22.095 --> 00:00:25.495
+insieme a tutto quello che serve per eseguirlo.
+
+8
+00:00:25.495 --> 00:00:29.204
+Per questo chi lo riceve non deve installare niente.
+
+9
+00:00:29.204 --> 00:00:33.160
+Leo ci mette solo le parti che il programma usa davvero,
+
+10
+00:00:33.160 --> 00:00:35.880
+così resta il più leggero possibile.
+
+11
+00:00:35.880 --> 00:00:40.206
+Un programma testuale si apre nella finestra nera, la console.
+
+12
+00:00:40.206 --> 00:00:44.657
+Un progetto con finestre parte direttamente con le sue finestre.
+
+13
+00:00:45.957 --> 00:00:51.145
+Per creare gli eseguibili Leo usa uno strumento che si chiama PyInstaller.
+
+14
+00:00:51.145 --> 00:00:54.688
+Si installa una volta sola, con Internet acceso,
+
+15
+00:00:54.688 --> 00:00:57.977
+dalla riga di comando nella cartella di Leo.
+
+16
+00:00:57.977 --> 00:01:03.671
+Se te ne dimentichi, nessun problema: Leo ti avvisa e ti mostra il comando esatto.
+
+17
+00:01:03.671 --> 00:01:08.922
+Oppure aggiungi meno meno installa a leo compila, e Leo lo installa per te,
+
+18
+00:01:08.922 --> 00:01:11.263
+dopo averti chiesto conferma.
+
+19
+00:01:12.563 --> 00:01:16.606
+Da Leo Studio è semplicissimo: menu Esegui, Crea eseguibile.
+
+20
+00:01:16.606 --> 00:01:21.956
+Oppure control, maiuscolo, B, o il pulsante Crea punto exe nella barra a sinistra.
+
+21
+00:01:21.956 --> 00:01:25.523
+Studio salva tutto e lavora in un processo separato.
+
+22
+00:01:25.523 --> 00:01:30.160
+L'avanzamento scorre nel pannello Uscita, e se cambi idea c'è Annulla.
+
+23
+00:01:30.160 --> 00:01:35.451
+Dopo qualche minuto compare l'avviso Eseguibile pronto, con il percorso del file.
+
+24
+00:01:35.451 --> 00:01:39.910
+Solo una cosa: se il programma sta girando, fermalo prima con Stop.
+
+25
+00:01:41.210 --> 00:01:45.594
+Lo stesso lavoro si fa dalla riga di comando, con leo compila,
+
+26
+00:01:45.594 --> 00:01:50.229
+seguito da un file punto leo oppure dalla cartella di un progetto.
+
+27
+00:01:50.229 --> 00:01:53.737
+Con meno meno nome scegli il nome del programma,
+
+28
+00:01:53.737 --> 00:01:57.996
+e con meno meno icona gli dai un'icona in formato punto ico.
+
+29
+00:01:57.996 --> 00:02:00.877
+Altrimenti l'icona è lo stemma di Leo.
+
+30
+00:02:00.877 --> 00:02:05.700
+L'eseguibile finisce nella cartella eseguibile, accanto al programma.
+
+31
+00:02:07.000 --> 00:02:12.492
+Di solito Leo crea una cartella, con un file punto exe piccolo e le librerie.
+
+32
+00:02:12.492 --> 00:02:17.533
+Il programma parte quasi all'istante, ma va spedita tutta la cartella,
+
+33
+00:02:17.533 --> 00:02:20.182
+per esempio compressa in uno zip.
+
+34
+00:02:20.182 --> 00:02:26.062
+Con meno meno un trattino file ottieni invece un file solo, comodissimo da mandare.
+
+35
+00:02:26.062 --> 00:02:31.490
+Però a ogni avvio si decomprime, e impiega qualche secondo in più a partire.
+
+36
+00:02:32.790 --> 00:02:35.975
+E i file che il programma legge e scrive?
+
+37
+00:02:35.975 --> 00:02:38.899
+Prendiamo questo contatore di visite.
+
+38
+00:02:38.899 --> 00:02:43.644
+Se il file visite punto txt esiste, legge il numero che contiene.
+
+39
+00:02:43.644 --> 00:02:46.179
+Poi aggiunge uno e lo riscrive.
+
+40
+00:02:46.179 --> 00:02:49.753
+La prima volta stampa uno, poi due, e così via.
+
+41
+00:02:49.753 --> 00:02:53.198
+Ma una volta compilato, dove finisce il file?
+
+42
+00:02:54.498 --> 00:02:56.543
+Accanto al file punto exe.
+
+43
+00:02:56.543 --> 00:03:00.752
+I file con un nome senza cartella si leggono e si scrivono lì.
+
+44
+00:03:00.752 --> 00:03:05.624
+Anche i file di dati del progetto vengono copiati accanto all'eseguibile,
+
+45
+00:03:05.624 --> 00:03:09.953
+e Leo non sovrascrive mai quelli che l'utente ha già modificato.
+
+46
+00:03:09.953 --> 00:03:13.682
+Immagini e suoni, invece, restano dentro l'eseguibile.
+
+47
+00:03:14.982 --> 00:03:19.644
+Un consiglio: prova sempre il programma con F5 prima di compilarlo.
+
+48
+00:03:19.644 --> 00:03:22.068
+Comunque Leo controlla da solo:
+
+49
+00:03:22.068 --> 00:03:26.046
+se c'è un errore di sintassi te lo mostra e non compila,
+
+50
+00:03:26.046 --> 00:03:30.583
+e ti avvisa se un'immagine sta fuori dalla cartella del progetto.
+
+51
+00:03:30.583 --> 00:03:35.743
+E se vuoi mettere il tuo nome nelle proprietà del programma, scrivi autore,
+
+52
+00:03:35.743 --> 00:03:39.472
+descrizione e versione nel file progetto punto toml.
+
+53
+00:03:40.772 --> 00:03:41.483
+Quiz.
+
+54
+00:03:41.483 --> 00:03:44.817
+Hai compilato il programma senza opzioni particolari.
+
+55
+00:03:44.817 --> 00:03:46.894
+Che cosa mandi a chi lo userà?
+
+56
+00:03:51.194 --> 00:03:56.298
+La risposta giusta è tutta la cartella, per esempio in uno zip:
+
+57
+00:03:56.298 --> 00:03:59.462
+il file punto exe da solo non basta.
+
+58
+00:03:59.462 --> 00:04:03.847
+Se vuoi un file solo, usa meno meno un trattino file.
+
+59
+00:04:05.147 --> 00:04:06.373
+Ricapitoliamo.
+
+60
+00:04:06.373 --> 00:04:08.826
+Installa PyInstaller una volta sola,
+
+61
+00:04:08.826 --> 00:04:12.281
+poi crea l'eseguibile da Leo Studio o con leo compila.
+
+62
+00:04:12.281 --> 00:04:15.625
+Spedisci tutta la cartella, oppure usa un file solo.
+
+63
+00:04:15.625 --> 00:04:19.025
+E i file del programma stanno accanto all'eseguibile.
+
+64
+00:04:20.325 --> 00:04:24.065
+Adesso i tuoi programmi girano su qualunque PC Windows.
+
+65
+00:04:24.065 --> 00:04:26.678
+Nel prossimo video, dallo stesso PC,
+
+66
+00:04:26.678 --> 00:04:30.121
+creiamo un'app da installare sul telefono Android.
