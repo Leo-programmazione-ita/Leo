@@ -1,0 +1,213 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.221
+In Leo un comando a inizio riga si può scrivere come una frase: stampa Ciao mondo,
+
+2
+00:00:06.221 --> 00:00:08.954
+senza parentesi e senza virgolette.
+
+3
+00:00:08.954 --> 00:00:13.277
+In questo video vediamo la regola, che sta in una riga sola:
+
+4
+00:00:13.277 --> 00:00:16.010
+le parentesi vogliono dire calcola.
+
+5
+00:00:17.310 --> 00:00:20.883
+A sinistra la forma nuova, a destra quella classica:
+
+6
+00:00:20.883 --> 00:00:23.324
+fanno esattamente la stessa cosa.
+
+7
+00:00:23.324 --> 00:00:27.969
+Dopo un comando di testo, come stampa, tutto quello che segue è testo,
+
+8
+00:00:27.969 --> 00:00:31.839
+così com'è scritto: numeri, decimali, apostrofi compresi.
+
+9
+00:00:31.839 --> 00:00:34.578
+La forma classica resta sempre valida:
+
+10
+00:00:34.578 --> 00:00:39.759
+se tutto quello che segue il comando è una sola parentesi, è la forma classica.
+
+11
+00:00:41.059 --> 00:00:42.455
+Ecco la regola.
+
+12
+00:00:42.455 --> 00:00:47.434
+Dentro un comando di testo, quello che sta tra parentesi tonde si calcola,
+
+13
+00:00:47.434 --> 00:00:51.137
+e il valore prende il suo posto: nome diventa Giulia,
+
+14
+00:00:51.137 --> 00:00:53.687
+anni più uno diventa trentacinque.
+
+15
+00:00:53.687 --> 00:00:57.390
+Stampa, tra parentesi, tre più quattro, scrive sette.
+
+16
+00:00:57.390 --> 00:01:02.551
+Senza parentesi, invece, tre più quattro è testo, e viene scritto così com'è.
+
+17
+00:01:02.551 --> 00:01:07.590
+Non è un errore: l'editor ti suggerisce le parentesi, se volevi il calcolo.
+
+18
+00:01:08.890 --> 00:01:11.034
+I comandi sono di tre famiglie.
+
+19
+00:01:11.034 --> 00:01:14.883
+Quelli di testo scrivono una frase: stampa, messaggio, chiedi.
+
+20
+00:01:14.883 --> 00:01:19.282
+Quelli di valore ricevono numeri, anche con l'unità: avanti cento passi,
+
+21
+00:01:19.282 --> 00:01:22.745
+destra novanta gradi, attendi cinquecento millisecondi.
+
+22
+00:01:22.745 --> 00:01:25.385
+Oppure parole, come colore verde chiaro.
+
+23
+00:01:25.385 --> 00:01:28.903
+Quelli senza valori si scrivono da soli: casa, penna su.
+
+24
+00:01:28.903 --> 00:01:32.972
+E anche i metodi degli oggetti delle finestre che fanno un'azione.
+
+25
+00:01:34.272 --> 00:01:40.157
+Se metti la frase tra virgolette, il testo è esatto: le parentesi restano parentesi,
+
+26
+00:01:40.157 --> 00:01:44.059
+e i valori si inseriscono con le graffe, come sempre.
+
+27
+00:01:44.059 --> 00:01:49.944
+E chiedi si può usare anche a destra di un uguale: variabile risposta uguale chiedi,
+
+28
+00:01:49.944 --> 00:01:51.415
+come ti chiami.
+
+29
+00:01:52.715 --> 00:01:56.750
+Le parentesi restano obbligatorie dove si calcola un valore:
+
+30
+00:01:56.750 --> 00:01:59.836
+le funzioni come lunghezza, casuale, radice.
+
+31
+00:01:59.836 --> 00:02:01.795
+Come le formule di Excel.
+
+32
+00:02:01.795 --> 00:02:05.296
+E la regola vale solo per il comando a inizio riga.
+
+33
+00:02:05.296 --> 00:02:09.450
+I metodi delle liste, come aggiungi, restano con le parentesi.
+
+34
+00:02:10.750 --> 00:02:14.934
+E se tra parentesi c'è qualcosa che non si può calcolare?
+
+35
+00:02:14.934 --> 00:02:20.341
+Leo se ne accorge prima di eseguire, e te lo spiega: le parentesi calcolano;
+
+36
+00:02:20.341 --> 00:02:24.718
+per scriverle così come sono, metti la frase tra virgolette.
+
+37
+00:02:24.718 --> 00:02:28.709
+Le faccine, come due punti e parentesi, restano testo.
+
+38
+00:02:30.009 --> 00:02:31.778
+Un consiglio pratico.
+
+39
+00:02:31.778 --> 00:02:37.086
+La forma senza parentesi è comodissima per i comandi semplici e per i messaggi.
+
+40
+00:02:37.086 --> 00:02:39.953
+Quando una riga contiene molti calcoli,
+
+41
+00:02:39.953 --> 00:02:44.590
+la forma classica con le virgolette e le graffe è spesso più chiara.
+
+42
+00:02:44.590 --> 00:02:47.152
+Scegli quella che si legge meglio.
+
+43
+00:02:48.452 --> 00:02:49.353
+Domanda.
+
+44
+00:02:49.353 --> 00:02:53.350
+Che cosa scrive stampa totale, due per tre tra parentesi, euro?
+
+45
+00:02:57.650 --> 00:02:59.566
+Totale sei euro, risposta B.
+
+46
+00:02:59.566 --> 00:03:01.323
+Tra parentesi si calcola.
+
+47
+00:03:02.623 --> 00:03:03.930
+Ricapitoliamo.
+
+48
+00:03:03.930 --> 00:03:08.268
+Dopo un comando di testo tutto è testo; tra parentesi si calcola;
+
+49
+00:03:08.268 --> 00:03:10.705
+tra virgolette il testo è esatto.
+
+50
+00:03:10.705 --> 00:03:14.152
+I comandi di valore accettano numeri con le unità.
+
+51
+00:03:14.152 --> 00:03:18.133
+E la forma classica, con le parentesi, resta sempre valida.
+
+52
+00:03:19.433 --> 00:03:24.641
+Esercizio: prendi il tuo primo programma e riscrivilo con i comandi senza parentesi.
+
+53
+00:03:24.641 --> 00:03:27.188
+Poi confronta: quale si legge meglio?

@@ -1,0 +1,149 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.139
+Chiedi restituisce sempre un testo,
+
+2
+00:00:03.139 --> 00:00:06.761
+e chi usa il programma può scrivere qualunque cosa.
+
+3
+00:00:06.761 --> 00:00:11.548
+Nel video su chiedi abbiamo visto come difendersi con prova e cattura.
+
+4
+00:00:11.548 --> 00:00:16.827
+Oggi vediamo due comandi che fanno quel lavoro per te: chiedi numero e scegli.
+
+5
+00:00:18.127 --> 00:00:23.697
+A sinistra, la versione con chiedi: un ciclo, prova e cattura, la conversione.
+
+6
+00:00:23.697 --> 00:00:25.963
+Otto righe per una domanda.
+
+7
+00:00:25.963 --> 00:00:29.914
+A destra, la stessa cosa con chiedi numero: una riga.
+
+8
+00:00:29.914 --> 00:00:35.678
+Richiede la risposta finché è un numero, e con da e a finché sta nell'intervallo.
+
+9
+00:00:36.978 --> 00:00:39.368
+Ecco che cosa succede davvero.
+
+10
+00:00:39.368 --> 00:00:45.029
+La prima risposta è trenta, in lettere: Leo spiega che serve un numero e richiede.
+
+11
+00:00:45.029 --> 00:00:49.809
+La seconda è trecento: fuori dall'intervallo, e Leo richiede ancora.
+
+12
+00:00:49.809 --> 00:00:54.212
+La terza è giusta, e il programma continua con un numero vero,
+
+13
+00:00:54.212 --> 00:00:56.162
+già pronto per i conti.
+
+14
+00:00:57.462 --> 00:01:02.214
+Scegli mostra un menu numerato: nel terminale si risponde con il numero,
+
+15
+00:01:02.214 --> 00:01:05.599
+e sul telefono compaiono dei pulsanti da toccare.
+
+16
+00:01:05.599 --> 00:01:09.222
+Restituisce la voce scelta, non il numero: qui Excel.
+
+17
+00:01:09.222 --> 00:01:13.380
+Una risposta che non è nel menu viene semplicemente richiesta.
+
+18
+00:01:14.680 --> 00:01:18.632
+Un errore sottile: chiedi restituisce il testo cinque,
+
+19
+00:01:18.632 --> 00:01:22.201
+e il testo cinque non è uguale al numero cinque.
+
+20
+00:01:22.201 --> 00:01:25.451
+La condizione è falsa, e non stampa niente.
+
+21
+00:01:25.451 --> 00:01:30.550
+Leo se ne accorge e ti avvisa: stai confrontando un testo con un numero.
+
+22
+00:01:30.550 --> 00:01:33.864
+La soluzione è chiedi numero, oppure intero.
+
+23
+00:01:35.164 --> 00:01:38.798
+Sul telefono queste domande diventano ancora più comode:
+
+24
+00:01:38.798 --> 00:01:43.964
+chiedi numero apre la tastiera numerica, e scegli mostra un pulsante per ogni voce.
+
+25
+00:01:43.964 --> 00:01:48.449
+Lo stesso programma funziona nel terminale del computer e sul telefono,
+
+26
+00:01:48.449 --> 00:01:50.266
+senza cambiare una riga.
+
+27
+00:01:51.566 --> 00:01:52.268
+Domanda.
+
+28
+00:01:52.268 --> 00:01:54.068
+L'utente sceglie la seconda voce.
+
+29
+00:01:54.068 --> 00:01:55.648
+Che cosa restituisce scegli?
+
+30
+00:01:59.948 --> 00:02:04.030
+Il testo Excel, risposta B: la voce, non il numero.
+
+31
+00:02:05.330 --> 00:02:06.624
+Ricapitoliamo.
+
+32
+00:02:06.624 --> 00:02:10.684
+Chiedi numero richiede finché la risposta è un numero valido,
+
+33
+00:02:10.684 --> 00:02:12.508
+anche in un intervallo.
+
+34
+00:02:12.508 --> 00:02:14.802
+Scegli fa scegliere da un menu.
+
+35
+00:02:14.802 --> 00:02:18.391
+E se confronti un testo con un numero, Leo ti avvisa.
+
+36
+00:02:19.691 --> 00:02:22.177
+Esercizio: un convertitore di valute.
+
+37
+00:02:22.177 --> 00:02:27.038
+Scegli la valuta con scegli, l'importo con chiedi numero, e stampa il risultato.

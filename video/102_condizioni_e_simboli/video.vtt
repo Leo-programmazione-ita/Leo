@@ -1,0 +1,201 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.975
+Le condizioni sono il punto in cui chi comincia sbaglia di più:
+
+2
+00:00:04.975 --> 00:00:10.458
+un uguale al posto di due, un allora dimenticato, un maggiore scritto a parole.
+
+3
+00:00:10.458 --> 00:00:14.996
+In questo video vediamo le regole di Leo: rigorose quando serve,
+
+4
+00:00:14.996 --> 00:00:17.643
+tolleranti dove non fa differenza.
+
+5
+00:00:18.943 --> 00:00:23.941
+Dentro la condizione di un se, un solo uguale vale come confronto:
+
+6
+00:00:23.941 --> 00:00:25.900
+se voto uguale dieci.
+
+7
+00:00:25.900 --> 00:00:30.088
+Il doppio uguale resta valido, ed è la forma canonica.
+
+8
+00:00:30.088 --> 00:00:35.694
+E allora, a fine riga, è facoltativo: se la riga finisce con la condizione,
+
+9
+00:00:35.694 --> 00:00:37.720
+Leo va a capo da solo.
+
+10
+00:00:37.720 --> 00:00:41.368
+Lo stesso vale per fai dopo mentre e per ogni.
+
+11
+00:00:41.368 --> 00:00:47.514
+Il fine, invece, resta obbligatorio: è quello che fa vedere dove finisce il blocco.
+
+12
+00:00:48.814 --> 00:00:52.297
+I calcoli e i confronti si scrivono con i simboli,
+
+13
+00:00:52.297 --> 00:00:57.703
+come in matematica e in ogni linguaggio: più, meno, per, diviso, maggiore, minore.
+
+14
+00:00:57.703 --> 00:01:02.568
+Leo accetta anche i simboli della tastiera matematica: maggiore o uguale,
+
+15
+00:01:02.568 --> 00:01:05.391
+minore o uguale, diverso, per e diviso.
+
+16
+00:01:05.391 --> 00:01:08.814
+E il formattatore li riporta alla forma canonica.
+
+17
+00:01:10.114 --> 00:01:14.769
+Le forme a parole, come x è maggiore di tre, o tre più quattro,
+
+18
+00:01:14.769 --> 00:01:16.802
+non sono codice valido:
+
+19
+00:01:16.802 --> 00:01:21.719
+un linguaggio serio deve avere un solo modo di scrivere un calcolo.
+
+20
+00:01:21.719 --> 00:01:27.751
+Ma Leo le riconosce, e ti insegna il simbolo: ti mostra la riga intera già corretta,
+
+21
+00:01:27.751 --> 00:01:29.915
+con il pulsante correggi.
+
+22
+00:01:29.915 --> 00:01:34.636
+Dentro il testo di un comando, invece, le parole restano parole:
+
+23
+00:01:34.636 --> 00:01:39.094
+stampa tre più quattro fa sette scrive proprio quella frase.
+
+24
+00:01:40.394 --> 00:01:44.940
+Ripeti per sempre ripete un blocco finché non incontra interrompi:
+
+25
+00:01:44.940 --> 00:01:48.933
+la forma giusta per un programma che aspetta un servizio,
+
+26
+00:01:48.933 --> 00:01:51.758
+o per il ciclo principale di un gioco.
+
+27
+00:01:51.758 --> 00:01:56.611
+Qui il programma controlla ogni cinque secondi se un servizio è attivo,
+
+28
+00:01:56.611 --> 00:01:58.761
+e si ferma quando risponde.
+
+29
+00:02:00.061 --> 00:02:03.638
+Altri errori frequenti vengono riconosciuti e corretti:
+
+30
+00:02:03.638 --> 00:02:07.953
+fai cinque volte diventa ripeti cinque volte, mostra diventa stampa,
+
+31
+00:02:07.953 --> 00:02:12.212
+un uguale su una variabile nuova diventa variabile x uguale cinque.
+
+32
+00:02:12.212 --> 00:02:13.518
+E una garanzia:
+
+33
+00:02:13.518 --> 00:02:18.117
+il correttore non propone mai una riga che il parser di Leo rifiuterebbe.
+
+34
+00:02:18.117 --> 00:02:21.694
+Se Leo ti propone una correzione, quella riga funziona.
+
+35
+00:02:22.994 --> 00:02:26.831
+Il consiglio: scrivi come ti viene, poi usa formatta.
+
+36
+00:02:26.831 --> 00:02:31.549
+Il codice torna nella forma canonica, con il doppio uguale, allora,
+
+37
+00:02:31.549 --> 00:02:33.625
+fai e i simboli standard.
+
+38
+00:02:33.625 --> 00:02:38.406
+Nei progetti di gruppo è quello che rende il codice di tutti uguale,
+
+39
+00:02:38.406 --> 00:02:40.545
+e più facile da rileggere.
+
+40
+00:02:41.845 --> 00:02:42.795
+Domanda.
+
+41
+00:02:42.795 --> 00:02:45.110
+Che cosa fa se x uguale cinque?
+
+42
+00:02:49.410 --> 00:02:51.644
+Confronta x con cinque, risposta B.
+
+43
+00:02:51.644 --> 00:02:55.124
+Dentro una condizione l'uguale singolo vale come confronto.
+
+44
+00:02:56.424 --> 00:02:57.660
+Ricapitoliamo.
+
+45
+00:02:57.660 --> 00:03:00.020
+Nel se l'uguale singolo confronta.
+
+46
+00:03:00.020 --> 00:03:02.661
+Allora e fai sono facoltativi, fine no.
+
+47
+00:03:02.661 --> 00:03:06.538
+I calcoli si scrivono con i simboli, anche quelli matematici,
+
+48
+00:03:06.538 --> 00:03:10.302
+e le forme a parole vengono corrette con il simbolo giusto.
+
+49
+00:03:11.602 --> 00:03:17.204
+Esercizio: scrivi una condizione a parole, per esempio x è maggiore di tre,
+
+50
+00:03:17.204 --> 00:03:20.173
+e guarda la riga che ti propone Leo.
