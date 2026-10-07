@@ -1,0 +1,257 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.173
+Questa volta non partiamo da un modello: la calcolatrice la disegniamo noi,
+
+2
+00:00:05.173 --> 00:00:07.200
+da una finestra quasi vuota.
+
+3
+00:00:07.200 --> 00:00:11.084
+Due numeri, quattro operazioni, un risultato grande e chiaro.
+
+4
+00:00:11.084 --> 00:00:15.363
+E un'attenzione speciale per l'unica operazione che non si può fare:
+
+5
+00:00:15.363 --> 00:00:16.827
+dividere per zero.
+
+6
+00:00:18.127 --> 00:00:19.675
+Ecco l'app finita.
+
+7
+00:00:19.675 --> 00:00:24.615
+Due caselle numero, con due decimali e un minimo e un massimo molto larghi,
+
+8
+00:00:24.615 --> 00:00:26.996
+da meno un milione a un milione.
+
+9
+00:00:26.996 --> 00:00:30.805
+Quattro pulsanti tondi, larghi settanta e alti sessanta,
+
+10
+00:00:30.805 --> 00:00:34.139
+con raggio degli angoli trenta: cerchi perfetti.
+
+11
+00:00:34.139 --> 00:00:38.305
+Il segno lo scriviamo con i caratteri più, meno, per e diviso.
+
+12
+00:00:38.305 --> 00:00:43.662
+E il risultato: un'etichetta con il carattere a trentadue, in grassetto, centrata,
+
+13
+00:00:43.662 --> 00:00:46.698
+su fondo bianco con gli angoli arrotondati.
+
+14
+00:00:47.998 --> 00:00:52.093
+Il modo più rapido per iniziare: crea un'app dal modello Saluto,
+
+15
+00:00:52.093 --> 00:00:55.278
+e togli gli oggetti che non servono con Elimina.
+
+16
+00:00:55.278 --> 00:00:59.430
+Poi aggiungi due caselle numero, quattro pulsanti e un'etichetta.
+
+17
+00:00:59.430 --> 00:01:04.662
+Rinominali subito, con nomi chiari: Numero A, Numero B, Pulsante Più, Pulsante Meno,
+
+18
+00:01:04.662 --> 00:01:07.563
+Pulsante Per, Pulsante Diviso, e Risultato.
+
+19
+00:01:07.563 --> 00:01:11.601
+Attenzione alla casella numero: il massimo predefinito è cento.
+
+20
+00:01:11.601 --> 00:01:15.753
+Per una calcolatrice alza minimo e massimo, e metti due decimali.
+
+21
+00:01:17.053 --> 00:01:18.319
+Ora il codice.
+
+22
+00:01:18.319 --> 00:01:22.173
+Ogni pulsante fa una cosa sola: chiama la funzione calcola,
+
+23
+00:01:22.173 --> 00:01:24.647
+passandole l'operazione come testo.
+
+24
+00:01:24.647 --> 00:01:29.594
+Più, meno, la lettera x per la moltiplicazione e i due punti per la divisione.
+
+25
+00:01:29.594 --> 00:01:34.196
+Sono solo etichette interne: potevamo anche scrivere somma o differenza.
+
+26
+00:01:35.496 --> 00:01:36.781
+Ecco calcola.
+
+27
+00:01:36.781 --> 00:01:41.369
+Legge i due valori, che sono già numeri grazie alle caselle numero,
+
+28
+00:01:41.369 --> 00:01:44.550
+e sceglie l'operazione con una catena di se.
+
+29
+00:01:44.550 --> 00:01:50.178
+Nel codice la moltiplicazione si scrive con l'asterisco e la divisione con la barra.
+
+30
+00:01:50.178 --> 00:01:55.133
+Alla fine passa il risultato a una funzione mostra, che vediamo tra poco.
+
+31
+00:01:55.133 --> 00:01:58.865
+Ma c'è un problema nascosto nel ramo della divisione.
+
+32
+00:01:58.865 --> 00:02:00.394
+Riesci a vederlo?
+
+33
+00:02:01.694 --> 00:02:04.479
+Il problema è la divisione per zero.
+
+34
+00:02:04.479 --> 00:02:08.151
+In matematica non si può fare, e Leo, se ci provi,
+
+35
+00:02:08.151 --> 00:02:12.203
+si ferma con un errore di divisione: divisione per zero.
+
+36
+00:02:12.203 --> 00:02:16.191
+La soluzione è controllare prima: se b è uguale a zero,
+
+37
+00:02:16.191 --> 00:02:20.369
+scriviamo un messaggio chiaro nel risultato, lo scuotiamo,
+
+38
+00:02:20.369 --> 00:02:23.471
+e usciamo dalla funzione con restituisci.
+
+39
+00:02:23.471 --> 00:02:27.270
+Solo se b non è zero arriviamo alla riga che divide.
+
+40
+00:02:27.270 --> 00:02:32.714
+Si dice programmare in modo difensivo: prevedere quello che può andare storto.
+
+41
+00:02:34.014 --> 00:02:36.973
+Ultimo passo: mostrare bene il risultato.
+
+42
+00:02:36.973 --> 00:02:42.227
+Dividendo dodici per quattro, Leo ottiene tre virgola zero, un numero decimale.
+
+43
+00:02:42.227 --> 00:02:44.763
+Prima arrotondiamo a due decimali,
+
+44
+00:02:44.763 --> 00:02:48.327
+così un terzo non diventa una fila infinita di tre.
+
+45
+00:02:48.327 --> 00:02:53.580
+Poi, se il numero è uguale alla sua parte intera, teniamo solo la parte intera.
+
+46
+00:02:53.580 --> 00:02:57.687
+Ed ecco il risultato: tre, pulito, che pulsa appena compare.
+
+47
+00:02:58.987 --> 00:03:02.324
+Quando pensi di aver finito, prova i casi strani.
+
+48
+00:03:02.324 --> 00:03:03.729
+Dividi per zero.
+
+49
+00:03:03.729 --> 00:03:05.368
+Usa numeri negativi.
+
+50
+00:03:05.368 --> 00:03:07.066
+Prova uno diviso tre.
+
+51
+00:03:07.066 --> 00:03:08.705
+Prova numeri enormi.
+
+52
+00:03:08.705 --> 00:03:13.681
+Un'app è davvero pronta quando resiste anche a chi la usa in modo imprevisto.
+
+53
+00:03:14.981 --> 00:03:15.666
+Quiz.
+
+54
+00:03:15.666 --> 00:03:19.879
+Perché, dopo il messaggio non si divide per zero, scriviamo restituisci?
+
+55
+00:03:21.879 --> 00:03:27.593
+Per uscire subito dalla funzione, così la riga che divide non viene mai eseguita.
+
+56
+00:03:36.193 --> 00:03:37.411
+Ricapitoliamo.
+
+57
+00:03:37.411 --> 00:03:39.846
+Le caselle numero danno numeri veri.
+
+58
+00:03:39.846 --> 00:03:43.222
+Una funzione con un parametro serve quattro pulsanti.
+
+59
+00:03:43.222 --> 00:03:45.823
+Prima di dividere si controlla lo zero,
+
+60
+00:03:45.823 --> 00:03:49.254
+e con arrotonda e intero il risultato è sempre pulito.
+
+61
+00:03:50.554 --> 00:03:54.636
+Esercizio: aggiungi un quinto pulsante per la potenza, a elevato b.
+
+62
+00:03:54.636 --> 00:03:58.337
+In Leo si scrive con l'accento circonflesso, il cappelletto:
+
+63
+00:03:58.337 --> 00:04:01.112
+due cappelletto dieci fa milleventiquattro.
+
+64
+00:04:01.112 --> 00:04:04.432
+Il prossimo progetto è un gioco: acchiappa la stella.
