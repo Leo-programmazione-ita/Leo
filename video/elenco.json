@@ -73,79 +73,77 @@
    "titolo": "Che cos'è Leo",
    "descrizione": "Il linguaggio di programmazione in italiano: che cosa ci costruisci, dove gira e perché si impara in fretta.",
    "livello": "principiante",
-   "durata": 294.6,
-   "mp4": null,
-   "vtt": null,
+   "durata": 299.3,
+   "mp4": "01_cos_e_leo/video.mp4",
+   "vtt": "01_cos_e_leo/video.vtt",
    "poster": "01_cos_e_leo/poster.jpg",
-   "capitoli": [],
+   "capitoli": [
+    {
+     "t": 0.0,
+     "titolo": "Che cos'è Leo"
+    },
+    {
+     "t": 13.1,
+     "titolo": "Leo in una frase"
+    },
+    {
+     "t": 50.3,
+     "titolo": "Si legge come una frase"
+    },
+    {
+     "t": 75.8,
+     "titolo": "E funziona davvero"
+    },
+    {
+     "t": 89.4,
+     "titolo": "Dove gira Leo"
+    },
+    {
+     "t": 93.1,
+     "titolo": "Sul PC: Leo e Leo Studio"
+    },
+    {
+     "t": 129.5,
+     "titolo": "Sul telefono: l'app Leo"
+    },
+    {
+     "t": 154.9,
+     "titolo": "App vere, fatte da te"
+    },
+    {
+     "t": 175.0,
+     "titolo": "Leo e gli altri linguaggi"
+    },
+    {
+     "t": 201.6,
+     "titolo": "Pensato per imparare in fretta"
+    },
+    {
+     "t": 233.9,
+     "titolo": "Consiglio"
+    },
+    {
+     "t": 255.6,
+     "titolo": "Quiz"
+    },
+    {
+     "t": 274.3,
+     "titolo": "In breve"
+    },
+    {
+     "t": 293.5,
+     "titolo": "Alla prossima!"
+    }
+   ],
    "numero": "01",
-   "durata_testo": "4:55",
+   "durata_testo": "4:59",
    "livello_testo": "Principiante",
    "obiettivi": [
     "Sapere che cos'è Leo e a chi serve",
     "Riconoscere un programma Leo e leggerlo ad alta voce",
     "Conoscere gli strumenti: Leo sul PC, Leo Studio e l'app per il telefono"
    ],
-   "prerequisiti": [],
-   "stimata": true,
-   "copione": [
-    {
-     "titolo": "Che cos'è Leo",
-     "testo": "Benvenuto. Questo è il primo video su Leo. In pochi minuti vedi che cos'è, che cosa ci puoi costruire, e perché si impara in fretta anche partendo da zero."
-    },
-    {
-     "titolo": "Leo in una frase",
-     "testo": "Leo è un linguaggio di programmazione tutto in italiano. Le parole che usi per comandare il computer sono italiane: se, mentre, ripeti, fine. Anche i messaggi d'errore sono in italiano, e non si limitano a dire che qualcosa non va: ti spiegano perché, e ti propongono la correzione. Ha librerie pronte per il lavoro vero: file, internet, dati, database. E funziona sul computer e sul telefono. Va bene per chi comincia da zero, e anche per chi programma già e vuole andare veloce."
-    },
-    {
-     "titolo": "Si legge come una frase",
-     "testo": "Guarda questo programma. Anche se non hai mai programmato, prova a leggerlo ad alta voce. Variabile voti: una lista di cinque voti. Variabile totale: zero. Per ogni voto nella lista, fai: aggiungi il voto al totale. Fine. E alla fine, stampa la media. Visto? Si legge quasi come una frase in italiano. È proprio questa l'idea di Leo."
-    },
-    {
-     "titolo": "E funziona davvero",
-     "testo": "Ed ecco che cosa succede quando lo esegui. Leo fa i conti e scrive: media, ventisette virgola otto. Tu hai descritto che cosa fare, in italiano. Il computer l'ha fatto."
-    },
-    {
-     "titolo": "Dove gira Leo",
-     "testo": "Adesso vediamo dove puoi usare Leo."
-    },
-    {
-     "titolo": "Sul PC: Leo e Leo Studio",
-     "testo": "Sul computer con Windows hai due strumenti. Il primo è Leo vero e proprio: scrivi un programma in un file e lo esegui con un doppio clic. Il secondo è Leo Studio, un ambiente nero e rosso dove disegni le finestre trascinando i controlli, come si faceva con il vecchio Visual Basic. Ci sono più di novanta controlli pronti: pulsanti, caselle, grafici, perfino oggetti per i giochi. E quando il programma è finito, lo trasformi in un file eseguibile da distribuire a chi vuoi."
-    },
-    {
-     "titolo": "Sul telefono: l'app Leo",
-     "testo": "Poi c'è l'app Leo per Android. Con il telefono scrivi ed esegui programmi ovunque, senza un computer. Ma soprattutto crei app vere, con finestre e pulsanti, disegnandole con le dita. Le tue app possono usare la fotocamera, la bussola, la voce, la torcia del telefono. E con un tocco diventano un file APK da installare e condividere."
-    },
-    {
-     "titolo": "App vere, fatte da te",
-     "testo": "Ecco qualche esempio di app costruite con Leo sul telefono. Un contatore, una bussola con la livella a bolla, una lista della spesa con uno stile al neon. Sono tutte app che puoi creare anche tu, partendo da un modello pronto. Lo vediamo nei prossimi video."
-    },
-    {
-     "titolo": "Leo e gli altri linguaggi",
-     "testo": "Se hai già visto un altro linguaggio, per esempio Python, ti troverai a casa. Le idee sono le stesse: decisioni, cicli, funzioni, liste. Cambia la lingua: invece di if scrivi se, invece di print scrivi stampa. E ogni blocco si chiude con la parola fine: così vedi sempre dove finisce. Quello che impari con Leo ti servirà anche con gli altri linguaggi."
-    },
-    {
-     "titolo": "Pensato per imparare in fretta",
-     "testo": "Leo è fatto anche per imparare in fretta. Quando sbagli, ti mostra la riga già corretta. Il comando leo spiega racconta il tuo programma riga per riga, in italiano. Leo impara ti accompagna con lezioni guidate, dal primo stampa fino alla prima app con finestre. Leo sfida ti propone esercizi a livelli, con la verifica automatica. E c'è la tartaruga, che disegna seguendo i tuoi comandi: il modo più immediato per vedere un algoritmo al lavoro."
-    },
-    {
-     "titolo": "Consiglio",
-     "testo": "Un consiglio prima di cominciare. Per programmare con Leo non serve sapere l'inglese, e non serve la matematica difficile. Serve curiosità. E un'abitudine: ogni volta che vedi un esempio in questi video, mettilo in pausa e scrivilo tu. Con le tue mani. È il modo più veloce per imparare."
-    },
-    {
-     "titolo": "Quiz",
-     "testo": "Una domanda veloce. Con quale parola si chiude un blocco in Leo? La risposta giusta è la A: fine. Ogni blocco che apri con allora oppure con fai, lo chiudi con fine."
-    },
-    {
-     "titolo": "In breve",
-     "testo": "Ricapitoliamo. Leo è un linguaggio di programmazione in italiano, e un programma si legge quasi come una frase. Lo usi sul computer, con Leo e Leo Studio, e sul telefono, con l'app Leo. E quando sbagli, gli errori ti spiegano che cosa è successo."
-    },
-    {
-     "titolo": "Alla prossima!",
-     "testo": "Nel prossimo video scriviamo insieme il tuo primo programma. Ti aspetto."
-    }
-   ]
+   "prerequisiti": []
   },
   {
    "id": "02_primo_programma",
@@ -7041,13 +7039,13 @@
    "titolo": "Liste, dizionari e funzioni: da Python a Leo",
    "descrizione": "Liste e metodi, dizionari e cicli su chiave e valore, le comprensioni con per ogni e se, gli argomenti con nome e i valori predefiniti, prova e cattura con l'oggetto errore.",
    "livello": "intermedio",
-   "durata": 153.3,
+   "durata": 164.8,
    "mp4": null,
    "vtt": null,
    "poster": "151_da_python_strutture/poster.jpg",
    "capitoli": [],
    "numero": "151",
-   "durata_testo": "2:33",
+   "durata_testo": "2:45",
    "livello_testo": "Intermedio",
    "obiettivi": [
     "Tradurre liste, dizionari e comprensioni",
@@ -8253,5 +8251,5 @@
    ]
   }
  ],
- "aggiornato": "2026-10-01"
+ "aggiornato": "2026-10-07"
 }

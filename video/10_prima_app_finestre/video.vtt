@@ -1,0 +1,241 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.016
+Con questo video entriamo nelle app con finestre.
+
+2
+00:00:04.016 --> 00:00:07.963
+Pulsanti, caselle, numeri che cambiano quando li tocchi.
+
+3
+00:00:07.963 --> 00:00:12.158
+In questo video crei la tua prima app, in meno di un minuto,
+
+4
+00:00:12.158 --> 00:00:14.378
+e poi capiamo come funziona.
+
+5
+00:00:15.678 --> 00:00:17.897
+Prima una differenza importante.
+
+6
+00:00:17.897 --> 00:00:22.611
+Un programma normale è solo testo: parte, esegue le righe dall'alto in basso,
+
+7
+00:00:22.611 --> 00:00:23.942
+stampa e chiede.
+
+8
+00:00:23.942 --> 00:00:27.603
+Un'app con finestre invece ha pulsanti, caselle, immagini.
+
+9
+00:00:27.603 --> 00:00:31.596
+E il suo codice aspetta: quando tocchi un pulsante, fa qualcosa.
+
+10
+00:00:32.896 --> 00:00:36.549
+Dalla schermata iniziale tocca nuova app con finestre.
+
+11
+00:00:36.549 --> 00:00:38.729
+Leo ti chiede: da cosa parti?
+
+12
+00:00:38.729 --> 00:00:43.266
+Ci sono diversi modelli pronti: saluto, contatore, lista della spesa,
+
+13
+00:00:43.266 --> 00:00:48.687
+timer da cucina, quiz, scheda dati, effetti speciali, pappagallo, bussola e livella.
+
+14
+00:00:48.687 --> 00:00:52.045
+Ogni modello è un'app completa, che funziona già.
+
+15
+00:00:52.045 --> 00:00:55.345
+Si parte da qualcosa che va, e poi lo si cambia.
+
+16
+00:00:56.645 --> 00:00:58.295
+Scegliamo il contatore.
+
+17
+00:00:58.295 --> 00:01:01.756
+Leo propone un nome: puoi lasciarlo, o scriverne uno tuo.
+
+18
+00:01:01.756 --> 00:01:02.767
+Tocca crea.
+
+19
+00:01:04.067 --> 00:01:07.960
+Ecco il disegnatore, con la finestra della tua app.
+
+20
+00:01:07.960 --> 00:01:13.370
+In alto hai annulla, il menu con i tre puntini, e il pulsante rosso prova.
+
+21
+00:01:13.370 --> 00:01:18.583
+In basso: aggiungi un oggetto, finestra per le sue proprietà, e codice.
+
+22
+00:01:18.583 --> 00:01:21.618
+Tutto si salva da solo, mentre lavori.
+
+23
+00:01:22.918 --> 00:01:24.144
+Tocca prova.
+
+24
+00:01:24.144 --> 00:01:28.374
+L'app parte, a tutto schermo, proprio come un'app installata.
+
+25
+00:01:28.374 --> 00:01:30.704
+Tocca più uno: il numero sale.
+
+26
+00:01:30.704 --> 00:01:32.052
+Uno, due, tre.
+
+27
+00:01:32.052 --> 00:01:35.608
+Meno uno lo fa scendere, azzera lo riporta a zero.
+
+28
+00:01:35.608 --> 00:01:38.428
+Con la x in alto torni al disegnatore.
+
+29
+00:01:39.728 --> 00:01:42.993
+Adesso apriamo il cofano e guardiamo com'è fatta.
+
+30
+00:01:44.293 --> 00:01:47.244
+Ogni oggetto della finestra ha un nome.
+
+31
+00:01:47.244 --> 00:01:50.887
+L'etichetta con il numero grande si chiama Numero.
+
+32
+00:01:50.887 --> 00:01:55.659
+I pulsanti si chiamano pulsante più, pulsante meno, pulsante azzera.
+
+33
+00:01:55.659 --> 00:02:00.432
+Tocca un oggetto nel disegnatore e vedi il suo nome e la sua misura.
+
+34
+00:02:00.432 --> 00:02:03.069
+Sono i nomi che userai nel codice.
+
+35
+00:02:04.369 --> 00:02:07.108
+Tocca codice, ed ecco il cuore dell'app.
+
+36
+00:02:07.108 --> 00:02:09.904
+La variabile conteggio ricorda il numero.
+
+37
+00:02:09.904 --> 00:02:13.271
+La funzione mostra lo scrive nell'etichetta Numero,
+
+38
+00:02:13.271 --> 00:02:15.611
+cambiando la sua proprietà testo.
+
+39
+00:02:15.611 --> 00:02:19.377
+E poi la parte nuova: quando pulsante più punto clic, fai.
+
+40
+00:02:19.377 --> 00:02:22.117
+Questo blocco non parte subito: aspetta.
+
+41
+00:02:22.117 --> 00:02:26.454
+Ogni volta che qualcuno tocca il pulsante, il conteggio sale di uno,
+
+42
+00:02:26.454 --> 00:02:28.451
+e il numero viene mostrato.
+
+43
+00:02:29.751 --> 00:02:34.915
+Nel codice completo ci sono tre blocchi quando, uno per ogni pulsante: più,
+
+44
+00:02:34.915 --> 00:02:36.284
+meno e azzera.
+
+45
+00:02:36.284 --> 00:02:39.955
+Anche da qui puoi toccare esegui per provare l'app.
+
+46
+00:02:41.255 --> 00:02:42.923
+Adesso tocca a te.
+
+47
+00:02:42.923 --> 00:02:46.386
+Fai contare il pulsante più uno di due in due.
+
+48
+00:02:46.386 --> 00:02:50.555
+Nel codice cambia conteggio più uno in conteggio più due.
+
+49
+00:02:50.555 --> 00:02:51.710
+Poi prova.
+
+50
+00:02:51.710 --> 00:02:54.724
+Hai appena modificato la tua prima app.
+
+51
+00:02:56.024 --> 00:02:56.756
+Quiz.
+
+52
+00:02:56.756 --> 00:03:00.922
+Quando si eseguono le righe dentro quando pulsante più punto clic?
+
+53
+00:03:05.222 --> 00:03:08.801
+Ogni volta che si tocca pulsante più, risposta B.
+
+54
+00:03:08.801 --> 00:03:11.753
+Un blocco quando aspetta il suo evento.
+
+55
+00:03:13.053 --> 00:03:14.388
+Ricapitoliamo.
+
+56
+00:03:14.388 --> 00:03:18.456
+Nuova app con finestre, un modello pronto, un nome, e crea.
+
+57
+00:03:18.456 --> 00:03:20.337
+Prova fa partire l'app.
+
+58
+00:03:20.337 --> 00:03:24.890
+Ogni oggetto ha un nome, e il codice con quando risponde ai tocchi.
+
+59
+00:03:26.190 --> 00:03:29.761
+Nel prossimo video impariamo a usare il disegnatore: spostare,
+
+60
+00:03:29.761 --> 00:03:31.904
+ingrandire e cambiare gli oggetti.

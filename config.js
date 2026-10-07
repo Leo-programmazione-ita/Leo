@@ -32,7 +32,7 @@ window.LEO_CONFIG = {
   /* --- Contatti ---------------------------------------------------------------
      Email del titolare: compare nel piede, nei termini, nella privacy e nel
      pulsante "Contattami per la licenza". "" = "email in arrivo".               */
-  emailContatto: "",
+  emailContatto: "leoprogrammazioneita@proton.me",
 
   /* --- Licenza (licenza.html e scarica.html) ----------------------------------
      prezzo: per esempio "29 €" ("" = "Prezzo in arrivo").

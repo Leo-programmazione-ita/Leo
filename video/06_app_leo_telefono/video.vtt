@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.924
+Questo video è dedicato all'app Leo per Android.
+
+2
+00:00:03.924 --> 00:00:07.410
+Con l'app per Android scrivi ed esegui programmi,
+
+3
+00:00:07.410 --> 00:00:11.752
+crei app con finestre e le trasformi in app vere da installare.
+
+4
+00:00:11.752 --> 00:00:16.827
+In questo video la installiamo e facciamo un giro nella schermata iniziale.
+
+5
+00:00:18.127 --> 00:00:20.086
+Che cosa fa l'app Leo?
+
+6
+00:00:20.086 --> 00:00:24.004
+Scrive ed esegue programmi, e non le serve internet:
+
+7
+00:00:24.004 --> 00:00:26.747
+Leo gira tutto dentro il telefono.
+
+8
+00:00:26.747 --> 00:00:30.274
+Disegna app con finestre, toccando lo schermo.
+
+9
+00:00:30.274 --> 00:00:35.367
+Fa usare ai tuoi programmi la fotocamera, i sensori, la voce e il GPS.
+
+10
+00:00:35.367 --> 00:00:39.351
+E trasforma un tuo programma in un'app da installare.
+
+11
+00:00:40.651 --> 00:00:43.275
+L'app si installa da un file APK:
+
+12
+00:00:43.275 --> 00:00:49.099
+un solo file che va bene per tutti i telefoni Android, dalla versione sette in poi.
+
+13
+00:00:49.099 --> 00:00:54.475
+Copia il file sul telefono, nel modo che preferisci: Google Drive, una mail,
+
+14
+00:00:54.475 --> 00:00:56.587
+un messaggio a te stesso.
+
+15
+00:00:56.587 --> 00:00:57.547
+Aprilo.
+
+16
+00:00:57.547 --> 00:01:03.306
+La prima volta Android ti chiede di consentire l'installazione di app sconosciute,
+
+17
+00:01:03.306 --> 00:01:06.570
+per l'app da cui lo stai aprendo: consenti.
+
+18
+00:01:06.570 --> 00:01:08.298
+Poi tocca installa.
+
+19
+00:01:08.298 --> 00:01:13.546
+Se Play Protect dice che l'app non è conosciuta, scegli installa comunque.
+
+20
+00:01:13.546 --> 00:01:17.386
+È normale per le app che non vengono dal Play Store.
+
+21
+00:01:18.686 --> 00:01:22.073
+Ecco la schermata iniziale: i miei programmi.
+
+22
+00:01:22.073 --> 00:01:27.570
+Il pulsante rosso, nuovo programma, apre un foglio bianco per scrivere codice.
+
+23
+00:01:27.570 --> 00:01:33.131
+Sotto, nuova app con finestre, per creare un'app partendo da un modello pronto.
+
+24
+00:01:33.131 --> 00:01:38.052
+Più giù ci sono i recenti: i tuoi programmi, con i più nuovi in cima.
+
+25
+00:01:38.052 --> 00:01:41.951
+E in alto a destra la rotellina apre le impostazioni.
+
+26
+00:01:43.251 --> 00:01:46.156
+Scorrendo verso il basso trovi gli esempi.
+
+27
+00:01:46.156 --> 00:01:51.037
+Sono programmi pronti: le tabelline, indovina il numero, la rubrica e altri.
+
+28
+00:01:51.037 --> 00:01:55.453
+Tocca un esempio per aprirlo e guardarlo, eseguilo, e cambialo pure:
+
+29
+00:01:55.453 --> 00:01:59.578
+le tue modifiche vanno in una copia, l'originale resta com'era.
+
+30
+00:02:00.878 --> 00:02:03.735
+Adesso sistemiamo l'app come piace a te.
+
+31
+00:02:05.035 --> 00:02:07.777
+Nelle impostazioni scegli l'aspetto.
+
+32
+00:02:07.777 --> 00:02:13.386
+Di serie Leo è nero e rosso, come Leo Studio; se preferisci, passi al tema chiaro,
+
+33
+00:02:13.386 --> 00:02:18.746
+con lo stesso rosso come accento, oppure lasci che segua il tema del telefono.
+
+34
+00:02:18.746 --> 00:02:22.049
+Il cambio è immediato, senza riavviare l'app.
+
+35
+00:02:22.049 --> 00:02:25.851
+L'editor del codice ha sempre i colori di Leo Studio.
+
+36
+00:02:27.151 --> 00:02:31.848
+Sempre nelle impostazioni c'è la dimensione del carattere dell'editor:
+
+37
+00:02:31.848 --> 00:02:34.618
+sposta il cursore finché leggi comodo.
+
+38
+00:02:34.618 --> 00:02:36.786
+Poi gli aiuti mentre scrivi:
+
+39
+00:02:36.786 --> 00:02:40.942
+i suggerimenti sopra la tastiera e i consigli per chi inizia,
+
+40
+00:02:40.942 --> 00:02:44.073
+che puoi spegnere quando non ti servono più.
+
+41
+00:02:44.073 --> 00:02:49.252
+Guida e sito apre il manuale, gli esempi e questi video, anche senza internet.
+
+42
+00:02:49.252 --> 00:02:53.167
+E più sotto la guida rapida: le parole principali di Leo,
+
+43
+00:02:53.167 --> 00:02:56.539
+ognuna con una spiegazione e un piccolo esempio.
+
+44
+00:02:57.839 --> 00:02:59.162
+Un consiglio.
+
+45
+00:02:59.162 --> 00:03:04.643
+I tuoi programmi stanno dentro l'app, e Android li salva nel backup automatico:
+
+46
+00:03:04.643 --> 00:03:07.981
+se cambi telefono, arrivano insieme al resto.
+
+47
+00:03:07.981 --> 00:03:10.879
+Ma per i programmi a cui tieni di più,
+
+48
+00:03:10.879 --> 00:03:15.100
+ogni tanto mandali anche via mail o su Drive con condividi.
+
+49
+00:03:15.100 --> 00:03:17.431
+Due copie sono meglio di una.
+
+50
+00:03:18.731 --> 00:03:19.499
+Quiz.
+
+51
+00:03:19.499 --> 00:03:23.221
+Da dove parti per creare un'app con pulsanti e caselle?
+
+52
+00:03:27.521 --> 00:03:30.234
+Nuova app con finestre, risposta B.
+
+53
+00:03:30.234 --> 00:03:34.460
+Ti fa scegliere un modello pronto, che poi cambi come vuoi.
+
+54
+00:03:35.760 --> 00:03:37.088
+Ricapitoliamo.
+
+55
+00:03:37.088 --> 00:03:40.105
+L'app Leo si installa da un solo file APK.
+
+56
+00:03:40.105 --> 00:03:44.752
+Nella schermata iniziale hai nuovo programma, nuova app con finestre,
+
+57
+00:03:44.752 --> 00:03:46.623
+i recenti e gli esempi.
+
+58
+00:03:46.623 --> 00:03:51.270
+E nelle impostazioni scegli tema, carattere, e trovi la guida rapida.
+
+59
+00:03:52.570 --> 00:03:56.652
+Nel prossimo video scriviamo il primo programma direttamente dal telefono.

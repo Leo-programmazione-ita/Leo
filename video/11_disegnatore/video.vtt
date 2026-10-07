@@ -1,0 +1,209 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.076
+Oggi impariamo a usare il disegnatore di finestre,
+
+2
+00:00:04.076 --> 00:00:07.283
+lo strumento con cui dai forma alla tua app.
+
+3
+00:00:07.283 --> 00:00:09.071
+Useremo solo le dita.
+
+4
+00:00:10.371 --> 00:00:12.661
+Tocca un oggetto per sceglierlo.
+
+5
+00:00:12.661 --> 00:00:15.811
+Intorno compare un bordo rosso con le maniglie,
+
+6
+00:00:15.811 --> 00:00:19.532
+e un'etichetta con il nome e la misura: qui pulsante più,
+
+7
+00:00:19.532 --> 00:00:21.995
+centocinquanta per sessantaquattro.
+
+8
+00:00:21.995 --> 00:00:26.289
+E la barra in basso cambia: ora mostra i comandi per quell'oggetto.
+
+9
+00:00:27.589 --> 00:00:30.975
+Per spostare un oggetto, trascinalo con il dito.
+
+10
+00:00:30.975 --> 00:00:34.724
+Per cambiargli la misura, trascina una delle maniglie.
+
+11
+00:00:34.724 --> 00:00:39.260
+Mentre muovi, l'oggetto si aggancia a una griglia di quattro pixel,
+
+12
+00:00:39.260 --> 00:00:42.223
+e compaiono delle guide che ti aiutano ad
+
+13
+00:00:42.223 --> 00:00:45.851
+allinearlo ai bordi e ai centri degli altri oggetti,
+
+14
+00:00:45.851 --> 00:00:47.604
+con i margini giusti.
+
+15
+00:00:47.604 --> 00:00:52.079
+Così la finestra resta ordinata anche se le dita non sono precise.
+
+16
+00:00:53.379 --> 00:00:55.984
+Con l'oggetto scelto, tocca aspetto.
+
+17
+00:00:55.984 --> 00:00:58.588
+Si apre il pannello delle proprietà.
+
+18
+00:00:58.588 --> 00:01:02.792
+In cima il nome: se lo cambi, Leo lo aggiorna anche nel codice.
+
+19
+00:01:02.792 --> 00:01:07.764
+Poi posizione e misura, scritte con i numeri, per quando vuoi la precisione.
+
+20
+00:01:07.764 --> 00:01:12.323
+E sotto, tutto l'aspetto: il testo, i colori, lo stile, il carattere,
+
+21
+00:01:12.323 --> 00:01:14.690
+gli angoli arrotondati, l'ombra.
+
+22
+00:01:14.690 --> 00:01:16.644
+Fatto chiude il pannello.
+
+23
+00:01:17.944 --> 00:01:20.393
+E adesso aggiungiamo qualcosa di nuovo.
+
+24
+00:01:21.693 --> 00:01:25.387
+Partiamo dal modello saluto e tocchiamo aggiungi un oggetto.
+
+25
+00:01:25.387 --> 00:01:30.059
+Sale la tavolozza, divisa in schede: base, inserimento, scelta, e molte altre.
+
+26
+00:01:30.059 --> 00:01:35.003
+Tocca un oggetto, per esempio l'interruttore, e compare nella finestra, già scelto.
+
+27
+00:01:35.003 --> 00:01:37.611
+Leo ti suggerisce: trascinalo dove vuoi.
+
+28
+00:01:38.911 --> 00:01:42.110
+Con un oggetto scelto hai anche altri comandi.
+
+29
+00:01:42.110 --> 00:01:45.486
+Duplica fa una copia identica, con un nome nuovo:
+
+30
+00:01:45.486 --> 00:01:48.566
+comodissimo per una fila di pulsanti uguali.
+
+31
+00:01:48.566 --> 00:01:52.238
+Livello porta l'oggetto in primo piano o sullo sfondo,
+
+32
+00:01:52.238 --> 00:01:54.844
+quando due oggetti si sovrappongono.
+
+33
+00:01:54.844 --> 00:01:56.384
+Elimina lo toglie.
+
+34
+00:01:56.384 --> 00:02:01.360
+E se sbagli, la freccia annulla in alto torna indietro, un passo alla volta.
+
+35
+00:02:02.660 --> 00:02:05.326
+Un trucco per le finestre più ricche.
+
+36
+00:02:05.326 --> 00:02:10.363
+Se lasci un oggetto sopra un riquadro, un pannello scorrevole o delle schede,
+
+37
+00:02:10.363 --> 00:02:12.377
+l'oggetto ci entra dentro.
+
+38
+00:02:12.377 --> 00:02:17.354
+Poi, quando sposti il contenitore, tutto il suo contenuto si sposta insieme.
+
+39
+00:02:18.654 --> 00:02:23.668
+Il consiglio di oggi: dai agli oggetti nomi che dicono che cosa fanno.
+
+40
+00:02:23.668 --> 00:02:26.303
+Pulsante salva si capisce subito.
+
+41
+00:02:26.303 --> 00:02:29.903
+Pulsante sette, tra un mese, non ti dirà niente.
+
+42
+00:02:29.903 --> 00:02:34.981
+Il nome si cambia nel pannello aspetto, e Leo aggiorna anche il codice.
+
+43
+00:02:36.281 --> 00:02:37.032
+Quiz.
+
+44
+00:02:37.032 --> 00:02:40.382
+Cambi il nome di un pulsante nel pannello aspetto.
+
+45
+00:02:40.382 --> 00:02:42.403
+Che cosa succede al codice?
+
+46
+00:02:46.703 --> 00:02:50.012
+Risposta B: Leo aggiorna il nome anche nel codice.
+
+47
+00:02:50.012 --> 00:02:52.009
+Non devi riscrivere niente.
+
+48
+00:02:53.309 --> 00:02:54.608
+Ricapitoliamo.
+
+49
+00:02:54.608 --> 00:02:59.687
+Tocchi per scegliere, trascini per spostare, e le maniglie cambiano la misura.
+
+50
+00:02:59.687 --> 00:03:02.758
+Aspetto ti fa cambiare nome, testo e colori.
+
+51
+00:03:02.758 --> 00:03:07.187
+E con aggiungi un oggetto la tua finestra si riempie di cose nuove.
+
+52
+00:03:08.487 --> 00:03:12.569
+Nel prossimo video diamo vita agli oggetti con gli eventi.

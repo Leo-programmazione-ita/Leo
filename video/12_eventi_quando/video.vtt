@@ -1,0 +1,237 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.031
+Oggi parliamo degli eventi, il cuore di ogni app con finestre.
+
+2
+00:00:05.031 --> 00:00:09.886
+Un evento è qualcosa che succede: un tocco, una casella che cambia,
+
+3
+00:00:09.886 --> 00:00:11.957
+la finestra che si apre.
+
+4
+00:00:11.957 --> 00:00:15.194
+E tu decidi che cosa fare, quando succede.
+
+5
+00:00:16.494 --> 00:00:18.826
+Un evento si scrive sempre così.
+
+6
+00:00:18.826 --> 00:00:23.200
+Quando, il nome dell'oggetto, un punto, il nome dell'evento, e fai.
+
+7
+00:00:23.200 --> 00:00:25.882
+Poi le righe che dicono che cosa fare.
+
+8
+00:00:25.882 --> 00:00:26.757
+E fine.
+
+9
+00:00:26.757 --> 00:00:31.188
+Si legge come una frase: quando pulsante saluta viene cliccato, fai:
+
+10
+00:00:31.188 --> 00:00:33.229
+scrivi ciao nell'etichetta.
+
+11
+00:00:34.529 --> 00:00:38.805
+Non serve ricordare il nome degli eventi: c'è il pulsante evento.
+
+12
+00:00:38.805 --> 00:00:42.906
+Scegli un oggetto, per esempio l'interruttore, e tocca evento.
+
+13
+00:00:42.906 --> 00:00:45.132
+Leo ti chiede: quando succede?
+
+14
+00:00:45.132 --> 00:00:47.944
+E ti mostra gli eventi di quell'oggetto.
+
+15
+00:00:47.944 --> 00:00:52.630
+Tocca quando interruttore punto cambio: Leo scrive il blocco nel codice,
+
+16
+00:00:52.630 --> 00:00:54.621
+con il cursore già dentro.
+
+17
+00:00:54.621 --> 00:00:59.835
+Per l'interruttore prepara anche il se, per quando si accende e quando si spegne.
+
+18
+00:01:01.135 --> 00:01:03.883
+Ecco gli eventi che userai più spesso.
+
+19
+00:01:03.883 --> 00:01:06.690
+Clic, quando qualcuno tocca un oggetto.
+
+20
+00:01:06.690 --> 00:01:11.588
+Cambio, quando cambia un valore: il testo di una casella, un interruttore,
+
+21
+00:01:11.588 --> 00:01:12.723
+un cursore.
+
+22
+00:01:12.723 --> 00:01:16.307
+Invio, quando nella casella si preme il tasto invio.
+
+23
+00:01:16.307 --> 00:01:20.727
+E apertura, che scatta una volta sola, quando la finestra si apre.
+
+24
+00:01:22.027 --> 00:01:24.603
+Questo è il codice del modello saluto.
+
+25
+00:01:24.603 --> 00:01:29.307
+Casella nome punto testo legge quello che l'utente ha scritto nella casella.
+
+26
+00:01:29.307 --> 00:01:33.786
+Etichetta uno punto testo, uguale, cambia quello che l'etichetta mostra.
+
+27
+00:01:33.786 --> 00:01:37.706
+Se la casella è vuota, la funzione messaggio mostra un avviso.
+
+28
+00:01:37.706 --> 00:01:40.394
+Altrimenti, l'etichetta saluta per nome.
+
+29
+00:01:41.694 --> 00:01:44.074
+Dal codice puoi cambiare quasi tutto.
+
+30
+00:01:44.074 --> 00:01:46.295
+Qui, quando l'interruttore cambia,
+
+31
+00:01:46.295 --> 00:01:50.051
+se è acceso la finestra diventa blu notte e l'etichetta bianca.
+
+32
+00:01:50.051 --> 00:01:52.695
+Altrimenti, tornano ai colori predefiniti:
+
+33
+00:01:52.695 --> 00:01:55.710
+le virgolette vuote vogliono dire colore normale.
+
+34
+00:01:55.710 --> 00:02:00.470
+E il pulsante si vede solo quando l'interruttore è acceso: visibile uguale acceso.
+
+35
+00:02:01.770 --> 00:02:06.610
+Dentro un blocco quando c'è sempre una variabile speciale: evento.
+
+36
+00:02:06.610 --> 00:02:09.815
+Contiene i dati di quello che è successo.
+
+37
+00:02:09.815 --> 00:02:15.047
+Qui, dal modello bussola e livella, il punto cardinale verso cui guardi.
+
+38
+00:02:15.047 --> 00:02:19.756
+Si legge con evento, e tra quadre e virgolette il nome del dato.
+
+39
+00:02:19.756 --> 00:02:23.811
+Ogni oggetto ha i suoi dati: la guida li elenca tutti.
+
+40
+00:02:25.111 --> 00:02:29.661
+Le variabili scritte fuori dai blocchi quando si creano all'inizio,
+
+41
+00:02:29.661 --> 00:02:34.940
+e restano vive per tutta l'app: così ricordano i valori tra un tocco e l'altro.
+
+42
+00:02:34.940 --> 00:02:39.854
+E l'evento apertura della finestra è il posto giusto per preparare tutto:
+
+43
+00:02:39.854 --> 00:02:43.070
+scrivere i testi iniziali, dare il benvenuto.
+
+44
+00:02:44.370 --> 00:02:46.752
+Un consiglio da programmatore.
+
+45
+00:02:46.752 --> 00:02:51.202
+Se due eventi devono fare la stessa cosa, non copiare le righe:
+
+46
+00:02:51.202 --> 00:02:54.900
+mettile in una funzione, e chiamala da tutti e due.
+
+47
+00:02:54.900 --> 00:02:57.783
+Come la funzione mostra del contatore.
+
+48
+00:02:57.783 --> 00:03:01.105
+Se un giorno cambi idea, cambi un posto solo.
+
+49
+00:03:02.405 --> 00:03:03.077
+Quiz.
+
+50
+00:03:03.077 --> 00:03:06.487
+Quale evento scatta quando l'utente scrive in una casella?
+
+51
+00:03:10.787 --> 00:03:12.276
+Cambio, risposta B.
+
+52
+00:03:12.276 --> 00:03:14.869
+Scatta ogni volta che il valore cambia.
+
+53
+00:03:16.169 --> 00:03:17.504
+Ricapitoliamo.
+
+54
+00:03:17.504 --> 00:03:21.389
+Un evento si scrive quando, oggetto, punto, evento, fai.
+
+55
+00:03:21.389 --> 00:03:24.059
+Il pulsante evento lo scrive per te.
+
+56
+00:03:24.059 --> 00:03:28.369
+Le proprietà degli oggetti si leggono e si cambiano dal codice.
+
+57
+00:03:28.369 --> 00:03:32.496
+E la variabile evento porta i dati di quello che è successo.
+
+58
+00:03:33.796 --> 00:03:36.915
+Nel prossimo video curiamo l'aspetto dell'app,
+
+59
+00:03:36.915 --> 00:03:39.918
+con gli stili che si applicano con un tocco.

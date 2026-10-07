@@ -1,0 +1,177 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.641
+Sul telefono correggere un errore è ancora più comodo che sul computer.
+
+2
+00:00:05.641 --> 00:00:09.480
+Oggi vediamo i pulsanti che fanno il lavoro per te.
+
+3
+00:00:10.780 --> 00:00:13.812
+Prendiamo questo programma, media punto leo.
+
+4
+00:00:13.812 --> 00:00:19.118
+Calcola la media dei voti, ma nell'ultima riga c'è un errore di battitura: tottale,
+
+5
+00:00:19.118 --> 00:00:20.168
+con due t.
+
+6
+00:00:21.468 --> 00:00:22.825
+Tocca esegui.
+
+7
+00:00:22.825 --> 00:00:28.449
+Il programma stampa la media, sette e mezzo, poi si ferma sulla riga sbagliata.
+
+8
+00:00:28.449 --> 00:00:33.296
+Lo stato diventa errore, in rosso, e sotto c'è il messaggio di Leo:
+
+9
+00:00:33.296 --> 00:00:38.467
+lo stesso del computer, con il suggerimento e la riga corretta proposta.
+
+10
+00:00:38.467 --> 00:00:43.509
+In fondo al messaggio ci sono due pulsanti: vai alla riga, e correggi.
+
+11
+00:00:44.809 --> 00:00:50.179
+Vai alla riga ti porta nell'editor, con il cursore proprio sulla riga sbagliata.
+
+12
+00:00:50.179 --> 00:00:54.755
+Correggi fa di più: sostituisce la riga con quella proposta da Leo.
+
+13
+00:00:54.755 --> 00:01:00.369
+Sotto compare un avviso, riga nove corretta, con il pulsante annulla, se ci ripensi.
+
+14
+00:01:00.369 --> 00:01:03.176
+Poi riesegui, e il programma funziona.
+
+15
+00:01:04.476 --> 00:01:10.017
+Il pulsante correggi compare solo quando Leo sa davvero come correggere la riga:
+
+16
+00:01:10.017 --> 00:01:14.425
+un nome sbagliato, una virgoletta o una parentesi che mancano.
+
+17
+00:01:14.425 --> 00:01:18.958
+Se nel frattempo hai già cambiato quella riga, Leo non la tocca.
+
+18
+00:01:18.958 --> 00:01:21.540
+Ogni correzione si può annullare.
+
+19
+00:01:21.540 --> 00:01:27.333
+E Leo non cambia mai la logica del programma: i calcoli e le decisioni restano tuoi.
+
+20
+00:01:28.633 --> 00:01:31.898
+Ora due strumenti per tenere tutto in ordine.
+
+21
+00:01:33.198 --> 00:01:36.485
+Sul telefono è facile perdere i rientri.
+
+22
+00:01:36.485 --> 00:01:40.251
+Il codice funziona lo stesso, ma si legge male.
+
+23
+00:01:40.251 --> 00:01:45.523
+Dal menu dei tre puntini, formatta il codice rimette tutto in ordine:
+
+24
+00:01:45.523 --> 00:01:50.385
+quattro spazi per ogni blocco, e ogni fine sotto il suo inizio.
+
+25
+00:01:50.385 --> 00:01:54.014
+Se il codice è già in ordine, Leo te lo dice.
+
+26
+00:01:55.314 --> 00:01:57.929
+E se un programma non si ferma più?
+
+27
+00:01:57.929 --> 00:02:02.308
+Qui n cresce sempre, quindi la condizione resta vera per sempre.
+
+28
+00:02:02.308 --> 00:02:06.990
+Tocca ferma: Leo interrompe il programma, anche dentro un ciclo così.
+
+29
+00:02:06.990 --> 00:02:11.612
+Nei casi rarissimi in cui non ci riesce, compare programma bloccato,
+
+30
+00:02:11.612 --> 00:02:13.923
+con il pulsante riavvia l'app.
+
+31
+00:02:13.923 --> 00:02:16.538
+I tuoi programmi restano al sicuro.
+
+32
+00:02:17.838 --> 00:02:22.466
+Il consiglio di oggi: prima di toccare correggi, leggi il suggerimento.
+
+33
+00:02:22.466 --> 00:02:25.044
+Il pulsante ti fa risparmiare tempo,
+
+34
+00:02:25.044 --> 00:02:30.083
+ma capire perché era sbagliato è quello che ti fa crescere come programmatore.
+
+35
+00:02:31.383 --> 00:02:32.094
+Quiz.
+
+36
+00:02:32.094 --> 00:02:35.540
+Hai toccato correggi, ma la correzione non ti convince.
+
+37
+00:02:35.540 --> 00:02:36.689
+Che cosa fai?
+
+38
+00:02:40.989 --> 00:02:43.445
+Tocchi annulla nell'avviso, risposta B.
+
+39
+00:02:43.445 --> 00:02:47.520
+Oppure il tasto annulla della barra: ogni correzione si può annullare.
+
+40
+00:02:48.820 --> 00:02:50.012
+Ricapitoliamo.
+
+41
+00:02:50.012 --> 00:02:54.562
+Gli errori compaiono nel pannello dell'uscita, con vai alla riga e correggi.
+
+42
+00:02:54.562 --> 00:02:57.541
+Formatta il codice rimette in ordine i rientri,
+
+43
+00:02:57.541 --> 00:03:00.249
+e ferma interrompe anche i cicli infiniti.
+
+44
+00:03:01.549 --> 00:03:07.671
+Nel prossimo video impariamo a usare gli esempi e a tenere in ordine i programmi.

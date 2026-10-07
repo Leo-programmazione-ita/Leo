@@ -1,0 +1,325 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:01.658
+Benvenuto.
+
+2
+00:00:01.658 --> 00:00:04.167
+Questo è il primo video su Leo.
+
+3
+00:00:04.167 --> 00:00:08.477
+In pochi minuti vedi che cos'è, che cosa ci puoi costruire,
+
+4
+00:00:08.477 --> 00:00:12.337
+e perché si impara in fretta anche partendo da zero.
+
+5
+00:00:13.637 --> 00:00:17.376
+Leo è un linguaggio di programmazione tutto in italiano.
+
+6
+00:00:17.376 --> 00:00:22.752
+Le parole che usi per comandare il computer sono italiane: se, mentre, ripeti, fine.
+
+7
+00:00:22.752 --> 00:00:25.731
+Anche i messaggi d'errore sono in italiano,
+
+8
+00:00:25.731 --> 00:00:29.997
+e non si limitano a dire che qualcosa non va: ti spiegano perché,
+
+9
+00:00:29.997 --> 00:00:32.217
+e ti propongono la correzione.
+
+10
+00:00:32.217 --> 00:00:37.534
+Ha novecentoquattordici funzioni di libreria già incluse, per il lavoro vero: file,
+
+11
+00:00:37.534 --> 00:00:39.462
+internet, dati, database.
+
+12
+00:00:39.462 --> 00:00:42.208
+E funziona sul computer e sul telefono.
+
+13
+00:00:42.608 --> 00:00:45.425
+Va bene per chi comincia da zero,
+
+14
+00:00:45.425 --> 00:00:49.547
+e anche per chi programma già e vuole andare veloce.
+
+15
+00:00:50.847 --> 00:00:52.713
+Guarda questo programma.
+
+16
+00:00:52.713 --> 00:00:56.911
+Anche se non hai mai programmato, prova a leggerlo ad alta voce.
+
+17
+00:00:56.911 --> 00:00:59.768
+Variabile voti: una lista di cinque voti.
+
+18
+00:00:59.768 --> 00:01:01.576
+Variabile totale: zero.
+
+19
+00:01:01.576 --> 00:01:05.483
+Per ogni voto nella lista, fai: aggiungi il voto al totale.
+
+20
+00:01:05.483 --> 00:01:06.241
+Fine.
+
+21
+00:01:06.241 --> 00:01:08.398
+E alla fine, stampa la media.
+
+22
+00:01:08.898 --> 00:01:09.730
+Visto?
+
+23
+00:01:09.730 --> 00:01:12.702
+Si legge quasi come una frase in italiano.
+
+24
+00:01:12.702 --> 00:01:15.020
+È proprio questa l'idea di Leo.
+
+25
+00:01:16.320 --> 00:01:19.428
+Ed ecco che cosa succede quando lo esegui.
+
+26
+00:01:19.428 --> 00:01:23.406
+Leo fa i conti e scrive: media, ventisette virgola otto.
+
+27
+00:01:23.406 --> 00:01:26.638
+Tu hai descritto che cosa fare, in italiano.
+
+28
+00:01:26.638 --> 00:01:28.565
+Il computer l'ha fatto.
+
+29
+00:01:29.865 --> 00:01:32.314
+Adesso vediamo dove puoi usare Leo.
+
+30
+00:01:33.614 --> 00:01:36.738
+Sul computer con Windows hai due strumenti.
+
+31
+00:01:36.738 --> 00:01:39.066
+Il primo è Leo vero e proprio:
+
+32
+00:01:39.066 --> 00:01:43.354
+scrivi un programma in un file e lo esegui con un doppio clic.
+
+33
+00:01:43.354 --> 00:01:45.315
+Il secondo è Leo Studio,
+
+34
+00:01:45.315 --> 00:01:50.338
+un ambiente nero e rosso dove disegni le finestre trascinando i controlli,
+
+35
+00:01:50.338 --> 00:01:53.462
+come si faceva con il vecchio Visual Basic.
+
+36
+00:01:53.462 --> 00:01:58.731
+Ci sono centoquarantasei controlli pronti, divisi in ventuno schede: pulsanti,
+
+37
+00:01:58.731 --> 00:02:02.100
+caselle, grafici, perfino oggetti per i giochi.
+
+38
+00:02:02.100 --> 00:02:04.489
+E quando il programma è finito,
+
+39
+00:02:04.489 --> 00:02:08.716
+lo trasformi in un file eseguibile da distribuire a chi vuoi.
+
+40
+00:02:10.016 --> 00:02:12.496
+Poi c'è l'app Leo per Android.
+
+41
+00:02:12.496 --> 00:02:17.586
+Con il telefono scrivi ed esegui programmi ovunque, senza un computer.
+
+42
+00:02:17.586 --> 00:02:23.330
+Ma soprattutto crei app vere, con finestre e pulsanti, disegnandole con le dita.
+
+43
+00:02:23.330 --> 00:02:29.334
+Le tue app possono usare la fotocamera, la bussola, la voce, la torcia del telefono.
+
+44
+00:02:29.334 --> 00:02:34.098
+E con un tocco diventano un file APK da installare e condividere.
+
+45
+00:02:35.398 --> 00:02:39.691
+Ecco qualche esempio di app costruite con Leo sul telefono.
+
+46
+00:02:39.691 --> 00:02:43.344
+Un contatore, una bussola con la livella a bolla,
+
+47
+00:02:43.344 --> 00:02:46.676
+una lista della spesa con uno stile al neon.
+
+48
+00:02:46.676 --> 00:02:51.739
+Sono tutte app che puoi creare anche tu, partendo da un modello pronto.
+
+49
+00:02:51.739 --> 00:02:54.174
+Lo vediamo nei prossimi video.
+
+50
+00:02:55.474 --> 00:03:01.018
+Se hai già visto un altro linguaggio, per esempio Python, ti troverai a casa.
+
+51
+00:03:01.018 --> 00:03:05.322
+Le idee sono le stesse: decisioni, cicli, funzioni, liste.
+
+52
+00:03:05.322 --> 00:03:10.540
+Cambia la lingua: invece di if scrivi se, invece di print scrivi stampa.
+
+53
+00:03:10.540 --> 00:03:15.888
+E ogni blocco si chiude con la parola fine: così vedi sempre dove finisce.
+
+54
+00:03:15.888 --> 00:03:20.780
+Quello che impari con Leo ti servirà anche con gli altri linguaggi.
+
+55
+00:03:22.080 --> 00:03:25.114
+Leo è fatto anche per imparare in fretta.
+
+56
+00:03:25.114 --> 00:03:28.457
+Quando sbagli, ti mostra la riga già corretta.
+
+57
+00:03:28.457 --> 00:03:33.596
+Il comando leo spiega racconta il tuo programma riga per riga, in italiano.
+
+58
+00:03:33.596 --> 00:03:36.878
+Leo impara ti accompagna con lezioni guidate,
+
+59
+00:03:36.878 --> 00:03:40.469
+dal primo stampa fino alla prima app con finestre.
+
+60
+00:03:40.469 --> 00:03:45.175
+Leo sfida ti propone esercizi a livelli, con la verifica automatica.
+
+61
+00:03:45.175 --> 00:03:49.137
+E c'è la tartaruga, che disegna seguendo i tuoi comandi:
+
+62
+00:03:49.137 --> 00:03:53.100
+il modo più immediato per vedere un algoritmo al lavoro.
+
+63
+00:03:54.400 --> 00:03:56.492
+Un consiglio prima di cominciare.
+
+64
+00:03:56.492 --> 00:03:59.502
+Per programmare con Leo non serve sapere l'inglese,
+
+65
+00:03:59.502 --> 00:04:01.747
+e non serve la matematica difficile.
+
+66
+00:04:01.747 --> 00:04:02.971
+Serve curiosità.
+
+67
+00:04:03.371 --> 00:04:07.982
+E un'abitudine: ogni volta che vedi un esempio in questi video,
+
+68
+00:04:07.982 --> 00:04:10.514
+mettilo in pausa e scrivilo tu.
+
+69
+00:04:10.514 --> 00:04:12.073
+Con le tue mani.
+
+70
+00:04:12.073 --> 00:04:14.800
+È il modo più veloce per imparare.
+
+71
+00:04:16.100 --> 00:04:17.774
+Una domanda veloce.
+
+72
+00:04:17.774 --> 00:04:20.998
+Con quale parola si chiude un blocco in Leo?
+
+73
+00:04:25.298 --> 00:04:28.137
+La risposta giusta è la A: fine.
+
+74
+00:04:28.137 --> 00:04:33.461
+Ogni blocco che apri con allora oppure con fai, lo chiudi con fine.
+
+75
+00:04:34.761 --> 00:04:36.162
+Ricapitoliamo.
+
+76
+00:04:36.162 --> 00:04:39.856
+Leo è un linguaggio di programmazione in italiano,
+
+77
+00:04:39.856 --> 00:04:43.231
+e un programma si legge quasi come una frase.
+
+78
+00:04:43.231 --> 00:04:48.389
+Lo usi sul computer, con Leo e Leo Studio, e sul telefono, con l'app Leo.
+
+79
+00:04:48.389 --> 00:04:52.720
+E quando sbagli, gli errori ti spiegano che cosa è successo.
+
+80
+00:04:54.020 --> 00:04:57.529
+Nel prossimo video scriviamo insieme il tuo primo programma.
+
+81
+00:04:57.529 --> 00:04:58.510
+Ti aspetto.

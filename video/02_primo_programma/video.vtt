@@ -1,0 +1,245 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.820
+Oggi scriviamo il tuo primo programma in Leo.
+
+2
+00:00:03.820 --> 00:00:08.268
+Imparerai tre cose che fanno quasi tutti i programmi del mondo:
+
+3
+00:00:08.268 --> 00:00:13.969
+scrivere qualcosa sullo schermo, ricordare dei valori, e fare domande a chi lo usa.
+
+4
+00:00:15.269 --> 00:00:17.374
+Cominciamo con una riga sola.
+
+5
+00:00:17.374 --> 00:00:21.812
+Stampa, parentesi, e tra virgolette il testo da scrivere: Ciao, mondo.
+
+6
+00:00:21.812 --> 00:00:24.657
+Esegui il programma, ed ecco il risultato.
+
+7
+00:00:25.057 --> 00:00:29.139
+Stampa scrive sullo schermo quello che metti tra le parentesi.
+
+8
+00:00:29.139 --> 00:00:31.996
+Il testo va sempre tra virgolette doppie.
+
+9
+00:00:33.296 --> 00:00:35.764
+Dove lo scrivi, questo programma?
+
+10
+00:00:35.764 --> 00:00:39.856
+Sul computer, in un file di testo che finisce con punto leo:
+
+11
+00:00:39.856 --> 00:00:42.023
+poi fai doppio clic e parte.
+
+12
+00:00:42.023 --> 00:00:46.838
+In Leo Studio, nell'editor, e premi Esegui, oppure il tasto effe cinque.
+
+13
+00:00:46.838 --> 00:00:51.893
+Sul telefono, nell'app Leo: tocchi Nuovo programma, scrivi, e tocchi Esegui.
+
+14
+00:00:51.893 --> 00:00:55.745
+Scegli quello che preferisci: il linguaggio è lo stesso.
+
+15
+00:00:57.045 --> 00:01:00.310
+Adesso facciamo ricordare qualcosa al programma.
+
+16
+00:01:00.310 --> 00:01:03.634
+La parola variabile crea una scatola con un nome.
+
+17
+00:01:03.634 --> 00:01:05.908
+Variabile nome, uguale, Giulia.
+
+18
+00:01:05.908 --> 00:01:08.182
+Variabile anni, uguale, dodici.
+
+19
+00:01:08.182 --> 00:01:11.973
+Da quel momento, quando scrivi nome, Leo ci mette Giulia.
+
+20
+00:01:11.973 --> 00:01:15.821
+E con i numeri puoi fare i conti: anni più uno fa tredici.
+
+21
+00:01:17.121 --> 00:01:19.350
+Ecco un trucco molto comodo.
+
+22
+00:01:19.350 --> 00:01:24.367
+Dentro un testo, tra parentesi graffe, puoi mettere un nome o un calcolo:
+
+23
+00:01:24.367 --> 00:01:27.153
+Leo lo sostituisce con il suo valore.
+
+24
+00:01:27.153 --> 00:01:30.621
+Ciao, graffa nome graffa, diventa: Ciao, Giulia.
+
+25
+00:01:30.621 --> 00:01:35.080
+E dentro le graffe funziona anche un calcolo, come anni più uno.
+
+26
+00:01:36.380 --> 00:01:40.053
+Ora facciamo parlare il programma con chi lo usa.
+
+27
+00:01:41.353 --> 00:01:47.352
+Chiedi fa una domanda, aspetta che qualcuno scriva la risposta e la dà al programma.
+
+28
+00:01:47.352 --> 00:01:52.308
+Qui la risposta finisce nella variabile nome, e il programma saluta.
+
+29
+00:01:52.308 --> 00:01:58.242
+Poi un controllo in più: se il nome ha più di cinque lettere, il programma lo nota.
+
+30
+00:01:58.242 --> 00:02:00.525
+Lunghezza conta le lettere.
+
+31
+00:02:00.525 --> 00:02:03.394
+Rosario ne ha sette: che nome lungo!
+
+32
+00:02:04.694 --> 00:02:07.280
+Attenzione a un dettaglio importante.
+
+33
+00:02:07.280 --> 00:02:11.303
+Chiedi restituisce sempre un testo, anche se scrivi un numero.
+
+34
+00:02:11.303 --> 00:02:16.532
+Per fare i conti devi trasformarlo in numero: la funzione intero fa proprio questo.
+
+35
+00:02:16.532 --> 00:02:20.612
+Così quattordici più dieci fa ventiquattro, come ci si aspetta.
+
+36
+00:02:21.912 --> 00:02:24.063
+Una regola da ricordare:
+
+37
+00:02:24.063 --> 00:02:29.775
+nel codice i numeri con la virgola si scrivono con il punto, come in inglese.
+
+38
+00:02:29.775 --> 00:02:33.472
+Tre punto cinquanta, non tre virgola cinquanta.
+
+39
+00:02:33.472 --> 00:02:38.647
+Se ti scappa la virgola, Leo te lo dice e ti mostra il numero giusto.
+
+40
+00:02:39.947 --> 00:02:44.037
+Le righe che cominciano con il cancelletto sono commenti.
+
+41
+00:02:44.037 --> 00:02:48.819
+Leo non le esegue: sono note per te, o per chi leggerà il programma.
+
+42
+00:02:48.819 --> 00:02:52.280
+Scrivi un commento sopra ogni pezzo importante.
+
+43
+00:02:52.280 --> 00:02:55.049
+Tra un mese ti ringrazierai da solo.
+
+44
+00:02:56.349 --> 00:02:57.956
+Il consiglio di oggi.
+
+45
+00:02:57.956 --> 00:03:02.834
+Quando provi un programma, cambia una cosa sola alla volta, e rieseguilo subito.
+
+46
+00:03:02.834 --> 00:03:06.825
+Se qualcosa si rompe, sai esattamente quale modifica l'ha rotto.
+
+47
+00:03:06.825 --> 00:03:09.818
+I programmatori esperti lavorano proprio così.
+
+48
+00:03:11.118 --> 00:03:11.739
+Quiz.
+
+49
+00:03:11.739 --> 00:03:13.697
+Che cosa stampa questo programma?
+
+50
+00:03:13.697 --> 00:03:15.608
+Guarda bene le parentesi graffe.
+
+51
+00:03:19.908 --> 00:03:22.470
+Risposta B: il doppio è otto.
+
+52
+00:03:22.470 --> 00:03:27.663
+Dentro le graffe Leo fa il calcolo, e mette il risultato nel testo.
+
+53
+00:03:28.963 --> 00:03:30.337
+Ricapitoliamo.
+
+54
+00:03:30.337 --> 00:03:32.586
+Stampa scrive sullo schermo.
+
+55
+00:03:32.586 --> 00:03:35.396
+Variabile crea un nome per un valore.
+
+56
+00:03:35.396 --> 00:03:40.768
+Chiedi fa una domanda e restituisce un testo, e intero lo trasforma in numero.
+
+57
+00:03:40.768 --> 00:03:46.514
+E dentro un testo, le parentesi graffe mettono il valore di un nome o di un calcolo.
+
+58
+00:03:47.814 --> 00:03:49.539
+Un esercizio per te:
+
+59
+00:03:49.539 --> 00:03:54.036
+scrivi un programma che chiede due numeri e stampa la loro somma.
+
+60
+00:03:54.036 --> 00:03:58.657
+Nel prossimo video impariamo a far prendere decisioni al programma,
+
+61
+00:03:58.657 --> 00:04:00.875
+e a fargli ripetere le cose.

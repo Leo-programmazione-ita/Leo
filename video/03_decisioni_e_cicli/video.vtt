@@ -1,0 +1,249 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.401
+Finora i nostri programmi eseguivano le righe una dopo l'altra,
+
+2
+00:00:04.401 --> 00:00:06.214
+sempre nello stesso modo.
+
+3
+00:00:06.214 --> 00:00:10.555
+Oggi vediamo le due strutture che reggono ogni programma: la decisione,
+
+4
+00:00:10.555 --> 00:00:11.929
+e la ripetizione.
+
+5
+00:00:13.229 --> 00:00:15.351
+Ecco la prima decisione.
+
+6
+00:00:15.351 --> 00:00:19.729
+Se voto è maggiore o uguale a sei, allora stampa promosso.
+
+7
+00:00:19.729 --> 00:00:20.591
+Fine.
+
+8
+00:00:20.591 --> 00:00:25.632
+Le righe tra allora e fine si eseguono solo se la condizione è vera.
+
+9
+00:00:25.632 --> 00:00:29.412
+E nota lo spazio all'inizio della riga di stampa:
+
+10
+00:00:29.412 --> 00:00:34.453
+il rientro fa vedere a colpo d'occhio che cosa sta dentro il blocco.
+
+11
+00:00:35.753 --> 00:00:38.316
+Spesso le strade sono più di due.
+
+12
+00:00:38.316 --> 00:00:40.880
+Se il voto è almeno nove, ottimo.
+
+13
+00:00:40.880 --> 00:00:43.693
+Altrimenti se è almeno sei, promosso.
+
+14
+00:00:43.693 --> 00:00:47.320
+Altrimenti, in tutti gli altri casi, da ripassare.
+
+15
+00:00:47.320 --> 00:00:52.447
+Leo controlla le condizioni dall'alto in basso e si ferma alla prima vera.
+
+16
+00:00:52.447 --> 00:00:57.386
+Con cinque, nessuna delle prime due è vera, quindi tocca ad altrimenti.
+
+17
+00:00:58.686 --> 00:01:00.510
+Questi sono i confronti.
+
+18
+00:01:00.510 --> 00:01:05.240
+Doppio uguale significa uguale, punto esclamativo uguale significa diverso.
+
+19
+00:01:05.240 --> 00:01:08.944
+Poi minore, maggiore, minore o uguale, maggiore o uguale.
+
+20
+00:01:08.944 --> 00:01:13.788
+E per unire più condizioni usi le parole e, o, non: proprio come in italiano.
+
+21
+00:01:14.088 --> 00:01:19.802
+Occhio: il doppio uguale confronta, un solo uguale dà un valore a una variabile.
+
+22
+00:01:21.102 --> 00:01:23.364
+Passiamo alle ripetizioni.
+
+23
+00:01:23.364 --> 00:01:27.224
+In Leo ce ne sono tre, e ognuna ha il suo momento.
+
+24
+00:01:28.524 --> 00:01:30.559
+La più semplice è ripeti.
+
+25
+00:01:30.559 --> 00:01:33.704
+Ripeti tre volte, stampa ciao da Leo, fine.
+
+26
+00:01:33.704 --> 00:01:37.095
+Quando sai già quante volte, ripeti è perfetto.
+
+27
+00:01:38.395 --> 00:01:42.389
+Per ogni scorre una serie di valori, uno alla volta.
+
+28
+00:01:42.389 --> 00:01:46.250
+Uno punto punto cinque vuol dire: da uno a cinque.
+
+29
+00:01:46.250 --> 00:01:50.510
+A ogni giro, la variabile i prende il valore successivo.
+
+30
+00:01:50.510 --> 00:01:53.905
+Ed ecco un pezzo della tabellina del sette.
+
+31
+00:01:55.205 --> 00:01:58.055
+Per ogni funziona anche con le liste.
+
+32
+00:01:58.055 --> 00:02:03.565
+Una lista si scrive tra parentesi quadre, con gli elementi separati da virgole.
+
+33
+00:02:03.565 --> 00:02:07.936
+Per ogni frutto nella lista, stampa mi piace la, e il frutto.
+
+34
+00:02:07.936 --> 00:02:09.899
+Tre elementi, tre giri.
+
+35
+00:02:11.199 --> 00:02:14.659
+Mentre ripete finché la condizione resta vera.
+
+36
+00:02:14.659 --> 00:02:16.389
+Qui n parte da tre.
+
+37
+00:02:16.389 --> 00:02:20.169
+Mentre n è maggiore di zero: stampa n, e togli uno.
+
+38
+00:02:20.169 --> 00:02:22.219
+Tre, due, uno, partenza!
+
+39
+00:02:22.519 --> 00:02:27.741
+Ricordati sempre di cambiare qualcosa dentro il ciclo: se n non scendesse mai,
+
+40
+00:02:27.741 --> 00:02:29.866
+il ciclo non finirebbe più.
+
+41
+00:02:31.166 --> 00:02:33.370
+Allora, quale ciclo scegliere?
+
+42
+00:02:33.370 --> 00:02:35.458
+Se sai quante volte, ripeti.
+
+43
+00:02:35.458 --> 00:02:38.996
+Se hai una lista o un intervallo di numeri, per ogni.
+
+44
+00:02:38.996 --> 00:02:42.186
+Se devi aspettare che succeda qualcosa, mentre.
+
+45
+00:02:43.486 --> 00:02:47.949
+E ora mettiamo tutto insieme in un classico: indovina il numero.
+
+46
+00:02:47.949 --> 00:02:52.970
+Mentre il tentativo è diverso dal segreto, il programma chiede un numero,
+
+47
+00:02:52.970 --> 00:02:55.449
+e poi dice più alto o più basso.
+
+48
+00:02:55.449 --> 00:02:57.061
+Quattro: più alto.
+
+49
+00:02:57.061 --> 00:02:58.549
+Nove: più basso.
+
+50
+00:02:58.549 --> 00:02:59.912
+Sette: esatto.
+
+51
+00:02:59.912 --> 00:03:05.119
+Negli esempi di Leo trovi la versione completa, con un numero scelto a caso.
+
+52
+00:03:06.419 --> 00:03:07.009
+Quiz.
+
+53
+00:03:07.009 --> 00:03:09.276
+Quante volte stampa ciao questo programma?
+
+54
+00:03:13.576 --> 00:03:15.413
+Tre volte, risposta B.
+
+55
+00:03:15.413 --> 00:03:19.698
+Due punto punto quattro contiene due, tre e quattro: tre giri.
+
+56
+00:03:20.998 --> 00:03:22.259
+Ricapitoliamo.
+
+57
+00:03:22.259 --> 00:03:25.928
+Con se, altrimenti se e altrimenti il programma sceglie.
+
+58
+00:03:25.928 --> 00:03:28.508
+Con ripeti, per ogni e mentre ripete.
+
+59
+00:03:28.508 --> 00:03:31.202
+E tutti i blocchi si chiudono con fine.
+
+60
+00:03:32.502 --> 00:03:37.461
+Esercizio: chiedi un numero e stampa la sua tabellina, da uno a dieci.
+
+61
+00:03:37.461 --> 00:03:42.167
+Nel prossimo video impariamo a leggere i messaggi d'errore di Leo:
+
+62
+00:03:42.167 --> 00:03:45.155
+ti fanno risparmiare un sacco di tempo.

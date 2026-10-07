@@ -1,0 +1,229 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.698
+Oggi usiamo l'editor dell'app Leo.
+
+2
+00:00:02.698 --> 00:00:07.302
+Scriviamo un programma sul telefono, lo eseguiamo, rispondiamo alle sue domande.
+
+3
+00:00:07.302 --> 00:00:08.663
+Tutto con le dita.
+
+4
+00:00:09.963 --> 00:00:13.350
+Dalla schermata iniziale tocca nuovo programma.
+
+5
+00:00:13.350 --> 00:00:18.893
+Si apre l'editor, con un piccolo esempio già scritto, da cancellare o da cambiare.
+
+6
+00:00:18.893 --> 00:00:23.450
+In alto c'è il nome del programma: toccalo per dargli un nome tuo.
+
+7
+00:00:23.450 --> 00:00:28.131
+E non devi preoccuparti di salvare: Leo salva da solo mentre scrivi.
+
+8
+00:00:28.131 --> 00:00:30.779
+Sotto il nome vedi scritto salvato.
+
+9
+00:00:32.079 --> 00:00:37.501
+Sulla tastiera del telefono le parentesi e le virgolette sono scomode da trovare.
+
+10
+00:00:37.501 --> 00:00:41.583
+Per questo, sopra la tastiera, Leo mette due file di tasti.
+
+11
+00:00:41.583 --> 00:00:47.065
+Nella prima: annulla, ripeti, i rientri, e i simboli più usati, come le parentesi,
+
+12
+00:00:47.065 --> 00:00:49.076
+le virgolette e l'uguale.
+
+13
+00:00:49.076 --> 00:00:54.132
+Nella seconda, le parole di Leo: stampa, variabile, se, allora, altrimenti.
+
+14
+00:00:54.132 --> 00:00:56.569
+Un tocco, e la parola è scritta.
+
+15
+00:00:57.869 --> 00:01:01.044
+Scriviamo questo programma: la tabellina.
+
+16
+00:01:01.044 --> 00:01:06.162
+Chiede quale tabellina vuoi, trasforma la risposta in un numero, e poi,
+
+17
+00:01:06.162 --> 00:01:09.725
+per ogni i da uno a dieci, stampa il risultato.
+
+18
+00:01:09.725 --> 00:01:14.843
+Il codice si colora mentre scrivi, con gli stessi colori di Leo Studio:
+
+19
+00:01:14.843 --> 00:01:18.277
+le parole di Leo in rosso, i testi in giallo.
+
+20
+00:01:19.577 --> 00:01:21.932
+Tocca il pulsante rosso, esegui.
+
+21
+00:01:21.932 --> 00:01:24.699
+Dal basso sale il pannello dell'uscita.
+
+22
+00:01:24.699 --> 00:01:28.466
+Quando il programma fa una domanda, compare una casella:
+
+23
+00:01:28.466 --> 00:01:30.880
+scrivi la risposta e tocca invia.
+
+24
+00:01:30.880 --> 00:01:33.705
+E il programma continua, fino alla fine.
+
+25
+00:01:33.705 --> 00:01:37.944
+Qui vedi il programma saluto: chiede il nome e saluta tre volte.
+
+26
+00:01:39.244 --> 00:01:41.579
+Ecco la tabellina del sette.
+
+27
+00:01:41.579 --> 00:01:46.831
+In cima al pannello c'è lo stato: completato, e quanto tempo ci ha messo.
+
+28
+00:01:46.831 --> 00:01:49.360
+Di nuovo riesegue il programma.
+
+29
+00:01:49.360 --> 00:01:55.326
+Copia uscita copia tutto il testo, per incollarlo in un messaggio o in un documento.
+
+30
+00:01:55.326 --> 00:02:00.060
+E il pannello si allarga o si riduce trascinando la sua maniglia.
+
+31
+00:02:01.360 --> 00:02:05.247
+Mentre il programma gira, lo stato dice in esecuzione,
+
+32
+00:02:05.247 --> 00:02:08.821
+oppure in attesa quando aspetta una tua risposta.
+
+33
+00:02:08.821 --> 00:02:11.768
+Il pulsante ferma lo interrompe subito,
+
+34
+00:02:11.768 --> 00:02:15.467
+anche se è finito in un ciclo che non si ferma mai.
+
+35
+00:02:15.467 --> 00:02:17.912
+Capita, soprattutto con mentre.
+
+36
+00:02:17.912 --> 00:02:21.360
+La x chiude il pannello e ti riporta al codice.
+
+37
+00:02:22.660 --> 00:02:26.407
+I tre puntini in alto aprono il menu dell'editor.
+
+38
+00:02:26.407 --> 00:02:29.892
+Formatta il codice mette in ordine i rientri.
+
+39
+00:02:29.892 --> 00:02:33.705
+Condividi manda il testo del programma a chi vuoi.
+
+40
+00:02:33.705 --> 00:02:39.030
+Crea app Android lo trasforma in un'app: lo vediamo nella serie sull'APK.
+
+41
+00:02:39.030 --> 00:02:42.252
+E poi ci sono le impostazioni ed elimina.
+
+42
+00:02:43.552 --> 00:02:45.089
+Due accorgimenti.
+
+43
+00:02:45.089 --> 00:02:50.253
+Se una riga è lunga, gira il telefono in orizzontale: vedi molto più codice.
+
+44
+00:02:50.253 --> 00:02:54.311
+E quando sbagli, usa i tasti annulla e ripeti della barra:
+
+45
+00:02:54.311 --> 00:02:58.246
+tornano indietro di un passo alla volta, con precisione.
+
+46
+00:02:59.546 --> 00:03:00.261
+Quiz.
+
+47
+00:03:00.261 --> 00:03:03.288
+Il programma aspetta la risposta a una domanda.
+
+48
+00:03:03.288 --> 00:03:04.444
+Che cosa fai?
+
+49
+00:03:08.744 --> 00:03:12.999
+Risposta B: scrivi nella casella in basso e tocchi invia.
+
+50
+00:03:12.999 --> 00:03:15.683
+Lo stato in attesa te lo ricorda.
+
+51
+00:03:16.983 --> 00:03:18.330
+Ricapitoliamo.
+
+52
+00:03:18.330 --> 00:03:22.677
+Nuovo programma apre l'editor, e il programma si salva da solo.
+
+53
+00:03:22.677 --> 00:03:26.657
+La barra sopra la tastiera ti dà simboli e parole di Leo.
+
+54
+00:03:26.657 --> 00:03:30.085
+Esegui, rispondi alle domande, ferma e di nuovo.
+
+55
+00:03:30.085 --> 00:03:34.126
+E nel menu dei tre puntini: formatta, condividi, crea app.
+
+56
+00:03:35.426 --> 00:03:40.224
+Nel prossimo video vediamo che cosa succede quando c'è un errore,
+
+57
+00:03:40.224 --> 00:03:43.181
+e il pulsante che lo corregge per te.

@@ -1,0 +1,261 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:02.548
+Oggi parliamo di errori.
+
+2
+00:00:02.548 --> 00:00:07.539
+Tutti sbagliano quando programmano, anche i più bravi, tutti i giorni.
+
+3
+00:00:07.539 --> 00:00:10.227
+La differenza la fa il linguaggio:
+
+4
+00:00:10.227 --> 00:00:15.602
+Leo è fatto per aiutarti a capire che cosa non va, dove, e come si corregge.
+
+5
+00:00:16.902 --> 00:00:19.253
+Ecco un programma con un errore.
+
+6
+00:00:19.253 --> 00:00:20.193
+Lo vedi?
+
+7
+00:00:20.193 --> 00:00:23.485
+Nell'ultima riga c'è scritto tottale, con due t.
+
+8
+00:00:23.485 --> 00:00:26.247
+Un errore di battitura, capita a tutti.
+
+9
+00:00:26.247 --> 00:00:29.010
+E questo è il messaggio che scrive Leo.
+
+10
+00:00:29.010 --> 00:00:31.596
+Leggiamolo insieme, pezzo per pezzo.
+
+11
+00:00:32.896 --> 00:00:36.170
+Un messaggio di Leo ha sempre la stessa forma.
+
+12
+00:00:36.170 --> 00:00:40.536
+Uno: il tipo di errore, e la posizione: riga otto, colonna otto.
+
+13
+00:00:40.536 --> 00:00:45.569
+Due: la riga sbagliata, con delle freccette proprio sotto il punto preciso.
+
+14
+00:00:45.569 --> 00:00:49.935
+Tre: che cosa non va, detto in italiano: tottale non è definito.
+
+15
+00:00:49.935 --> 00:00:51.936
+Quattro: il suggerimento.
+
+16
+00:00:51.936 --> 00:00:55.756
+Forse intendevi totale, che hai definito alla riga due?
+
+17
+00:00:55.756 --> 00:00:58.121
+E cinque: la riga già corretta.
+
+18
+00:00:58.121 --> 00:01:00.243
+Non devi indovinare niente.
+
+19
+00:01:01.543 --> 00:01:07.665
+Vediamo gli errori che capitano più spesso a chi comincia, e che cosa risponde Leo.
+
+20
+00:01:08.965 --> 00:01:12.534
+Primo classico: un blocco aperto e mai chiuso.
+
+21
+00:01:12.534 --> 00:01:18.484
+Leo lo dice chiaramente: il blocco per ogni aperto alla riga due non è mai chiuso,
+
+22
+00:01:18.484 --> 00:01:19.739
+manca fine.
+
+23
+00:01:19.739 --> 00:01:25.292
+E ti indica proprio la riga dove il blocco comincia, così sai dove guardare.
+
+24
+00:01:26.592 --> 00:01:30.144
+Secondo classico: sommare un testo e un numero.
+
+25
+00:01:30.144 --> 00:01:33.567
+Leo non indovina che cosa volevi: te lo dice.
+
+26
+00:01:33.567 --> 00:01:36.602
+Non posso sommare un testo e un intero.
+
+27
+00:01:36.602 --> 00:01:42.285
+E ti suggerisce la strada: trasformare il numero in testo con la funzione testo.
+
+28
+00:01:42.285 --> 00:01:47.000
+Ancora più comodo: mettere il valore tra graffe, dentro il testo.
+
+29
+00:01:48.300 --> 00:01:54.277
+Terzo classico, per chi arriva da altri linguaggi: scrivere print invece di stampa.
+
+30
+00:01:54.277 --> 00:01:59.926
+Leo riconosce le parole degli altri linguaggi e ti dice come si scrive in Leo:
+
+31
+00:01:59.926 --> 00:02:02.028
+in Leo si scrive stampa.
+
+32
+00:02:02.028 --> 00:02:05.443
+Lo stesso vale per if, while, e tante altre.
+
+33
+00:02:06.743 --> 00:02:10.218
+Dalla riga di comando, Leo fa ancora di più.
+
+34
+00:02:10.218 --> 00:02:15.296
+Se trova errori di forma, come una virgoletta o un fine che mancano,
+
+35
+00:02:15.296 --> 00:02:17.835
+ti propone di correggerli lui.
+
+36
+00:02:17.835 --> 00:02:19.906
+Ma solo se rispondi sì.
+
+37
+00:02:19.906 --> 00:02:25.519
+Puoi dire sì a tutto, no, una alla volta, oppure vedere prima le differenze.
+
+38
+00:02:25.819 --> 00:02:31.304
+Prima di cambiare il file ne salva una copia, e non tocca mai la logica:
+
+39
+00:02:31.304 --> 00:02:34.390
+nomi e calcoli restano decisioni tue.
+
+40
+00:02:35.690 --> 00:02:37.392
+Leo è anche paziente.
+
+41
+00:02:37.392 --> 00:02:41.853
+Alcune sviste frequenti le tollera: il programma funziona lo stesso.
+
+42
+00:02:41.853 --> 00:02:43.672
+Allora e fai scambiati.
+
+43
+00:02:43.672 --> 00:02:46.137
+Le maiuscole sbagliate in un nome.
+
+44
+00:02:46.137 --> 00:02:48.602
+I colori scritti senza virgolette.
+
+45
+00:02:48.602 --> 00:02:52.476
+E accetta alcuni sinonimi, come finché al posto di mentre,
+
+46
+00:02:52.476 --> 00:02:54.764
+o sennò al posto di altrimenti.
+
+47
+00:02:54.764 --> 00:02:59.342
+Quando vuoi il rigore, per un compito in classe o un lavoro di gruppo,
+
+48
+00:02:59.342 --> 00:03:02.629
+la modalità rigorosa spegne tutte le tolleranze.
+
+49
+00:03:03.929 --> 00:03:06.262
+Un consiglio da programmatore.
+
+50
+00:03:06.262 --> 00:03:09.209
+Leggi sempre il messaggio fino in fondo.
+
+51
+00:03:09.209 --> 00:03:13.383
+E se la riga indicata ti sembra giusta, guarda quella prima.
+
+52
+00:03:13.383 --> 00:03:19.031
+Una parentesi o un fine che mancano, spesso, si notano solo qualche riga più avanti.
+
+53
+00:03:20.331 --> 00:03:21.100
+Quiz.
+
+54
+00:03:21.100 --> 00:03:24.413
+Che cosa vuol dire errore nome alla riga dodici?
+
+55
+00:03:28.713 --> 00:03:33.530
+Risposta B: alla riga dodici c'è un nome che Leo non conosce.
+
+56
+00:03:33.530 --> 00:03:39.325
+Di solito è un errore di battitura, o una variabile usata prima di crearla.
+
+57
+00:03:40.625 --> 00:03:41.876
+Ricapitoliamo.
+
+58
+00:03:41.876 --> 00:03:44.379
+Tipo, riga e colonna ti dicono dove.
+
+59
+00:03:44.379 --> 00:03:47.678
+La spiegazione e il suggerimento ti dicono perché.
+
+60
+00:03:47.678 --> 00:03:51.034
+La riga corretta proposta ti dice come si corregge.
+
+61
+00:03:51.034 --> 00:03:54.503
+E l'autocorrezione non cambia niente senza il tuo sì.
+
+62
+00:03:55.803 --> 00:04:00.179
+Un esercizio utile: prendi un programma che funziona e sbaglialo apposta,
+
+63
+00:04:00.179 --> 00:04:01.853
+in cinque modi diversi.
+
+64
+00:04:01.853 --> 00:04:03.798
+Leggi che cosa risponde Leo.
+
+65
+00:04:03.798 --> 00:04:06.823
+Nel prossimo video installiamo Leo sul computer.
