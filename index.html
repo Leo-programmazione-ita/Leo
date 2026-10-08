@@ -44,7 +44,7 @@
   #leo-splash.leo-esci{opacity:0;pointer-events:none}
   #leo-splash .marchio-intro{width:clamp(150px,42vw,210px);height:auto;filter:drop-shadow(0 0 54px rgba(230,17,26,.42));animation:leoLogoIn .7s cubic-bezier(.2,.7,.1,1) both}
   #leo-splash .barra-intro{position:absolute;bottom:17%;width:118px;height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
-  #leo-splash .barra-intro::after{content:"";position:absolute;inset:0;width:40%;border-radius:3px;background:#E6111A;animation:leoBarra 1.6s cubic-bezier(.4,0,.2,1) forwards}
+  #leo-splash .barra-intro::after{content:"";position:absolute;inset:0;width:40%;border-radius:3px;background:#E6111A;animation:leoBarra 2.6s cubic-bezier(.4,0,.2,1) forwards}
   @keyframes leoLogoIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
   @keyframes leoBarra{from{transform:translateX(-110%)}to{transform:translateX(320%)}}
   @media (prefers-reduced-motion:reduce){#leo-splash .marchio-intro{animation:none}#leo-splash .barra-intro{display:none}}
@@ -59,7 +59,7 @@
   (function(){
     var s=document.getElementById("leo-splash"); if(!s) return;
     var reduce=false; try{ reduce=matchMedia("(prefers-reduced-motion:reduce)").matches; }catch(e){}
-    var durata = reduce ? 700 : 1800;
+    var durata = reduce ? 900 : 2800;
     var via=false;
     function esci(){ if(via) return; via=true; s.classList.add("leo-esci");
       setTimeout(function(){ if(s&&s.parentNode) s.parentNode.removeChild(s); }, 500); }
