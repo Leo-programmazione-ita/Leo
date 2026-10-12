@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Leo per iPhone</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="description" content="Leo, il linguaggio di programmazione in italiano, che gira sul tuo iPhone. Scrivi codice Leo ed eseguilo subito, anche offline.">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Leo">
+<link rel="manifest" href="leo_app.webmanifest">
+<link rel="apple-touch-icon" href="img/leo_iphone_icon.png">
+<link rel="icon" href="img/leo_iphone_icon.png">
+<style>
+  :root{
+    --nero:#0a0a0a; --nero2:#141414; --nero3:#1c1c1e; --bordo:#2a2a2c;
+    --rosso:#E6111A; --rosso-scuro:#b00d14; --testo:#f2f2f2; --tenue:#9a9a9e;
+    --ok:#27d07a; --giallo:#ffd23f;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--nero); color:var(--testo);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
+    display:flex; flex-direction:column;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    overflow:hidden;
+  }
+  header{
+    display:flex; align-items:center; gap:10px; padding:12px 16px 10px;
+    border-bottom:1px solid var(--bordo); background:var(--nero);
+  }
+  .leone{width:30px;height:30px;border-radius:7px;flex:0 0 auto}
+  header h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.2px}
+  header h1 b{color:var(--rosso)}
+  header .sub{font-size:11px;color:var(--tenue);margin-top:1px}
+  #stato{margin-left:auto;font-size:11px;color:var(--tenue);text-align:right;line-height:1.3}
+  #stato .pallino{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--giallo);margin-right:4px;vertical-align:middle}
+  #stato.pronto .pallino{background:var(--ok)}
+  #stato.errore .pallino{background:var(--rosso)}
+
+  main{flex:1;display:flex;flex-direction:column;min-height:0}
+  .barra{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--nero);overflow-x:auto;scrollbar-width:none}
+  .barra::-webkit-scrollbar{display:none}
+  .barra select,.barra button{
+    font-family:inherit;font-size:13px;border-radius:9px;border:1px solid var(--bordo);
+    background:var(--nero3);color:var(--testo);padding:8px 12px;white-space:nowrap;
+  }
+  .barra select{min-width:150px}
+  #esegui{background:var(--rosso);border-color:var(--rosso);color:#fff;font-weight:700;padding:8px 18px}
+  #esegui:disabled{opacity:.5}
+  #esegui:active{background:var(--rosso-scuro)}
+
+  .editor-wrap{flex:1;display:flex;flex-direction:column;min-height:0;padding:0 12px}
+  textarea#codice{
+    flex:1;width:100%;min-height:120px;resize:none;border:1px solid var(--bordo);border-radius:12px;
+    background:var(--nero2);color:var(--testo);padding:12px;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:15px;line-height:1.5;
+    -webkit-text-size-adjust:100%;tab-size:2;
+  }
+  textarea#codice:focus{outline:none;border-color:var(--rosso)}
+
+  .uscita-wrap{flex:1;display:flex;flex-direction:column;min-height:0;padding:10px 12px 12px}
+  .uscita-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .uscita-top .et{font-size:11px;color:var(--tenue);text-transform:uppercase;letter-spacing:.5px}
+  .uscita-top button{margin-left:auto;background:none;border:none;color:var(--tenue);font-size:12px;padding:4px 8px}
+  #uscita{
+    flex:1;overflow:auto;border:1px solid var(--bordo);border-radius:12px;background:#000;
+    padding:12px;font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:14px;line-height:1.5;
+    white-space:pre-wrap;word-break:break-word;
+  }
+  #uscita .err{color:#ff7b7b}
+  #uscita .note{color:var(--tenue)}
+  #uscita .in{color:var(--giallo)}
+
+  .velo{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;z-index:50;text-align:center;padding:24px}
+  .velo img{width:64px;height:64px;border-radius:14px}
+  .velo .barra-prog{width:220px;max-width:70vw;height:6px;border-radius:3px;background:var(--nero3);overflow:hidden}
+  .velo .barra-prog i{display:block;height:100%;width:30%;background:var(--rosso);transition:width .3s}
+  .velo p{margin:0;color:var(--tenue);font-size:13px}
+  .velo .tit{color:var(--testo);font-size:16px;font-weight:700}
+  .nascosto{display:none !important}
+
+  .hint{font-size:11px;color:var(--tenue);padding:0 12px 8px;text-align:center}
+  .hint b{color:var(--testo)}
+</style>
+</head>
+<body>
+  <header>
+    <img class="leone" id="leone" alt="Leo" src="img/leo_iphone_icon.png">
+    <div>
+      <h1>Le<b>o</b> <span style="font-weight:400;color:var(--tenue);font-size:13px">per iPhone</span></h1>
+      <div class="sub">Il linguaggio di programmazione in italiano</div>
+    </div>
+    <div id="stato"><span class="pallino"></span><span id="stato-txt">avvio…</span></div>
+  </header>
+
+  <main>
+    <div class="barra">
+      <button id="esegui" disabled>▶ Esegui</button>
+      <select id="esempi" aria-label="Esempi">
+        <option value="">Esempi…</option>
+      </select>
+      <button id="pulisci-codice">Svuota</button>
+    </div>
+
+    <div class="editor-wrap">
+      <textarea id="codice" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">stampa("Ciao da Leo!")
+
+variabile nome = chiedi("Come ti chiami?")
+stampa("Benvenuto, {nome} 👋")
+
+per ogni n in [1, 2, 3] fai
+    stampa("{n} per 7 fa {n * 7}")
+fine</textarea>
+    </div>
+
+    <div class="uscita-wrap">
+      <div class="uscita-top">
+        <span class="et">Risultato</span>
+        <button id="pulisci-uscita">pulisci</button>
+      </div>
+      <div id="uscita"><span class="note">Premi ▶ Esegui per far girare il tuo programma Leo.</span></div>
+    </div>
+    <div class="hint">Per averlo come app: tocca <b>Condividi</b> → <b>Aggiungi alla schermata Home</b>.</div>
+  </main>
+
+  <div class="velo" id="velo">
+    <img src="img/leo_iphone_icon.png" alt="Leo">
+    <div class="tit">Leo si sta preparando…</div>
+    <div class="barra-prog"><i id="prog"></i></div>
+    <p id="velo-msg">carico il motore Python…</p>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const uscita = $("#uscita");
+let pyodide = null, pronto = false, inEsecuzione = false;
+
+function setStato(txt, cls){ $("#stato-txt").textContent = txt; $("#stato").className = cls||""; }
+function prog(p, msg){ $("#prog").style.width = Math.round(p*100)+"%"; if(msg) $("#velo-msg").textContent = msg; }
+function out(txt, cls){
+  const span = document.createElement("span");
+  if(cls) span.className = cls;
+  span.textContent = txt;
+  uscita.appendChild(span);
+  uscita.scrollTop = uscita.scrollHeight;
+}
+function pulisciUscita(){ uscita.textContent = ""; }
+
+// ----- bundle leo (zip): inline base64 se presente, altrimenti scaricato -----
+async function bytesBundle(){
+  if (typeof window.LEO_ZIP_B64 === "string" && window.LEO_ZIP_B64.length > 100){
+    const bin = atob(window.LEO_ZIP_B64);
+    const u = new Uint8Array(bin.length);
+    for (let i=0;i<bin.length;i++) u[i] = bin.charCodeAt(i);
+    return u;
+  }
+  const r = await fetch("leo_web.zip");
+  if(!r.ok) throw new Error("non trovo leo_web.zip ("+r.status+")");
+  return new Uint8Array(await r.arrayBuffer());
+}
+
+async function avvia(){
+  try{
+    prog(0.15, "carico il motore Python (Pyodide)…");
+    pyodide = await loadPyodide({ stdout: s => out(s), stderr: s => out(s, "err") });
+    prog(0.55, "carico Leo (interprete + vocabolario)…");
+    const zip = await bytesBundle();
+    pyodide.unpackArchive(zip, "zip");           // estrae leo/ e dati/ in /home/pyodide
+    prog(0.8, "accendo l'interprete…");
+    pyodide.runPython(`
+import sys, os
+sys.path.insert(0, "/home/pyodide")
+os.environ["LEO_PIATTAFORMA"] = "ios"
+os.environ["LEO_DATI"] = "/home/pyodide/dati"
+import leo.esecuzione as _LE
+
+def _esegui_leo(src):
+    try:
+        _LE.esegui_sorgente(src)
+    except SystemExit:
+        pass
+    except BaseException as e:
+        nome = type(e).__name__
+        msg = getattr(e, "messaggio", None) or str(e)
+        sug = getattr(e, "suggerimento", None)
+        print("\\n\u26a0\ufe0f " + msg)
+        if sug:
+            print("\U0001f4a1 " + sug)
+`);
+    // input() di Python (usato da 'chiedi') -> prompt del telefono
+    pyodide.setStdin({ stdin: () => {
+        const r = window.prompt("Leo ti chiede qualcosa:");
+        return r === null ? "" : r + "\n";
+    }});
+    pronto = true;
+    setStato("pronto", "pronto");
+    $("#esegui").disabled = false;
+    $("#velo").classList.add("nascosto");
+  }catch(e){
+    setStato("errore", "errore");
+    prog(1, "");
+    $("#velo-msg").innerHTML = "Non sono riuscito a partire.<br>" + (e && e.message ? e.message : e) +
+       "<br><br><span style='font-size:12px'>Serve internet al primo avvio. Riprova.</span>";
+  }
+}
+
+function esegui(){
+  if(!pronto || inEsecuzione) return;
+  inEsecuzione = true;
+  $("#esegui").disabled = true;
+  setStato("in esecuzione…");
+  pulisciUscita();
+  const src = $("#codice").value;
+  // lascia respirare la UI, poi esegui (sincrono)
+  setTimeout(() => {
+    try{
+      pyodide.globals.get("_esegui_leo")(src);
+    }catch(e){
+      out("\n⚠️ " + (e && e.message ? e.message : e), "err");
+    }finally{
+      inEsecuzione = false;
+      $("#esegui").disabled = false;
+      setStato("pronto", "pronto");
+      if(uscita.textContent.trim()==="") out("(nessuna stampa)", "note");
+    }
+  }, 30);
+}
+
+// ----- esempi -----
+const ESEMPI = {
+  "Saluto e tabellina": `stampa("Ciao da Leo!")
+
+per ogni n in [1, 2, 3, 4, 5] fai
+    stampa("3 per {n} fa {3 * n}")
+fine`,
+  "Media dei voti": `# Calcola la media e il voto migliore
+variabile voti = [28, 30, 24, 27, 30]
+variabile totale = 0
+
+per ogni v in voti fai
+    totale += v
+fine
+
+variabile media = totale / lunghezza(voti)
+stampa("Media: {arrotonda(media, 2)}")
+stampa("Voto migliore: {massimo(voti)}")`,
+  "Chiedi il nome": `variabile nome = chiedi("Come ti chiami?")
+stampa("Benvenuto, {nome} 👋")`,
+  "Pari o dispari": `variabile numero = intero(chiedi("Scrivi un numero:"))
+se numero % 2 == 0 allora
+    stampa("{numero} è pari")
+altrimenti
+    stampa("{numero} è dispari")
+fine`,
+  "Conto alla rovescia": `variabile n = 5
+finché n > 0 fai
+    stampa(n)
+    n -= 1
+fine
+stampa("Via! 🚀")`
+};
+const sel = $("#esempi");
+for(const nome in ESEMPI){
+  const o = document.createElement("option");
+  o.value = nome; o.textContent = nome; sel.appendChild(o);
+}
+sel.addEventListener("change", () => {
+  if(ESEMPI[sel.value]){ $("#codice").value = ESEMPI[sel.value]; sel.value=""; pulisciUscita(); out("(programma caricato — premi ▶ Esegui)","note"); }
+});
+
+$("#esegui").addEventListener("click", esegui);
+$("#pulisci-uscita").addEventListener("click", pulisciUscita);
+$("#pulisci-codice").addEventListener("click", () => { $("#codice").value=""; $("#codice").focus(); });
+
+// Tab inserisce due spazi invece di spostare il focus
+$("#codice").addEventListener("keydown", e => {
+  if(e.key === "Tab"){ e.preventDefault();
+    const t=e.target, s=t.selectionStart, en=t.selectionEnd;
+    t.value = t.value.slice(0,s) + "  " + t.value.slice(en);
+    t.selectionStart = t.selectionEnd = s+2;
+  }
+});
+
+// service worker (offline) — solo se servito da file (non data:)
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+  navigator.serviceWorker.register("leo_sw.js").catch(()=>{});
+}
+
+avvia();
+</script>
+</body>
+</html>
