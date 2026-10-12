@@ -2,6 +2,8 @@
 <!-- Scritta da strumenti/sito_template/dominio.py: non modificare a mano. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://leoitalia.com/confronto.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://leoitalia.com/dati.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://leoitalia.com/giochi.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/libro/00_introduzione.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/libro/01_primo_programma.html</loc><lastmod>2026-10-07</lastmod></url>
@@ -256,9 +258,14 @@
   <url><loc>https://leoitalia.com/riferimento/linguaggio/variabili.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/riferimento/linguaggio/verifiche.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/riferimento/telefono/index.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/scarica.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://leoitalia.com/scarica.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://leoitalia.com/scienza.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://leoitalia.com/sicurezza.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://leoitalia.com/sistema.html</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://leoitalia.com/suite.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/telefono.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/template.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://leoitalia.com/web.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/termini.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/video.html</loc><lastmod>2026-10-07</lastmod></url>
 </urlset>

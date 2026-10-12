@@ -1492,3 +1492,64 @@ figure { margin: 0; }
   :root.in-app .navigazione li { border: 0; }
   :root.in-app .navigazione a { padding: 10px 10px; font-size: 15px; font-weight: 600; white-space: nowrap; }
 }
+
+/* ---------- Edizioni di Leo (scarica.html): Suite + edizioni mirate.
+   La griglia riusa l'impianto delle schede; l'icona e' un PNG (leone su nero).
+   La .tabella-metodi (web.html) riusa .h-tabella-py, con i nomi dei metodi che
+   possono andare a capo. ---------- */
+.edizioni { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.edizione { display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  padding: 24px; background: var(--superficie); border: 1px solid var(--bordo);
+  border-radius: var(--r-grande); }
+.edizione:hover { border-color: var(--bordo-forte); }
+.edizione-icona { width: 60px; height: 60px; border-radius: 14px; display: block;
+  background: #000; border: 1px solid var(--bordo); flex: none; }
+.edizione-corpo { flex: 1 1 auto; }
+.edizione-corpo h3 { font-size: 19px; margin: 0 0 6px; letter-spacing: -.015em; }
+.edizione-corpo p { color: var(--testo-2); margin: 0; font-size: 15.5px; }
+.edizione-azione { margin-top: 2px; }
+.edizione-arrivo { margin: 0; font-size: 13.5px; font-weight: 600; color: var(--testo-3);
+  display: inline-flex; align-items: center; gap: 7px; }
+.edizione-arrivo::before { content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accento); flex: none; }
+.edizione-suite { grid-column: 1 / -1; flex-direction: row; align-items: center; flex-wrap: wrap;
+  background: var(--accento-tenue); border-color: var(--accento-linea); }
+.edizione-suite .edizione-icona { width: 72px; height: 72px; }
+.edizione-suite .edizione-corpo { min-width: 220px; }
+@media (max-width: 520px) { .edizione-suite { flex-direction: column; align-items: flex-start; } }
+
+/* nomi dei metodi: vanno a capo invece di allargare la tabella */
+.tabella-metodi th[scope="row"] { white-space: normal; }
+.tabella-metodi th[scope="row"] code, .tabella-metodi td code { background: none; padding: 0; }
+
+/* ogni card e' un link alla sua pagina: la parte icona+testo e' un <a> */
+.edizione-vai { display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  width: 100%; text-decoration: none; color: inherit; }
+.edizione-vai:hover h3, .edizione-vai:focus-visible h3 { color: var(--accento-vivo); }
+
+/* ---------- Suite al centro e in evidenza nella griglia delle edizioni
+   (scarica.html). La card Suite occupa tutta la larghezza in alto, centrata,
+   piu' grande e con l'accento del tema; su mobile torna in colonna singola. ---------- */
+.edizione-suite { justify-content: center; text-align: center; gap: 18px 24px;
+  padding: 30px 28px; box-shadow: inset 0 0 0 1px var(--accento-linea); }
+.edizione-suite .edizione-vai { flex-direction: row; align-items: center; justify-content: center;
+  flex-wrap: wrap; width: auto; flex: 0 1 560px; text-align: left; }
+.edizione-suite .edizione-corpo { min-width: 220px; flex: 1 1 320px; }
+.edizione-suite .edizione-corpo h3 { font-size: 23px; }
+.edizione-suite .edizione-corpo p { font-size: 16.5px; }
+.edizione-suite .edizione-azione { flex: none; }
+@media (max-width: 520px) { .edizione-suite { text-align: left; }
+  .edizione-suite .edizione-vai { flex-direction: column; align-items: flex-start; } }
+
+/* ---------- Pagine delle singole edizioni (dati.html, giochi.html, sistema.html,
+   sicurezza.html, scienza.html, suite.html; web.html e' il modello). Il colore
+   dell'edizione arriva in --ed (stile inline nella sezione) e tocca solo piccoli
+   dettagli — lo stemma e l'etichetta — mentre il resto resta sul tema del sito. */
+.ed-stemma { width: 92px; height: 92px; border-radius: 22px; display: block;
+  margin: 0 auto 22px; background: #000; border: 2px solid var(--ed, var(--accento)); }
+.ed-etichetta { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
+  border-radius: 999px; border: 1px solid var(--ed, var(--accento)); color: var(--testo-2);
+  font: 700 13px/1 var(--car); letter-spacing: .04em; text-transform: uppercase; }
+.ed-etichetta::before { content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ed, var(--accento)); flex: none; }
