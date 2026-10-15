@@ -22,10 +22,10 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261008-2">
+<link rel="stylesheet" href="css/stile.css?v=20261015">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js" defer></script>
+<script src="js/sito.js?v=20261015" defer></script>
 <script src="js/cerca.js" defer></script>
 </head>
 <body>
@@ -98,11 +98,9 @@
   .dl-smart .t p{margin:3px 0 0;color:#cfcfd4;font-size:14px}
   .dl-smart .freccia{margin-left:auto;color:#E6111A;font-size:26px}
   /* Modale download */
-  .dl-modale{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.66);backdrop-filter:blur(3px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
-  .dl-modale.aperta{opacity:1;visibility:visible;pointer-events:auto}
-  .dl-box{width:min(440px,100%);background:#121214;border:1px solid #2a2a2e;border-radius:20px;padding:24px;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.6);transform:translateY(12px) scale(.97);transition:transform .24s cubic-bezier(.2,.7,.1,1)}
-  .dl-modale.aperta .dl-box{transform:none}
-  @media (prefers-reduced-motion:reduce){.dl-modale,.dl-box{transition:none}.dl-box{transform:none}}
+  .dl-modale{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.66);backdrop-filter:blur(3px)}
+  .dl-modale.aperta{display:grid}
+  .dl-box{width:min(440px,100%);background:#121214;border:1px solid #2a2a2e;border-radius:20px;padding:24px;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.6)}
   .dl-box .chiudi{position:absolute;top:10px;right:12px;background:none;border:0;color:#9a9a9e;font-size:26px;cursor:pointer;line-height:1}
   .dl-box img{width:68px;height:68px;margin:2px auto 8px}
   .dl-box h3{margin:0 0 4px;font-size:22px}
@@ -132,7 +130,7 @@
   <button type="button" class="dl-suite" data-ed="suite" aria-label="Scarica Leo Suite">
     <img src="img/edizioni/banner_suite.png" alt="Leo Suite">
     <span class="dl-suite-cta">
-      <span class="finto-pulsante">Scarica ↓</span>
+      <span class="finto-pulsante">Scarica la Suite ↓</span>
     </span>
   </button>
 
@@ -173,7 +171,7 @@
         <a class="dl-quadr" href="sicurezza.html">
           <img src="img/edizioni/sicurezza.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Sicurezza</span>
-          <span class="dl-q-desc">Dati protetti, forense e rete. Difensiva.</span>
+          <span class="dl-q-desc">Dati protetti, forense e rete. Solo per difesa.</span>
         </a>
         <a class="dl-quadr" href="scienza.html">
           <img src="img/edizioni/scienza.png" alt="" width="56" height="56" loading="lazy">
