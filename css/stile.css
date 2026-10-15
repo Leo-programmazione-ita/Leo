@@ -1553,3 +1553,94 @@ figure { margin: 0; }
   font: 700 13px/1 var(--car); letter-spacing: .04em; text-transform: uppercase; }
 .ed-etichetta::before { content: ""; width: 9px; height: 9px; border-radius: 50%;
   background: var(--ed, var(--accento)); flex: none; }
+
+
+/* ====================================================================
+   10. ANIMAZIONI (livello aggiunto)
+   Comparse allo scroll riattivate in modo mirato + micro-interazioni + firme.
+   Tutto dietro prefers-reduced-motion:no-preference e gate :root.js.
+   Riusa --curva e la classe .visibile aggiunta da sito.js.
+   ==================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* comparsa allo scroll */
+  :root.js .compari,
+  :root.js .parole,
+  :root.js .h-testa-sezione,
+  :root.js .h-tessera,
+  :root.js .h-novita-voce,
+  :root.js .hed-suite,
+  :root.js .hed-card,
+  :root.js .mondo,
+  :root.js .cf-caso,
+  :root.js .nv-voce,
+  :root.js .documento h2,
+  :root.js .dl-quadr,
+  :root.js .dl-suite,
+  :root.js .dl-smart {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity .6s var(--curva), transform .6s var(--curva);
+  }
+  :root.js .compari.visibile,
+  :root.js .parole.visibile,
+  :root.js .h-testa-sezione.visibile,
+  :root.js .h-tessera.visibile,
+  :root.js .h-novita-voce.visibile,
+  :root.js .hed-suite.visibile,
+  :root.js .hed-card.visibile,
+  :root.js .mondo.visibile,
+  :root.js .cf-caso.visibile,
+  :root.js .nv-voce.visibile,
+  :root.js .documento h2.visibile,
+  :root.js .dl-quadr.visibile,
+  :root.js .dl-suite.visibile,
+  :root.js .dl-smart.visibile { opacity: 1; transform: none; }
+  :root.js .documento h2 { opacity:0; transform:translateY(16px); transition:opacity .6s var(--curva),transform .6s var(--curva); }
+  :root.js .documento h2.visibile { opacity:1; transform:none; }
+
+  /* ritardi scaglionati (r2..r6 nel markup) */
+  :root.js .r2{transition-delay:.08s} :root.js .r3{transition-delay:.16s}
+  :root.js .r4{transition-delay:.24s} :root.js .r5{transition-delay:.32s} :root.js .r6{transition-delay:.40s}
+  :root.js .h-pubblico .h-tessera:nth-child(2),:root.js .hed-griglia .hed-card:nth-child(2),:root.js .dl-griglia .dl-quadr:nth-child(2){transition-delay:0.05s}:root.js .h-pubblico .h-tessera:nth-child(3),:root.js .hed-griglia .hed-card:nth-child(3),:root.js .dl-griglia .dl-quadr:nth-child(3){transition-delay:0.10s}:root.js .h-pubblico .h-tessera:nth-child(4),:root.js .hed-griglia .hed-card:nth-child(4),:root.js .dl-griglia .dl-quadr:nth-child(4){transition-delay:0.15s}:root.js .h-pubblico .h-tessera:nth-child(5),:root.js .hed-griglia .hed-card:nth-child(5),:root.js .dl-griglia .dl-quadr:nth-child(5){transition-delay:0.20s}:root.js .h-pubblico .h-tessera:nth-child(6),:root.js .hed-griglia .hed-card:nth-child(6),:root.js .dl-griglia .dl-quadr:nth-child(6){transition-delay:0.25s}
+
+  /* parole a cascata */
+  :root.js .parole .p{opacity:0;transform:translateY(.5em);display:inline-block;
+    transition:opacity .5s var(--curva),transform .5s var(--curva)}
+  :root.js .parole.visibile .p{opacity:1;transform:none;transition-delay:calc(var(--i,0)*.04s)}
+
+  /* galleria template: comparsa + hover */
+  :root.js .galleria .modello{opacity:0}
+  :root.js .galleria .modello.visibile{animation:entra .55s var(--curva) both}
+  .modello:hover{transform:translateY(-4px);border-color:var(--accento-linea);box-shadow:var(--ombra-scheda)}
+
+  /* leone che respira (inviti) */
+  .h-invito-stemma,.invito-stemma{animation:leoRespiro 4.5s ease-in-out infinite}
+  @keyframes leoRespiro{0%,100%{filter:drop-shadow(0 20px 40px rgba(var(--accento-rgb),.35))}
+    50%{filter:drop-shadow(0 20px 56px rgba(var(--accento-rgb),.64))}}
+
+  /* sottolineatura voce attiva che si disegna */
+  .navigazione a[aria-current="page"]:not(.pulsante)::after{transform:scaleX(0);transform-origin:left;
+    animation:navLinea .5s var(--curva) .25s forwards}
+  @keyframes navLinea{to{transform:scaleX(1)}}
+
+  /* transizione colori al cambio tema */
+  body,.testata{transition:background-color .28s ease,color .28s ease,border-color .28s ease}
+
+  /* overlay ricerca: entrata */
+  :root.cerca-aperta .cerca-finestra{animation:cercaIn .2s var(--curva) both}
+  @keyframes cercaIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+
+  /* menu mobile: voci a cascata */
+  .navigazione.aperta li{animation:menuVoce .32s var(--curva) both}
+  .navigazione.aperta li:nth-child(2){animation-delay:0.03s}.navigazione.aperta li:nth-child(3){animation-delay:0.06s}.navigazione.aperta li:nth-child(4){animation-delay:0.09s}.navigazione.aperta li:nth-child(5){animation-delay:0.12s}.navigazione.aperta li:nth-child(6){animation-delay:0.15s}.navigazione.aperta li:nth-child(7){animation-delay:0.18s}.navigazione.aperta li:nth-child(8){animation-delay:0.21s}
+  @keyframes menuVoce{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+  /* 404: glitch della cifra */
+  .pagina-404 .cifra-404{animation:glitch404 .9s steps(2,end) 1 both}
+  @keyframes glitch404{
+    0%{text-shadow:none}
+    12%{text-shadow:-3px 0 var(--accento),3px 0 #26d8ef}
+    24%{text-shadow:3px 0 var(--accento),-3px 0 #26d8ef}
+    36%{text-shadow:-2px 0 var(--accento),2px 0 #26d8ef}
+    50%,100%{text-shadow:0 0 44px rgba(var(--accento-rgb),.4)}}
+}
