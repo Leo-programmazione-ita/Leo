@@ -67,57 +67,122 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro">
-    <div class="contenitore stretto">
-      <p class="sopratitolo compari">Scarica</p>
-      <h1 class="parole">Leo è pronto. <em class="testo-accento">Tu anche.</em></h1>
-      <p class="introduzione compari r2">Sul PC un solo programma di installazione con tutto dentro: il linguaggio, Leo Studio, gli esempi e il manuale. Questa versione è gratis e senza scadenza. Sul telefono l'app Leo per Android.</p>
-    </div>
-  </section>
+<style>
+  .dl-wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  /* Banner Suite a tutta larghezza */
+  .dl-suite{display:block;width:100%;border:0;padding:0;margin:0 0 6px;cursor:pointer;background:#0b0b0d;position:relative}
+  .dl-suite img{display:block;width:100%;height:auto}
+  .dl-suite .dl-suite-cta{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+     background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,0))}
+  .dl-suite .dl-suite-cta .t{text-align:left}
+  .dl-suite .dl-suite-cta h2{margin:0;font-size:clamp(20px,3.6vw,30px)}
+  .dl-suite .dl-suite-cta p{margin:2px 0 0;color:#d7d7db;font-size:14px}
+  .dl-suite .finto-pulsante{margin-left:auto;background:#E6111A;color:#fff;font-weight:700;padding:11px 20px;border-radius:12px;white-space:nowrap}
+  .dl-sezione-tit{text-align:center;margin:30px 0 14px}
+  .dl-sezione-tit .sop{color:#9a9a9e;text-transform:uppercase;letter-spacing:.08em;font-size:12px;margin:0}
+  .dl-sezione-tit h2{margin:4px 0 0;font-size:clamp(20px,3.4vw,28px)}
+  /* Quadratini */
+  .dl-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .dl-quadr{text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;cursor:pointer;
+     background:#141416;border:1px solid #27272b;border-radius:16px;padding:18px 12px;color:#f2f2f2;transition:border-color .15s,transform .15s,background .15s}
+  .dl-quadr:hover{border-color:#E6111A;transform:translateY(-2px);background:#17171a}
+  .dl-quadr img{width:56px;height:56px}
+  .dl-q-nome{font-weight:700}
+  .dl-q-desc{font-size:12px;color:#9a9a9e;line-height:1.35}
+  /* Banner smartphone */
+  .dl-smart{display:flex;align-items:center;gap:16px;margin:28px 0 8px;padding:20px 22px;border-radius:18px;text-decoration:none;color:#fff;
+     background:linear-gradient(100deg,#1b1b1f,#2a0e12 70%);border:1px solid #3a1116;transition:border-color .15s,transform .15s}
+  .dl-smart:hover{border-color:#E6111A;transform:translateY(-2px)}
+  .dl-smart .ico{font-size:30px;line-height:1}
+  .dl-smart .t h3{margin:0;font-size:clamp(17px,3vw,22px)}
+  .dl-smart .t p{margin:3px 0 0;color:#cfcfd4;font-size:14px}
+  .dl-smart .freccia{margin-left:auto;color:#E6111A;font-size:26px}
+  /* Modale download */
+  .dl-modale{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.66);backdrop-filter:blur(3px)}
+  .dl-modale.aperta{display:grid}
+  .dl-box{width:min(440px,100%);background:#121214;border:1px solid #2a2a2e;border-radius:20px;padding:24px;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+  .dl-box .chiudi{position:absolute;top:10px;right:12px;background:none;border:0;color:#9a9a9e;font-size:26px;cursor:pointer;line-height:1}
+  .dl-box img{width:68px;height:68px;margin:2px auto 8px}
+  .dl-box h3{margin:0 0 4px;font-size:22px}
+  .dl-box .d{color:#b9b9c0;font-size:14px;margin:0 auto 18px;max-width:34ch}
+  .dl-box .pulsante.grande{width:100%;justify-content:center}
+  .dl-box .mob{margin:14px 0 0;font-size:13px}
+  .dl-box .mob a{color:#E6111A}
+  .dl-box .win{color:#8a8a90;font-size:12px;margin:10px 0 0}
+  .dl-suite-quadr-wrap{display:flex;justify-content:center;margin:0 0 16px}
+  .dl-quadr-suite{max-width:300px;border-color:#E6111A;box-shadow:0 0 0 3px rgba(230,17,26,.12);background:linear-gradient(160deg,#1a1114,#141416)}
+  .dl-quadr-suite:hover{border-color:#E6111A;box-shadow:0 0 0 4px rgba(230,17,26,.2)}
+  .dl-quadr-suite .dl-q-nome{color:#fff;font-size:18px}
+  .dl-q-badge{color:#E6111A;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+  .dl-suite:focus,.dl-suite:focus-visible{outline:2px solid #E6111A;outline-offset:-2px}
+  .dl-quadr:focus,.dl-quadr:focus-visible{outline:2px solid #E6111A;outline-offset:2px}
+</style>
 
-  <section class="contenitore scarica-due" aria-label="Download">
-    <div class="pannello-download compari ingrandisci" id="windows">
-      <span class="piattaforma" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
-      <img class="stemma" src="img/stemma_192.png" alt="" width="88" height="88">
-      <h2>Leo per Windows</h2>
-      <p class="introduzione" style="margin:0 auto 26px">Windows 10 e 11 a 64 bit</p>
-      <a class="pulsante grande" data-scarica href="scarica.html" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-        <span class="etichetta">Scarica Leo</span>
-      </a>
-      <p class="spiegazione-arrivo" data-se-no-link hidden>Il programma di installazione sarà disponibile qui a breve. Il pulsante si attiverà da solo: torna a trovarci.</p>
-      <p class="dettagli" data-dettagli-download>Programma di installazione per Windows · nessun account richiesto</p>
-    </div>
-    <div class="pannello-download compari ingrandisci r2" id="android">
-      <span class="piattaforma" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
-      <img class="stemma" src="img/stemma_192.png" alt="" width="88" height="88">
-      <h2>Leo per Android</h2>
-      <p class="dettagli" style="color:var(--accento);font-weight:700;letter-spacing:.02em;margin:0 auto 8px">Anteprima · presto su Google Play</p>
-      <p class="introduzione" style="margin:0 auto 26px">Android 7.0 e successivi</p>
-      <a class="pulsante grande" data-scarica="android" href="scarica.html#android" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-        <span class="etichetta">Scarica l'app Android</span>
-      </a>
-      <p class="spiegazione-arrivo" data-se-no-link="android" hidden>L'app per il telefono sarà scaricabile qui a breve: il pulsante si attiverà da solo.</p>
-      <p class="dettagli" data-dettagli-android>Un solo APK per tutti i telefoni · nessun account richiesto</p>
-      <p class="nota-apk"><a href="telefono.html">Che cosa fa l'app sul telefono <span aria-hidden="true">→</span></a></p>
-    </div>
-    <div class="pannello-download compari ingrandisci r4" id="iphone">
-      <span class="piattaforma" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
-      <img class="stemma" src="img/stemma_192.png" alt="" width="88" height="88">
-      <h2>Leo per iPhone</h2>
-      <p class="dettagli" style="color:var(--accento);font-weight:700;letter-spacing:.02em;margin:0 auto 8px">Anteprima &middot; presto su App Store</p>
-      <p class="introduzione" style="margin:0 auto 26px">iPhone e iPad, dentro Safari</p>
-      <a class="pulsante grande" href="iphone.html" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-        <span class="etichetta">Apri Leo per iPhone</span>
-      </a>
-      <p class="dettagli">Web-app: aprila e &laquo;Aggiungi alla schermata Home&raquo;</p>
-    </div>
-  </section>
-  <p class="contenitore nota-offline compari"><strong>Guida e sito, anche offline.</strong> Leo Studio e l'app Android hanno dentro questo sito, con il manuale e gli esempi: si aprono dalla voce «Guida e sito» anche senza internet.</p>
+<div class="dl-wrap">
+  <!-- Banner Suite a tutta larghezza -->
+  <button type="button" class="dl-suite" data-ed="suite" aria-label="Scarica Leo Suite">
+    <img src="img/edizioni/banner_suite.png" alt="Leo Suite">
+    <span class="dl-suite-cta">
+      <span class="finto-pulsante">Scarica ↓</span>
+    </span>
+  </button>
 
-  <section class="sezione" aria-labelledby="titolo-requisiti">
+  <!-- Quadratini: le altre edizioni -->
+  <div class="dl-sezione-tit">
+    <p class="sop">Tutte le edizioni</p>
+    <h2>Scegli la tua versione</h2>
+  </div>
+  <div class="dl-suite-quadr-wrap">
+    <button type="button" class="dl-quadr dl-quadr-suite" data-ed="suite" aria-label="Scarica Leo Suite">
+      <span class="dl-q-badge">★ Tutte in una</span>
+      <img src="img/edizioni/suite.png" alt="" width="68" height="68">
+      <span class="dl-q-nome">Leo Suite</span>
+      <span class="dl-q-desc">Tutte le edizioni in una, già interconnesse.</span>
+    </button>
+  </div>
+  <div class="dl-griglia">
+        <a class="dl-quadr" href="web.html">
+          <img src="img/edizioni/web.png" alt="" width="56" height="56" loading="lazy">
+          <span class="dl-q-nome">Leo Web</span>
+          <span class="dl-q-desc">Siti e servizi web in italiano.</span>
+        </a>
+        <a class="dl-quadr" href="dati.html">
+          <img src="img/edizioni/dati.png" alt="" width="56" height="56" loading="lazy">
+          <span class="dl-q-nome">Leo Dati</span>
+          <span class="dl-q-desc">Database, tabelle, calcolo, grafici.</span>
+        </a>
+        <a class="dl-quadr" href="giochi.html">
+          <img src="img/edizioni/giochi.png" alt="" width="56" height="56" loading="lazy">
+          <span class="dl-q-nome">Leo Giochi</span>
+          <span class="dl-q-desc">Giochi e grafica, personaggi pronti.</span>
+        </a>
+        <a class="dl-quadr" href="sistema.html">
+          <img src="img/edizioni/sistema.png" alt="" width="56" height="56" loading="lazy">
+          <span class="dl-q-nome">Leo Sistema</span>
+          <span class="dl-q-desc">Automatizzare il computer.</span>
+        </a>
+        <a class="dl-quadr" href="sicurezza.html">
+          <img src="img/edizioni/sicurezza.png" alt="" width="56" height="56" loading="lazy">
+          <span class="dl-q-nome">Leo Sicurezza</span>
+          <span class="dl-q-desc">Sicurezza informatica, reti, forense.</span>
+        </a>
+        <a class="dl-quadr" href="scienza.html">
+          <img src="img/edizioni/scienza.png" alt="" width="56" height="56" loading="lazy">
+          <span class="dl-q-nome">Leo Scienza</span>
+          <span class="dl-q-desc">Matematica avanzata e scienza.</span>
+        </a>
+  </div>
+
+  <!-- Banner smartphone -->
+  <a class="dl-smart" href="telefono.html">
+    <span class="ico" aria-hidden="true">📱</span>
+    <span class="t"><h3>Prova la versione per smartphone — in anteprima</h3>
+      <p>Android e iPhone: scopri come scaricarle e cosa fanno.</p></span>
+    <span class="freccia" aria-hidden="true">→</span>
+  </a>
+</div>
+
+<section class="sezione" aria-labelledby="titolo-requisiti">
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Requisiti</p>
@@ -176,94 +241,45 @@
     </div>
   </section>
 
-  <section class="sezione" aria-labelledby="titolo-edizioni">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Edizioni</p>
-        <h2 id="titolo-edizioni" class="titolo-sezione parole">Un solo Leo, <em>tante edizioni.</em></h2>
-        <p class="introduzione compari r2">Leo è un unico linguaggio universale: si scrive allo stesso modo ovunque. La <strong>Suite</strong> le ha tutte dentro di sé, già interconnesse, per programmare a tutto campo. Le edizioni mirate sono più leggere perché non portano le funzioni e i contenuti delle altre categorie: scegli quella che ti serve, il linguaggio non cambia. Tocca un prodotto per aprire la sua <strong>scheda</strong>, con i download: Windows pronto, Android e iPhone in anteprima.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutto Leo in un pacchetto: tutte le categorie, già interconnesse. Per programmare a tutto campo.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <span class="edizione-arrivo">Presto scaricabile</span>
-                  <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <span class="edizione-arrivo">Presto scaricabile</span>
-                  <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <span class="edizione-arrivo">Presto scaricabile</span>
-                  <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi, finestre.</p>
-            </div>
-          </a>
-          <span class="edizione-arrivo">Presto scaricabile</span>
-                  <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sicurezza.html">
-            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sicurezza</h3>
-              <p>Sicurezza informatica, reti e forense.</p>
-            </div>
-          </a>
-          <span class="edizione-arrivo">Presto scaricabile</span>
-                  <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="scienza.html">
-            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Scienza</h3>
-              <p>Matematica avanzata e scienza.</p>
-            </div>
-          </a>
-          <span class="edizione-arrivo">Presto scaricabile</span>
-                  <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <p class="nota-offline compari">Lo stesso codice Leo gira su ogni edizione. La Suite è il modo più semplice per avere tutto; le edizioni mirate arriveranno come download separati, più leggeri.</p>
-    </div>
-  </section>
+<!-- Modale di download .exe -->
+<div class="dl-modale" id="dl-modale" role="dialog" aria-modal="true" aria-labelledby="dl-tit">
+  <div class="dl-box">
+    <button type="button" class="chiudi" data-chiudi aria-label="Chiudi">×</button>
+    <img id="dl-ico" src="img/edizioni/suite.png" alt="">
+    <h3 id="dl-tit">Leo</h3>
+    <p class="d" id="dl-desc"></p>
+    <a class="pulsante grande" id="dl-exe" href="#" rel="noopener" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+      <span class="etichetta">Scarica per Windows (.exe)</span>
+    </a>
+    <p class="mob">In anteprima anche su <a href="telefono.html">smartphone (Android e iPhone) →</a></p>
+    <p class="win">Windows 10/11 a 64 bit · nessun account richiesto</p>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var ED = {"suite": {"nome": "Suite", "exe": "Setup_Leo_0.1.0.exe", "apk": "Leo-0.1.0.apk", "desc": "Tutte le categorie, già interconnesse: per programmare a tutto campo."}, "web": {"nome": "Web", "exe": "Setup_Leo_Web_0.1.0.exe", "apk": "Leo-Web-0.1.0.apk", "desc": "Siti e servizi web in italiano."}, "dati": {"nome": "Dati", "exe": "Setup_Leo_Dati_0.1.0.exe", "apk": "Leo-Dati-0.1.0.apk", "desc": "Database, tabelle, calcolo, grafici."}, "giochi": {"nome": "Giochi", "exe": "Setup_Leo_Giochi_0.1.0.exe", "apk": "Leo-Giochi-0.1.0.apk", "desc": "Giochi e grafica, personaggi pronti."}, "sistema": {"nome": "Sistema", "exe": "Setup_Leo_Sistema_0.1.0.exe", "apk": "Leo-Sistema-0.1.0.apk", "desc": "Automatizzare il computer."}, "sicurezza": {"nome": "Sicurezza", "exe": "Setup_Leo_Sicurezza_0.1.0.exe", "apk": "Leo-Sicurezza-0.1.0.apk", "desc": "Sicurezza informatica, reti, forense."}, "scienza": {"nome": "Scienza", "exe": "Setup_Leo_Scienza_0.1.0.exe", "apk": "Leo-Scienza-0.1.0.apk", "desc": "Matematica avanzata e scienza."}};
+    var BASE = "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/";
+    var m = document.getElementById("dl-modale");
+    function apri(id){
+      var e = ED[id]; if(!e) return;
+      document.getElementById("dl-tit").textContent = "Leo " + e.nome;
+      document.getElementById("dl-desc").textContent = e.desc;
+      document.getElementById("dl-ico").src = "img/edizioni/" + id + ".png";
+      var a = document.getElementById("dl-exe");
+      a.href = BASE + e.exe;
+      m.classList.add("aperta");
+    }
+    function chiudi(){ m.classList.remove("aperta"); }
+    document.querySelectorAll("[data-ed]").forEach(function(b){
+      b.addEventListener("click", function(){ apri(b.getAttribute("data-ed")); });
+    });
+    m.addEventListener("click", function(ev){ if(ev.target === m) chiudi(); });
+    document.querySelector("[data-chiudi]").addEventListener("click", chiudi);
+    document.addEventListener("keydown", function(ev){ if(ev.key === "Escape") chiudi(); });
+  })();
+</script>
 </main>
 
 <!--#piede-->
