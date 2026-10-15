@@ -116,9 +116,16 @@
   .dl-q-badge{color:#E6111A;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
   .dl-suite:focus,.dl-suite:focus-visible{outline:2px solid #E6111A;outline-offset:-2px}
   .dl-quadr:focus,.dl-quadr:focus-visible{outline:2px solid #E6111A;outline-offset:2px}
+  .dl-mobile{align-items:flex-start}
+  .dl-mobile .t h3{margin:0;font-size:clamp(17px,3vw,22px)}
+  .dl-mob-azioni{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+  .dl-mob-nota{margin:12px 0 0;font-size:14px}
+  .dl-mob-nota a{color:#E6111A;text-decoration:none}
+  .dl-mob-nota a:hover{text-decoration:underline}
 </style>
 
 <div class="dl-wrap">
+  <h1 class="solo-lettori">Scarica Leo</h1>
   <!-- Banner Suite a tutta larghezza -->
   <button type="button" class="dl-suite" data-ed="suite" aria-label="Scarica Leo Suite">
     <img src="img/edizioni/banner_suite.png" alt="Leo Suite">
@@ -144,42 +151,48 @@
         <a class="dl-quadr" href="web.html">
           <img src="img/edizioni/web.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Web</span>
-          <span class="dl-q-desc">Siti e servizi web in italiano.</span>
+          <span class="dl-q-desc">Pagine in italiano che diventano siti veri.</span>
         </a>
         <a class="dl-quadr" href="dati.html">
           <img src="img/edizioni/dati.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Dati</span>
-          <span class="dl-q-desc">Database, tabelle, calcolo, grafici.</span>
+          <span class="dl-q-desc">Database, tabelle, calcolo e grafici.</span>
         </a>
         <a class="dl-quadr" href="giochi.html">
           <img src="img/edizioni/giochi.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Giochi</span>
-          <span class="dl-q-desc">Giochi e grafica, personaggi pronti.</span>
+          <span class="dl-q-desc">Grafica, suoni e sprite già pronti.</span>
         </a>
         <a class="dl-quadr" href="sistema.html">
           <img src="img/edizioni/sistema.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Sistema</span>
-          <span class="dl-q-desc">Automatizzare il computer.</span>
+          <span class="dl-q-desc">Automatizza file, finestre e processi.</span>
         </a>
         <a class="dl-quadr" href="sicurezza.html">
           <img src="img/edizioni/sicurezza.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Sicurezza</span>
-          <span class="dl-q-desc">Sicurezza informatica, reti, forense.</span>
+          <span class="dl-q-desc">Dati protetti, forense e rete. Difensiva.</span>
         </a>
         <a class="dl-quadr" href="scienza.html">
           <img src="img/edizioni/scienza.png" alt="" width="56" height="56" loading="lazy">
           <span class="dl-q-nome">Leo Scienza</span>
-          <span class="dl-q-desc">Matematica avanzata e scienza.</span>
+          <span class="dl-q-desc">Trigonometria, equazioni, derivate, IA.</span>
         </a>
   </div>
 
-  <!-- Banner smartphone -->
-  <a class="dl-smart" href="telefono.html">
+  <!-- Pannello mobile: Android + iPhone (anteprima) -->
+  <section class="dl-smart dl-mobile" id="android" aria-labelledby="dl-mob-tit">
     <span class="ico" aria-hidden="true">📱</span>
-    <span class="t"><h3>Prova la versione per smartphone — in anteprima</h3>
-      <p>Android e iPhone: scopri come scaricarle e cosa fanno.</p></span>
-    <span class="freccia" aria-hidden="true">→</span>
-  </a>
+    <div class="t">
+      <h3 id="dl-mob-tit">Leo sul telefono — in anteprima</h3>
+      <p>Lo stesso Leo in tasca. Scarica l'app Android, o apri Leo per iPhone.</p>
+      <div class="dl-mob-azioni">
+        <a class="pulsante grande" data-scarica="android"><span class="etichetta">Scarica l'app Android</span></a>
+        <a class="pulsante secondario" href="iphone.html">Apri Leo per iPhone</a>
+      </div>
+      <p class="dl-mob-nota"><a href="telefono.html">Che cosa fa l'app sul telefono <span aria-hidden="true">&rarr;</span></a></p>
+    </div>
+  </section>
 </div>
 
 <section class="sezione" aria-labelledby="titolo-requisiti">
