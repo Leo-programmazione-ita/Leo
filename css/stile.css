@@ -1523,12 +1523,124 @@ figure { margin: 0; }
 .tabella-metodi th[scope="row"] { white-space: normal; }
 .tabella-metodi th[scope="row"] code, .tabella-metodi td code { background: none; padding: 0; }
 
-/* ---- Vetrina promozionale delle edizioni (codice -> risultato) -------------- */
-.promo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; }
-.promo .finestra-codice { margin: 0; }
-.promo-risultato { position: relative; margin: 0; border: 1px solid var(--bordo-forte); border-radius: 18px; overflow: hidden; background: var(--superficie); box-shadow: var(--ombra-scheda); }
-.promo-risultato::before { content: ""; position: absolute; inset: auto auto -30% -20%; width: 70%; height: 70%; background: radial-gradient(closest-side, rgba(var(--accento-rgb), .18), transparent 70%); z-index: 0; pointer-events: none; }
-.promo-risultato img { display: block; width: 100%; height: auto; position: relative; z-index: 1; }
-.promo-etichetta { position: relative; z-index: 1; display: flex; align-items: center; gap: 9px; padding: 11px 16px; font: 600 13.5px/1 var(--car); color: var(--testo-3); border-top: 1px solid var(--bordo); background: var(--fondo-codice); }
-.promo-etichetta::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--verde); box-shadow: 0 0 0 3px rgba(111,207,151,.18); }
-@media (max-width: 860px) { .promo { grid-template-columns: 1fr; } }
+/* ogni card e' un link alla sua pagina: la parte icona+testo e' un <a> */
+.edizione-vai { display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  width: 100%; text-decoration: none; color: inherit; }
+.edizione-vai:hover h3, .edizione-vai:focus-visible h3 { color: var(--accento-vivo); }
+
+/* ---------- Suite al centro e in evidenza nella griglia delle edizioni
+   (scarica.html). La card Suite occupa tutta la larghezza in alto, centrata,
+   piu' grande e con l'accento del tema; su mobile torna in colonna singola. ---------- */
+.edizione-suite { justify-content: center; text-align: center; gap: 18px 24px;
+  padding: 30px 28px; box-shadow: inset 0 0 0 1px var(--accento-linea); }
+.edizione-suite .edizione-vai { flex-direction: row; align-items: center; justify-content: center;
+  flex-wrap: wrap; width: auto; flex: 0 1 560px; text-align: left; }
+.edizione-suite .edizione-corpo { min-width: 220px; flex: 1 1 320px; }
+.edizione-suite .edizione-corpo h3 { font-size: 23px; }
+.edizione-suite .edizione-corpo p { font-size: 16.5px; }
+.edizione-suite .edizione-azione { flex: none; }
+@media (max-width: 520px) { .edizione-suite { text-align: left; }
+  .edizione-suite .edizione-vai { flex-direction: column; align-items: flex-start; } }
+
+/* ---------- Pagine delle singole edizioni (dati.html, giochi.html, sistema.html,
+   sicurezza.html, scienza.html, suite.html; web.html e' il modello). Il colore
+   dell'edizione arriva in --ed (stile inline nella sezione) e tocca solo piccoli
+   dettagli — lo stemma e l'etichetta — mentre il resto resta sul tema del sito. */
+.ed-stemma { width: 92px; height: 92px; border-radius: 22px; display: block;
+  margin: 0 auto 22px; background: #000; border: 2px solid var(--ed, var(--accento)); }
+.ed-etichetta { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
+  border-radius: 999px; border: 1px solid var(--ed, var(--accento)); color: var(--testo-2);
+  font: 700 13px/1 var(--car); letter-spacing: .04em; text-transform: uppercase; }
+.ed-etichetta::before { content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ed, var(--accento)); flex: none; }
+
+
+/* ====================================================================
+   10. ANIMAZIONI (livello aggiunto)
+   Comparse allo scroll riattivate in modo mirato + micro-interazioni + firme.
+   Tutto dietro prefers-reduced-motion:no-preference e gate :root.js.
+   Riusa --curva e la classe .visibile aggiunta da sito.js.
+   ==================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* comparsa allo scroll */
+  :root.js .compari,
+  :root.js .parole,
+  :root.js .h-testa-sezione,
+  :root.js .h-tessera,
+  :root.js .h-novita-voce,
+  :root.js .hed-suite,
+  :root.js .hed-card,
+  :root.js .mondo,
+  :root.js .cf-caso,
+  :root.js .nv-voce,
+  :root.js .documento h2,
+  :root.js .dl-quadr,
+  :root.js .dl-suite,
+  :root.js .dl-smart {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity .6s var(--curva), transform .6s var(--curva);
+  }
+  :root.js .compari.visibile,
+  :root.js .parole.visibile,
+  :root.js .h-testa-sezione.visibile,
+  :root.js .h-tessera.visibile,
+  :root.js .h-novita-voce.visibile,
+  :root.js .hed-suite.visibile,
+  :root.js .hed-card.visibile,
+  :root.js .mondo.visibile,
+  :root.js .cf-caso.visibile,
+  :root.js .nv-voce.visibile,
+  :root.js .documento h2.visibile,
+  :root.js .dl-quadr.visibile,
+  :root.js .dl-suite.visibile,
+  :root.js .dl-smart.visibile { opacity: 1; transform: none; }
+  :root.js .documento h2 { opacity:0; transform:translateY(16px); transition:opacity .6s var(--curva),transform .6s var(--curva); }
+  :root.js .documento h2.visibile { opacity:1; transform:none; }
+
+  /* ritardi scaglionati (r2..r6 nel markup) */
+  :root.js .r2{transition-delay:.08s} :root.js .r3{transition-delay:.16s}
+  :root.js .r4{transition-delay:.24s} :root.js .r5{transition-delay:.32s} :root.js .r6{transition-delay:.40s}
+  :root.js .h-pubblico .h-tessera:nth-child(2),:root.js .hed-griglia .hed-card:nth-child(2),:root.js .dl-griglia .dl-quadr:nth-child(2){transition-delay:0.05s}:root.js .h-pubblico .h-tessera:nth-child(3),:root.js .hed-griglia .hed-card:nth-child(3),:root.js .dl-griglia .dl-quadr:nth-child(3){transition-delay:0.10s}:root.js .h-pubblico .h-tessera:nth-child(4),:root.js .hed-griglia .hed-card:nth-child(4),:root.js .dl-griglia .dl-quadr:nth-child(4){transition-delay:0.15s}:root.js .h-pubblico .h-tessera:nth-child(5),:root.js .hed-griglia .hed-card:nth-child(5),:root.js .dl-griglia .dl-quadr:nth-child(5){transition-delay:0.20s}:root.js .h-pubblico .h-tessera:nth-child(6),:root.js .hed-griglia .hed-card:nth-child(6),:root.js .dl-griglia .dl-quadr:nth-child(6){transition-delay:0.25s}
+
+  /* parole a cascata */
+  :root.js .parole .p{opacity:0;transform:translateY(.5em);display:inline-block;
+    transition:opacity .5s var(--curva),transform .5s var(--curva)}
+  :root.js .parole.visibile .p{opacity:1;transform:none;transition-delay:calc(var(--i,0)*.04s)}
+
+  /* galleria template: comparsa + hover */
+  :root.js .galleria .modello{opacity:0}
+  :root.js .galleria .modello.visibile{animation:entra .55s var(--curva) both}
+  .modello:hover{transform:translateY(-4px);border-color:var(--accento-linea);box-shadow:var(--ombra-scheda)}
+
+  /* leone che respira (inviti) */
+  .h-invito-stemma,.invito-stemma{animation:leoRespiro 4.5s ease-in-out infinite}
+  @keyframes leoRespiro{0%,100%{filter:drop-shadow(0 20px 40px rgba(var(--accento-rgb),.35))}
+    50%{filter:drop-shadow(0 20px 56px rgba(var(--accento-rgb),.64))}}
+
+  /* sottolineatura voce attiva che si disegna */
+  .navigazione a[aria-current="page"]:not(.pulsante)::after{transform:scaleX(0);transform-origin:left;
+    animation:navLinea .5s var(--curva) .25s forwards}
+  @keyframes navLinea{to{transform:scaleX(1)}}
+
+  /* transizione colori al cambio tema */
+  body,.testata{transition:background-color .28s ease,color .28s ease,border-color .28s ease}
+
+  /* overlay ricerca: entrata */
+  :root.cerca-aperta .cerca-finestra{animation:cercaIn .2s var(--curva) both}
+  @keyframes cercaIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+
+  /* menu mobile: voci a cascata */
+  .navigazione.aperta li{animation:menuVoce .32s var(--curva) both}
+  .navigazione.aperta li:nth-child(2){animation-delay:0.03s}.navigazione.aperta li:nth-child(3){animation-delay:0.06s}.navigazione.aperta li:nth-child(4){animation-delay:0.09s}.navigazione.aperta li:nth-child(5){animation-delay:0.12s}.navigazione.aperta li:nth-child(6){animation-delay:0.15s}.navigazione.aperta li:nth-child(7){animation-delay:0.18s}.navigazione.aperta li:nth-child(8){animation-delay:0.21s}
+  @keyframes menuVoce{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+  /* 404: glitch della cifra */
+  .pagina-404 .cifra-404{animation:glitch404 .9s steps(2,end) 1 both}
+  @keyframes glitch404{
+    0%{text-shadow:none}
+    12%{text-shadow:-3px 0 var(--accento),3px 0 #26d8ef}
+    24%{text-shadow:3px 0 var(--accento),-3px 0 #26d8ef}
+    36%{text-shadow:-2px 0 var(--accento),2px 0 #26d8ef}
+    50%,100%{text-shadow:0 0 44px rgba(var(--accento-rgb),.4)}}
+}

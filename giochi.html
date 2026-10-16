@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Giochi</title>
-<meta name="description" content="Con Leo Giochi fai videogiochi e grafica in italiano: personaggi gi&agrave; pronti, scene, tastiera e collisioni, con parole italiane e niente da installare.">
+<title>Leo Giochi — grafica, animazioni, suoni e personaggi pronti</title>
+<meta name="description" content="Leo Giochi è l'edizione per creare giochi: grafica e disegno, animazioni, suoni, geometria 2D e i personaggi e gli sprite già pronti. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/giochi.html">
@@ -12,8 +12,8 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
 <meta property="og:url" content="https://leoitalia.com/giochi.html">
-<meta property="og:title" content="Leo Giochi — videogiochi e grafica in italiano">
-<meta property="og:description" content="Personaggi pronti, scene e movimento: fai il tuo primo gioco in italiano, in poche righe.">
+<meta property="og:title" content="Leo Giochi — crea giochi in italiano, con i personaggi pronti">
+<meta property="og:description" content="Grafica, animazioni, suoni, geometria 2D e gli asset pronti: l'edizione di Leo mirata ai giochi.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,10 +22,10 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261008-2">
+<link rel="stylesheet" href="css/stile.css?v=20261015">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js" defer></script>
+<script src="js/sito.js?v=20261015" defer></script>
 <script src="js/cerca.js" defer></script>
 </head>
 <body>
@@ -44,9 +44,9 @@
         <li><a href="template.html">Esempi</a></li>
         <li><a href="video.html">Video</a></li>
         <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="web.html">Web</a></li>
         <li><a href="novita.html">Novità</a></li>
         <li><a href="confronto.html">Confronto</a></li>
-        <li><a href="statistiche.html">Statistiche</a></li>
         <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
       </ul>
     </nav>
@@ -67,62 +67,152 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro">
+  <section class="testa-pagina centro" style="--ed:#A855F7">
     <div class="contenitore stretto">
-      <p class="sopratitolo compari">Leo Giochi</p>
-      <h1 class="parole">Il tuo primo gioco, <em class="testo-accento">in poche righe.</em></h1>
-      <p class="introduzione compari r2">Un personaggio gi&agrave; pronto, una scena, i tasti: Leo Giochi mette la grafica e il movimento a portata di parola italiana. Perfetto per imparare divertendosi e per i pi&ugrave; piccoli.</p>
+      <img class="ed-stemma" src="img/edizioni/giochi.png" alt="" width="92" height="92">
+      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
+      <h1 class="parole">Leo Giochi, <em class="testo-accento">gioca con il codice.</em></h1>
+      <p class="introduzione compari r2">Grafica, animazioni, suoni e geometria 2D, con i personaggi già pronti: l'edizione mirata a chi vuole creare giochi, in italiano.</p>
     </div>
   </section>
 
-  <section class="contenitore" aria-label="Esempio">
-    <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>gioco.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">eroe</span> <span class="c-operatori">=</span> <span class="c-libreria">personaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;gatto&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">scena</span><span class="c-punteggiatura">.</span><span class="c-libreria">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-variabili">eroe</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">quando</span> <span class="c-flusso">premi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;destra&quot;</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">eroe</span><span class="c-punteggiatura">.</span><span class="c-libreria">muovi</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span>
-<span class="c-variabili">scena</span><span class="c-punteggiatura">.</span><span class="c-libreria">avvia</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_giochi.png" alt="Scena di un gioco creato con Leo Giochi" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">Il gioco gira · personaggi pronti</figcaption>
-      </figure>
-    </div>
-    <p class="nota-offline compari">I personaggi e i suoni sono gi&agrave; inclusi: scrivi poche righe e il gioco parte, sul PC e sul telefono.</p>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-cosa">
+  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#A855F7">
     <div class="contenitore">
       <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa c'&egrave; dentro</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Grafica e movimento, <em>gi&agrave; pronti.</em></h2>
-        <p class="introduzione compari r2">Tutto il necessario per un gioco 2D, senza cercare immagini o librerie in giro.</p>
+        <p class="sopratitolo compari">Cosa ci fai</p>
+        <h2 id="titolo-cosa" class="titolo-sezione parole">Disegna, muovi, <em>fai suonare.</em></h2>
+        <p class="introduzione compari r2">Tutte le funzioni per i giochi, abilitate e pronte in questa edizione, più gli asset inclusi. Sono i moduli della categoria <strong>Giochi</strong>.</p>
       </div>
       <dl class="requisiti">
-        <div class="scheda compari"><dt>Personaggi pronti</dt><dd>Una galleria di personaggi e oggetti gi&agrave; disegnati: li richiami per nome e li muovi.</dd></div>
-        <div class="scheda compari r1"><dt>Scene e sfondi</dt><dd>Componi la scena, aggiungi sfondi e oggetti, gestisci pi&ugrave; livelli.</dd></div>
-        <div class="scheda compari r2"><dt>Tastiera e tocco</dt><dd>Rispondi ai tasti e al tocco dello schermo con <code>quando premi</code>, semplice e chiaro.</dd></div>
-        <div class="scheda compari r3"><dt>Collisioni e suoni</dt><dd>Sai quando due cose si toccano e fai partire un suono: le basi di ogni gioco.</dd></div>
+        <div class="scheda compari"><dt>Grafica</dt><dd>Disegni sullo schermo con la tartaruga e le forme: linee, figure e colori per costruire la scena (<code>tartaruga</code>).</dd></div>
+        <div class="scheda compari r1"><dt>Animazioni</dt><dd>Fai muovere ciò che disegni, fotogramma dopo fotogramma, per dare vita al gioco (<code>animazioni</code>).</dd></div>
+        <div class="scheda compari r2"><dt>Suoni</dt><dd>Effetti e musica: riproduci suoni al momento giusto, quando si raccoglie un oggetto o si vince (<code>suoni</code>).</dd></div>
+        <div class="scheda compari r3"><dt>Geometria 2D</dt><dd>Posizioni, distanze e collisioni in due dimensioni: la matematica dei giochi, già pronta (<code>geometria</code>).</dd></div>
+        <div class="scheda compari r4"><dt>Aspetto degli oggetti</dt><dd>Dai stile e colore agli oggetti di gioco in modo uniforme e ordinato (<code>stili_oggetti</code>).</dd></div>
+        <div class="scheda compari r5"><dt>Personaggi e asset pronti</dt><dd>I personaggi, gli sprite, i suoni e i cursori già inclusi nel pacchetto: parti subito senza cercare risorse.</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="sezione" aria-labelledby="titolo-scarica">
+  <section class="sezione" aria-labelledby="titolo-esempio">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Un assaggio</p>
+        <h2 id="titolo-esempio" class="titolo-sezione parole">Raccogli le gemme, <em>conta i punti.</em></h2>
+      </div>
+      <div class="finestra-codice compari ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>punti.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">punteggio</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">gemma</span> <span class="c-flusso">in</span> <span class="c-punteggiatura">[</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-numeri">50</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">punteggio</span> <span class="c-operatori">=</span> <span class="c-variabili">punteggio</span> <span class="c-operatori">+</span> <span class="c-variabili">gemma</span>
+    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Gemma raccolta! Punti: </span><span class="c-interpolazione">{</span><span class="c-variabili">punteggio</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+      </div>
+      <p class="nota-offline compari">Un semplice <code>per ogni</code> tiene il punteggio: i costrutti di base sono gli stessi in ogni edizione.</p>
+    </div>
+  </section>
+
+  <section class="sezione scura" aria-label="Lo stesso Leo">
+    <div class="contenitore">
+      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>i giochi e la grafica</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
+    </div>
+  </section>
+
+  <section class="sezione" aria-labelledby="titolo-prova">
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-scarica" class="titolo-sezione parole">Fai il tuo gioco, <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Leo Giochi &egrave; dentro Leo Studio e dentro la Suite. Scarica Leo, apri un file e fai partire il tuo primo personaggio.</p>
+        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
+        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, apri un file, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
       </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="scarica.html">
+      <div class="azioni compari" style="flex-wrap:wrap;gap:12px">
+        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Giochi_0.1.0.exe" rel="noopener" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica Leo</span>
+          <span class="etichetta">Windows (.exe)</span>
         </a>
+        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Giochi-0.1.0.apk" rel="noopener" download>Android (.apk) &middot; anteprima</a>
+        <a class="pulsante secondario" href="iphone.html">iPhone &middot; anteprima</a>
         <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
+      <p class="dettagli" style="margin-top:14px;max-width:62ch">
+        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
+        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
+        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
+      </p>
+    </div>
+  </section>
+
+  <section class="sezione scura" aria-labelledby="altre-giochi">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Un solo Leo</p>
+        <h2 id="altre-giochi" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
+        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
+      </div>
+      <ul class="edizioni compari" role="list">
+        <li class="edizione edizione-suite">
+          <a class="edizione-vai" href="suite.html">
+            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Suite</h3>
+              <p>Tutte le categorie, già interconnesse.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="web.html">
+            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Web</h3>
+              <p>Siti e servizi web in italiano.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="dati.html">
+            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Dati</h3>
+              <p>Database, tabelle, calcolo, grafici.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="sistema.html">
+            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Sistema</h3>
+              <p>Automatizzare il computer: file, processi, finestre.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="sicurezza.html">
+            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Sicurezza</h3>
+              <p>Sicurezza informatica, reti e forense.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="scienza.html">
+            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Scienza</h3>
+              <p>Matematica avanzata e scienza.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+      </ul>
+      <div class="azioni compari" style="margin-top:8px">
+        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
       </div>
     </div>
   </section>
@@ -144,7 +234,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="novita.html">Novità</a></li>
-          <li><a href="statistiche.html">Statistiche</a></li>
           <li><a href="telefono.html">Leo sul telefono</a></li>
           <li><a href="scarica.html">Scarica</a></li>
           <li><a href="licenza.html">Licenza</a></li>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Dati</title>
-<meta name="description" content="Con Leo Dati lavori con database, tabelle, calcolo e grafici in italiano: leggi un CSV, filtri e ordini, fai i conti e disegni un grafico, tutto con parole italiane.">
+<title>Leo Dati — database, tabelle, calcolo e grafici</title>
+<meta name="description" content="Leo Dati è l'edizione per i dati: database, tabelle a righe e colonne, calcolo numerico, grafici e formati come CSV, JSON ed Excel. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/dati.html">
@@ -12,8 +12,8 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
 <meta property="og:url" content="https://leoitalia.com/dati.html">
-<meta property="og:title" content="Leo Dati — database, tabelle, calcolo e grafici in italiano">
-<meta property="og:description" content="Leggi i dati, falli parlare: tabelle, database, calcolo e grafici, scritti in italiano.">
+<meta property="og:title" content="Leo Dati — database, tabelle e grafici in italiano">
+<meta property="og:description" content="Database, tabelle, calcolo, grafici e formati di dati (CSV, JSON, Excel): l'edizione di Leo mirata ai dati.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,10 +22,10 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261008-2">
+<link rel="stylesheet" href="css/stile.css?v=20261015">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js" defer></script>
+<script src="js/sito.js?v=20261015" defer></script>
 <script src="js/cerca.js" defer></script>
 </head>
 <body>
@@ -44,9 +44,9 @@
         <li><a href="template.html">Esempi</a></li>
         <li><a href="video.html">Video</a></li>
         <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="web.html">Web</a></li>
         <li><a href="novita.html">Novità</a></li>
         <li><a href="confronto.html">Confronto</a></li>
-        <li><a href="statistiche.html">Statistiche</a></li>
         <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
       </ul>
     </nav>
@@ -67,60 +67,152 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro">
+  <section class="testa-pagina centro" style="--ed:#22C55E">
     <div class="contenitore stretto">
-      <p class="sopratitolo compari">Leo Dati</p>
-      <h1 class="parole">I tuoi dati, <em class="testo-accento">che parlano italiano.</em></h1>
-      <p class="introduzione compari r2">Apri un foglio o un database, filtra e ordina, fai i calcoli e disegna un grafico — con parole italiane, senza formule criptiche. Leo Dati porta tabelle, database, statistica e grafici dentro lo stesso linguaggio.</p>
+      <img class="ed-stemma" src="img/edizioni/dati.png" alt="" width="92" height="92">
+      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
+      <h1 class="parole">Leo Dati, <em class="testo-accento">i tuoi numeri parlano.</em></h1>
+      <p class="introduzione compari r2">Database, tabelle, calcolo e grafici: l'edizione mirata a chi lavora con i dati e vuole leggerli, elaborarli e mostrarli, tutto in italiano.</p>
     </div>
   </section>
 
-  <section class="contenitore" aria-label="Esempio">
-    <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>vendite.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">tabella</span><span class="c-punteggiatura">.</span><span class="c-libreria">leggi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;vendite.csv&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">ordina_per</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">decrescente</span><span class="c-punteggiatura">:</span> <span class="c-costanti">sì</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Totale:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">grafico_barre</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;mese&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;grafico.png&quot;</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_dati_chart.png" alt="Grafico a barre dell'incasso per mese, creato con Leo Dati" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">grafico.png · creato da Leo in una riga</figcaption>
-      </figure>
-    </div>
-    <p class="nota-offline compari">Leggi un <code>.csv</code> o un database, i numeri si formattano come vuoi e il grafico esce come immagine pronta da incollare.</p>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-cosa">
+  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#22C55E">
     <div class="contenitore">
       <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa c'&egrave; dentro</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Dal dato grezzo <em>al grafico.</em></h2>
-        <p class="introduzione compari r2">Tutto quello che serve per raccogliere, ripulire e capire i dati, in un'unica edizione pi&ugrave; leggera.</p>
+        <p class="sopratitolo compari">Cosa ci fai</p>
+        <h2 id="titolo-cosa" class="titolo-sezione parole">Dai dati grezzi <em>alle risposte.</em></h2>
+        <p class="introduzione compari r2">Tutte le funzioni per i dati, abilitate e pronte in questa edizione. Sono i moduli della categoria <strong>Dati</strong>.</p>
       </div>
       <dl class="requisiti">
-        <div class="scheda compari"><dt>Tabelle e CSV</dt><dd>Leggi e scrivi fogli e <code>.csv</code>, filtra, ordina, raggruppa e unisci come con un foglio di calcolo, ma a parole.</dd></div>
-        <div class="scheda compari r1"><dt>Database</dt><dd>Ti colleghi a un database, interroghi e salvi, senza imparare un'altra lingua per le query.</dd></div>
-        <div class="scheda compari r2"><dt>Calcolo e statistica</dt><dd>Somme, medie, minimi e massimi, percentuali: i conti sui dati con funzioni in italiano.</dd></div>
-        <div class="scheda compari r3"><dt>Grafici</dt><dd>Barre, linee e torte da una tabella in una riga: escono come immagini pronte da usare.</dd></div>
+        <div class="scheda compari"><dt>Database</dt><dd>Crei e interroghi database senza SQL a mano: salvi, cerchi e aggiorni i dati con parole italiane (<code>database</code>, <code>database_avanzato</code>).</dd></div>
+        <div class="scheda compari r1"><dt>Tabelle</dt><dd>Tabelle a righe e colonne da riempire, ordinare e filtrare, pronte da mostrare o da esportare (<code>tabelle</code>).</dd></div>
+        <div class="scheda compari r2"><dt>Calcolo</dt><dd>Calcolo numerico su liste e colonne: somme, medie, totali e conti su grandi quantità di dati (<code>calcolo</code>).</dd></div>
+        <div class="scheda compari r3"><dt>Grafici</dt><dd>Diagrammi e grafici dai tuoi dati: barre, linee e torte per vedere i numeri a colpo d'occhio (<code>diagrammi</code>).</dd></div>
+        <div class="scheda compari r4"><dt>Formati</dt><dd>Leggi e scrivi i formati che già usi — CSV, JSON ed Excel — per scambiare dati con altri programmi (<code>formati</code>).</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="sezione" aria-labelledby="titolo-scarica">
+  <section class="sezione" aria-labelledby="titolo-esempio">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Un assaggio</p>
+        <h2 id="titolo-esempio" class="titolo-sezione parole">La media, <em>in tre righe.</em></h2>
+      </div>
+      <div class="finestra-codice compari ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>voti.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">]</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">somma</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
+<span class="c-flusso">per ogni</span> <span class="c-variabili">v</span> <span class="c-flusso">in</span> <span class="c-variabili">voti</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">somma</span> <span class="c-operatori">=</span> <span class="c-variabili">somma</span> <span class="c-operatori">+</span> <span class="c-variabili">v</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"La media dei voti è </span><span class="c-interpolazione">{</span><span class="c-variabili">somma / 4</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <p class="nota-offline compari">Solo i costrutti di base — <code>variabile</code>, <code>per ogni</code>, <code>stampa</code> — sono già il cuore di Leo: identici in ogni edizione.</p>
+    </div>
+  </section>
+
+  <section class="sezione scura" aria-label="Lo stesso Leo">
+    <div class="contenitore">
+      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>i dati</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
+    </div>
+  </section>
+
+  <section class="sezione" aria-labelledby="titolo-prova">
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-scarica" class="titolo-sezione parole">Fai parlare i tuoi dati, <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Leo Dati &egrave; dentro Leo Studio e dentro la Suite. Scarica Leo, apri un file e comincia dai tuoi dati.</p>
+        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
+        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, apri un file, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
       </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="scarica.html">
+      <div class="azioni compari" style="flex-wrap:wrap;gap:12px">
+        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Dati_0.1.0.exe" rel="noopener" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica Leo</span>
+          <span class="etichetta">Windows (.exe)</span>
         </a>
+        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Dati-0.1.0.apk" rel="noopener" download>Android (.apk) &middot; anteprima</a>
+        <a class="pulsante secondario" href="iphone.html">iPhone &middot; anteprima</a>
         <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
+      <p class="dettagli" style="margin-top:14px;max-width:62ch">
+        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
+        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
+        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
+      </p>
+    </div>
+  </section>
+
+  <section class="sezione scura" aria-labelledby="altre-dati">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Un solo Leo</p>
+        <h2 id="altre-dati" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
+        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
+      </div>
+      <ul class="edizioni compari" role="list">
+        <li class="edizione edizione-suite">
+          <a class="edizione-vai" href="suite.html">
+            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Suite</h3>
+              <p>Tutte le categorie, già interconnesse.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="web.html">
+            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Web</h3>
+              <p>Siti e servizi web in italiano.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="giochi.html">
+            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Giochi</h3>
+              <p>Giochi e grafica, con i personaggi pronti.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="sistema.html">
+            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Sistema</h3>
+              <p>Automatizzare il computer: file, processi, finestre.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="sicurezza.html">
+            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Sicurezza</h3>
+              <p>Sicurezza informatica, reti e forense.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+        <li class="edizione">
+          <a class="edizione-vai" href="scienza.html">
+            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+            <div class="edizione-corpo">
+              <h3>Leo Scienza</h3>
+              <p>Matematica avanzata e scienza.</p>
+            </div>
+          </a>
+          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
+        </li>
+      </ul>
+      <div class="azioni compari" style="margin-top:8px">
+        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
       </div>
     </div>
   </section>
@@ -142,7 +234,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="novita.html">Novità</a></li>
-          <li><a href="statistiche.html">Statistiche</a></li>
           <li><a href="telefono.html">Leo sul telefono</a></li>
           <li><a href="scarica.html">Scarica</a></li>
           <li><a href="licenza.html">Licenza</a></li>
