@@ -79,10 +79,10 @@
     <div class="promo compari">
       <div class="finestra-codice ingrandisci">
         <div class="barra"><i></i><i></i><i></i><span>vendite.leo</span></div>
-<pre class="codice"><code>variabile t = tabella.leggi(&quot;vendite.csv&quot;)
-t = t.ordina_per(&quot;incasso&quot;, decrescente: s&igrave;)
-scrivi(&quot;Totale:&quot;, t.somma(&quot;incasso&quot;))
-t.grafico_barre(&quot;mese&quot;, &quot;incasso&quot;).salva(&quot;grafico.png&quot;)</code></pre>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">tabella</span><span class="c-punteggiatura">.</span><span class="c-libreria">leggi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;vendite.csv&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">ordina_per</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">decrescente</span><span class="c-punteggiatura">:</span> <span class="c-costanti">sì</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Totale:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">grafico_barre</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;mese&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;grafico.png&quot;</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
       <figure class="promo-risultato">
         <img src="img/edizioni/vetrina_dati_chart.png" alt="Grafico a barre dell'incasso per mese, creato con Leo Dati" width="1216" height="736" loading="lazy" decoding="async">

@@ -76,16 +76,22 @@
   </section>
 
   <section class="contenitore" aria-label="Esempio">
-    <div class="finestra-codice compari ingrandisci">
-      <div class="barra"><i></i><i></i><i></i><span>led.leo</span></div>
-<pre class="codice"><code>rem Collega la scheda e fai lampeggiare il LED
-variabile s = robotica.collega_scheda()
-ripeti per sempre fai
-    s.scrivi_pin(25, acceso)
-    aspetta(0.5)
-    s.scrivi_pin(25, spento)
-    aspetta(0.5)
-fine</code></pre>
+    <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>led.leo</span></div>
+<pre class="codice"><code><span class="c-commenti">rem Collega la scheda e fai lampeggiare il LED</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">s</span> <span class="c-operatori">=</span> <span class="c-variabili">robotica</span><span class="c-punteggiatura">.</span><span class="c-libreria">collega_scheda</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">ripeti</span> <span class="c-flusso">per</span> <span class="c-flusso">sempre</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">scrivi_pin</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-costanti">acceso</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">aspetta</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
+    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">scrivi_pin</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-costanti">spento</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">aspetta</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span></code></pre>
+      </div>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_robotica.png" alt="Raspberry Pi Pico collegato con il LED acceso da Leo" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">Pico collegato · LED acceso</figcaption>
+      </figure>
     </div>
     <p class="nota-offline compari">Niente scheda sottomano? <code>robotica.scheda_simulata()</code> fa provare tutto senza hardware; poi colleghi il Pico vero.</p>
   </section>

@@ -76,16 +76,22 @@
   </section>
 
   <section class="contenitore" aria-label="Esempio">
-    <div class="finestra-codice compari ingrandisci">
-      <div class="barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
-<pre class="codice"><code>rem Quali porte sono aperte su un host?
-scrivi(sicurezza.scansiona_porte(&quot;esempio.it&quot;, da: 1, a: 1024))
+    <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
+<pre class="codice"><code><span class="c-commenti">rem Quali porte sono aperte su un host?</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">scansiona_porte</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">da</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-variabili">a</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1024</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
 
-rem Il sito ha gli header di protezione giusti?
-scrivi(sicurezza.audita_sito(&quot;esempio.it&quot;))
+<span class="c-commenti">rem Il sito ha gli header di protezione giusti?</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">audita_sito</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
 
-rem Cosa dicono i log di accesso?
-scrivi(sicurezza.tria_log(&quot;accessi.log&quot;))</code></pre>
+<span class="c-commenti">rem Cosa dicono i log di accesso?</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">tria_log</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;accessi.log&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_sicurezza.png" alt="Report di sicurezza prodotto da Leo Sicurezza" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">Report · 2 avvisi trovati</figcaption>
+      </figure>
     </div>
     <p class="nota-offline compari">Gli strumenti sono pensati per lavorare sui <strong>tuoi</strong> sistemi o con autorizzazione: controlli, audit e analisi, non intrusione.</p>
   </section>

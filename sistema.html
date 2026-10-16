@@ -76,14 +76,20 @@
   </section>
 
   <section class="contenitore" aria-label="Esempio">
-    <div class="finestra-codice compari ingrandisci">
-      <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
-<pre class="codice"><code>rem Mette in ordine la cartella Download per tipo di file
-sistema.organizza_cartella(&quot;C:/Download&quot;)
+    <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
+<pre class="codice"><code><span class="c-commenti">rem Mette in ordine la cartella Download per tipo di file</span>
+<span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">organizza_cartella</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Download&quot;</span><span class="c-punteggiatura">)</span>
 
-rem Trova i file doppi e i pi&ugrave; grandi
-scrivi(sistema.trova_duplicati(&quot;C:/Foto&quot;))
-scrivi(sistema.trova_file_grandi(&quot;C:/Foto&quot;, 100))</code></pre>
+<span class="c-commenti">rem Trova i file doppi e i più grandi</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">trova_duplicati</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Foto&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">trova_file_grandi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Foto&quot;</span><span class="c-punteggiatura">,</span> <span class="c-numeri">100</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_sistema.png" alt="Risultato di Leo Sistema: cartella messa in ordine" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">Terminale · cartella in ordine</figcaption>
+      </figure>
     </div>
     <p class="nota-offline compari">Prima di toccare i file puoi chiedere un'anteprima (<code>prova: s&igrave;</code>): vedi cosa succederebbe, poi confermi.</p>
   </section>
