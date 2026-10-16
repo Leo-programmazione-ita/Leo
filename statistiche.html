@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leo in numeri — statistiche del progetto</title>
+<meta name="description" content="I numeri reali di Leo: 970 funzioni, 7.288 test automatici, 221.000 righe di codice, 7 edizioni e 5 piattaforme. Statistiche per programmatori, ricercatori e finanziatori.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/statistiche.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/statistiche.html">
+<meta property="og:title" content="Leo in numeri — statistiche del progetto">
+<meta property="og:description" content="970 funzioni, 7.288 test automatici, 221.000 righe di codice, 7 edizioni. I numeri reali di Leo.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<link rel="stylesheet" href="css/stile.css">
+<script>try{var t=localStorage.getItem('leo-tema');if(t&&t!=='sistema')document.documentElement.setAttribute('data-tema',t)}catch(e){}</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js" defer></script>
+<script src="js/cerca.js" defer></script>
+<style>
+  .st-intro{color:var(--testo-2);font-size:clamp(16px,2.1vw,19px);max-width:60ch;margin:16px auto 0}
+  .st-griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+  @media(max-width:860px){.st-griglia{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:420px){.st-griglia{grid-template-columns:1fr}}
+  .st-tessera{background:var(--superficie);border:1px solid var(--bordo);border-radius:14px;padding:22px;position:relative;overflow:hidden}
+  .st-tessera::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--accento)}
+  .st-n{font-size:clamp(30px,5vw,44px);font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--testo)}
+  .st-et{color:var(--testo-2);font-size:14px;margin-top:9px;font-weight:600}
+  .st-nt{color:var(--testo-3);font-size:12.5px;margin-top:3px}
+  .st-verde{color:var(--verde,#6FCF97)}
+  .st-barre{margin-top:34px;display:flex;flex-direction:column;gap:12px}
+  .st-barra{display:grid;grid-template-columns:150px 1fr 54px;align-items:center;gap:14px}
+  @media(max-width:560px){.st-barra{grid-template-columns:110px 1fr 44px;gap:10px}}
+  .st-barra .lab{font-size:14px;color:var(--testo-2);font-weight:600}
+  .st-barra .track{height:12px;background:var(--superficie-2,#151518);border-radius:7px;overflow:hidden;border:1px solid var(--bordo)}
+  .st-barra .fill{height:100%;background:linear-gradient(90deg,var(--accento),var(--accento-vivo,#FF4D5E));border-radius:7px}
+  .st-barra .val{font-size:13.5px;color:var(--testo);font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+  .st-due{display:grid;grid-template-columns:1fr 1fr;gap:38px;margin-top:10px}
+  @media(max-width:760px){.st-due{grid-template-columns:1fr;gap:26px}}
+  .st-lista{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:12px}
+  .st-lista li{display:flex;gap:12px;color:var(--testo-2);font-size:15.5px}
+  .st-lista li::before{content:"";flex:0 0 auto;width:7px;height:7px;margin-top:9px;background:var(--accento);transform:rotate(45deg)}
+  .st-lista b{color:var(--testo)}
+  .st-nota{color:var(--testo-3);font-size:12.5px;margin-top:40px;max-width:72ch}
+  .st-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;align-items:center}
+</style>
+</head>
+<body class="pagina-statistiche">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="riferimento/index.html">Riferimento</a></li>
+        <li><a href="manuale/index.html">Manuale</a></li>
+        <li><a href="template.html">Esempi</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li><a href="statistiche.html" aria-current="page">Statistiche</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="contenuto">
+  <section class="testa-pagina centro">
+    <div class="contenitore">
+      <h1 class="parole">Leo <em class="testo-accento">in numeri</em></h1>
+      <p class="st-intro">Un linguaggio di programmazione completo, in italiano, costruito e verificato con serietà. Questi sono i numeri reali, estratti dal codice sorgente — per chi programma, per chi fa ricerca e per chi valuta il progetto.</p>
+    </div>
+  </section>
+
+  <section class="sezione">
+    <div class="contenitore">
+      <div class="st-griglia">
+        <div class="st-tessera"><div class="st-n">970</div><div class="st-et">Funzioni e metodi</div><div class="st-nt">libreria standard</div></div>
+        <div class="st-tessera"><div class="st-n">7.288</div><div class="st-et">Test automatici</div><div class="st-nt">in 297 file</div></div>
+        <div class="st-tessera"><div class="st-n">25.424</div><div class="st-et">Verifiche (assert)</div><div class="st-nt">controlli puntuali</div></div>
+        <div class="st-tessera"><div class="st-n">221.327</div><div class="st-et">Righe di codice</div><div class="st-nt">+ 140.861 di test</div></div>
+        <div class="st-tessera"><div class="st-n">7</div><div class="st-et">Edizioni</div><div class="st-nt">Suite + 6 mirate</div></div>
+        <div class="st-tessera"><div class="st-n">61</div><div class="st-et">Moduli di libreria</div><div class="st-nt">10 categorie</div></div>
+        <div class="st-tessera"><div class="st-n">5</div><div class="st-et">Piattaforme</div><div class="st-nt">PC · telefono · web · robot</div></div>
+        <div class="st-tessera"><div class="st-n st-verde">59<span style="font-size:.5em;color:var(--testo-3)">/60</span></div><div class="st-et">Parità con Python</div><div class="st-nt">voci pari o migliori</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sezione scura">
+    <div class="contenitore">
+      <h2 class="titolo-sezione parole">Le funzioni, <em>per argomento</em></h2>
+      <p class="st-intro" style="margin-left:0">937 funzioni di libreria, raggruppate per categoria. La Suite le ha tutte; ogni edizione mirata porta la sua.</p>
+      <div class="st-barre">
+        <div class="st-barra"><span class="lab">Sistema</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">261</span></div>
+        <div class="st-barra"><span class="lab">Sicurezza</span><span class="track"><span class="fill" style="width:70%"></span></span><span class="val">184</span></div>
+        <div class="st-barra"><span class="lab">Base / nucleo</span><span class="track"><span class="fill" style="width:40%"></span></span><span class="val">104</span></div>
+        <div class="st-barra"><span class="lab">Documenti</span><span class="track"><span class="fill" style="width:36%"></span></span><span class="val">95</span></div>
+        <div class="st-barra"><span class="lab">Giochi</span><span class="track"><span class="fill" style="width:27%"></span></span><span class="val">71</span></div>
+        <div class="st-barra"><span class="lab">Dati</span><span class="track"><span class="fill" style="width:26%"></span></span><span class="val">67</span></div>
+        <div class="st-barra"><span class="lab">Scienza</span><span class="track"><span class="fill" style="width:23%"></span></span><span class="val">61</span></div>
+        <div class="st-barra"><span class="lab">Web</span><span class="track"><span class="fill" style="width:17%"></span></span><span class="val">45</span></div>
+        <div class="st-barra"><span class="lab">Multimedia</span><span class="track"><span class="fill" style="width:11%"></span></span><span class="val">30</span></div>
+        <div class="st-barra"><span class="lab">Prestazioni</span><span class="track"><span class="fill" style="width:5%"></span></span><span class="val">12</span></div>
+        <div class="st-barra"><span class="lab">Robotica</span><span class="track"><span class="fill" style="width:3%"></span></span><span class="val">7</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sezione">
+    <div class="contenitore">
+      <div class="st-due">
+        <div>
+          <h2 class="titolo-sezione parole">Qualità <em>misurata</em></h2>
+          <ul class="st-lista">
+            <li><b>7.288 test automatici</b> coprono funzioni, metodi, parser ed errori.</li>
+            <li><b>Fuzzing:</b> ogni funzione viene chiamata con migliaia di valori sbagliati; deve sempre rispondere con un errore chiaro in italiano, mai con un crash tecnico.</li>
+            <li><b>Suite verdi:</b> è lo standard del progetto — ogni modulo arriva coi suoi test, eseguiti verdi.</li>
+            <li><b>Messaggi d'errore</b> con posizione, causa e correzione proposta, in italiano.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="titolo-sezione parole">Il linguaggio</h2>
+          <ul class="st-lista">
+            <li>Gira su <b>CPython</b> e ne eredita la solidità; sintassi in italiano.</li>
+            <li><b>Classi con ereditarietà</b>, slicing di testi e liste, moduli, eccezioni, funzioni come valori.</li>
+            <li><b>Interoperabilità totale:</b> si interfaccia con Python, con C/nativo (FFI: struct, callback, memoria) e con qualunque eseguibile via JSON.</li>
+            <li>Crea <b>.exe</b> per Windows e <b>APK</b> per Android, senza dipendenze esterne.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="st-cta">
+        <a class="pulsante grande" href="scarica.html">Scarica Leo</a>
+        <a class="pulsante secondario" href="confronto.html">Leo e Python a confronto</a>
+      </div>
+      <p class="st-nota">Tutti i numeri di questa pagina sono conteggi reali del codice sorgente di Leo (funzioni e metodi registrati, file e funzioni di test, righe di codice). "Parità con Python" riassume un confronto su 60 voci documentato nel progetto. Aggiornato a ottobre 2026.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="statistiche.html">Statistiche</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="confronto.html">Leo e Python</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

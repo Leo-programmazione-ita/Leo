@@ -273,7 +273,7 @@
   }
 
   /* ------------------------------------------------ comparse */
-  var daOsservare = tutti(".compari, .parole, .disegna, .filo, .numero-grande, .potere, .traduzione, .tempi, .osserva, .h-testa-sezione, .h-tessera, .h-novita-voce, .hed-suite, .hed-card, .mondo, .cf-caso, .nv-voce, .documento h2, .dl-quadr, .dl-suite, .dl-smart, .galleria .modello");
+  var daOsservare = tutti(".compari, .parole, .disegna, .filo, .numero-grande, .potere, .traduzione, .tempi, .osserva");
   function mostra(el) {
     el.classList.add("visibile");
     tutti("[data-conta]", el).concat(el.hasAttribute("data-conta") ? [el] : []).forEach(function (c) {

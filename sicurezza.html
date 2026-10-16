@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Sicurezza — dati protetti, forense e rete</title>
-<meta name="description" content="Leo Sicurezza è l'edizione per la sicurezza informatica: dati protetti, analisi binaria, forense, difesa degli account e rete (TCP, DNS, TLS). Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
+<title>Leo Sicurezza</title>
+<meta name="description" content="Leo Sicurezza serve a programmare lato blue e red team in italiano: scansione delle porte, controllo degli header di sicurezza, audit di un sito e analisi dei log (forense).">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/sicurezza.html">
@@ -12,8 +12,8 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
 <meta property="og:url" content="https://leoitalia.com/sicurezza.html">
-<meta property="og:title" content="Leo Sicurezza — sicurezza informatica e reti in italiano">
-<meta property="og:description" content="Dati protetti, analisi binaria, forense, difesa degli account e rete (TCP/DNS/TLS): l'edizione di Leo mirata alla sicurezza.">
+<meta property="og:title" content="Leo Sicurezza — blue e red team in italiano">
+<meta property="og:description" content="Scansione porte, header, audit di un sito e analisi dei log: la sicurezza, scritta in italiano.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,10 +22,10 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261008-2">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js" defer></script>
 <script src="js/cerca.js" defer></script>
 </head>
 <body>
@@ -44,9 +44,9 @@
         <li><a href="template.html">Esempi</a></li>
         <li><a href="video.html">Video</a></li>
         <li><a href="telefono.html">Telefono</a></li>
-        <li><a href="web.html">Web</a></li>
         <li><a href="novita.html">Novità</a></li>
         <li><a href="confronto.html">Confronto</a></li>
+        <li><a href="statistiche.html">Statistiche</a></li>
         <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
       </ul>
     </nav>
@@ -67,150 +67,58 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#06B6D4">
+  <section class="testa-pagina centro">
     <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/sicurezza.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Sicurezza, <em class="testo-accento">proteggi e indaga.</em></h1>
-      <p class="introduzione compari r2">Dati protetti, analisi binaria, forense, difesa degli account e rete (TCP, DNS, TLS): l'edizione mirata alla sicurezza informatica, in italiano.</p>
+      <p class="sopratitolo compari">Leo Sicurezza</p>
+      <h1 class="parole">Difendere e testare, <em class="testo-accento">in italiano.</em></h1>
+      <p class="introduzione compari r2">Leo Sicurezza serve a programmare su due fronti: <strong>blue team</strong> per difendere e controllare, <strong>red team</strong> per testare. Scansione delle porte, header di sicurezza, audit di un sito e analisi forense dei log, con parole italiane.</p>
     </div>
   </section>
 
-  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#06B6D4">
+  <section class="contenitore" aria-label="Esempio">
+    <div class="finestra-codice compari ingrandisci">
+      <div class="barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
+<pre class="codice"><code>rem Quali porte sono aperte su un host?
+scrivi(sicurezza.scansiona_porte(&quot;esempio.it&quot;, da: 1, a: 1024))
+
+rem Il sito ha gli header di protezione giusti?
+scrivi(sicurezza.audita_sito(&quot;esempio.it&quot;))
+
+rem Cosa dicono i log di accesso?
+scrivi(sicurezza.tria_log(&quot;accessi.log&quot;))</code></pre>
+    </div>
+    <p class="nota-offline compari">Gli strumenti sono pensati per lavorare sui <strong>tuoi</strong> sistemi o con autorizzazione: controlli, audit e analisi, non intrusione.</p>
+  </section>
+
+  <section class="sezione scura" aria-labelledby="titolo-cosa">
     <div class="contenitore">
       <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa ci fai</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Difendi, analizza, <em>indaga.</em></h2>
-        <p class="introduzione compari r2">Tutte le funzioni per la sicurezza, abilitate e pronte in questa edizione. Sono i moduli della categoria <strong>Sicurezza</strong>.</p>
+        <p class="sopratitolo compari">Cosa c'&egrave; dentro</p>
+        <h2 id="titolo-cosa" class="titolo-sezione parole">Blue team e red team, <em>stessi strumenti.</em></h2>
+        <p class="introduzione compari r2">Dalle reti ai log: gli strumenti per capire, difendere e mettere alla prova un sistema.</p>
       </div>
       <dl class="requisiti">
-        <div class="scheda compari"><dt>Dati protetti</dt><dd>Proteggi le informazioni: cifratura, firme e verifica dei dati, per tenerli al sicuro (<code>sicurezza_dati</code>).</dd></div>
-        <div class="scheda compari r1"><dt>Analisi binaria</dt><dd>Leggi e manipoli i dati a livello di byte, per capire e trattare i file così come sono (<code>binario</code>).</dd></div>
-        <div class="scheda compari r2"><dt>Forense</dt><dd>Strumenti per l'analisi forense: esamini i dati e ricostruisci cosa è successo (<code>forense</code>).</dd></div>
-        <div class="scheda compari r3"><dt>Difesa degli account</dt><dd>Metti in sicurezza accessi e credenziali, per difendere gli account (<code>difesa</code>).</dd></div>
-        <div class="scheda compari r4"><dt>Rete</dt><dd>Lavori con la rete a basso e ad alto livello — TCP, DNS, TLS — per analizzarla e metterla in sicurezza (<code>rete_sistema</code>, <code>rete_bassa</code>).</dd></div>
+        <div class="scheda compari"><dt>Reti e porte</dt><dd>Scopri quali porte sono aperte e quali servizi rispondono, con limiti di sicurezza sensati.</dd></div>
+        <div class="scheda compari r1"><dt>Header e audit web</dt><dd>Controlli gli header di protezione di un sito e ottieni un audit con i punti deboli.</dd></div>
+        <div class="scheda compari r2"><dt>Forense e log</dt><dd>Leggi i log, trovi gli accessi falliti, gli IP sospetti, gli orari insoliti e le anomalie.</dd></div>
+        <div class="scheda compari r3"><dt>Nel resto di Leo</dt><dd>Si lega a rete, file e testo: colleghi i controlli dentro i tuoi strumenti.</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="sezione" aria-labelledby="titolo-esempio">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Controlla gli host, <em>in fila.</em></h2>
-      </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>rete.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">indirizzi</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"10.0.0.1"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"10.0.0.2"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"10.0.0.3"</span><span class="c-punteggiatura">]</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">ip</span> <span class="c-flusso">in</span> <span class="c-variabili">indirizzi</span> <span class="c-flusso">fai</span>
-    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Controllo l'host </span><span class="c-interpolazione">{</span><span class="c-variabili">ip</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span></code></pre>
-      </div>
-      <p class="nota-offline compari">Un <code>per ogni</code> sulla lista degli indirizzi: i costrutti di base sono gli stessi in ogni edizione.</p>
-    </div>
-  </section>
-
-  <section class="sezione scura" aria-label="Lo stesso Leo">
-    <div class="contenitore">
-      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>la sicurezza e le reti</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="titolo-prova">
+  <section class="sezione" aria-labelledby="titolo-scarica">
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, apri un file, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
+        <h2 id="titolo-scarica" class="titolo-sezione parole">Metti in sicurezza, <em>oggi.</em></h2>
+        <p class="introduzione compari r2">Leo Sicurezza &egrave; dentro Leo Studio e dentro la Suite. Scarica Leo e comincia dai tuoi sistemi.</p>
       </div>
-      <div class="azioni compari" style="flex-wrap:wrap;gap:12px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sicurezza_0.1.0.exe" rel="noopener" download>
+      <div class="azioni compari">
+        <a class="pulsante grande" href="scarica.html">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
+          <span class="etichetta">Scarica Leo</span>
         </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sicurezza-0.1.0.apk" rel="noopener" download>Android (.apk) &middot; anteprima</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone &middot; anteprima</a>
         <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <p class="dettagli" style="margin-top:14px;max-width:62ch">
-        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
-        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
-        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
-      </p>
-    </div>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="altre-sicurezza">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-sicurezza" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutte le categorie, già interconnesse.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi, finestre.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="scienza.html">
-            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Scienza</h3>
-              <p>Matematica avanzata e scienza.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
       </div>
     </div>
   </section>
@@ -232,6 +140,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="novita.html">Novità</a></li>
+          <li><a href="statistiche.html">Statistiche</a></li>
           <li><a href="telefono.html">Leo sul telefono</a></li>
           <li><a href="scarica.html">Scarica</a></li>
           <li><a href="licenza.html">Licenza</a></li>
