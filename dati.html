@@ -97,18 +97,22 @@
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">La media, <em>in tre righe.</em></h2>
+        <h2 id="titolo-esempio" class="titolo-sezione parole">Dal foglio <em>al grafico.</em></h2>
       </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>voti.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">28</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">,</span> <span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-numeri">27</span><span class="c-punteggiatura">]</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">somma</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">v</span> <span class="c-flusso">in</span> <span class="c-variabili">voti</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">somma</span> <span class="c-operatori">=</span> <span class="c-variabili">somma</span> <span class="c-operatori">+</span> <span class="c-variabili">v</span>
-<span class="c-flusso">fine</span>
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"La media dei voti è </span><span class="c-interpolazione">{</span><span class="c-variabili">somma / 4</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+      <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>vendite.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">tabella</span><span class="c-punteggiatura">.</span><span class="c-libreria">leggi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;vendite.csv&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">ordina_per</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">decrescente</span><span class="c-punteggiatura">:</span> <span class="c-costanti">sì</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Totale:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">grafico_barre</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;mese&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;grafico.png&quot;</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
-      <p class="nota-offline compari">Solo i costrutti di base — <code>variabile</code>, <code>per ogni</code>, <code>stampa</code> — sono già il cuore di Leo: identici in ogni edizione.</p>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_dati_chart.png" alt="Grafico a barre dell'incasso per mese, creato con Leo" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">grafico.png · creato da Leo in una riga</figcaption>
+      </figure>
+    </div>
+      <p class="nota-offline compari">Leggi il CSV, fai i conti ed esci come immagine: il grafico in una riga. I costrutti di base sono identici in ogni edizione.</p>
     </div>
   </section>
 
@@ -201,14 +205,14 @@
           <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
         <li class="edizione">
-          <a class="edizione-vai" href="scienza.html">
-            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <a class="edizione-vai" href="robotica.html">
+            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
             <div class="edizione-corpo">
-              <h3>Leo Scienza</h3>
-              <p>Matematica avanzata e scienza.</p>
+              <h3>Leo Robotica</h3>
+              <p>Robot e schede: Pico, sensori, motori.</p>
             </div>
           </a>
-          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
+          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
       </ul>
       <div class="azioni compari" style="margin-top:8px">

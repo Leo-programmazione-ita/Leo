@@ -99,14 +99,18 @@
         <p class="sopratitolo compari">Un assaggio</p>
         <h2 id="titolo-esempio" class="titolo-sezione parole">Controlla gli host, <em>in fila.</em></h2>
       </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>rete.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">indirizzi</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"10.0.0.1"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"10.0.0.2"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"10.0.0.3"</span><span class="c-punteggiatura">]</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">ip</span> <span class="c-flusso">in</span> <span class="c-variabili">indirizzi</span> <span class="c-flusso">fai</span>
-    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Controllo l'host </span><span class="c-interpolazione">{</span><span class="c-variabili">ip</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span></code></pre>
+      <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
+<pre class="codice"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">scansiona_porte</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">da</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-variabili">a</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1024</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">audita_sito</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
-      <p class="nota-offline compari">Un <code>per ogni</code> sulla lista degli indirizzi: i costrutti di base sono gli stessi in ogni edizione.</p>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_sicurezza.png" alt="Report di sicurezza prodotto da Leo Sicurezza" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">Report · 2 avvisi trovati</figcaption>
+      </figure>
+    </div>
+      <p class="nota-offline compari">Porte aperte e header di sicurezza, con parole italiane. I costrutti di base sono gli stessi in ogni edizione.</p>
     </div>
   </section>
 
@@ -199,14 +203,14 @@
           <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
         <li class="edizione">
-          <a class="edizione-vai" href="scienza.html">
-            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <a class="edizione-vai" href="robotica.html">
+            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
             <div class="edizione-corpo">
-              <h3>Leo Scienza</h3>
-              <p>Matematica avanzata e scienza.</p>
+              <h3>Leo Robotica</h3>
+              <p>Robot e schede: Pico, sensori, motori.</p>
             </div>
           </a>
-          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
+          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
       </ul>
       <div class="azioni compari" style="margin-top:8px">

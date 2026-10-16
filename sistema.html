@@ -98,16 +98,21 @@
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Scorri i file, <em>uno a uno.</em></h2>
+        <h2 id="titolo-esempio" class="titolo-sezione parole">Metti in ordine, <em>da solo.</em></h2>
       </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>file.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">file</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-testi">"foto.jpg"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"note.txt"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"musica.mp3"</span><span class="c-punteggiatura">]</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">nome</span> <span class="c-flusso">in</span> <span class="c-variabili">file</span> <span class="c-flusso">fai</span>
-    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Trovato file: </span><span class="c-interpolazione">{</span><span class="c-variabili">nome</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span></code></pre>
+      <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
+<pre class="codice"><code><span class="c-commenti">rem Mette in ordine la cartella Download per tipo</span>
+<span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">organizza_cartella</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Download&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">trova_duplicati</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Foto&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
-      <p class="nota-offline compari">Un <code>per ogni</code> sulla lista dei file: i costrutti di base sono identici in ogni edizione.</p>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_sistema.png" alt="Terminale di Leo Sistema: cartella messa in ordine" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">Terminale · cartella in ordine</figcaption>
+      </figure>
+    </div>
+      <p class="nota-offline compari">Gli dici la cartella: Leo la mette in ordine e trova i doppioni. I costrutti di base sono identici in ogni edizione.</p>
     </div>
   </section>
 
@@ -200,14 +205,14 @@
           <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
         <li class="edizione">
-          <a class="edizione-vai" href="scienza.html">
-            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <a class="edizione-vai" href="robotica.html">
+            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
             <div class="edizione-corpo">
-              <h3>Leo Scienza</h3>
-              <p>Matematica avanzata e scienza.</p>
+              <h3>Leo Robotica</h3>
+              <p>Robot e schede: Pico, sensori, motori.</p>
             </div>
           </a>
-          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
+          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
       </ul>
       <div class="azioni compari" style="margin-top:8px">

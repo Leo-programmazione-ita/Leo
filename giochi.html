@@ -98,17 +98,24 @@
     <div class="contenitore">
       <div class="intestazione-sezione">
         <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Raccogli le gemme, <em>conta i punti.</em></h2>
+        <h2 id="titolo-esempio" class="titolo-sezione parole">Un personaggio, <em>e si muove.</em></h2>
       </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>punti.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">punteggio</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">gemma</span> <span class="c-flusso">in</span> <span class="c-punteggiatura">[</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-numeri">50</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">punteggio</span> <span class="c-operatori">=</span> <span class="c-variabili">punteggio</span> <span class="c-operatori">+</span> <span class="c-variabili">gemma</span>
-    <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Gemma raccolta! Punti: </span><span class="c-interpolazione">{</span><span class="c-variabili">punteggio</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span></code></pre>
+      <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>gioco.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">eroe</span> <span class="c-operatori">=</span> <span class="c-libreria">personaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;gatto&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">scena</span><span class="c-punteggiatura">.</span><span class="c-libreria">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-variabili">eroe</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">quando</span> <span class="c-flusso">premi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;destra&quot;</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">eroe</span><span class="c-punteggiatura">.</span><span class="c-libreria">muovi</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+<span class="c-variabili">scena</span><span class="c-punteggiatura">.</span><span class="c-libreria">avvia</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
-      <p class="nota-offline compari">Un semplice <code>per ogni</code> tiene il punteggio: i costrutti di base sono gli stessi in ogni edizione.</p>
+      <figure class="promo-risultato">
+        <img src="img/edizioni/vetrina_giochi.png" alt="Scena di un gioco creato con Leo Giochi" width="1216" height="736" loading="lazy" decoding="async">
+        <figcaption class="promo-etichetta">Il gioco gira · personaggi pronti</figcaption>
+      </figure>
+    </div>
+      <p class="nota-offline compari">Personaggi e scene già pronti: con <code>quando premi</code> il gioco risponde. I costrutti di base sono gli stessi in ogni edizione.</p>
     </div>
   </section>
 
@@ -201,14 +208,14 @@
           <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
         <li class="edizione">
-          <a class="edizione-vai" href="scienza.html">
-            <img class="edizione-icona" src="img/edizioni/scienza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+          <a class="edizione-vai" href="robotica.html">
+            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
             <div class="edizione-corpo">
-              <h3>Leo Scienza</h3>
-              <p>Matematica avanzata e scienza.</p>
+              <h3>Leo Robotica</h3>
+              <p>Robot e schede: Pico, sensori, motori.</p>
             </div>
           </a>
-          <a class="pulsante piccolo edizione-azione" href="scienza.html"><span class="etichetta">Apri e scarica</span></a>
+          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
         </li>
       </ul>
       <div class="azioni compari" style="margin-top:8px">
