@@ -39,13 +39,30 @@
     </a>
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
-        <li><a href="../riferimento/index.html">Riferimento</a></li>
-        <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
-        <li><a href="../template.html">Esempi</a></li>
-        <li><a href="../video.html">Video</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Impara
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../manuale/index.html">Manuale</a></li>
+            <li><a href="../riferimento/index.html">Riferimento</a></li>
+            <li><a href="../libro/index.html" aria-current="page">Il libro</a></li>
+            <li><a href="../template.html">Esempi</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Scopri
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../video.html">Video</a></li>
+            <li><a href="../novita.html">Novità</a></li>
+            <li><a href="../confronto.html">Confronto</a></li>
+            <li><a href="../statistiche.html">Statistiche</a></li>
+          </ul>
+        </li>
         <li><a href="../telefono.html">Telefono</a></li>
-        <li><a href="../novita.html">Novità</a></li>
-        <li><a href="../confronto.html">Confronto</a></li>
         <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
       </ul>
     </nav>
@@ -69,17 +86,16 @@
   <article class="libro-articolo libro-articolo-cover">
     
   <header class="libro-cover">
-    <p class="libro-cover-sopra">Il manuale, in forma di libro</p>
-    <h1>Leo</h1>
-    <p class="libro-cover-sotto">Dal primo programma all'applicazione vera, in italiano.
-    Dal principiante all'avanzato, un capitolo alla volta.</p>
+    <p class="libro-cover-sopra">Informatica &amp; pensiero computazionale</p>
+    <h1>Pensare in codice</h1>
+    <p class="libro-cover-sotto">Imparare l'informatica e a programmare da zero, in italiano, con Leo.
+    Dal primo programma all'applicazione vera, un capitolo alla volta. Di Rosario Zappal&agrave;.</p>
     <div class="libro-cover-azioni">
       <a class="pulsante grande" href="01_primo_programma.html">Comincia a leggere</a>
-      <a class="pulsante secondario grande" href="completo.html">Tutto in una pagina (per PDF)</a>
+      <a class="pulsante secondario grande" href="Pensare_in_codice.pdf" download>Scarica il PDF</a>
+      <a class="pulsante secondario grande" href="Pensare_in_codice.epub" download>EPUB</a>
     </div>
-    <p class="libro-cover-nota">Tutti gli esempi sono stati eseguiti con <code>python3 -m leo</code>
-    prima di entrare nel libro. Per stampare: apri <a href="completo.html">la versione completa</a>
-    e usa <strong>Stampa → Salva come PDF</strong>.</p>
+    <p class="libro-cover-nota">Tutti gli esempi sono stati eseguiti con <code>python3 -m leo</code> prima di entrare nel libro. Preferisci leggerlo tutto di seguito nel browser? Apri <a href="completo.html">la versione in una pagina</a>.</p>
   </header>
 
     <div class="libro-indice">
@@ -154,7 +170,7 @@
         <h2>Impara</h2>
         <ul>
           <li><a href="../riferimento/index.html">Riferimento</a></li>
-          <li><a href="../manuale/index.html" aria-current="page">Manuale</a></li>
+          <li><a href="../manuale/index.html">Manuale</a></li>
           <li><a href="../template.html">Esempi pronti</a></li>
           <li><a href="../video.html">Videoteca</a></li>
           <li><a href="../manuale/domande.html">Domande frequenti</a></li>

@@ -230,6 +230,25 @@
     tutti("a", nav).forEach(function (a) { a.addEventListener("click", chiudi); });
   }
 
+  /* --------------------------------------------- menu a tendina della barra */
+  (function () {
+    var aprenti = tutti(".nav-apri");
+    if (!aprenti.length) return;
+    function chiudiTutte(tranne) {
+      aprenti.forEach(function (b) { if (b !== tranne) b.setAttribute("aria-expanded", "false"); });
+    }
+    aprenti.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var aperto = btn.getAttribute("aria-expanded") === "true";
+        chiudiTutte(btn);
+        btn.setAttribute("aria-expanded", aperto ? "false" : "true");
+      });
+    });
+    document.addEventListener("click", function () { chiudiTutte(null); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") chiudiTutte(null); });
+  })();
+
   /* ------------------------------------------------ parole che salgono */
   tutti(".parole").forEach(function (el) {
     var i = 0;
