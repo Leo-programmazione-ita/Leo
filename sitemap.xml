@@ -5,33 +5,6 @@
   <url><loc>https://leoitalia.com/dati.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/giochi.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/00_introduzione.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/01_primo_programma.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/02_variabili_costanti.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/03_numeri.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/04_testi.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/05_liste_dizionari.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/06_slicing.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/07_condizioni.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/08_cicli.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/09_funzioni.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/10_errori.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/11_classi.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/12_moduli.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/13_file_cartelle.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/14_parallelismo.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/15_sequenze_pigre.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/16_tour_libreria.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/17_finestre_studio.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/18_android.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/19_cybersecurity.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/20_distribuzione.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/A_riferimento_sintassi.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/B_errori_comuni.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/C_confronto_python.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/D_glossario.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/completo.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://leoitalia.com/libro/index.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/licenza.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/manuale/avanzata.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/manuale/basi.html</loc><lastmod>2026-10-07</lastmod></url>
@@ -259,7 +232,6 @@
   <url><loc>https://leoitalia.com/riferimento/linguaggio/verifiche.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/riferimento/telefono/index.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/scarica.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://leoitalia.com/scienza.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/sicurezza.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/sistema.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/suite.html</loc><lastmod>2026-10-12</lastmod></url>
@@ -268,4 +240,5 @@
   <url><loc>https://leoitalia.com/web.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/termini.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://leoitalia.com/video.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://leoitalia.com/libro/</loc><lastmod>2026-10-17</lastmod></url>
 </urlset>

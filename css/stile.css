@@ -1699,3 +1699,9 @@ figure { margin: 0; }
 .video-promo video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
 .video-promo-ripiego { padding: 24px; color: var(--testo-2); text-align: center; }
 .vt-promo { margin-top: clamp(20px,3vw,36px); }
+
+/* Badge "In arrivo" della pagina libro */
+.libro-pill-arrivo { display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:999px;
+  border:1px solid var(--accento); color:var(--testo); background:rgba(var(--accento-rgb),.12);
+  font-weight:700; letter-spacing:.04em; text-transform:uppercase; font-size:14px; }
+.libro-pill-arrivo::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--accento); }
