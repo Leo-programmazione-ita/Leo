@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oggetti e classi</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Libro interattivo "Informatica" — sezione 12: Oggetti e classi. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A; --blu:#86C1FF;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+.controls{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+input[type=text]{font:inherit;font-family:var(--mono);font-size:14px;color:#fff;background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:9px 12px;width:150px}
+input[type=text]:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+button.az{font:inherit;font-family:var(--mono);font-size:13.5px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;transition:.14s}
+button.az:hover{border-color:var(--accent);color:#fff}
+button.az:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.az.rosso{background:var(--accent);border-color:var(--accent);color:#fff}
+button.az.rosso:hover{background:#c20e16}
+
+/* --- stampo + oggetti --- */
+.stampo{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+.stampo .bozza{border:1px dashed var(--accent);border-radius:14px;padding:12px 16px;text-align:center;background:var(--panel2)}
+.stampo .bozza .t{font-family:var(--mono);font-size:14px;color:#fff}
+.stampo .bozza .d{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:4px}
+.oggetti{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
+.ogg{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;animation:nasce .3s ease}
+@keyframes nasce{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.ogg .emoji{font-size:30px;line-height:1}
+.ogg .nm{font-family:var(--mono);font-size:14px;color:#fff;margin:6px 0 2px}
+.ogg .cls{font-family:var(--mono);font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em}
+.ogg .vers{font-family:var(--mono);font-size:12px;color:var(--accent);min-height:1.3em;margin-top:8px}
+.ogg .saldo{font-family:var(--mono);font-size:22px;font-weight:600;color:#fff;margin:8px 0}
+.ogg .bbar{display:flex;gap:6px;justify-content:center;margin-top:8px}
+.ogg .bbar button{font:inherit;font-family:var(--mono);font-size:12px;padding:5px 9px;border-radius:8px;cursor:pointer;
+  background:var(--panel);border:1px solid var(--line);color:var(--fg)}
+.ogg .bbar button:hover{border-color:var(--accent);color:#fff}
+.vuoto{color:var(--faint);font-family:var(--mono);font-size:13px;text-align:center;padding:10px}
+
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA;margin:0}
+pre.code .kw{color:var(--accent)} pre.code .st{color:var(--blu)} pre.code .cm{color:var(--faint)} pre.code .nu{color:#F5B971}
+.prova{margin-top:14px}
+a.btn-prova{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;
+  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:10px;
+  padding:10px 16px;text-decoration:none;transition:.14s}
+a.btn-prova:hover{background:#c20e16;border-color:#c20e16}
+a.btn-prova:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.prova .nota{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:4px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
+</style>
+<div class="wrap">
+<span class="eyebrow">Informatica interattiva · Sezione 12</span>
+<h1>Oggetti e classi</h1>
+<p class="lead">Una <b>classe</b> è uno stampo; gli <b>oggetti</b> sono i biscotti che ne escono. Lo stampo descrive com'è fatto un oggetto e cosa sa fare; ogni oggetto, poi, vive per conto suo con i propri dati.</p>
+<p>Finora i dati (numeri, testi, liste) e le azioni (le funzioni) erano cose separate. Un oggetto li <b>unisce</b>: tiene insieme ciò che sa (il suo stato) e ciò che sa fare (i suoi metodi). La classe è il progetto; da un progetto costruisci quanti oggetti vuoi, tutti uguali nello stampo ma ognuno con la sua storia.</p>
+<section>
+<h2><span class="n">01</span>Uno stampo, tanti oggetti</h2>
+<p>Ecco la classe <span class="mono">Cane</span>: ogni cane <b>ha</b> un nome e <b>sa</b> abbaiare. Scrivi un nome e premi <b>Crea</b>: nasce un oggetto nuovo. Creane diversi, poi fai abbaiare ciascuno — ognuno dice il <em>suo</em> nome.</p>
+<div class="card">
+<div class="stampo">
+<div class="bozza"><div class="t">classe Cane</div><div class="d">ha nome · azione abbaia()</div></div>
+</div>
+<div class="controls">
+<input id="nomeCane" maxlength="14" placeholder="es. Fido" type="text"/>
+<button class="az rosso" id="creaCane">Crea un Cane ▸</button>
+</div>
+<div class="oggetti" id="cani"><div class="vuoto">Nessun oggetto ancora: creane uno.</div></div>
+<p class="take">Una classe sola (<span class="mono">Cane</span>), tanti oggetti diversi. Lo <b>stampo</b> è condiviso; il <b>nome</b> è di ciascuno.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">02</span>Ognuno ha il suo stato</h2>
+<p>Gli oggetti non si pestano i piedi: ciascuno custodisce i <b>propri</b> dati. Ecco due <span class="mono">Salvadanaio</span>, di Anna e di Luca. Metti o togli monete dall'uno: l'altro non cambia. È lo stesso stampo, ma due stati separati.</p>
+<div class="card">
+<div class="oggetti" id="salvadanai"></div>
+<p class="take">Lo <b>stato</b> vive dentro l'oggetto. Chiamare un metodo su Anna tocca il saldo di Anna, non quello di Luca: ognuno fa storia a sé.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">03</span>E con Leo?</h2>
+<p>In Leo descrivi uno stampo con <span class="mono">classe</span>, i suoi dati con <span class="mono">ha</span>, le sue azioni con <span class="mono">azione</span>, e crei un oggetto con <span class="mono">nuovo</span>. Prova nel browser:</p>
+<pre class="code"><span class="kw">classe</span> Cane
+    <span class="kw">ha</span> nome
+    <span class="kw">azione</span> abbaia()
+        <span class="kw">stampa</span>(<span class="st">"{questo.nome}: Bau!"</span>)
+    <span class="kw">fine</span>
+<span class="kw">fine</span>
+
+<span class="kw">variabile</span> fido = <span class="kw">nuovo</span> Cane(<span class="st">"Fido"</span>)
+<span class="kw">variabile</span> lola = <span class="kw">nuovo</span> Cane(<span class="st">"Lola"</span>)
+fido.abbaia()        <span class="cm"># Fido: Bau!</span>
+lola.abbaia()        <span class="cm"># Lola: Bau!</span></pre>
+<div class="prova">
+<a class="btn-prova" href="#" id="provalo" rel="noopener" target="_blank"><span class="tri">▶</span> Provalo in Leo Web</a>
+<span class="nota">si apre il playground con questo codice</span>
+</div>
+</section>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<a class="pn-prev" href="funzioni.html">← Le funzioni</a>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<span class="pn-spacer"></span>
+</nav><div class="foot">
+<span>Informatica interattiva — un libro di Rosario Zappalà</span>
+<a href="https://leoitalia.com">leoitalia.com</a>
+</div>
+</div>
+<script>
+(function(){
+  "use strict";
+  // ---------- 01: classe Cane ----------
+  var nomeCane=document.getElementById('nomeCane'),
+      creaCane=document.getElementById('creaCane'),
+      cani=document.getElementById('cani');
+  var contaCani=0;
+  function creaUnCane(){
+    var nome=(nomeCane.value||'').trim() || 'Senzanome';
+    if(contaCani===0) cani.innerHTML='';
+    if(contaCani>=6) return;
+    contaCani++;
+    var o=document.createElement('div'); o.className='ogg';
+    o.innerHTML='<div class="emoji">🐕</div><div class="nm">'+escapeHtml(nome)+'</div>'+
+      '<div class="cls">un Cane</div><div class="vers">&nbsp;</div>'+
+      '<div class="bbar"><button type="button">abbaia()</button></div>';
+    var vers=o.querySelector('.vers');
+    o.querySelector('button').addEventListener('click',function(){
+      vers.textContent=nome+': Bau!';
+      vers.style.animation='none'; void vers.offsetWidth; vers.style.animation='nasce .3s ease';
+    });
+    cani.appendChild(o);
+    nomeCane.value=''; nomeCane.focus();
+  }
+  function escapeHtml(s){ return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  creaCane.addEventListener('click',creaUnCane);
+  nomeCane.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); creaUnCane(); } });
+
+  // ---------- 02: due Salvadanaio ----------
+  var cont=document.getElementById('salvadanai');
+  function salvadanaio(nome){
+    var saldo=0;
+    var o=document.createElement('div'); o.className='ogg';
+    o.innerHTML='<div class="emoji">🐷</div><div class="nm">'+nome+'</div><div class="cls">un Salvadanaio</div>'+
+      '<div class="saldo">€ <span>0</span></div>'+
+      '<div class="bbar"><button type="button" data-d="5">+5</button><button type="button" data-d="-5">−5</button></div>';
+    var span=o.querySelector('.saldo span');
+    o.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var d=+b.getAttribute('data-d');
+        saldo=Math.max(0,saldo+d);
+        span.textContent=saldo;
+      });
+    });
+    cont.appendChild(o);
+  }
+  salvadanaio('Anna');
+  salvadanaio('Luca');
+
+  // ---------- 03: Provalo ----------
+  var CODICE =
+    'classe Cane\n' +
+    '    ha nome\n' +
+    '    azione abbaia()\n' +
+    '        stampa("{questo.nome}: Bau!")\n' +
+    '    fine\n' +
+    'fine\n' +
+    '\n' +
+    'variabile fido = nuovo Cane("Fido")\n' +
+    'variabile lola = nuovo Cane("Lola")\n' +
+    'fido.abbaia()\n' +
+    'lola.abbaia()\n';
+  function b64url(s){ return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+  document.getElementById('provalo').setAttribute('href','../prova.html#c='+b64url(CODICE));
+})();
+</script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "Una <b>classe</b> è…", "o": ["uno stampo per creare oggetti", "un singolo oggetto", "un numero"], "c": 0, "s": "È il progetto; gli oggetti escono dallo stampo."}, {"d": "Due oggetti creati dalla stessa classe…", "o": ["hanno ciascuno il proprio stato", "condividono tutto", "restano identici per sempre"], "c": 0, "s": "Stesso stampo, ma ognuno fa storia a sé."}, {"d": "<code>nuovo Cane(\"Fido\")</code> crea…", "o": ["un oggetto Cane di nome Fido", "una nuova classe", "una variabile vuota"], "c": 0, "s": "nuovo costruisce un oggetto a partire dalla classe."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

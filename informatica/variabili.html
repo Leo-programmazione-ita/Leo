@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le variabili</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Libro interattivo "Informatica" — sezione 9: Le variabili.
+   Stesso mondo visivo scuro delle altre sezioni; colori espliciti. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A; --blu:#86C1FF;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+
+/* --- scatola di memoria --- */
+.boxrow{display:flex;gap:20px;justify-content:center;align-items:flex-end;flex-wrap:wrap;margin:6px 0 20px}
+.membox{display:flex;flex-direction:column;align-items:center;gap:8px}
+.membox .nome{font-family:var(--mono);font-size:14px;color:var(--accent);letter-spacing:.04em}
+.membox .scatola{min-width:110px;min-height:76px;border:2px solid var(--line);border-radius:14px;
+  background:var(--panel2);display:flex;align-items:center;justify-content:center;padding:10px 16px;
+  font-family:var(--mono);font-size:26px;font-weight:600;color:#fff;transition:.18s}
+.membox .scatola.lampo{border-color:var(--accent);box-shadow:0 0 26px -6px var(--accent)}
+.membox .tipo{font-family:var(--mono);font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+button.az{font:inherit;font-family:var(--mono);font-size:13.5px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;transition:.14s}
+button.az:hover{border-color:var(--accent);color:#fff}
+button.az:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.riga-leo{font-family:var(--mono);font-size:13.5px;color:var(--muted);text-align:center;margin-top:14px;min-height:1.2em}
+.riga-leo b{color:var(--accent)}
+
+/* --- esecuzione passo-passo --- */
+.step-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}
+@media (max-width:560px){.step-grid{grid-template-columns:1fr}}
+.prog{font-family:var(--mono);font-size:14px;background:#100c0b;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.prog .ln{padding:7px 14px;color:#E8DDDA;border-left:3px solid transparent;white-space:pre}
+.prog .ln.now{background:var(--accent-soft);border-left-color:var(--accent);color:#fff}
+.prog .ln.done{color:var(--faint)}
+.mem{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.mem h4{margin:0 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.mem .riga{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:14px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.mem .riga:last-child{border-bottom:0}
+.mem .riga .k{color:var(--accent)} .mem .riga .v{color:#fff}
+.mem .vuota{color:var(--faint);font-family:var(--mono);font-size:13px}
+.mem .riga.cambiata .v{animation:pop .5s ease}
+@keyframes pop{0%{color:var(--accent);transform:scale(1.18)}100%{color:#fff;transform:none}}
+
+/* --- codice --- */
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA;margin:0}
+pre.code .kw{color:var(--accent)} pre.code .st{color:var(--blu)} pre.code .cm{color:var(--faint)} pre.code .nu{color:#F5B971}
+.prova{margin-top:14px}
+a.btn-prova{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;
+  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:10px;
+  padding:10px 16px;text-decoration:none;transition:.14s}
+a.btn-prova:hover{background:#c20e16;border-color:#c20e16}
+a.btn-prova:focus-visible{outline:2px solid #fff;outline-offset:2px}
+a.btn-prova .tri{font-size:11px}
+.prova .nota{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:4px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
+</style>
+<div class="wrap">
+<span class="eyebrow">Informatica interattiva · Sezione 9</span>
+<h1>Le variabili</h1>
+<p class="lead">Un programma deve <b>ricordare</b>: il punteggio, un nome, quante vite restano. Lo fa con le variabili — scatole di memoria con un nome, in cui mette un valore e lo cambia quando serve.</p>
+<p>«Variabile» vuol dire proprio <em>che può variare</em>. Dài un nome a una scatola, ci metti dentro un valore, e da quel momento puoi rileggerlo o sostituirlo. Il nome resta; il contenuto cambia. È il modo in cui ogni programma tiene il conto di ciò che succede.</p>
+<section>
+<h2><span class="n">01</span>Una scatola con un nome</h2>
+<p>Ecco una variabile che si chiama <span class="mono">punti</span>. Premi i pulsanti: ogni volta cambi ciò che c'è <b>dentro</b> la scatola, ma il nome resta sempre lo stesso. Sotto compare la riga di Leo che corrisponde all'azione.</p>
+<div class="card">
+<div class="boxrow">
+<div class="membox">
+<span class="nome">punti</span>
+<div class="scatola" id="box1">0</div>
+<span class="tipo" id="tipo1">numero</span>
+</div>
+</div>
+<div class="btns">
+<button class="az" data-a="set10">punti = 10</button>
+<button class="az" data-a="add5">punti = punti + 5</button>
+<button class="az" data-a="double">punti = punti * 2</button>
+<button class="az" data-a="zero">punti = 0</button>
+</div>
+<div class="riga-leo" id="riga1">Premi un pulsante…</div>
+<p class="take">Il <b>nome</b> (<span class="mono">punti</span>) è un'etichetta fissa; il <b>valore</b> dentro la scatola cambia a ogni assegnazione con <span class="mono">=</span>.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">02</span>Esegui riga per riga</h2>
+<p>Il computer legge il programma <b>dall'alto in basso</b>, una riga alla volta. Premi <b>Passo</b> e guarda: a sinistra si illumina la riga in esecuzione, a destra la memoria si aggiorna. Nota come <span class="mono">vite = vite - 1</span> prima <em>legge</em> il vecchio valore e poi <em>riscrive</em> la stessa scatola.</p>
+<div class="card">
+<div class="step-grid">
+<div class="prog" id="prog"></div>
+<div class="mem">
+<h4>Memoria</h4>
+<div id="memlist"><div class="vuota">(ancora vuota)</div></div>
+</div>
+</div>
+<div class="btns" style="margin-top:16px">
+<button class="az" id="passo">Passo ▸</button>
+<button class="az" id="ricomincia">↻ Ricomincia</button>
+</div>
+<p class="take">Una variabile vive nel tempo: il suo valore dipende da <b>quali righe</b> sono già state eseguite. Ecco perché l'ordine conta.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">03</span>E con Leo?</h2>
+<p>In Leo crei una variabile con <span class="mono">variabile</span> e la cambi con <span class="mono">=</span>. Puoi metterci numeri, testo, liste… e cambiarne il contenuto quando vuoi. Prova questo nel browser: gira davvero.</p>
+<pre class="code"><span class="kw">variabile</span> punti = <span class="nu">0</span>
+<span class="kw">variabile</span> nome = <span class="st">"Lea"</span>
+
+punti = punti + <span class="nu">10</span>      <span class="cm"># legge 0, riscrive 10</span>
+punti = punti * <span class="nu">2</span>       <span class="cm"># ora 20</span>
+
+<span class="kw">stampa</span>(<span class="st">"{nome} ha {punti} punti"</span>)</pre>
+<div class="prova">
+<a class="btn-prova" href="#" id="provalo" rel="noopener" target="_blank"><span class="tri">▶</span> Provalo in Leo Web</a>
+<span class="nota">si apre il playground con questo codice</span>
+</div>
+<p class="kicker" style="margin-top:14px">Cambia i numeri o il nome e premi <b>Esegui</b>: vedrai subito il nuovo risultato. È la stessa scatola <span class="mono">punti</span> che hai toccato qui sopra.</p>
+</section>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<a class="pn-prev" href="scrivere-leo.html">← Scrivere in Leo</a>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<a class="pn-next" href="cicli.html">I cicli →</a>
+</nav><div class="foot">
+<span>Informatica interattiva — un libro di Rosario Zappalà</span>
+<a href="https://leoitalia.com">leoitalia.com</a>
+</div>
+</div>
+<script>
+(function(){
+  "use strict";
+
+  // ---------- 01: scatola singola "punti" ----------
+  var box1=document.getElementById('box1'),
+      tipo1=document.getElementById('tipo1'),
+      riga1=document.getElementById('riga1');
+  var punti=0;
+  function mostra1(testoLeo){
+    box1.textContent=String(punti);
+    box1.classList.remove('lampo'); void box1.offsetWidth; box1.classList.add('lampo');
+    tipo1.textContent='numero';
+    riga1.innerHTML=testoLeo;
+  }
+  document.querySelectorAll('[data-a]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var a=b.getAttribute('data-a');
+      if(a==='set10'){ punti=10; mostra1('<b>punti</b> = 10'); }
+      else if(a==='add5'){ punti=punti+5; mostra1('<b>punti</b> = punti + 5 &nbsp;→&nbsp; '+punti); }
+      else if(a==='double'){ punti=punti*2; mostra1('<b>punti</b> = punti * 2 &nbsp;→&nbsp; '+punti); }
+      else if(a==='zero'){ punti=0; mostra1('<b>punti</b> = 0'); }
+    });
+  });
+
+  // ---------- 02: esecuzione passo-passo ----------
+  // ogni passo: testo della riga + funzione che aggiorna lo stato memoria
+  var PROG=[
+    {t:'vite = 3',          f:function(m){m.vite=3; return 'vite';}},
+    {t:'nome = "Lea"',      f:function(m){m.nome='"Lea"'; return 'nome';}},
+    {t:'vite = vite - 1',   f:function(m){m.vite=m.vite-1; return 'vite';}},
+    {t:'punti = 0',         f:function(m){m.punti=0; return 'punti';}},
+    {t:'punti = punti + 50',f:function(m){m.punti=m.punti+50; return 'punti';}},
+    {t:'vite = vite - 1',   f:function(m){m.vite=m.vite-1; return 'vite';}}
+  ];
+  var prog=document.getElementById('prog'),
+      memlist=document.getElementById('memlist'),
+      bPasso=document.getElementById('passo'),
+      bRic=document.getElementById('ricomincia');
+  var mem={}, i=0, ordine=[];
+
+  function renderProg(){
+    prog.innerHTML='';
+    PROG.forEach(function(r,idx){
+      var d=document.createElement('div');
+      d.className='ln'+(idx<i?' done':'')+(idx===i?' now':'');
+      d.textContent=r.t;
+      prog.appendChild(d);
+    });
+  }
+  function renderMem(cambiata){
+    if(!ordine.length){ memlist.innerHTML='<div class="vuota">(ancora vuota)</div>'; return; }
+    memlist.innerHTML='';
+    ordine.forEach(function(k){
+      var r=document.createElement('div');
+      r.className='riga'+(k===cambiata?' cambiata':'');
+      r.innerHTML='<span class="k">'+k+'</span><span class="v">'+mem[k]+'</span>';
+      memlist.appendChild(r);
+    });
+  }
+  function ricomincia(){ mem={}; ordine=[]; i=0; renderProg(); renderMem(null); bPasso.disabled=false; bPasso.textContent='Passo ▸'; }
+  function passo(){
+    if(i>=PROG.length) return;
+    var k=PROG[i].f(mem);
+    if(ordine.indexOf(k)<0) ordine.push(k);
+    i++;
+    renderProg(); renderMem(k);
+    if(i>=PROG.length){ bPasso.disabled=true; bPasso.textContent='Finito ✓'; }
+  }
+  bPasso.addEventListener('click',passo);
+  bRic.addEventListener('click',ricomincia);
+  ricomincia();
+
+  // ---------- 03: pulsante "Provalo in Leo Web" ----------
+  var CODICE =
+    'variabile punti = 0\n' +
+    'variabile nome = "Lea"\n' +
+    '\n' +
+    'punti = punti + 10\n' +
+    'punti = punti * 2\n' +
+    '\n' +
+    'stampa("{nome} ha {punti} punti")\n';
+  function b64url(s){
+    return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  }
+  var a=document.getElementById('provalo');
+  a.setAttribute('href','../prova.html#c='+b64url(CODICE));
+})();
+</script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "Cosa fa <code>variabile punti = 10</code>?", "o": ["Crea una scatola di memoria chiamata <b>punti</b> con dentro 10", "Controlla se punti è uguale a 10", "Stampa 10 sullo schermo"], "c": 0, "s": "<code>variabile</code> crea una nuova scatola con un nome e ci mette un valore."}, {"d": "Dopo <code>variabile vite = 3</code> e poi <code>vite = vite - 1</code>, quanto vale <b>vite</b>?", "o": ["3", "2", "-1"], "c": 1, "s": "<code>vite - 1</code> legge il valore attuale (3), toglie 1 e riscrive 2 nella stessa scatola."}, {"d": "Il <b>nome</b> di una variabile…", "o": ["cambia a ogni riga", "resta fisso, mentre il valore può cambiare", "può contenere solo numeri"], "c": 1, "s": "Il nome è un'etichetta fissa: è il valore nella scatola che varia."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

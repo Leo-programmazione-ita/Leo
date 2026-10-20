@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I cicli</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Libro interattivo "Informatica" — sezione 10: I cicli. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A; --blu:#86C1FF;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+.controls{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+.controls label{font-family:var(--mono);font-size:13.5px;color:var(--muted)}
+input[type=range]{accent-color:var(--accent);width:180px}
+.nbig{font-family:var(--mono);font-size:20px;font-weight:600;color:#fff;min-width:2ch;text-align:center}
+button.az{font:inherit;font-family:var(--mono);font-size:13.5px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;transition:.14s}
+button.az:hover{border-color:var(--accent);color:#fff}
+button.az:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.az[disabled]{opacity:.5;cursor:default}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+
+/* --- gettoni (ripeti) --- */
+.gettoni{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;min-height:56px;margin:18px 0 8px}
+.gettone{width:40px;height:40px;border-radius:11px;border:1px solid var(--line);background:var(--off);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;color:var(--faint);
+  transform:scale(.4);opacity:0;transition:transform .22s cubic-bezier(.3,1.4,.5,1),opacity .22s}
+.gettone.on{transform:none;opacity:1;background:var(--on);border-color:var(--on);color:#fff;box-shadow:0 0 16px -4px var(--accent)}
+.contatore{font-family:var(--mono);font-size:14px;color:var(--muted);text-align:center;min-height:1.2em}
+.contatore b{color:#fff}
+.riga-leo{font-family:var(--mono);font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+.riga-leo b{color:var(--accent)}
+
+/* --- chips (per ogni) --- */
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.chip{min-width:38px;height:38px;padding:0 10px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;color:var(--muted);transition:.14s}
+.chip.now{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 16px -4px var(--accent)}
+.chip.done{color:var(--faint);border-style:dashed}
+.stato{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:15px;margin-top:4px}
+.stato .k{color:var(--muted)} .stato .v{color:#fff;font-weight:600}
+
+/* --- mentre --- */
+.mentre-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media (max-width:560px){.mentre-wrap{grid-template-columns:1fr}}
+.vite{display:flex;gap:10px;justify-content:center;align-items:center;min-height:52px;flex-wrap:wrap}
+.cuore{width:34px;height:34px;transition:.2s}
+.cuore.spento{opacity:.18;filter:grayscale(1)}
+.log{background:#100c0b;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:var(--mono);font-size:13px;min-height:120px}
+.log .r{padding:3px 0;color:var(--muted)}
+.log .r .vero{color:var(--ok)} .log .r .falso{color:var(--accent)}
+.log .r.exit{color:#fff}
+
+/* --- codice --- */
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA;margin:0}
+pre.code .kw{color:var(--accent)} pre.code .st{color:var(--blu)} pre.code .cm{color:var(--faint)} pre.code .nu{color:#F5B971}
+.prova{margin-top:14px}
+a.btn-prova{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;
+  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:10px;
+  padding:10px 16px;text-decoration:none;transition:.14s}
+a.btn-prova:hover{background:#c20e16;border-color:#c20e16}
+a.btn-prova:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.prova .nota{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:4px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.gettone{transform:none;opacity:1}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
+</style>
+<div class="wrap">
+<span class="eyebrow">Informatica interattiva · Sezione 10</span>
+<h1>I cicli</h1>
+<p class="lead">I computer sono bravissimi in una cosa noiosa per noi: <b>ripetere</b>. Invece di scrivere cento volte la stessa riga, dici una volta sola «fallo cento volte». Questo è un ciclo.</p>
+<p>Quasi ogni programma, a un certo punto, deve rifare la stessa cosa più volte: per ogni riga di un file, per ogni giocatore, finché il mostro ha energia. Ci sono due modi di ripetere: un numero <b>fisso</b> di volte, oppure <b>finché</b> una condizione resta vera. Vediamoli toccandoli.</p>
+<section>
+<h2><span class="n">01</span>Ripeti un numero di volte</h2>
+<p>Il ciclo più semplice fa una cosa un numero esatto di volte. Scegli quante e premi <b>Esegui</b>: ogni giro accende un gettone. Nessuno li scrive a mano — è il ciclo che li ripete per te.</p>
+<div class="card">
+<div class="controls">
+<label for="n1">ripeti</label>
+<input id="n1" max="12" min="1" type="range" value="5"/>
+<span class="nbig" id="n1val">5</span>
+<label>volte</label>
+</div>
+<div class="gettoni" id="gettoni"></div>
+<div class="contatore" id="cont1">Pronto: premi «Esegui».</div>
+<div class="riga-leo" id="riga1"><b>ripeti</b> 5 <b>volte</b></div>
+<div class="btns">
+<button class="az" id="esegui1">Esegui ▸</button>
+</div>
+<p class="take">Una riga sola — <span class="mono">ripeti N volte</span> — fa il lavoro di N righe uguali. Cambi N, cambia tutto.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">02</span>Il ciclo che conta</h2>
+<p>Spesso il ciclo ha bisogno di <b>sapere a che giro è</b>: il primo, il secondo… Con <span class="mono">per ogni n in 1..N</span> una variabile <span class="mono">n</span> prende, un giro alla volta, i valori 1, 2, 3… Qui la usiamo per fare una <b>somma</b>. Premi <b>Passo</b> e segui <span class="mono">n</span> e <span class="mono">somma</span>.</p>
+<div class="card">
+<div class="controls">
+<label for="n2">per ogni n in 1..</label>
+<input id="n2" max="10" min="3" type="range" value="5"/>
+<span class="nbig" id="n2val">5</span>
+</div>
+<div class="chips" id="chips"></div>
+<div class="stato">
+<span><span class="k">n =</span> <span class="v" id="vn">–</span></span>
+<span><span class="k">somma =</span> <span class="v" id="vsomma">0</span></span>
+</div>
+<div class="btns">
+<button class="az" id="passo2">Passo ▸</button>
+<button class="az" id="ric2">↻ Ricomincia</button>
+</div>
+<p class="take">La variabile del ciclo (<span class="mono">n</span>) cambia a ogni giro; quella che accumula (<span class="mono">somma</span>) si porta dietro il totale. Insieme contano.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">03</span>Finché è vero: <span class="mono">mentre</span></h2>
+<p>A volte non sai <em>quante</em> volte ripetere: dipende. «Finché il personaggio ha vite, continua.» Il ciclo <span class="mono">mentre</span> <b>controlla la condizione prima di ogni giro</b>: se è vera, esegue; se diventa falsa, si ferma. Premi <b>Passo</b> e guarda il controllo.</p>
+<div class="card">
+<div class="mentre-wrap">
+<div>
+<div class="vite" id="vite"></div>
+<div class="stato"><span><span class="k">vite =</span> <span class="v" id="vvite">3</span></span></div>
+</div>
+<div class="log" id="log"><div class="r">Premi «Passo» per iniziare.</div></div>
+</div>
+<div class="btns">
+<button class="az" id="passo3">Passo ▸</button>
+<button class="az" id="ric3">↻ Ricomincia</button>
+</div>
+<p class="take">Il <span class="mono">mentre</span> può girare tante volte o nessuna: decide la <b>condizione</b>, controllata ogni volta. Se non diventa mai falsa, il ciclo non finisce — ecco perché la condizione va pensata bene.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">04</span>E con Leo?</h2>
+<p>In Leo i due cicli si leggono quasi come in italiano: <span class="mono">ripeti … volte</span>, <span class="mono">per ogni … in …</span>, <span class="mono">mentre …</span>. Prova questo nel browser e cambia i numeri:</p>
+<pre class="code"><span class="cm"># ripeti un numero fisso di volte</span>
+<span class="kw">ripeti</span> <span class="nu">3</span> <span class="kw">volte</span>
+    <span class="kw">stampa</span>(<span class="st">"ciao!"</span>)
+<span class="kw">fine</span>
+
+<span class="cm"># contare con un ciclo</span>
+<span class="kw">variabile</span> somma = <span class="nu">0</span>
+<span class="kw">per ogni</span> n <span class="kw">in</span> <span class="nu">1</span>..<span class="nu">5</span> <span class="kw">fai</span>
+    somma = somma + n
+<span class="kw">fine</span>
+<span class="kw">stampa</span>(<span class="st">"somma = {somma}"</span>)
+
+<span class="cm"># ripeti finché è vero</span>
+<span class="kw">variabile</span> vite = <span class="nu">3</span>
+<span class="kw">mentre</span> vite &gt; <span class="nu">0</span> <span class="kw">fai</span>
+    <span class="kw">stampa</span>(<span class="st">"vite: {vite}"</span>)
+    vite = vite - <span class="nu">1</span>
+<span class="kw">fine</span></pre>
+<div class="prova">
+<a class="btn-prova" href="#" id="provalo" rel="noopener" target="_blank"><span class="tri">▶</span> Provalo in Leo Web</a>
+<span class="nota">si apre il playground con questo codice</span>
+</div>
+</section>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<a class="pn-prev" href="variabili.html">← Le variabili</a>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<a class="pn-next" href="funzioni.html">Le funzioni →</a>
+</nav><div class="foot">
+<span>Informatica interattiva — un libro di Rosario Zappalà</span>
+<a href="https://leoitalia.com">leoitalia.com</a>
+</div>
+</div>
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // ---------- 01: ripeti N volte ----------
+  var n1=document.getElementById('n1'), n1val=document.getElementById('n1val'),
+      gettoni=document.getElementById('gettoni'), cont1=document.getElementById('cont1'),
+      riga1=document.getElementById('riga1'), esegui1=document.getElementById('esegui1');
+  var timer=null;
+  function aggiornaRiga(){ riga1.innerHTML='<b>ripeti</b> '+n1.value+' <b>volte</b>'; }
+  n1.addEventListener('input',function(){ n1val.textContent=n1.value; aggiornaRiga(); fermaEsegui(); cont1.textContent='Pronto: premi «Esegui».'; gettoni.innerHTML=''; });
+  function fermaEsegui(){ if(timer){clearInterval(timer);timer=null;} esegui1.disabled=false; esegui1.textContent='Esegui ▸'; }
+  esegui1.addEventListener('click',function(){
+    fermaEsegui();
+    var N=+n1.value, i=0;
+    gettoni.innerHTML='';
+    var cells=[];
+    for(var k=0;k<N;k++){ var g=document.createElement('div'); g.className='gettone'; g.textContent=(k+1); gettoni.appendChild(g); cells.push(g); }
+    esegui1.disabled=true; esegui1.textContent='…';
+    function giro(){
+      cells[i].classList.add('on');
+      i++;
+      cont1.innerHTML='giro <b>'+i+'</b> di <b>'+N+'</b>';
+      if(i>=N){ fermaEsegui(); cont1.innerHTML='fatto: <b>'+N+'</b> giri'; }
+    }
+    if(reduce){ cells.forEach(function(c){c.classList.add('on');}); i=N; cont1.innerHTML='fatto: <b>'+N+'</b> giri'; fermaEsegui(); }
+    else timer=setInterval(giro,190);
+  });
+  aggiornaRiga();
+
+  // ---------- 02: per ogni n in 1..N (somma) ----------
+  var n2=document.getElementById('n2'), n2val=document.getElementById('n2val'),
+      chips=document.getElementById('chips'), vn=document.getElementById('vn'),
+      vsomma=document.getElementById('vsomma'),
+      passo2=document.getElementById('passo2'), ric2=document.getElementById('ric2');
+  var N2=5, i2=0, somma=0, chipEls=[];
+  function buildChips(){
+    N2=+n2.value; chips.innerHTML=''; chipEls=[];
+    for(var k=1;k<=N2;k++){ var c=document.createElement('div'); c.className='chip'; c.textContent=k; chips.appendChild(c); chipEls.push(c); }
+  }
+  function ric2f(){ i2=0; somma=0; vn.textContent='–'; vsomma.textContent='0'; buildChips(); passo2.disabled=false; passo2.textContent='Passo ▸'; }
+  n2.addEventListener('input',function(){ n2val.textContent=n2.value; ric2f(); });
+  passo2.addEventListener('click',function(){
+    if(i2>=N2) return;
+    if(i2>0) chipEls[i2-1].classList.remove('now'), chipEls[i2-1].classList.add('done');
+    var n=i2+1;
+    chipEls[i2].classList.add('now');
+    somma+=n; i2++;
+    vn.textContent=n; vsomma.textContent=somma;
+    if(i2>=N2){ passo2.disabled=true; passo2.textContent='Finito ✓'; }
+  });
+  ric2.addEventListener('click',ric2f);
+  ric2f();
+
+  // ---------- 03: mentre vite > 0 ----------
+  var viteBox=document.getElementById('vite'), vvite=document.getElementById('vvite'),
+      log=document.getElementById('log'),
+      passo3=document.getElementById('passo3'), ric3=document.getElementById('ric3');
+  var CUORE='<svg class="cuore" viewBox="0 0 24 24" fill="#E6111A"><path d="M12 21s-7.5-4.6-10-9.3C.3 8 2 4.5 5.3 4.5 7.3 4.5 8.9 5.7 12 8.9c3.1-3.2 4.7-4.4 6.7-4.4 3.3 0 5 3.5 3.3 7.2C19.5 16.4 12 21 12 21z"/></svg>';
+  var START=3, vite=START, fase='check', fatto=false;
+  function renderVite(){
+    viteBox.innerHTML='';
+    for(var k=0;k<START;k++){ var s=document.createElement('span'); s.innerHTML=CUORE; s.firstChild.classList.toggle('spento',k>=vite); viteBox.appendChild(s.firstChild); }
+    vvite.textContent=vite;
+  }
+  function addLog(html,cls){ var r=document.createElement('div'); r.className='r'+(cls?' '+cls:''); r.innerHTML=html; log.appendChild(r); log.scrollTop=log.scrollHeight; }
+  function ric3f(){ vite=START; fase='check'; fatto=false; log.innerHTML=''; renderVite(); passo3.disabled=false; passo3.textContent='Passo ▸'; addLog('<span style="color:#8A7E7B">vite = 3 — pronto</span>'); }
+  passo3.addEventListener('click',function(){
+    if(fatto) return;
+    if(fase==='check'){
+      var ok = vite>0;
+      addLog('controllo <b style="color:#fff">vite &gt; 0</b> → '+(ok?'<span class="vero">vero</span> (vite='+vite+'), eseguo':'<span class="falso">falso</span> (vite='+vite+')'), ok?'':'exit');
+      if(ok){ fase='body'; }
+      else { fatto=true; passo3.disabled=true; passo3.textContent='Uscito ✓'; addLog('il ciclo <b>finisce</b>', 'exit'); }
+    } else {
+      vite=vite-1; renderVite();
+      addLog('&nbsp;&nbsp;vite = vite - 1 → <b style="color:#fff">'+vite+'</b>');
+      fase='check';
+    }
+  });
+  ric3.addEventListener('click',ric3f);
+  ric3f();
+
+  // ---------- 04: Provalo ----------
+  var CODICE =
+    'ripeti 3 volte\n' +
+    '    stampa("ciao!")\n' +
+    'fine\n' +
+    '\n' +
+    'variabile somma = 0\n' +
+    'per ogni n in 1..5 fai\n' +
+    '    somma = somma + n\n' +
+    'fine\n' +
+    'stampa("somma = {somma}")\n' +
+    '\n' +
+    'variabile vite = 3\n' +
+    'mentre vite > 0 fai\n' +
+    '    stampa("vite: {vite}")\n' +
+    '    vite = vite - 1\n' +
+    'fine\n';
+  function b64url(s){ return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+  document.getElementById('provalo').setAttribute('href','../prova.html#c='+b64url(CODICE));
+})();
+</script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "<code>ripeti 3 volte</code> esegue il blocco…", "o": ["3 volte", "finché è vero", "una volta sola"], "c": 0, "s": "Un numero fisso di ripetizioni."}, {"d": "<code>mentre vite &gt; 0</code> controlla la condizione…", "o": ["prima di ogni giro", "solo all'inizio", "mai"], "c": 0, "s": "Se è vera esegue; appena diventa falsa, si ferma."}, {"d": "<code>per ogni n in 1..5</code> fa prendere a n i valori…", "o": ["1, 2, 3, 4, 5", "solo 1 e 5", "0, 1, 2, 3, 4"], "c": 0, "s": "Uno alla volta, da 1 a 5."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

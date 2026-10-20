@@ -118,10 +118,10 @@
       <div class="promo compari">
       <div class="finestra-codice ingrandisci">
         <div class="barra"><i></i><i></i><i></i><span>vendite.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">tabella</span><span class="c-punteggiatura">.</span><span class="c-libreria">leggi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;vendite.csv&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">ordina_per</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">decrescente</span><span class="c-punteggiatura">:</span> <span class="c-costanti">sì</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Totale:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">grafico_barre</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;mese&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;grafico.png&quot;</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-libreria">tabella</span><span class="c-punteggiatura">(</span><span class="c-libreria">leggi_tabella</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;vendite.csv&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">t</span> <span class="c-operatori">=</span> <span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">ordina</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">decrescente</span> <span class="c-operatori">=</span> <span class="c-costanti">sì</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Totale:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-libreria">somma</span><span class="c-punteggiatura">(</span><span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">colonna</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">t</span><span class="c-punteggiatura">.</span><span class="c-libreria">grafico</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;barre&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">etichette</span> <span class="c-operatori">=</span> <span class="c-testi">&quot;mese&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">valori</span> <span class="c-operatori">=</span> <span class="c-testi">&quot;incasso&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;grafico.png&quot;</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
       <figure class="promo-risultato">
         <img src="img/edizioni/vetrina_dati_chart.png" alt="Grafico a barre dell'incasso per mese, creato con Leo" width="1216" height="736" loading="lazy" decoding="async">
@@ -162,6 +162,50 @@
         <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
         <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
       </p>
+    </div>
+  </section>
+
+  <section class="sezione" aria-labelledby="guida-dati" style="--ed:#22C55E">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Come si usa</p>
+        <h2 id="guida-dati" class="titolo-sezione parole">Guida rapida, <em>dai dati alle risposte.</em></h2>
+        <p class="introduzione compari r2">Con Leo Dati metti i numeri in una tabella, li ordini e li riassumi con parole italiane. Ecco un esempio completo, davvero eseguibile, senza file esterni.</p>
+      </div>
+      <div class="finestra-codice compari ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>voti.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-libreria">tabella</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Anna"</span><span class="c-punteggiatura">,</span>  <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Italiano"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">8</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Luca"</span><span class="c-punteggiatura">,</span>  <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Italiano"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">6</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Marta"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Italiano"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">9</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Gino"</span><span class="c-punteggiatura">,</span>  <span class="c-testi">"materia"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Italiano"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">7</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
+<span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">classifica</span> <span class="c-operatori">=</span> <span class="c-variabili">voti</span><span class="c-punteggiatura">.</span><span class="c-libreria">ordina</span><span class="c-punteggiatura">(</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">,</span> <span class="c-variabili">decrescente</span> <span class="c-operatori">=</span> <span class="c-costanti">sì</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">classifica</span><span class="c-punteggiatura">.</span><span class="c-libreria">mostra</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Media della classe: </span><span class="c-interpolazione">{</span><span class="c-libreria">media</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">.</span><span class="c-libreria">colonna</span><span class="c-punteggiatura">(</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Voto più alto: </span><span class="c-interpolazione">{</span><span class="c-libreria">massimo</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">.</span><span class="c-libreria">colonna</span><span class="c-punteggiatura">(</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <p class="nota-offline compari">Esegui e Leo stampa la tabella ordinata dal voto più alto, poi la media della classe (<code>7.5</code>) e il voto migliore (<code>9</code>). La stessa tabella la puoi salvare in CSV, JSON o Excel, o farne un grafico.</p>
+      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Primi passi <em>su Windows</em></h3>
+      <dl class="requisiti">
+        <div class="scheda compari"><dt>1 · Apri Leo Studio</dt><dd>Scarica il <code>.exe</code> per Windows, installalo e apri <strong>Leo Studio</strong>: l'editor di Leo, già pronto.</dd></div>
+        <div class="scheda compari r1"><dt>2 · Scrivi in italiano</dt><dd>Crea un file <code>voti.leo</code> e scrivi in italiano, come nell'esempio qui sopra.</dd></div>
+        <div class="scheda compari r2"><dt>3 · Premi Esegui</dt><dd>Premi <strong>Esegui</strong> (o <kbd>F5</kbd>): la tabella e i conti compaiono subito. Cambia i dati, riesegui, ed è tutto aggiornato.</dd></div>
+      </dl>
+      <p class="nota-offline compari"><strong>Sul telefono.</strong> Con l'<strong>app Android</strong> (il file <code>.apk</code>) scrivi ed esegui le stesse analisi dal telefono. Su <strong>iPhone</strong> apri la <a href="iphone.html">web-app</a> dal browser e scegli «Aggiungi alla schermata Home»: Leo diventa un'icona come un'app, senza installare nulla.</p>
+      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Cosa ti porti a casa</h3>
+      <ul class="elenco-spunte compari">
+          <li>Database senza SQL a mano: salvi, cerchi e aggiorni con parole italiane.</li>
+          <li>Tabelle da ordinare, filtrare e raggruppare, pronte da mostrare o esportare.</li>
+          <li>Calcolo numerico: somme, medie, totali e statistiche su grandi quantità di dati.</li>
+          <li>Grafici a barre, linee e torte dai tuoi dati, in una riga.</li>
+          <li>Leggi e scrivi i formati che già usi: CSV, JSON ed Excel.</li>
+      </ul>
+      <div class="azioni compari" style="margin-top:18px">
+        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
     </div>
   </section>
 

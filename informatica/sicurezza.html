@@ -1,13 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sicurezza</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 /* Libro interattivo "Informatica" — sezione 7: Sicurezza.
    Stesso mondo visivo scuro delle altre sezioni; colori espliciti. */
 :root{
   --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
-  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
   --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
   --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
@@ -81,87 +86,140 @@ pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color
 .vaultstate.no{color:var(--accent)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+.prova{margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+a.btn-prova{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;
+  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:10px;
+  padding:10px 16px;text-decoration:none;transition:.14s}
+a.btn-prova:hover{background:#c20e16;border-color:#c20e16}
+a.btn-prova:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.prova .nota{font-family:var(--mono);font-size:12px;color:var(--faint)}
+pre.code .nu{color:#F5B971}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
 </style>
-
 <div class="wrap">
-  <span class="eyebrow">Informatica interattiva · Sezione 7</span>
-  <h1>Sicurezza</h1>
-  <p class="lead">Due domande semplici, due idee potenti: <b>come nascondo un messaggio</b> perché solo chi voglio io lo legga, e <b>come mi accorgo</b> se qualcuno l'ha cambiato di nascosto. Qui le tocchi con mano.</p>
-  <p>Proteggere i dati non è magia né paranoia: è buon senso reso preciso. Da una parte la <b>riservatezza</b> — trasformare un testo in modo che resti leggibile solo a chi ha la chiave. Dall'altra l'<b>integrità</b> — avere un modo rapido per controllare che un file sia davvero quello di prima, lettera per lettera. Vediamo le due idee con esempi volutamente piccoli, pensati per capire, non per difendere davvero qualcosa.</p>
-
-  <section>
-    <h2><span class="n">01</span>Nascondere un messaggio</h2>
-    <p>L'idea della <b>cifratura</b> è antica: trasformo il testo seguendo una regola segreta — la <b>chiave</b> — così che un occhio di passaggio non capisca nulla. Chi conosce la chiave fa il percorso all'indietro e riottiene l'originale. Il <b>cifrario di Cesare</b> fa la cosa più semplice che ci sia: sposta ogni lettera di un certo numero di posti nell'alfabeto. Scrivi qualcosa, scegli lo spostamento e guarda.</p>
-    <div class="card">
-      <label class="flabel" for="cTxt">il tuo messaggio</label>
-      <input class="tfield" id="cTxt" value="Ci vediamo alle otto" maxlength="40" aria-label="messaggio da cifrare">
-      <label class="flabel" for="cKey">chiave — di quanti posti sposto ogni lettera: <b id="cKeyVal" style="color:var(--fg)">3</b></label>
-      <input type="range" id="cKey" min="1" max="25" value="3" aria-label="chiave: spostamento da 1 a 25">
-      <div class="rowlab"><span>1</span><span>sposta ogni lettera</span><span>25</span></div>
-      <div class="wheel" aria-hidden="true">A → <b id="cDemo">D</b> &nbsp;·&nbsp; B → <b id="cDemo2">E</b> &nbsp;·&nbsp; C → <b id="cDemo3">F</b></div>
-      <div class="cipherout" id="cOut" aria-live="polite"></div>
-      <div class="btnrow">
-        <button class="btn primary" id="cDecBtn" type="button">Decifra con la stessa chiave</button>
-        <span class="state" id="cState"></span>
-      </div>
-      <p class="take">Cifrare vuol dire trasformare un messaggio così che solo chi ha la <b>chiave</b> lo riporti leggibile. Con la <b>stessa chiave</b> il percorso all'indietro ti ridà, lettera per lettera, l'originale.</p>
-      <p class="kicker" style="font-size:14px;margin:12px 0 0">Onestà prima di tutto: il cifrario di Cesare è solo un <b>esempio didattico</b> — ci sono 25 chiavi, si rompe in un attimo. La cifratura vera, quella che protegge i tuoi messaggi e i siti su internet, è costruita su una matematica enormemente più robusta: stessa idea, forza incomparabile.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">02</span>L'impronta</h2>
-    <p>E se invece non volessi nascondere un testo, ma solo <b>controllare che non sia stato cambiato</b>? Si usa un'<b>impronta</b> (in inglese <i>hash</i>): una funzione che da un testo qualsiasi calcola una breve stringa, sempre la stessa per lo stesso testo. Il bello è la fragilità voluta: cambia <b>una sola lettera</b> e l'impronta cambia del tutto. Modifica il testo di destra e confronta.</p>
-    <div class="card">
-      <div class="hashgrid">
-        <div class="hashcol">
-          <h3>originale</h3>
-          <input class="tfield" id="hA" value="contratto firmato" maxlength="40" aria-label="testo originale">
-          <div class="hashval" id="hAout" aria-live="polite"></div>
-        </div>
-        <div class="hashcol">
-          <h3>modificato</h3>
-          <input class="tfield" id="hB" value="contratto firmato" maxlength="40" aria-label="testo modificato">
-          <div class="hashval" id="hBout" aria-live="polite"></div>
-        </div>
-      </div>
-      <p class="hashnote" id="hNote"></p>
-      <p class="take">L'impronta è come un <b>sigillo</b>: non rivela il contenuto (dall'impronta non torni al testo), ma se qualcosa cambia te ne accorgi subito. Si confrontano le impronte, non i testi interi.</p>
-      <p class="kicker" style="font-size:14px;margin:12px 0 0">Anche questa è <b>illustrativa</b>: qui l'impronta è un semplice numero a 32 bit calcolato a mano. Le funzioni hash vere — quelle con cui i siti custodiscono le password — sono molto più lunghe, più robuste e pensate apposta per resistere agli abusi.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">03</span>La cassaforte e la chiave</h2>
-    <p>Mettiamo insieme le due idee in una piccola scena. Qui sotto c'è un messaggio <b>chiuso a chiave</b>: lo vedi cifrato, illeggibile. Nel campo scrivi la chiave; se è quella giusta il lucchetto si apre e il messaggio si rivela. Se sbagli, resta chiuso — nessun indizio, come dev'essere.</p>
-    <div class="card vault">
-      <div class="lock" id="vLock" aria-hidden="true">🔒</div>
-      <div class="vaultmsg" id="vMsg" aria-live="polite"></div>
-      <label class="flabel" for="vKey" style="text-align:left">la chiave (suggerimento: è il nome del libro… <b>leo</b>)</label>
-      <input class="tfield" id="vKey" placeholder="scrivi la chiave" aria-label="chiave per aprire il messaggio" autocomplete="off">
-      <div class="vaultstate" id="vState"></div>
-      <p class="take" style="text-align:left">La <b>riservatezza</b> (solo chi ha la chiave legge) e l'<b>integrità</b> (l'impronta rivela le modifiche) sono le due idee alla base della sicurezza. Tutto il resto è renderle abbastanza forti da fidarsene.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">04</span>E con Leo?</h2>
-    <p>Leo ha strumenti di sicurezza <b>difensiva</b> pronti all'uso: calcolare l'impronta di un testo o di un file per verificarne l'integrità, lavorare con i dati binari, codificare e decodificare. Lo stesso gesto che hai appena provato, scritto in codice:</p>
-    <pre class="code"><span class="cm"># l'impronta di un testo: la calcoli, poi la confronti</span>
-<span class="kw">impronta</span> = dati_binari(<span class="st">"contratto firmato"</span>).impronta(<span class="st">"sha256"</span>)
-<span class="kw">stampa</span>(impronta)
+<span class="eyebrow">Informatica interattiva · Sezione 7</span>
+<h1>Sicurezza</h1>
+<p class="lead">Due domande semplici, due idee potenti: <b>come nascondo un messaggio</b> perché solo chi voglio io lo legga, e <b>come mi accorgo</b> se qualcuno l'ha cambiato di nascosto. Qui le tocchi con mano.</p>
+<p>Proteggere i dati non è magia né paranoia: è buon senso reso preciso. Da una parte la <b>riservatezza</b> — trasformare un testo in modo che resti leggibile solo a chi ha la chiave. Dall'altra l'<b>integrità</b> — avere un modo rapido per controllare che un file sia davvero quello di prima, lettera per lettera. Vediamo le due idee con esempi volutamente piccoli, pensati per capire, non per difendere davvero qualcosa.</p>
+<section>
+<h2><span class="n">01</span>Nascondere un messaggio</h2>
+<p>L'idea della <b>cifratura</b> è antica: trasformo il testo seguendo una regola segreta — la <b>chiave</b> — così che un occhio di passaggio non capisca nulla. Chi conosce la chiave fa il percorso all'indietro e riottiene l'originale. Il <b>cifrario di Cesare</b> fa la cosa più semplice che ci sia: sposta ogni lettera di un certo numero di posti nell'alfabeto. Scrivi qualcosa, scegli lo spostamento e guarda.</p>
+<div class="card">
+<label class="flabel" for="cTxt">il tuo messaggio</label>
+<input aria-label="messaggio da cifrare" class="tfield" id="cTxt" maxlength="40" value="Ci vediamo alle otto"/>
+<label class="flabel" for="cKey">chiave — di quanti posti sposto ogni lettera: <b id="cKeyVal" style="color:var(--fg)">3</b></label>
+<input aria-label="chiave: spostamento da 1 a 25" id="cKey" max="25" min="1" type="range" value="3"/>
+<div class="rowlab"><span>1</span><span>sposta ogni lettera</span><span>25</span></div>
+<div aria-hidden="true" class="wheel">A → <b id="cDemo">D</b>  ·  B → <b id="cDemo2">E</b>  ·  C → <b id="cDemo3">F</b></div>
+<div aria-live="polite" class="cipherout" id="cOut"></div>
+<div class="btnrow">
+<button class="btn primary" id="cDecBtn" type="button">Decifra con la stessa chiave</button>
+<span class="state" id="cState"></span>
+</div>
+<p class="take">Cifrare vuol dire trasformare un messaggio così che solo chi ha la <b>chiave</b> lo riporti leggibile. Con la <b>stessa chiave</b> il percorso all'indietro ti ridà, lettera per lettera, l'originale.</p>
+<p class="kicker" style="font-size:14px;margin:12px 0 0">Onestà prima di tutto: il cifrario di Cesare è solo un <b>esempio didattico</b> — ci sono 25 chiavi, si rompe in un attimo. La cifratura vera, quella che protegge i tuoi messaggi e i siti su internet, è costruita su una matematica enormemente più robusta: stessa idea, forza incomparabile.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">02</span>L'impronta</h2>
+<p>E se invece non volessi nascondere un testo, ma solo <b>controllare che non sia stato cambiato</b>? Si usa un'<b>impronta</b> (in inglese <i>hash</i>): una funzione che da un testo qualsiasi calcola una breve stringa, sempre la stessa per lo stesso testo. Il bello è la fragilità voluta: cambia <b>una sola lettera</b> e l'impronta cambia del tutto. Modifica il testo di destra e confronta.</p>
+<div class="card">
+<div class="hashgrid">
+<div class="hashcol">
+<h3>originale</h3>
+<input aria-label="testo originale" class="tfield" id="hA" maxlength="40" value="contratto firmato"/>
+<div aria-live="polite" class="hashval" id="hAout"></div>
+</div>
+<div class="hashcol">
+<h3>modificato</h3>
+<input aria-label="testo modificato" class="tfield" id="hB" maxlength="40" value="contratto firmato"/>
+<div aria-live="polite" class="hashval" id="hBout"></div>
+</div>
+</div>
+<p class="hashnote" id="hNote"></p>
+<p class="take">L'impronta è come un <b>sigillo</b>: non rivela il contenuto (dall'impronta non torni al testo), ma se qualcosa cambia te ne accorgi subito. Si confrontano le impronte, non i testi interi.</p>
+<p class="kicker" style="font-size:14px;margin:12px 0 0">Anche questa è <b>illustrativa</b>: qui l'impronta è un semplice numero a 32 bit calcolato a mano. Le funzioni hash vere — quelle con cui i siti custodiscono le password — sono molto più lunghe, più robuste e pensate apposta per resistere agli abusi.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">03</span>La cassaforte e la chiave</h2>
+<p>Mettiamo insieme le due idee in una piccola scena. Qui sotto c'è un messaggio <b>chiuso a chiave</b>: lo vedi cifrato, illeggibile. Nel campo scrivi la chiave; se è quella giusta il lucchetto si apre e il messaggio si rivela. Se sbagli, resta chiuso — nessun indizio, come dev'essere.</p>
+<div class="card vault">
+<div aria-hidden="true" class="lock" id="vLock">🔒</div>
+<div aria-live="polite" class="vaultmsg" id="vMsg"></div>
+<label class="flabel" for="vKey" style="text-align:left">la chiave (suggerimento: è il nome del libro… <b>leo</b>)</label>
+<input aria-label="chiave per aprire il messaggio" autocomplete="off" class="tfield" id="vKey" placeholder="scrivi la chiave"/>
+<div class="vaultstate" id="vState"></div>
+<p class="take" style="text-align:left">La <b>riservatezza</b> (solo chi ha la chiave legge) e l'<b>integrità</b> (l'impronta rivela le modifiche) sono le due idee alla base della sicurezza. Tutto il resto è renderle abbastanza forti da fidarsene.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">04</span>E con Leo?</h2>
+<p>Leo ha strumenti di sicurezza <b>difensiva</b> pronti all'uso: calcolare l'impronta di un testo o di un file per verificarne l'integrità, lavorare con i dati binari, codificare e decodificare. Lo stesso gesto che hai appena provato, scritto in codice:</p>
+<pre class="code"><span class="cm"># l'impronta di un testo: la calcoli, poi la confronti</span>
+<span class="kw">variabile</span> firma = impronta(<span class="st">"contratto firmato"</span>)
+<span class="kw">stampa</span>(firma)
 
 <span class="cm"># cambia una lettera e ricalcola: l'impronta sarà tutt'altra</span>
-<span class="kw">stampa</span>(dati_binari(<span class="st">"contratto firmata"</span>).impronta(<span class="st">"sha256"</span>))</pre>
-    <p style="margin-top:14px" class="kicker">Due testi quasi identici, due impronte completamente diverse: è lo stesso effetto del sigillo qui sopra, ma con una funzione robusta e lunga. Non ti dico qui il risultato esatto — <b>provalo e guarda</b>.</p>
-  </section>
-
-  <div class="foot">
-    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
-    <a href="https://leoitalia.com">leoitalia.com</a>
-  </div>
+<span class="kw">stampa</span>(impronta(<span class="st">"contratto firmata"</span>))</pre><div class="prova"><a class="btn-prova" href="../prova.html#c=IyBsJ2ltcHJvbnRhIGRpIHVuIHRlc3RvOiBsYSBjYWxjb2xpLCBwb2kgbGEgY29uZnJvbnRpCnZhcmlhYmlsZSBmaXJtYSA9IGltcHJvbnRhKCJjb250cmF0dG8gZmlybWF0byIpCnN0YW1wYShmaXJtYSkKCiMgY2FtYmlhIHVuYSBsZXR0ZXJhIGUgcmljYWxjb2xhOiBsJ2ltcHJvbnRhIHNhcsOgIHR1dHQnYWx0cmEKc3RhbXBhKGltcHJvbnRhKCJjb250cmF0dG8gZmlybWF0YSIpKQo" rel="noopener" target="_blank"><span class="tri">▶</span> Provalo in Leo Web</a><span class="nota">si apre il playground con questo codice</span></div>
+<p class="kicker" style="margin-top:14px">Due testi quasi identici, due impronte completamente diverse: è lo stesso effetto del sigillo qui sopra, ma con una funzione robusta e lunga. Non ti dico qui il risultato esatto — <b>provalo e guarda</b>.</p>
+</section>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<a class="pn-prev" href="reti.html">← Reti e Internet</a>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<a class="pn-next" href="scrivere-leo.html">Scrivere in Leo →</a>
+</nav><div class="foot">
+<span>Informatica interattiva — un libro di Rosario Zappalà</span>
+<a href="https://leoitalia.com">leoitalia.com</a>
 </div>
-
+</div>
 <script>
 (function(){
   "use strict";
@@ -318,3 +376,38 @@ pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color
   renderVault();
 })();
 </script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "Il <b>cifrario di Cesare</b>…", "o": ["sposta ogni lettera di un certo numero di posti", "cancella le vocali", "inverte le parole"], "c": 0, "s": "Sposta le lettere nell'alfabeto; con la chiave torni indietro."}, {"d": "Un'<b>impronta</b> (hash) serve a…", "o": ["accorgersi se qualcosa è cambiato", "nascondere il testo per sempre", "comprimere i file"], "c": 0, "s": "Cambi una lettera e l'impronta cambia del tutto: è un sigillo."}, {"d": "Per <b>decifrare</b> Cesare serve…", "o": ["la stessa chiave usata per cifrare", "nessuna chiave", "una chiave qualsiasi"], "c": 0, "s": "Stessa chiave, percorso all'indietro."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

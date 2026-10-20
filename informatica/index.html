@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pensare in codice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -5,7 +10,7 @@
 <style>
 :root{
   --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
-  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C; --accent:#E6111A;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B; --accent:#E6111A;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
   --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --disp:'Fraunces',Georgia,'Times New Roman',serif; color-scheme:dark;
@@ -39,6 +44,13 @@ a.card:hover .go{color:var(--accent)}
   border:1px solid var(--line);border-radius:999px;padding:2px 8px;text-transform:uppercase}
 .foot{color:var(--faint);font-size:13px;margin-top:48px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:18px;text-align:center}
 .foot a{color:var(--muted);text-decoration:none}
+.sezlabel{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+  margin:44px 0 -10px;display:flex;align-items:center;gap:14px}
+.sezlabel::after{content:"";flex:1;height:1px;background:var(--line)}
+
+a.card{position:relative}
+.card.vista::after{content:"";position:absolute;top:12px;right:12px;width:9px;height:9px;border-radius:50%;background:#49C27A;box-shadow:0 0 9px -1px #49C27A}
+.card.vista .go::before{content:"\2713 ";color:#49C27A}
 </style>
 <div class="wrap">
   <div class="hero">
@@ -61,5 +73,15 @@ a.card:hover .go{color:var(--accent)}
     <a class="card" href="scrivere-leo.html"><span class="num">08</span><span class="ct">Scrivere in Leo</span><span class="cd">Scrivi programmi veri in italiano e premi Esegui.</span><span class="go">Apri →</span></a>
   </div>
 
+  <div class="sezlabel">Programmare con Leo</div>
+  <div class="grid">
+    <a class="card" href="variabili.html"><span class="num">09</span><span class="ct">Le variabili</span><span class="cd">Scatole di memoria con un nome: ricordare, contare, cambiare valore.</span><span class="go">Apri →</span></a>
+    <a class="card" href="cicli.html"><span class="num">10</span><span class="ct">I cicli</span><span class="cd">Ripetere senza riscrivere: ripeti, per ogni, mentre.</span><span class="go">Apri →</span></a>
+    <a class="card" href="funzioni.html"><span class="num">11</span><span class="ct">Le funzioni</span><span class="cd">Macchine con un nome: dentro un valore, fuori un risultato.</span><span class="go">Apri →</span></a>
+    <a class="card" href="oggetti.html"><span class="num">12</span><span class="ct">Oggetti e classi</span><span class="cd">Uno stampo, tanti oggetti, ognuno con il suo stato.</span><span class="go">Apri →</span></a>
+  </div>
+
   <div class="foot">Informatica interattiva — un libro di <b style="color:var(--muted)">Rosario Zappalà</b> · <a href="https://leoitalia.com">leoitalia.com</a></div>
 </div>
+<script>try{var s=JSON.parse(localStorage.getItem("leo-info-viste")||"[]");document.querySelectorAll("a.card").forEach(function(a){var id=(a.getAttribute("href")||"").replace(".html","").replace(/[^a-z-]/g,"");if(s.indexOf(id)>=0)a.classList.add("vista");});}catch(e){}</script>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le funzioni</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Libro interattivo "Informatica" — sezione 11: Le funzioni. */
+:root{
+  --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
+  --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
+  --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A; --blu:#86C1FF;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:30px;padding-left:18px;padding-right:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0 .15em;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,5vw,32px);line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:.5em;color:var(--accent);vertical-align:middle;margin-right:.6em;letter-spacing:.1em}
+p{margin:0 0 1em;color:#E8DDDA}
+p.lead{font-size:19px;color:var(--muted)}
+.wrap>section{margin-top:52px}
+b,strong{color:#fff;font-weight:600}
+.kicker{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.take{border-left:3px solid var(--accent);padding:2px 0 2px 16px;color:var(--muted);font-size:15px;margin:14px 0 0}
+.mono{font-family:var(--mono)}
+.controls{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap}
+.controls label{font-family:var(--mono);font-size:13.5px;color:var(--muted)}
+input[type=range]{accent-color:var(--accent);width:150px}
+.nbig{font-family:var(--mono);font-size:20px;font-weight:600;color:#fff;min-width:2ch;text-align:center}
+button.az{font:inherit;font-family:var(--mono);font-size:13.5px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;transition:.14s}
+button.az:hover{border-color:var(--accent);color:#fff}
+button.az:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+
+/* --- macchina funzione --- */
+.macchina{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
+.porta{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:70px}
+.porta .et{font-family:var(--mono);font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em}
+.porta .pill{font-family:var(--mono);font-size:22px;font-weight:600;color:#fff;background:var(--panel2);
+  border:1px solid var(--line);border-radius:12px;padding:8px 16px;min-width:56px;text-align:center;transition:.18s}
+.porta .pill.out{color:var(--accent);border-color:var(--accent)}
+.porta .pill.lampo{box-shadow:0 0 22px -5px var(--accent)}
+.scatolaf{background:var(--panel2);border:1px dashed var(--accent);border-radius:16px;padding:14px 18px;text-align:center;min-width:160px}
+.scatolaf .fn{font-family:var(--mono);font-size:15px;color:#fff}
+.scatolaf .body{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:6px}
+.scatolaf .body b{color:var(--accent)}
+.freccia{font-family:var(--mono);font-size:22px;color:var(--faint)}
+
+/* --- registro chiamate --- */
+.reg{font-family:var(--mono);font-size:14px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;margin-top:4px}
+.reg .r{display:flex;justify-content:space-between;gap:12px;padding:9px 14px;border-bottom:1px solid var(--line);color:var(--muted)}
+.reg .r:last-child{border-bottom:0}
+.reg .r .in{color:#fff} .reg .r .ar{color:var(--faint)} .reg .r .ou{color:var(--accent);font-weight:600}
+.reg .vuoto{padding:14px;color:var(--faint);text-align:center}
+
+pre.code{font-family:var(--mono);font-size:13.5px;background:#100c0b;border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;overflow-x:auto;line-height:1.7;color:#E8DDDA;margin:0}
+pre.code .kw{color:var(--accent)} pre.code .st{color:var(--blu)} pre.code .cm{color:var(--faint)} pre.code .nu{color:#F5B971}
+.prova{margin-top:14px}
+a.btn-prova{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;
+  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:10px;
+  padding:10px 16px;text-decoration:none;transition:.14s}
+a.btn-prova:hover{background:#c20e16;border-color:#c20e16}
+a.btn-prova:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.prova .nota{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:4px}
+.foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot a{color:var(--muted);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
+</style>
+<div class="wrap">
+<span class="eyebrow">Informatica interattiva · Sezione 11</span>
+<h1>Le funzioni</h1>
+<p class="lead">Una funzione è una <b>macchina</b> a cui dai un nome: ci metti qualcosa dentro, lei lavora, e ti restituisce un risultato. La scrivi una volta e la usi mille.</p>
+<p>Quando un pezzo di programma serve più volte — o anche solo quando ha un senso compiuto — gli dài un nome e lo chiudi in una funzione. Da quel momento lo richiami con quel nome, gli passi gli <b>ingredienti</b> (i parametri) e ricevi il <b>risultato</b>. Non devi più sapere <em>come</em> lavora dentro: basta sapere cosa entra e cosa esce.</p>
+<section>
+<h2><span class="n">01</span>Dentro, lavora, fuori</h2>
+<p>Questa macchina si chiama <span class="mono">raddoppia</span>. Le dài un numero, lei restituisce il doppio. Scegli l'ingresso e premi <b>Chiama</b>: guarda il valore entrare, la regola applicarsi, il risultato uscire.</p>
+<div class="card">
+<div class="controls">
+<label for="n">n =</label>
+<input id="n" max="20" min="0" type="range" value="6"/>
+<span class="nbig" id="nval">6</span>
+</div>
+<div class="macchina">
+<div class="porta">
+<span class="et">entra</span>
+<span class="pill" id="pin">6</span>
+</div>
+<span class="freccia">→</span>
+<div class="scatolaf">
+<div class="fn">raddoppia(n)</div>
+<div class="body"><b>restituisci</b> n * 2</div>
+</div>
+<span class="freccia">→</span>
+<div class="porta">
+<span class="et">esce</span>
+<span class="pill out" id="pout">?</span>
+</div>
+</div>
+<div class="btns"><button class="az" id="chiama">Chiama raddoppia(6) ▸</button></div>
+<p class="take">Una funzione nasconde il «come»: a chi la usa bastano l'<b>ingresso</b> e il <b>risultato</b>. È così che un programma grande resta semplice.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">02</span>Stessa macchina, risultati diversi</h2>
+<p>La stessa funzione, chiamata con ingressi diversi, dà risultati diversi — ma segue <b>sempre la stessa regola</b>. Chiama <span class="mono">raddoppia</span> con qualche numero e guarda il registro: a parità d'ingresso, l'uscita è sempre identica.</p>
+<div class="card">
+<div class="controls">
+<label for="n2">chiama raddoppia(</label>
+<input id="n2" max="50" min="0" type="range" value="7"/>
+<span class="nbig" id="n2val">7</span>
+<label>)</label>
+<button class="az" id="chiama2">Chiama ▸</button>
+</div>
+<div class="reg" id="reg"><div class="vuoto">Nessuna chiamata ancora.</div></div>
+<p class="take">Prevedibile: <span class="mono">raddoppia(7)</span> fa <b>14</b> oggi, domani e sempre. Questa affidabilità è ciò che rende le funzioni dei mattoni solidi.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">03</span>Più ingredienti</h2>
+<p>Una funzione può prendere <b>più parametri</b>. <span class="mono">area(base, altezza)</span> ne vuole due e restituisce la loro moltiplicazione. Muovi i due cursori: il risultato si aggiorna.</p>
+<div class="card">
+<div class="controls">
+<label for="b">base</label>
+<input id="b" max="12" min="1" type="range" value="4"/>
+<span class="nbig" id="bval">4</span>
+<label for="h">altezza</label>
+<input id="h" max="12" min="1" type="range" value="3"/>
+<span class="nbig" id="hval">3</span>
+</div>
+<div class="macchina">
+<div class="porta"><span class="et">base, altezza</span><span class="pill" id="pin2">4, 3</span></div>
+<span class="freccia">→</span>
+<div class="scatolaf"><div class="fn">area(base, altezza)</div><div class="body"><b>restituisci</b> base * altezza</div></div>
+<span class="freccia">→</span>
+<div class="porta"><span class="et">area</span><span class="pill out" id="pout2">12</span></div>
+</div>
+<p class="take">I parametri sono le <b>caselle d'ingresso</b> della macchina: cambiandoli cambi il risultato, senza riscrivere la funzione.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">04</span>E con Leo?</h2>
+<p>In Leo definisci una funzione con <span class="mono">funzione</span> e le fai dare un risultato con <span class="mono">restituisci</span>. Poi la chiami per nome quante volte vuoi. Prova nel browser:</p>
+<pre class="code"><span class="kw">funzione</span> raddoppia(n)
+    <span class="kw">restituisci</span> n * <span class="nu">2</span>
+<span class="kw">fine</span>
+
+<span class="kw">funzione</span> area(base, altezza)
+    <span class="kw">restituisci</span> base * altezza
+<span class="kw">fine</span>
+
+<span class="kw">stampa</span>(raddoppia(<span class="nu">6</span>))        <span class="cm"># 12</span>
+<span class="kw">stampa</span>(raddoppia(<span class="nu">7</span>))        <span class="cm"># 14</span>
+<span class="kw">stampa</span>(area(<span class="nu">4</span>, <span class="nu">3</span>))        <span class="cm"># 12</span></pre>
+<div class="prova">
+<a class="btn-prova" href="#" id="provalo" rel="noopener" target="_blank"><span class="tri">▶</span> Provalo in Leo Web</a>
+<span class="nota">si apre il playground con questo codice</span>
+</div>
+</section>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<a class="pn-prev" href="cicli.html">← I cicli</a>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<a class="pn-next" href="oggetti.html">Oggetti e classi →</a>
+</nav><div class="foot">
+<span>Informatica interattiva — un libro di Rosario Zappalà</span>
+<a href="https://leoitalia.com">leoitalia.com</a>
+</div>
+</div>
+<script>
+(function(){
+  "use strict";
+  // ---------- 01: raddoppia ----------
+  var n=document.getElementById('n'), nval=document.getElementById('nval'),
+      pin=document.getElementById('pin'), pout=document.getElementById('pout'),
+      chiama=document.getElementById('chiama');
+  function setN(){ nval.textContent=n.value; pin.textContent=n.value; pout.textContent='?'; pout.classList.remove('lampo');
+    chiama.textContent='Chiama raddoppia('+n.value+') ▸'; }
+  n.addEventListener('input',setN);
+  chiama.addEventListener('click',function(){
+    pin.classList.remove('lampo'); void pin.offsetWidth; pin.classList.add('lampo');
+    setTimeout(function(){ pout.textContent=String(+n.value*2); pout.classList.remove('lampo'); void pout.offsetWidth; pout.classList.add('lampo'); },180);
+  });
+  setN();
+
+  // ---------- 02: registro chiamate ----------
+  var n2=document.getElementById('n2'), n2val=document.getElementById('n2val'),
+      chiama2=document.getElementById('chiama2'), reg=document.getElementById('reg');
+  var prima=true;
+  n2.addEventListener('input',function(){ n2val.textContent=n2.value; });
+  chiama2.addEventListener('click',function(){
+    if(prima){ reg.innerHTML=''; prima=false; }
+    var v=+n2.value;
+    var r=document.createElement('div'); r.className='r';
+    r.innerHTML='<span class="in">raddoppia('+v+')</span><span class="ar">restituisci '+v+' * 2</span><span class="ou">'+(v*2)+'</span>';
+    reg.insertBefore(r, reg.firstChild);
+  });
+
+  // ---------- 03: area(base, altezza) ----------
+  var b=document.getElementById('b'), h=document.getElementById('h'),
+      bval=document.getElementById('bval'), hval=document.getElementById('hval'),
+      pin2=document.getElementById('pin2'), pout2=document.getElementById('pout2');
+  function setArea(){ bval.textContent=b.value; hval.textContent=h.value;
+    pin2.textContent=b.value+', '+h.value; pout2.textContent=String(+b.value*+h.value);
+    pout2.classList.remove('lampo'); void pout2.offsetWidth; pout2.classList.add('lampo'); }
+  b.addEventListener('input',setArea); h.addEventListener('input',setArea);
+  setArea();
+
+  // ---------- 04: Provalo ----------
+  var CODICE =
+    'funzione raddoppia(n)\n' +
+    '    restituisci n * 2\n' +
+    'fine\n' +
+    '\n' +
+    'funzione area(base, altezza)\n' +
+    '    restituisci base * altezza\n' +
+    'fine\n' +
+    '\n' +
+    'stampa(raddoppia(6))\n' +
+    'stampa(raddoppia(7))\n' +
+    'stampa(area(4, 3))\n';
+  function b64url(s){ return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+  document.getElementById('provalo').setAttribute('href','../prova.html#c='+b64url(CODICE));
+})();
+</script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "Una <b>funzione</b> è come…", "o": ["una macchina: ingresso → risultato", "una scatola di memoria", "un ciclo"], "c": 0, "s": "Le dai qualcosa, lei restituisce un risultato."}, {"d": "<code>restituisci</code> serve a…", "o": ["dare indietro il risultato", "stampare a schermo", "creare una variabile"], "c": 0, "s": "La funzione consegna il suo risultato con restituisci."}, {"d": "<code>raddoppia(7)</code> con <code>restituisci n * 2</code> dà…", "o": ["14", "7", "9"], "c": 0, "s": "7 × 2 = 14, sempre lo stesso risultato per lo stesso ingresso."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

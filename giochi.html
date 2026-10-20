@@ -119,12 +119,16 @@
       <div class="promo compari">
       <div class="finestra-codice ingrandisci">
         <div class="barra"><i></i><i></i><i></i><span>gioco.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">eroe</span> <span class="c-operatori">=</span> <span class="c-libreria">personaggio</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;gatto&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">scena</span><span class="c-punteggiatura">.</span><span class="c-libreria">aggiungi</span><span class="c-punteggiatura">(</span><span class="c-variabili">eroe</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">quando</span> <span class="c-flusso">premi</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;destra&quot;</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">eroe</span><span class="c-punteggiatura">.</span><span class="c-libreria">muovi</span><span class="c-punteggiatura">(</span><span class="c-numeri">10</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span>
+<pre class="codice"><code><span class="c-commenti"># Un personaggio si muove sullo schermo</span>
+<span class="c-libreria">sfondo</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;blu notte&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;oro&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">ripeti</span> <span class="c-numeri">6</span> <span class="c-flusso">volte</span>
+    <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">sinistra</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">destra</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
 <span class="c-flusso">fine</span>
-<span class="c-variabili">scena</span><span class="c-punteggiatura">.</span><span class="c-libreria">avvia</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
+<span class="c-libreria">nascondi_tartaruga</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
       <figure class="promo-risultato">
         <img src="img/edizioni/vetrina_giochi.png" alt="Scena di un gioco creato con Leo Giochi" width="1216" height="736" loading="lazy" decoding="async">
@@ -165,6 +169,42 @@
         <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
         <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
       </p>
+    </div>
+  </section>
+
+  
+  <section class="sezione" aria-labelledby="guida-giochi" style="--ed:#A855F7">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Come si usa</p>
+        <h2 id="guida-giochi" class="titolo-sezione parole">Guida rapida, <em>in tre minuti.</em></h2>
+        <p class="introduzione compari r2">Dall’installazione al primo disegno sullo schermo. È lo stesso Leo su Windows, Android e iPhone: cambia solo come lo apri.</p>
+      </div>
+      <div class="finestra-codice ingrandisci compari">
+        <div class="barra"><i></i><i></i><i></i><span>stella.leo</span></div>
+<pre class="codice"><code><span class="c-commenti"># Un quadrato colorato con la tartaruga</span>
+<span class="c-libreria">sfondo</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;blu notte&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;oro&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">spessore</span><span class="c-punteggiatura">(</span><span class="c-numeri">4</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">ripeti</span> <span class="c-numeri">4</span> <span class="c-flusso">volte</span>
+        <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">120</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">destra</span><span class="c-punteggiatura">(</span><span class="c-numeri">90</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+<span class="c-libreria">nascondi_tartaruga</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <p class="nota-offline compari">Esegui e la tartaruga disegna un quadrato color oro su sfondo blu notte, poi salva tutto in un file <code>.svg</code> che apri con il browser. Cambia <code>avanti(120)</code> o il <code>colore</code> e rifai: vedi subito la differenza.</p>
+      <div class="intestazione-sezione" style="margin-top:34px">
+        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">Primi passi, <em>su ogni dispositivo.</em></h3>
+      </div>
+      <dl class="requisiti"><div class="scheda compari"><dt>Windows (.exe)</dt><dd>Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, scrivi il codice qui sopra e premi <strong>Esegui</strong> (o F5): la finestra con il disegno appare al volo.</dd></div><div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l’APK, apri l’app <strong>Leo</strong>, incolla il codice e tocca <strong>Esegui</strong>: disegni con la tartaruga anche dal telefono.</dd></div><div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app dal browser e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: diventa un’icona come un’app, pronta per scrivere ed eseguire.</dd></div></dl>
+      <p class="dettagli compari" style="margin-top:14px;max-width:64ch"><strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp; <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp; <strong>iPhone</strong> &mdash; web-app in anteprima; l&rsquo;app su App Store &egrave; in arrivo.</p>
+      <div class="intestazione-sezione" style="margin-top:34px">
+        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">In breve, <em>cosa porti a casa.</em></h3>
+      </div>
+      <ul class="elenco-spunte compari"><li><strong>Grafica con la tartaruga</strong>: <code>avanti</code>, <code>destra</code>, <code>colore</code>, <code>ripeti</code> per disegnare forme e scene.</li><li><strong>Animazioni e suoni</strong> per dare vita al gioco e reagire ai comandi.</li><li><strong>Geometria 2D</strong> e <strong>personaggi già pronti</strong> nel pacchetto: parti subito.</li><li>Il disegno si salva come <code>.svg</code>: lo apri, lo condividi o lo metti in una pagina.</li></ul>
+      <div class="azioni compari" style="margin-top:20px">
+        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
     </div>
   </section>
 

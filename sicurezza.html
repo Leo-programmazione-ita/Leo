@@ -118,8 +118,8 @@
       <div class="promo compari">
       <div class="finestra-codice ingrandisci">
         <div class="barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
-<pre class="codice"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">scansiona_porte</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">da</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-variabili">a</span><span class="c-punteggiatura">:</span> <span class="c-numeri">1024</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sicurezza</span><span class="c-punteggiatura">.</span><span class="c-libreria">audita_sito</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="codice"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">scansiona_porte</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">da</span> <span class="c-operatori">=</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-variabili">a</span> <span class="c-operatori">=</span> <span class="c-numeri">1024</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">audita_sito</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
       <figure class="promo-risultato">
         <img src="img/edizioni/vetrina_sicurezza.png" alt="Report di sicurezza prodotto da Leo Sicurezza" width="1216" height="736" loading="lazy" decoding="async">
@@ -160,6 +160,56 @@
         <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
         <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
       </p>
+    </div>
+  </section>
+
+  <section class="sezione" aria-labelledby="come-si-usa-sicurezza" style="--ed:#06B6D4">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Come si usa</p>
+        <h2 id="come-si-usa-sicurezza" class="titolo-sezione parole">Guida rapida, <em>in tre passi.</em></h2>
+        <p class="introduzione compari r2">Tutta la sicurezza di Leo &egrave; dentro Leo Studio: apri un file, scrivi in italiano e avvia. Niente da configurare &mdash; funziona sul PC e, in anteprima, anche sul telefono.</p>
+      </div>
+      <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>guida.leo</span></div>
+<pre class="codice"><code># Una password robusta, la sua impronta e un testo in base64
+variabile pw = password_casuale(16)
+scrivi("Password generata: " + pw)
+scrivi("Impronta SHA-256: " + impronta(pw))
+scrivi("In base64: " + codifica_base64("messaggio privato"))</code></pre>
+      </div>
+      <figure class="promo-risultato">
+        <figcaption class="promo-etichetta">Cosa produce</figcaption>
+<pre class="codice"><code>Password generata: vkzn4~fg5Pwn^.LF
+Impronta SHA-256: 56695823e9e53d51...156e06b2
+In base64: bWVzc2FnZ2lvIHByaXZhdG8=</code></pre>
+      </figure>
+    </div>
+      <p class="nota-offline compari">Una password robusta, la sua impronta <strong>SHA-256</strong> e un testo in <strong>base64</strong>: funzioni sicure, con parole italiane. Password e impronta cambiano a ogni avvio; il base64 &egrave; sempre lo stesso.</p>
+
+      <div class="intestazione-sezione" style="margin-top:28px">
+        <p class="sopratitolo compari">Primi passi</p>
+        <h2 class="titolo-sezione parole">Sul tuo <em>dispositivo.</em></h2>
+      </div>
+      <dl class="requisiti">
+        <div class="scheda compari"><dt>Windows (.exe)</dt><dd>Scarica il programma e installalo. Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, incolla l'esempio qui sopra e premi <strong>Esegui</strong>: il risultato compare subito.</dd></div>
+        <div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l'<code>.apk</code> (in anteprima, presto su Google Play), apri l'app Leo e scrivi lo stesso codice in italiano: gira direttamente dal telefono.</dd></div>
+        <div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app in anteprima e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: la usi come un'app, senza App Store. L'app nativa &egrave; in arrivo.</dd></div>
+      </dl>
+
+      <div class="intestazione-sezione" style="margin-top:28px">
+        <p class="sopratitolo compari">In breve</p>
+        <h2 class="titolo-sezione parole">Cosa ti porti <em>a casa.</em></h2>
+      </div>
+      <dl class="requisiti">
+        <div class="scheda compari"><dt>Dati al sicuro</dt><dd>Impronte, base64 ed esadecimale, firme HMAC e password robuste con <code>password_casuale</code>, <code>impronta</code> e <code>codifica_base64</code>.</dd></div>
+        <div class="scheda compari r1"><dt>Reti e forense</dt><dd>Analizzi porte, header dei siti e dati a livello di byte &mdash; tutto in italiano, pronto all'uso.</dd></div>
+        <div class="scheda compari r2"><dt>Stesso Leo, ovunque</dt><dd>Lo stesso codice gira su Windows, Android e iPhone: lo scrivi una volta sola.</dd></div>
+      </dl>
+      <div class="azioni compari" style="margin-top:22px">
+        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
     </div>
   </section>
 

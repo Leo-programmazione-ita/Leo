@@ -119,9 +119,9 @@
       <div class="promo compari">
       <div class="finestra-codice ingrandisci">
         <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
-<pre class="codice"><code><span class="c-commenti">rem Mette in ordine la cartella Download per tipo</span>
-<span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">organizza_cartella</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Download&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-variabili">sistema</span><span class="c-punteggiatura">.</span><span class="c-libreria">trova_duplicati</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Foto&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="codice"><code><span class="c-commenti"># Mette in ordine la cartella Download per tipo</span>
+<span class="c-libreria">organizza_cartella</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Download&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">trova_duplicati</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Foto&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
       </div>
       <figure class="promo-risultato">
         <img src="img/edizioni/vetrina_sistema.png" alt="Terminale di Leo Sistema: cartella messa in ordine" width="1216" height="736" loading="lazy" decoding="async">
@@ -162,6 +162,51 @@
         <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
         <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
       </p>
+    </div>
+  </section>
+
+  
+  <section class="sezione" aria-labelledby="guida-sistema" style="--ed:#7F93AD">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Come si usa</p>
+        <h2 id="guida-sistema" class="titolo-sezione parole">Guida rapida, <em>in tre minuti.</em></h2>
+        <p class="introduzione compari r2">Dall’installazione al primo lavoro fatto da solo: metti in ordine una cartella in italiano. È lo stesso Leo su Windows, Android e iPhone.</p>
+      </div>
+      <div class="finestra-codice ingrandisci compari">
+        <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
+<pre class="codice"><code><span class="c-commenti"># Fa ordine in una cartella: ogni file va nella sottocartella della sua estensione</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">lavoro</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-libreria">cartella_temporanea</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;DownloadFinti&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span>
+
+<span class="c-commenti"># qualche file di esempio</span>
+<span class="c-flusso">per</span> <span class="c-flusso">ogni</span> <span class="c-variabili">nome</span> <span class="c-flusso">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">&quot;foto.jpg&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;nota.txt&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;musica.mp3&quot;</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
+        <span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;ciao&quot;</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-commenti"># sposta ciascun file nella cartella del suo tipo</span>
+<span class="c-flusso">per</span> <span class="c-flusso">ogni</span> <span class="c-variabili">nome</span> <span class="c-flusso">in</span> <span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">tipo</span> <span class="c-operatori">=</span> <span class="c-libreria">estensione_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">nome</span><span class="c-punteggiatura">)</span>
+        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dove</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-variabili">tipo</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-variabili">dove</span><span class="c-punteggiatura">)</span>
+        <span class="c-libreria">sposta_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-variabili">dove</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">fine</span>
+
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;In ordine! Cartelle create:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-libreria">elenca_cartelle</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <p class="nota-offline compari">Esegui e Leo crea una cartella di prova, ci mette tre file e li smista ciascuno nella sottocartella del suo tipo; alla fine stampa <code>In ordine! Cartelle create: [&quot;jpg&quot;, &quot;mp3&quot;, &quot;txt&quot;]</code>. Cambia i nomi dei file e riprova: fa il lavoro ripetitivo al posto tuo.</p>
+      <div class="intestazione-sezione" style="margin-top:34px">
+        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">Primi passi, <em>su ogni dispositivo.</em></h3>
+      </div>
+      <dl class="requisiti"><div class="scheda compari"><dt>Windows (.exe)</dt><dd>Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, scrivi il codice qui sopra e premi <strong>Esegui</strong> (o F5): guardi il risultato nel terminale.</dd></div><div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l’APK, apri l’app <strong>Leo</strong>, incolla il codice e tocca <strong>Esegui</strong>: provi gli script anche dal telefono.</dd></div><div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app dal browser e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: diventa un’icona come un’app, pronta per scrivere ed eseguire.</dd></div></dl>
+      <p class="dettagli compari" style="margin-top:14px;max-width:64ch"><strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp; <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp; <strong>iPhone</strong> &mdash; web-app in anteprima; l&rsquo;app su App Store &egrave; in arrivo.</p>
+      <div class="intestazione-sezione" style="margin-top:34px">
+        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">In breve, <em>cosa porti a casa.</em></h3>
+      </div>
+      <ul class="elenco-spunte compari"><li><strong>File e cartelle</strong>: crea, sposta, elenca e cerca con <code>crea_cartella</code>, <code>sposta_file</code>, <code>elenca_file</code>.</li><li><strong>Processi e finestre</strong>: avvii e fermi programmi, organizzi il desktop.</li><li><strong>Informazioni del computer</strong> e <strong>programmi da riga di comando</strong> veri, con opzioni e argomenti.</li><li>Automatizzi il lavoro noioso: una volta scritto, lo riusi ogni giorno.</li></ul>
+      <div class="azioni compari" style="margin-top:20px">
+        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
     </div>
   </section>
 

@@ -179,6 +179,7 @@
         <div class="scheda compari"><dt>Server web</dt><dd><code>p.html()</code> dà la pagina come testo, da restituire da un server fatto con la libreria web di Leo. Scriverla e servirla sono la stessa cosa.</dd></div>
         <div class="scheda compari r1"><dt>Dati e tabelle</dt><dd>Tabelle e database riempiono le pagine con un ciclo; numeri e date si formattano come sempre.</dd></div>
         <div class="scheda compari r2"><dt>File e immagini</dt><dd><code>salva</code> scrive dove dici; le immagini le indichi per percorso locale o per indirizzo web. La pagina è responsiva: si legge bene anche sul telefono.</dd></div>
+        <div class="scheda compari r2"><dt>Un'app web intera</dt><dd>Un progetto con finestre si esporta come una <strong>cartella di file web veri</strong> (HTML, JavaScript, CSS) che gira nel browser: lo disegni in italiano in Leo Studio e lo pubblichi dove vuoi.</dd></div>
       </dl>
     </div>
   </section>
@@ -207,6 +208,50 @@
         <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
         <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
       </p>
+    </div>
+  </section>
+
+  <section class="sezione" aria-labelledby="guida-web" style="--ed:#3B82F6">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Come si usa</p>
+        <h2 id="guida-web" class="titolo-sezione parole">Guida rapida, <em>la tua prima pagina.</em></h2>
+        <p class="introduzione compari r2">Con Leo Web descrivi la pagina dall'alto in basso, come la leggi: ogni riga diventa HTML e CSS veri, senza un solo tag a mano. Ecco un esempio completo, davvero eseguibile.</p>
+      </div>
+      <div class="finestra-codice compari ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>orto.leo</span></div>
+<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">p</span> <span class="c-operatori">=</span> <span class="c-libreria">pagina</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il mio orto"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">titolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Frutta di stagione"</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sottotitolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Raccolta stamattina, scritta in italiano con Leo."</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sezione</span><span class="c-punteggiatura">(</span><span class="c-testi">"Mela"</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Croccante e dolce."</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sezione</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pera"</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Succosa e profumata."</span><span class="c-punteggiatura">)</span>
+<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">in_fondo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Fatto con Leo · leoitalia.com"</span><span class="c-punteggiatura">)</span>
+
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dove</span> <span class="c-operatori">=</span> <span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"orto.html"</span><span class="c-punteggiatura">)</span>
+<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pagina salvata in: </span><span class="c-interpolazione">{</span><span class="c-variabili">dove</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
+      </div>
+      <p class="nota-offline compari">Esegui e Leo scrive <code>orto.html</code> accanto al programma: aprilo con un doppio clic ed è già bello, con lo stile curato incluso. I testi che passi sono protetti in automatico, così un <code>&lt;</code> o una <code>&amp;</code> non rompono la pagina.</p>
+      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Primi passi <em>su Windows</em></h3>
+      <dl class="requisiti">
+        <div class="scheda compari"><dt>1 · Apri Leo Studio</dt><dd>Scarica il <code>.exe</code> per Windows, installalo e apri <strong>Leo Studio</strong>: l'editor di Leo con i colori e l'anteprima già pronti.</dd></div>
+        <div class="scheda compari r1"><dt>2 · Scrivi in italiano</dt><dd>Crea un file <code>orto.leo</code> e scrivi la pagina in italiano, come nell'esempio qui sopra.</dd></div>
+        <div class="scheda compari r2"><dt>3 · Premi Esegui</dt><dd>Premi <strong>Esegui</strong> (o <kbd>F5</kbd>): Leo salva l'HTML e lo puoi aprire nel browser. Modifica, riesegui, ed è aggiornato.</dd></div>
+      </dl>
+      <p class="nota-offline compari"><strong>Sul telefono.</strong> Con l'<strong>app Android</strong> (il file <code>.apk</code>) scrivi ed esegui lo stesso codice dal telefono, e la pagina salvata la apri al volo. Su <strong>iPhone</strong> apri la <a href="iphone.html">web-app</a> dal browser e scegli «Aggiungi alla schermata Home»: Leo diventa un'icona come un'app, senza installare nulla.</p>
+      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Cosa ti porti a casa</h3>
+      <ul class="elenco-spunte compari">
+          <li>Pagine web in italiano: titoli, paragrafi, sezioni, elenchi, tabelle, immagini e collegamenti.</li>
+          <li>Diventa HTML e CSS veri, responsivi: si leggono bene anche sul telefono.</li>
+          <li>La pagina si costruisce da sola da una lista o da un database, con un <code>per ogni</code>.</li>
+          <li><code>p.html()</code> ti ridà la pagina come testo, da servire con un server fatto in Leo.</li>
+          <li>Stesso identico codice su Windows, Android e iPhone.</li>
+      </ul>
+      <div class="azioni compari" style="margin-top:18px">
+        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+      </div>
     </div>
   </section>
 

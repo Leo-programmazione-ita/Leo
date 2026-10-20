@@ -244,12 +244,55 @@
     }
   }
 
+  // Decodifica base64url (URL-safe, padding facoltativo) in testo UTF-8.
+  function daBase64Url(s) {
+    s = String(s).replace(/-/g, "+").replace(/_/g, "/");
+    while (s.length % 4) s += "=";
+    var bin = atob(s);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    try { return new TextDecoder("utf-8").decode(bytes); }
+    catch (e) { return bin; }
+  }
+
+  // Legge il codice passato nell'URL dal QR del libro: #c=<base64url> (o ?c=…).
+  function codiceDaUrl() {
+    try {
+      var h = (location.hash || "").replace(/^#/, "");
+      var raw = null;
+      if (h.indexOf("c=") === 0) raw = h.slice(2);
+      else {
+        var q = new URLSearchParams(location.search);
+        if (q.get("c")) raw = q.get("c");
+      }
+      return raw ? daBase64Url(raw) : null;
+    } catch (e) { return null; }
+  }
+
+  // Avviso discreto: questo codice arriva dal libro.
+  function mostraBannerLibro() {
+    if (document.querySelector(".prova-dal-libro")) return;
+    var p = document.createElement("p");
+    p.className = "prova-dal-libro";
+    p.innerHTML = "📖 Questo esempio arriva dal libro " +
+      "<strong>«Pensare in codice»</strong>. Modificalo e premi " +
+      "«Esegui» per riprovarlo.";
+    var intro = document.querySelector(".prova-intro");
+    if (intro && intro.parentNode) intro.parentNode.insertBefore(p, intro.nextSibling);
+  }
+
   function avvia() {
     var el = elementi();
     if (!el.editor || !el.esegui) return;
 
-    // esempio iniziale
-    if (!el.editor.value.trim()) el.editor.value = ESEMPI.saluto;
+    // codice dal QR del libro, se presente; altrimenti l'esempio iniziale
+    var codiceLibro = codiceDaUrl();
+    if (codiceLibro) {
+      el.editor.value = codiceLibro;
+      mostraBannerLibro();
+    } else if (!el.editor.value.trim()) {
+      el.editor.value = ESEMPI.saluto;
+    }
 
     el.esegui.addEventListener("click", function () { esegui(el); });
 
@@ -276,6 +319,7 @@
     preparaLeo(el).then(function () {
       impostaStato(el.stato, "Leo è pronto: premi «Esegui».", "pronto");
       el.esegui.disabled = false;
+      if (codiceLibro) esegui(el);   // arrivato dal libro: eseguilo subito
     }).catch(function (errore) {
       impostaStato(el.stato, "Leo non si è caricato: " +
         (errore && errore.message ? errore.message : errore), "errore");

@@ -1,13 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tutto è bit</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 /* Libro interattivo "Informatica" — sezione 1. Lettura a scorrimento, moduli da toccare.
    Mondo visivo unico e scuro, coerente con la CPU 3D; colori espliciti. */
 :root{
   --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
-  --fg:#F4ECEA; --muted:#B39A9D; --faint:#7A6E6C;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
   --accent:#E6111A; --accent-soft:rgba(230,17,26,.14);
   --on:#E6111A; --off:#241C1A; --ink:#0C0A0B; --ok:#49C27A;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
@@ -82,88 +87,140 @@ pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color
 .foot{color:var(--faint);font-size:13px;margin-top:56px;font-family:var(--mono);letter-spacing:.02em;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .foot a{color:var(--muted);text-decoration:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+.prova{margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+a.btn-prova{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;
+  color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:10px;
+  padding:10px 16px;text-decoration:none;transition:.14s}
+a.btn-prova:hover{background:#c20e16;border-color:#c20e16}
+a.btn-prova:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.prova .nota{font-family:var(--mono);font-size:12px;color:var(--faint)}
+pre.code .nu{color:#F5B971}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
 </style>
-
 <div class="wrap">
-  <span class="eyebrow">Informatica interattiva · Sezione 1</span>
-  <h1>Tutto è bit</h1>
-  <p class="lead">Un numero, una parola, una foto, una canzone. Dentro un computer sono tutti la stessa cosa: lunghe file di <b>zeri e uni</b>. Qui lo tocchi con mano.</p>
-  <p>Un computer, sotto sotto, sa fare una cosa sola: distinguere tra <b>acceso</b> e <b>spento</b>. Niente lettere, niente colori, niente suoni — solo milioni di minuscoli interruttori. Il bello è che con quella sola distinzione, ripetuta tante volte, si può rappresentare <em>qualsiasi</em> cosa. Vediamo come.</p>
-
-  <section>
-    <h2><span class="n">01</span>Un interruttore: il bit</h2>
-    <p>La più piccola informazione possibile è una risposta sì/no: <b>1</b> o <b>0</b>, acceso o spento. Si chiama <b>bit</b>. Da solo dice poco. Ma mettine otto in fila — un <b>byte</b> — e ognuno vale il doppio del precedente: 128, 64, 32… Accendi gli interruttori e guarda che numero formano.</p>
-    <div class="card">
-      <div class="bits" id="bits"></div>
-      <input type="range" id="slide" min="0" max="255" value="65">
-      <div class="rowlab"><span>0</span><span>trascina per cambiare</span><span>255</span></div>
-      <div class="byteread">
-        <div class="big" id="dec">65</div>
-        <div class="bin"><span id="bin">01000001</span> &nbsp;·&nbsp; in base dieci: <b id="dec2" style="color:var(--fg)">65</b></div>
-      </div>
-      <p class="take">Otto bit contano da <b>0</b> a <b>255</b>: 256 combinazioni. Vuoi numeri più grandi? Aggiungi byte. È tutto qui.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">02</span>Le lettere sono numeri</h2>
-    <p>Se il computer conosce solo numeri, come fa a scrivere «Ciao»? Semplice: a ogni carattere è assegnato un numero, uguale per tutti i computer del mondo (lo standard <b>Unicode</b>). La <b>A</b> è 65, la <b>a</b> è 97. E quel numero, come hai appena visto, è un byte. Scrivi qualcosa e guarda ogni lettera diventare codice e poi binario.</p>
-    <div class="card">
-      <input class="tfield" id="txt" value="Ciao" maxlength="18" aria-label="scrivi del testo">
-      <div class="chips" id="chips"></div>
-      <p class="take">Perfino le <b>emoji</b> sono numeri Unicode (solo un po' più grandi di un byte). Un testo è una collana di codici.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">03</span>Le immagini sono griglie di numeri</h2>
-    <p>Una foto è una griglia di puntini: i <b>pixel</b>. Ogni pixel è un numero che dice il suo colore. Qui ogni cella è accesa (1) o spenta (0): disegna qualcosa e conta — l'immagine <em>è</em> quei numeri.</p>
-    <div class="card">
-      <div class="imgwrap">
-        <canvas id="pix" width="256" height="256"></canvas>
-      </div>
-      <div class="pal" id="pal"></div>
-      <div class="imgbtns">
-        <button class="btn" id="clr">Pulisci</button>
-        <button class="btn" id="leone">Disegna un leone</button>
-      </div>
-      <p class="imgmeta" style="margin-top:14px">Griglia <b>16×16</b> = <b>256</b> numeri · accesi ora: <b id="npix">0</b></p>
-      <p class="take">A colori ogni pixel sono <b>tre</b> numeri (quanto rosso, quanto verde, quanto blu). Una foto del telefono? Milioni di pixel, milioni di numeri.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">04</span>Anche il suono è numeri</h2>
-    <p>Un suono è un'onda che vibra nell'aria. Il computer la <b>misura</b> tante volte al secondo e segna ogni misura come un numero: sono i <b>campioni</b>. Rimetti insieme i numeri abbastanza in fretta e l'orecchio risente l'onda. Muovi la frequenza e, se vuoi, ascolta.</p>
-    <div class="card">
-      <canvas id="wave" width="640" height="200"></canvas>
-      <div class="soundctl">
-        <label for="freq">frequenza</label>
-        <input type="range" id="freq" min="1" max="12" value="4" style="flex:1;margin:0">
-        <button class="btn primary" id="play">▶ ascolta</button>
-      </div>
-      <p class="take">I puntini rossi sono i campioni: ognuno è un numero. Più campioni al secondo, più il suono è fedele.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">05</span>E con Leo?</h2>
-    <p>In Leo questi "numeri sotto le cose" sono a portata di mano. Puoi trasformare un numero in binario, o vedere i byte di un testo — esattamente quello che hai toccato qui sopra:</p>
-    <pre class="code"><span class="cm"># il numero 65 in binario</span>
+<span class="eyebrow">Informatica interattiva · Sezione 1</span>
+<h1>Tutto è bit</h1>
+<p class="lead">Un numero, una parola, una foto, una canzone. Dentro un computer sono tutti la stessa cosa: lunghe file di <b>zeri e uni</b>. Qui lo tocchi con mano.</p>
+<p>Un computer, sotto sotto, sa fare una cosa sola: distinguere tra <b>acceso</b> e <b>spento</b>. Niente lettere, niente colori, niente suoni — solo milioni di minuscoli interruttori. Il bello è che con quella sola distinzione, ripetuta tante volte, si può rappresentare <em>qualsiasi</em> cosa. Vediamo come.</p>
+<section>
+<h2><span class="n">01</span>Un interruttore: il bit</h2>
+<p>La più piccola informazione possibile è una risposta sì/no: <b>1</b> o <b>0</b>, acceso o spento. Si chiama <b>bit</b>. Da solo dice poco. Ma mettine otto in fila — un <b>byte</b> — e ognuno vale il doppio del precedente: 128, 64, 32… Accendi gli interruttori e guarda che numero formano.</p>
+<div class="card">
+<div class="bits" id="bits"></div>
+<input id="slide" max="255" min="0" type="range" value="65"/>
+<div class="rowlab"><span>0</span><span>trascina per cambiare</span><span>255</span></div>
+<div class="byteread">
+<div class="big" id="dec">65</div>
+<div class="bin"><span id="bin">01000001</span>  ·  in base dieci: <b id="dec2" style="color:var(--fg)">65</b></div>
+</div>
+<p class="take">Otto bit contano da <b>0</b> a <b>255</b>: 256 combinazioni. Vuoi numeri più grandi? Aggiungi byte. È tutto qui.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">02</span>Le lettere sono numeri</h2>
+<p>Se il computer conosce solo numeri, come fa a scrivere «Ciao»? Semplice: a ogni carattere è assegnato un numero, uguale per tutti i computer del mondo (lo standard <b>Unicode</b>). La <b>A</b> è 65, la <b>a</b> è 97. E quel numero, come hai appena visto, è un byte. Scrivi qualcosa e guarda ogni lettera diventare codice e poi binario.</p>
+<div class="card">
+<input aria-label="scrivi del testo" class="tfield" id="txt" maxlength="18" value="Ciao"/>
+<div class="chips" id="chips"></div>
+<p class="take">Perfino le <b>emoji</b> sono numeri Unicode (solo un po' più grandi di un byte). Un testo è una collana di codici.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">03</span>Le immagini sono griglie di numeri</h2>
+<p>Una foto è una griglia di puntini: i <b>pixel</b>. Ogni pixel è un numero che dice il suo colore. Qui ogni cella è accesa (1) o spenta (0): disegna qualcosa e conta — l'immagine <em>è</em> quei numeri.</p>
+<div class="card">
+<div class="imgwrap">
+<canvas height="256" id="pix" width="256"></canvas>
+</div>
+<div class="pal" id="pal"></div>
+<div class="imgbtns">
+<button class="btn" id="clr">Pulisci</button>
+<button class="btn" id="leone">Disegna un leone</button>
+</div>
+<p class="imgmeta" style="margin-top:14px">Griglia <b>16×16</b> = <b>256</b> numeri · accesi ora: <b id="npix">0</b></p>
+<p class="take">A colori ogni pixel sono <b>tre</b> numeri (quanto rosso, quanto verde, quanto blu). Una foto del telefono? Milioni di pixel, milioni di numeri.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">04</span>Anche il suono è numeri</h2>
+<p>Un suono è un'onda che vibra nell'aria. Il computer la <b>misura</b> tante volte al secondo e segna ogni misura come un numero: sono i <b>campioni</b>. Rimetti insieme i numeri abbastanza in fretta e l'orecchio risente l'onda. Muovi la frequenza e, se vuoi, ascolta.</p>
+<div class="card">
+<canvas height="200" id="wave" width="640"></canvas>
+<div class="soundctl">
+<label for="freq">frequenza</label>
+<input id="freq" max="12" min="1" style="flex:1;margin:0" type="range" value="4"/>
+<button class="btn primary" id="play">▶ ascolta</button>
+</div>
+<p class="take">I puntini rossi sono i campioni: ognuno è un numero. Più campioni al secondo, più il suono è fedele.</p>
+</div>
+</section>
+<section>
+<h2><span class="n">05</span>E con Leo?</h2>
+<p>In Leo questi "numeri sotto le cose" sono a portata di mano. Puoi trasformare un numero in binario, o vedere i byte di un testo — esattamente quello che hai toccato qui sopra:</p>
+<pre class="code"><span class="cm"># il numero 65 in binario</span>
 <span class="kw">stampa</span>(in_binario(<span class="st">65</span>))
 
 <span class="cm"># i byte della parola "Ciao", scritti in bit</span>
-<span class="kw">stampa</span>(dati_binari(<span class="st">"Ciao"</span>).codifica(<span class="st">"bit"</span>, <span class="st">" "</span>))</pre>
-    <div class="out">▸ 1000001<br>▸ 01000011 01101001 01100001 01101111</div>
-    <p style="margin-top:14px" class="kicker">C=67, i=105, a=97, o=111 — le stesse lettere della collana qui sopra, ora in zeri e uni. Dal concetto al codice vero, senza magia.</p>
-  </section>
-
-  <div class="foot">
-    <span>Informatica interattiva — un libro di Rosario Zappalà</span>
-    <a href="https://leoitalia.com">leoitalia.com</a>
-  </div>
+<span class="kw">stampa</span>(dati_binari(<span class="st">"Ciao"</span>).codifica(<span class="st">"bit"</span>, <span class="st">" "</span>))</pre><div class="prova"><a class="btn-prova" href="../prova.html#c=IyBpbCBudW1lcm8gNjUgaW4gYmluYXJpbwpzdGFtcGEoaW5fYmluYXJpbyg2NSkpCgojIGkgYnl0ZSBkZWxsYSBwYXJvbGEgIkNpYW8iLCBzY3JpdHRpIGluIGJpdApzdGFtcGEoZGF0aV9iaW5hcmkoIkNpYW8iKS5jb2RpZmljYSgiYml0IiwgIiAiKSk" rel="noopener" target="_blank"><span class="tri">▶</span> Provalo in Leo Web</a><span class="nota">si apre il playground con questo codice</span></div>
+<div class="out">▸ 1000001<br/>▸ 01000011 01101001 01100001 01101111</div>
+<p class="kicker" style="margin-top:14px">C=67, i=105, a=97, o=111 — le stesse lettere della collana qui sopra, ora in zeri e uni. Dal concetto al codice vero, senza magia.</p>
+</section>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<span class="pn-spacer"></span>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<a class="pn-next" href="logica.html">La logica →</a>
+</nav><div class="foot">
+<span>Informatica interattiva — un libro di Rosario Zappalà</span>
+<a href="https://leoitalia.com">leoitalia.com</a>
 </div>
-
+</div>
 <script>
 (function(){
   "use strict";
@@ -288,3 +345,38 @@ pre.code .kw{color:var(--accent)} pre.code .st{color:#86C1FF} pre.code .cm{color
   freq.addEventListener('input',function(){ if(osc)osc.frequency.value=160+(+freq.value)*70; });
 })();
 </script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "Quanti valori diversi può avere un singolo <b>bit</b>?", "o": ["Due: 0 o 1", "Otto", "Infiniti"], "c": 0, "s": "Un bit è acceso o spento: solo 0 oppure 1."}, {"d": "Quanti bit ci sono in un <b>byte</b>?", "o": ["8", "2", "100"], "c": 0, "s": "Un byte sono 8 bit in fila: bastano per un numero da 0 a 255."}, {"d": "Dentro un computer, una lettera in fondo è…", "o": ["un numero (un codice)", "un disegno", "un suono"], "c": 0, "s": "Tutto è bit: anche le lettere sono numeri, tramite un codice."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

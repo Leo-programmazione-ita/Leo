@@ -1,13 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dal codice al processore</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;family=Figtree:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 /* Layout: una "macchina" 3D a sinistra, il pannello strumenti a destra; su telefono si impila.
    Mondo visivo unico e scuro (lo schermo di uno strumento), colori espliciti. */
 :root{
   --bg:#0C0A0B; --panel:#141010; --panel2:#1B1513; --line:#2C2220;
-  --fg:#F4ECEA; --muted:#B39A9D; --faint:#766A6B;
+  --fg:#F4ECEA; --muted:#B39A9D; --faint:#8A7E7B;
   --accent:#E6111A; --accent-dim:#7d1116; --alu:#F0A830; --ok:#49C27A;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
   --body:'Figtree',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -29,6 +34,12 @@ h1{font-family:var(--disp);font-weight:600;font-size:clamp(30px,5vw,46px);line-h
   border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:430px}
 #scene{display:block;width:100%;height:100%;position:absolute;inset:0;touch-action:none;cursor:grab}
 #scene:active{cursor:grabbing}
+.scene-offline{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:30px 26px;gap:8px}
+.scene-offline .so-ico{font-size:40px;color:var(--faint);line-height:1}
+.scene-offline p{margin:0;color:var(--muted);max-width:34ch;font-size:15px}
+.scene-offline .so-sub{color:var(--faint);font-size:13px}
+button:disabled{opacity:.45;cursor:not-allowed}
 .labels{position:absolute;inset:0;pointer-events:none}
 .lab{position:absolute;transform:translate(-50%,-50%);font-family:var(--mono);font-size:12px;
   letter-spacing:.04em;color:var(--fg);background:rgba(10,8,9,.62);border:1px solid var(--line);
@@ -77,60 +88,123 @@ button:disabled{opacity:.4;cursor:not-allowed}
 .foot{color:var(--faint);font-size:12.5px;margin-top:16px;font-family:var(--mono);letter-spacing:.02em}
 .foot b{color:var(--muted);font-weight:500}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+
+.pagenav{display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;
+  margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.pagenav a{color:var(--muted);text-decoration:none;transition:.14s;padding:4px 2px;max-width:46%}
+.pagenav a:hover{color:var(--accent)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.pagenav .pn-idx{color:var(--faint)}
+.pagenav .pn-next{text-align:right}
+.pagenav .pn-spacer{flex:1 1 30%}
+
+/* accessibilità: focus visibile su tutti i controlli */
+button:focus-visible,.btn:focus-visible,a.btn-prova:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- mini-quiz "Metti alla prova" --- */
+.quiz{margin-top:52px}
+.quiz h2 .n{color:var(--accent)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}
+.qdomanda{font-weight:600;color:#fff;margin:0 0 14px;font-size:17px}
+.qdomanda code{font-family:var(--mono);font-size:.92em;color:var(--accent)}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:flex;align-items:flex-start;gap:10px;text-align:left;font:inherit;font-size:15px;color:var(--fg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s}
+.qopt:hover:not([disabled]){border-color:var(--accent)}
+.qopt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.qopt[disabled]{cursor:default}
+.qopt .seg{font-family:var(--mono);font-size:13px;color:var(--faint);flex:0 0 auto}
+.qopt.giusta{border-color:var(--ok,#49C27A);background:color-mix(in srgb,var(--ok,#49C27A) 13%,var(--panel2))}
+.qopt.giusta .seg{color:var(--ok,#49C27A)}
+.qopt.sbagliata{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+.qspieg{margin:12px 0 0;font-size:14.5px;color:var(--muted);border-left:3px solid var(--ok,#49C27A);padding-left:14px}
+.qspieg.no{border-left-color:var(--accent)}
+.qspieg code{font-family:var(--mono);font-size:.9em}
+.qnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+.qavanti{font:inherit;font-family:var(--mono);font-size:13.5px;color:#fff;background:var(--accent);border:1px solid var(--accent);
+  border-radius:10px;padding:9px 16px;cursor:pointer}
+.qavanti[disabled]{opacity:.4;cursor:default}
+.qprog{font-family:var(--mono);font-size:13px;color:var(--faint)}
+.qfine{text-align:center;padding:22px}
+.qfine .big{font-family:var(--disp);font-size:30px;color:#fff}
+.qfine .sub{color:var(--muted);margin-top:6px}
+.qfine button{margin-top:14px;font:inherit;font-family:var(--mono);font-size:13px;color:var(--fg);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
 </style>
-
 <div class="wrap">
-  <header class="top">
-    <span class="eyebrow">Leo · sotto il cofano</span>
-    <h1>Dal codice al processore</h1>
-    <p class="sub">Scrivi una riga in Leo e guarda cosa succede davvero: ogni istruzione viaggia dentro il processore in tre tempi — <b>preleva</b>, <b>decodifica</b>, <b>esegui</b>. Trascina per girare la scena.</p>
-  </header>
-
-  <div class="stage">
-    <div class="scene-card">
-      <canvas id="scene"></canvas>
-      <div class="labels" id="labels"></div>
-      <div class="phasebar">
-        <span class="phase" data-ph="fetch">Preleva</span>
-        <span class="phase" data-ph="decode">Decodifica</span>
-        <span class="phase alu" data-ph="exec">Esegui</span>
-      </div>
-      <div class="scene-hint">trascina per ruotare · rotellina per lo zoom</div>
-    </div>
-
-    <div class="panel">
-      <div>
-        <p class="block-title">Il programma Leo</p>
-        <div class="prog" id="prog"></div>
-      </div>
-      <div class="inputs">
-        <div class="field"><label for="a">a</label><input id="a" type="number" value="3" min="0" max="99"></div>
-        <div class="field"><label for="b">b</label><input id="b" type="number" value="4" min="0" max="99"></div>
-        <div style="flex:1 1 120px;align-self:center" class="decoded" id="decoded">premi <b>Passo</b> per iniziare</div>
-      </div>
-      <div>
-        <p class="block-title">Registri</p>
-        <div class="regs" id="regs"></div>
-      </div>
-      <div>
-        <p class="block-title">Uscita · stampa()</p>
-        <div class="out" id="out"><span class="ph">in attesa…</span></div>
-      </div>
-      <div class="controls">
-        <button class="primary" id="step">Passo ▸</button>
-        <button id="run">Esegui tutto ⏵⏵</button>
-        <button id="reset">Ripeti ↺</button>
-      </div>
-    </div>
-  </div>
-  <p class="foot">Modello semplificato e onesto del ciclo di un processore: i registri (<b>R1 R2 R3</b>) tengono i numeri, l'<b>ALU</b> fa i conti, l'<b>unità di controllo</b> dirige il traffico, la <b>memoria</b> custodisce il programma. leoitalia.com</p>
+<header class="top">
+<span class="eyebrow">Leo · sotto il cofano</span>
+<h1>Dal codice al processore</h1>
+<p class="sub">Scrivi una riga in Leo e guarda cosa succede davvero: ogni istruzione viaggia dentro il processore in tre tempi — <b>preleva</b>, <b>decodifica</b>, <b>esegui</b>. Trascina per girare la scena.</p>
+</header>
+<div class="stage">
+<div class="scene-card">
+<canvas id="scene"></canvas>
+<div class="labels" id="labels"></div>
+<div class="phasebar">
+<span class="phase" data-ph="fetch">Preleva</span>
+<span class="phase" data-ph="decode">Decodifica</span>
+<span class="phase alu" data-ph="exec">Esegui</span>
 </div>
-
+<div class="scene-hint">trascina per ruotare · rotellina per lo zoom</div>
+</div>
+<div class="panel">
+<div>
+<p class="block-title">Il programma Leo</p>
+<div class="prog" id="prog"></div>
+</div>
+<div class="inputs">
+<div class="field"><label for="a">a</label><input id="a" max="99" min="0" type="number" value="3"/></div>
+<div class="field"><label for="b">b</label><input id="b" max="99" min="0" type="number" value="4"/></div>
+<div class="decoded" id="decoded" style="flex:1 1 120px;align-self:center">premi <b>Passo</b> per iniziare</div>
+</div>
+<div>
+<p class="block-title">Registri</p>
+<div class="regs" id="regs"></div>
+</div>
+<div>
+<p class="block-title">Uscita · stampa()</p>
+<div class="out" id="out"><span class="ph">in attesa…</span></div>
+</div>
+<div class="controls">
+<button class="primary" id="step">Passo ▸</button>
+<button id="run">Esegui tutto ⏵⏵</button>
+<button id="reset">Ripeti ↺</button>
+</div>
+</div>
+</div>
+<section class="quiz" aria-label="Metti alla prova">
+  <h2><span class="n">★</span> Metti alla prova</h2>
+  <div class="quizbox" id="quizbox"></div>
+</section>
+  <nav aria-label="Naviga le pagine interattive" class="pagenav">
+<a class="pn-prev" href="logica.html">← La logica</a>
+<a class="pn-idx" href="index.html">Tutte le pagine</a>
+<a class="pn-next" href="algoritmi.html">Gli algoritmi →</a>
+</nav><p class="foot">Modello semplificato e onesto del ciclo di un processore: i registri (<b>R1 R2 R3</b>) tengono i numeri, l'<b>ALU</b> fa i conti, l'<b>unità di controllo</b> dirige il traffico, la <b>memoria</b> custodisce il programma. leoitalia.com</p>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (function(){
   "use strict";
   var THREE = window.THREE;
+
+  // Ripiego: la libreria 3D (Three.js) si scarica dal web. Se manca (offline o
+  // rete che la blocca), niente errore in console: mostriamo un messaggio al
+  // posto della scena e disattiviamo i comandi del modello.
+  if (!THREE || !THREE.WebGLRenderer) {
+    var _cv = document.getElementById('scene');
+    var _card = _cv && _cv.closest ? _cv.closest('.scene-card') : null;
+    if (_card) {
+      _card.innerHTML = '<div class="scene-offline"><div class="so-ico" aria-hidden="true">⌗</div>' +
+        '<p>Il <b>modello 3D</b> del processore ha bisogno di una connessione a internet per caricarsi.</p>' +
+        '<p class="so-sub">Torna online per girarlo, zoomarlo ed eseguire il programma passo per passo. Il resto della pagina funziona lo stesso.</p></div>';
+    }
+    ['step','run','reset'].forEach(function(id){ var e=document.getElementById(id); if(e){ e.disabled=true; } });
+    return;
+  }
+
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
 
   // ---------- colori ----------
@@ -182,7 +256,7 @@ button:disabled{opacity:.4;cursor:not-allowed}
       new THREE.LineBasicMaterial({color:C.boxEdge}));
     g.add(m); g.add(e);
     g.position.set(x, h/2, z);
-    g.userData = {mat:m, h:h};
+    g.userData = {mat:m.material, h:h};
     scene.add(g);
     return g;
   }
@@ -383,3 +457,38 @@ button:disabled{opacity:.4;cursor:not-allowed}
   setTimeout(resize, 300);
 })();
 </script>
+<script>try{var k="leo-info-viste",s=JSON.parse(localStorage.getItem(k)||"[]"),id=(location.pathname.split("/").pop()||"").replace(".html","");if(id&&s.indexOf(id)<0){s.push(id);localStorage.setItem(k,JSON.stringify(s));}}catch(e){}</script>
+<script>window.LEO_QUIZ=[{"d": "Il ciclo del processore è…", "o": ["preleva, decodifica, esegui", "scrivi, salva, stampa", "accendi, calcola, spegni"], "c": 0, "s": "Tre tempi: prende l'istruzione, la capisce, la esegue."}, {"d": "I registri (R1, R2, R3) servono a…", "o": ["tenere i numeri su cui lavorare", "disegnare sullo schermo", "collegarsi a internet"], "c": 0, "s": "Piccole caselle velocissime dove la CPU tiene i valori del momento."}, {"d": "L'<b>ALU</b> è la parte che…", "o": ["fa i calcoli", "salva i file", "mostra le finestre"], "c": 0, "s": "Unità aritmetico-logica: fa somme e confronti."}];</script>
+
+<script>
+(function(){
+  var Q = window.LEO_QUIZ; if(!Q||!Q.length) return;
+  var box=document.getElementById('quizbox'); if(!box) return;
+  var i=0, giuste=0, risposto=false, SEG=['A','B','C','D'];
+  function render(){
+    risposto=false; var q=Q[i];
+    var h='<div class="qcard"><p class="qdomanda">'+q.d+'</p><div class="qopts">';
+    q.o.forEach(function(op,k){ h+='<button class="qopt" data-k="'+k+'"><span class="seg">'+SEG[k]+'</span><span>'+op+'</span></button>'; });
+    h+='</div><div class="qspieg" id="qspieg" hidden></div><div class="qnav"><span class="qprog">Domanda '+(i+1)+' di '+Q.length+'</span><button class="qavanti" id="qavanti" disabled>'+(i<Q.length-1?'Avanti ▸':'Vedi risultato')+'</button></div></div>';
+    box.innerHTML=h;
+    var opts=box.querySelectorAll('.qopt');
+    opts.forEach(function(b){ b.addEventListener('click',function(){
+      if(risposto) return; risposto=true;
+      var k=+b.getAttribute('data-k'), ok=(k===q.c); if(ok) giuste++;
+      opts.forEach(function(x,xi){ x.setAttribute('disabled','disabled'); if(xi===q.c)x.classList.add('giusta'); });
+      if(!ok) b.classList.add('sbagliata');
+      var sp=document.getElementById('qspieg'); sp.hidden=false; sp.className='qspieg'+(ok?'':' no');
+      sp.innerHTML='<b style="color:'+(ok?'var(--ok,#49C27A)':'var(--accent)')+'">'+(ok?'Giusto. ':'Non proprio. ')+'</b>'+q.s;
+      document.getElementById('qavanti').removeAttribute('disabled');
+    }); });
+    document.getElementById('qavanti').addEventListener('click',function(){ i++; if(i<Q.length) render(); else fine(); });
+  }
+  function fine(){
+    try{var k='leo-info-quiz-'+((location.pathname.split('/').pop()||'').replace('.html',''));localStorage.setItem(k,giuste+'/'+Q.length);}catch(e){}
+    box.innerHTML='<div class="qcard qfine"><div class="big">'+giuste+' / '+Q.length+'</div><div class="sub">'+(giuste===Q.length?'Perfetto! Hai capito tutto.':(giuste>=Math.ceil(Q.length/2)?'Bene! Rileggi quello che ti è sfuggito.':'Nessun problema: riguarda la pagina e riprova.'))+'</div><button id="qrif">Riprova ↻</button></div>';
+    document.getElementById('qrif').addEventListener('click',function(){ i=0;giuste=0;render(); });
+  }
+  render();
+})();
+</script>
+</html>

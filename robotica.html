@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leo Robotica — Pico, sensori, motori e LED</title>
-<meta name="description" content="Leo Sistema è l'edizione per robot e schede: Raspberry Pi Pico, sensori, motori e LED. Da Leo rilevi i dispositivi collegati e li flashi, poi carichi il programma. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
+<meta name="description" content="Leo Robotica è l'edizione per robot e schede: Raspberry Pi Pico, sensori, motori e LED. Da Leo rilevi i dispositivi collegati e li flashi, poi carichi il programma. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/robotica.html">
@@ -88,7 +88,7 @@
       <img class="ed-stemma" src="img/edizioni/robotica.png" alt="" width="92" height="92">
       <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
       <h1 class="parole">Leo Robotica, <em class="testo-accento">dai vita alle cose.</em></h1>
-      <p class="introduzione compari r2">Accendi un LED, leggi un sensore, muovi un motore: Leo Robotica parla con Raspberry Pi Pico e le schede compatibili. Da Leo <strong>rilevi i dispositivi collegati e li flashi</strong>, poi carichi il tuo programma. In italiano.</p>
+      <p class="introduzione compari r2">Accendi un LED, leggi un sensore, muovi un motore: Leo Robotica parla con Raspberry Pi Pico. Da Leo <strong>rilevi i dispositivi collegati e li flashi</strong>, poi carichi il tuo programma. In italiano.</p>
     </div>
   </section>
 
@@ -100,7 +100,7 @@
         <p class="introduzione compari r2">Tutte le funzioni per i robot e le schede, abilitate e pronte in questa edizione. Sono i moduli della categoria <strong>Robotica</strong>.</p>
       </div>
       <dl class="requisiti">
-        <div class="scheda compari"><dt>Rileva e flasha</dt><dd>Da Leo vedi i dispositivi collegati (Pico, ESP32, Arduino) e li prepari con un comando (<code>robotica</code>).</dd></div>
+        <div class="scheda compari"><dt>Rileva e flasha</dt><dd>Da Leo vedi i dispositivi collegati (Raspberry Pi Pico) e li prepari con un comando (<code>robotica</code>).</dd></div>
         <div class="scheda compari r1"><dt>Pin e LED</dt><dd>Accendi e spegni i pin, fai lampeggiare i LED, leggi lo stato dei pin digitali.</dd></div>
         <div class="scheda compari r2"><dt>Sensori e pulsanti</dt><dd>Leggi pulsanti e sensori (temperatura, luce, distanza) e reagisci a quello che succede.</dd></div>
         <div class="scheda compari r3"><dt>Motori e PWM</dt><dd>Piloti motori e servo con il PWM, per muovere davvero le cose.</dd></div>
@@ -119,11 +119,13 @@
       <div class="promo compari">
       <div class="finestra-codice ingrandisci">
         <div class="barra"><i></i><i></i><i></i><span>led.leo</span></div>
-<pre class="codice"><code><span class="c-commenti">rem Collega la scheda e fai lampeggiare il LED</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">s</span> <span class="c-operatori">=</span> <span class="c-variabili">robotica</span><span class="c-punteggiatura">.</span><span class="c-libreria">collega_scheda</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">ripeti</span> <span class="c-flusso">per</span> <span class="c-flusso">sempre</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">scrivi_pin</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">,</span> <span class="c-costanti">acceso</span><span class="c-punteggiatura">)</span>
-    <span class="c-libreria">aspetta</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
+<pre class="codice"><code><span class="c-commenti"># Collega la scheda e fai lampeggiare il LED</span>
+<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">s</span> <span class="c-operatori">=</span> <span class="c-libreria">collega_scheda</span><span class="c-punteggiatura">(</span><span class="c-variabili">simulata</span> <span class="c-operatori">=</span> <span class="c-costanti">vero</span><span class="c-punteggiatura">)</span>
+<span class="c-flusso">ripeti</span> <span class="c-numeri">3</span> <span class="c-flusso">volte</span> <span class="c-flusso">fai</span>
+    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">accendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
+    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">spegni</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">)</span>
+    <span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
 <span class="c-flusso">fine</span></code></pre>
       </div>
       <figure class="promo-risultato">
@@ -131,7 +133,7 @@
         <figcaption class="promo-etichetta">Pico collegato · LED acceso</figcaption>
       </figure>
     </div>
-      <p class="nota-offline compari">Niente scheda sottomano? <code>robotica.scheda_simulata()</code> fa provare tutto senza hardware; poi colleghi il Pico vero.</p>
+      <p class="nota-offline compari">Niente scheda sottomano? <code>scheda_simulata()</code> fa provare tutto senza hardware; poi colleghi il Pico vero.</p>
     </div>
   </section>
 
@@ -159,6 +161,55 @@
         <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
         <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Robotica-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
         <a class="pulsante secondario" href="iphone.html">iPhone</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sezione" aria-labelledby="come-si-usa-robotica" style="--ed:#F97316">
+    <div class="contenitore">
+      <div class="intestazione-sezione">
+        <p class="sopratitolo compari">Come si usa</p>
+        <h2 id="come-si-usa-robotica" class="titolo-sezione parole">Guida rapida, <em>anche senza scheda.</em></h2>
+        <p class="introduzione compari r2">Tutta la robotica di Leo &egrave; dentro Leo Studio: apri un file, scrivi in italiano e avvia. Non hai un Pico sottomano? Usa il <strong>Banco</strong>, la scheda simulata: l'esempio gira lo stesso, poi passi a quella vera.</p>
+      </div>
+      <div class="promo compari">
+      <div class="finestra-codice ingrandisci">
+        <div class="barra"><i></i><i></i><i></i><span>guida.leo</span></div>
+<pre class="codice"><code># Nessuna scheda sottomano: uso il Banco (scheda simulata)
+variabile scheda = collega_scheda(simulata = vero)
+scheda.accendi(25)
+scrivi("LED di bordo acceso")
+scrivi("Temperatura della scheda: " + testo(scheda.temperatura()) + " gradi")</code></pre>
+      </div>
+      <figure class="promo-risultato">
+        <figcaption class="promo-etichetta">Cosa produce</figcaption>
+<pre class="codice"><code>LED di bordo acceso
+Temperatura della scheda: 20.8 gradi</code></pre>
+      </figure>
+    </div>
+      <p class="nota-offline compari">Il <strong>Banco</strong> (<code>collega_scheda(simulata = vero)</code>) &egrave; una scheda finta gi&agrave; collegata: accendi il LED di bordo e leggi la temperatura senza alcun hardware. Con il Pico vero basta togliere <code>simulata = vero</code>.</p>
+
+      <div class="intestazione-sezione" style="margin-top:28px">
+        <p class="sopratitolo compari">Primi passi</p>
+        <h2 class="titolo-sezione parole">Sul tuo <em>dispositivo.</em></h2>
+      </div>
+      <dl class="requisiti">
+        <div class="scheda compari"><dt>Windows (.exe)</dt><dd>Scarica il programma e installalo. Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, incolla l'esempio qui sopra e premi <strong>Esegui</strong>: gira subito grazie al Banco, senza collegare nulla.</dd></div>
+        <div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l'<code>.apk</code> (in anteprima, presto su Google Play), apri l'app Leo e scrivi lo stesso codice in italiano: con il Banco provi la robotica anche dal telefono.</dd></div>
+        <div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app in anteprima e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: la usi come un'app, senza App Store. L'app nativa &egrave; in arrivo.</dd></div>
+      </dl>
+
+      <div class="intestazione-sezione" style="margin-top:28px">
+        <p class="sopratitolo compari">In breve</p>
+        <h2 class="titolo-sezione parole">Cosa ti porti <em>a casa.</em></h2>
+      </div>
+      <dl class="requisiti">
+        <div class="scheda compari"><dt>Prova senza hardware</dt><dd>Il <strong>Banco</strong> simula la scheda: accendi pin e LED, leggi sensori e temperatura con <code>collega_scheda(simulata = vero)</code>.</dd></div>
+        <div class="scheda compari r1"><dt>Poi la scheda vera</dt><dd>Lo stesso codice comanda un Raspberry Pi Pico via USB o Wi-Fi: pin, sensori, motori e LED, in italiano.</dd></div>
+        <div class="scheda compari r2"><dt>Stesso Leo, ovunque</dt><dd>Lo stesso programma gira su Windows, Android e iPhone: lo scrivi una volta sola.</dd></div>
+      </dl>
+      <div class="azioni compari" style="margin-top:22px">
+        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
       </div>
     </div>
   </section>

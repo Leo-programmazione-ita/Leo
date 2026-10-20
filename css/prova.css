@@ -5,6 +5,16 @@
 .prova-intro h1 { margin-bottom: 10px; }
 .prova-intro p { color: var(--testo-2); max-width: 65ch; }
 
+/* avviso "codice arrivato dal libro via QR" */
+.prova-dal-libro {
+  margin: 0 0 24px; padding: 11px 15px; max-width: 65ch;
+  font-size: 14.5px; color: var(--testo-2);
+  background: color-mix(in srgb, var(--accento-vivo) 9%, var(--superficie));
+  border: 1px solid color-mix(in srgb, var(--accento-vivo) 32%, var(--bordo-forte));
+  border-radius: var(--r-piccolo);
+}
+.prova-dal-libro strong { color: var(--testo); }
+
 /* --- barra degli strumenti --------------------------------------------- */
 .prova-barra {
   display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
