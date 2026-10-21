@@ -252,6 +252,23 @@
     </div>
   </section>
 
+  <section class="sezione" aria-labelledby="titolo-antivirus">
+    <div class="contenitore smartscreen">
+      <div>
+        <p class="sopratitolo compari">Parliamoci chiaro</p>
+        <h2 id="titolo-antivirus" class="titolo-sezione parole">Se l'antivirus segnala Leo</h2>
+        <p class="compari">Qualche antivirus — come AVG, Avast o lo stesso Microsoft Defender — può segnalare il programma di installazione di Leo come sospetto. Succede perché Leo è un progetto <strong>nuovo</strong>, ancora scaricato da poche persone, e perché i suoi file sono firmati con un certificato <strong>personale</strong> e non con quello a pagamento di una grande azienda. L'antivirus non trova nulla di dannoso: semplicemente non conosce ancora Leo. È un <strong>falso allarme</strong>.</p>
+        <p class="compari">Se il file viene bloccato o messo in quarantena, apri il tuo antivirus, cerca Leo fra gli elementi in quarantena e scegli <strong>Ripristina</strong> o <strong>Consenti</strong> (a volte la voce si chiama <em>Aggiungi alle eccezioni</em>). Poi riavvia l'installazione. Scarica Leo solo da questo sito: così sei sicuro di avere il file originale.</p>
+      </div>
+      <div class="finto-avviso compari da-destra" role="img" aria-label="Esempio di un avviso dell'antivirus che mette un file in quarantena">
+        <strong>Minaccia rilevata</strong>
+        L'antivirus ha spostato in quarantena un file ritenuto sospetto. Puoi ripristinarlo se conosci e ti fidi della sua origine.
+        <div class="dati-app">File: Setup_Leo.exe<br>Stato: In quarantena</div>
+        <div class="tasti-avviso"><span class="evid">Ripristina</span><span>Elimina</span></div>
+      </div>
+    </div>
+  </section>
+
   <section class="sezione scura" aria-labelledby="titolo-licenza">
     <div class="contenitore">
       <div class="intestazione-sezione">
@@ -277,6 +294,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
       <span class="etichetta">Scarica per Windows (.exe)</span>
     </a>
+    <a class="pulsante secondario" id="dl-apk" href="#" rel="noopener" download>
+      <span class="etichetta">Scarica per Android (.apk)</span>
+    </a>
     <p class="mob">In anteprima anche su smartphone: <a href="telefono.html">Android →</a> · <a href="iphone.html">iPhone →</a></p>
     <p class="win">Windows 10/11 a 64 bit · nessun account richiesto</p>
   </div>
@@ -284,7 +304,7 @@
 
 <script>
   (function(){
-    var ED = {"suite": {"nome": "Suite", "exe": "Setup_Leo_0.1.0.exe", "apk": "Leo-0.1.0.apk", "desc": "Tutte le categorie, già interconnesse: per programmare a tutto campo."}, "web": {"nome": "Web", "exe": "Setup_Leo_Web_0.1.0.exe", "apk": "Leo-Web-0.1.0.apk", "desc": "Siti e servizi web in italiano."}, "dati": {"nome": "Dati", "exe": "Setup_Leo_Dati_0.1.0.exe", "apk": "Leo-Dati-0.1.0.apk", "desc": "Database, tabelle, calcolo, grafici."}, "giochi": {"nome": "Giochi", "exe": "Setup_Leo_Giochi_0.1.0.exe", "apk": "Leo-Giochi-0.1.0.apk", "desc": "Giochi e grafica, personaggi pronti."}, "sistema": {"nome": "Sistema", "exe": "Setup_Leo_Sistema_0.1.0.exe", "apk": "Leo-Sistema-0.1.0.apk", "desc": "Automatizzare il computer."}, "sicurezza": {"nome": "Sicurezza", "exe": "Setup_Leo_Sicurezza_0.1.0.exe", "apk": "Leo-Sicurezza-0.1.0.apk", "desc": "Sicurezza informatica, reti, forense."}, "scienza": {"nome": "Scienza", "exe": "Setup_Leo_Scienza_0.1.0.exe", "apk": "Leo-Scienza-0.1.0.apk", "desc": "Matematica avanzata e scienza."}};
+    var ED = {"suite": {"nome": "Suite", "exe": "Setup_Leo_0.1.0.exe", "apk": "Leo-0.1.0.apk", "desc": "Tutte le categorie, già interconnesse: per programmare a tutto campo."}, "web": {"nome": "Web", "exe": "Setup_Leo_Web_0.1.0.exe", "apk": "Leo-Web-0.1.0.apk", "desc": "Siti e servizi web in italiano."}, "dati": {"nome": "Dati", "exe": "Setup_Leo_Dati_0.1.0.exe", "apk": "Leo-Dati-0.1.0.apk", "desc": "Database, tabelle, calcolo, grafici."}, "giochi": {"nome": "Giochi", "exe": "Setup_Leo_Giochi_0.1.0.exe", "apk": "Leo-Giochi-0.1.0.apk", "desc": "Giochi e grafica, personaggi pronti."}, "sistema": {"nome": "Sistema", "exe": "Setup_Leo_Sistema_0.1.0.exe", "apk": "Leo-Sistema-0.1.0.apk", "desc": "Automatizzare il computer."}, "sicurezza": {"nome": "Sicurezza", "exe": "Setup_Leo_Sicurezza_0.1.0.exe", "apk": "Leo-Sicurezza-0.1.0.apk", "desc": "Sicurezza informatica, reti, forense."}, "robotica": {"nome": "Robotica", "exe": "Setup_Leo_Robotica_0.1.0.exe", "apk": "Leo-Robotica-0.1.0.apk", "desc": "Robot e schede: Pico, sensori, motori e LED."}};
     var BASE = "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/";
     var m = document.getElementById("dl-modale");
     function apri(id){
@@ -294,6 +314,7 @@
       document.getElementById("dl-ico").src = "img/edizioni/" + id + ".png";
       var a = document.getElementById("dl-exe");
       a.href = BASE + e.exe;
+      var ak = document.getElementById("dl-apk"); if(ak) ak.href = BASE + e.apk;
       m.classList.add("aperta");
     }
     function chiudi(){ m.classList.remove("aperta"); }
