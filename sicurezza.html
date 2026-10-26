@@ -3,30 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Sicurezza — dati protetti, forense e rete</title>
-<meta name="description" content="Leo Sicurezza è l'edizione per la sicurezza informatica: dati protetti, analisi binaria, forense, difesa degli account e rete (TCP, DNS, TLS). Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
+<title>Leo Sicurezza — il banco del perito per controllare, cifrare e verificare</title>
+<meta name="description" content="Leo Sicurezza è il banco del perito: una cassetta di attrezzi per calcolare impronte, firmare, derivare password robuste e verificare l'integrità, con un taccuino che registra ogni prova. Solo uso difensivo e di verifica.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/sicurezza.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/sicurezza.html">
-<meta property="og:title" content="Leo Sicurezza — sicurezza informatica e reti in italiano">
-<meta property="og:description" content="Dati protetti, analisi binaria, forense, difesa degli account e rete (TCP/DNS/TLS): l'edizione di Leo mirata alla sicurezza.">
+<meta property="og:title" content="Leo Sicurezza — il banco del perito per controllare, cifrare e verificare">
+<meta property="og:description" content="Leo Sicurezza è il banco del perito: una cassetta di attrezzi per calcolare impronte, firmare, derivare password robuste e verificare l'integrità, con un taccuino che registra ogni prova. Solo uso difensivo e di verifica.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
+<style>:root{--accento:#06B6D4;--accento-rgb:6,182,212;--accento-vivo:#22D3EE;--accento-linea:rgba(6,182,212,.3);--accento-tenue:rgba(6,182,212,.1)}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -45,9 +42,10 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuali/index.html">Manuali</a></li>
+            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
-            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
           </ul>
         </li>
@@ -61,7 +59,7 @@
             <li><a href="dati.html">Leo Dati</a></li>
             <li><a href="giochi.html">Leo Giochi</a></li>
             <li><a href="sistema.html">Leo Sistema</a></li>
-            <li><a href="sicurezza.html" aria-current="page">Leo Sicurezza</a></li>
+            <li><a href="sicurezza.html">Leo Sicurezza</a></li>
             <li><a href="robotica.html">Leo Robotica</a></li>
             <li><a href="confronto.html">Confronta le edizioni</a></li>
           </ul>
@@ -97,219 +95,90 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#06B6D4">
-    <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/sicurezza.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Sicurezza, <em class="testo-accento">proteggi e indaga.</em></h1>
-      <p class="introduzione compari r2">Dati protetti, analisi binaria, forense, difesa degli account e rete (TCP, DNS, TLS): l'edizione mirata alla sicurezza informatica, in italiano.</p>
-          <div class="azioni compari r3" data-dl-hero style="justify-content:center;margin-top:30px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sicurezza_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica per Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sicurezza-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+<section class="n-hero">
+  <div class="contenitore n-hero-griglia">
+    <div>
+      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Sicurezza</b> · il banco del perito</span>
+      <h1 class="n-h1">Scegli l'attrezzo.<span class="riga2">Il taccuino registra.</span></h1>
+      <p class="n-sotto">Leo Sicurezza è il <strong>banco del perito</strong>: una cassetta di attrezzi per controllare, cifrare e verificare, con un <strong>taccuino</strong> che annota ogni prova che fai. Niente foglio bianco: scegli lo strumento, leggi l'esito, e resta la traccia di come ci sei arrivato.</p>
+      <div class="n-azioni">
+        <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo Sicurezza</a>
+        <a class="n-btn n-btn-ghost" href="manuali/sicurezza.html">Guida di Leo Sicurezza</a>
       </div>
-      <p class="dettagli compari r4" style="margin-top:12px;font-size:14px;color:var(--testo-3)">Gratis &middot; Windows 10/11 &middot; Android 7+ &middot; versione 0.1.0</p>
-</div>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#06B6D4">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa ci fai</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Difendi, analizza, <em>indaga.</em></h2>
-        <p class="introduzione compari r2">Tutte le funzioni per la sicurezza, abilitate e pronte in questa edizione. Sono i moduli della categoria <strong>Sicurezza</strong>.</p>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Dati protetti</dt><dd>Proteggi le informazioni: cifratura, firme e verifica dei dati, per tenerli al sicuro (<code>sicurezza_dati</code>).</dd></div>
-        <div class="scheda compari r1"><dt>Analisi binaria</dt><dd>Leggi e manipoli i dati a livello di byte, per capire e trattare i file così come sono (<code>binario</code>).</dd></div>
-        <div class="scheda compari r2"><dt>Forense</dt><dd>Strumenti per l'analisi forense: esamini i dati e ricostruisci cosa è successo (<code>forense</code>).</dd></div>
-        <div class="scheda compari r3"><dt>Difesa degli account</dt><dd>Metti in sicurezza accessi e credenziali, per difendere gli account (<code>difesa</code>).</dd></div>
-        <div class="scheda compari r4"><dt>Rete</dt><dd>Lavori con la rete a basso e ad alto livello — TCP, DNS, TLS — per analizzarla e metterla in sicurezza (<code>rete_sistema</code>, <code>rete_bassa</code>).</dd></div>
-      </dl>
+      <p class="n-nota">Windows · Android · solo verifica e difesa, mai per attaccare o aggirare sistemi</p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
+<pre><span class="cm"># scegli l'attrezzo, il taccuino registra la prova</span>
+<span class="kw">fai</span> <span class="fn">controlla</span> <span class="kw">con</span> percorso
+    <span class="kw">variabile</span> firma = <span class="fn">impronta_file</span>(percorso)
+    <span class="kw">variabile</span> esame = <span class="fn">indizi_file</span>(percorso)
+    taccuino.<span class="fn">annota</span>(percorso, firma)
+    <span class="kw">restituisci</span> esame[<span class="st">"avvisi"</span>]
+<span class="kw">fine</span>
 
-  <section class="sezione" aria-labelledby="titolo-esempio">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Controlla gli host, <em>in fila.</em></h2>
-      </div>
-      <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>controllo.leo</span></div>
-<pre class="codice"><code><span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">scansiona_porte</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">,</span> <span class="c-variabili">da</span> <span class="c-operatori">=</span> <span class="c-numeri">1</span><span class="c-punteggiatura">,</span> <span class="c-variabili">a</span> <span class="c-operatori">=</span> <span class="c-numeri">1024</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">audita_sito</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;esempio.it&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_sicurezza.png" alt="Report di sicurezza prodotto da Leo Sicurezza" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">Report · 2 avvisi trovati</figcaption>
-      </figure>
-    </div>
-      <p class="nota-offline compari">Porte aperte e header di sicurezza, con parole italiane. I costrutti di base sono gli stessi in ogni edizione.</p>
-    </div>
-  </section>
-
-  <section class="sezione scura" aria-label="Lo stesso Leo">
-    <div class="contenitore">
-      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>la sicurezza e le reti</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="titolo-prova">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, apri un file, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
-      </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sicurezza_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <div class="azioni-app compari" style="margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sicurezza-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
-      </div>
-      <p class="dettagli" style="margin-top:14px;max-width:62ch">
-        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
-        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
-        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
-      </p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="come-si-usa-sicurezza" style="--ed:#06B6D4">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Come si usa</p>
-        <h2 id="come-si-usa-sicurezza" class="titolo-sezione parole">Guida rapida, <em>in tre passi.</em></h2>
-        <p class="introduzione compari r2">Tutta la sicurezza di Leo &egrave; dentro Leo Studio: apri un file, scrivi in italiano e avvia. Niente da configurare &mdash; funziona sul PC e, in anteprima, anche sul telefono.</p>
-      </div>
-      <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>guida.leo</span></div>
-<pre class="codice"><code># Una password robusta, la sua impronta e un testo in base64
-variabile pw = password_casuale(16)
-scrivi("Password generata: " + pw)
-scrivi("Impronta SHA-256: " + impronta(pw))
-scrivi("In base64: " + codifica_base64("messaggio privato"))</code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <figcaption class="promo-etichetta">Cosa produce</figcaption>
-<pre class="codice"><code>Password generata: vkzn4~fg5Pwn^.LF
-Impronta SHA-256: 56695823e9e53d51...156e06b2
-In base64: bWVzc2FnZ2lvIHByaXZhdG8=</code></pre>
-      </figure>
-    </div>
-      <p class="nota-offline compari">Una password robusta, la sua impronta <strong>SHA-256</strong> e un testo in <strong>base64</strong>: funzioni sicure, con parole italiane. Password e impronta cambiano a ogni avvio; il base64 &egrave; sempre lo stesso.</p>
-
-      <div class="intestazione-sezione" style="margin-top:28px">
-        <p class="sopratitolo compari">Primi passi</p>
-        <h2 class="titolo-sezione parole">Sul tuo <em>dispositivo.</em></h2>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Windows (.exe)</dt><dd>Scarica il programma e installalo. Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, incolla l'esempio qui sopra e premi <strong>Esegui</strong>: il risultato compare subito.</dd></div>
-        <div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l'<code>.apk</code> (in anteprima, presto su Google Play), apri l'app Leo e scrivi lo stesso codice in italiano: gira direttamente dal telefono.</dd></div>
-        <div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app in anteprima e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: la usi come un'app, senza App Store. L'app nativa &egrave; in arrivo.</dd></div>
-      </dl>
-
-      <div class="intestazione-sezione" style="margin-top:28px">
-        <p class="sopratitolo compari">In breve</p>
-        <h2 class="titolo-sezione parole">Cosa ti porti <em>a casa.</em></h2>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Dati al sicuro</dt><dd>Impronte, base64 ed esadecimale, firme HMAC e password robuste con <code>password_casuale</code>, <code>impronta</code> e <code>codifica_base64</code>.</dd></div>
-        <div class="scheda compari r1"><dt>Reti e forense</dt><dd>Analizzi porte, header dei siti e dati a livello di byte &mdash; tutto in italiano, pronto all'uso.</dd></div>
-        <div class="scheda compari r2"><dt>Stesso Leo, ovunque</dt><dd>Lo stesso codice gira su Windows, Android e iPhone: lo scrivi una volta sola.</dd></div>
-      </dl>
-      <div class="azioni compari" style="margin-top:22px">
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+<span class="fn">stampa</span>(<span class="fn">controlla</span>(<span class="st">"allegato.bin"</span>))</pre>
+      <div class="n-diventa">
+        <b>il taccuino registra ogni prova</b>
+        <span class="n-tag">SHA-256</span><span class="n-tag">HMAC</span><span class="n-tag">scrypt</span><span class="n-tag">verifica</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione scura" aria-labelledby="altre-sicurezza">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-sicurezza" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutte le categorie, già interconnesse.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi, finestre.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="robotica.html">
-            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Robotica</h3>
-              <p>Robot e schede: Pico, sensori, motori.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Come funziona</p>
+    <h2 class="n-h2">Una cassetta di attrezzi, un taccuino</h2>
+    <p class="n-intro">Non parti da un editor vuoto: apri il banco e trovi gli attrezzi pronti, divisi per mestiere. Riempi i campi, premi il pulsante, leggi l'esito; con «Mostra codice» vedi sempre il Leo reale che l'attrezzo ha costruito, pronto da copiare. Ogni prova salvata finisce nel taccuino del caso.</p>
+    <div class="n-passi">
+      <div class="n-passo"><div><h4>Scegli l'attrezzo</h4><p>Impronte e file, password e accessi, cifratura, firme, verifica dell'integrità. Ogni attrezzo ha un nome in italiano e una riga che dice cosa fa: scegli quello giusto per la prova che ti serve.</p></div></div>
+      <div class="n-passo"><div><h4>Esegui la verifica, l'impronta o la firma</h4><p>Indichi un file, incolli una password, scegli una chiave. Calcoli l'impronta SHA-256, firmi e verifichi con HMAC, derivi una password robusta con scrypt, confronti due versioni di un file.</p></div></div>
+      <div class="n-passo"><div><h4>Leggi l'esito</h4><p>Il risultato compare chiaro: l'impronta da copiare, il «firma valida» o «firma non valida», gli avvisi di un file sospetto. Nessuna scatola nera, nessun gergo inutile.</p></div></div>
+      <div class="n-passo"><div><h4>Il taccuino tiene traccia</h4><p>Ogni prova salvata diventa una voce — attrezzo, ingressi, esito, ora, nota — e resta la memoria del caso, esportabile. Quando rifai un controllo domani, hai ancora davanti cosa avevi trovato oggi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ">Interconnessione</p>
+      <h2 class="n-h2">Sicurezza osserva, in sola lettura</h2>
+      <p class="n-intro">Nell'interconnessione Leo Sicurezza ha un ruolo preciso: <strong>osserva</strong>. Legge ciò che un'altra edizione <strong>espone</strong> — una cartella, un'esportazione, un insieme di dati — e ne verifica l'integrità, ma <strong>non modifica mai lo stato altrui</strong>. È il perito che controlla le prove senza toccarle.</p>
+      <p class="n-intro" style="margin-top:12px">Dichiari con <code>[[usa]]</code> cosa vuoi controllare; il taccuino registra l'esito. <a href="suite.html">Come funziona l'interconnessione →</a></p>
+    </div>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>verifica.leo</span></div>
+<pre><span class="cm"># Sicurezza legge ciò che un'altra edizione espone</span>
+[[<span class="kw">usa</span>]]
+progetto    = <span class="st">"magazzino"</span>
+interfaccia = <span class="st">"esportazioni"</span>
+come        = <span class="st">"backup"</span>
+
+<span class="cm"># e ne verifica l'integrità, senza toccare nulla</span>
+<span class="kw">fai</span> <span class="fn">controlla_backup</span>
+    <span class="kw">variabile</span> esito = <span class="fn">verifica_integrita</span>(backup, <span class="st">"impronte.txt"</span>)
+    taccuino.<span class="fn">annota</span>(<span class="st">"backup"</span>, esito)
+    <span class="kw">restituisci</span> esito
+<span class="kw">fine</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="n-dl">
+  <div class="contenitore n-sez">
+    <div class="n-dl-card">
+      <h2>Prova Leo Sicurezza</h2>
+      <p>Il banco del perito dove controlli, cifri e verifichi, e il taccuino ricorda ogni prova. Solo per verifica e difesa. Per Windows e Android, gratis in questa versione.</p>
+      <div class="n-dl-azioni">
+        <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sicurezza_0.1.0.exe">Windows (158 MB)</a>
+        <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sicurezza-0.1.0.apk">Android (65 MB)</a>
+        <a class="n-btn n-btn-ghost" href="manuali/sicurezza.html">Guida</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <!--#piede-->
@@ -320,27 +189,38 @@ In base64: bWVzc2FnZ2lvIHByaXZhdG8=</code></pre>
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="novita.html">Novità</a></li>
           <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuali/index.html">Manuali</a></li>
+          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
-          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="template.html">Esempi</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">

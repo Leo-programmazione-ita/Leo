@@ -3,30 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Giochi — grafica, animazioni, suoni e personaggi pronti</title>
-<meta name="description" content="Leo Giochi è l'edizione per creare giochi: grafica e disegno, animazioni, suoni, geometria 2D e i personaggi e gli sprite già pronti. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
+<title>Leo Giochi — il palco dove costruisci giochi con Leo</title>
+<meta name="description" content="Leo Giochi è un palco: scegli i personaggi, dai le regole e premi Prova. I personaggi e le risorse sono pacchetti che scarichi a scelta nel setup. Usa le classifiche di Leo Dati.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/giochi.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/giochi.html">
-<meta property="og:title" content="Leo Giochi — crea giochi in italiano, con i personaggi pronti">
-<meta property="og:description" content="Grafica, animazioni, suoni, geometria 2D e gli asset pronti: l'edizione di Leo mirata ai giochi.">
+<meta property="og:title" content="Leo Giochi — il palco dove costruisci giochi con Leo">
+<meta property="og:description" content="Leo Giochi è un palco: scegli i personaggi, dai le regole e premi Prova. I personaggi e le risorse sono pacchetti che scarichi a scelta nel setup. Usa le classifiche di Leo Dati.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
+<style>:root{--accento:#A855F7;--accento-rgb:168,85,247;--accento-vivo:#C084FC;--accento-linea:rgba(168,85,247,.3);--accento-tenue:rgba(168,85,247,.1)}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -45,9 +42,10 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuali/index.html">Manuali</a></li>
+            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
-            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
           </ul>
         </li>
@@ -59,7 +57,7 @@
             <li><a href="suite.html">Leo Suite</a></li>
             <li><a href="web.html">Leo Web</a></li>
             <li><a href="dati.html">Leo Dati</a></li>
-            <li><a href="giochi.html" aria-current="page">Leo Giochi</a></li>
+            <li><a href="giochi.html">Leo Giochi</a></li>
             <li><a href="sistema.html">Leo Sistema</a></li>
             <li><a href="sicurezza.html">Leo Sicurezza</a></li>
             <li><a href="robotica.html">Leo Robotica</a></li>
@@ -97,214 +95,91 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#A855F7">
-    <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/giochi.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Giochi, <em class="testo-accento">gioca con il codice.</em></h1>
-      <p class="introduzione compari r2">Grafica, animazioni, suoni e geometria 2D, con i personaggi già pronti: l'edizione mirata a chi vuole creare giochi, in italiano.</p>
-          <div class="azioni compari r3" data-dl-hero style="justify-content:center;margin-top:30px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Giochi_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica per Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Giochi-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+<section class="n-hero">
+  <div class="contenitore n-hero-griglia">
+    <div>
+      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Giochi</b> · palco di gioco</span>
+      <h1 class="n-h1">Metti gli attori.<span class="riga2">Premi ▶ Prova.</span></h1>
+      <p class="n-sotto">Leo Giochi è un <strong>palco di gioco</strong>: scegli i personaggi, li porti sulla scena e dai loro le regole. Quando premi <strong>▶ Prova</strong> il gioco parte lì, nello stesso palco. Niente motore da montare, niente schermate da cambiare.</p>
+      <div class="n-azioni">
+        <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo Giochi</a>
+        <a class="n-btn n-btn-ghost" href="manuali/giochi.html">Guida di Leo Giochi</a>
       </div>
-      <p class="dettagli compari r4" style="margin-top:12px;font-size:14px;color:var(--testo-3)">Gratis &middot; Windows 10/11 &middot; Android 7+ &middot; versione 0.1.0</p>
-</div>
-  </section>
+      <p class="n-nota">Windows · Android · app leggera, i personaggi e le risorse si scaricano a scelta</p>
+    </div>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>avventura.leo</span></div>
+<pre><span class="cm"># a sinistra il palco, qui le regole</span>
+<span class="kw">scena</span> <span class="st">"Avventura"</span>
+Eroe   = <span class="fn">personaggio</span>(<span class="st">"volpe"</span>)
+Moneta = <span class="fn">oggetto</span>(<span class="st">"moneta"</span>)
 
-  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#A855F7">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa ci fai</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Disegna, muovi, <em>fai suonare.</em></h2>
-        <p class="introduzione compari r2">Tutte le funzioni per i giochi, abilitate e pronte in questa edizione, più gli asset inclusi. Sono i moduli della categoria <strong>Giochi</strong>.</p>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Grafica</dt><dd>Disegni sullo schermo con la tartaruga e le forme: linee, figure e colori per costruire la scena (<code>tartaruga</code>).</dd></div>
-        <div class="scheda compari r1"><dt>Animazioni</dt><dd>Fai muovere ciò che disegni, fotogramma dopo fotogramma, per dare vita al gioco (<code>animazioni</code>).</dd></div>
-        <div class="scheda compari r2"><dt>Suoni</dt><dd>Effetti e musica: riproduci suoni al momento giusto, quando si raccoglie un oggetto o si vince (<code>suoni</code>).</dd></div>
-        <div class="scheda compari r3"><dt>Geometria 2D</dt><dd>Posizioni, distanze e collisioni in due dimensioni: la matematica dei giochi, già pronta (<code>geometria</code>).</dd></div>
-        <div class="scheda compari r4"><dt>Aspetto degli oggetti</dt><dd>Dai stile e colore agli oggetti di gioco in modo uniforme e ordinato (<code>stili_oggetti</code>).</dd></div>
-        <div class="scheda compari r5"><dt>Personaggi e asset pronti</dt><dd>I personaggi, gli sprite, i suoni e i cursori già inclusi nel pacchetto: parti subito senza cercare risorse.</dd></div>
-      </dl>
-    </div>
-  </section>
+<span class="kw">quando</span> premi su <span class="kw">fai</span>
+  Eroe.<span class="fn">salta</span>()
+<span class="kw">fine</span>
 
-  <section class="sezione" aria-labelledby="titolo-esempio">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Un personaggio, <em>e si muove.</em></h2>
+<span class="kw">quando</span> Eroe.<span class="fn">tocca</span> Moneta <span class="kw">fai</span>
+  punteggio.<span class="fn">aggiungi</span>(<span class="nu">10</span>)
+<span class="kw">fine</span></pre>
+      <div class="n-diventa">
+        <b>sul palco</b>
+        <span class="n-tag">🦊 Eroe</span><span class="n-tag">💰 Moneta</span><span class="n-tag">👾 Nemico</span><span class="n-tag">▶ Prova</span>
       </div>
-      <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>gioco.leo</span></div>
-<pre class="codice"><code><span class="c-commenti"># Un personaggio si muove sullo schermo</span>
-<span class="c-libreria">sfondo</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;blu notte&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;oro&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">ripeti</span> <span class="c-numeri">6</span> <span class="c-flusso">volte</span>
-    <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
-    <span class="c-libreria">sinistra</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
-    <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
-    <span class="c-libreria">destra</span><span class="c-punteggiatura">(</span><span class="c-numeri">60</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span>
-<span class="c-libreria">nascondi_tartaruga</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_giochi.png" alt="Scena di un gioco creato con Leo Giochi" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">Il gioco gira · personaggi pronti</figcaption>
-      </figure>
     </div>
-      <p class="nota-offline compari">Personaggi e scene già pronti: con <code>quando premi</code> il gioco risponde. I costrutti di base sono gli stessi in ogni edizione.</p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione scura" aria-label="Lo stesso Leo">
-    <div class="contenitore">
-      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>i giochi e la grafica</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Come funziona</p>
+    <h2 class="n-h2">Un teatrino con attori e regole</h2>
+    <p class="n-intro">Il centro è il palco: un mondo con lo sfondo scelto dove stanno i personaggi. A sinistra la libreria da cui li trascini, a destra le regole dell'attore selezionato. Non parti da un foglio di codice: il codice Leo è la conseguenza di ciò che costruisci sul palco.</p>
+    <div class="n-passi">
+      <div class="n-passo"><div><h4>Scegli e scarica i pacchetti</h4><p>Personaggi, sfondi, suoni e musiche sono <strong>pesanti</strong> — centinaia di megabyte, fino a oltre un gigabyte — perciò <strong>non sono dentro l'app</strong>. Nel setup scegli quali pacchetti installare e Leo li scarica: parti con una base leggera e aggiungi solo ciò che ti serve.</p></div></div>
+      <div class="n-passo"><div><h4>Porta i personaggi sul palco</h4><p>Trascini una volpe, un robot, una moneta o una piattaforma dalla libreria al palco: nasce un attore già pronto, con le animazioni e i comportamenti giusti (la moneta si raccoglie, il nemico insegue).</p></div></div>
+      <div class="n-passo"><div><h4>Dai le regole con gli eventi</h4><p>Le regole sono eventi leggibili: «quando premi ↑ → Salta», «quando l'Eroe tocca la Moneta → +10 punti», «quando urto un Nemico → perdi una vita». Ogni evento è un blocco <code>quando … fai … fine</code>.</p></div></div>
+      <div class="n-passo"><div><h4>Premi ▶ Prova</h4><p>Il gioco parte nello stesso palco: muovi, salti, raccogli. Premi ⏹ e torni a sistemare. Quando sei pronto, esporti il gioco per Windows o per il telefono.</p></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione" aria-labelledby="titolo-prova">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, apri un file, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
-      </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Giochi_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <div class="azioni-app compari" style="margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Giochi-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
-      </div>
-      <p class="dettagli" style="margin-top:14px;max-width:62ch">
-        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
-        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
-        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
-      </p>
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ">Interconnessione</p>
+      <h2 class="n-h2">I punteggi vivono in Leo Dati</h2>
+      <p class="n-intro">Una classifica seria non sta dentro il gioco: la tiene <strong>Leo Dati</strong>, che <strong>espone</strong> una tabella dei punteggi, e Leo Giochi la <strong>usa</strong>. Così i record restano quando chiudi il gioco e li puoi mostrare anche altrove — su un sito fatto con Leo Web, ad esempio.</p>
+      <p class="n-intro" style="margin-top:12px">È la piattaforma Suite a rendere possibile questo collegamento, dichiarato e sicuro. <a href="suite.html">Come funziona l'interconnessione →</a></p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>classifica.leo</span></div>
+<pre><span class="cm"># nel progetto.toml del gioco: dichiari cosa usi</span>
+[[<span class="kw">usa</span>]]
+progetto    = <span class="st">"arcade"</span>
+interfaccia = <span class="st">"punteggi"</span>
+come        = <span class="st">"classifica"</span>
 
-  
-  <section class="sezione" aria-labelledby="guida-giochi" style="--ed:#A855F7">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Come si usa</p>
-        <h2 id="guida-giochi" class="titolo-sezione parole">Guida rapida, <em>in tre minuti.</em></h2>
-        <p class="introduzione compari r2">Dall’installazione al primo disegno sullo schermo. È lo stesso Leo su Windows, Android e iPhone: cambia solo come lo apri.</p>
-      </div>
-      <div class="finestra-codice ingrandisci compari">
-        <div class="barra"><i></i><i></i><i></i><span>stella.leo</span></div>
-<pre class="codice"><code><span class="c-commenti"># Un quadrato colorato con la tartaruga</span>
-<span class="c-libreria">sfondo</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;blu notte&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">colore</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;oro&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">spessore</span><span class="c-punteggiatura">(</span><span class="c-numeri">4</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">ripeti</span> <span class="c-numeri">4</span> <span class="c-flusso">volte</span>
-        <span class="c-libreria">avanti</span><span class="c-punteggiatura">(</span><span class="c-numeri">120</span><span class="c-punteggiatura">)</span>
-        <span class="c-libreria">destra</span><span class="c-punteggiatura">(</span><span class="c-numeri">90</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span>
-<span class="c-libreria">nascondi_tartaruga</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <p class="nota-offline compari">Esegui e la tartaruga disegna un quadrato color oro su sfondo blu notte, poi salva tutto in un file <code>.svg</code> che apri con il browser. Cambia <code>avanti(120)</code> o il <code>colore</code> e rifai: vedi subito la differenza.</p>
-      <div class="intestazione-sezione" style="margin-top:34px">
-        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">Primi passi, <em>su ogni dispositivo.</em></h3>
-      </div>
-      <dl class="requisiti"><div class="scheda compari"><dt>Windows (.exe)</dt><dd>Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, scrivi il codice qui sopra e premi <strong>Esegui</strong> (o F5): la finestra con il disegno appare al volo.</dd></div><div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l’APK, apri l’app <strong>Leo</strong>, incolla il codice e tocca <strong>Esegui</strong>: disegni con la tartaruga anche dal telefono.</dd></div><div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app dal browser e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: diventa un’icona come un’app, pronta per scrivere ed eseguire.</dd></div></dl>
-      <p class="dettagli compari" style="margin-top:14px;max-width:64ch"><strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp; <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp; <strong>iPhone</strong> &mdash; web-app in anteprima; l&rsquo;app su App Store &egrave; in arrivo.</p>
-      <div class="intestazione-sezione" style="margin-top:34px">
-        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">In breve, <em>cosa porti a casa.</em></h3>
-      </div>
-      <ul class="elenco-spunte compari"><li><strong>Grafica con la tartaruga</strong>: <code>avanti</code>, <code>destra</code>, <code>colore</code>, <code>ripeti</code> per disegnare forme e scene.</li><li><strong>Animazioni e suoni</strong> per dare vita al gioco e reagire ai comandi.</li><li><strong>Geometria 2D</strong> e <strong>personaggi già pronti</strong> nel pacchetto: parti subito.</li><li>Il disegno si salva come <code>.svg</code>: lo apri, lo condividi o lo metti in una pagina.</li></ul>
-      <div class="azioni compari" style="margin-top:20px">
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
+<span class="cm"># poi, in Leo, "classifica" è già pronta</span>
+<span class="kw">quando</span> partita.<span class="fn">finisce</span> <span class="kw">fai</span>
+  classifica.<span class="fn">salva</span>(<span class="st">"Rosa"</span>, punteggio)
+<span class="kw">fine</span></pre>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione scura" aria-labelledby="altre-giochi">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-giochi" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutte le categorie, già interconnesse.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi, finestre.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sicurezza.html">
-            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sicurezza</h3>
-              <p>Sicurezza informatica, reti e forense.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="robotica.html">
-            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Robotica</h3>
-              <p>Robot e schede: Pico, sensori, motori.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
+<section class="n-dl">
+  <div class="contenitore n-sez">
+    <div class="n-dl-card">
+      <h2>Prova Leo Giochi</h2>
+      <p>Il palco dove scegli i personaggi, dai le regole e premi Prova. L'app è leggera: i pacchetti di personaggi e risorse li scarichi a scelta. Per Windows e Android, gratis in questa versione.</p>
+      <div class="n-dl-azioni">
+        <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Giochi_0.1.0.exe">Windows (161 MB)</a>
+        <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Giochi-0.1.0.apk">Android (65 MB)</a>
+        <a class="n-btn n-btn-ghost" href="manuali/giochi.html">Guida</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <!--#piede-->
@@ -315,27 +190,38 @@
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="novita.html">Novità</a></li>
           <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuali/index.html">Manuali</a></li>
+          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
-          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="template.html">Esempi</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">

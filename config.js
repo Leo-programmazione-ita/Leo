@@ -15,7 +15,7 @@ window.LEO_CONFIG = {
 
   /* Versione e dimensione mostrate sotto il pulsante ("" = non mostrarle). */
   versione: "0.1.0",
-  dimensione: "147 MB",
+  dimensione: "161 MB",
 
   /* App Leo per Android: indirizzo dell'APK (o della pagina del Play Store).
      ""  -> il pulsante "Scarica l'app" mostra "Link in arrivo".                 */

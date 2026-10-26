@@ -3,30 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Robotica — Pico, sensori, motori e LED</title>
-<meta name="description" content="Leo Robotica è l'edizione per robot e schede: Raspberry Pi Pico, sensori, motori e LED. Da Leo rilevi i dispositivi collegati e li flashi, poi carichi il programma. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
+<title>Leo Robotica — la plancia di comando per la tua scheda</title>
+<meta name="description" content="Leo Robotica è una plancia di comando per l'hardware: pin, sensori, LED e motori della tua Raspberry Pi Pico. Un simulatore ti fa provare tutto prima di collegare la scheda vera.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/robotica.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/robotica.html">
-<meta property="og:title" content="Leo Robotica — robot e schede in italiano">
-<meta property="og:description" content="Raspberry Pi Pico, sensori, motori e LED: rileva i dispositivi, flashali e programmali in italiano con Leo.">
+<meta property="og:title" content="Leo Robotica — la plancia di comando per la tua scheda">
+<meta property="og:description" content="Leo Robotica è una plancia di comando per l'hardware: pin, sensori, LED e motori della tua Raspberry Pi Pico. Un simulatore ti fa provare tutto prima di collegare la scheda vera.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
+<style>:root{--accento:#F97316;--accento-rgb:249,115,22;--accento-vivo:#FB923C;--accento-linea:rgba(249,115,22,.3);--accento-tenue:rgba(249,115,22,.1)}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -45,9 +42,10 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuali/index.html">Manuali</a></li>
+            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
-            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
           </ul>
         </li>
@@ -62,7 +60,7 @@
             <li><a href="giochi.html">Leo Giochi</a></li>
             <li><a href="sistema.html">Leo Sistema</a></li>
             <li><a href="sicurezza.html">Leo Sicurezza</a></li>
-            <li><a href="robotica.html" aria-current="page">Leo Robotica</a></li>
+            <li><a href="robotica.html">Leo Robotica</a></li>
             <li><a href="confronto.html">Confronta le edizioni</a></li>
           </ul>
         </li>
@@ -97,220 +95,118 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#F97316">
-    <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/robotica.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Robotica, <em class="testo-accento">dai vita alle cose.</em></h1>
-      <p class="introduzione compari r2">Accendi un LED, leggi un sensore, muovi un motore: Leo Robotica parla con Raspberry Pi Pico. Da Leo <strong>rilevi i dispositivi collegati e li flashi</strong>, poi carichi il tuo programma. In italiano.</p>
-          <div class="azioni compari r3" data-dl-hero style="justify-content:center;margin-top:30px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Robotica_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica per Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Robotica-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+<section class="n-hero">
+  <div class="contenitore n-hero-griglia">
+    <div>
+      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Robotica</b> · plancia hardware</span>
+      <h1 class="n-h1">Scrivi Leo.<span class="riga2">Si muove la scheda.</span></h1>
+      <p class="n-sotto">Leo Robotica è una <strong>plancia di comando per l'hardware</strong>: davanti a te hai i pin, i sensori, i LED e i motori della tua <strong>Raspberry Pi Pico</strong>. Scrivi il comportamento in Leo, lo provi nel <strong>simulatore</strong> senza collegare niente, poi lo carichi sulla scheda vera.</p>
+      <div class="n-azioni">
+        <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo Robotica</a>
+        <a class="n-btn n-btn-ghost" href="manuali/robotica.html">Guida di Leo Robotica</a>
       </div>
-      <p class="dettagli compari r4" style="margin-top:12px;font-size:14px;color:var(--testo-3)">Gratis &middot; Windows 10/11 &middot; Android 7+ &middot; versione 0.1.0</p>
-</div>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#F97316">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa ci fai</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Dal rilevamento <em>al robot che si muove.</em></h2>
-        <p class="introduzione compari r2">Tutte le funzioni per i robot e le schede, abilitate e pronte in questa edizione. Sono i moduli della categoria <strong>Robotica</strong>.</p>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Rileva e flasha</dt><dd>Da Leo vedi i dispositivi collegati (Raspberry Pi Pico) e li prepari con un comando (<code>robotica</code>).</dd></div>
-        <div class="scheda compari r1"><dt>Pin e LED</dt><dd>Accendi e spegni i pin, fai lampeggiare i LED, leggi lo stato dei pin digitali.</dd></div>
-        <div class="scheda compari r2"><dt>Sensori e pulsanti</dt><dd>Leggi pulsanti e sensori (temperatura, luce, distanza) e reagisci a quello che succede.</dd></div>
-        <div class="scheda compari r3"><dt>Motori e PWM</dt><dd>Piloti motori e servo con il PWM, per muovere davvero le cose.</dd></div>
-        <div class="scheda compari r4"><dt>Carica il programma</dt><dd>Scrivi in Leo e carichi il programma sulla scheda, pronta a partire da sola.</dd></div>
-        <div class="scheda compari r5"><dt>Simulatore</dt><dd>Provi tutto senza hardware con una scheda simulata, poi passi a quella vera.</dd></div>
-      </dl>
+      <p class="n-nota">Windows · Android · simulatore incluso: provi tutto anche senza scheda</p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>comportamento.leo</span></div>
+<pre><span class="cm"># quando premo il pulsante, accendo il LED</span>
+<span class="kw">variabile</span> scheda = <span class="fn">plancia</span>(<span class="st">"Pico"</span>)
+<span class="kw">variabile</span> luce = scheda.<span class="fn">led</span>(<span class="nu">15</span>)
+<span class="kw">variabile</span> tasto = scheda.<span class="fn">pulsante</span>(<span class="nu">14</span>)
 
-  <section class="sezione" aria-labelledby="titolo-esempio">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Fai lampeggiare <em>un LED.</em></h2>
-      </div>
-      <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>led.leo</span></div>
-<pre class="codice"><code><span class="c-commenti"># Collega la scheda e fai lampeggiare il LED</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">s</span> <span class="c-operatori">=</span> <span class="c-libreria">collega_scheda</span><span class="c-punteggiatura">(</span><span class="c-variabili">simulata</span> <span class="c-operatori">=</span> <span class="c-costanti">vero</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">ripeti</span> <span class="c-numeri">3</span> <span class="c-flusso">volte</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">accendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">)</span>
-    <span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
-    <span class="c-variabili">s</span><span class="c-punteggiatura">.</span><span class="c-libreria">spegni</span><span class="c-punteggiatura">(</span><span class="c-numeri">25</span><span class="c-punteggiatura">)</span>
-    <span class="c-libreria">attendi</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.5</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_robotica.png" alt="Raspberry Pi Pico collegato con il LED acceso" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">Pico collegato · LED acceso</figcaption>
-      </figure>
-    </div>
-      <p class="nota-offline compari">Niente scheda sottomano? <code>scheda_simulata()</code> fa provare tutto senza hardware; poi colleghi il Pico vero.</p>
-    </div>
-  </section>
-
-  <section class="sezione scura" aria-label="Lo stesso Leo">
-    <div class="contenitore">
-      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>i robot e le schede</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="titolo-prova">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, collega la scheda, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code>.</p>
-      </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Robotica_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <div class="azioni-app compari" style="margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Robotica-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+tasto.<span class="kw">quando</span> premuto <span class="kw">fai</span>
+  luce.<span class="fn">accendi</span>()
+<span class="kw">fine</span></pre>
+      <div class="n-diventa">
+        <b>la plancia comanda</b>
+        <span class="n-tag">pin GP15</span><span class="n-tag">LED</span><span class="n-tag">pulsante GP14</span><span class="n-tag">simulatore</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione" aria-labelledby="come-si-usa-robotica" style="--ed:#F97316">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Come si usa</p>
-        <h2 id="come-si-usa-robotica" class="titolo-sezione parole">Guida rapida, <em>anche senza scheda.</em></h2>
-        <p class="introduzione compari r2">Tutta la robotica di Leo &egrave; dentro Leo Studio: apri un file, scrivi in italiano e avvia. Non hai un Pico sottomano? Usa il <strong>Banco</strong>, la scheda simulata: l'esempio gira lo stesso, poi passi a quella vera.</p>
-      </div>
-      <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>guida.leo</span></div>
-<pre class="codice"><code># Nessuna scheda sottomano: uso il Banco (scheda simulata)
-variabile scheda = collega_scheda(simulata = vero)
-scheda.accendi(25)
-scrivi("LED di bordo acceso")
-scrivi("Temperatura della scheda: " + testo(scheda.temperatura()) + " gradi")</code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <figcaption class="promo-etichetta">Cosa produce</figcaption>
-<pre class="codice"><code>LED di bordo acceso
-Temperatura della scheda: 20.8 gradi</code></pre>
-      </figure>
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Come funziona</p>
+    <h2 class="n-h2">La scheda è il tuo documento</h2>
+    <p class="n-intro">Aprendo un progetto Robotica non vedi un editor generico: vedi la <strong>scheda disegnata grande</strong> con lo schema dei pin. Ci colleghi i componenti, scrivi cosa devono fare in Leo e li metti alla prova nel simulatore prima ancora di avere l'hardware davanti.</p>
+    <div class="n-passi">
+      <div class="n-passo"><div><h4>Apri la plancia</h4><p>Scegli il modello di scheda (Pico, Pico W o Pico 2) e la plancia disegna lo schema giusto dei suoi piedini: GP0–GP28, GND, 3V3, 5V, i pin analogici e il LED di bordo.</p></div></div>
+      <div class="n-passo"><div><h4>Scegli i pin e i componenti</h4><p>Dalla casella a sinistra prendi LED, pulsanti, sensori (luce, temperatura, distanza) e motori. Li colleghi a un piedino con un cavo: niente coordinate, solo il pin a cui vanno.</p></div></div>
+      <div class="n-passo"><div><h4>Scrivi il comportamento in Leo</h4><p>Descrivi cosa succede con le parole di sempre: «quando premo il pulsante accendi il LED», «leggi la temperatura ogni secondo», «porta il motore al 45%». In italiano, con <code>fai … fine</code>.</p></div></div>
+      <div class="n-passo"><div><h4>Prova nel simulatore</h4><p>Il simulatore risponde come una scheda vera: accendi un LED e si illumina, leggi un sensore e vedi il valore cambiare, muovi un motore e lo osservi girare. Tutto senza collegare niente.</p></div></div>
+      <div class="n-passo"><div><h4>Collega e carica sulla Pico</h4><p>Quando sei convinto, attacchi la scheda via USB e premi «Carica sulla scheda»: lo stesso comportamento che hai provato nel simulatore parte sull'hardware vero.</p></div></div>
     </div>
-      <p class="nota-offline compari">Il <strong>Banco</strong> (<code>collega_scheda(simulata = vero)</code>) &egrave; una scheda finta gi&agrave; collegata: accendi il LED di bordo e leggi la temperatura senza alcun hardware. Con il Pico vero basta togliere <code>simulata = vero</code>.</p>
+  </div>
+</section>
 
-      <div class="intestazione-sezione" style="margin-top:28px">
-        <p class="sopratitolo compari">Primi passi</p>
-        <h2 class="titolo-sezione parole">Sul tuo <em>dispositivo.</em></h2>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Windows (.exe)</dt><dd>Scarica il programma e installalo. Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, incolla l'esempio qui sopra e premi <strong>Esegui</strong>: gira subito grazie al Banco, senza collegare nulla.</dd></div>
-        <div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l'<code>.apk</code> (in anteprima, presto su Google Play), apri l'app Leo e scrivi lo stesso codice in italiano: con il Banco provi la robotica anche dal telefono.</dd></div>
-        <div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app in anteprima e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: la usi come un'app, senza App Store. L'app nativa &egrave; in arrivo.</dd></div>
-      </dl>
-
-      <div class="intestazione-sezione" style="margin-top:28px">
-        <p class="sopratitolo compari">In breve</p>
-        <h2 class="titolo-sezione parole">Cosa ti porti <em>a casa.</em></h2>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Prova senza hardware</dt><dd>Il <strong>Banco</strong> simula la scheda: accendi pin e LED, leggi sensori e temperatura con <code>collega_scheda(simulata = vero)</code>.</dd></div>
-        <div class="scheda compari r1"><dt>Poi la scheda vera</dt><dd>Lo stesso codice comanda un Raspberry Pi Pico via USB o Wi-Fi: pin, sensori, motori e LED, in italiano.</dd></div>
-        <div class="scheda compari r2"><dt>Stesso Leo, ovunque</dt><dd>Lo stesso programma gira su Windows, Android e iPhone: lo scrivi una volta sola.</dd></div>
-      </dl>
-      <div class="azioni compari" style="margin-top:22px">
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ">Robotica non è Sistema</p>
+      <h2 class="n-h2">Comanda una scheda, non il computer</h2>
+      <p class="n-intro">È facile confonderle, ma fanno cose diverse. <strong>Leo Robotica</strong> comanda l'<strong>hardware di una scheda elettronica</strong>: i pin, i sensori e gli attuatori di una Raspberry Pi Pico. <strong>Leo Sistema</strong> invece comanda il <strong>computer e il suo sistema operativo</strong>: file, programmi, automazioni.</p>
+      <p class="n-intro" style="margin-top:12px">Robotica guarda fuori, verso i cavi e i piedini; Sistema guarda dentro, verso la macchina. Due plance distinte, ciascuna col suo mondo.</p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>progetto.toml</span></div>
+<pre><span class="cm"># Robotica ESPONE letture e comandi dell'hardware</span>
+[[<span class="kw">espone</span>]]
+tipo = <span class="st">"hardware/lettura"</span>
+nome = <span class="st">"temperatura"</span>
+da   = <span class="st">"sensore_temp"</span>
 
-  <section class="sezione scura" aria-labelledby="altre-robotica">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-robotica" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutte le categorie, già interconnesse.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sicurezza.html">
-            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sicurezza</h3>
-              <p>Sicurezza informatica, reti e forense.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
+[[<span class="kw">espone</span>]]
+tipo = <span class="st">"hardware/comando"</span>
+nome = <span class="st">"accendi_luce"</span>
+da   = <span class="st">"led_sala"</span>
+
+<span class="cm"># e USA i dati di un'altra edizione</span>
+[[<span class="kw">usa</span>]]
+progetto    = <span class="st">"magazzino"</span>
+interfaccia = <span class="st">"soglie"</span>
+come        = <span class="st">"limiti"</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ">Interconnessione</p>
+      <h2 class="n-h2">Letture e comandi per le altre edizioni</h2>
+      <p class="n-intro">La tua scheda non resta isolata. Leo Robotica <strong>espone</strong> le sue letture e i suoi comandi (<code>hardware/lettura</code>, <code>hardware/comando</code>): così un sito di Leo Web può mostrare la temperatura della stanza, o Leo Sistema può accendere una luce quando scatta un'automazione. E Robotica, a sua volta, <strong>usa</strong> i dati di Leo Dati e i trigger di Leo Sistema.</p>
+      <p class="n-intro" style="margin-top:12px">È la piattaforma Suite a rendere possibile questo collegamento, dichiarato e sicuro. <a href="suite.html">Come funziona l'interconnessione →</a></p>
+    </div>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>sala.leo</span></div>
+<pre><span class="cm"># il sensore di luce è esposto come lettura</span>
+<span class="kw">variabile</span> scheda = <span class="fn">plancia</span>(<span class="st">"Pico"</span>)
+<span class="kw">variabile</span> buio = scheda.<span class="fn">sensore</span>(<span class="st">"luce"</span>, <span class="nu">26</span>)
+<span class="kw">variabile</span> lampada = scheda.<span class="fn">led</span>(<span class="nu">15</span>)
+
+buio.<span class="kw">quando</span> cambia <span class="kw">fai</span>
+  <span class="kw">se</span> buio.<span class="fn">valore</span>() < limiti.minimo <span class="kw">fai</span>
+    lampada.<span class="fn">accendi</span>()
+  <span class="kw">fine</span>
+<span class="kw">fine</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="n-dl">
+  <div class="contenitore n-sez">
+    <div class="n-dl-card">
+      <h2>Prova Leo Robotica</h2>
+      <p>La plancia di comando per la tua scheda, con il simulatore per provare tutto prima di collegarla. Per Windows e Android, gratis in questa versione.</p>
+      <div class="n-dl-azioni">
+        <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Robotica_0.1.0.exe">Windows (158 MB)</a>
+        <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Robotica-0.1.0.apk">Android (65 MB)</a>
+        <a class="n-btn n-btn-ghost" href="manuali/robotica.html">Guida</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <!--#piede-->
@@ -321,27 +217,38 @@ Temperatura della scheda: 20.8 gradi</code></pre>
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="novita.html">Novità</a></li>
           <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuali/index.html">Manuali</a></li>
+          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
-          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="template.html">Esempi</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">

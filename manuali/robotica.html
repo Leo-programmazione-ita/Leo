@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida di Leo Robotica — dalla plancia alla scheda</title>
+<meta name="description" content="La guida pratica di Leo Robotica: aprire la plancia, scegliere pin e componenti, scrivere il comportamento in Leo, provarlo nel simulatore e caricarlo sulla Raspberry Pi Pico.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuali/robotica.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:title" content="Guida di Leo Robotica — dalla plancia alla scheda">
+<meta property="og:description" content="La guida pratica di Leo Robotica: aprire la plancia, scegliere pin e componenti, scrivere il comportamento in Leo, provarlo nel simulatore e caricarlo sulla Raspberry Pi Pico.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css?v=20261026">
+<link rel="stylesheet" href="../css/nuovo.css?v=20261026">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js?v=20261026" defer></script>
+<script src="../js/cerca.js" defer></script>
+<style>:root{--accento:#F97316;--accento-rgb:249,115,22;--accento-vivo:#FB923C;--accento-linea:rgba(249,115,22,.3);--accento-tenue:rgba(249,115,22,.1)}</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Impara
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="index.html">Manuali</a></li>
+            <li><a href="linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="piattaforma.html">Piattaforma Suite</a></li>
+            <li><a href="../riferimento/index.html">Riferimento</a></li>
+            <li><a href="../template.html">Esempi</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Scopri
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../suite.html">Leo Suite</a></li>
+            <li><a href="../web.html">Leo Web</a></li>
+            <li><a href="../dati.html">Leo Dati</a></li>
+            <li><a href="../giochi.html">Leo Giochi</a></li>
+            <li><a href="../sistema.html">Leo Sistema</a></li>
+            <li><a href="../sicurezza.html">Leo Sicurezza</a></li>
+            <li><a href="../robotica.html">Leo Robotica</a></li>
+            <li><a href="../confronto.html">Confronta le edizioni</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Risorse
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../video.html">Video</a></li>
+            <li><a href="../novita.html">Novità</a></li>
+            <li><a href="../statistiche.html">Statistiche</a></li>
+          </ul>
+        </li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+<section class="n-hero">
+  <div class="contenitore">
+    <span class="n-occhiello"><span class="pallino"></span> Guida · Leo Robotica</span>
+    <h1 class="n-h1" style="font-size:clamp(32px,5vw,54px)">Comandare una scheda con Leo Robotica</h1>
+    <p class="n-sotto" style="max-width:62ch">Come si fa e dove trovi le cose nella plancia hardware. Dalla prima accensione di un LED al caricamento del comportamento sulla Raspberry Pi Pico.</p>
+  </div>
+</section>
+
+<section class="n-sez">
+  <div class="contenitore n-doc">
+    <h2>Che cos'è la plancia</h2>
+    <p>Leo Robotica è una <strong>plancia di comando per l'hardware</strong>. Al centro vedi la tua scheda disegnata grande, con lo schema dei pin; a sinistra la casella dei componenti; a destra le proprietà del pezzo scelto e il codice Leo. Comanda i piedini di una <strong>scheda elettronica</strong> (la Raspberry Pi Pico), non il tuo computer: per quello c'è Leo Sistema.</p>
+
+    <h2>Aprire la plancia</h2>
+    <p>Crea un progetto Robotica e scegli il modello di scheda nella barra in alto: <strong>Pico</strong>, <strong>Pico W</strong> o <strong>Pico 2</strong>. La plancia disegna subito lo schema giusto dei piedini — GP0–GP28, le masse (GND), il 3V3, il 5V, i pin analogici 26/27/28 e il LED di bordo — così sai esattamente dove collegare ogni cosa.</p>
+
+    <h2>Scegliere pin e componenti</h2>
+    <p>Dalla casella a sinistra prendi un componente e lo colleghi a un piedino: la plancia disegna il cavo dal pezzo al pin.</p>
+    <ul>
+      <li><strong>LED</strong>: una lucina da accendere, spegnere o commutare.</li>
+      <li><strong>Pulsante</strong>: un tasto fisico che reagisce quando lo premi o lo rilasci.</li>
+      <li><strong>Sensore</strong>: luce, temperatura o distanza, con il valore letto dal vivo.</li>
+      <li><strong>Motore</strong>: regolato in percentuale (0–100%) con il cursore.</li>
+    </ul>
+
+    <h2>Scrivere il comportamento in Leo</h2>
+    <p>Il comportamento si scrive in Leo, in italiano. Prendi la scheda con <code>plancia</code>, i componenti con i suoi metodi e descrivi cosa succede con <code>quando … fai … fine</code>:</p>
+    <pre>variabile scheda = plancia("Pico")
+variabile luce = scheda.led(15)
+variabile tasto = scheda.pulsante(14)
+
+tasto.quando premuto fai
+  luce.accendi()
+fine</pre>
+    <p>Per leggere un sensore ragioni allo stesso modo:</p>
+    <pre>variabile scheda = plancia("Pico")
+variabile temp = scheda.sensore("temperatura", 26)
+
+temp.quando cambia fai
+  scrivi("Temperatura:", temp.valore(), "°C")
+fine</pre>
+
+    <h2>Provare nel simulatore</h2>
+    <p>Non serve la scheda per iniziare. Il <strong>simulatore</strong> risponde come una Pico vera: accendi un LED e lo vedi illuminarsi, leggi un sensore e il valore cambia dal vivo, muovi un motore e lo osservi girare, premi un pulsante a schermo e il tuo comportamento scatta. Provi tutto in classe, senza collegare niente, poi passi all'hardware senza cambiare una riga.</p>
+
+    <h2>Caricare sulla Pico</h2>
+    <p>Quando il comportamento ti convince, collega la scheda al computer con il cavo USB. La barra in alto mostra la connessione (COM / Wi-Fi / Simulata); premi <strong>«Carica sulla scheda»</strong> e lo stesso comportamento che hai provato nel simulatore parte sulla Pico vera.</p>
+
+    <h2>Dove trovo le cose</h2>
+    <ul>
+      <li><strong>Modello di scheda e connessione</strong>: barra in alto.</li>
+      <li><strong>Componenti</strong> (LED, pulsante, sensore, motore): casella a sinistra.</li>
+      <li><strong>Proprietà del pezzo</strong> (pin, colore, tipo di sensore): pannello a destra.</li>
+      <li><strong>Codice Leo</strong>: finestra accanto alla plancia, con «Mostra codice».</li>
+      <li><strong>Telemetria dal vivo</strong> (valori dei sensori, pin accesi): sotto la plancia.</li>
+      <li><strong>Carica sulla scheda</strong>: pulsante nella barra in alto.</li>
+    </ul>
+
+    <div class="n-indice" style="margin-top:44px">
+      <a href="../robotica.html" style="--cc:var(--c-robotica)"><strong>Scheda di Leo Robotica</strong><span>Cos'è e come scaricarlo.</span></a>
+      <a href="piattaforma.html" style="--cc:var(--c-suite)"><strong>Interconnessione</strong><span>Come Robotica espone letture e comandi alle altre edizioni.</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../suite.html">Leo Suite</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="../web.html">Web</a></li>
+          <li><a href="../dati.html">Dati</a></li>
+          <li><a href="../giochi.html">Giochi</a></li>
+          <li><a href="../sistema.html">Sistema</a></li>
+          <li><a href="../sicurezza.html">Sicurezza</a></li>
+          <li><a href="../robotica.html">Robotica</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="index.html">Manuali</a></li>
+          <li><a href="linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="piattaforma.html">Piattaforma</a></li>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../template.html">Esempi</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

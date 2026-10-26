@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida di Leo Sistema — comporre e attivare un agente</title>
+<meta name="description" content="La guida pratica di Leo Sistema: comporre un agente con sensi, testa e mani, scegliere regole o IA locale (e cosa installa il setup), interfacciarsi con Leo Dati, provare a vuoto e attivare.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuali/sistema.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:title" content="Guida di Leo Sistema — comporre e attivare un agente">
+<meta property="og:description" content="La guida pratica di Leo Sistema: comporre un agente con sensi, testa e mani, scegliere regole o IA locale (e cosa installa il setup), interfacciarsi con Leo Dati, provare a vuoto e attivare.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css?v=20261026">
+<link rel="stylesheet" href="../css/nuovo.css?v=20261026">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js?v=20261026" defer></script>
+<script src="../js/cerca.js" defer></script>
+<style>:root{--accento:#7F93AD;--accento-rgb:127,147,173;--accento-vivo:#A3B3C7;--accento-linea:rgba(127,147,173,.3);--accento-tenue:rgba(127,147,173,.1)}</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Impara
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="index.html">Manuali</a></li>
+            <li><a href="linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="piattaforma.html">Piattaforma Suite</a></li>
+            <li><a href="../riferimento/index.html">Riferimento</a></li>
+            <li><a href="../template.html">Esempi</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Scopri
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../suite.html">Leo Suite</a></li>
+            <li><a href="../web.html">Leo Web</a></li>
+            <li><a href="../dati.html">Leo Dati</a></li>
+            <li><a href="../giochi.html">Leo Giochi</a></li>
+            <li><a href="../sistema.html">Leo Sistema</a></li>
+            <li><a href="../sicurezza.html">Leo Sicurezza</a></li>
+            <li><a href="../robotica.html">Leo Robotica</a></li>
+            <li><a href="../confronto.html">Confronta le edizioni</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Risorse
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../video.html">Video</a></li>
+            <li><a href="../novita.html">Novità</a></li>
+            <li><a href="../statistiche.html">Statistiche</a></li>
+          </ul>
+        </li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+<section class="n-hero">
+  <div class="contenitore">
+    <span class="n-occhiello"><span class="pallino"></span> Guida · Leo Sistema</span>
+    <h1 class="n-h1" style="font-size:clamp(32px,5vw,54px)">Comporre un agente con Leo Sistema</h1>
+    <p class="n-sotto" style="max-width:62ch">Come si fa e dove trovi le cose nel laboratorio di agenti. Dai sensi all'azione: componi un agente, scegli se decide con le regole o con l'IA, collegalo ai dati, provalo e attivalo.</p>
+  </div>
+</section>
+
+<section class="n-sez">
+  <div class="contenitore n-doc">
+    <h2>Un agente ha tre parti</h2>
+    <p>Un agente è un programma che resta vivo e lavora da solo. Lo componi scegliendo tre cose:</p>
+    <ul>
+      <li><strong>Sensi</strong> — il «quando»: cosa osserva e cosa lo sveglia (un orario, un file che compare, un processo che parte, un valore che cambia).</li>
+      <li><strong>Testa</strong> — come decide: con le regole che scrivi tu, oppure con un'IA locale che ragiona.</li>
+      <li><strong>Mani</strong> — cosa fa sul computer: file, finestre, processi, notifiche, comandi.</li>
+    </ul>
+    <p>Leo Sistema comanda il sistema operativo, non l'hardware di una scheda elettronica: per quello c'è Leo Robotica.</p>
+
+    <h2>Comporre un agente</h2>
+    <p>L'agente è un normale programma Leo. I sensi sono il ciclo che <code>sorveglia</code> e resta in ascolto; la testa è il <code>se… allora</code>; le mani sono le azioni:</p>
+    <pre># SENSI — resta in ascolto di una cartella
+sorveglia "~/Download" fai arrivato
+    # TESTA — una regola decide
+    se estensione_file(arrivato) == ".pdf" allora
+        # MANI — agisce sul computer
+        sposta_file(arrivato, "~/Documenti")
+        mostra_notifica("Ordinato", nome_file(arrivato))
+    fine
+fine</pre>
+    <p>Trovi i sensi, i verbi delle mani e il registro nelle tre fasce dell'editor: sorgente a sinistra, agente al centro, registro a destra.</p>
+
+    <h2>La testa: regole o IA</h2>
+    <p>La testa decide in due modi, a tua scelta, e puoi mescolarli. Con le <strong>regole</strong> imposti tu la logica. Con un'<strong>IA locale</strong> l'agente ragiona: il modello gira sul tuo computer, gratis e offline.</p>
+    <pre>variabile ia = modello_locale("llama3")
+
+sorveglia "~/Download" fai arrivato
+    # la testa IA sceglie la cartella giusta
+    variabile dove = ia.cartella_per(arrivato)
+    sposta_file(arrivato, dove)
+fine</pre>
+    <p>Se un agente usa l'IA, <strong>è il setup a installare le dipendenze</strong> — una o più, ciò che serve: il runtime del modello (Ollama) e almeno un modello di partenza. Tu non fai nulla a mano; il modello si scarica al primo avvio, poi lavora offline, e puoi aggiungerne altri.</p>
+    <ul>
+      <li>L'IA locale è realistica su <strong>Windows</strong>; su Android si usa un modello remoto o piccolissimo.</li>
+      <li>Le <strong>regole</strong> girano ovunque, senza installare niente.</li>
+    </ul>
+
+    <h2>Interfacciarsi con Leo Dati</h2>
+    <p>Sistema è l'attuatore: usa i dati che le altre edizioni espongono. Dichiari nel <code>progetto.toml</code> la tabella di Leo Dati che ti serve, e il nome è pronto nel codice dell'agente:</p>
+    <pre>[[usa]]
+progetto    = "magazzino"
+interfaccia = "prodotti"
+come        = "catalogo"</pre>
+    <pre>per ogni p in catalogo.righe() fai
+    se p["scorta"] == 0 allora
+        mostra_notifica("Esaurito", p["nome"])
+    fine
+fine</pre>
+    <p>Allo stesso modo un agente può <strong>esporre</strong> i propri trigger e le proprie azioni, così un'altra edizione li attiva:</p>
+    <pre>[[espone]]
+tipo = "servizio/azione"
+nome = "aggiorna_scorte"
+da   = "agente.leo"</pre>
+
+    <h2>Provare e attivare</h2>
+    <p>Prima di toccare il disco, usa la <strong>prova a vuoto</strong>: l'agente simula tutto e stampa nel registro l'elenco di ciò che farebbe, con il conto dei file coinvolti. Nessuna scrittura finché non dai l'ok.</p>
+    <p>Con <strong>Attiva</strong> l'agente resta in ascolto e lavora da solo, mostrando un registro dal vivo (fatto, saltato, errore). Lo fermi e lo riparti quando vuoi, lo mandi in sottofondo o all'avvio del computer, e ne tieni attivi più d'uno insieme.</p>
+
+    <h2>Dove trovo le cose</h2>
+    <ul>
+      <li><strong>Sorgente</strong> (file, processi, computer): fascia a sinistra.</li>
+      <li><strong>Sensi, testa e mani dell'agente</strong>: fascia centrale, a passi.</li>
+      <li><strong>Regole o IA</strong> (e la scelta del modello): nel passo della testa.</li>
+      <li><strong>Codice Leo</strong> generato: con «Mostra codice», sotto l'agente.</li>
+      <li><strong>Prova a vuoto</strong> e <strong>Attiva / Ferma</strong>: nella barra in alto.</li>
+      <li><strong>Registro dal vivo</strong>: fascia a destra.</li>
+    </ul>
+
+    <div class="n-indice" style="margin-top:44px">
+      <a href="../sistema.html" style="--cc:var(--c-sistema)"><strong>Scheda di Leo Sistema</strong><span>Cos'è e come scaricarlo.</span></a>
+      <a href="piattaforma.html" style="--cc:var(--c-suite)"><strong>Interconnessione</strong><span>Come Sistema usa le altre edizioni ed espone azioni.</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../suite.html">Leo Suite</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="../web.html">Web</a></li>
+          <li><a href="../dati.html">Dati</a></li>
+          <li><a href="../giochi.html">Giochi</a></li>
+          <li><a href="../sistema.html">Sistema</a></li>
+          <li><a href="../sicurezza.html">Sicurezza</a></li>
+          <li><a href="../robotica.html">Robotica</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="index.html">Manuali</a></li>
+          <li><a href="linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="piattaforma.html">Piattaforma</a></li>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../template.html">Esempi</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

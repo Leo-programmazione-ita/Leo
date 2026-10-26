@@ -3,30 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo per il web</title>
-<meta name="description" content="Con Leo scrivi pagine web in italiano che diventano HTML e CSS veri, senza scrivere un solo tag: titoli, paragrafi, elenchi, tabelle e immagini con parole italiane. Poi salvi il file e lo apri in qualsiasi browser.">
+<title>Leo Web — il costruttore di siti dove scrivi Leo</title>
+<meta name="description" content="Leo Web è un costruttore di siti a due finestre: scrivi in Leo e vedi la pagina. Il compilatore decide da sé HTML, CSS, PHP o JavaScript, e si collega ai dati di Leo Dati.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/web.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/web.html">
-<meta property="og:title" content="Leo per il web — scrivi pagine in italiano, diventano siti veri">
-<meta property="og:description" content="Costruisci pagine web in italiano, dall'alto in basso come le leggi: diventano HTML e CSS veri, senza scrivere tag a mano.">
+<meta property="og:title" content="Leo Web — il costruttore di siti dove scrivi Leo">
+<meta property="og:description" content="Leo Web è un costruttore di siti a due finestre: scrivi in Leo e vedi la pagina. Il compilatore decide da sé HTML, CSS, PHP o JavaScript, e si collega ai dati di Leo Dati.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
+<style>:root{--accento:#3B82F6;--accento-rgb:59,130,246;--accento-vivo:#60A5FA;--accento-linea:rgba(59,130,246,.3);--accento-tenue:rgba(59,130,246,.1)}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -45,9 +42,10 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuali/index.html">Manuali</a></li>
+            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
-            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
           </ul>
         </li>
@@ -57,7 +55,7 @@
           </button>
           <ul class="nav-tendina">
             <li><a href="suite.html">Leo Suite</a></li>
-            <li><a href="web.html" aria-current="page">Leo Web</a></li>
+            <li><a href="web.html">Leo Web</a></li>
             <li><a href="dati.html">Leo Dati</a></li>
             <li><a href="giochi.html">Leo Giochi</a></li>
             <li><a href="sistema.html">Leo Sistema</a></li>
@@ -97,261 +95,84 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#3B82F6">
-    <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/web.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Web, <em class="testo-accento">scrivi pagine in italiano che diventano siti veri.</em></h1>
-      <p class="introduzione compari r2">Con Leo costruisci una pagina web con parole italiane, dall'alto in basso come la leggi. Leo la trasforma in HTML e CSS veri: un file che apri in qualsiasi browser e carichi su qualsiasi sito. Non devi imparare i tag, e lo stile curato è già incluso.</p>
-          <div class="azioni compari r3" data-dl-hero style="justify-content:center;margin-top:30px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Web_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica per Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Web-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+<section class="n-hero">
+  <div class="contenitore n-hero-griglia">
+    <div>
+      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Web</b> · costruttore di siti</span>
+      <h1 class="n-h1">Scrivi Leo.<span class="riga2">Esce un sito vero.</span></h1>
+      <p class="n-sotto">Due finestre affiancate: a sinistra la pagina, a destra il tuo Leo. Tu descrivi cosa vuoi; <strong>il compilatore capisce da sé se servono HTML, CSS, PHP o JavaScript</strong> e li genera. Niente tag a mano, niente cambio di linguaggio.</p>
+      <div class="n-azioni">
+        <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo Web</a>
+        <a class="n-btn n-btn-ghost" href="manuali/web.html">Guida di Leo Web</a>
       </div>
-      <p class="dettagli compari r4" style="margin-top:12px;font-size:14px;color:var(--testo-3)">Gratis &middot; Windows 10/11 &middot; Android 7+ &middot; versione 0.1.0</p>
-</div>
-  </section>
-
-  <section class="contenitore" aria-label="Esempio">
-    <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>sito.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">p</span> <span class="c-operatori">=</span> <span class="c-libreria">pagina</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Il nostro orto&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">titolo</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Frutta di stagione&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sezione</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Mela&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;Croccante e dolce, raccolta stamattina.&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;index.html&quot;</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_web.png" alt="Una pagina web creata con Leo, aperta nel browser" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">index.html · aperto nel browser</figcaption>
-      </figure>
+      <p class="n-nota">Windows · Android · esporta l'intero progetto web (cartella pronta da pubblicare)</p>
     </div>
-    <p class="nota-offline compari">Apri <code>index.html</code> con un doppio clic: è già bello, senza aver scritto un solo tag. I testi che passi sono <strong>protetti in automatico</strong>, così un <code>&lt;</code> o una <code>&amp;</code> non rompono la pagina.</p>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-metodi" style="--ed:#3B82F6">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Gli elementi</p>
-        <h2 id="titolo-metodi" class="titolo-sezione parole">Una parola, <em>un pezzo di pagina.</em></h2>
-        <p class="introduzione compari r2">Ogni metodo aggiunge un elemento, in ordine. Restituisce la pagina stessa, quindi li puoi anche concatenare: <code>p.titolo("A").paragrafo("B")</code>.</p>
-      </div>
-      <div class="tabella-metodi h-tabella-py compari">
-        <table>
-          <thead><tr><th scope="col">Metodo</th><th scope="col">Cosa aggiunge</th></tr></thead>
-          <tbody>
-            <tr><th scope="row"><code>titolo(testo)</code></th><td>Il titolo grande, principale della pagina.</td></tr>
-            <tr><th scope="row"><code>sottotitolo(testo)</code></th><td>Una riga più piccola, sotto il titolo.</td></tr>
-            <tr><th scope="row"><code>sezione(testo)</code></th><td>Un titoletto che apre una nuova sezione.</td></tr>
-            <tr><th scope="row"><code>paragrafo(testo)</code></th><td>Un paragrafo di testo normale.</td></tr>
-            <tr><th scope="row"><code>immagine(percorso, alt)</code></th><td>Un'immagine, da un file o da un indirizzo web.</td></tr>
-            <tr><th scope="row"><code>collegamento(testo, indirizzo)</code></th><td>Un collegamento cliccabile.</td></tr>
-            <tr><th scope="row"><code>pulsante(testo, indirizzo)</code></th><td>Un collegamento a forma di pulsante colorato.</td></tr>
-            <tr><th scope="row"><code>elenco(voci)</code></th><td>Un elenco puntato, da una lista.</td></tr>
-            <tr><th scope="row"><code>elenco_numerato(voci)</code></th><td>Un elenco numerato, da una lista.</td></tr>
-            <tr><th scope="row"><code>tabella(righe, intestazione)</code></th><td>Una tabella; l'intestazione è la prima riga in grassetto.</td></tr>
-            <tr><th scope="row"><code>citazione(testo)</code></th><td>Una frase in evidenza, rientrata.</td></tr>
-            <tr><th scope="row"><code>codice(testo)</code></th><td>Un blocco di codice a larghezza fissa.</td></tr>
-            <tr><th scope="row"><code>riga()</code></th><td>Una linea orizzontale di separazione.</td></tr>
-            <tr><th scope="row"><code>in_fondo(testo)</code></th><td>Una scritta piccola in fondo, il piè di pagina.</td></tr>
-            <tr><th scope="row"><code>tema(nome)</code></th><td>L'aspetto: <code>"chiaro"</code> (predefinito) o <code>"scuro"</code>.</td></tr>
-            <tr><th scope="row"><code>salva(percorso)</code></th><td>Scrive il file HTML e restituisce il percorso.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="nota-offline compari"><strong>Serve la pagina come testo?</strong> <code>p.html()</code> ti ridà l'intera pagina come testo: utile per servirla da un server fatto con Leo, incollarla o controllarla.</p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="titolo-dati">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Dai tuoi dati</p>
-        <h2 id="titolo-dati" class="titolo-sezione parole">Si costruisce <em>da sola.</em></h2>
-        <p class="introduzione compari r2">Siccome è Leo, hai tutta la lingua a disposizione: un <code>per ogni</code> genera la pagina da una lista o da un database, senza niente di nuovo da imparare.</p>
-      </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>orto.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">prodotti</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span>
-    <span class="c-punteggiatura">[</span><span class="c-testi">"Mela"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"croccante e dolce"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span>
-    <span class="c-punteggiatura">[</span><span class="c-testi">"Pera"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"succosa"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">,</span>
-<span class="c-punteggiatura">]</span>
-
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">p</span> <span class="c-operatori">=</span> <span class="c-libreria">pagina</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il nostro orto"</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">titolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Frutta di stagione"</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">prod</span> <span class="c-flusso">in</span> <span class="c-variabili">prodotti</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sezione</span><span class="c-punteggiatura">(</span><span class="c-variabili">prod</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
-    <span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-variabili">prod</span><span class="c-punteggiatura">[</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"orto.html"</span><span class="c-punteggiatura">)</span></code></pre>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>pagina.leo</span></div>
+<pre><span class="cm"># a sinistra la pagina, qui il tuo Leo</span>
+<span class="kw">variabile</span> p = <span class="fn">pagina</span>(<span class="st">"Contatti"</span>)
+p.<span class="fn">titolo</span>(<span class="st">"Scrivimi"</span>)
+p.<span class="fn">paragrafo</span>(<span class="st">"Rispondo entro un giorno."</span>)
+p.<span class="fn">modulo</span>(<span class="st">"nome"</span>, <span class="st">"messaggio"</span>)
+p.<span class="fn">salva</span>(<span class="st">"index.html"</span>)</pre>
+      <div class="n-diventa">
+        <b>il compilatore genera</b>
+        <span class="n-tag">index.html</span><span class="n-tag">stile.css</span><span class="n-tag">invia.php</span><span class="n-tag">controlli.js</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione scura" aria-labelledby="titolo-lega">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Si lega al resto di Leo</p>
-        <h2 id="titolo-lega" class="titolo-sezione parole">Scrivere e servire: <em>lo stesso mondo.</em></h2>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Server web</dt><dd><code>p.html()</code> dà la pagina come testo, da restituire da un server fatto con la libreria web di Leo. Scriverla e servirla sono la stessa cosa.</dd></div>
-        <div class="scheda compari r1"><dt>Dati e tabelle</dt><dd>Tabelle e database riempiono le pagine con un ciclo; numeri e date si formattano come sempre.</dd></div>
-        <div class="scheda compari r2"><dt>File e immagini</dt><dd><code>salva</code> scrive dove dici; le immagini le indichi per percorso locale o per indirizzo web. La pagina è responsiva: si legge bene anche sul telefono.</dd></div>
-        <div class="scheda compari r2"><dt>Un'app web intera</dt><dd>Un progetto con finestre si esporta come una <strong>cartella di file web veri</strong> (HTML, JavaScript, CSS) che gira nel browser: lo disegni in italiano in Leo Studio e lo pubblichi dove vuoi.</dd></div>
-      </dl>
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Come funziona</p>
+    <h2 class="n-h2">Due finestre, un pensiero solo</h2>
+    <p class="n-intro">La pagina e il codice sono sincronizzati: tocchi un blocco nella pagina e vai sulla riga di Leo che lo crea; cambi il Leo e la pagina si aggiorna. Scegli tu da che lato lavorare.</p>
+    <div class="n-passi">
+      <div class="n-passo"><div><h4>Scrivi in Leo, in italiano</h4><p>Descrivi pagine, moduli, elenchi e menu con le stesse parole di sempre. Nessun markup da imparare.</p></div></div>
+      <div class="n-passo"><div><h4>Il compilatore sceglie la tecnologia</h4><p>Una pagina statica diventa HTML e CSS; un modulo che salva diventa PHP con query preparate; una ricerca o un controllo lato pagina diventano JavaScript. Tu non lo decidi: lo capisce da ciò che hai scritto.</p></div></div>
+      <div class="n-passo"><div><h4>Esporti il progetto</h4><p>«Esporta» crea una cartella web completa — pagine, stile, script, eventuali file PHP — pronta da caricare sul tuo hosting o nel tuo sito.</p></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione" aria-labelledby="titolo-scarica">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-scarica" class="titolo-sezione parole">La tua prima pagina, <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Leo per il web è dentro Leo Studio: scarica Leo, apri un file, scrivi la tua pagina in italiano e salvala. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
-      </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Web_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <div class="azioni-app compari" style="margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Web-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
-      </div>
-      <p class="dettagli" style="margin-top:14px;max-width:62ch">
-        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
-        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
-        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
-      </p>
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ">Interconnessione</p>
+      <h2 class="n-h2">I dati arrivano da Leo Dati</h2>
+      <p class="n-intro">Un sito serio ha bisogno di dati. In Leo non li reinventi: Leo Dati <strong>espone</strong> una tabella, Leo Web la <strong>usa</strong>. Il catalogo, il magazzino, gli iscritti vivono una volta sola e il sito li mostra sempre aggiornati.</p>
+      <p class="n-intro" style="margin-top:12px">È la piattaforma Suite a rendere possibile questo collegamento, dichiarato e sicuro. <a href="suite.html">Come funziona l'interconnessione →</a></p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>catalogo.leo</span></div>
+<pre><span class="cm"># nel progetto.toml del sito: dichiari cosa usi</span>
+[[<span class="kw">usa</span>]]
+progetto    = <span class="st">"magazzino"</span>
+interfaccia = <span class="st">"prodotti"</span>
+come        = <span class="st">"catalogo"</span>
 
-  <section class="sezione" aria-labelledby="guida-web" style="--ed:#3B82F6">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Come si usa</p>
-        <h2 id="guida-web" class="titolo-sezione parole">Guida rapida, <em>la tua prima pagina.</em></h2>
-        <p class="introduzione compari r2">Con Leo Web descrivi la pagina dall'alto in basso, come la leggi: ogni riga diventa HTML e CSS veri, senza un solo tag a mano. Ecco un esempio completo, davvero eseguibile.</p>
-      </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>orto.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">p</span> <span class="c-operatori">=</span> <span class="c-libreria">pagina</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il mio orto"</span><span class="c-punteggiatura">)</span>
+<span class="cm"># poi, in Leo, "catalogo" è già pronto</span>
+<span class="kw">variabile</span> p = <span class="fn">pagina</span>(<span class="st">"Catalogo"</span>)
+p.<span class="fn">mostra</span>(catalogo)
+p.<span class="fn">salva</span>(<span class="st">"index.html"</span>)</pre>
+    </div>
+  </div>
+</section>
 
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">titolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Frutta di stagione"</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sottotitolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Raccolta stamattina, scritta in italiano con Leo."</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sezione</span><span class="c-punteggiatura">(</span><span class="c-testi">"Mela"</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Croccante e dolce."</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">sezione</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pera"</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Succosa e profumata."</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">in_fondo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Fatto con Leo · leoitalia.com"</span><span class="c-punteggiatura">)</span>
-
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dove</span> <span class="c-operatori">=</span> <span class="c-variabili">p</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"orto.html"</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pagina salvata in: </span><span class="c-interpolazione">{</span><span class="c-variabili">dove</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <p class="nota-offline compari">Esegui e Leo scrive <code>orto.html</code> accanto al programma: aprilo con un doppio clic ed è già bello, con lo stile curato incluso. I testi che passi sono protetti in automatico, così un <code>&lt;</code> o una <code>&amp;</code> non rompono la pagina.</p>
-      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Primi passi <em>su Windows</em></h3>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>1 · Apri Leo Studio</dt><dd>Scarica il <code>.exe</code> per Windows, installalo e apri <strong>Leo Studio</strong>: l'editor di Leo con i colori e l'anteprima già pronti.</dd></div>
-        <div class="scheda compari r1"><dt>2 · Scrivi in italiano</dt><dd>Crea un file <code>orto.leo</code> e scrivi la pagina in italiano, come nell'esempio qui sopra.</dd></div>
-        <div class="scheda compari r2"><dt>3 · Premi Esegui</dt><dd>Premi <strong>Esegui</strong> (o <kbd>F5</kbd>): Leo salva l'HTML e lo puoi aprire nel browser. Modifica, riesegui, ed è aggiornato.</dd></div>
-      </dl>
-      <p class="nota-offline compari"><strong>Sul telefono.</strong> Con l'<strong>app Android</strong> (il file <code>.apk</code>) scrivi ed esegui lo stesso codice dal telefono, e la pagina salvata la apri al volo. Su <strong>iPhone</strong> apri la <a href="iphone.html">web-app</a> dal browser e scegli «Aggiungi alla schermata Home»: Leo diventa un'icona come un'app, senza installare nulla.</p>
-      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Cosa ti porti a casa</h3>
-      <ul class="elenco-spunte compari">
-          <li>Pagine web in italiano: titoli, paragrafi, sezioni, elenchi, tabelle, immagini e collegamenti.</li>
-          <li>Diventa HTML e CSS veri, responsivi: si leggono bene anche sul telefono.</li>
-          <li>La pagina si costruisce da sola da una lista o da un database, con un <code>per ogni</code>.</li>
-          <li><code>p.html()</code> ti ridà la pagina come testo, da servire con un server fatto in Leo.</li>
-          <li>Stesso identico codice su Windows, Android e iPhone.</li>
-      </ul>
-      <div class="azioni compari" style="margin-top:18px">
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+<section class="n-dl">
+  <div class="contenitore n-sez">
+    <div class="n-dl-card">
+      <h2>Prova Leo Web</h2>
+      <p>Il costruttore di siti dove scrivi una cosa sola. Per Windows e Android, gratis in questa versione.</p>
+      <div class="n-dl-azioni">
+        <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Web_0.1.0.exe">Windows (158 MB)</a>
+        <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Web-0.1.0.apk">Android (65 MB)</a>
+        <a class="n-btn n-btn-ghost" href="manuali/web.html">Guida</a>
       </div>
     </div>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="altre-web">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-web" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutte le categorie, già interconnesse.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi, finestre.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sicurezza.html">
-            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sicurezza</h3>
-              <p>Sicurezza informatica, reti e forense.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="robotica.html">
-            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Robotica</h3>
-              <p>Robot e schede: Pico, sensori, motori.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <!--#piede-->
@@ -362,27 +183,38 @@
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="novita.html">Novità</a></li>
           <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuali/index.html">Manuali</a></li>
+          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
-          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="template.html">Esempi</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">

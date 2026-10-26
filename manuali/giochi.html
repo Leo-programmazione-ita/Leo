@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida di Leo Giochi — allestire il palco e far girare il gioco</title>
+<meta name="description" content="La guida pratica di Leo Giochi: scaricare i pacchetti di personaggi e risorse, allestire il palco, scrivere le regole con gli eventi, provare il gioco e usare le classifiche di Leo Dati.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/manuali/giochi.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:title" content="Guida di Leo Giochi — allestire il palco e far girare il gioco">
+<meta property="og:description" content="La guida pratica di Leo Giochi: scaricare i pacchetti di personaggi e risorse, allestire il palco, scrivere le regole con gli eventi, provare il gioco e usare le classifiche di Leo Dati.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<link rel="icon" href="../img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="../img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/stemma_180.png">
+<link rel="stylesheet" href="../css/stile.css?v=20261026">
+<link rel="stylesheet" href="../css/nuovo.css?v=20261026">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="../config.js" defer></script>
+<script src="../js/sito.js?v=20261026" defer></script>
+<script src="../js/cerca.js" defer></script>
+<style>:root{--accento:#A855F7;--accento-rgb:168,85,247;--accento-vivo:#C084FC;--accento-linea:rgba(168,85,247,.3);--accento-tenue:rgba(168,85,247,.1)}</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+      <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Impara
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="index.html">Manuali</a></li>
+            <li><a href="linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="piattaforma.html">Piattaforma Suite</a></li>
+            <li><a href="../riferimento/index.html">Riferimento</a></li>
+            <li><a href="../template.html">Esempi</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Scopri
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../suite.html">Leo Suite</a></li>
+            <li><a href="../web.html">Leo Web</a></li>
+            <li><a href="../dati.html">Leo Dati</a></li>
+            <li><a href="../giochi.html">Leo Giochi</a></li>
+            <li><a href="../sistema.html">Leo Sistema</a></li>
+            <li><a href="../sicurezza.html">Leo Sicurezza</a></li>
+            <li><a href="../robotica.html">Leo Robotica</a></li>
+            <li><a href="../confronto.html">Confronta le edizioni</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Risorse
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="../video.html">Video</a></li>
+            <li><a href="../novita.html">Novità</a></li>
+            <li><a href="../statistiche.html">Statistiche</a></li>
+          </ul>
+        </li>
+        <li><a href="../telefono.html">Telefono</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="../scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+<section class="n-hero">
+  <div class="contenitore">
+    <span class="n-occhiello"><span class="pallino"></span> Guida · Leo Giochi</span>
+    <h1 class="n-h1" style="font-size:clamp(32px,5vw,54px)">Costruire un gioco con Leo Giochi</h1>
+    <p class="n-sotto" style="max-width:62ch">Come si fa e dove trovi le cose sul palco. Dallo scaricare i pacchetti di personaggi fino a premere Prova e salvare i punteggi in Leo Dati.</p>
+  </div>
+</section>
+
+<section class="n-sez">
+  <div class="contenitore n-doc">
+    <h2>Il palco</h2>
+    <p>Leo Giochi si apre su un <strong>palco di gioco</strong>: un mondo con lo sfondo scelto dove stanno i personaggi. A <strong>sinistra</strong> c'è la libreria dei personaggi e degli oggetti; a <strong>destra</strong> le regole dell'attore che hai selezionato; in alto il grande <strong>▶ Prova</strong>. Il codice Leo nasce da ciò che fai sul palco, non il contrario.</p>
+
+    <h2>Scaricare i pacchetti di personaggi e risorse</h2>
+    <p>I personaggi animati, gli sfondi, i suoni e le musiche sono <strong>pesanti</strong> — centinaia di megabyte, fino a oltre un gigabyte. Per questo <strong>non sono dentro l'app</strong>: l'installazione resta leggera e i pacchetti li scegli tu.</p>
+    <ul>
+      <li>Nel <strong>setup</strong> (o più tardi dal menu <strong>Pacchetti</strong>) vedi l'elenco: eroi, nemici, tesori, piattaforme, sfondi, suoni, musiche.</li>
+      <li>Spunti quelli che ti servono e Leo li <strong>scarica</strong>: parti con la base e aggiungi il resto quando vuoi.</li>
+      <li>Un pacchetto già scaricato resta a disposizione per tutti i tuoi giochi; quelli che non usi puoi lasciarli fuori.</li>
+    </ul>
+
+    <h2>Allestire il palco</h2>
+    <p>Dalla libreria a sinistra <strong>trascini</strong> un personaggio o un oggetto sul palco: nasce un attore già configurato. Scegli lo sfondo e la dimensione del mondo dalla scena.</p>
+    <pre>scena "Avventura"
+Eroe   = personaggio("volpe")
+Moneta = oggetto("moneta")
+Nemico = oggetto("robot")</pre>
+    <p>Ogni oggetto arriva con i comportamenti giusti: la <strong>moneta</strong> si raccoglie, il <strong>nemico</strong> insegue, la <strong>piattaforma</strong> ti regge. Li aggiusti dai blocchi di comportamento a destra (velocità, forza del salto, punti…).</p>
+
+    <h2>Scrivere le regole: gli eventi</h2>
+    <p>Le regole sono <strong>eventi</strong>: cosa succede <em>quando</em> qualcosa accade. Ogni evento è un blocco <code>quando … fai … fine</code>.</p>
+    <pre>quando premi su fai
+  Eroe.salta()
+fine
+
+quando Eroe.tocca Moneta fai
+  punteggio.aggiungi(10)
+fine
+
+quando urto Nemico fai
+  vite.togli(1)
+fine</pre>
+    <p>Gli eventi li trovi come frasi leggibili nel pannello a destra («quando premi ↑ → Salta», «quando tocca Moneta → +10 punti»): aggiungerli lì scrive il blocco <code>quando</code> per te.</p>
+
+    <h2>Provare il gioco</h2>
+    <p>Premi <strong>▶ Prova</strong>: il gioco parte nello stesso palco e puoi muoverti, saltare e raccogliere con le frecce (o col joystick sul telefono). Premi <strong>⏹</strong> per tornare a sistemare. Quando è pronto, <strong>Esporta</strong> crea il gioco per Windows o per il telefono.</p>
+
+    <h2>Salvare i punteggi in Leo Dati</h2>
+    <p>Per tenere una classifica che non si perde, non la chiudi dentro il gioco: la tabella dei punteggi la espone <strong>Leo Dati</strong> e il gioco la usa. Dichiari nel <code>progetto.toml</code> cosa usi; poi il nome è pronto nel codice.</p>
+    <pre>[[usa]]
+progetto    = "arcade"
+interfaccia = "punteggi"
+come        = "classifica"</pre>
+    <pre>quando partita.finisce fai
+  classifica.salva("Rosa", punteggio)
+fine</pre>
+
+    <h2>Dove trovo le cose</h2>
+    <ul>
+      <li><strong>Personaggi e oggetti</strong>: libreria a sinistra (schede Personaggi, Oggetti, Galleria).</li>
+      <li><strong>Pacchetti da scaricare</strong>: menu Pacchetti (o al primo avvio).</li>
+      <li><strong>Comportamenti e regole</strong> dell'attore: pannello a destra.</li>
+      <li><strong>Sfondo e dimensione del mondo</strong>: proprietà della scena.</li>
+      <li><strong>▶ Prova / ⏹</strong>: in alto nella barra; <strong>Mostra codice</strong>: cassetto in basso.</li>
+      <li><strong>Esporta</strong>: nel menu del progetto.</li>
+    </ul>
+
+    <div class="n-indice" style="margin-top:44px">
+      <a href="../giochi.html" style="--cc:var(--c-giochi)"><strong>Scheda di Leo Giochi</strong><span>Cos'è e come scaricarlo.</span></a>
+      <a href="piattaforma.html" style="--cc:var(--c-suite)"><strong>Interconnessione</strong><span>Come Giochi usa le classifiche delle altre edizioni.</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="../index.html" aria-label="Leo, pagina principale">
+          <img src="../img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../suite.html">Leo Suite</a></li>
+          <li><a href="../scarica.html">Scarica</a></li>
+          <li><a href="../novita.html">Novità</a></li>
+          <li><a href="../licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="../web.html">Web</a></li>
+          <li><a href="../dati.html">Dati</a></li>
+          <li><a href="../giochi.html">Giochi</a></li>
+          <li><a href="../sistema.html">Sistema</a></li>
+          <li><a href="../sicurezza.html">Sicurezza</a></li>
+          <li><a href="../robotica.html">Robotica</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="index.html">Manuali</a></li>
+          <li><a href="linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="piattaforma.html">Piattaforma</a></li>
+          <li><a href="../riferimento/index.html">Riferimento</a></li>
+          <li><a href="../template.html">Esempi</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="../termini.html">Termini d'uso</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

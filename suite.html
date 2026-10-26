@@ -3,30 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Suite — tutto Leo, già interconnesso</title>
-<meta name="description" content="Leo Suite è l'edizione completa: ha tutte le categorie dentro di sé — web, dati, giochi, sistema, sicurezza, robotica e altro — già interconnesse. Per programmare a tutto campo, in italiano.">
+<title>Leo Suite — la piattaforma dove i progetti si parlano</title>
+<meta name="description" content="Leo Suite non è un lanciatore: è la piattaforma che interconnette le edizioni di Leo. Un sistema è fatto di parti che si collegano con espone / usa, coi tipi controllati prima dell'esecuzione.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/suite.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/suite.html">
-<meta property="og:title" content="Leo Suite — tutto Leo in un solo pacchetto">
-<meta property="og:description" content="Tutte le categorie di Leo dentro di sé, già interconnesse: l'edizione completa per programmare a tutto campo.">
+<meta property="og:title" content="Leo Suite — la piattaforma dove i progetti si parlano">
+<meta property="og:description" content="Leo Suite non è un lanciatore: è la piattaforma che interconnette le edizioni di Leo. Un sistema è fatto di parti che si collegano con espone / usa, coi tipi controllati prima dell'esecuzione.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
+<style></style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -45,9 +42,10 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuali/index.html">Manuali</a></li>
+            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
-            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
           </ul>
         </li>
@@ -56,7 +54,7 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="suite.html" aria-current="page">Leo Suite</a></li>
+            <li><a href="suite.html">Leo Suite</a></li>
             <li><a href="web.html">Leo Web</a></li>
             <li><a href="dati.html">Leo Dati</a></li>
             <li><a href="giochi.html">Leo Giochi</a></li>
@@ -97,235 +95,171 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#E6111A">
-    <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/suite.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Suite, <em class="testo-accento">tutto, già collegato.</em></h1>
-      <p class="introduzione compari r2">L'edizione completa: ha dentro di sé tutte le categorie — web, dati, giochi, sistema, sicurezza, robotica e altro ancora — già interconnesse. Un unico Leo per programmare a tutto campo.</p>
-          <div class="azioni compari r3" data-dl-hero style="justify-content:center;margin-top:30px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica per Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+<section class="n-hero">
+  <div class="contenitore n-hero-griglia">
+    <div>
+      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Suite</b> · la piattaforma</span>
+      <h1 class="n-h1">Qui i tuoi progetti<span class="riga2">si parlano.</span></h1>
+      <p class="n-sotto">Leo Suite <strong>non è un menù di avvio</strong> che apre le edizioni una per una. È la piattaforma dove un <strong>sistema intero</strong> prende forma: tante parti — un sito, dei dati, un agente, una scheda — che si collegano tra loro e vivono come una cosa sola.</p>
+      <div class="n-azioni">
+        <a class="n-btn n-btn-pri" href="#scarica">Scarica Leo Suite <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg></a>
+        <a class="n-btn n-btn-ghost" href="manuali/piattaforma.html">Guida della piattaforma</a>
       </div>
-      <p class="dettagli compari r4" style="margin-top:12px;font-size:14px;color:var(--testo-3)">Gratis &middot; Windows 10/11 &middot; Android 7+ &middot; versione 0.1.0</p>
-</div>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#E6111A">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa ci fai</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Tutte le categorie, <em>in un solo Leo.</em></h2>
-        <p class="introduzione compari r2">Leo Suite non collega edizioni separate: è un unico Leo completo, con ogni categoria già dentro e pronta all'uso. Niente è bloccato.</p>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Web</dt><dd>Siti, servizi e pagine scritte in italiano, richieste ed email.</dd></div>
-        <div class="scheda compari r1"><dt>Dati</dt><dd>Database, tabelle, calcolo, grafici e formati come CSV, JSON ed Excel.</dd></div>
-        <div class="scheda compari r2"><dt>Giochi</dt><dd>Grafica, animazioni, suoni, geometria 2D e i personaggi pronti.</dd></div>
-        <div class="scheda compari r3"><dt>Sistema</dt><dd>File e cartelle, processi, finestre, hardware e programmi da riga di comando.</dd></div>
-        <div class="scheda compari r4"><dt>Sicurezza</dt><dd>Dati protetti, analisi binaria, forense, difesa degli account e rete.</dd></div>
-        <div class="scheda compari r5"><dt>Robotica</dt><dd>Accendi LED, leggi sensori e muovi motori: Raspberry Pi Pico.</dd></div>
-        <div class="scheda compari"><dt>Documenti e multimedia</dt><dd>Anche Excel, Word e PDF, immagini e audio: in Leo Suite c'è pure questo.</dd></div>
-        <div class="scheda compari r1"><dt>Prestazioni</dt><dd>Lavori in parallelo e sequenze pigre, per quando serve spingere.</dd></div>
-      </dl>
+      <p class="n-nota">Windows · Android · contiene tutte le edizioni, già interconnesse</p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>Negozio/progetto.toml</span></div>
+<pre><span class="cm"># un SISTEMA: più parti in una casa sola</span>
+<span class="kw">[sistema]</span>
+edizione = <span class="st">"suite"</span>
 
-  <section class="sezione scura" aria-labelledby="titolo-interconn">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Già interconnesse</p>
-        <h2 id="titolo-interconn" class="titolo-sezione parole">Il bello è che <em>si parlano tra loro.</em></h2>
-        <p class="introduzione compari r2">Nelle edizioni mirate le altre categorie sono bloccate, così non nascono bug. In Leo Suite sono tutte accese insieme: leggi un database (Dati), ne fai un grafico, lo metti in una pagina (Web) e la salvi su disco (Sistema) — nello stesso programma, senza colla tra pezzi.</p>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>Dati → Web</dt><dd>Prendi una tabella da un database e la pubblichi come pagina web, con un <code>per ogni</code>.</dd></div>
-        <div class="scheda compari r1"><dt>Robotica → Dati</dt><dd>I valori letti dai sensori li salvi, li elabori e li metti in un grafico.</dd></div>
-        <div class="scheda compari r2"><dt>Sistema → Sicurezza</dt><dd>Leggi i file e analizzi i dati a livello di byte per indagini e difesa.</dd></div>
-      </dl>
-    </div>
-  </section>
+<span class="kw">[[parte]]</span>
+nome    = <span class="st">"catalogo"</span>
+dominio = <span class="st">"dati"</span>
 
-  <section class="sezione" aria-labelledby="titolo-esempio">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Somma il carrello, <em>poi fanne quel che vuoi.</em></h2>
-      </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>carrello.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">prezzi</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">12.5</span><span class="c-punteggiatura">,</span> <span class="c-numeri">8.0</span><span class="c-punteggiatura">,</span> <span class="c-numeri">4.5</span><span class="c-punteggiatura">]</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
-<span class="c-flusso">per ogni</span> <span class="c-variabili">p</span> <span class="c-flusso">in</span> <span class="c-variabili">prezzi</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-variabili">totale</span> <span class="c-operatori">+</span> <span class="c-variabili">p</span>
-<span class="c-flusso">fine</span>
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Totale del carrello: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">}</span><span class="c-testi"> euro"</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <p class="nota-offline compari">Qui sono bastati i costrutti di base, ma in Suite questo stesso totale finisce in un grafico (Dati), in una pagina (Web) o in un file (Sistema): è tutto lì, già collegato.</p>
-    </div>
-  </section>
+<span class="kw">[[parte]]</span>
+nome    = <span class="st">"vetrina"</span>
+dominio = <span class="st">"web"</span>
 
-  <section class="sezione scura" aria-label="Lo stesso Leo">
-    <div class="contenitore">
-      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. La differenza è che <strong>Leo Suite le ha tutte dentro di sé, già interconnesse</strong>: è l'edizione completa, il modo più semplice per avere tutto. Le edizioni mirate sono solo pacchetti più leggeri, ciascuno concentrato su un tema.</p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="titolo-prova">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Provala</p>
-        <h2 id="titolo-prova" class="titolo-sezione parole">Tutto Leo, <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Leo Suite è dentro Leo Studio: scarica Leo, apri un file e hai ogni categoria a disposizione. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
-      </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <div class="azioni-app compari" style="margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
-      </div>
-      <p class="dettagli" style="margin-top:14px;max-width:62ch">
-        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
-        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
-        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
-      </p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="guida-suite" style="--ed:#E6111A">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Come si usa</p>
-        <h2 id="guida-suite" class="titolo-sezione parole">Guida rapida, <em>tutto nello stesso file.</em></h2>
-        <p class="introduzione compari r2">Con Leo Suite ogni categoria è già accesa: nello stesso programma fai un conto, lo metti in una tabella e poi in una pagina web. Ecco un esempio completo, davvero eseguibile.</p>
-      </div>
-      <div class="finestra-codice compari ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>riepilogo.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">prezzi</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-numeri">12.5</span><span class="c-punteggiatura">,</span> <span class="c-numeri">8.0</span><span class="c-punteggiatura">,</span> <span class="c-numeri">4.5</span><span class="c-punteggiatura">]</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
-<span class="c-flusso">per</span> <span class="c-flusso">ogni</span> <span class="c-variabili">p</span> <span class="c-flusso">in</span> <span class="c-variabili">prezzi</span> <span class="c-flusso">fai</span>
-    <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-variabili">totale</span> <span class="c-operatori">+</span> <span class="c-variabili">p</span>
-<span class="c-flusso">fine</span>
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Totale del carrello: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">}</span><span class="c-testi"> euro"</span><span class="c-punteggiatura">)</span>
-
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">voti</span> <span class="c-operatori">=</span> <span class="c-libreria">tabella</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">[</span>
-    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Anna"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">8</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
-    <span class="c-punteggiatura">{</span><span class="c-testi">"nome"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Luca"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"voto"</span><span class="c-punteggiatura">:</span> <span class="c-numeri">6</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
-<span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Media dei voti: </span><span class="c-interpolazione">{</span><span class="c-libreria">media</span><span class="c-punteggiatura">(</span><span class="c-variabili">voti</span><span class="c-punteggiatura">.</span><span class="c-libreria">colonna</span><span class="c-punteggiatura">(</span><span class="c-testi">"voto"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
-
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">pag</span> <span class="c-operatori">=</span> <span class="c-libreria">pagina</span><span class="c-punteggiatura">(</span><span class="c-testi">"Riepilogo"</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">pag</span><span class="c-punteggiatura">.</span><span class="c-libreria">titolo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Il mio negozio"</span><span class="c-punteggiatura">)</span>
-<span class="c-variabili">pag</span><span class="c-punteggiatura">.</span><span class="c-libreria">paragrafo</span><span class="c-punteggiatura">(</span><span class="c-testi">"Carrello: </span><span class="c-interpolazione">{</span><span class="c-variabili">totale</span><span class="c-interpolazione">}</span><span class="c-testi"> euro."</span><span class="c-punteggiatura">)</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dove</span> <span class="c-operatori">=</span> <span class="c-variabili">pag</span><span class="c-punteggiatura">.</span><span class="c-libreria">salva</span><span class="c-punteggiatura">(</span><span class="c-testi">"riepilogo.html"</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Pagina salvata in: </span><span class="c-interpolazione">{</span><span class="c-variabili">dove</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <p class="nota-offline compari">Esegui e Leo somma il carrello (<code>25.0 euro</code>), calcola la media dei voti e salva una pagina web <code>riepilogo.html</code>: base, Dati e Web nello stesso file, senza colla tra i pezzi.</p>
-      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Primi passi <em>su Windows</em></h3>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>1 · Apri Leo Studio</dt><dd>Scarica il <code>.exe</code> per Windows, installalo e apri <strong>Leo Studio</strong>: hai ogni categoria a disposizione.</dd></div>
-        <div class="scheda compari r1"><dt>2 · Scrivi in italiano</dt><dd>Crea un file <code>riepilogo.leo</code> e scrivi in italiano, come nell'esempio qui sopra.</dd></div>
-        <div class="scheda compari r2"><dt>3 · Premi Esegui</dt><dd>Premi <strong>Esegui</strong> (o <kbd>F5</kbd>): il totale e la media compaiono e la pagina viene salvata. Modifica, riesegui, ed è aggiornato.</dd></div>
-      </dl>
-      <p class="nota-offline compari"><strong>Sul telefono.</strong> Con l'<strong>app Android</strong> (il file <code>.apk</code>) scrivi ed esegui lo stesso codice completo dal telefono. Su <strong>iPhone</strong> apri la <a href="iphone.html">web-app</a> dal browser e scegli «Aggiungi alla schermata Home»: Leo diventa un'icona come un'app, senza installare nulla.</p>
-      <h3 class="titolo-sezione parole" style="font-size:clamp(22px,3vw,30px);margin:34px 0 4px">Cosa ti porti a casa</h3>
-      <ul class="elenco-spunte compari">
-          <li>Tutte le categorie dentro un solo Leo: web, dati, giochi, sistema, sicurezza, robotica e altro.</li>
-          <li>Già interconnesse: leggi un database, ne fai un grafico, lo metti in una pagina e la salvi su disco.</li>
-          <li>Anche documenti e multimedia: Excel, Word, PDF, immagini e audio.</li>
-          <li>Lavori in parallelo e sequenze pigre, per quando serve spingere.</li>
-          <li>Lo stesso identico codice su Windows, Android e iPhone.</li>
-      </ul>
-      <div class="azioni compari" style="margin-top:18px">
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+<span class="kw">[[collega]]</span>      <span class="cm"># il cablaggio fra le parti</span>
+da  = <span class="st">"catalogo"</span>   <span class="cm"># chi espone i dati</span>
+a   = <span class="st">"vetrina"</span>    <span class="cm"># chi li usa</span>
+interfaccia = <span class="st">"prodotti"</span></pre>
+      <div class="n-diventa">
+        <b>un sistema solo, non app separate</b>
+        <span class="n-tag">catalogo · Dati</span><span class="n-tag">vetrina · Web</span><span class="n-tag">avvisi · Sistema</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione scura" aria-labelledby="altre-suite">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-suite" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Che cos'è, davvero</p>
+    <h2 class="n-h2">Non un lanciatore: un tessuto</h2>
+    <p class="n-intro">Si potrebbe pensare alla Suite come a un cassetto da cui apri Leo Web, Leo Dati, Leo Giochi… Non è così. La Suite è la <strong>casa dove i collegamenti tra i progetti vivono</strong>: è lì che un sistema fatto di parti diverse diventa una cosa sola e viene tenuto insieme.</p>
+    <div class="n-passi">
+      <div class="n-passo"><div><h4>Un sistema è fatto di parti</h4><p>Ogni parte è un normale progetto Leo, costruito con l'edizione giusta per il suo mestiere: il catalogo in Leo Dati, la vetrina in Leo Web, l'agente che avvisa in Leo Sistema. Restano progetti veri, ciascuno col suo strumento.</p></div></div>
+      <div class="n-passo"><div><h4>Le parti si collegano tra loro</h4><p>Una parte <strong>espone</strong> ciò che sa fare — una tabella, un'azione — e un'altra la <strong>usa</strong>, dandole un nome. Il collegamento non è colla scritta a mano: è dichiarato, e la piattaforma lo genera da sé.</p></div></div>
+      <div class="n-passo"><div><h4>La Suite orchestra l'insieme</h4><p>La casa tiene la mappa di chi espone e chi usa, controlla che i tipi combacino <strong>prima</strong> di eseguire, e compila tutto insieme. Tu vedi un sistema; non quattro programmi slegati.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ" style="color:var(--c-suite)">Il principio</p>
+      <h2 class="n-h2">Espone / usa, e i tipi si controllano prima</h2>
+      <p class="n-intro">Il collegamento tra due parti si dichiara nel loro <code>progetto.toml</code>, non dentro il codice Leo. Una parte scrive un blocco <strong>[[espone]]</strong>; l'altra un blocco <strong>[[usa]]</strong> che la richiama per nome. Da quel momento, nel codice, quel nome è già pronto all'uso.</p>
+      <p class="n-intro" style="margin-top:12px">Il vocabolario è tipizzato: <em>dato/tabella</em>, <em>servizio/sito</em>, <em>trigger/quando</em>, <em>azione/fai</em>, <em>hardware/comando</em>… Se un lato chiede una tabella e l'altro offre un'azione, l'errore si vede <strong>prima dell'esecuzione</strong>, in italiano. Niente colla a mano, niente cambio di linguaggio.</p>
+      <p class="n-intro" style="margin-top:12px"><a href="manuali/piattaforma.html">Leggi la guida della piattaforma →</a></p>
+    </div>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>espone · usa</span></div>
+<pre><span class="cm"># catalogo/progetto.toml — ESPONE i prodotti</span>
+<span class="kw">[[espone]]</span>
+tipo = <span class="st">"dato/tabella"</span>
+nome = <span class="st">"prodotti"</span>
+
+<span class="cm"># vetrina/progetto.toml — USA quei prodotti</span>
+<span class="kw">[[usa]]</span>
+progetto    = <span class="st">"../catalogo"</span>
+interfaccia = <span class="st">"prodotti"</span>
+come        = <span class="st">"catalogo"</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Un esempio, dall'inizio alla fine</p>
+    <h2 class="n-h2">Un negozio, in tre edizioni che si parlano</h2>
+    <p class="n-intro">Lo stesso sistema attraversa tre domini senza che tu scriva una riga di PHP, SQL o altro. Leo Dati tiene il catalogo; Leo Web lo mostra e raccoglie gli ordini; Leo Sistema, ogni mattina, legge gli ordini e avvisa. I colori sono quelli delle edizioni.</p>
+    <div class="n-due" style="margin-top:36px">
+      <div class="n-flusso" aria-hidden="true">
+        <div class="n-nodo"><span class="p" style="background:var(--c-dati)">D</span><div><div class="d"><strong>Leo Dati</strong> tiene il catalogo</div><code>espone  dato/tabella  "prodotti"</code></div></div>
+        <div class="n-frec">↓</div>
+        <div class="n-nodo"><span class="p" style="background:var(--c-web)">W</span><div><div class="d"><strong>Leo Web</strong> mostra i prodotti e raccoglie gli ordini</div><code>usa  "catalogo"  ·  espone  "ordini"</code></div></div>
+        <div class="n-frec">↓</div>
+        <div class="n-nodo"><span class="p" style="background:var(--c-sistema)">S</span><div><div class="d"><strong>Leo Sistema</strong> ogni mattina legge gli ordini e avvisa</div><code>usa  "ordini"  ·  azione  "notifica"</code></div></div>
       </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sistema.html">
-            <img class="edizione-icona" src="img/edizioni/sistema.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sistema</h3>
-              <p>Automatizzare il computer: file, processi, finestre.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sistema.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sicurezza.html">
-            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sicurezza</h3>
-              <p>Sicurezza informatica, reti e forense.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="robotica.html">
-            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Robotica</h3>
-              <p>Robot e schede: Pico, sensori, motori.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
+      <div class="n-vetro" aria-hidden="true">
+        <div class="n-vetro-barra"><i></i><i></i><i></i><span>avvisi/principale.leo</span></div>
+<pre><span class="cm"># l'agente usa il ponte "ordini" di Leo Dati,</span>
+<span class="cm"># generato dal collegamento: nessun import a mano</span>
+<span class="kw">quando</span> <span class="fn">ogni_mattina</span>() <span class="kw">fai</span>
+    <span class="kw">variabile</span> nuovi = ordini.<span class="fn">righe</span>()
+    <span class="kw">se</span> nuovi.<span class="fn">conteggio</span>() &gt; <span class="nu">0</span> <span class="kw">fai</span>
+        <span class="fn">notifica</span>(<span class="st">"Nuovi ordini da evadere: "</span> + nuovi.<span class="fn">conteggio</span>())
+    <span class="kw">fine</span>
+<span class="kw">fine</span></pre>
       </div>
     </div>
-  </section>
+    <p class="n-intro" style="margin-top:28px;max-width:70ch">Nessuna parte conosce le altre nel dettaglio: ognuna dichiara la sua interfaccia, la Suite le tiene insieme. Cambi un'edizione e il resto continua a funzionare, finché l'interfaccia resta la stessa.</p>
+  </div>
+</section>
+
+<section class="n-sez n-banda">
+  <div class="contenitore">
+    <p class="n-occ" style="color:var(--c-suite)">Il grafo</p>
+    <h2 class="n-h2">Ogni edizione, il suo ruolo</h2>
+    <p class="n-intro">Nell'interconnessione ogni strumento ha un posto naturale. La Suite non cancella queste differenze: le mette fianco a fianco e le fa collaborare.</p>
+    <div class="n-edizioni">
+      <a class="n-ed" href="dati.html" style="--cc:var(--c-dati)">
+        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+        <h3>Leo Dati <em>il perno</em></h3>
+        <p>Espone le tabelle: è lo stato che dura. Quasi tutto, nel sistema, parte dai dati che Leo Dati custodisce.</p>
+        <span class="n-forma">Espone i dati</span>
+      </a>
+      <a class="n-ed" href="web.html" style="--cc:var(--c-web)">
+        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>Leo Web <em>la vetrina</em></h3>
+        <p>Usa i dati per mostrarli e raccoglie ciò che arriva: espone a sua volta siti ed endpoint che le altre parti possono richiamare.</p>
+        <span class="n-forma">Usa i dati</span>
+      </a>
+      <a class="n-ed" href="sistema.html" style="--cc:var(--c-sistema)">
+        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Leo Sistema <em>l'attuatore</em></h3>
+        <p>Espone trigger e azioni, e usa tutto il resto: è la parte che agisce, controlla e tiene aggiornato il sistema al momento giusto.</p>
+        <span class="n-forma">Attua e orchestra</span>
+      </a>
+      <a class="n-ed" href="robotica.html" style="--cc:var(--c-robotica)">
+        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3M9 13h.01M15 13h.01"/></svg></div>
+        <h3>Leo Robotica <em>l'hardware</em></h3>
+        <p>Espone le letture dei sensori e i comandi degli attuatori della scheda, e usa Dati e Sistema per reagire al mondo fisico.</p>
+        <span class="n-forma">Letture e comandi</span>
+      </a>
+      <a class="n-ed" href="sicurezza.html" style="--cc:var(--c-sicurezza)">
+        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></div>
+        <h3>Leo Sicurezza <em>l'osservatore</em></h3>
+        <p>Guarda il sistema in sola lettura: controlla, verifica e tiene traccia, senza mai modificare ciò che osserva.</p>
+        <span class="n-forma">Osserva e verifica</span>
+      </a>
+      <a class="n-ed" href="giochi.html" style="--cc:var(--c-giochi)">
+        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h3M8.5 10.5v3M15 11h.01M18 13h.01"/></svg></div>
+        <h3>Leo Giochi <em>il palco</em></h3>
+        <p>Usa i dati del sistema dove servono — per esempio le classifiche — così il gioco attinge agli stessi numeri del resto.</p>
+        <span class="n-forma">Usa le classifiche</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="scarica" class="n-dl">
+  <div class="contenitore n-sez">
+    <div class="n-dl-card">
+      <h2>Scarica Leo Suite</h2>
+      <p>Una sola installazione con <strong>tutte le edizioni</strong>, pronte a collegarsi tra loro. Per Windows e Android, gratis e senza scadenza in questa versione.</p>
+      <div class="n-dl-azioni">
+        <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_0.1.0.exe">Windows (161 MB)</a>
+        <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-0.1.0.apk">Android (65 MB)</a>
+        <a class="n-btn n-btn-ghost" href="manuali/piattaforma.html">Guida della piattaforma</a>
+      </div>
+      <p class="n-nota" style="margin-top:18px">Versione 0.1.0 · contiene Web, Dati, Giochi, Sistema, Sicurezza e Robotica</p>
+    </div>
+  </div>
+</section>
 </main>
 
 <!--#piede-->
@@ -336,27 +270,38 @@
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="novita.html">Novità</a></li>
           <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuali/index.html">Manuali</a></li>
+          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
-          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="template.html">Esempi</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">

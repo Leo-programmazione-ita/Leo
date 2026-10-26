@@ -3,30 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Sistema — file, processi, finestre e hardware</title>
-<meta name="description" content="Leo Sistema è l'edizione per automatizzare il computer: file e cartelle, processi, finestre, hardware e programmi da riga di comando. Sempre lo stesso Leo, in italiano, più leggero da scaricare.">
+<title>Leo Sistema — il laboratorio di agenti che lavorano al posto tuo</title>
+<meta name="description" content="Leo Sistema è un laboratorio di agenti: programmi che osservano il computer, decidono con regole o con un'IA locale e agiscono da soli. È l'attuatore della Suite: espone trigger e azioni, e usa le altre edizioni, a partire da Leo Dati.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/sistema.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:url" content="https://leoitalia.com/sistema.html">
-<meta property="og:title" content="Leo Sistema — automatizza il computer in italiano">
-<meta property="og:description" content="File e cartelle, processi, finestre, hardware e programmi da riga di comando: l'edizione di Leo mirata al sistema.">
+<meta property="og:title" content="Leo Sistema — il laboratorio di agenti che lavorano al posto tuo">
+<meta property="og:description" content="Leo Sistema è un laboratorio di agenti: programmi che osservano il computer, decidono con regole o con un'IA locale e agiscono da soli. È l'attuatore della Suite: espone trigger e azioni, e usa le altre edizioni, a partire da Leo Dati.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leo: programmare in italiano, sul PC e sul telefono">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261015" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
+<style>:root{--accento:#7F93AD;--accento-rgb:127,147,173;--accento-vivo:#A3B3C7;--accento-linea:rgba(127,147,173,.3);--accento-tenue:rgba(127,147,173,.1)}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -45,9 +42,10 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuali/index.html">Manuali</a></li>
+            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
-            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
           </ul>
         </li>
@@ -60,7 +58,7 @@
             <li><a href="web.html">Leo Web</a></li>
             <li><a href="dati.html">Leo Dati</a></li>
             <li><a href="giochi.html">Leo Giochi</a></li>
-            <li><a href="sistema.html" aria-current="page">Leo Sistema</a></li>
+            <li><a href="sistema.html">Leo Sistema</a></li>
             <li><a href="sicurezza.html">Leo Sicurezza</a></li>
             <li><a href="robotica.html">Leo Robotica</a></li>
             <li><a href="confronto.html">Confronta le edizioni</a></li>
@@ -97,216 +95,94 @@
 <!--/testata-->
 
 <main id="contenuto">
-  <section class="testa-pagina centro" style="--ed:#CBD5E1">
-    <div class="contenitore stretto">
-      <img class="ed-stemma" src="img/edizioni/sistema.png" alt="" width="92" height="92">
-      <p class="sopratitolo compari"><span class="ed-etichetta">Edizione</span></p>
-      <h1 class="parole">Leo Sistema, <em class="testo-accento">il PC lavora per te.</em></h1>
-      <p class="introduzione compari r2">File e cartelle, processi, finestre, hardware e programmi da riga di comando: l'edizione mirata a chi vuole automatizzare il computer, in italiano.</p>
-          <div class="azioni compari r3" data-dl-hero style="justify-content:center;margin-top:30px">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sistema_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Scarica per Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sistema-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
+<section class="n-hero">
+  <div class="contenitore n-hero-griglia">
+    <div>
+      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Sistema</b> · laboratorio di agenti</span>
+      <h1 class="n-h1">Componi un agente.<span class="riga2">Lavora da solo.</span></h1>
+      <p class="n-sotto">Un agente ha tre parti: i <strong>sensi</strong> (cosa osserva), la <strong>testa</strong> (come decide) e le <strong>mani</strong> (cosa fa sul computer). Tu le componi; l'agente resta in ascolto e agisce da sé, in sottofondo, anche in più di uno alla volta.</p>
+      <div class="n-azioni">
+        <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo Sistema</a>
+        <a class="n-btn n-btn-ghost" href="manuali/sistema.html">Guida di Leo Sistema</a>
       </div>
-      <p class="dettagli compari r4" style="margin-top:12px;font-size:14px;color:var(--testo-3)">Gratis &middot; Windows 10/11 &middot; Android 7+ &middot; versione 0.1.0</p>
-</div>
-  </section>
-
-  <section class="sezione scura" aria-labelledby="titolo-cosa" style="--ed:#CBD5E1">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Cosa ci fai</p>
-        <h2 id="titolo-cosa" class="titolo-sezione parole">Automatizza <em>il noioso.</em></h2>
-        <p class="introduzione compari r2">Tutte le funzioni per il sistema, abilitate e pronte in questa edizione. Sono i moduli della categoria <strong>Sistema</strong>.</p>
-      </div>
-      <dl class="requisiti">
-        <div class="scheda compari"><dt>File e cartelle</dt><dd>Crei, sposti, copi e cerchi file e cartelle, e apri gli archivi: il lavoro ripetitivo lo fa Leo (<code>archivi</code>, <code>cartelle</code>).</dd></div>
-        <div class="scheda compari r1"><dt>Processi</dt><dd>Avvii e fermi programmi, controlli cosa sta girando e automatizzi le operazioni del sistema (<code>sistema</code>).</dd></div>
-        <div class="scheda compari r2"><dt>Finestre</dt><dd>Gestisci le finestre e il desktop: le sposti, le ridimensioni e le organizzi (<code>desktop</code>).</dd></div>
-        <div class="scheda compari r3"><dt>Hardware</dt><dd>Leggi le informazioni del computer e della piattaforma su cui giri, per adattare i tuoi programmi (<code>computer</code>, <code>piattaforma</code>).</dd></div>
-        <div class="scheda compari r4"><dt>Programmi da riga di comando</dt><dd>Scrivi veri programmi a riga di comando, con opzioni e argomenti, da usare come strumenti seri (<code>programmi</code>).</dd></div>
-        <div class="scheda compari r5"><dt>Schede Pico</dt><dd>Il supporto per i controlli della scheda Raspberry Pi Pico è incluso nel pacchetto.</dd></div>
-      </dl>
+      <p class="n-nota">Windows · Android · comanda il computer — file, finestre, processi, rete. Non l'hardware di una scheda elettronica: quello è Leo Robotica.</p>
     </div>
-  </section>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>agente.leo</span></div>
+<pre><span class="cm"># sensi · testa · mani — e resta in ascolto</span>
+<span class="kw">variabile</span> ia = <span class="fn">modello_locale</span>(<span class="st">"llama3"</span>)
 
-  <section class="sezione" aria-labelledby="titolo-esempio">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un assaggio</p>
-        <h2 id="titolo-esempio" class="titolo-sezione parole">Metti in ordine, <em>da solo.</em></h2>
-      </div>
-      <div class="promo compari">
-      <div class="finestra-codice ingrandisci">
-        <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
-<pre class="codice"><code><span class="c-commenti"># Mette in ordine la cartella Download per tipo</span>
-<span class="c-libreria">organizza_cartella</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Download&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">scrivi</span><span class="c-punteggiatura">(</span><span class="c-libreria">trova_duplicati</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;C:/Foto&quot;</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <figure class="promo-risultato">
-        <img src="img/edizioni/vetrina_sistema.png" alt="Terminale di Leo Sistema: cartella messa in ordine" width="1216" height="736" loading="lazy" decoding="async">
-        <figcaption class="promo-etichetta">Terminale · cartella in ordine</figcaption>
-      </figure>
-    </div>
-      <p class="nota-offline compari">Gli dici la cartella: Leo la mette in ordine e trova i doppioni. I costrutti di base sono identici in ogni edizione.</p>
-    </div>
-  </section>
-
-  <section class="sezione scura" aria-label="Lo stesso Leo">
-    <div class="contenitore">
-      <p class="nota-offline compari">È sempre lo stesso Leo, universale: con qualunque edizione programmi qualsiasi cosa. Questa edizione è solo un pacchetto più leggero, mirato a <strong>il computer e il sistema</strong>. Le funzioni delle altre categorie sono disponibili in <a href="suite.html">Leo Suite</a>.</p>
-    </div>
-  </section>
-
-  <section class="sezione" aria-labelledby="titolo-prova">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Provalo</p>
-        <h2 id="titolo-prova" class="titolo-sezione parole">Comincia <em>oggi.</em></h2>
-        <p class="introduzione compari r2">Ogni edizione è dentro Leo Studio: scarica Leo, apri un file, scrivi in italiano e avvia. Funziona ovunque, anche nei programmi <code>.exe</code> e sul telefono.</p>
-      </div>
-      <div class="azioni compari">
-        <a class="pulsante grande" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sistema_0.1.0.exe" rel="noopener" download>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-          <span class="etichetta">Windows (.exe)</span>
-        </a>
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
-      </div>
-      <div class="azioni-app compari" style="margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span style="color:var(--testo-3);font-size:14px">Anche sul telefono, in anteprima:</span>
-        <a class="pulsante secondario" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sistema-0.1.0.apk" rel="noopener" download>Android (.apk)</a>
-        <a class="pulsante secondario" href="iphone.html">iPhone</a>
-      </div>
-      <p class="dettagli" style="margin-top:14px;max-width:62ch">
-        <strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp;
-        <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp;
-        <strong>iPhone</strong> &mdash; web-app in anteprima: aprila e &laquo;Aggiungi alla schermata Home&raquo;; l&rsquo;app su App Store &egrave; in arrivo.
-      </p>
-    </div>
-  </section>
-
-  
-  <section class="sezione" aria-labelledby="guida-sistema" style="--ed:#7F93AD">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Come si usa</p>
-        <h2 id="guida-sistema" class="titolo-sezione parole">Guida rapida, <em>in tre minuti.</em></h2>
-        <p class="introduzione compari r2">Dall’installazione al primo lavoro fatto da solo: metti in ordine una cartella in italiano. È lo stesso Leo su Windows, Android e iPhone.</p>
-      </div>
-      <div class="finestra-codice ingrandisci compari">
-        <div class="barra"><i></i><i></i><i></i><span>ordina.leo</span></div>
-<pre class="codice"><code><span class="c-commenti"># Fa ordine in una cartella: ogni file va nella sottocartella della sua estensione</span>
-<span class="c-dichiarazioni">variabile</span> <span class="c-variabili">lavoro</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-libreria">cartella_temporanea</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;DownloadFinti&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span>
-
-<span class="c-commenti"># qualche file di esempio</span>
-<span class="c-flusso">per</span> <span class="c-flusso">ogni</span> <span class="c-variabili">nome</span> <span class="c-flusso">in</span> <span class="c-punteggiatura">[</span><span class="c-testi">&quot;foto.jpg&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;nota.txt&quot;</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;musica.mp3&quot;</span><span class="c-punteggiatura">]</span> <span class="c-flusso">fai</span>
-        <span class="c-libreria">scrivi_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-testi">&quot;ciao&quot;</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span>
-
-<span class="c-commenti"># sposta ciascun file nella cartella del suo tipo</span>
-<span class="c-flusso">per</span> <span class="c-flusso">ogni</span> <span class="c-variabili">nome</span> <span class="c-flusso">in</span> <span class="c-libreria">elenca_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span> <span class="c-flusso">fai</span>
-        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">tipo</span> <span class="c-operatori">=</span> <span class="c-libreria">estensione_file</span><span class="c-punteggiatura">(</span><span class="c-variabili">nome</span><span class="c-punteggiatura">)</span>
-        <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">dove</span> <span class="c-operatori">=</span> <span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-variabili">tipo</span><span class="c-punteggiatura">)</span>
-        <span class="c-libreria">crea_cartella</span><span class="c-punteggiatura">(</span><span class="c-variabili">dove</span><span class="c-punteggiatura">)</span>
-        <span class="c-libreria">sposta_file</span><span class="c-punteggiatura">(</span><span class="c-libreria">unisci_percorso</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">,</span> <span class="c-variabili">nome</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-variabili">dove</span><span class="c-punteggiatura">)</span>
-<span class="c-flusso">fine</span>
-
-<span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">&quot;In ordine! Cartelle create:&quot;</span><span class="c-punteggiatura">,</span> <span class="c-libreria">elenca_cartelle</span><span class="c-punteggiatura">(</span><span class="c-variabili">lavoro</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span></code></pre>
-      </div>
-      <p class="nota-offline compari">Esegui e Leo crea una cartella di prova, ci mette tre file e li smista ciascuno nella sottocartella del suo tipo; alla fine stampa <code>In ordine! Cartelle create: [&quot;jpg&quot;, &quot;mp3&quot;, &quot;txt&quot;]</code>. Cambia i nomi dei file e riprova: fa il lavoro ripetitivo al posto tuo.</p>
-      <div class="intestazione-sezione" style="margin-top:34px">
-        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">Primi passi, <em>su ogni dispositivo.</em></h3>
-      </div>
-      <dl class="requisiti"><div class="scheda compari"><dt>Windows (.exe)</dt><dd>Apri <strong>Leo Studio</strong>, crea un file <code>.leo</code>, scrivi il codice qui sopra e premi <strong>Esegui</strong> (o F5): guardi il risultato nel terminale.</dd></div><div class="scheda compari r1"><dt>Android (.apk)</dt><dd>Installa l’APK, apri l’app <strong>Leo</strong>, incolla il codice e tocca <strong>Esegui</strong>: provi gli script anche dal telefono.</dd></div><div class="scheda compari r2"><dt>iPhone (iOS)</dt><dd>Apri la web-app dal browser e scegli <strong>&laquo;Aggiungi alla schermata Home&raquo;</strong>: diventa un’icona come un’app, pronta per scrivere ed eseguire.</dd></div></dl>
-      <p class="dettagli compari" style="margin-top:14px;max-width:64ch"><strong>Windows 10/11</strong> &mdash; pronto (versione 0.1.0).&nbsp; <strong>Android 7+</strong> &mdash; APK in anteprima, presto su Google Play.&nbsp; <strong>iPhone</strong> &mdash; web-app in anteprima; l&rsquo;app su App Store &egrave; in arrivo.</p>
-      <div class="intestazione-sezione" style="margin-top:34px">
-        <h3 class="titolo-sezione parole" style="font-size:clamp(1.35rem,3vw,1.75rem)">In breve, <em>cosa porti a casa.</em></h3>
-      </div>
-      <ul class="elenco-spunte compari"><li><strong>File e cartelle</strong>: crea, sposta, elenca e cerca con <code>crea_cartella</code>, <code>sposta_file</code>, <code>elenca_file</code>.</li><li><strong>Processi e finestre</strong>: avvii e fermi programmi, organizzi il desktop.</li><li><strong>Informazioni del computer</strong> e <strong>programmi da riga di comando</strong> veri, con opzioni e argomenti.</li><li>Automatizzi il lavoro noioso: una volta scritto, lo riusi ogni giorno.</li></ul>
-      <div class="azioni compari" style="margin-top:20px">
-        <a class="pulsante secondario" href="manuale/index.html">Apri il manuale</a>
+<span class="kw">sorveglia</span> <span class="st">"~/Download"</span> <span class="kw">fai</span> arrivato
+    <span class="cm"># la testa decide: una regola…</span>
+    <span class="kw">se</span> <span class="fn">estensione_file</span>(arrivato) == <span class="st">".pdf"</span> <span class="kw">allora</span>
+        <span class="fn">sposta_file</span>(arrivato, <span class="st">"~/Documenti"</span>)
+    <span class="kw">altrimenti</span>
+        <span class="cm"># …oppure l'IA locale</span>
+        <span class="fn">sposta_file</span>(arrivato, ia.<span class="fn">cartella_per</span>(arrivato))
+    <span class="kw">fine</span>
+    <span class="fn">mostra_notifica</span>(<span class="st">"Ordinato"</span>, <span class="fn">nome_file</span>(arrivato))
+<span class="kw">fine</span></pre>
+      <div class="n-diventa">
+        <b>l'agente ha</b>
+        <span class="n-tag">sensi</span><span class="n-tag">testa</span><span class="n-tag">mani</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sezione scura" aria-labelledby="altre-sistema">
-    <div class="contenitore">
-      <div class="intestazione-sezione">
-        <p class="sopratitolo compari">Un solo Leo</p>
-        <h2 id="altre-sistema" class="titolo-sezione parole">Scopri le altre <em>edizioni</em></h2>
-        <p class="introduzione compari r2">Stesso linguaggio, ovunque. Con la <strong>Suite</strong> le hai tutte in un colpo solo, già interconnesse.</p>
-      </div>
-      <ul class="edizioni compari" role="list">
-        <li class="edizione edizione-suite">
-          <a class="edizione-vai" href="suite.html">
-            <img class="edizione-icona" src="img/edizioni/suite.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Suite</h3>
-              <p>Tutte le categorie, già interconnesse.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="suite.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="web.html">
-            <img class="edizione-icona" src="img/edizioni/web.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Web</h3>
-              <p>Siti e servizi web in italiano.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="web.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="dati.html">
-            <img class="edizione-icona" src="img/edizioni/dati.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Dati</h3>
-              <p>Database, tabelle, calcolo, grafici.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="dati.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="giochi.html">
-            <img class="edizione-icona" src="img/edizioni/giochi.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Giochi</h3>
-              <p>Giochi e grafica, con i personaggi pronti.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="giochi.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="sicurezza.html">
-            <img class="edizione-icona" src="img/edizioni/sicurezza.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Sicurezza</h3>
-              <p>Sicurezza informatica, reti e forense.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="sicurezza.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-        <li class="edizione">
-          <a class="edizione-vai" href="robotica.html">
-            <img class="edizione-icona" src="img/edizioni/robotica.png" alt="" width="64" height="64" loading="lazy" decoding="async">
-            <div class="edizione-corpo">
-              <h3>Leo Robotica</h3>
-              <p>Robot e schede: Pico, sensori, motori.</p>
-            </div>
-          </a>
-          <a class="pulsante piccolo edizione-azione" href="robotica.html"><span class="etichetta">Apri e scarica</span></a>
-        </li>
-      </ul>
-      <div class="azioni compari" style="margin-top:8px">
-        <a class="pulsante secondario" href="scarica.html">Vedi tutte le edizioni &rarr;</a>
+<section class="n-sez">
+  <div class="contenitore">
+    <p class="n-occ">Come funziona</p>
+    <h2 class="n-h2">Sensi, testa, mani</h2>
+    <p class="n-intro">Leo Sistema è un <strong>laboratorio di agenti</strong>: non scrivi un comando da lanciare una volta, componi un programma che osserva, decide e agisce da solo, e resta vivo. La testa può essere fatta di <strong>regole</strong> che scrivi tu (se… e… allora…) oppure di un'<strong>IA locale</strong> che ragiona: scegli tu, e puoi mescolarle. Se l'agente usa l'IA, il setup installa da sé ciò che serve — il runtime del modello (Ollama) e un modello di partenza — così tu non tocchi niente.</p>
+    <div class="n-passi">
+      <div class="n-passo"><div><h4>Dai i sensi — il «quando»</h4><p>Scegli cosa sveglia l'agente: un orario, un file che compare in una cartella, un processo che parte, un valore che cambia. È ciò che l'agente osserva per decidere quando muoversi.</p></div></div>
+      <div class="n-passo"><div><h4>Scegli la testa — regole o IA</h4><p>Decidi come ragiona: con regole logiche che imposti tu, oppure con un'IA locale che gira sul tuo computer, gratis e offline. Entrambi vanno bene, e la scelta è tua: per i casi di giudizio puoi affidarti al modello, per il resto alle regole.</p></div></div>
+      <div class="n-passo"><div><h4>Dai le mani — le azioni</h4><p>Collega cosa fa sul computer: rinomina, sposta o cestina file, apre o chiude programmi, affianca finestre, manda notifiche, lancia comandi. Le azioni delicate chiedono conferma e, per i file, il cestino è il default.</p></div></div>
+      <div class="n-passo"><div><h4>Provalo a vuoto</h4><p>Prima di toccare il disco, la «prova a vuoto» mostra l'elenco di ciò che l'agente farebbe, riga per riga. Controlli il conto — «toccherò N file» — e poi dai l'ok.</p></div></div>
+      <div class="n-passo"><div><h4>Attivalo</h4><p>Con «Attiva» l'agente resta in ascolto e lavora da solo, con un registro dal vivo che dice fatto, saltato o errore. Lo fermi e lo riparti quando vuoi, lo mandi in sottofondo o all'avvio, e ne tieni attivi più d'uno insieme.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="n-banda">
+  <div class="contenitore n-sez n-due">
+    <div>
+      <p class="n-occ">Interconnessione</p>
+      <h2 class="n-h2">Leo Sistema è l'attuatore</h2>
+      <p class="n-intro">Sistema non tiene i dati né mostra pagine: <strong>agisce</strong>. Per questo <strong>usa</strong> le altre edizioni, e in particolare Leo Dati — legge e aggiorna le tabelle che il perno dei dati espone. A sua volta <strong>espone</strong> i propri trigger e le proprie azioni, così un'altra edizione può far scattare un agente quando serve.</p>
+      <p class="n-intro" style="margin-top:12px">Tutto si dichiara nel <code>progetto.toml</code>, in modo esplicito e tipizzato. <a href="suite.html">Come funziona l'interconnessione →</a></p>
+    </div>
+    <div class="n-vetro" aria-hidden="true">
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>progetto.toml</span></div>
+<pre><span class="cm"># USA una tabella che Leo Dati espone</span>
+[[<span class="kw">usa</span>]]
+progetto    = <span class="st">"magazzino"</span>
+interfaccia = <span class="st">"prodotti"</span>
+come        = <span class="st">"catalogo"</span>
+
+<span class="cm"># ed ESPONE un'azione che gli altri attivano</span>
+[[<span class="kw">espone</span>]]
+tipo = <span class="st">"servizio/azione"</span>
+nome = <span class="st">"aggiorna_scorte"</span>
+da   = <span class="st">"agente.leo"</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="n-dl">
+  <div class="contenitore n-sez">
+    <div class="n-dl-card">
+      <h2>Prova Leo Sistema</h2>
+      <p>Il laboratorio dove componi agenti che osservano, decidono e agiscono da soli. Per Windows e Android, gratis in questa versione.</p>
+      <div class="n-dl-azioni">
+        <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_Sistema_0.1.0.exe">Windows (158 MB)</a>
+        <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-Sistema-0.1.0.apk">Android (65 MB)</a>
+        <a class="n-btn n-btn-ghost" href="manuali/sistema.html">Guida</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <!--#piede-->
@@ -317,27 +193,38 @@
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="novita.html">Novità</a></li>
           <li><a href="licenza.html">Licenza</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuali/index.html">Manuali</a></li>
+          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
+          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
-          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="template.html">Esempi</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">
