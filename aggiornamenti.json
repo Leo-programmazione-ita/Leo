@@ -1,5 +1,42 @@
 {
   "versione": "0.1.0",
-  "note": "Versione attuale di Leo.",
-  "url": "https://leoitalia.com/scarica.html"
+  "note": "Versione definitiva: edizioni reinventate, correzioni e aggiornamento automatico.",
+  "url": "https://leoitalia.com/scarica.html",
+  "installatori": {
+    "suite": {
+      "sha256": "01c01ed70efc750e09673718cedd584ac13581350b861f1ca76200d988689829",
+      "nome": "Setup_Leo_0.1.0.exe",
+      "dimensione": 301617800
+    },
+    "web": {
+      "sha256": "4748b089f040f65217977d9573011ebb8a3ae48d9f2c17315770a364f913cc33",
+      "nome": "Setup_Leo_Web_0.1.0.exe",
+      "dimensione": 298285888
+    },
+    "dati": {
+      "sha256": "11d91baed5109368c208048d16e10f17ec5708e362d437c56b56d4f1a98048c2",
+      "nome": "Setup_Leo_Dati_0.1.0.exe",
+      "dimensione": 298279384
+    },
+    "giochi": {
+      "sha256": "9624d4ae1aeebb0b47aeb6f0a601d180b88b1fb53e3b05bf3d0af634a7e8868d",
+      "nome": "Setup_Leo_Giochi_0.1.0.exe",
+      "dimensione": 301509736
+    },
+    "sistema": {
+      "sha256": "242eda5265d8cd448e08855378a80645376372c98ce6c5f7c6bdeec3742b59fd",
+      "nome": "Setup_Leo_Sistema_0.1.0.exe",
+      "dimensione": 298299288
+    },
+    "sicurezza": {
+      "sha256": "6d083e2e92e7d891e92bdd016125452f3fa16f48047638c4219d8a699ff5f154",
+      "nome": "Setup_Leo_Sicurezza_0.1.0.exe",
+      "dimensione": 298274232
+    },
+    "robotica": {
+      "sha256": "e7a66beef19d4cdf1a2f73086bc95aa9e41960fd64496b81a49e38f6ce983737",
+      "nome": "Setup_Leo_Robotica_0.1.0.exe",
+      "dimensione": 298282688
+    }
+  }
 }

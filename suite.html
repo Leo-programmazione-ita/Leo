@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leo Suite — la piattaforma dove i progetti si parlano</title>
-<meta name="description" content="Leo Suite non è un lanciatore: è la piattaforma che interconnette le edizioni di Leo. Un sistema è fatto di parti che si collegano con espone / usa, coi tipi controllati prima dell'esecuzione.">
+<title>Leo Suite — la piattaforma dove si programma</title>
+<meta name="description" content="Leo Suite è la piattaforma di programmazione completa di Leo: un foglio di codice e una finestra, e costruisci qualunque programma. E in più le edizioni si parlano — espone / usa, coi tipi controllati prima dell'esecuzione.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/suite.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
-<meta property="og:title" content="Leo Suite — la piattaforma dove i progetti si parlano">
-<meta property="og:description" content="Leo Suite non è un lanciatore: è la piattaforma che interconnette le edizioni di Leo. Un sistema è fatto di parti che si collegano con espone / usa, coi tipi controllati prima dell'esecuzione.">
+<meta property="og:title" content="Leo Suite — la piattaforma dove si programma">
+<meta property="og:description" content="Leo Suite è la piattaforma di programmazione completa di Leo: un foglio di codice e una finestra, e costruisci qualunque programma. E in più le edizioni si parlano — espone / usa, coi tipi controllati prima dell'esecuzione.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
@@ -99,35 +99,28 @@
   <div class="contenitore n-hero-griglia">
     <div>
       <span class="n-occhiello"><span class="pallino"></span> Leo <b>Suite</b> · la piattaforma</span>
-      <h1 class="n-h1">Qui i tuoi progetti<span class="riga2">si parlano.</span></h1>
-      <p class="n-sotto">Leo Suite <strong>non è un menù di avvio</strong> che apre le edizioni una per una. È la piattaforma dove un <strong>sistema intero</strong> prende forma: tante parti — un sito, dei dati, un agente, una scheda — che si collegano tra loro e vivono come una cosa sola.</p>
+      <h1 class="n-h1">Un foglio di codice<span class="riga2">e una finestra.</span></h1>
+      <p class="n-sotto">Leo Suite è la <strong>piattaforma di programmazione</strong> di Leo: scrivi il codice in un foglio, disegni la finestra accanto e <strong>costruisci qualunque programma</strong>. Tutto il linguaggio, nessuna edizione specializzata da scegliere — la superficie dove programmi, punto.</p>
       <div class="n-azioni">
         <a class="n-btn n-btn-pri" href="#scarica">Scarica Leo Suite <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg></a>
         <a class="n-btn n-btn-ghost" href="manuali/piattaforma.html">Guida della piattaforma</a>
       </div>
-      <p class="n-nota">Windows · Android · contiene tutte le edizioni, già interconnesse</p>
+      <p class="n-nota">Windows · Android · la piattaforma completa, con tutte le edizioni incluse</p>
     </div>
     <div class="n-vetro" aria-hidden="true">
-      <div class="n-vetro-barra"><i></i><i></i><i></i><span>Negozio/progetto.toml</span></div>
-<pre><span class="cm"># un SISTEMA: più parti in una casa sola</span>
-<span class="kw">[sistema]</span>
-edizione = <span class="st">"suite"</span>
+      <div class="n-vetro-barra"><i></i><i></i><i></i><span>principale.leo</span></div>
+<pre><span class="cm"># un foglio di codice: ecco il programma</span>
+<span class="kw">finestra</span> <span class="fn">Benvenuto</span>()
+    <span class="kw">variabile</span> nome = <span class="fn">campo</span>(<span class="st">"Come ti chiami?"</span>)
+    <span class="fn">bottone</span>(<span class="st">"Saluta"</span>) <span class="kw">quando</span> premuto <span class="kw">fai</span>
+        <span class="fn">mostra</span>(<span class="st">"Ciao, "</span> + nome.<span class="fn">testo</span>())
+    <span class="kw">fine</span>
+<span class="kw">fine</span>
 
-<span class="kw">[[parte]]</span>
-nome    = <span class="st">"catalogo"</span>
-dominio = <span class="st">"dati"</span>
-
-<span class="kw">[[parte]]</span>
-nome    = <span class="st">"vetrina"</span>
-dominio = <span class="st">"web"</span>
-
-<span class="kw">[[collega]]</span>      <span class="cm"># il cablaggio fra le parti</span>
-da  = <span class="st">"catalogo"</span>   <span class="cm"># chi espone i dati</span>
-a   = <span class="st">"vetrina"</span>    <span class="cm"># chi li usa</span>
-interfaccia = <span class="st">"prodotti"</span></pre>
+<span class="cm"># e la finestra la disegni accanto, a vista</span></pre>
       <div class="n-diventa">
-        <b>un sistema solo, non app separate</b>
-        <span class="n-tag">catalogo · Dati</span><span class="n-tag">vetrina · Web</span><span class="n-tag">avvisi · Sistema</span>
+        <b>codice + finestra: un programma vero</b>
+        <span class="n-tag">app con finestre</span><span class="n-tag">strumenti</span><span class="n-tag">.exe · app</span>
       </div>
     </div>
   </div>
@@ -136,27 +129,29 @@ interfaccia = <span class="st">"prodotti"</span></pre>
 <section class="n-sez">
   <div class="contenitore">
     <p class="n-occ">Che cos'è, davvero</p>
-    <h2 class="n-h2">Non un lanciatore: un tessuto</h2>
-    <p class="n-intro">Si potrebbe pensare alla Suite come a un cassetto da cui apri Leo Web, Leo Dati, Leo Giochi… Non è così. La Suite è la <strong>casa dove i collegamenti tra i progetti vivono</strong>: è lì che un sistema fatto di parti diverse diventa una cosa sola e viene tenuto insieme.</p>
+    <h2 class="n-h2">La piattaforma dove si programma</h2>
+    <p class="n-intro">Leo Suite non è un cassetto da cui apri Leo Web, Leo Dati, Leo Giochi… È la <strong>piattaforma di programmazione vera e propria</strong>: un foglio di codice e una finestra da disegnare. Qui scrivi Leo per intero e costruisci <strong>qualunque cosa</strong> — un'app con le sue finestre, uno strumento, un programma da riga di comando. Le edizioni specializzate sono comodità in più; il cuore è questo.</p>
     <div class="n-passi">
-      <div class="n-passo"><div><h4>Un sistema è fatto di parti</h4><p>Ogni parte è un normale progetto Leo, costruito con l'edizione giusta per il suo mestiere: il catalogo in Leo Dati, la vetrina in Leo Web, l'agente che avvisa in Leo Sistema. Restano progetti veri, ciascuno col suo strumento.</p></div></div>
-      <div class="n-passo"><div><h4>Le parti si collegano tra loro</h4><p>Una parte <strong>espone</strong> ciò che sa fare — una tabella, un'azione — e un'altra la <strong>usa</strong>, dandole un nome. Il collegamento non è colla scritta a mano: è dichiarato, e la piattaforma lo genera da sé.</p></div></div>
-      <div class="n-passo"><div><h4>La Suite orchestra l'insieme</h4><p>La casa tiene la mappa di chi espone e chi usa, controlla che i tipi combacino <strong>prima</strong> di eseguire, e compila tutto insieme. Tu vedi un sistema; non quattro programmi slegati.</p></div></div>
+      <div class="n-passo"><div><h4>Un foglio di codice</h4><p>Scrivi Leo in italiano, tutto il linguaggio: variabili, funzioni, <code>quando … fai</code>, finestre, tipi. Niente sottoinsieme ridotto, niente dominio da scegliere prima di cominciare. È la lingua intera, davanti a te.</p></div></div>
+      <div class="n-passo"><div><h4>Una finestra, disegnata accanto</h4><p>Accanto al codice c'è il disegnatore di finestre: trascini i componenti, li colleghi al codice e vedi subito com'è fatto il programma. Codice e interfaccia stanno nello stesso posto, uno di fianco all'altra.</p></div></div>
+      <div class="n-passo"><div><h4>Costruisci qualunque programma</h4><p>Da qui esce un programma vero — un'applicazione con finestre, uno strumento, un servizio. La piattaforma compila per Windows e Android senza che tu esca da Leo e senza conoscere altri linguaggi.</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="n-banda">
-  <div class="contenitore n-sez n-due">
-    <div>
-      <p class="n-occ" style="color:var(--c-suite)">Il principio</p>
-      <h2 class="n-h2">Espone / usa, e i tipi si controllano prima</h2>
-      <p class="n-intro">Il collegamento tra due parti si dichiara nel loro <code>progetto.toml</code>, non dentro il codice Leo. Una parte scrive un blocco <strong>[[espone]]</strong>; l'altra un blocco <strong>[[usa]]</strong> che la richiama per nome. Da quel momento, nel codice, quel nome è già pronto all'uso.</p>
-      <p class="n-intro" style="margin-top:12px">Il vocabolario è tipizzato: <em>dato/tabella</em>, <em>servizio/sito</em>, <em>trigger/quando</em>, <em>azione/fai</em>, <em>hardware/comando</em>… Se un lato chiede una tabella e l'altro offre un'azione, l'errore si vede <strong>prima dell'esecuzione</strong>, in italiano. Niente colla a mano, niente cambio di linguaggio.</p>
-      <p class="n-intro" style="margin-top:12px"><a href="manuali/piattaforma.html">Leggi la guida della piattaforma →</a></p>
-    </div>
-    <div class="n-vetro" aria-hidden="true">
-      <div class="n-vetro-barra"><i></i><i></i><i></i><span>espone · usa</span></div>
+  <div class="contenitore n-sez">
+    <p class="n-occ" style="color:var(--c-suite)">E in più</p>
+    <h2 class="n-h2">E in più: le edizioni si parlano</h2>
+    <p class="n-intro" style="max-width:72ch">Oltre a essere la piattaforma dove programmi, Leo Suite tiene insieme anche le <strong>edizioni specializzate</strong> — Web, Dati, Giochi, Sistema, Sicurezza, Robotica — e le fa collaborare. Un sistema fatto di parti diverse può diventare una cosa sola: è un <strong>potere in più</strong>, non l'identità della Suite.</p>
+    <p class="n-intro" style="max-width:72ch;margin-top:12px">Il meccanismo è semplice: una parte <strong>espone</strong> ciò che sa fare — una tabella, un'azione — e un'altra la <strong>usa</strong>, dandole un nome. Il collegamento non è colla scritta a mano: è dichiarato nel <code>progetto.toml</code>, e la piattaforma lo genera da sé, controllando che i tipi combacino <strong>prima</strong> di eseguire, in italiano.</p>
+    <div class="n-due" style="margin-top:32px">
+      <div>
+        <p class="n-intro">Il vocabolario è tipizzato: <em>dato/tabella</em>, <em>servizio/sito</em>, <em>trigger/quando</em>, <em>azione/fai</em>, <em>hardware/comando</em>… Se un lato chiede una tabella e l'altro offre un'azione, l'errore si vede prima dell'esecuzione. Niente colla a mano, niente cambio di linguaggio.</p>
+        <p class="n-intro" style="margin-top:12px"><a href="manuali/piattaforma.html">Leggi la guida della piattaforma →</a></p>
+      </div>
+      <div class="n-vetro" aria-hidden="true">
+        <div class="n-vetro-barra"><i></i><i></i><i></i><span>espone · usa</span></div>
 <pre><span class="cm"># catalogo/progetto.toml — ESPONE i prodotti</span>
 <span class="kw">[[espone]]</span>
 tipo = <span class="st">"dato/tabella"</span>
@@ -167,15 +162,16 @@ nome = <span class="st">"prodotti"</span>
 progetto    = <span class="st">"../catalogo"</span>
 interfaccia = <span class="st">"prodotti"</span>
 come        = <span class="st">"catalogo"</span></pre>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="n-sez">
   <div class="contenitore">
-    <p class="n-occ">Un esempio, dall'inizio alla fine</p>
+    <p class="n-occ">L'interconnessione, dall'inizio alla fine</p>
     <h2 class="n-h2">Un negozio, in tre edizioni che si parlano</h2>
-    <p class="n-intro">Lo stesso sistema attraversa tre domini senza che tu scriva una riga di PHP, SQL o altro. Leo Dati tiene il catalogo; Leo Web lo mostra e raccoglie gli ordini; Leo Sistema, ogni mattina, legge gli ordini e avvisa. I colori sono quelli delle edizioni.</p>
+    <p class="n-intro">Quando il sistema cresce, lo stesso progetto può attraversare tre domini senza che tu scriva una riga di PHP, SQL o altro. Leo Dati tiene il catalogo; Leo Web lo mostra e raccoglie gli ordini; Leo Sistema, ogni mattina, legge gli ordini e avvisa. I colori sono quelli delle edizioni.</p>
     <div class="n-due" style="margin-top:36px">
       <div class="n-flusso" aria-hidden="true">
         <div class="n-nodo"><span class="p" style="background:var(--c-dati)">D</span><div><div class="d"><strong>Leo Dati</strong> tiene il catalogo</div><code>espone  dato/tabella  "prodotti"</code></div></div>
@@ -204,7 +200,7 @@ come        = <span class="st">"catalogo"</span></pre>
   <div class="contenitore">
     <p class="n-occ" style="color:var(--c-suite)">Il grafo</p>
     <h2 class="n-h2">Ogni edizione, il suo ruolo</h2>
-    <p class="n-intro">Nell'interconnessione ogni strumento ha un posto naturale. La Suite non cancella queste differenze: le mette fianco a fianco e le fa collaborare.</p>
+    <p class="n-intro">Quando colleghi le edizioni, ognuna ha un posto naturale nel sistema. La Suite non cancella queste differenze: le mette fianco a fianco e le fa collaborare.</p>
     <div class="n-edizioni">
       <a class="n-ed" href="dati.html" style="--cc:var(--c-dati)">
         <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
@@ -250,7 +246,7 @@ come        = <span class="st">"catalogo"</span></pre>
   <div class="contenitore n-sez">
     <div class="n-dl-card">
       <h2>Scarica Leo Suite</h2>
-      <p>Una sola installazione con <strong>tutte le edizioni</strong>, pronte a collegarsi tra loro. Per Windows e Android, gratis e senza scadenza in questa versione.</p>
+      <p>La piattaforma di programmazione completa, con <strong>tutte le edizioni</strong> incluse e già pronte a collegarsi tra loro. Per Windows e Android, gratis e senza scadenza in questa versione.</p>
       <div class="n-dl-azioni">
         <a class="n-btn n-btn-pri" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Setup_Leo_0.1.0.exe">Windows (161 MB)</a>
         <a class="n-btn n-btn-ghost" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.0/Leo-0.1.0.apk">Android (65 MB)</a>
