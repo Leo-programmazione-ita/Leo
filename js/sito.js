@@ -644,10 +644,9 @@
   }
 })();
 
-
 /* Download "dal sito": i link alle Release di GitHub partono SENZA lasciare
-   leoitalia.com. Il file arriva comunque dalla CDN di GitHub, ma viene avviato
-   dentro un iframe nascosto, cosi' la pagina non cambia. Nessun CORS richiesto.
+   leoitalia.com (file avviato in un iframe nascosto; il file arriva comunque
+   dalla CDN di GitHub). Subito dopo si apre un banner di ringraziamento.
    Fallback: senza JavaScript il link normale funziona come prima. */
 (function () {
   "use strict";
@@ -657,23 +656,60 @@
     document.body.appendChild(f);
     setTimeout(function () { try { if (f.parentNode) f.parentNode.removeChild(f); } catch (e) {} }, 180000);
   }
-  function avviso() {
-    var d = document.getElementById("avviso-download");
-    if (!d) {
-      d = document.createElement("div"); d.id = "avviso-download";
-      d.setAttribute("role", "status"); d.setAttribute("aria-live", "polite");
-      d.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:#1b1b1f;color:#fff;padding:12px 18px;border-radius:10px;font:14px/1.45 system-ui,-apple-system,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:90vw;text-align:center";
-      document.body.appendChild(d);
-    }
-    d.textContent = "Download avviato… se non parte, guarda la barra dei download del browser.";
-    d.style.transition = ""; d.style.opacity = "1";
-    clearTimeout(d._t); d._t = setTimeout(function () { d.style.transition = "opacity .5s"; d.style.opacity = "0"; }, 6000);
+  function edizioneDa(url) {
+    var nome = (url.split("?")[0].split("/").pop()) || "";
+    var m = nome.match(/Setup_Leo(?:_([A-Za-z]+))?_\d/) || nome.match(/Leo(?:-([A-Za-z]+))?-\d/);
+    var ed = m && m[1] ? m[1] : "";
+    return ed ? "Leo " + ed : "Leo Suite";
+  }
+  var ultimoFocus = null;
+  function chiudi(bg) {
+    if (!bg || !bg.parentNode) return;
+    bg.parentNode.removeChild(bg);
+    document.removeEventListener("keydown", bg._esc, true);
+    try { if (ultimoFocus && ultimoFocus.focus) ultimoFocus.focus(); } catch (e) {}
+  }
+  function ringrazia(edizione) {
+    var vecchio = document.getElementById("grazie-download");
+    if (vecchio) chiudi(vecchio);
+    ultimoFocus = document.activeElement;
+    var bg = document.createElement("div");
+    bg.id = "grazie-download";
+    bg.setAttribute("role", "dialog");
+    bg.setAttribute("aria-modal", "true");
+    bg.setAttribute("aria-labelledby", "grazie-titolo");
+    bg.style.cssText = "position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(2px);animation:grazieFade .2s ease";
+    var card = document.createElement("div");
+    card.style.cssText = "position:relative;max-width:420px;width:100%;background:var(--superficie,#0E0E11);color:var(--testo,#F5F3EF);border:1px solid var(--bordo-forte,#2B2B31);border-radius:16px;padding:30px 26px 26px;text-align:center;box-shadow:0 22px 60px rgba(0,0,0,.5)";
+    card.innerHTML =
+      '<button type="button" aria-label="Chiudi" style="position:absolute;top:12px;right:14px;background:none;border:none;color:var(--testo,#F5F3EF);opacity:.6;font-size:22px;line-height:1;cursor:pointer">×</button>' +
+      '<img src="/img/stemma.svg" alt="" width="56" height="56" style="display:block;margin:0 auto 14px" />' +
+      '<h2 id="grazie-titolo" style="margin:0 0 10px;font-size:22px;font-weight:700">Grazie per aver scaricato ' + edizione + '!</h2>' +
+      '<p style="margin:0 0 18px;opacity:.85;font-size:15px;line-height:1.5">Il download è partito. Trovi l’installatore nella barra dei download del browser o nella cartella <strong>Download</strong> — aprilo per installare.</p>' +
+      '<div style="display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap">' +
+        '<button type="button" data-chiudi style="background:var(--accento,#D2122A);color:var(--su-accento,#fff);border:none;border-radius:10px;padding:11px 22px;font-size:15px;font-weight:600;cursor:pointer">Chiudi</button>' +
+        '<a href="/manuale/installazione.html" style="color:var(--accento,#E0182D);font-size:14px;text-decoration:none;font-weight:600">Come si installa →</a>' +
+      '</div>';
+    bg.appendChild(card);
+    document.body.appendChild(bg);
+    bg._esc = function (ev) { if (ev.key === "Escape") chiudi(bg); };
+    document.addEventListener("keydown", bg._esc, true);
+    bg.addEventListener("click", function (ev) { if (ev.target === bg) chiudi(bg); });
+    card.querySelector("[aria-label='Chiudi']").addEventListener("click", function () { chiudi(bg); });
+    card.querySelector("[data-chiudi]").addEventListener("click", function () { chiudi(bg); });
+    try { card.querySelector("[data-chiudi]").focus(); } catch (e) {}
+  }
+  if (!document.getElementById("grazie-download-stile")) {
+    var st = document.createElement("style"); st.id = "grazie-download-stile";
+    st.textContent = "@keyframes grazieFade{from{opacity:0}to{opacity:1}}";
+    document.head.appendChild(st);
   }
   document.addEventListener("click", function (e) {
     var a = (e.target && e.target.closest) ? e.target.closest('a[href*="/releases/download/"]') : null;
     if (!a || !a.getAttribute("href")) return;
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    avvia(a.href); avviso();
+    avvia(a.href);
+    ringrazia(edizioneDa(a.href));
   });
 })();
