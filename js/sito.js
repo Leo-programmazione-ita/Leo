@@ -643,3 +643,37 @@
     applica(false);
   }
 })();
+
+
+/* Download "dal sito": i link alle Release di GitHub partono SENZA lasciare
+   leoitalia.com. Il file arriva comunque dalla CDN di GitHub, ma viene avviato
+   dentro un iframe nascosto, cosi' la pagina non cambia. Nessun CORS richiesto.
+   Fallback: senza JavaScript il link normale funziona come prima. */
+(function () {
+  "use strict";
+  function avvia(url) {
+    var f = document.createElement("iframe");
+    f.style.display = "none"; f.setAttribute("aria-hidden", "true"); f.src = url;
+    document.body.appendChild(f);
+    setTimeout(function () { try { if (f.parentNode) f.parentNode.removeChild(f); } catch (e) {} }, 180000);
+  }
+  function avviso() {
+    var d = document.getElementById("avviso-download");
+    if (!d) {
+      d = document.createElement("div"); d.id = "avviso-download";
+      d.setAttribute("role", "status"); d.setAttribute("aria-live", "polite");
+      d.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:#1b1b1f;color:#fff;padding:12px 18px;border-radius:10px;font:14px/1.45 system-ui,-apple-system,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:90vw;text-align:center";
+      document.body.appendChild(d);
+    }
+    d.textContent = "Download avviato… se non parte, guarda la barra dei download del browser.";
+    d.style.transition = ""; d.style.opacity = "1";
+    clearTimeout(d._t); d._t = setTimeout(function () { d.style.transition = "opacity .5s"; d.style.opacity = "0"; }, 6000);
+  }
+  document.addEventListener("click", function (e) {
+    var a = (e.target && e.target.closest) ? e.target.closest('a[href*="/releases/download/"]') : null;
+    if (!a || !a.getAttribute("href")) return;
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    avvia(a.href); avviso();
+  });
+})();
