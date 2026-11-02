@@ -1,42 +1,42 @@
 {
-  "versione": "0.1.1",
-  "note": "Edizioni col suo: il Nuovo mostra solo la superficie dell'edizione (Leo Web apre il costruttore di siti, non una finestra vuota).",
+  "versione": "0.1.2",
+  "note": "Edizioni piu' solide e col suo: parita' telefono-desktop su tutte e 7 le edizioni, salvataggi dati resi sicuri (niente perdite alla chiusura) e vari ritocchi d'uso.",
   "url": "https://leoitalia.com/scarica.html",
   "installatori": {
     "suite": {
-      "sha256": "9b39f7930ea0067d65a36bec6c28f41e836afb877fbffdae6046e44999ad6b49",
-      "nome": "Setup_Leo_0.1.1.exe",
-      "dimensione": 301691296
+      "sha256": "4e2fdee6bcb51452e776eca70a75e5fab819cd8ab49275b3389db122793ad95c",
+      "nome": "Setup_Leo_0.1.2.exe",
+      "dimensione": 255678264
     },
     "web": {
-      "sha256": "64087661c9d54a3d21eef634f941c98c099ece0decf3923463e4fcab38df782b",
-      "nome": "Setup_Leo_Web_0.1.1.exe",
-      "dimensione": 298357520
+      "sha256": "a2d191544dd047c4d4851a04add6aca7b4af9ff26128a3d9201cf06312380282",
+      "nome": "Setup_Leo_Web_0.1.2.exe",
+      "dimensione": 252341880
     },
     "dati": {
-      "sha256": "13683c5ea711adb5e44201ef725e2b9778efe88733af44800bfd279e039a90f0",
-      "nome": "Setup_Leo_Dati_0.1.1.exe",
-      "dimensione": 298350184
+      "sha256": "f206a9b0432a36ab381788373abafa78aba473ea88aa2d62bfd93183d675b0d1",
+      "nome": "Setup_Leo_Dati_0.1.2.exe",
+      "dimensione": 252334848
     },
     "giochi": {
-      "sha256": "7084053da5b5da6cabfd8b84e55c61988231c22eda3282725e117dbe3d8719b6",
-      "nome": "Setup_Leo_Giochi_0.1.1.exe",
-      "dimensione": 301583728
+      "sha256": "1a2013fffb1e59972ce861afa9525812fa68f505d788dd91f1a591e68fec99a4",
+      "nome": "Setup_Leo_Giochi_0.1.2.exe",
+      "dimensione": 255564264
     },
     "sistema": {
-      "sha256": "97694b9ff66e1a252090ccafa2a2e9bb16db8d579363e0e532e0bc1a1115c7fc",
-      "nome": "Setup_Leo_Sistema_0.1.1.exe",
-      "dimensione": 298375400
+      "sha256": "91fdbb68253f1e2314bc79f1a3533abd15821d3dd0066f45d388635208c17b26",
+      "nome": "Setup_Leo_Sistema_0.1.2.exe",
+      "dimensione": 252341936
     },
     "sicurezza": {
-      "sha256": "84e7a63e2a1f7a958069dc0869acd2719783f406fd958fc7d98b8fd6a224d651",
-      "nome": "Setup_Leo_Sicurezza_0.1.1.exe",
-      "dimensione": 298345560
+      "sha256": "e103672e36f616cf184a8bd546d43ed8a2d383818e97df31817c78836d4d30d5",
+      "nome": "Setup_Leo_Sicurezza_0.1.2.exe",
+      "dimensione": 252330424
     },
     "robotica": {
-      "sha256": "530d92bee9d84a1da7c695ef637b849e884c7792e373e248ec6d008e81b53751",
-      "nome": "Setup_Leo_Robotica_0.1.1.exe",
-      "dimensione": 298358192
+      "sha256": "94177f3f68d14e2b3b2e40fc0e18fc5aa4a8d490081eb28666ebf3c3df097e44",
+      "nome": "Setup_Leo_Robotica_0.1.2.exe",
+      "dimensione": 252338648
     }
   }
 }
