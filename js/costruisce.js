@@ -1,16 +1,15 @@
 /* Il sito si costruisce mentre lo usi (vedi css/costruisce.css).
    Ogni sezione di <main> parte come bozza e viene «stampata» quando entra
    nello schermo; il riquadro del codice si scrive riga per riga.
-   Con «riduci movimento» resta, ma solo a dissolvenze. Si mostra tutto subito
-   senza IntersectionObserver, in stampa o se qualcosa va storto.
+   Sicurezze: niente effetto con meno movimento richiesto, senza
+   IntersectionObserver, in stampa o se qualcosa va storto (si mostra tutto).
    Gli elementi che hanno già una loro comparsa (sito.js) non vengono toccati. */
 (function () {
   "use strict";
   var d = document, root = d.documentElement;
   function sblocca() { root.classList.remove("lc-prima"); }
   if (!("IntersectionObserver" in window)) { sblocca(); return; }
-  /* con «riduci movimento» l'effetto resta, ma solo a dissolvenze (vedi CSS) */
-  try { if (matchMedia("(prefers-reduced-motion: reduce)").matches) root.classList.add("lc-ridotto"); } catch (e) {}
+  try { if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sblocca(); return; } } catch (e) { sblocca(); return; }
 
   var GIA_ANIMATI = ".compari,.parole,.disegna,.filo,.numero-grande,.potere,.traduzione,.tempi,.osserva," +
     ".h-testa-sezione,.h-tessera,.h-novita-voce,.hed-suite,.hed-card,.mondo,.cf-caso,.nv-voce," +
@@ -18,7 +17,7 @@
   var PEZZI = "h1,h2,h3,h4,p,pre,img,figure,blockquote,table,li,.n-btn,.btn,.n-ed,.n-nodo,.n-frec," +
     ".n-indice>a,.n-tag,.n-occhiello";
   var BLOCCHI = "figure,table,.n-btn,.btn,.n-ed,.n-nodo,.n-indice>a,.n-tag";
-  var PASSO = 90, PASSO_RIGA = 85, ATTESA_BOZZA = 550;
+  var PASSO = 70, PASSO_RIGA = 75, ATTESA_BOZZA = 280;
 
   var sezioni = [], segnale = null, griglia = null, inCorso = 0;
 

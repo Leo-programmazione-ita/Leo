@@ -3,8 +3,8 @@
    Ogni sezione compare prima come bozza di cantiere (barre al posto del
    testo, schede tratteggiate, griglia da progetto) e poi viene stampata
    pezzo per pezzo. Nel riquadro del codice le righe si scrivono una a una.
-   Attivo solo con :root.lc-attivo (messo da JS): senza JS il sito si vede
-   subito, tutto intero. Con «riduci movimento» solo dissolvenze, niente scorrimenti.
+   Attivo solo con :root.lc-attivo (messo da JS) e se l'utente non ha
+   chiesto meno movimento: senza JS il sito si vede subito, tutto intero.
    ==================================================================== */
 :root {
   --lc-barra: rgba(245, 243, 239, .085);
@@ -19,7 +19,7 @@
   --lc-griglia: rgba(224, 24, 45, .06);
 }
 
-@media all {
+@media (prefers-reduced-motion: no-preference) {
 
   /* ---- prima che lo script prepari la bozza: niente sfarfallio.
          Se lo script non arriva, dopo 2,5 s si mostra tutto comunque. */
@@ -127,20 +127,6 @@
   .lc-segnale.lc-su { transform: translate(-50%, 0); }
 }
 
-/* «riduci movimento» (telefoni e PC con le animazioni ridotte): la bozza resta,
-   ma la pagina vera vi si dissolve sopra, senza parti che scorrono o lampeggiano */
-@media (prefers-reduced-motion: reduce) {
-  :root.lc-attivo .lc-fatto.lc-testo,
-  :root.lc-attivo .lc-fatto.lc-blocco,
-  :root.lc-attivo img.lc-fatto { animation: lc-dissolvi .6s ease both; }
-  :root.lc-attivo pre.lc-righe .lc-riga.lc-cursore::after { animation: none; }
-  .lc-segnale .lc-spia { animation: none; }
-  .lc-segnale, .lc-segnale.lc-su { transform: none; transition: opacity .3s ease; }
-}
-@media (prefers-reduced-motion: reduce) and (max-width: 640px) {
-  .lc-segnale, .lc-segnale.lc-su { transform: translate(-50%, 0); }
-}
-
 @media print {
   .lc-segnale, .lc-griglia { display: none !important; }
 }
@@ -159,7 +145,6 @@
   from { opacity: .1; filter: grayscale(1) blur(8px); }
   to { opacity: 1; filter: none; }
 }
-@keyframes lc-dissolvi { from { opacity: 0; } to { opacity: 1; } }
 @keyframes lc-sblocca { to { visibility: visible; } }
 @keyframes lc-lampeggia { 50% { opacity: 0; } }
 @keyframes lc-gira { 50% { transform: rotate(90deg) scale(.8); } }
