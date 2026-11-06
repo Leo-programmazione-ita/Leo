@@ -61,7 +61,8 @@
             <li><a href="../sistema.html">Leo Sistema</a></li>
             <li><a href="../sicurezza.html">Leo Sicurezza</a></li>
             <li><a href="../robotica.html">Leo Robotica</a></li>
-            <li><a href="../confronto.html">Confronta le edizioni</a></li>
+            <li><a href="../edizioni.html">Cosa fa ogni edizione</a></li>
+            <li><a href="../confronto.html">Leo e Python a confronto</a></li>
           </ul>
         </li>
         <li class="nav-gruppo">
@@ -109,42 +110,57 @@
     <p>Leo Web mostra la <strong>pagina</strong> a sinistra e il <strong>codice Leo</strong> a destra, sincronizzati. Selezioni un blocco nella pagina e salti alla riga che lo crea; cambi il codice e la pagina si aggiorna. Lavori dal lato che preferisci.</p>
 
     <h2>La tua prima pagina</h2>
-    <p>Una pagina si costruisce pezzo per pezzo con il tipo <code>pagina</code> e i suoi metodi:</p>
-    <pre>variabile p = pagina("Il mio sito")
-p.titolo("Benvenuto")
+    <p>Ogni pagina è una serie di blocchi, uno sotto l'altro. Nel codice è il tipo <code>pagina</code> con i suoi metodi, ed è proprio il codice che il costruttore scrive per te:</p>
+    <pre>variabile p = pagina("Home")
+p.titolo("Benvenuti")
 p.paragrafo("Questo è il mio primo sito con Leo.")
-p.immagine("foto.jpg")
+p.pulsante("Scrivici", "contatti.html")
 p.salva("index.html")</pre>
-    <p>Trovi tutti i blocchi nella casella a sinistra: titolo, sottotitolo, sezione, paragrafo, immagine, collegamento, pulsante, elenco, tabella, citazione, codice.</p>
+    <p>I blocchi sono nella tavolozza: titolo, sottotitolo, sezione, testo, immagine, galleria, slider, mappa, collegamento, pulsante, elenco, elenco numerato, tabella, citazione, codice, separatore e piè di pagina. Un sito può avere più pagine: le aggiungi dalla barra delle pagine e le colleghi con pulsanti e collegamenti.</p>
+
+    <h2>Scrivere il codice a mano</h2>
+    <p>Puoi anche modificare direttamente il codice Leo della pagina: aggiungi una riga come <code>p.citazione("…")</code>, cambi un testo o sposti un blocco, e la pagina si aggiorna. Finché il codice non è un blocco che il costruttore conosce, la pagina resta com'era e Leo te lo segnala: non perdi niente. (Le pagine con blocchi dati si modificano dal costruttore.)</p>
+
+    <h2>I mattoni</h2>
+    <p>Nel menu <strong>Modifica → Altro → Inserisci mattone</strong> trovi blocchi di codice pronti con le funzioni del web, divisi per argomento:</p>
+    <ul>
+      <li><strong>Scaricare dal web</strong>: scaricare una pagina, dati JSON o un file, inviare dati (POST), controllare se c'è internet.</li>
+      <li><strong>Fare una pagina</strong>: creare e salvare una pagina.</li>
+      <li><strong>Server e indirizzi</strong>: creare un piccolo server web, aggiungere una rotta, avviarlo, scomporre un indirizzo.</li>
+      <li><strong>Pubblicare</strong>: pubblicare il sito su GitHub.</li>
+    </ul>
+    <p>Un clic e il codice entra al cursore, con i punti da completare già evidenziati: con Tab passi da uno all'altro.</p>
 
     <h2>Il compilatore sceglie la tecnologia</h2>
-    <p>Non decidi tu HTML, CSS, PHP o JavaScript: lo capisce Leo Web da ciò che hai scritto.</p>
+    <p>Non scrivi HTML, CSS o JavaScript: li genera Leo da ciò che hai costruito.</p>
     <ul>
-      <li>Una pagina di contenuti → <strong>HTML + CSS</strong>.</li>
-      <li>Un modulo che salva dati → <strong>PHP</strong> con query preparate (sicure).</li>
-      <li>Una ricerca o un controllo nella pagina → <strong>JavaScript</strong>.</li>
+      <li>Ogni pagina diventa <strong>HTML</strong>, con un unico foglio di stile <code>style.css</code> per tutto il sito.</li>
+      <li>Se un blocco ha bisogno di muoversi (uno slider, una lista con ricerca e ordinamento, un modulo) Leo aggiunge <code>script.js</code>; altrimenti il sito resta senza JavaScript.</li>
+      <li>Per i motori di ricerca prepara anche <code>sitemap.xml</code>.</li>
     </ul>
 
-    <h2>Usare i dati di Leo Dati</h2>
-    <p>Per mostrare dati veri, dichiara nel <code>progetto.toml</code> cosa usi; poi il nome è pronto nel codice.</p>
-    <pre>[[usa]]
-progetto    = "magazzino"
-interfaccia = "prodotti"
-come        = "catalogo"</pre>
-    <pre>variabile p = pagina("Catalogo")
-p.mostra(catalogo)
-p.salva("index.html")</pre>
+    <h2>Siti con dati (nella Suite)</h2>
+    <p>Nella <strong>Suite</strong>, dove Web e Dati lavorano insieme, la tavolozza ha in più tre blocchi che usano un database vero: <strong>Lista da dataset</strong> (mostra le righe di una tabella), <strong>Modulo contatti</strong> (salva quello che scrivono i visitatori) e <strong>Gestione dati</strong> (aggiungere, modificare e togliere righe). Le query sono sempre preparate, i moduli hanno un filtro antispam e il database non si scarica dal sito.</p>
+    <p>Quando esporti un sito con dati, Leo ti chiede dove lo pubblicherai:</p>
+    <ul>
+      <li><strong>PHP</strong> — per l'hosting classico: carichi la cartella e funziona subito. È la scelta proposta.</li>
+      <li><strong>Python (Flask)</strong> — un'app autonoma con <code>app.py</code>: <code>pip install -r requirements.txt</code> e poi <code>python app.py</code>.</li>
+      <li><strong>Node.js</strong> — un'app autonoma con <code>server.js</code>, senza pacchetti da installare (serve Node 22.5 o più recente): <code>node server.js</code>.</li>
+      <li><strong>Statico</strong> — solo pagine: le liste sono una fotografia di quel momento e i moduli non inviano.</li>
+    </ul>
+    <p>Con PHP, Python e Node le liste si aggiornano da sole quando cambiano i dati, senza ricompilare. Né l'app Python né quella Node hanno bisogno di Leo per girare.</p>
+    <p>Nell'edizione Leo Web da sola questi blocchi non ci sono, perché manca un progetto Dati a cui collegarsi: il sito esce sempre come pagine statiche, pronte per qualunque hosting.</p>
 
     <h2>Esportare il progetto</h2>
-    <p>Con <strong>Esporta</strong> ottieni una cartella web completa — <code>index.html</code>, le altre pagine, <code>stile.css</code>, gli script e gli eventuali file PHP — pronta da caricare sul tuo hosting.</p>
+    <p>Con <strong>Esegui → Esporta sito web</strong> scegli una cartella e ottieni il sito completo: le pagine, <code>style.css</code>, le immagini nella cartella <code>immagini/</code>, gli eventuali script e, per i siti con dati, il server scelto con il suo database. Leo comprime HTML e CSS e prepara anche un file ZIP da caricare in un colpo solo. Alla fine ti dice come avviarlo.</p>
 
     <h2>Dove trovo le cose</h2>
     <ul>
-      <li><strong>Blocchi</strong>: casella a sinistra.</li>
-      <li><strong>Proprietà del blocco</strong> (testo, colore, link): pannello a destra.</li>
-      <li><strong>Codice Leo</strong>: finestra accanto alla pagina.</li>
-      <li><strong>Anteprima dal vivo</strong>: si aggiorna a ogni modifica.</li>
-      <li><strong>Esporta</strong>: nel menu del progetto.</li>
+      <li><strong>Blocchi</strong>: la tavolozza del costruttore.</li>
+      <li><strong>Proprietà del blocco</strong> (testo, indirizzo, immagine): il pannello a destra.</li>
+      <li><strong>Codice Leo</strong>: accanto alla pagina, modificabile.</li>
+      <li><strong>Mattoni</strong>: Modifica → Altro → Inserisci mattone.</li>
+      <li><strong>Esporta</strong>: menu Esegui → Esporta sito web.</li>
     </ul>
 
     <div class="n-indice" style="margin-top:44px">

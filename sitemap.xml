@@ -2,6 +2,7 @@
 <!-- Scritta da strumenti/sito_template/dominio.py: non modificare a mano. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://leoitalia.com/confronto.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://leoitalia.com/edizioni.html</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://leoitalia.com/dati.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/giochi.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://leoitalia.com/</loc><lastmod>2026-10-07</lastmod></url>
