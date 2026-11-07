@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fatto con Leo — giochi, app, programmi e siti scritti in Leo</title>
-<meta name="description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite e un sito. Con il codice da scaricare.">
+<meta name="description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite, un sito, un agente che riordina i download, una sentinella d'integrità e una serra automatica. Con il codice da scaricare.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/fatto-con-leo.html">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
 <meta property="og:title" content="Fatto con Leo — giochi, app, programmi e siti scritti in Leo">
-<meta property="og:description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite e un sito. Con il codice da scaricare.">
+<meta property="og:description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite, un sito, un agente che riordina i download, una sentinella d'integrità e una serra automatica. Con il codice da scaricare.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
@@ -137,7 +137,7 @@
 <section class="n-hero">
   <div class="contenitore">
     <h1 class="n-h1" style="font-size:clamp(34px,5vw,58px)">Fatto con Leo</h1>
-    <p class="n-sotto" style="max-width:60ch">Un gioco, un'app, un programma e un sito, scritti dall'inizio alla fine in Leo. Ognuno è stato eseguito e provato davvero, e puoi scaricarne il codice per aprirlo, studiarlo e cambiarlo.</p>
+    <p class="n-sotto" style="max-width:60ch">Un gioco, un'app, un programma, un sito, un agente, uno strumento di sicurezza e una serra automatica, scritti dall'inizio alla fine in Leo. Ognuno è stato eseguito e provato davvero, e puoi scaricarne il codice per aprirlo, studiarlo e cambiarlo.</p>
   </div>
 </section>
 <section class="fc-elenco">
@@ -184,6 +184,39 @@
       <pre class="fc-codice"><code><span><span class="t-p">variabile</span> p = <span class="t-f">pagina</span>(<span class="t-s">&quot;I nostri prodotti&quot;</span>)</span><span>p.<span class="t-f">tema</span>(<span class="t-s">&quot;sabbia&quot;</span>)</span><span>p.<span class="t-f">sezione</span>(<span class="t-s">&quot;Il listino del banco&quot;</span>)</span><span>p.<span class="t-f">pulsante</span>(<span class="t-s">&quot;Ordina o prenota&quot;</span>, <span class="t-s">&quot;contatti.html&quot;</span>)</span></code></pre>
       <ul class="fc-punti"><li>Pagine scritte in Leo, sito in HTML e CSS</li><li>Immagini, galleria, tabella degli orari</li><li>Sitemap e versione per telefono</li></ul>
       <div class="fc-azioni"><a class="fc-btn" href="vetrina/forno_bellafarina.zip" download>Scarica il progetto</a><span>Si apre in Leo Studio (Suite o Web).</span></div>
+    </div>
+  </article>
+  <article class="fc" style="--cc:var(--c-sistema)">
+    <figure class="fc-foto"><img src="img/vetrina/riordino.png" alt="Il rapporto del riordino: quindici file sistemati, divisi per regola, con l'elenco degli spostamenti" loading="lazy"></figure>
+    <div class="fc-testo">
+      <p class="fc-ed"><span></span>Leo Sistema · Un agente che lavora da solo</p>
+      <h2>Riordina Download</h2>
+      <p class="fc-desc">Un agente che tiene in ordine la cartella Download: decide con delle regole dove va ogni file (fatture, PDF, immagini, musica, archivi…) e lo sposta nella sottocartella giusta, senza mai sovrascrivere. Può restare in ascolto, fare una prova a vuoto e annullare l'ultimo giro; tutto finisce in un registro.</p>
+      <pre class="fc-codice"><code><span><span class="t-p">variabile</span> r = <span class="t-f">scegli_regola</span>(regole, nome, byte)</span><span><span class="t-p">variabile</span> nuovo = <span class="t-f">nome_libero</span>(dest, nome)</span><span><span class="t-f">sposta_file</span>(origine, arrivo)</span><span>reg.<span class="t-f">informazione</span>(<span class="t-s">&quot;Spostato:&quot;</span>, nome)</span></code></pre>
+      <ul class="fc-punti"><li>Undici regole in un file JSON, da cambiare a piacere</li><li>Registro, storico CSV, rapporto HTML e annulla</li><li>Salta i download non finiti e i file appena arrivati</li></ul>
+      <div class="fc-azioni"><a class="fc-btn" href="vetrina/riordina_download.zip" download>Scarica il progetto</a><span>Dal terminale: leo . dentro la cartella (prima prova: leo . --prova).</span></div>
+    </div>
+  </article>
+  <article class="fc fc-inv" style="--cc:var(--c-sicurezza)">
+    <figure class="fc-foto"><img src="img/vetrina/sentinella.png" alt="Il rapporto della Sentinella d'integrità: un file modificato, uno sospetto travestito da immagine, uno aggiunto e uno tolto" loading="lazy"></figure>
+    <div class="fc-testo">
+      <p class="fc-ed"><span></span>Leo Sicurezza · Uno strumento difensivo</p>
+      <h2>Sentinella d'integrità</h2>
+      <p class="fc-desc">Fa una «fotografia» di una cartella, per esempio i file di un sito: l'impronta SHA-256 di ogni file, sigillata con una firma HMAC. Poi dice che cosa è stato modificato, aggiunto o tolto, segnala i file travestiti e dà l'allarme se qualcuno ritocca il sigillo. Ogni controllo finisce nel taccuino del Banco del perito.</p>
+      <pre class="fc-codice"><code><span><span class="t-p">variabile</span> foto = <span class="t-f">impronta_albero</span>(cartella)</span><span><span class="t-p">se</span> <span class="t-p">non</span> <span class="t-f">verifica_hmac</span>(righe, k, firma) <span class="t-p">allora</span></span><span>    <span class="t-f">stampa</span>(<span class="t-s">&quot;ALLARME: sigillo alterato&quot;</span>)</span><span><span class="t-p">fine</span></span><span><span class="t-p">variabile</span> d = <span class="t-f">confronta_alberi</span>(prima, cartella)</span></code></pre>
+      <ul class="fc-punti"><li>Impronte SHA-256 e firma HMAC del sigillo</li><li>Riconosce un programma travestito da immagine</li><li>Legge soltanto: non cambia niente nella cartella</li></ul>
+      <div class="fc-azioni"><a class="fc-btn" href="vetrina/sentinella_integrita.zip" download>Scarica il progetto</a><span>leo fotografa.leo, poi leo . per controllare.</span></div>
+    </div>
+  </article>
+  <article class="fc" style="--cc:var(--c-robotica)">
+    <figure class="fc-foto"><img src="img/vetrina/serra.png" alt="Il rapporto della serra automatica: umidità, temperatura e luce in tre grafici, con soglie, attuatori accesi e allarmi" loading="lazy"></figure>
+    <div class="fc-testo">
+      <p class="fc-ed"><span></span>Leo Robotica · Una scheda, provata in simulazione</p>
+      <h2>Serra automatica</h2>
+      <p class="fc-desc">Legge umidità della terra, luce e temperatura da una Raspberry Pi Pico e decide con delle soglie: accende la pompa, la ventola e la lampada, e in caso di allarme suona il buzzer e scrive sullo schermo OLED. Provata con la scheda <strong>simulata</strong> di Leo Robotica: con una Pico vera cambia una sola riga.</p>
+      <pre class="fc-codice"><code><span><span class="t-p">variabile</span> s = <span class="t-f">collega_scheda</span>(simulata = <span class="t-p">vero</span>)</span><span><span class="t-p">variabile</span> u = s.<span class="t-f">umidita</span>(PIN_UMIDITA)</span><span><span class="t-p">se</span> stato[<span class="t-s">&quot;pompa&quot;</span>] <span class="t-p">allora</span></span><span>    s.<span class="t-f">accendi</span>(PIN_POMPA)</span><span><span class="t-p">fine</span></span></code></pre>
+      <ul class="fc-punti"><li>Soglie con isteresi: relè e motore non sfarfallano</li><li>Registro CSV e grafici SVG disegnati in Leo</li><li>Anche come plancia, con le letture dal vivo</li></ul>
+      <div class="fc-azioni"><a class="fc-btn" href="vetrina/serra_automatica.zip" download>Scarica il progetto</a><span>leo serra.leo dentro la cartella; nessuna scheda richiesta.</span></div>
     </div>
   </article>
   <aside class="fc-nota">
