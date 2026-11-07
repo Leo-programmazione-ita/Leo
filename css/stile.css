@@ -320,7 +320,8 @@ pre.uscita::before { content: "Uscita"; display: block; margin-bottom: 6px; font
 
 /* ---------- 8. Piede ---------- */
 .piede { position: relative; border-top: 1px solid var(--bordo); background: var(--fondo-piede); padding: 64px 0 32px; font-size: 14.5px; color: var(--testo-2); }
-.piede-griglia { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 36px; }
+.piede-griglia { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: 32px; }
+@media (max-width: 1080px) { .piede-griglia { grid-template-columns: repeat(4, minmax(0, 1fr)); } .piede-marchio { grid-column: 1 / -1; } }
 .piede-marchio p { margin: 14px 0 0; max-width: 320px; }
 .piede-marchio .piede-autore { font-size: 14px; color: var(--testo-3); }
 .piede-marchio .piede-autore strong { color: var(--testo-2); font-weight: 600; }
@@ -337,7 +338,8 @@ pre.uscita::before { content: "Uscita"; display: block; margin-bottom: 6px; font
 .piede a:hover { color: var(--testo); }
 .piede-fondo { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; justify-content: space-between; margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--bordo); font-size: 13.5px; color: var(--testo-3); }
 .piede-fondo p { margin: 0; }
-@media (max-width: 760px) { .piede-griglia { grid-template-columns: 1fr 1fr; } .piede-marchio { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .piede-griglia { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 20px; } .piede-marchio { grid-column: 1 / -1; } }
+.piede-fondo a { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- 9. Comparse ----------
    Il sito non fa comparire ogni sezione allo scorrimento: il contenuto c'e' subito (piu' veloce,

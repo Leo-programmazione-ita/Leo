@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leo a scuola — programmare in italiano in classe</title>
+<meta name="description" content="Leo a scuola: per quali età, un primo percorso di dieci lezioni con materiali già pronti, i requisiti dei PC del laboratorio, la privacy degli alunni e la licenza per le scuole.">
+<meta name="theme-color" content="#050506">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://leoitalia.com/scuola.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Leo">
+<meta property="og:url" content="https://leoitalia.com/scuola.html">
+<meta property="og:title" content="Leo a scuola — programmare in italiano in classe">
+<meta property="og:description" content="Per quali età, un primo percorso di dieci lezioni con materiali già pronti, i PC del laboratorio, la privacy degli alunni e la licenza per le scuole.">
+<meta property="og:image" content="https://leoitalia.com/img/og.png">
+<link rel="icon" href="img/stemma.svg" type="image/svg+xml">
+<link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/stemma_180.png">
+<link rel="stylesheet" href="css/stile.css?v=20261107">
+<link rel="stylesheet" href="css/nuovo.css?v=20261026">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<script src="config.js" defer></script>
+<script src="js/sito.js?v=20261026" defer></script>
+<script src="js/cerca.js" defer></script>
+<style>
+.sc-eta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.sc-eta>div{border:1px solid var(--bordo);border-radius:16px;padding:20px 22px;background:var(--superficie);border-top:3px solid var(--cc,var(--accento))}
+.sc-eta h3{margin:0 0 4px;font-size:19px}
+.sc-eta .sc-chi{margin:0 0 10px;font-size:14px;color:var(--testo-3)}
+.sc-eta p,.sc-eta li{color:var(--testo-2);line-height:1.55;font-size:15.5px}
+.sc-eta ul{margin:0;padding-left:18px}
+.sc-eta li+li{margin-top:5px}
+.sc-lezioni{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px;counter-reset:lez}
+.sc-lez{border:1px solid var(--bordo);border-radius:16px;background:var(--superficie);padding:18px 22px 18px 76px;position:relative;counter-increment:lez}
+.sc-lez::before{content:counter(lez);position:absolute;left:20px;top:18px;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  font:700 17px/1 var(--car-titoli);color:var(--accento-vivo);background:var(--accento-tenue);border:1px solid var(--accento-linea)}
+.sc-lez h3{margin:2px 0 4px;font-size:18.5px}
+.sc-lez .sc-obiettivo{margin:0 0 10px;color:var(--testo-2);line-height:1.5}
+.sc-lez dl{margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 14px;font-size:14.5px;line-height:1.5}
+.sc-lez dt{color:var(--testo-3);font-weight:600}
+.sc-lez dd{margin:0;color:var(--testo-2);min-width:0}
+.sc-lez a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.sc-lez code{font-size:13px;white-space:nowrap}
+.sc-due{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.sc-due>div{border:1px solid var(--bordo);border-radius:16px;padding:20px 22px;background:var(--superficie)}
+.sc-due h3{margin:0 0 10px;font-size:18px}
+.sc-due ul{margin:0;padding-left:18px;color:var(--testo-2);line-height:1.55}
+.sc-due li+li{margin-top:6px}
+.sc-due a,.sc-nota a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.sc-nota{margin-top:18px;color:var(--testo-2);max-width:72ch;line-height:1.6}
+.sc-contatti{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+@media (max-width:900px){.sc-eta{grid-template-columns:1fr}}
+@media (max-width:720px){.sc-due{grid-template-columns:1fr}}
+@media (max-width:560px){.sc-lez{padding:66px 18px 18px}.sc-lez::before{top:16px;left:18px}.sc-lez dl{grid-template-columns:1fr;gap:2px}.sc-lez dd{margin-bottom:6px}}
+</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<!--#testata-->
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+      <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+    </a>
+    <nav id="navigazione" class="navigazione" aria-label="Principale">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Impara
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="manuale/index.html">Manuale completo</a></li>
+            <li><a href="manuali/index.html">Guide delle edizioni</a></li>
+            <li><a href="riferimento/index.html">Riferimento</a></li>
+            <li><a href="manuale/domande.html">Domande frequenti</a></li>
+            <li><a href="prova.html">Prova nel browser</a></li>
+            <li><a href="informatica/index.html">Pensare in codice</a></li>
+            <li><a href="libro/index.html">Il libro</a></li>
+            <li><a href="template.html">Esempi</a></li>
+            <li><a href="scuola.html" aria-current="page">Leo a scuola</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Scopri
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="suite.html">Leo Suite</a></li>
+            <li><a href="web.html">Leo Web</a></li>
+            <li><a href="dati.html">Leo Dati</a></li>
+            <li><a href="giochi.html">Leo Giochi</a></li>
+            <li><a href="sistema.html">Leo Sistema</a></li>
+            <li><a href="sicurezza.html">Leo Sicurezza</a></li>
+            <li><a href="robotica.html">Leo Robotica</a></li>
+            <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+            <li><a href="confronto.html">Leo e Python a confronto</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Risorse
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="video.html">Video</a></li>
+            <li><a href="novita.html">Novità</a></li>
+            <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+            <li><a href="statistiche.html">Statistiche</a></li>
+          </ul>
+        </li>
+        <li><a href="telefono.html">Telefono</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+      </ul>
+    </nav>
+    <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <span class="apri-cerca-testo">Cerca</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="cambia-tema" type="button" data-cambia-tema aria-label="Passa al tema chiaro" title="Tema chiaro">
+      <svg class="icona-sole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="icona-luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="navigazione" aria-label="Apri il menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
+
+<main id="contenuto">
+<section class="n-hero">
+  <div class="contenitore">
+    <span class="n-occhiello"><span class="pallino"></span> Per insegnanti e scuole</span>
+    <h1 class="n-h1" style="font-size:clamp(34px,5.6vw,60px)">Leo a scuola</h1>
+    <p class="n-sotto" style="max-width:62ch">Leo è un linguaggio di programmazione con le parole in italiano: <code>se</code>, <code>ripeti</code>, <code>per ogni</code>, <code>funzione</code>. I ragazzi leggono il codice come una frase e i messaggi d'errore spiegano in italiano che cosa non va. Qui trovi per quali età è pensato, un primo percorso con materiali già pronti e quello che serve sapere per il laboratorio.</p>
+  </div>
+</section>
+
+<section class="n-sez" aria-labelledby="titolo-eta">
+  <div class="contenitore">
+    <p class="n-occ">Per chi</p>
+    <h2 class="n-h2" id="titolo-eta">Le età consigliate</h2>
+    <p class="n-intro">Sono indicazioni, non regole: conta più l'abitudine a leggere e scrivere che l'anno di corso.</p>
+    <div class="sc-eta">
+      <div style="--cc:var(--c-dati)">
+        <h3>Primaria</h3>
+        <p class="sc-chi">4ª e 5ª classe</p>
+        <ul>
+          <li>Prime istruzioni: <code>stampa</code>, ripetere, decidere.</li>
+          <li>Disegnare con la tartaruga: quadrati, stelle, poligoni.</li>
+          <li>Le pagine da toccare di <a href="informatica/index.html">Pensare in codice</a> (bit, logica), guidate dall'insegnante.</li>
+        </ul>
+      </div>
+      <div style="--cc:var(--c-web)">
+        <h3>Secondaria di primo grado</h3>
+        <p class="sc-chi">dalla 1ª alla 3ª media</p>
+        <ul>
+          <li>Il percorso qui sotto, tutto.</li>
+          <li>Variabili, cicli, funzioni, liste e un piccolo gioco.</li>
+          <li>La prima app con una finestra e un pulsante.</li>
+        </ul>
+      </div>
+      <div style="--cc:var(--c-suite)">
+        <h3>Biennio delle superiori</h3>
+        <p class="sc-chi">1ª e 2ª classe</p>
+        <ul>
+          <li>Il percorso, a passo più svelto, con tutte le sfide.</li>
+          <li>In più: classi e oggetti, errori, file, reti e sicurezza.</li>
+          <li>Chi viene da Python trova le lezioni «Da Python a Leo».</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="n-banda" aria-labelledby="titolo-percorso">
+  <div class="contenitore n-sez">
+    <p class="n-occ">Un primo percorso</p>
+    <h2 class="n-h2" id="titolo-percorso">Dieci lezioni, con materiali che ci sono già</h2>
+    <p class="n-intro">Ogni lezione dura circa un'ora e usa solo materiali già pubblicati: le pagine interattive di <a href="informatica/index.html">Pensare in codice</a>, i capitoli del <a href="libro/index.html">libro</a>, le lezioni guidate di <code>leo impara</code> e le sfide con verifica automatica di <code>leo sfida</code>. Le lezioni guidate ci sono anche in Leo Studio (<em>Impara Leo</em>) e nell'app per Android; i primi esempi si provano anche <a href="prova.html">nel browser</a>, senza installare niente.</p>
+    <ol class="sc-lezioni">
+      <li class="sc-lez">
+        <h3>Che cos'è un programma</h3>
+        <p class="sc-obiettivo">Il computer capisce solo zeri e uni e segue istruzioni precise, una dopo l'altra. Il primo programma: far scrivere qualcosa al computer.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/bit.html">Tutto è bit</a>, <a href="informatica/scrivere-leo.html">Scrivere in Leo</a></dd>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/01_primo_programma.html">capitolo 1: Il primo programma</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 1</code> (stampa) · sfida «Ciao, mondo!» con <code>leo sfida 1</code></dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Ricordare: le variabili</h3>
+        <p class="sc-obiettivo">Una variabile è una scatola con un nome: ci metti un valore, lo cambi, lo usi nei calcoli.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/variabili.html">Le variabili</a></dd>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/02_variabili_costanti.html">capitolo 2</a> e <a href="libro/03_numeri.html">capitolo 3</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 2</code> · sfida «La mia età» (<code>leo sfida 2</code>)</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Decidere: se … allora</h3>
+        <p class="sc-obiettivo">Il programma sceglie che cosa fare. Vero e falso, e due condizioni insieme.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/logica.html">La logica</a></dd>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/07_condizioni.html">capitolo 7: Prendere decisioni</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 3</code> e <code>leo impara 14</code> · sfida «Pari o dispari»</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Ripetere</h3>
+        <p class="sc-obiettivo">Fare la stessa cosa tante volte senza riscriverla: <code>ripeti … volte</code>, <code>per ogni</code>, <code>mentre</code>.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/cicli.html">I cicli</a></dd>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/08_cicli.html">capitolo 8: Ripetere</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 4</code>, <code>5</code> e <code>11</code> · sfide «Conto alla rovescia» e «La somma da 1 a n»</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Disegnare con la tartaruga</h3>
+        <p class="sc-obiettivo">Una tartaruga che cammina e lascia la traccia: i cicli diventano figure. Funziona bene anche alla primaria.</p>
+        <dl>
+          <dt>Al computer</dt><dd><code>leo impara 8</code>, <code>9</code> e <code>10</code> (sul PC, si apre una finestra)</dd>
+          <dt>Per chi vuole</dt><dd>Il modello «Disegno vettoriale con la Tartaruga» nella schermata di benvenuto di Leo Studio</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Le funzioni</h3>
+        <p class="sc-obiettivo">Dare un nome a un pezzo di programma e riusarlo: dentro un valore, fuori un risultato.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/funzioni.html">Le funzioni</a></dd>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/09_funzioni.html">capitolo 9: Le funzioni</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 6</code> · sfide «La funzione doppio» e «La tabellina»</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Liste e dizionari</h3>
+        <p class="sc-obiettivo">Tenere insieme tanti dati: la lista della spesa, i voti della classe.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/dati.html">I dati</a></dd>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/05_liste_dizionari.html">capitolo 5: Liste e dizionari</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 7</code> e <code>15</code> · sfide «Il più grande» e «Conta le vocali»</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Gli algoritmi</h3>
+        <p class="sc-obiettivo">Una ricetta di passi: ordinare e cercare, guardando l'algoritmo che lavora passo passo.</p>
+        <dl>
+          <dt>Da esplorare</dt><dd><a href="informatica/algoritmi.html">Gli algoritmi</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 12</code> (i testi) · sfida «Bim Bum»</dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>Progetto: indovina il numero</h3>
+        <p class="sc-obiettivo">Mettere insieme tutto in un piccolo gioco: numeri casuali, cicli, decisioni e gli errori di chi gioca.</p>
+        <dl>
+          <dt>Da leggere</dt><dd>Libro, <a href="libro/10_errori.html">capitolo 10: Quando qualcosa va storto</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 13</code>, <code>16</code> e <code>17</code> · l'esempio <a href="template.html#indovina-numero">Indovina il numero</a></dd>
+        </dl>
+      </li>
+      <li class="sc-lez">
+        <h3>La prima app con una finestra</h3>
+        <p class="sc-obiettivo">Disegnare una finestra con un'etichetta e un pulsante e scrivere che cosa succede al clic.</p>
+        <dl>
+          <dt>Da leggere</dt><dd>Manuale, <a href="manuale/primo-programma.html">Il tuo primo programma</a> · libro, <a href="libro/17_finestre_studio.html">capitolo 17</a></dd>
+          <dt>Al computer</dt><dd><code>leo impara 18</code>–<code>21</code> in Leo Studio o nell'app Android (<a href="manuale/telefono.html">Leo sul telefono</a>)</dd>
+        </dl>
+      </li>
+    </ol>
+    <p class="sc-nota">Per il biennio, dopo il percorso: <a href="informatica/oggetti.html">Oggetti e classi</a> e il <a href="libro/11_classi.html">capitolo 11</a>, <a href="informatica/reti.html">Reti e Internet</a>, <a href="informatica/sicurezza.html">Sicurezza</a> e le lezioni di sicurezza di <code>leo impara</code> (dalla 33 alla 40). Le sfide si fanno in ordine: ognuna si sblocca quando la precedente è superata.</p>
+  </div>
+</section>
+
+<section class="n-sez" aria-labelledby="titolo-laboratorio">
+  <div class="contenitore">
+    <p class="n-occ">Il laboratorio</p>
+    <h2 class="n-h2" id="titolo-laboratorio">I PC della scuola</h2>
+    <div class="sc-due">
+      <div>
+        <h3>Che cosa serve</h3>
+        <ul>
+          <li>PC con <strong>Windows 10 o 11 a 64 bit</strong>.</li>
+          <li><strong>Nessun diritto di amministratore</strong>: Leo si installa per l'utente, nella sua cartella (<code>AppData\Local\Programs\Leo</code>), e non tocca le impostazioni del computer.</li>
+          <li>Non serve installare Python: c'è già tutto dentro il programma di installazione.</li>
+          <li>Telefoni e tablet Android 7.0 o successivi con l'app Leo. Su iPhone e iPad si prova solo il linguaggio nel browser: programmi di testo, niente finestre.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Da sapere</h3>
+        <ul>
+          <li><strong>Funziona offline</strong>: una volta installato, Leo non ha bisogno di internet per scrivere ed eseguire i programmi.</li>
+          <li>Siccome si installa per utente, se gli alunni entrano con account diversi va installato in ciascun account.</li>
+          <li>Per tanti PC c'è l'installazione silenziosa: <code>Setup_Leo_0.1.4.exe /S</code>.</li>
+          <li>I passi dell'installazione, con l'avviso blu di Windows, sono nel <a href="manuale/installazione.html">manuale</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="n-banda" aria-labelledby="titolo-privacy">
+  <div class="contenitore n-sez">
+    <p class="n-occ">Privacy</p>
+    <h2 class="n-h2" id="titolo-privacy">I dati degli alunni restano a scuola</h2>
+    <div class="sc-due">
+      <div>
+        <h3>Che cosa non c'è</h3>
+        <ul>
+          <li><strong>Nessun account</strong>: gli alunni non si registrano e non lasciano nome o email.</li>
+          <li><strong>Nessuna telemetria</strong>: Leo non invia statistiche d'uso, rapporti sugli errori né i programmi degli alunni.</li>
+          <li>Nessuna pubblicità. I programmi e i progressi delle lezioni restano sul computer o sul telefono.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Quando Leo usa internet</h3>
+        <ul>
+          <li><strong>Controllo degli aggiornamenti</strong>: all'avvio, al massimo una volta al giorno, Leo Studio legge un piccolo file da <code>leoitalia.com</code> per sapere se c'è una versione nuova. Si spegne in <em>Impostazioni → Avanzate → Controlla gli aggiornamenti</em>.</li>
+          <li>Al primo avvio Leo Sistema, Leo Giochi e la Suite propongono contenuti facoltativi da scaricare; si può dire di no.</li>
+          <li>Se un programma vuole usare internet o file fuori dalla sua cartella, Leo <a href="riferimento/linguaggio/permessi.html">chiede il permesso</a> prima.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sc-nota">Alcune pagine di questo sito caricano risorse da servizi esterni (per esempio il motore della prova nel browser): l'elenco è nella <a href="privacy.html">privacy</a>.</p>
+  </div>
+</section>
+
+<section class="n-sez" aria-labelledby="titolo-licenza">
+  <div class="contenitore">
+    <p class="n-occ">Licenza e contatti</p>
+    <h2 class="n-h2" id="titolo-licenza">La licenza per le scuole</h2>
+    <p class="n-intro">Questa versione di Leo è gratuita e senza scadenza. La licenza d'uso però è personale: per installarlo sui PC di un laboratorio o di tutta la scuola, o per le versioni future, <strong>contattaci</strong> e troviamo insieme la formula adatta al numero di postazioni. Ci fa piacere anche sapere come lo usate in classe, che cosa funziona e che cosa manca.</p>
+    <div class="sc-contatti">
+      <a class="pulsante" href="#" data-email>Scrivici</a>
+      <a class="pulsante secondario" href="licenza.html">La licenza di Leo</a>
+      <a class="pulsante secondario" href="scarica.html">Scarica Leo</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!--#piede-->
+<footer class="piede">
+  <div class="contenitore">
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
+          <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
+        </a>
+        <p>Il linguaggio di programmazione che parla italiano: un solo linguaggio per siti, dati, giochi, agenti, sicurezza e robotica. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
+      </div>
+      <nav class="piede-colonna" aria-label="Leo">
+        <h2>Leo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
+          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="statistiche.html">Statistiche</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="manuale/index.html">Manuale completo</a></li>
+          <li><a href="manuali/index.html">Guide delle edizioni</a></li>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="prova.html">Prova nel browser</a></li>
+          <li><a href="informatica/index.html">Pensare in codice</a></li>
+          <li><a href="libro/index.html">Il libro</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="scuola.html" aria-current="page">Leo a scuola</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
+          <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+          <li><a href="confronto.html">Leo e Python</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Informazioni legali">
+        <h2>Legale</h2>
+        <ul>
+          <li><a href="licenza.html">Licenza</a></li>
+          <li><a href="termini.html">Termini d'uso</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="#" data-email>Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="piede-fondo">
+      <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
+      <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
+      </div>
+      <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>
+    </div>
+  </div>
+</footer>
+<!--/piede-->
+</body>
+</html>

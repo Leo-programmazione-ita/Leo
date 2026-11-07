@@ -15,7 +15,7 @@
 <meta property="og:title" content="Leo in numeri — statistiche del progetto">
 <meta property="og:description" content="Oltre 900 funzioni, 7.288 test automatici, 221.000 righe di codice, 6 edizioni più la Suite. I numeri reali di Leo.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
-<link rel="stylesheet" href="css/stile.css">
+<link rel="stylesheet" href="css/stile.css?v=20261107">
 <script>try{var t=localStorage.getItem('leo-tema');if(t&&t!=='sistema')document.documentElement.setAttribute('data-tema',t)}catch(e){}</script>
 <script src="config.js" defer></script>
 <script src="js/sito.js" defer></script>
@@ -58,12 +58,51 @@
     </a>
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
-        <li><a href="riferimento/index.html">Riferimento</a></li>
-        <li><a href="manuale/index.html">Manuale</a></li>
-        <li><a href="template.html">Esempi</a></li>
-        <li><a href="video.html">Video</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Impara
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="manuale/index.html">Manuale completo</a></li>
+            <li><a href="manuali/index.html">Guide delle edizioni</a></li>
+            <li><a href="riferimento/index.html">Riferimento</a></li>
+            <li><a href="manuale/domande.html">Domande frequenti</a></li>
+            <li><a href="prova.html">Prova nel browser</a></li>
+            <li><a href="informatica/index.html">Pensare in codice</a></li>
+            <li><a href="libro/index.html">Il libro</a></li>
+            <li><a href="template.html">Esempi</a></li>
+            <li><a href="scuola.html">Leo a scuola</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Scopri
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="suite.html">Leo Suite</a></li>
+            <li><a href="web.html">Leo Web</a></li>
+            <li><a href="dati.html">Leo Dati</a></li>
+            <li><a href="giochi.html">Leo Giochi</a></li>
+            <li><a href="sistema.html">Leo Sistema</a></li>
+            <li><a href="sicurezza.html">Leo Sicurezza</a></li>
+            <li><a href="robotica.html">Leo Robotica</a></li>
+            <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+            <li><a href="confronto.html">Leo e Python a confronto</a></li>
+          </ul>
+        </li>
+        <li class="nav-gruppo">
+          <button type="button" class="nav-apri" aria-expanded="false">Risorse
+            <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="nav-tendina">
+            <li><a href="video.html">Video</a></li>
+            <li><a href="novita.html">Novità</a></li>
+            <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+            <li><a href="statistiche.html" aria-current="page">Statistiche</a></li>
+          </ul>
+        </li>
         <li><a href="telefono.html">Telefono</a></li>
-        <li><a href="statistiche.html" aria-current="page">Statistiche</a></li>
         <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
       </ul>
     </nav>
@@ -80,6 +119,8 @@
     </button>
   </div>
 </header>
+<p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
+<!--/testata-->
 
 <main id="contenuto">
   <section class="testa-pagina centro">
@@ -155,6 +196,7 @@
   </section>
 </main>
 
+<!--#piede-->
 <footer class="piede">
   <div class="contenitore">
     <div class="piede-griglia">
@@ -162,32 +204,53 @@
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: un solo linguaggio per siti, dati, giochi, agenti, sicurezza e robotica. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="statistiche.html">Statistiche</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
-          <li><a href="licenza.html">Licenza</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="statistiche.html" aria-current="page">Statistiche</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuale/index.html">Manuale completo</a></li>
+          <li><a href="manuali/index.html">Guide delle edizioni</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="prova.html">Prova nel browser</a></li>
+          <li><a href="informatica/index.html">Pensare in codice</a></li>
+          <li><a href="libro/index.html">Il libro</a></li>
           <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="scuola.html">Leo a scuola</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
+          <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
           <li><a href="confronto.html">Leo e Python</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">
         <h2>Legale</h2>
         <ul>
+          <li><a href="licenza.html">Licenza</a></li>
           <li><a href="termini.html">Termini d'uso</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="#" data-email>Contatti</a></li>
@@ -201,10 +264,11 @@
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
       </div>
-      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+      <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>
     </div>
   </div>
 </footer>
+<!--/piede-->
 <!--/piede-->
 </body>
 </html>

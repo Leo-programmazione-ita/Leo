@@ -22,7 +22,7 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261015">
+<link rel="stylesheet" href="css/stile.css?v=20261107">
 <script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
 <script src="js/sito.js?v=20261015" defer></script>
@@ -99,10 +99,15 @@
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuale/index.html">Manuale</a></li>
+            <li><a href="manuale/index.html">Manuale completo</a></li>
+            <li><a href="manuali/index.html">Guide delle edizioni</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
+            <li><a href="manuale/domande.html">Domande frequenti</a></li>
+            <li><a href="prova.html">Prova nel browser</a></li>
+            <li><a href="informatica/index.html">Pensare in codice</a></li>
             <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
+            <li><a href="scuola.html">Leo a scuola</a></li>
           </ul>
         </li>
         <li class="nav-gruppo">
@@ -117,7 +122,8 @@
             <li><a href="sistema.html">Leo Sistema</a></li>
             <li><a href="sicurezza.html">Leo Sicurezza</a></li>
             <li><a href="robotica.html">Leo Robotica</a></li>
-            <li><a href="confronto.html" aria-current="page">Confronta le edizioni</a></li>
+            <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+            <li><a href="confronto.html" aria-current="page">Leo e Python a confronto</a></li>
           </ul>
         </li>
         <li class="nav-gruppo">
@@ -182,14 +188,14 @@
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>ciao.py</span></div>
-<pre class="codice"><code><span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="codice" tabindex="0"><code><span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
         </div>
       </div>
       <div class="leo">
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>ciao.leo</span></div>
-<pre class="codice"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="codice" tabindex="0"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
 <pre class="uscita">Ciao, mondo!</pre>
         </div>
       </div>
@@ -218,7 +224,7 @@
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>veicoli.py</span></div>
-<pre class="codice"><code><span class="c-flusso">class</span> Veicolo<span class="c-punteggiatura">:</span>
+<pre class="codice" tabindex="0"><code><span class="c-flusso">class</span> Veicolo<span class="c-punteggiatura">:</span>
     <span class="c-flusso">def</span> __init__<span class="c-punteggiatura">(</span>self<span class="c-punteggiatura">,</span> nome<span class="c-punteggiatura">,</span> ruote<span class="c-operatori">=</span><span class="c-numeri">4</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
         self<span class="c-punteggiatura">.</span>nome <span class="c-operatori">=</span> nome
         self<span class="c-punteggiatura">.</span>ruote <span class="c-operatori">=</span> ruote
@@ -243,7 +249,7 @@
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>veicoli.leo</span></div>
-<pre class="codice"><code>classe Veicolo
+<pre class="codice" tabindex="0"><code>classe Veicolo
     ha nome
     ha <span class="c-variabili">ruote</span> <span class="c-operatori">=</span> <span class="c-numeri">4</span>
     <span class="c-dichiarazioni">azione</span> <span class="c-funzioni_utente">descrivi</span><span class="c-punteggiatura">(</span><span class="c-punteggiatura">)</span> <span class="c-flusso">dà</span> <span class="c-libreria">testo</span>
@@ -291,7 +297,7 @@ Vespa: 2 ruote (una moto)</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>fette.py</span></div>
-<pre class="codice"><code>parola <span class="c-operatori">=</span> <span class="c-testi">"primavera"</span>
+<pre class="codice" tabindex="0"><code>parola <span class="c-operatori">=</span> <span class="c-testi">"primavera"</span>
 <span class="c-libreria">print</span><span class="c-punteggiatura">(</span>parola<span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-punteggiatura">:</span><span class="c-numeri">5</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>      <span class="c-commenti"># primi 5 caratteri</span>
 <span class="c-libreria">print</span><span class="c-punteggiatura">(</span>parola<span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">3</span><span class="c-punteggiatura">:</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>      <span class="c-commenti"># ultimi 3</span>
 
@@ -304,7 +310,7 @@ numeri <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span>
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>fette.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">parola</span> <span class="c-operatori">=</span> <span class="c-testi">"primavera"</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">variabile</span> <span class="c-variabili">parola</span> <span class="c-operatori">=</span> <span class="c-testi">"primavera"</span>
 <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">parola</span><span class="c-punteggiatura">[</span><span class="c-numeri">0</span><span class="c-numeri">..</span><span class="c-numeri">4</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
 <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-variabili">parola</span><span class="c-punteggiatura">[</span><span class="c-operatori">-</span><span class="c-numeri">3</span><span class="c-numeri">..</span><span class="c-operatori">-</span><span class="c-numeri">1</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span>
 
@@ -342,7 +348,7 @@ era
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>prezzi.py</span></div>
-<pre class="codice"><code><span class="c-commenti"># Con i float normali i centesimi non tornano:</span>
+<pre class="codice" tabindex="0"><code><span class="c-commenti"># Con i float normali i centesimi non tornano:</span>
 <span class="c-libreria">print</span><span class="c-punteggiatura">(</span><span class="c-numeri">0.1</span> <span class="c-operatori">+</span> <span class="c-numeri">0.2</span><span class="c-punteggiatura">)</span>        <span class="c-commenti"># 0.30000000000000004</span>
 
 <span class="c-flusso">from</span> decimal <span class="c-flusso">import</span> Decimal
@@ -356,7 +362,7 @@ totale <span class="c-operatori">=</span> <span class="c-libreria">sum</span><sp
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>prezzi.leo</span></div>
-<pre class="codice"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Con i decimali normali: </span><span class="c-interpolazione">{</span><span class="c-numeri">0.1</span> <span class="c-operatori">+</span> <span class="c-numeri">0.2</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
+<pre class="codice" tabindex="0"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Con i decimali normali: </span><span class="c-interpolazione">{</span><span class="c-numeri">0.1</span> <span class="c-operatori">+</span> <span class="c-numeri">0.2</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
 
 <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">carrello</span> <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span><span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"4.99"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"0.90"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">,</span> <span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"12.50"</span><span class="c-punteggiatura">)</span><span class="c-punteggiatura">]</span>
 <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-libreria">soldi</span><span class="c-punteggiatura">(</span><span class="c-testi">"0.00"</span><span class="c-punteggiatura">)</span>
@@ -395,7 +401,7 @@ Con lo sconto del 20%: 14,71 €</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>eta.py</span></div>
-<pre class="codice"><code><span class="c-flusso">def</span> eta_da_testo<span class="c-punteggiatura">(</span>testo<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
+<pre class="codice" tabindex="0"><code><span class="c-flusso">def</span> eta_da_testo<span class="c-punteggiatura">(</span>testo<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
     <span class="c-flusso">return</span> <span class="c-libreria">int</span><span class="c-punteggiatura">(</span>testo<span class="c-punteggiatura">)</span>
 
 <span class="c-flusso">try</span><span class="c-punteggiatura">:</span>
@@ -410,7 +416,7 @@ Con lo sconto del 20%: 14,71 €</pre>
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>eta.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">eta_da_testo</span><span class="c-punteggiatura">(</span><span class="c-parametri">testo</span><span class="c-punteggiatura">)</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">eta_da_testo</span><span class="c-punteggiatura">(</span><span class="c-parametri">testo</span><span class="c-punteggiatura">)</span>
     <span class="c-dichiarazioni">restituisci</span> <span class="c-libreria">intero</span><span class="c-punteggiatura">(</span><span class="c-parametri">testo</span><span class="c-punteggiatura">)</span>
 <span class="c-flusso">fine</span>
 
@@ -454,7 +460,7 @@ Alla riga 2</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>spesa.py</span></div>
-<pre class="codice"><code><span class="c-flusso">import</span> csv
+<pre class="codice" tabindex="0"><code><span class="c-flusso">import</span> csv
 
 <span class="c-flusso">with</span> <span class="c-libreria">open</span><span class="c-punteggiatura">(</span><span class="c-testi">"spesa.csv"</span><span class="c-punteggiatura">,</span> encoding<span class="c-operatori">=</span><span class="c-testi">"utf-8"</span><span class="c-punteggiatura">)</span> <span class="c-flusso">as</span> f<span class="c-punteggiatura">:</span>
     righe <span class="c-operatori">=</span> <span class="c-libreria">list</span><span class="c-punteggiatura">(</span>csv<span class="c-punteggiatura">.</span>DictReader<span class="c-punteggiatura">(</span>f<span class="c-punteggiatura">)</span><span class="c-punteggiatura">)</span>
@@ -471,7 +477,7 @@ totale <span class="c-operatori">=</span> <span class="c-numeri">0</span>
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>spesa.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">inizio</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">righe</span> <span class="c-operatori">=</span> <span class="c-libreria">leggi_tabella</span><span class="c-punteggiatura">(</span><span class="c-testi">"spesa.csv"</span><span class="c-punteggiatura">)</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
     <span class="c-flusso">per ogni</span> <span class="c-variabili">r</span> <span class="c-logici">in</span> <span class="c-variabili">righe</span> <span class="c-flusso">fai</span>
@@ -512,7 +518,7 @@ Spesa totale: 32,30 €</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>meteo.py</span></div>
-<pre class="codice"><code><span class="c-flusso">import</span> json
+<pre class="codice" tabindex="0"><code><span class="c-flusso">import</span> json
 
 risposta <span class="c-operatori">=</span> <span class="c-testi">'{"citta": "Bologna", "gradi": 19, "venti": ["N", "NE"]}'</span>
 meteo <span class="c-operatori">=</span> json<span class="c-punteggiatura">.</span>loads<span class="c-punteggiatura">(</span>risposta<span class="c-punteggiatura">)</span>
@@ -524,7 +530,7 @@ venti <span class="c-operatori">=</span> <span class="c-testi">", "</span><span 
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>meteo.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">inizio</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">risposta</span> <span class="c-operatori">=</span> <span class="c-testi">"\{\"citta\": \"Bologna\", \"gradi\": 19, \"venti\": [\"N\", \"NE\"]}"</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">meteo</span> <span class="c-operatori">=</span> <span class="c-libreria">da_json</span><span class="c-punteggiatura">(</span><span class="c-variabili">risposta</span><span class="c-punteggiatura">)</span>
     <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"A </span><span class="c-interpolazione">{</span><span class="c-variabili">meteo</span><span class="c-punteggiatura">[</span><span class="c-testi">"citta"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi">: </span><span class="c-interpolazione">{</span><span class="c-variabili">meteo</span><span class="c-punteggiatura">[</span><span class="c-testi">"gradi"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> gradi, venti da </span><span class="c-interpolazione">{</span><span class="c-testi">", "</span><span class="c-punteggiatura">.</span><span class="c-proprieta">unisci</span><span class="c-punteggiatura">(</span><span class="c-variabili">meteo</span><span class="c-punteggiatura">[</span><span class="c-testi">"venti"</span><span class="c-punteggiatura">]</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
@@ -557,7 +563,7 @@ venti <span class="c-operatori">=</span> <span class="c-testi">", "</span><span 
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>servizio.py</span></div>
-<pre class="codice"><code><span class="c-flusso">from</span> http<span class="c-punteggiatura">.</span>server <span class="c-flusso">import</span> BaseHTTPRequestHandler<span class="c-punteggiatura">,</span> HTTPServer
+<pre class="codice" tabindex="0"><code><span class="c-flusso">from</span> http<span class="c-punteggiatura">.</span>server <span class="c-flusso">import</span> BaseHTTPRequestHandler<span class="c-punteggiatura">,</span> HTTPServer
 <span class="c-flusso">import</span> json<span class="c-punteggiatura">,</span> threading<span class="c-punteggiatura">,</span> urllib<span class="c-punteggiatura">.</span>request
 
 PAGINE <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span>
@@ -586,7 +592,7 @@ server<span class="c-punteggiatura">.</span>shutdown<span class="c-punteggiatura
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>servizio.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">inizio</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">servizio</span> <span class="c-operatori">=</span> <span class="c-libreria">server_web</span><span class="c-punteggiatura">(</span><span class="c-numeri">0</span><span class="c-punteggiatura">,</span> pagine <span class="c-operatori">=</span> <span class="c-punteggiatura">{</span>
         <span class="c-testi">"/api/saluto"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"messaggio"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"Ciao da Leo!"</span><span class="c-punteggiatura">}</span><span class="c-punteggiatura">,</span>
         <span class="c-testi">"/api/ora"</span><span class="c-punteggiatura">:</span> <span class="c-punteggiatura">{</span><span class="c-testi">"servizio"</span><span class="c-punteggiatura">:</span> <span class="c-testi">"orologio"</span><span class="c-punteggiatura">,</span> <span class="c-testi">"attivo"</span><span class="c-punteggiatura">:</span> <span class="c-valori_speciali">vero</span><span class="c-punteggiatura">}</span>
@@ -630,7 +636,7 @@ Server spento.</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>parallelo.py</span></div>
-<pre class="codice"><code><span class="c-flusso">from</span> concurrent<span class="c-punteggiatura">.</span>futures <span class="c-flusso">import</span> ThreadPoolExecutor
+<pre class="codice" tabindex="0"><code><span class="c-flusso">from</span> concurrent<span class="c-punteggiatura">.</span>futures <span class="c-flusso">import</span> ThreadPoolExecutor
 
 <span class="c-flusso">def</span> somma_fino<span class="c-punteggiatura">(</span>n<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
     totale <span class="c-operatori">=</span> <span class="c-numeri">0</span>
@@ -648,7 +654,7 @@ Server spento.</pre>
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>parallelo.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">somma_fino</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span><span class="c-punteggiatura">)</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">funzione</span> <span class="c-funzioni_utente">somma_fino</span><span class="c-punteggiatura">(</span><span class="c-parametri">n</span><span class="c-punteggiatura">)</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">totale</span> <span class="c-operatori">=</span> <span class="c-numeri">0</span>
     <span class="c-flusso">per ogni</span> <span class="c-variabili">i</span> <span class="c-logici">in</span> <span class="c-numeri">1</span><span class="c-numeri">..</span><span class="c-parametri">n</span> <span class="c-flusso">fai</span>
         <span class="c-variabili">totale</span> <span class="c-operatori">+=</span> <span class="c-variabili">i</span>
@@ -692,7 +698,7 @@ Risultato: 500.000.500.000</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>accesso.py</span></div>
-<pre class="codice"><code><span class="c-flusso">import</span> hashlib<span class="c-punteggiatura">,</span> os
+<pre class="codice" tabindex="0"><code><span class="c-flusso">import</span> hashlib<span class="c-punteggiatura">,</span> os
 
 <span class="c-flusso">def</span> impronta<span class="c-punteggiatura">(</span>password<span class="c-punteggiatura">)</span><span class="c-punteggiatura">:</span>
     sale <span class="c-operatori">=</span> os<span class="c-punteggiatura">.</span>urandom<span class="c-punteggiatura">(</span><span class="c-numeri">16</span><span class="c-punteggiatura">)</span>
@@ -717,7 +723,7 @@ salvata <span class="c-operatori">=</span> impronta<span class="c-punteggiatura"
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>accesso.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">inizio</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">scelta</span> <span class="c-operatori">=</span> <span class="c-testi">"Cavallo-Batteria-Pinzatrice-42"</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">forza</span> <span class="c-operatori">=</span> <span class="c-libreria">misura_forza_password</span><span class="c-punteggiatura">(</span><span class="c-variabili">scelta</span><span class="c-punteggiatura">)</span>
     <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Robustezza: </span><span class="c-interpolazione">{</span><span class="c-variabili">forza</span><span class="c-punteggiatura">[</span><span class="c-testi">"livello"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> (circa </span><span class="c-interpolazione">{</span><span class="c-variabili">forza</span><span class="c-punteggiatura">[</span><span class="c-testi">"bit"</span><span class="c-punteggiatura">]</span><span class="c-interpolazione">}</span><span class="c-testi"> bit)"</span><span class="c-punteggiatura">)</span>
@@ -758,7 +764,7 @@ Login con password sbagliata: falso</pre>
         <div class="etichetta-confronto"><span>Python</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>scadenze.py</span></div>
-<pre class="codice"><code><span class="c-flusso">from</span> datetime <span class="c-flusso">import</span> datetime
+<pre class="codice" tabindex="0"><code><span class="c-flusso">from</span> datetime <span class="c-flusso">import</span> datetime
 
 avvio <span class="c-operatori">=</span> datetime<span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> <span class="c-numeri">9</span><span class="c-punteggiatura">,</span> <span class="c-numeri">0</span><span class="c-punteggiatura">)</span>
 consegna <span class="c-operatori">=</span> datetime<span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">,</span> <span class="c-numeri">17</span><span class="c-punteggiatura">,</span> <span class="c-numeri">30</span><span class="c-punteggiatura">)</span>
@@ -774,7 +780,7 @@ giorno <span class="c-operatori">=</span> <span class="c-punteggiatura">[</span>
         <div class="etichetta-confronto"><span>Leo</span></div>
         <div class="finestra-codice">
           <div class="barra"><i></i><i></i><i></i><span>scadenze.leo</span></div>
-<pre class="codice"><code><span class="c-dichiarazioni">inizio</span>
+<pre class="codice" tabindex="0"><code><span class="c-dichiarazioni">inizio</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">avvio</span> <span class="c-operatori">=</span> <span class="c-libreria">data</span><span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">2</span><span class="c-punteggiatura">,</span> ore <span class="c-operatori">=</span> <span class="c-numeri">9</span><span class="c-punteggiatura">)</span>
     <span class="c-dichiarazioni">variabile</span> <span class="c-variabili">consegna</span> <span class="c-operatori">=</span> <span class="c-libreria">data</span><span class="c-punteggiatura">(</span><span class="c-numeri">2026</span><span class="c-punteggiatura">,</span> <span class="c-numeri">3</span><span class="c-punteggiatura">,</span> <span class="c-numeri">20</span><span class="c-punteggiatura">,</span> ore <span class="c-operatori">=</span> <span class="c-numeri">17</span><span class="c-punteggiatura">,</span> minuti <span class="c-operatori">=</span> <span class="c-numeri">30</span><span class="c-punteggiatura">)</span>
     <span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Dal </span><span class="c-interpolazione">{</span><span class="c-libreria">formatta_data</span><span class="c-punteggiatura">(</span><span class="c-variabili">avvio</span><span class="c-punteggiatura">,</span> <span class="c-testi">"medio"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi"> al </span><span class="c-interpolazione">{</span><span class="c-libreria">formatta_data</span><span class="c-punteggiatura">(</span><span class="c-variabili">consegna</span><span class="c-punteggiatura">,</span> <span class="c-testi">"medio"</span><span class="c-punteggiatura">)</span><span class="c-interpolazione">}</span><span class="c-testi">"</span><span class="c-punteggiatura">)</span>
@@ -825,7 +831,7 @@ La consegna cade di venerdì</pre>
   <div class="contenitore stretto">
     <h2>Il modo migliore per decidere è provarlo</h2>
     <p>Installa Leo Studio o apri l'app sul telefono, incolla uno di questi esempi e premi Esegui. In trenta secondi hai la tua risposta.</p>
-<pre class="codice"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
+<pre class="codice" tabindex="0"><code><span class="c-libreria">stampa</span><span class="c-punteggiatura">(</span><span class="c-testi">"Ciao, mondo!"</span><span class="c-punteggiatura">)</span></code></pre>
     <div class="cf-azioni">
       <a class="pulsante grande" href="scarica.html">Scarica Leo</a>
       <a class="pulsante grande secondario" href="template.html">Vedi altri esempi</a>
@@ -841,32 +847,53 @@ La consegna cade di venerdì</pre>
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
+        <p>Il linguaggio di programmazione che parla italiano: un solo linguaggio per siti, dati, giochi, agenti, sicurezza e robotica. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="novita.html">Novità</a></li>
-          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
-          <li><a href="licenza.html">Licenza</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="statistiche.html">Statistiche</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Impara">
         <h2>Impara</h2>
         <ul>
+          <li><a href="manuale/index.html">Manuale completo</a></li>
+          <li><a href="manuali/index.html">Guide delle edizioni</a></li>
           <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="manuale/index.html">Manuale</a></li>
-          <li><a href="template.html">Esempi pronti</a></li>
-          <li><a href="video.html">Videoteca</a></li>
           <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="prova.html">Prova nel browser</a></li>
+          <li><a href="informatica/index.html">Pensare in codice</a></li>
+          <li><a href="libro/index.html">Il libro</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="scuola.html">Leo a scuola</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Edizioni">
+        <h2>Edizioni</h2>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="dati.html">Dati</a></li>
+          <li><a href="giochi.html">Giochi</a></li>
+          <li><a href="sistema.html">Sistema</a></li>
+          <li><a href="sicurezza.html">Sicurezza</a></li>
+          <li><a href="robotica.html">Robotica</a></li>
+          <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+          <li><a href="confronto.html" aria-current="page">Leo e Python</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">
         <h2>Legale</h2>
         <ul>
+          <li><a href="licenza.html">Licenza</a></li>
           <li><a href="termini.html">Termini d'uso</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="#" data-email>Contatti</a></li>
@@ -880,7 +907,7 @@ La consegna cade di venerdì</pre>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
       </div>
-      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+      <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>
     </div>
   </div>
 </footer>

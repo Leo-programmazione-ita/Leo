@@ -17,7 +17,7 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/stile.css?v=20261107">
 <link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <link rel="stylesheet" href="css/costruisce.css?v=20261106f">
 <script>document.documentElement.classList.add("lc-prima")</script>
@@ -82,7 +82,7 @@
 .dl-verifica summary:focus-visible{outline:2px solid var(--testo);outline-offset:2px;border-radius:var(--r-grande)}
 .dl-verifica-corpo{padding:0 18px 18px;color:var(--testo-2);font-size:14.5px;line-height:1.55}
 .dl-verifica-corpo p{margin:0 0 12px;max-width:72ch}
-.dl-verifica-corpo code.dl-cmd{display:inline-block;white-space:normal;word-break:break-all}
+.dl-verifica-corpo code.dl-cmd{display:inline;white-space:normal;overflow-wrap:anywhere}
 .dl-hash{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
 .dl-hash th,.dl-hash td{text-align:left;vertical-align:top;padding:9px 8px;border-top:1px solid var(--bordo)}
 .dl-hash thead th{color:var(--testo-3);font-weight:600;border-top:0}
@@ -197,11 +197,15 @@ document.addEventListener("DOMContentLoaded", function () {
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuali/index.html">Manuali</a></li>
-            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
-            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
+            <li><a href="manuale/index.html">Manuale completo</a></li>
+            <li><a href="manuali/index.html">Guide delle edizioni</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
+            <li><a href="manuale/domande.html">Domande frequenti</a></li>
+            <li><a href="prova.html">Prova nel browser</a></li>
+            <li><a href="informatica/index.html">Pensare in codice</a></li>
+            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
+            <li><a href="scuola.html">Leo a scuola</a></li>
           </ul>
         </li>
         <li class="nav-gruppo">
@@ -232,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </ul>
         </li>
         <li><a href="telefono.html">Telefono</a></li>
-        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html">Scarica</a></li>
+        <li class="voce-scarica"><a class="pulsante piccolo" href="scarica.html" aria-current="page">Scarica</a></li>
       </ul>
     </nav>
     <button class="apri-cerca" type="button" data-apri-cerca aria-label="Cerca nel sito" title="Cerca (tasto /)">
@@ -440,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
+        <p>Il linguaggio di programmazione che parla italiano: un solo linguaggio per siti, dati, giochi, agenti, sicurezza e robotica. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
@@ -448,9 +452,26 @@ document.addEventListener("DOMContentLoaded", function () {
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="suite.html">Leo Suite</a></li>
-          <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="scarica.html" aria-current="page">Scarica</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
           <li><a href="novita.html">Novità</a></li>
-          <li><a href="licenza.html">Licenza</a></li>
+          <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="statistiche.html">Statistiche</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="manuale/index.html">Manuale completo</a></li>
+          <li><a href="manuali/index.html">Guide delle edizioni</a></li>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="prova.html">Prova nel browser</a></li>
+          <li><a href="informatica/index.html">Pensare in codice</a></li>
+          <li><a href="libro/index.html">Il libro</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="scuola.html">Leo a scuola</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Edizioni">
@@ -462,21 +483,14 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="sistema.html">Sistema</a></li>
           <li><a href="sicurezza.html">Sicurezza</a></li>
           <li><a href="robotica.html">Robotica</a></li>
-        </ul>
-      </nav>
-      <nav class="piede-colonna" aria-label="Impara">
-        <h2>Impara</h2>
-        <ul>
-          <li><a href="manuali/index.html">Manuali</a></li>
-          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
-          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
-          <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="template.html">Esempi</a></li>
+          <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+          <li><a href="confronto.html">Leo e Python</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">
         <h2>Legale</h2>
         <ul>
+          <li><a href="licenza.html">Licenza</a></li>
           <li><a href="termini.html">Termini d'uso</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="#" data-email>Contatti</a></li>
@@ -490,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
       </div>
-      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+      <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>
     </div>
   </div>
 </footer>

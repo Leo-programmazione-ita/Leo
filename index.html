@@ -17,7 +17,7 @@
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/stemma_180.png">
-<link rel="stylesheet" href="css/stile.css?v=20261026">
+<link rel="stylesheet" href="css/stile.css?v=20261107">
 <link rel="stylesheet" href="css/nuovo.css?v=20261026">
 <link rel="stylesheet" href="css/costruisce.css?v=20261106f">
 <script>document.documentElement.classList.add("lc-prima")</script>
@@ -26,7 +26,14 @@
 <script src="js/sito.js?v=20261026" defer></script>
 <script src="js/costruisce.js?v=20261106f" defer></script>
 <script src="js/cerca.js" defer></script>
-<style></style>
+<style>
+.n-scuola{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:18px 0 4px;padding:10px 16px;border:1px solid var(--accento-linea);border-radius:14px;
+  background:var(--accento-tenue);color:var(--testo-2);text-decoration:none;font-size:15px;line-height:1.4;max-width:100%;transition:border-color .15s,background .15s}
+.n-scuola strong{color:var(--testo)}
+.n-scuola-frec{color:var(--accento-vivo);font-weight:700}
+.n-scuola:hover{border-color:var(--accento-vivo);color:var(--testo)}
+.n-scuola:focus-visible{outline:2px solid var(--accento-vivo);outline-offset:3px}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Leo","alternateName":"Leo Suite","applicationCategory":"DeveloperApplication","applicationSubCategory":"Linguaggio di programmazione","operatingSystem":"Windows 10, Windows 11 (64 bit), Android 7.0 o successivo","softwareVersion":"0.1.4","inLanguage":"it","url":"https://leoitalia.com/","image":"https://leoitalia.com/img/og.png","description":"Leo è un linguaggio di programmazione con parole chiave italiane. Leo Studio (Windows) e l'app Leo (Android) in sei edizioni, più la Suite che le riunisce.","author":{"@type":"Person","name":"Rosario Zappalà"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
 </head>
 <body>
@@ -40,17 +47,21 @@
     </a>
     <nav id="navigazione" class="navigazione" aria-label="Principale">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li class="nav-gruppo">
           <button type="button" class="nav-apri" aria-expanded="false">Impara
             <svg class="nav-frec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="nav-tendina">
-            <li><a href="manuali/index.html">Manuali</a></li>
-            <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
-            <li><a href="manuali/piattaforma.html">Piattaforma Suite</a></li>
+            <li><a href="manuale/index.html">Manuale completo</a></li>
+            <li><a href="manuali/index.html">Guide delle edizioni</a></li>
             <li><a href="riferimento/index.html">Riferimento</a></li>
+            <li><a href="manuale/domande.html">Domande frequenti</a></li>
+            <li><a href="prova.html">Prova nel browser</a></li>
+            <li><a href="informatica/index.html">Pensare in codice</a></li>
+            <li><a href="libro/index.html">Il libro</a></li>
             <li><a href="template.html">Esempi</a></li>
+            <li><a href="scuola.html">Leo a scuola</a></li>
           </ul>
         </li>
         <li class="nav-gruppo">
@@ -107,6 +118,7 @@
     <div>
       <span class="n-occhiello"><span class="pallino"></span> Leo <b>Suite</b> · la piattaforma</span>
       <h1 class="n-h1">Un linguaggio.<span class="riga2">Qualunque software.</span></h1>
+      <a class="n-scuola" href="scuola.html"><strong>Impari o insegni?</strong> <span>Leo a scuola: età, un primo percorso di lezioni, laboratorio e privacy</span> <span class="n-scuola-frec" aria-hidden="true">→</span></a>
       <p class="n-sotto">Scrivi in <strong>Leo</strong>, in italiano. La piattaforma capisce cosa stai costruendo — un sito, dei dati, un gioco, un agente, un dispositivo — e genera da sé ciò che serve. <strong>Senza uscire da Leo. Senza conoscere altri linguaggi.</strong></p>
       <div class="n-azioni">
         <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg></a>
@@ -239,17 +251,34 @@ sito.<span class="fn">salva</span>(<span class="st">"index.html"</span>)
         <a class="marchio" href="index.html" aria-label="Leo, pagina principale">
           <img src="img/stemma_192.png" alt="" width="30" height="30"><span>Leo</span>
         </a>
-        <p>Il linguaggio di programmazione che parla italiano: una piattaforma per costruire qualunque software senza cambiare linguaggio.</p>
+        <p>Il linguaggio di programmazione che parla italiano: un solo linguaggio per siti, dati, giochi, agenti, sicurezza e robotica. Sul PC con Leo Studio, sul telefono con l'app Leo.</p>
         <p class="piede-autore">Ideato e sviluppato in Italia da <strong>Rosario Zappalà</strong>.</p>
       </div>
       <nav class="piede-colonna" aria-label="Leo">
         <h2>Leo</h2>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="suite.html">Leo Suite</a></li>
           <li><a href="scarica.html">Scarica</a></li>
+          <li><a href="telefono.html">Leo sul telefono</a></li>
           <li><a href="novita.html">Novità</a></li>
-          <li><a href="licenza.html">Licenza</a></li>
+          <li><a href="fatto-con-leo.html">Fatto con Leo</a></li>
+          <li><a href="video.html">Videoteca</a></li>
+          <li><a href="statistiche.html">Statistiche</a></li>
+        </ul>
+      </nav>
+      <nav class="piede-colonna" aria-label="Impara">
+        <h2>Impara</h2>
+        <ul>
+          <li><a href="manuale/index.html">Manuale completo</a></li>
+          <li><a href="manuali/index.html">Guide delle edizioni</a></li>
+          <li><a href="riferimento/index.html">Riferimento</a></li>
+          <li><a href="manuale/domande.html">Domande frequenti</a></li>
+          <li><a href="prova.html">Prova nel browser</a></li>
+          <li><a href="informatica/index.html">Pensare in codice</a></li>
+          <li><a href="libro/index.html">Il libro</a></li>
+          <li><a href="template.html">Esempi pronti</a></li>
+          <li><a href="scuola.html">Leo a scuola</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Edizioni">
@@ -261,21 +290,14 @@ sito.<span class="fn">salva</span>(<span class="st">"index.html"</span>)
           <li><a href="sistema.html">Sistema</a></li>
           <li><a href="sicurezza.html">Sicurezza</a></li>
           <li><a href="robotica.html">Robotica</a></li>
-        </ul>
-      </nav>
-      <nav class="piede-colonna" aria-label="Impara">
-        <h2>Impara</h2>
-        <ul>
-          <li><a href="manuali/index.html">Manuali</a></li>
-          <li><a href="manuali/linguaggio.html">Linguaggio Leo</a></li>
-          <li><a href="manuali/piattaforma.html">Piattaforma</a></li>
-          <li><a href="riferimento/index.html">Riferimento</a></li>
-          <li><a href="template.html">Esempi</a></li>
+          <li><a href="edizioni.html">Cosa fa ogni edizione</a></li>
+          <li><a href="confronto.html">Leo e Python</a></li>
         </ul>
       </nav>
       <nav class="piede-colonna" aria-label="Informazioni legali">
         <h2>Legale</h2>
         <ul>
+          <li><a href="licenza.html">Licenza</a></li>
           <li><a href="termini.html">Termini d'uso</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="#" data-email>Contatti</a></li>
@@ -289,7 +311,7 @@ sito.<span class="fn">salva</span>(<span class="st">"index.html"</span>)
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
       </div>
-      <p>Niente cookie, niente tracciamento: il sito non raccoglie dati.</p>
+      <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>
     </div>
   </div>
 </footer>
