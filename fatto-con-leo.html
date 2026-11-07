@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fatto con Leo — giochi, app, programmi e siti scritti in Leo</title>
-<meta name="description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite, un sito, un agente che riordina i download, una sentinella d'integrità e una serra automatica. Con il codice da scaricare.">
+<meta name="description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite, un sito, un agente che riordina i download, una sentinella d'integrità, una serra automatica e un piccolo gestionale. Con il codice da scaricare.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/fatto-con-leo.html">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
 <meta property="og:title" content="Fatto con Leo — giochi, app, programmi e siti scritti in Leo">
-<meta property="og:description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite, un sito, un agente che riordina i download, una sentinella d'integrità e una serra automatica. Con il codice da scaricare.">
+<meta property="og:description" content="Progetti veri scritti interamente in Leo: un gioco a piattaforme, un'app per le spese di casa, uno strumento di analisi delle vendite, un sito, un agente che riordina i download, una sentinella d'integrità, una serra automatica e un piccolo gestionale. Con il codice da scaricare.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <link rel="icon" href="img/stemma.svg" type="image/svg+xml">
 <link rel="icon" href="img/stemma_32.png" sizes="32x32" type="image/png">
@@ -137,7 +137,7 @@
 <section class="n-hero">
   <div class="contenitore">
     <h1 class="n-h1" style="font-size:clamp(34px,5vw,58px)">Fatto con Leo</h1>
-    <p class="n-sotto" style="max-width:60ch">Un gioco, un'app, un programma, un sito, un agente, uno strumento di sicurezza e una serra automatica, scritti dall'inizio alla fine in Leo. Ognuno è stato eseguito e provato davvero, e puoi scaricarne il codice per aprirlo, studiarlo e cambiarlo.</p>
+    <p class="n-sotto" style="max-width:60ch">Un gioco, un'app, un programma, un sito, un agente, uno strumento di sicurezza, una serra automatica e un piccolo gestionale, scritti dall'inizio alla fine in Leo. Ognuno è stato eseguito e provato davvero, e puoi scaricarne il codice per aprirlo, studiarlo e cambiarlo.</p>
   </div>
 </section>
 <section class="fc-elenco">
@@ -217,6 +217,17 @@
       <pre class="fc-codice"><code><span><span class="t-p">variabile</span> s = <span class="t-f">collega_scheda</span>(simulata = <span class="t-p">vero</span>)</span><span><span class="t-p">variabile</span> u = s.<span class="t-f">umidita</span>(PIN_UMIDITA)</span><span><span class="t-p">se</span> stato[<span class="t-s">&quot;pompa&quot;</span>] <span class="t-p">allora</span></span><span>    s.<span class="t-f">accendi</span>(PIN_POMPA)</span><span><span class="t-p">fine</span></span></code></pre>
       <ul class="fc-punti"><li>Soglie con isteresi: relè e motore non sfarfallano</li><li>Registro CSV e grafici SVG disegnati in Leo</li><li>Anche come plancia, con le letture dal vivo</li></ul>
       <div class="fc-azioni"><a class="fc-btn" href="vetrina/serra_automatica.zip" download>Scarica il progetto</a><span>leo serra.leo dentro la cartella; nessuna scheda richiesta.</span></div>
+    </div>
+  </article>
+  <article class="fc fc-inv" style="--cc:var(--c-suite)">
+    <figure class="fc-foto"><img src="img/vetrina/bottega.png" alt="Il sito della Bottega Aurora con la lista degli articoli disponibili letta dal database del magazzino" loading="lazy"></figure>
+    <div class="fc-testo">
+      <p class="fc-ed"><span></span>Leo Suite · Un gestionale con dati, sito e agente</p>
+      <h2>Bottega Aurora</h2>
+      <p class="fc-desc">Il piccolo gestionale di una bottega inventata: un foglio dati sul database del magazzino, un sito con le liste lette dal database e un agente che carica consegne e vendite, scrive l'ordine ai fornitori per gli articoli quasi finiti e poi aggiorna foglio e sito. Tre progetti, gli stessi dati.</p>
+      <pre class="fc-codice"><code><span><span class="t-p">se</span> db.<span class="t-f">esiste</span>(<span class="t-s">&quot;articoli&quot;</span>, {<span class="t-s">&quot;codice&quot;</span>: c}) <span class="t-p">allora</span></span><span>    db.<span class="t-f">esegui</span>(AGGIORNA, [pezzi, c])</span><span><span class="t-p">fine</span></span><span>foglio.<span class="t-f">esponi</span>(<span class="t-s">&quot;../magazzino&quot;</span>)</span><span>compilatore.<span class="t-f">compila_progetto</span>(<span class="t-s">&quot;../sito&quot;</span>, ...)</span></code></pre>
+      <ul class="fc-punti"><li>Database con tabelle descritte in italiano</li><li>Foglio dati esposto agli altri progetti</li><li>Ordine per fornitore pronto per Excel</li></ul>
+      <div class="fc-azioni"><a class="fc-btn" href="vetrina/bottega_gestionale.zip" download>Scarica il progetto</a><span>Leo Suite: leo . nella cartella agente_scorte.</span></div>
     </div>
   </article>
   <aside class="fc-nota">
