@@ -1,0 +1,85 @@
+/* ====================================================================
+   LA PAGINA SI COMPILA (costruisce.js)
+   All'inizio, al posto di ogni elemento, c'è il codice Leo che lo genera.
+   Un'onda di compilazione attraversa la sezione: dove passa, il codice si
+   scompone e la pagina vera compare; schede e pulsanti si incastrano.
+   Senza JS il sito si vede subito, intero.
+   ==================================================================== */
+
+:root {
+  --lc-kw: #ff6b7d; --lc-fn: #7fb6ff; --lc-st: #7fd88f; --lc-cm: #6b675f; --lc-tx: #a9a59c;
+  --lc-filo: rgba(245, 243, 239, .16);
+  --lc-onda: #E0182D;
+}
+:root[data-tema="chiaro"] {
+  --lc-kw: #c8102e; --lc-fn: #1f5fbf; --lc-st: #1d7a35; --lc-cm: #8d897f; --lc-tx: #48453f;
+  --lc-filo: rgba(17, 17, 19, .18);
+}
+
+/* prima che lo script prepari la pagina: niente sfarfallio.
+   Se lo script non arriva, dopo 2,5 s si mostra tutto comunque. */
+:root.lc-prima main { visibility: hidden; animation: lc-sblocca 0s 2.5s forwards; }
+@keyframes lc-sblocca { to { visibility: visible; } }
+
+/* ---- lo strato del codice (sopra la pagina, non cliccabile) --------- */
+.lc-strato { position: absolute; left: 0; top: 0; width: 100%; height: 0; z-index: 4; pointer-events: none; }
+
+.lc-sorgente {
+  position: absolute; overflow: hidden;
+  font: 13px/1.6 var(--car-codice, ui-monospace, Consolas, monospace);
+  color: var(--lc-tx);
+  white-space: pre-wrap; word-break: break-word;
+  transition: opacity .28s ease, filter .28s ease;
+}
+.lc-sorgente.lc-riga1 { white-space: nowrap; text-overflow: ellipsis; display: block; }
+.lc-sorgente.lc-grande { font-size: clamp(18px, 2.6vw, 34px); line-height: 1.35; }
+.lc-sorgente.lc-medio { font-size: clamp(15px, 1.8vw, 22px); line-height: 1.4; }
+.lc-sorgente.lc-blocco {
+  outline: 1px dashed var(--lc-filo); outline-offset: -1px;
+  border-radius: 12px; padding: 12px 14px;
+}
+.lc-sorgente.lc-pillola { border-radius: 999px; padding: 0 12px; font-size: 11.5px; }
+.lc-sorgente .kw { color: var(--lc-kw); }
+.lc-sorgente .fn { color: var(--lc-fn); }
+.lc-sorgente .st { color: var(--lc-st); }
+.lc-sorgente .cm { color: var(--lc-cm); }
+.lc-sorgente.lc-via { opacity: 0; filter: blur(3px); }
+
+/* ---- l'onda di compilazione ----------------------------------------- */
+.lc-onda {
+  position: absolute; height: 2px; pointer-events: none; z-index: 5;
+  background: linear-gradient(90deg, transparent, var(--lc-onda) 12%, #ff5a6e 50%, var(--lc-onda) 88%, transparent);
+  box-shadow: 0 0 18px 2px rgba(224, 24, 45, .55), 0 0 60px 8px rgba(224, 24, 45, .18);
+  opacity: 0;
+}
+.lc-onda::after {
+  content: attr(data-nome);
+  position: absolute; right: 0; bottom: 8px;
+  font: 600 11px/1 var(--car-codice, ui-monospace, monospace);
+  color: var(--lc-onda); white-space: nowrap; letter-spacing: .02em;
+  background: var(--fondo, #050506); padding: 4px 8px; border-radius: 6px;
+  border: 1px solid rgba(224, 24, 45, .35);
+}
+.lc-onda.lc-giu::after { bottom: auto; top: 8px; }
+
+/* ---- il riquadro di codice della pagina: le sue righe si scrivono dopo */
+:root.lc-attivo pre.lc-righe .lc-riga { opacity: 0; }
+:root.lc-attivo pre.lc-righe .lc-riga.lc-scritta { opacity: 1; transition: opacity .1s linear; }
+:root.lc-attivo pre.lc-righe .lc-riga.lc-cursore::after {
+  content: ""; display: inline-block; width: .55em; height: 1.05em;
+  margin-left: 2px; vertical-align: -.18em; background: var(--accento, #E0182D);
+  animation: lc-lampeggia .7s steps(1) infinite;
+}
+@keyframes lc-lampeggia { 50% { opacity: 0; } }
+
+@media (max-width: 640px) {
+  .lc-sorgente { font-size: 11.5px; }
+  .lc-sorgente.lc-grande { font-size: 14px; }
+  .lc-onda::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lc-sorgente { transition: opacity .4s ease; }
+  .lc-sorgente.lc-via { filter: none; }
+  :root.lc-attivo pre.lc-righe .lc-riga.lc-cursore::after { animation: none; }
+}
+@media print { .lc-strato, .lc-onda { display: none !important; } }
