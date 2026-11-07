@@ -1,42 +1,42 @@
 {
-  "versione": "0.1.3",
-  "note": "0.1.3: tre ponti verso altri linguaggi -- Python, C e ora JavaScript nel web; i siti di Leo Web si pubblicano anche come app Python (Flask) o Node, oltre che PHP e statico; palette dei controlli riorganizzata e piu' chiara, con nuove icone; schermata d'avvio col colore della tua edizione.",
+  "versione": "0.1.4",
+  "note": "0.1.4: nella Suite i siti con dati (liste dal database, moduli) si pubblicano anche come app Python (Flask) o Node autonome, oltre a PHP e statico (si sceglie in Esporta sito web); liste e moduli funzionano anche nel sito compresso; corretto un errore che nelle edizioni mirate bloccava il costruttore di siti; nelle edizioni Web, Dati, Sistema e Sicurezza arrivano i mattoni, blocchi di codice pronti da inserire; app a piu' schermate con Vai a una schermata.",
   "url": "https://leoitalia.com/scarica.html",
   "installatori": {
     "suite": {
-      "sha256": "334bfdd168ac43c663a7a72f5f1ead2659d4249a220ae6ae5992ceec8b0a4039",
-      "nome": "Setup_Leo_0.1.3.exe",
-      "dimensione": 301889000
+      "sha256": "163ae0b8beb61fdf601c2477c61cf6751d6859a6e5f2564a167f51e900ad7154",
+      "nome": "Setup_Leo_0.1.4.exe",
+      "dimensione": 301935168
     },
     "web": {
-      "sha256": "3cb99cb11db42100a41f40e77cc28a0c109fba3ea0ef8b7d2120ae9cf2b9c1e1",
-      "nome": "Setup_Leo_Web_0.1.3.exe",
-      "dimensione": 298551168
+      "sha256": "a0afcabd7e60078ef653099e7cc8f24941ff18ae1c5aaebd355b1403caba1d55",
+      "nome": "Setup_Leo_Web_0.1.4.exe",
+      "dimensione": 298601016
     },
     "dati": {
-      "sha256": "ddc57bcfaae891722633f12b3aee8700d4151b08e7d9e120e4ffb398ad27af64",
-      "nome": "Setup_Leo_Dati_0.1.3.exe",
-      "dimensione": 298549224
+      "sha256": "547d003a0b138d2af66d852150a5a7c5941318df68a28121f410b604b1e46fae",
+      "nome": "Setup_Leo_Dati_0.1.4.exe",
+      "dimensione": 298595592
     },
     "giochi": {
-      "sha256": "8e184309cd1fc749845578992d09b9317e0e3636bb22eb1c59193d36550fee40",
-      "nome": "Setup_Leo_Giochi_0.1.3.exe",
-      "dimensione": 301780640
+      "sha256": "33e5385d09880d1fb420dfd7e0630c7e673ca3d5560283c7b037a3d43046fc1e",
+      "nome": "Setup_Leo_Giochi_0.1.4.exe",
+      "dimensione": 301824320
     },
     "sistema": {
-      "sha256": "307bac5a1a777e541f2e452b8eb6a19d3d520d3c3c09d0206b4371965df3198c",
-      "nome": "Setup_Leo_Sistema_0.1.3.exe",
-      "dimensione": 298571360
+      "sha256": "b7aa23d82305f199183ac8748d2ae7791d426ea8c70eb68637bc13c31389a606",
+      "nome": "Setup_Leo_Sistema_0.1.4.exe",
+      "dimensione": 298617480
     },
     "sicurezza": {
-      "sha256": "43042514b4a5679dbc0f434edae5e8e7f7416d1e6fadd1ba407953f8f2b1c9eb",
-      "nome": "Setup_Leo_Sicurezza_0.1.3.exe",
-      "dimensione": 298543360
+      "sha256": "39c13aa39b21b707389e571ec53221e8dcd0df1c73fa00ca695a2659c631968c",
+      "nome": "Setup_Leo_Sicurezza_0.1.4.exe",
+      "dimensione": 298592512
     },
     "robotica": {
-      "sha256": "2c1265dc5e0ad3a16e4e4e768b7bdb89fc805a50a7c6c3ed8c303c286b519e07",
-      "nome": "Setup_Leo_Robotica_0.1.3.exe",
-      "dimensione": 298552504
+      "sha256": "f5c2249f3456690763085d9b1b09c2b5dc4e34c887b5497f32bdf3d54163f568",
+      "nome": "Setup_Leo_Robotica_0.1.4.exe",
+      "dimensione": 298599224
     }
   }
 }
