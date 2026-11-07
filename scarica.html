@@ -23,7 +23,86 @@
 <script src="config.js" defer></script>
 <script src="js/sito.js?v=20261026" defer></script>
 <script src="js/cerca.js" defer></script>
-<style></style>
+<style>
+.dl-testa{position:relative;overflow:hidden;padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px);border-bottom:1px solid var(--bordo);
+  background:radial-gradient(900px 380px at 85% 0%,color-mix(in srgb,var(--c-suite) 20%,transparent),transparent 70%),linear-gradient(180deg,#08080b,var(--fondo))}
+:root[data-tema="chiaro"] .dl-testa{background:radial-gradient(900px 380px at 85% 0%,color-mix(in srgb,var(--c-suite) 12%,transparent),transparent 70%),linear-gradient(180deg,var(--fondo-2),var(--fondo))}
+.dl-testa-griglia{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(28px,5vw,64px);align-items:center}
+.dl-req{margin:22px 0 0;font-size:14px;color:var(--testo-3);line-height:1.6}
+.dl-consigliato{background:var(--superficie);border:1px solid var(--bordo-forte);border-radius:var(--r-grande);padding:26px 26px 22px;
+  box-shadow:0 30px 80px -40px color-mix(in srgb,var(--c-suite) 55%,transparent)}
+.dl-etichetta{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--c-suite)}
+.dl-consigliato h2{margin:0;font-size:28px;letter-spacing:-.02em}
+.dl-consigliato h2 span{font-size:15px;font-weight:600;color:var(--testo-3);margin-left:6px;letter-spacing:0}
+.dl-cosa{margin:8px 0 20px;color:var(--testo-2);line-height:1.5}
+.dl-grande{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:14px;
+  background:var(--c-suite);color:#fff;font-weight:700;font-size:17px;text-decoration:none;transition:filter .15s}
+.dl-grande:hover{filter:brightness(1.1);color:#fff}
+.dl-grande:focus-visible{outline:3px solid var(--testo);outline-offset:3px}
+.dl-grande svg{width:21px;height:21px}
+.dl-meta{margin:10px 0 0;text-align:center;font-size:13.5px;color:var(--testo-3)}
+.dl-altro{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--bordo);font-size:14.5px;color:var(--testo-2);text-align:center}
+.dl-sez{padding-top:clamp(48px,7vw,84px);padding-bottom:clamp(40px,6vw,72px)}
+.dl-titolo{margin-bottom:28px}
+.dl-titolo .n-intro a,.dl-installa a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.dl-elenco{list-style:none;margin:0;padding:0;border:1px solid var(--bordo);border-radius:var(--r-grande);overflow:hidden;background:var(--superficie)}
+.dl-riga{display:grid;grid-template-columns:44px minmax(0,1fr) 186px 172px;gap:16px;align-items:center;padding:14px 18px;border-top:1px solid var(--bordo)}
+.dl-riga:first-child{border-top:0}
+.dl-consigliata{background:color-mix(in srgb,var(--c-suite) 7%,transparent)}
+.dl-ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--cc);background:color-mix(in srgb,var(--cc) 14%,transparent)}
+.dl-ico svg{width:21px;height:21px}
+.dl-nome{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dl-nome strong{font-size:16.5px}
+.dl-nome span{font-size:14px;color:var(--testo-3)}
+.dl-file{display:grid;grid-template-columns:20px 1fr auto;align-items:center;gap:9px;padding:10px 13px;border-radius:11px;
+  border:1px solid var(--bordo-forte);color:var(--testo);text-decoration:none;font-weight:600;font-size:14.5px;transition:border-color .15s,background .15s}
+.dl-file svg{width:18px;height:18px;color:var(--testo-2)}
+.dl-file small{white-space:nowrap;font-weight:500;font-size:12.5px;color:var(--testo-3)}
+.dl-file:hover{border-color:var(--cc);background:color-mix(in srgb,var(--cc) 10%,transparent);color:var(--testo)}
+.dl-file:focus-visible{outline:2px solid var(--cc);outline-offset:2px}
+.dl-installa{border-top:1px solid var(--bordo)}
+.dl-colonne{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.dl-colonne>div{border:1px solid var(--bordo);border-radius:var(--r-grande);padding:20px 22px;background:var(--superficie)}
+.dl-colonne h3{display:flex;align-items:center;gap:9px;margin:0 0 12px;font-size:18px}
+.dl-colonne h3 svg{width:19px;height:19px;color:var(--testo-2)}
+.dl-colonne ol{margin:0;padding-left:20px;color:var(--testo-2);line-height:1.55;font-size:15px}
+.dl-colonne li+li{margin-top:8px}
+.dl-colonne code{font-size:13px}
+.dl-note{margin-top:26px;display:grid;gap:8px;color:var(--testo-2);font-size:14.5px;max-width:72ch}
+.dl-note p{margin:0}
+@media (max-width:900px){.dl-testa-griglia{grid-template-columns:1fr}.dl-colonne{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .dl-riga{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 10px;padding:16px}
+  .dl-ico{grid-row:1;grid-column:1;justify-self:start}
+  .dl-nome{grid-row:1;grid-column:1 / -1;padding-left:54px}
+  .dl-file{grid-template-columns:18px minmax(0,1fr);row-gap:0;padding:9px 12px}
+  .dl-file small{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){.dl-grande,.dl-file{transition:none}}
+</style>
+<script>
+/* Il download consigliato segue il dispositivo: Android -> APK, iPhone/iPad -> web-app, altrimenti Windows. */
+document.addEventListener("DOMContentLoaded", function () {
+  var ua = navigator.userAgent || "", b = document.querySelector("[data-dl-consigliato]");
+  if (!b) return;
+  var q = function (s) { return b.querySelector(s); };
+  if (/Android/i.test(ua)) {
+    q("[data-dl-perche]").textContent = "Consigliato per il tuo telefono";
+    q("[data-dl-principale]").href = "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk";
+    q("[data-dl-testo]").textContent = "Scarica per Android";
+    q("[data-dl-meta]").textContent = "65 MB · app .apk";
+    q("[data-dl-altro]").innerHTML = 'Per il computer: <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe">scarica per Windows</a> (288 MB)';
+  } else if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
+    q("[data-dl-perche]").textContent = "Su iPhone e iPad";
+    q("[data-dl-principale]").href = "iphone.html";
+    q("[data-dl-testo]").textContent = "Apri Leo nel browser";
+    q("[data-dl-meta]").textContent = "niente da installare";
+    q("[data-dl-altro]").innerHTML = 'Per il computer: <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe">scarica per Windows</a> (288 MB)';
+  } else if (!/Windows/i.test(ua)) {
+    q("[data-dl-perche]").textContent = "Leo per il PC è per Windows";
+  }
+});
+</script>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -96,96 +175,111 @@
 <!--/testata-->
 
 <main id="contenuto">
-<section class="n-hero">
-  <div class="contenitore">
-    <span class="n-occhiello"><span class="pallino"></span> Versione <b>0.1.3</b></span>
-    <h1 class="n-h1" style="font-size:clamp(34px,5.6vw,60px)">Scarica Leo</h1>
-    <p class="n-sotto" style="max-width:58ch">Ogni edizione è un prodotto a sé: prendi quella che ti serve, oppure <strong>Leo Suite</strong> e le hai tutte, interconnesse. Per Windows 10/11 e per Android 7.0 o successivo. Gratis e senza scadenza in questa versione.</p>
-  </div>
-</section>
-
-<section class="n-sez">
-  <div class="contenitore">
-    <h2 class="n-h2">La piattaforma completa</h2>
-    <p class="n-intro">Leo Suite contiene tutte le categorie e il tessuto che le interconnette. Se non sai da dove partire, parti da qui.</p>
-    <div class="n-dlgriglia" style="margin-top:28px">
-      <div class="n-dlrow" style="--cc:var(--c-suite)">
-        <div class="n-ed-ico" style="--cc:var(--c-suite)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
-        <div><h3>Leo Suite</h3><p>Tutte le edizioni, interconnesse · PC 288 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-0.1.3.apk">Android</a>
-        </div>
-      </div>
+<section class="dl-testa">
+  <div class="contenitore dl-testa-griglia">
+    <div>
+      <h1 class="n-h1" style="font-size:clamp(36px,5.6vw,62px)">Scarica Leo</h1>
+      <p class="n-sotto" style="max-width:46ch">Il linguaggio che parla italiano, per il PC e per il telefono. Gratis e senza scadenza in questa versione.</p>
+      <p class="dl-req">Windows 10 e 11 a 64 bit · Android 7.0 o successivo · su iPhone e iPad nel <a href="iphone.html">browser</a></p>
+    </div>
+    <div class="dl-consigliato" data-dl-consigliato>
+      <p class="dl-etichetta" data-dl-perche>Consigliato per il tuo computer</p>
+      <h2>Leo Suite <span>0.1.4</span></h2>
+      <p class="dl-cosa">Tutte e sette le edizioni in una. Se non sai quale scegliere, parti da qui.</p>
+      <a class="dl-grande" data-dl-principale href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6.5 10.5 12 16l5.5-5.5M5 20h14"/></svg><span data-dl-testo>Scarica per Windows</span></a>
+      <p class="dl-meta" data-dl-meta>288 MB · installer .exe</p>
+      <p class="dl-altro" data-dl-altro>Ti serve sul telefono? <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk">Scarica per Android</a> (65 MB)</p>
     </div>
   </div>
 </section>
 
-<section class="n-banda">
-  <div class="contenitore n-sez">
-    <h2 class="n-h2">Le sei edizioni, ognuna col suo</h2>
-    <p class="n-intro">Stesso linguaggio, strumento su misura. Nelle edizioni mirate i contenuti delle altre categorie non vengono impacchettati: scarichi solo ciò che ti serve.</p>
-    <div class="n-dlgriglia" id="android">
-      <div class="n-dlrow" style="--cc:var(--c-web)">
-        <div class="n-ed-ico" style="--cc:var(--c-web)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
-        <div><h3>Leo Web</h3><p>Costruttore di siti · PC 285 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_Web_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-Web-0.1.3.apk">Android</a>
-        </div>
-      </div>
-      <div class="n-dlrow" style="--cc:var(--c-dati)">
-        <div class="n-ed-ico" style="--cc:var(--c-dati)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
-        <div><h3>Leo Dati</h3><p>Foglio a passi · PC 285 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_Dati_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-Dati-0.1.3.apk">Android</a>
-        </div>
-      </div>
-      <div class="n-dlrow" style="--cc:var(--c-giochi)">
-        <div class="n-ed-ico" style="--cc:var(--c-giochi)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h3M8.5 10.5v3M15 11h.01M18 13h.01"/></svg></div>
-        <div><h3>Leo Giochi</h3><p>Palco di gioco · PC 288 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_Giochi_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-Giochi-0.1.3.apk">Android</a>
-        </div>
-      </div>
-      <div class="n-dlrow" style="--cc:var(--c-sistema)">
-        <div class="n-ed-ico" style="--cc:var(--c-sistema)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <div><h3>Leo Sistema</h3><p>Laboratorio di agenti · PC 285 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_Sistema_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-Sistema-0.1.3.apk">Android</a>
-        </div>
-      </div>
-      <div class="n-dlrow" style="--cc:var(--c-sicurezza)">
-        <div class="n-ed-ico" style="--cc:var(--c-sicurezza)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></div>
-        <div><h3>Leo Sicurezza</h3><p>Banco del perito · PC 285 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_Sicurezza_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-Sicurezza-0.1.3.apk">Android</a>
-        </div>
-      </div>
-      <div class="n-dlrow" style="--cc:var(--c-robotica)">
-        <div class="n-ed-ico" style="--cc:var(--c-robotica)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3M9 13h.01M15 13h.01"/></svg></div>
-        <div><h3>Leo Robotica</h3><p>Plancia hardware · PC 285 MB · Android 65 MB</p></div>
-        <div class="n-dllink">
-          <a class="pc" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Setup_Leo_Robotica_0.1.3.exe">Windows</a>
-          <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.3/Leo-Robotica-0.1.3.apk">Android</a>
-        </div>
-      </div>
+<section class="n-sez dl-sez">
+  <div class="contenitore">
+    <div class="dl-titolo">
+      <h2 class="n-h2">Oppure scegli un'edizione</h2>
+      <p class="n-intro">Ogni edizione porta solo gli strumenti del suo mondo, con lo stesso linguaggio. Non sai quale ti serve? Guarda <a href="edizioni.html">cosa fa ogni edizione</a>, sul PC e sul telefono.</p>
     </div>
+    <ul class="dl-elenco">
+      <li class="dl-riga dl-consigliata" style="--cc:var(--c-suite)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></span>
+        <span class="dl-nome"><strong>Leo Suite</strong><span>Tutte le edizioni in una, collegate tra loro</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe" aria-label="Scarica Leo Suite per Windows, 288 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>288 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk" aria-label="Scarica Leo Suite per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+      <li class="dl-riga" style="--cc:var(--c-web)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>
+        <span class="dl-nome"><strong>Leo Web</strong><span>Siti costruiti a blocchi</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_Web_0.1.4.exe" aria-label="Scarica Leo Web per Windows, 285 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>285 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-Web-0.1.4.apk" aria-label="Scarica Leo Web per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+      <li class="dl-riga" style="--cc:var(--c-dati)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span>
+        <span class="dl-nome"><strong>Leo Dati</strong><span>Fogli di dati a passi, grafici e database</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_Dati_0.1.4.exe" aria-label="Scarica Leo Dati per Windows, 285 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>285 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-Dati-0.1.4.apk" aria-label="Scarica Leo Dati per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+      <li class="dl-riga" style="--cc:var(--c-giochi)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h3M8.5 10.5v3M15 11h.01M18 13h.01"/></svg></span>
+        <span class="dl-nome"><strong>Leo Giochi</strong><span>Giochi 2D con attori e scene</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_Giochi_0.1.4.exe" aria-label="Scarica Leo Giochi per Windows, 288 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>288 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-Giochi-0.1.4.apk" aria-label="Scarica Leo Giochi per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+      <li class="dl-riga" style="--cc:var(--c-sistema)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+        <span class="dl-nome"><strong>Leo Sistema</strong><span>Agenti che lavorano da soli sul computer</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_Sistema_0.1.4.exe" aria-label="Scarica Leo Sistema per Windows, 285 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>285 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-Sistema-0.1.4.apk" aria-label="Scarica Leo Sistema per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+      <li class="dl-riga" style="--cc:var(--c-sicurezza)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></span>
+        <span class="dl-nome"><strong>Leo Sicurezza</strong><span>Attrezzi per proteggere i tuoi sistemi</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_Sicurezza_0.1.4.exe" aria-label="Scarica Leo Sicurezza per Windows, 285 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>285 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-Sicurezza-0.1.4.apk" aria-label="Scarica Leo Sicurezza per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+      <li class="dl-riga" style="--cc:var(--c-robotica)">
+        <span class="dl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3M9 13h.01M15 13h.01"/></svg></span>
+        <span class="dl-nome"><strong>Leo Robotica</strong><span>Schede Pico ed ESP32 programmate in italiano</span></span>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_Robotica_0.1.4.exe" aria-label="Scarica Leo Robotica per Windows, 285 MB"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg><span>Windows</span><small>285 MB</small></a>
+        <a class="dl-file" href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-Robotica-0.1.4.apk" aria-label="Scarica Leo Robotica per Android, 65 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><span>Android</span><small>65 MB</small></a>
+      </li>
+    </ul>
   </div>
 </section>
 
-<section class="n-sez">
-  <div class="contenitore" style="max-width:760px">
+<section class="n-sez dl-sez dl-installa">
+  <div class="contenitore">
     <h2 class="n-h2">Come si installa</h2>
-    <div class="n-passi">
-      <div class="n-passo"><div><h4>Windows</h4><p>Apri il file <code>Setup_Leo_…_0.1.3.exe</code> e segui l'installazione. Al primo avvio alcune edizioni scaricano ciò che serve (per esempio i pacchetti dei giochi o il modello dell'IA di sistema).</p></div></div>
-      <div class="n-passo"><div><h4>Android</h4><p>Apri il file <code>Leo-…-0.1.3.apk</code> sul telefono e consenti l'installazione da questa fonte. Un solo APK va bene su tutti i telefoni Android 7.0 o successivi.</p></div></div>
+    <div class="dl-colonne">
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>Windows</h3>
+        <ol>
+          <li>Apri il file <code>Setup_Leo_…_0.1.4.exe</code> che hai scaricato.</li>
+          <li>Se compare «Windows ha protetto il PC», scegli <em>Ulteriori informazioni</em> e poi <em>Esegui comunque</em>: succede ai programmi nuovi, che Windows non conosce ancora.</li>
+          <li>Segui l'installazione. Al primo avvio alcune edizioni scaricano quello che serve, per esempio il modello dell'IA di Leo Sistema.</li>
+        </ol>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>Android</h3>
+        <ol>
+          <li>Apri il file <code>Leo-…-0.1.4.apk</code> dal telefono.</li>
+          <li>Se il telefono lo chiede, consenti l'installazione di app da questa fonte (il browser o la cartella Download).</li>
+          <li>Tocca <em>Installa</em>. Lo stesso file va bene su tutti i telefoni Android 7.0 o successivi.</li>
+        </ol>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPhone e iPad</h3>
+        <ol>
+          <li>Non serve installare niente: Leo funziona nel browser.</li>
+          <li>Apri la <a href="iphone.html">web-app di Leo</a> con Safari.</li>
+          <li>Con <em>Condividi → Aggiungi alla schermata Home</em> la ritrovi tra le app.</li>
+        </ol>
+      </div>
     </div>
-    <p class="n-nota" style="margin-top:22px">Gli installatori sono firmati con un certificato personale: Windows può chiedere una conferma in più la prima volta. I programmi che crei con Leo restano tuoi e funzionano anche senza Leo installato.</p>
+    <div class="dl-note">
+      <p><strong>Aggiornamenti.</strong> Leo controlla da solo se c'è una versione nuova e la installa solo dopo averne verificato l'integrità.</p>
+      <p><strong>I tuoi programmi restano tuoi</strong> e funzionano anche su computer dove Leo non è installato.</p>
+      <p><a href="novita.html">Cosa c'è di nuovo</a> · <a href="https://github.com/Leo-programmazione-ita/Leo/releases">Tutte le versioni</a></p>
+    </div>
   </div>
 </section>
 </main>
