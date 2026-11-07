@@ -131,7 +131,7 @@
 .m-briciole [aria-current] { color: var(--m-testo); }
 .m-sopra {
   display: flex; align-items: center; gap: 10px; margin: 0 0 16px;
-  font-size: 12.5px; font-weight: 700; letter-spacing: 0; color: var(--m-acc);
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0; color: var(--m-acc-vivo);
 }
 .m-sopra-n {
   display: inline-grid; place-items: center; min-width: 30px; height: 24px; padding: 0 6px; border-radius: 5px;
@@ -418,7 +418,7 @@ details.m-domanda summary:focus-visible { outline: 2px solid var(--m-acc); outli
 }
 .m-precsucc a:hover { border-color: rgba(var(--accento-rgb), .55); transform: translateY(-2px); background: #111116; box-shadow: 0 20px 44px -24px rgba(var(--accento-rgb), .45); }
 .m-succ { text-align: right; align-items: flex-end; }
-.m-ps-dir { font-size: 13px; letter-spacing: 0; color: var(--m-acc); font-weight: 700; }
+.m-ps-dir { font-size: 13px; letter-spacing: 0; color: var(--m-acc-vivo); font-weight: 700; }
 .m-ps-tit { font-size: 17px; font-weight: 650; line-height: 1.35; display: flex; gap: 10px; align-items: baseline; }
 .m-ps-tit .m-n { color: var(--m-testo-3); }
 @media (max-width: 560px) { .m-precsucc { grid-template-columns: 1fr; } .m-succ { text-align: left; align-items: flex-start; } }

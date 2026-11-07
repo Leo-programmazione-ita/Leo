@@ -32,9 +32,10 @@
 :root[data-tema="chiaro"] .dl-testa{background:radial-gradient(900px 380px at 85% 0%,color-mix(in srgb,var(--c-suite) 12%,transparent),transparent 70%),linear-gradient(180deg,var(--fondo-2),var(--fondo))}
 .dl-testa-griglia{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(28px,5vw,64px);align-items:center}
 .dl-req{margin:22px 0 0;font-size:14px;color:var(--testo-3);line-height:1.6}
+.dl-req-2{margin-top:6px}
 .dl-consigliato{background:var(--superficie);border:1px solid var(--bordo-forte);border-radius:var(--r-grande);padding:26px 26px 22px;
   box-shadow:0 30px 80px -40px color-mix(in srgb,var(--c-suite) 55%,transparent)}
-.dl-etichetta{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--c-suite)}
+.dl-etichetta{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--accento-vivo)}
 .dl-consigliato h2{margin:0;font-size:28px;letter-spacing:-.02em}
 .dl-consigliato h2 span{font-size:15px;font-weight:600;color:var(--testo-3);margin-left:6px;letter-spacing:0}
 .dl-cosa{margin:8px 0 20px;color:var(--testo-2);line-height:1.5}
@@ -70,9 +71,26 @@
 .dl-colonne h3 svg{width:19px;height:19px;color:var(--testo-2)}
 .dl-colonne ol{margin:0;padding-left:20px;color:var(--testo-2);line-height:1.55;font-size:15px}
 .dl-colonne li+li{margin-top:8px}
+.dl-android-scegli{margin:0 0 12px;color:var(--testo-2);font-size:14.5px;line-height:1.5}
+.dl-android-scegli a,.dl-colonne a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+#android{scroll-margin-top:calc(var(--altezza-testata) + 16px)}
 .dl-colonne code{font-size:13px}
 .dl-note{margin-top:26px;display:grid;gap:8px;color:var(--testo-2);font-size:14.5px;max-width:72ch}
 .dl-note p{margin:0}
+.dl-verifica{margin-top:26px;border:1px solid var(--bordo);border-radius:var(--r-grande);background:var(--superficie);max-width:100%}
+.dl-verifica summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--testo)}
+.dl-verifica summary:focus-visible{outline:2px solid var(--testo);outline-offset:2px;border-radius:var(--r-grande)}
+.dl-verifica-corpo{padding:0 18px 18px;color:var(--testo-2);font-size:14.5px;line-height:1.55}
+.dl-verifica-corpo p{margin:0 0 12px;max-width:72ch}
+.dl-verifica-corpo code.dl-cmd{display:inline-block;white-space:normal;word-break:break-all}
+.dl-hash{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.dl-hash th,.dl-hash td{text-align:left;vertical-align:top;padding:9px 8px;border-top:1px solid var(--bordo)}
+.dl-hash thead th{color:var(--testo-3);font-weight:600;border-top:0}
+.dl-hash tbody th{width:9.5em;color:var(--testo);font-weight:600}
+.dl-hash code{display:block;font-size:12px;line-height:1.45;word-break:break-all;overflow-wrap:anywhere;background:none;border:0;padding:0;color:var(--testo-2)}
+.dl-hash-file{display:block;font-size:12.5px;color:var(--testo-3);margin-bottom:2px;overflow-wrap:anywhere}
+@media (max-width:640px){.dl-hash thead{display:none}.dl-hash,.dl-hash tbody,.dl-hash tr,.dl-hash th,.dl-hash td{display:block;width:auto}
+  .dl-hash tr{border-top:1px solid var(--bordo);padding:8px 0}.dl-hash th,.dl-hash td{border:0;padding:4px 0}}
 
 /* --- vetrine delle edizioni --- */
 .vt-suite{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 40px;align-items:center;
@@ -117,7 +135,8 @@
 .vt-pc{background:color-mix(in srgb,var(--cc,var(--c-suite)) 64%,#000);border-color:transparent;color:#fff}
 .vt-pc svg,.vt-pc small{color:rgba(255,255,255,.85)}
 .vt-pc:hover{filter:brightness(1.1);color:#fff;border-color:transparent}
-.vt-suite .vt-pc{background:var(--c-suite)}
+.vt-suite .vt-pc{background:color-mix(in srgb,var(--c-suite) 78%,#000)}
+.vt-suite .vt-pc small,.vt-suite .vt-pc svg{color:#fff}
 .vt-btn:focus-visible,.vt-scopri:focus-visible{outline:2px solid var(--testo);outline-offset:2px}
 .vt-scopri{display:block;margin:14px 22px 20px;font-size:14px;font-weight:600;color:var(--testo-2);text-decoration:none}
 .vt-scopri:hover{color:var(--cc)}
@@ -148,15 +167,18 @@ document.addEventListener("DOMContentLoaded", function () {
     q("[data-dl-altro]").innerHTML = 'Per il computer: <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe">scarica per Windows</a> (288 MB)';
   } else if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
     q("[data-dl-perche]").textContent = "Su iPhone e iPad";
+    q("h2").innerHTML = "Leo nel browser";
+    q(".dl-cosa").textContent = "Su iPhone e iPad non c'è un'app da installare: Leo si prova nel browser.";
     q("[data-dl-principale]").href = "iphone.html";
     q("[data-dl-testo]").textContent = "Apri Leo nel browser";
-    q("[data-dl-meta]").textContent = "niente da installare";
+    q("[data-dl-meta]").textContent = "Prova il linguaggio nel browser: programmi di testo, niente finestre né edizioni";
     q("[data-dl-altro]").innerHTML = 'Per il computer: <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe">scarica per Windows</a> (288 MB)';
   } else if (!/Windows/i.test(ua)) {
     q("[data-dl-perche]").textContent = "Leo per il PC è per Windows";
   }
 });
 </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Leo","alternateName":"Leo Suite","applicationCategory":"DeveloperApplication","applicationSubCategory":"Linguaggio di programmazione","operatingSystem":"Windows 10, Windows 11 (64 bit), Android 7.0 o successivo","softwareVersion":"0.1.4","inLanguage":"it","url":"https://leoitalia.com/scarica.html","image":"https://leoitalia.com/img/og.png","description":"Leo è un linguaggio di programmazione con parole chiave italiane. Leo Studio (Windows) e l'app Leo (Android) in sei edizioni, più la Suite che le riunisce.","author":{"@type":"Person","name":"Rosario Zappalà"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"downloadUrl":["https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe","https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk"],"fileSize":"288 MB"}</script>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -235,12 +257,13 @@ document.addEventListener("DOMContentLoaded", function () {
     <div>
       <h1 class="n-h1" style="font-size:clamp(36px,5.6vw,62px)">Scarica Leo</h1>
       <p class="n-sotto" style="max-width:46ch">Il linguaggio che parla italiano, per il PC e per il telefono. Gratis e senza scadenza in questa versione.</p>
-      <p class="dl-req">Windows 10 e 11 a 64 bit · Android 7.0 o successivo · su iPhone e iPad nel <a href="iphone.html">browser</a></p>
+      <p class="dl-req">Windows 10 e 11 a 64 bit · Android 7.0 o successivo · su iPhone e iPad <a href="iphone.html">si prova nel browser</a></p>
+      <p class="dl-req dl-req-2">Nessun diritto di amministratore · si installa per utente · funziona offline</p>
     </div>
     <div class="dl-consigliato" data-dl-consigliato>
       <p class="dl-etichetta" data-dl-perche>Consigliato per il tuo computer</p>
       <h2>Leo Suite <span>0.1.4</span></h2>
-      <p class="dl-cosa">Tutte e sette le edizioni in una. Se non sai quale scegliere, parti da qui.</p>
+      <p class="dl-cosa">Tutte e sei le edizioni in una. Se non sai quale scegliere, parti da qui.</p>
       <a class="dl-grande" data-dl-principale href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6.5 10.5 12 16l5.5-5.5M5 20h14"/></svg><span data-dl-testo>Scarica per Windows</span></a>
       <p class="dl-meta" data-dl-meta>288 MB · installer .exe</p>
       <p class="dl-altro" data-dl-altro>Ti serve sul telefono? <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk">Scarica per Android</a> (65 MB)</p>
@@ -363,8 +386,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <li>Segui l'installazione. Al primo avvio alcune edizioni scaricano quello che serve, per esempio il modello dell'IA di Leo Sistema.</li>
         </ol>
       </div>
-      <div>
+      <div id="android">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>Android</h3>
+        <p class="dl-android-scegli">Ogni edizione ha la sua app: sette APK, uno per edizione più la Suite. <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk">Scarica Leo Suite per Android</a> (65 MB) o scegli l'edizione <a href="#suite">qui sopra</a>.</p>
         <ol>
           <li>Apri il file <code>Leo-…-0.1.4.apk</code> dal telefono.</li>
           <li>Se il telefono lo chiede, consenti l'installazione di app da questa fonte (il browser o la cartella Download).</li>
@@ -374,8 +398,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <div>
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>iPhone e iPad</h3>
         <ol>
-          <li>Non serve installare niente: Leo funziona nel browser.</li>
-          <li>Apri la <a href="iphone.html">web-app di Leo</a> con Safari.</li>
+          <li>Non c'è un'app da installare: <strong>prova il linguaggio nel browser</strong>. Ci sono i programmi di testo, niente finestre né edizioni.</li>
+          <li>Apri la <a href="iphone.html">pagina di prova di Leo</a> con Safari.</li>
           <li>Con <em>Condividi → Aggiungi alla schermata Home</em> la ritrovi tra le app.</li>
         </ol>
       </div>
@@ -385,6 +409,25 @@ document.addEventListener("DOMContentLoaded", function () {
       <p><strong>I tuoi programmi restano tuoi</strong> e funzionano anche su computer dove Leo non è installato.</p>
       <p><a href="novita.html">Cosa c'è di nuovo</a> · <a href="https://github.com/Leo-programmazione-ita/Leo/releases">Tutte le versioni</a></p>
     </div>
+    <details class="dl-verifica" id="verifica">
+      <summary>Verifica i file (SHA-256)</summary>
+      <div class="dl-verifica-corpo">
+        <p>Ogni file ha un'impronta SHA-256: se quella del file che hai scaricato è uguale a questa, il file è integro ed è proprio quello pubblicato. Su Windows la calcoli nel Prompt dei comandi con <code class="dl-cmd">certutil -hashfile Setup_Leo_0.1.4.exe SHA256</code>. Le stesse impronte sono nella <a href="https://github.com/Leo-programmazione-ita/Leo/releases/tag/v0.1.4">pagina della versione su GitHub</a>.</p>
+        <table class="dl-hash">
+          <thead><tr><th scope="col">Edizione</th><th scope="col">Windows (.exe)</th><th scope="col">Android (.apk)</th></tr></thead>
+          <tbody>
+<tr><th scope="row">Leo Suite</th><td><span class="dl-hash-file">Setup_Leo_0.1.4.exe</span><code>163ae0b8beb61fdf601c2477c61cf6751d6859a6e5f2564a167f51e900ad7154</code></td><td><span class="dl-hash-file">Leo-0.1.4.apk</span><code>372f8e2b4eb782596fb4feeafd259bf040c6e8ce680cd49b52575c1bc70d71c4</code></td></tr>
+<tr><th scope="row">Leo Web</th><td><span class="dl-hash-file">Setup_Leo_Web_0.1.4.exe</span><code>a0afcabd7e60078ef653099e7cc8f24941ff18ae1c5aaebd355b1403caba1d55</code></td><td><span class="dl-hash-file">Leo-Web-0.1.4.apk</span><code>691318fb2b50ed30608022991fe4b60ab9cd87fb62425672a6f6fef891439824</code></td></tr>
+<tr><th scope="row">Leo Dati</th><td><span class="dl-hash-file">Setup_Leo_Dati_0.1.4.exe</span><code>547d003a0b138d2af66d852150a5a7c5941318df68a28121f410b604b1e46fae</code></td><td><span class="dl-hash-file">Leo-Dati-0.1.4.apk</span><code>dcc9b8be9160b1afbc9ed6cc2849d04a9e83c8c760467f3e7eba53418352191b</code></td></tr>
+<tr><th scope="row">Leo Giochi</th><td><span class="dl-hash-file">Setup_Leo_Giochi_0.1.4.exe</span><code>33e5385d09880d1fb420dfd7e0630c7e673ca3d5560283c7b037a3d43046fc1e</code></td><td><span class="dl-hash-file">Leo-Giochi-0.1.4.apk</span><code>74c6dadd4afcdd157663734c8336bb5f66aa22bcc381fb2e3e65c95615824a81</code></td></tr>
+<tr><th scope="row">Leo Sistema</th><td><span class="dl-hash-file">Setup_Leo_Sistema_0.1.4.exe</span><code>b7aa23d82305f199183ac8748d2ae7791d426ea8c70eb68637bc13c31389a606</code></td><td><span class="dl-hash-file">Leo-Sistema-0.1.4.apk</span><code>2d6757acdee2b3ab7143b1348d71292277a7786fe7e538bed911ec56f74a4a36</code></td></tr>
+<tr><th scope="row">Leo Sicurezza</th><td><span class="dl-hash-file">Setup_Leo_Sicurezza_0.1.4.exe</span><code>39c13aa39b21b707389e571ec53221e8dcd0df1c73fa00ca695a2659c631968c</code></td><td><span class="dl-hash-file">Leo-Sicurezza-0.1.4.apk</span><code>5357d8eced092d6a2ceef45c0043bca7729cf2ce762b198181d2318c01f76cdd</code></td></tr>
+<tr><th scope="row">Leo Robotica</th><td><span class="dl-hash-file">Setup_Leo_Robotica_0.1.4.exe</span><code>f5c2249f3456690763085d9b1b09c2b5dc4e34c887b5497f32bdf3d54163f568</code></td><td><span class="dl-hash-file">Leo-Robotica-0.1.4.apk</span><code>8c34e5eb13b7811d2d44d9d057fc531b77283d2dd6e9ef7728a1e627ac37533a</code></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:12px">Dopo l'installazione Leo funziona anche senza internet. La rete serve solo per il controllo degli aggiornamenti (si può spegnere nelle impostazioni) e per i contenuti facoltativi del primo avvio: l'intelligenza artificiale locale di Leo Sistema e i pacchetti di personaggi di Leo Giochi (anche nella Suite).</p>
+      </div>
+    </details>
   </div>
 </section>
 </main>

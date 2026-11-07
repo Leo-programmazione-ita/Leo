@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Leo per iPhone</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
-<meta name="description" content="Leo, il linguaggio di programmazione in italiano, che gira sul tuo iPhone. Scrivi codice Leo ed eseguilo subito, anche offline.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Prova Leo, il linguaggio di programmazione in italiano, nel browser dell'iPhone: programmi di testo, da scrivere ed eseguire subito, anche offline.">
+<link rel="canonical" href="https://leoitalia.com/iphone.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Leo">
@@ -58,7 +59,7 @@
     font-family:inherit;font-size:13px;border-radius:9px;border:1px solid var(--bordo);
     background:var(--nero3);color:var(--testo);padding:8px 12px;white-space:nowrap;
   }
-  .barra select{min-width:150px}
+  .barra select{min-width:150px;font-size:16px}
   #esegui{background:var(--rosso);border-color:var(--rosso);color:#fff;font-weight:700;padding:8px 18px}
   #esegui:disabled{opacity:.5}
   #esegui:active{background:var(--rosso-scuro)}
@@ -67,7 +68,7 @@
   textarea#codice{
     flex:1;width:100%;min-height:120px;resize:none;border:1px solid var(--bordo);border-radius:12px;
     background:var(--nero2);color:var(--testo);padding:12px;
-    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:15px;line-height:1.5;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:16px;line-height:1.5;
     -webkit-text-size-adjust:100%;tab-size:2;
   }
   textarea#codice:focus{outline:none;border-color:var(--rosso)}
@@ -92,6 +93,10 @@
   .velo p{margin:0;color:var(--tenue);font-size:13px}
   .velo .tit{color:var(--testo);font-size:16px;font-weight:700}
   .nascosto{display:none !important}
+  .solo-lettori{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .piede-app{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;padding:0 12px 10px;font-size:12px;color:var(--tenue)}
+  .piede-app a{color:var(--testo);text-decoration:underline;text-underline-offset:2px}
+  .limiti{margin:0 12px 8px;font-size:12px;color:var(--tenue);text-align:center}
 
   .hint{font-size:11px;color:var(--tenue);padding:0 12px 8px;text-align:center}
   .hint b{color:var(--testo)}
@@ -117,6 +122,7 @@
     </div>
 
     <div class="editor-wrap">
+      <label class="solo-lettori" for="codice">Il tuo programma Leo</label>
       <textarea id="codice" spellcheck="false" autocapitalize="off" autocorrect="off" autocomplete="off">stampa("Ciao da Leo!")
 
 variabile nome = chiedi("Come ti chiami?")
@@ -135,6 +141,10 @@ fine</textarea>
       <div id="uscita"><span class="note">Premi ▶ Esegui per far girare il tuo programma Leo.</span></div>
     </div>
     <div class="hint">Per averlo come app: tocca <b>Condividi</b> → <b>Aggiungi alla schermata Home</b>.</div>
+    <p class="limiti">Qui provi il linguaggio: programmi di testo, niente finestre né edizioni. Per tutto il resto c'è Leo per Windows o per Android.</p>
+    <nav class="piede-app" aria-label="Sito di Leo">
+      <a href="index.html">leoitalia.com</a><a href="manuale/index.html">Manuale</a><a href="scarica.html">Scarica</a><a href="privacy.html">Privacy</a>
+    </nav>
   </main>
 
   <div class="velo" id="velo">

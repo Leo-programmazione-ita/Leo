@@ -511,10 +511,11 @@ pre.uscita::before { content: "Uscita"; display: block; margin-bottom: 6px; font
 .frase .fp.acceso { color: var(--accento-vivo); background-size: 100% 2px; }
 .cursore-scrittura::after { content: ""; display: inline-block; width: .55em; height: 1.1em; margin-left: 2px; vertical-align: text-bottom; background: var(--rosso); animation: lampeggio 1s steps(1) infinite; }
 @keyframes lampeggio { 50% { opacity: 0; } }
-.confronto { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 90px; }
+.confronto { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; margin-top: 90px; }
+.confronto > * { min-width: 0; }
 .confronto .finestra-codice { height: 100%; }
 .confronto .etichetta-confronto { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font: 700 13px/1 var(--car); letter-spacing: 0; color: var(--testo-3); }
-.confronto .leo .etichetta-confronto { color: var(--accento); }
+.confronto .leo .etichetta-confronto { color: var(--accento-vivo); }
 .errore-italiano pre { margin: 0; padding: 22px; font: 13.5px/1.65 var(--car-codice); color: #DADAE0; white-space: pre-wrap; background: #0B0B0D; }
 .errore-italiano .e-tipo { color: #FFB020; font-weight: 700; }
 .errore-italiano .e-num { color: #7A7A84; }
@@ -842,7 +843,7 @@ pre.uscita::before { content: "Uscita"; display: block; margin-bottom: 6px; font
 .pannello-download .spiegazione-arrivo { color: var(--testo-2); font-size: 15px; margin: 16px auto 0; max-width: 460px; }
 .requisiti { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .requisiti .scheda { padding: 22px; }
-.requisiti dt { font: 700 13px/1 var(--car); letter-spacing: 0; color: var(--accento); margin-bottom: 10px; }
+.requisiti dt { font: 700 13px/1 var(--car); letter-spacing: 0; color: var(--accento-vivo); margin-bottom: 10px; }
 .requisiti dd { margin: 0; font-size: 17px; }
 .passi-installa { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: installa; }
 .passi-installa li { counter-increment: installa; }
@@ -1156,7 +1157,7 @@ figure { margin: 0; }
 .oggetti-telefoni .telefono:last-child { transform: rotate(4deg) translateY(30px); }
 .oggetti-elenco { margin: 8px 0 0; display: grid; gap: 0; }
 .oggetti-elenco div { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 14px 0; border-top: 1px solid var(--bordo); }
-.oggetti-elenco dt { font: 700 13px/1.6 var(--car); letter-spacing: 0; color: var(--accento); }
+.oggetti-elenco dt { font: 700 13px/1.6 var(--car); letter-spacing: 0; color: var(--accento-vivo); }
 .oggetti-elenco dd { margin: 0; color: var(--testo-2); font-size: 16px; }
 @media (max-width: 900px) { .oggetti-griglia { grid-template-columns: 1fr; } .oggetti-telefoni { order: -1; margin-bottom: 40px; } }
 @media (max-width: 520px) { .oggetti-elenco div { grid-template-columns: 1fr; gap: 4px; } }

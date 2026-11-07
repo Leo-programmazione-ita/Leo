@@ -1,7 +1,7 @@
 /* Service worker di Leo per iPhone: fa funzionare l'app anche offline.
    Mette in cache il guscio dell'app + il pacchetto Leo, e — man mano che
    vengono scaricati — anche i file di Pyodide (il motore Python). */
-const CACHE = "leo-iphone-v1";
+const CACHE = "leo-iphone-v2";
 const CORE = [
   "iphone.html",
   "leo_web.zip",
@@ -28,19 +28,31 @@ self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
-  const cacheabile = url.origin === location.origin ||
-                     url.hostname.includes("jsdelivr") ||
-                     url.pathname.includes("pyodide");
-  e.respondWith(
-    caches.match(req).then((hit) => {
-      if (hit) return hit;
-      return fetch(req).then((resp) => {
-        if (resp && resp.ok && cacheabile) {
+  const motore = url.hostname.includes("jsdelivr") || url.pathname.includes("pyodide");
+  const guscio = url.origin === location.origin &&
+                 CORE.some((f) => url.pathname.endsWith("/" + f));
+  if (motore || guscio) {
+    // il guscio dell'app e il motore: prima dalla cache (funziona offline)
+    e.respondWith(
+      caches.match(req).then((hit) => hit || fetch(req).then((resp) => {
+        if (resp && resp.ok) {
           const copia = resp.clone();
           caches.open(CACHE).then((c) => c.put(req, copia)).catch(() => {});
         }
         return resp;
-      }).catch(() => caches.match("iphone.html"));
-    })
+      }).catch(() => caches.match("iphone.html")))
+    );
+    return;
+  }
+  if (url.origin !== location.origin) return;
+  // le altre pagine del sito: prima dalla rete (sempre aggiornate), la cache solo senza rete
+  e.respondWith(
+    fetch(req).then((resp) => {
+      if (resp && resp.ok) {
+        const copia = resp.clone();
+        caches.open(CACHE).then((c) => c.put(req, copia)).catch(() => {});
+      }
+      return resp;
+    }).catch(() => caches.match(req).then((hit) => hit || caches.match("iphone.html")))
   );
 });
