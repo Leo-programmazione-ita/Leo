@@ -103,7 +103,7 @@
     <div class="contenitore stretto">
       <p class="sopratitolo compari">Privacy</p>
       <h1 class="parole">Informativa sulla privacy</h1>
-      <p class="introduzione compari r2">Breve, perché c'è poco da dire: né il sito né Leo raccolgono dati personali.</p>
+      <p class="introduzione compari r2">Breve, perché c'è poco da dire: né il sito né Leo raccolgono dati personali. Qui sotto trovi anche i pochi servizi esterni che alcune pagine e Leo Studio usano, e perché.</p>
     </div>
   </section>
   <section class="contenitore stretto documento">
@@ -112,8 +112,9 @@
       <ul>
         <li>Il sito non ha moduli, account o iscrizioni: non ti chiede nome, email o altri dati.</li>
         <li>Non usa cookie, né tecnici né di profilazione, e nessuno strumento di statistica o di tracciamento.</li>
-        <li>Non carica caratteri, script o altri contenuti da siti esterni.</li>
+        <li>Quasi tutte le pagine sono servite solo dal sito. Alcune caricano qualcosa da servizi esterni: il motore Python della prova nel browser, i caratteri delle pagine «Pensare in codice», la grafica 3D di una pagina. L'elenco completo è al punto 3.</li>
         <li>Leo, Leo Studio e l'app Android non hanno account, non contengono pubblicità né strumenti di tracciamento e non inviano i tuoi programmi o i tuoi dati a nessuno.</li>
+        <li>Leo Studio, all'avvio, controlla al massimo una volta al giorno se c'è una versione nuova leggendo un piccolo file da questo sito; si può spegnere nelle impostazioni.</li>
         <li>L'app Android usa internet solo quando tu chiedi di scaricare le risorse extra della galleria, che arrivano da GitHub.</li>
       </ul>
     </div>
@@ -121,18 +122,34 @@
     <h2 id="titolare">1. Titolare</h2>
     <p>Il titolare del sito e di Leo è Rosario Zappalà, autore di Leo. Per qualunque domanda puoi scrivere a <a href="#" data-email>l'indirizzo di contatto</a>.</p>
 
-    <h2 id="navigazione">2. Dati tecnici di navigazione</h2>
-    <p>Come ogni sito, anche questo è ospitato su un server (hosting) che, per funzionare e per motivi di sicurezza, può registrare nei propri log tecnici dati come l'indirizzo IP, la data e l'ora della richiesta e il tipo di browser. Questi dati sono trattati dal fornitore dell'hosting secondo la sua informativa; il titolare non li usa per identificarti né per profilarti.</p>
+    <h2 id="dati-navigazione">2. Dati tecnici di navigazione</h2>
+    <p>Come ogni sito, anche questo è ospitato su un server: il sito è pubblicato con GitHub Pages (GitHub), che, per funzionare e per motivi di sicurezza, può registrare nei propri log tecnici dati come l'indirizzo IP, la data e l'ora della richiesta e il tipo di browser. Questi dati sono trattati dal fornitore dell'hosting secondo la sua informativa; il titolare non li usa per identificarti né per profilarti.</p>
     <p>Il tema scelto (nero e rosso, chiaro o come il sistema) e i video già visti restano solo nella memoria del tuo browser (<em>localStorage</em>): non arrivano a nessun server e li cancelli quando vuoi dalle impostazioni del browser.</p>
 
-    <h2 id="download">3. Download del programma</h2>
-    <p>Il pulsante «Scarica Leo» porta al programma di installazione, che può essere ospitato su un servizio esterno (per esempio le Releases di GitHub). Da quel momento vale l'informativa del servizio che ospita il file. Il download non richiede di lasciare dati personali.</p>
+    <h2 id="servizi-esterni">3. Servizi esterni e download</h2>
+    <p>Quando una pagina carica un file da un altro sito, il tuo browser si collega a quel sito, che vede i dati tecnici della richiesta (indirizzo IP, data e ora, tipo di browser) e li tratta secondo la propria informativa. Il sito di Leo non manda a questi servizi nessun altro dato e non usa i loro cookie. Ecco quali sono e dove:</p>
+    <div class="tabella-doc" tabindex="0" role="region" aria-label="Servizi esterni usati dal sito e da Leo"><table>
+      <thead><tr><th scope="col">Servizio</th><th scope="col">Che cosa carica</th><th scope="col">Dove o quando</th></tr></thead>
+      <tbody>
+        <tr><td>jsDelivr (<code>cdn.jsdelivr.net</code>)</td><td>Pyodide, il motore Python che fa girare Leo nel browser</td><td>Solo le pagine <a href="prova.html">Prova nel browser</a> e <a href="iphone.html">Leo per iPhone</a></td></tr>
+        <tr><td>Google Fonts (<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>)</td><td>I caratteri delle pagine interattive</td><td>Solo le pagine <a href="informatica/index.html">Pensare in codice</a> (cartella <code>informatica/</code>)</td></tr>
+        <tr><td>cdnjs di Cloudflare (<code>cdnjs.cloudflare.com</code>)</td><td>three.js, per la grafica 3D</td><td>Solo la pagina <a href="informatica/cpu.html">Dentro il computer</a></td></tr>
+        <tr><td>GitHub (<code>github.com</code>)</td><td>I programmi di installazione per Windows e le app per Android</td><td>Quando premi un pulsante di download nella pagina <a href="scarica.html">Scarica</a></td></tr>
+        <tr><td>Il sito di Leo (<code>leoitalia.com/aggiornamenti.json</code>)</td><td>Il numero dell'ultima versione</td><td>Leo Studio sul computer, all'avvio (vedi il punto 5)</td></tr>
+      </tbody>
+    </table></div>
+    <p>I download non richiedono di lasciare dati personali. Da quando premi il pulsante vale l'informativa di GitHub, che ospita i file.</p>
 
     <h2 id="licenze">4. Contatti, telefono e licenze</h2>
     <p>La chiave di licenza di Leo si richiede per telefono; la chiave viene poi consegnata via email. Se ci chiami o ci scrivi, il tuo numero o il tuo indirizzo email e il contenuto del messaggio sono usati solo per risponderti e, in caso di acquisto, per consegnarti la chiave di licenza e rispettare gli obblighi di legge (per esempio quelli fiscali). Non sono ceduti a nessuno e non sono usati per inviarti comunicazioni promozionali.</p>
 
     <h2 id="computer">5. Leo e Leo Studio sul computer</h2>
-    <p>Leo e Leo Studio non inviano statistiche d'uso, rapporti sugli arresti né i tuoi programmi: si collegano a internet solo quando lo chiede un programma che hai scritto tu (per esempio con le funzioni della libreria web). La chiave di licenza si controlla sul tuo computer, senza collegamenti.</p>
+    <p>Leo e Leo Studio non inviano statistiche d'uso, rapporti sugli arresti né i tuoi programmi. La chiave di licenza si controlla sul tuo computer, senza collegamenti. Leo si collega a internet solo in questi casi:</p>
+    <ul>
+      <li><strong>Controllo degli aggiornamenti.</strong> All'avvio, al massimo una volta al giorno, Leo Studio legge il file <code>https://leoitalia.com/aggiornamenti.json</code> per sapere se c'è una versione nuova. La richiesta dice solo la versione di Leo Studio che stai usando; come ogni richiesta, arriva con il tuo indirizzo IP al server che ospita il sito (GitHub Pages). Se c'è una versione nuova, Leo Studio scarica l'installatore della tua edizione da GitHub e lo installa solo dopo averne verificato l'impronta SHA-256. Si spegne in <em>Impostazioni → Avanzate → Controlla gli aggiornamenti</em>: spento, Leo Studio non si collega a internet per questo.</li>
+      <li><strong>Primo avvio di alcune edizioni.</strong> Leo Sistema e la Suite propongono di scaricare l'intelligenza artificiale locale (Ollama, da <code>ollama.com</code>); Leo Giochi e la Suite i pacchetti di personaggi e risorse (da GitHub). È facoltativo: se dici di no, Leo funziona lo stesso.</li>
+      <li><strong>Quando lo chiede un programma.</strong> Se un programma usa la rete (per esempio le funzioni della libreria web), Leo chiede prima il permesso a chi lo esegue: vedi <a href="riferimento/linguaggio/permessi.html">i permessi dei programmi</a>.</li>
+    </ul>
     <p><strong>La Galleria e gli elementi extra.</strong> La parte base della Galleria (personaggi, nemici, oggetti, sfondi, pulsanti, suoni, musiche, caratteri, icone…) è già dentro Leo e funziona senza Internet. La parte extra, segnata con l'icona di una nuvola, sta nei rilasci del repository GitHub <code>Leo-programmazione-ita/leo</code>: un elemento si scarica solo quando lo tocchi o lo usi e confermi la domanda «Scarico…?», che ne indica il peso; «Scarica tutto il pacchetto» li scarica uno per uno, sempre dopo la tua conferma. Prima del primo scaricamento Leo legge anche l'elenco aggiornato degli extra (un piccolo file nello stesso repository). Per questo solo scopo l'app Leo per Android ha il permesso «Internet»: Leo non lo usa per nient'altro e non invia dati tuoi; GitHub vede l'indirizzo IP come per qualunque download (vale l'informativa di GitHub). Ogni file è controllato con il peso e l'impronta SHA-256 dell'elenco: se non corrispondono viene scartato. Da quel momento l'elemento resta sul dispositivo e funziona senza Internet. Le app create con Leo non hanno il permesso «Internet»: contengono già i loro elementi.</p>
 
     <h2 id="telefono">6. L'app Leo per Android</h2>
@@ -147,7 +164,7 @@
     <h2 id="diritti">7. I tuoi diritti</h2>
     <p>In base al Regolamento (UE) 2016/679 (GDPR) puoi chiedere in ogni momento l'accesso, la rettifica o la cancellazione dei dati che ti riguardano, scrivendo all'indirizzo di contatto. Hai anche il diritto di proporre reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).</p>
 
-    <p class="aggiornato">Ultimo aggiornamento: ottobre 2026.</p>
+    <p class="aggiornato">Ultimo aggiornamento: novembre 2026.</p>
   </section>
 </main>
 

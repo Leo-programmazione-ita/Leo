@@ -23,7 +23,7 @@
 <script src="../config.js" defer></script>
 <script src="../js/sito.js?v=20261026" defer></script>
 <script src="../js/cerca.js" defer></script>
-<style></style>
+<style>.ling-esce{margin:10px 0 6px;font-size:13.5px;color:var(--testo-3)}.n-doc pre.ling-uscita{background:transparent;border-style:dashed;color:var(--testo-2)}:root[data-tema="chiaro"] .n-doc pre.ling-uscita{color:var(--testo)}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -101,90 +101,181 @@
   <div class="contenitore">
     <span class="n-occhiello"><span class="pallino"></span> Manuale · linguaggio</span>
     <h1 class="n-h1" style="font-size:clamp(32px,5vw,54px)">Il linguaggio Leo</h1>
-    <p class="n-sotto" style="max-width:62ch">La lingua è la stessa in ogni edizione: cambia solo lo strumento che hai davanti. Qui trovi le parole di Leo e come si mettono insieme. Si legge come una frase in italiano.</p>
+    <p class="n-sotto" style="max-width:62ch">La lingua è la stessa in ogni edizione: cambia solo lo strumento che hai davanti. Qui trovi le parole di Leo e come si mettono insieme, in una pagina. Ogni esempio è stato eseguito con Leo 0.1.4 e sotto c'è quello che stampa davvero.</p>
   </div>
 </section>
 
 <section class="n-sez">
   <div class="contenitore n-doc">
-    <h2>Scrivere e mostrare</h2>
-    <p>Un programma Leo è una sequenza di istruzioni, una per riga. Per far comparire qualcosa si usa <code>stampa</code>:</p>
-    <pre>stampa "Ciao, mondo"</pre>
+    <p>Vuoi tutto, con calma e con gli esercizi? C'è il <a href="../manuale/index.html">manuale completo</a> in 15 capitoli e il libro <a href="../libro/index.html">Pensare in codice</a>. Ogni funzione è descritta nel <a href="../riferimento/index.html">riferimento</a>. Gli esempi qui sotto puoi provarli subito <a href="../prova.html">nel browser</a>.</p>
 
-    <h2>Variabili e costanti</h2>
-    <p>Una <strong>variabile</strong> è un nome a cui dai un valore; una <strong>costante</strong> non cambia più.</p>
-    <pre>variabile nome = "Anna"
+    <h2 id="scrivere">Scrivere e mostrare</h2>
+    <p>Un programma Leo è una sequenza di istruzioni, una per riga. Per far comparire qualcosa si usa <code>stampa</code> (oppure <code>scrivi</code>, che fa lo stesso):</p>
+    <pre aria-label="Codice Leo">stampa(&quot;Ciao, mondo&quot;)</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Ciao, mondo</pre>
+
+    <h2 id="variabili">Variabili e costanti</h2>
+    <p>Una <strong>variabile</strong> è un nome a cui dai un valore; una <strong>costante</strong> non cambia più. Dentro un testo, tra parentesi graffe, metti il valore di una variabile.</p>
+    <pre aria-label="Codice Leo">variabile nome = &quot;Anna&quot;
 variabile età = 30
 costante PI = 3.14159
 
-stampa "Ciao " + nome</pre>
-    <p>I valori di base sono: testo (<code>"…"</code>), numeri interi e decimali, <code>vero</code>/<code>falso</code>, e <code>nulla</code>.</p>
+stampa(&quot;Ciao {nome}, hai {età} anni&quot;)
+età = età + 1
+stampa(&quot;L&#x27;anno prossimo: {età}&quot;)</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Ciao Anna, hai 30 anni
+L&#x27;anno prossimo: 31</pre>
+    <p>I valori di base sono: testo (<code>"…"</code>), numeri interi e decimali (con il punto: <code>3.14</code>), <code>vero</code>/<code>falso</code> e <code>nulla</code>.</p>
 
-    <h2>Decisioni</h2>
-    <p>Con <code>se … allora … altrimenti</code> il programma sceglie. I blocchi si aprono con la parola e si chiudono con <code>fine</code>.</p>
-    <pre>se età >= 18 allora
-    stampa "Maggiorenne"
+    <h2 id="liste">Liste e dizionari</h2>
+    <p>Una <strong>lista</strong> tiene più valori in fila, un <strong>dizionario</strong> dà un nome a ogni valore. Le posizioni partono da 0.</p>
+    <pre aria-label="Codice Leo">variabile spesa = [&quot;pane&quot;, &quot;latte&quot;]
+spesa.aggiungi(&quot;uova&quot;)
+stampa(spesa)
+stampa(lunghezza(spesa))
+stampa(spesa[0])
+
+variabile voti = {&quot;Anna&quot;: 8, &quot;Carlo&quot;: 7}
+voti[&quot;Bea&quot;] = 9
+per ogni nome, voto in voti fai
+    stampa(&quot;{nome}: {voto}&quot;)
+fine</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">[&quot;pane&quot;, &quot;latte&quot;, &quot;uova&quot;]
+3
+pane
+Anna: 8
+Carlo: 7
+Bea: 9</pre>
+
+    <h2 id="decisioni">Decisioni</h2>
+    <p>Con <code>se … allora</code>, <code>altrimenti se</code> e <code>altrimenti</code> il programma sceglie. Ogni blocco si chiude con <code>fine</code>.</p>
+    <pre aria-label="Codice Leo">variabile età = 16
+se età &gt;= 18 allora
+    stampa(&quot;Maggiorenne&quot;)
+altrimenti se età &gt;= 14 allora
+    stampa(&quot;Quasi&quot;)
 altrimenti
-    stampa "Minorenne"
+    stampa(&quot;Minorenne&quot;)
 fine</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Quasi</pre>
 
-    <h2>Ripetere</h2>
-    <p>Per ripetere ci sono <code>per ogni … in …</code>, <code>ripeti … volte</code> e <code>mentre …</code>.</p>
-    <pre>per ogni nome in ["Anna", "Beatrice", "Carlo"] fai
-    stampa "Ciao " + nome
+    <h2 id="ripetere">Ripetere</h2>
+    <p>Per ripetere ci sono <code>per ogni … in … fai</code>, <code>ripeti … volte</code> e <code>mentre … fai</code>.</p>
+    <pre aria-label="Codice Leo">per ogni nome in [&quot;Anna&quot;, &quot;Beatrice&quot;, &quot;Carlo&quot;] fai
+    stampa(&quot;Ciao &quot; + nome)
 fine
 
-ripeti 3 volte fai
-    stampa "squillo"
+ripeti 3 volte
+    stampa(&quot;squillo&quot;)
 fine
 
-variabile n = 5
-mentre n > 0 fai
-    stampa n
-    diminuisci n
+variabile n = 3
+mentre n &gt; 0 fai
+    stampa(n)
+    n = n - 1
 fine</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Ciao Anna
+Ciao Beatrice
+Ciao Carlo
+squillo
+squillo
+squillo
+3
+2
+1</pre>
 
-    <h2>Funzioni</h2>
-    <p>Una <strong>funzione</strong> è un blocco di istruzioni con un nome, che puoi richiamare. Può restituire un valore.</p>
-    <pre>funzione saluta(nome) fai
-    restituisci "Ciao " + nome + "!"
+    <h2 id="funzioni">Funzioni</h2>
+    <p>Una <strong>funzione</strong> è un blocco di istruzioni con un nome, che puoi richiamare. Può avere valori predefiniti e restituire un risultato con <code>restituisci</code>.</p>
+    <pre aria-label="Codice Leo">funzione saluta(nome, saluto = &quot;Ciao&quot;)
+    restituisci &quot;{saluto} {nome}!&quot;
 fine
 
-stampa saluta("Anna")</pre>
+stampa(saluta(&quot;Anna&quot;))
+stampa(saluta(&quot;Marco&quot;, &quot;Buongiorno&quot;))</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Ciao Anna!
+Buongiorno Marco!</pre>
 
-    <h2>Classi</h2>
-    <p>Una <strong>classe</strong> raccoglie dati e comportamenti. Con i metodi definisci cosa sa fare.</p>
-    <pre>classe Cane fai
-    funzione crea(nome) fai
-        self.nome = nome
+    <h2 id="classi">Classi e oggetti</h2>
+    <p>Una <strong>classe</strong> è uno stampo: con <code>ha</code> dici quali dati ha ogni oggetto, con <code>azione</code> che cosa sa fare. Dentro un'azione l'oggetto stesso si chiama <code>questo</code>. Per creare un oggetto si chiama la classe con i valori dei campi, nell'ordine in cui sono scritti (oppure <code>nuovo Cane("Fido", 3)</code>).</p>
+    <pre aria-label="Codice Leo">classe Cane
+    ha nome
+    ha età = 0
+    azione abbaia()
+        stampa(&quot;{questo.nome} dice: bau!&quot;)
     fine
-    funzione abbaia() fai
-        stampa self.nome + " dice: bau!"
+    azione compleanno()
+        questo.età = questo.età + 1
     fine
 fine
 
-variabile fido = Cane("Fido")
-fido.abbaia()</pre>
+variabile fido = Cane(&quot;Fido&quot;, 3)
+fido.abbaia()
+fido.compleanno()
+stampa(&quot;Ora Fido ha {fido.età} anni&quot;)</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Fido dice: bau!
+Ora Fido ha 4 anni</pre>
+    <p>Con <code>estende</code> una classe eredita da un'altra e può cambiare le sue azioni; <code>dà testo</code> dice che tipo di valore restituisce l'azione.</p>
+    <pre aria-label="Codice Leo">classe Animale
+    ha nome
+    azione verso() dà testo
+        restituisci &quot;...&quot;
+    fine
+    azione presentati()
+        stampa(&quot;{questo.nome} fa {questo.verso()}&quot;)
+    fine
+fine
 
-    <h2>Errori e prove</h2>
-    <p>Con <code>prova … cattura … infine</code> gestisci gli imprevisti senza fermare tutto.</p>
-    <pre>prova
+classe Gatto estende Animale
+    azione verso() dà testo
+        restituisci &quot;miao&quot;
+    fine
+fine
+
+Gatto(&quot;Romeo&quot;).presentati()</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Romeo fa miao</pre>
+
+    <h2 id="errori">Errori e prove</h2>
+    <p>Con <code>prova … cattura … infine … fine</code> gestisci gli imprevisti senza fermare tutto. Dopo <code>cattura</code> scrivi il tipo di errore e, con <code>come</code>, il nome con cui lo usi.</p>
+    <pre aria-label="Codice Leo">prova
     variabile x = 10 / 0
-cattura errore
-    stampa "Qualcosa è andato storto: " + errore
+cattura ErroreDivisione come e
+    stampa(&quot;Qualcosa è andato storto: {e.messaggio}&quot;)
 infine
-    stampa "Ho finito comunque"
+    stampa(&quot;Ho finito comunque&quot;)
 fine</pre>
-    <p>I messaggi d'errore di Leo sono in italiano e dicono dove, perché e come correggere.</p>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">Qualcosa è andato storto: Divisione per zero.
+Ho finito comunque</pre>
+    <p>I messaggi d'errore di Leo sono in italiano e dicono dove, perché e come correggere. Con <code>leo programma.leo --semplice</code> diventano ancora più brevi, con un esempio corretto.</p>
 
-    <h2>Moduli</h2>
-    <p>Con <code>importa … come …</code> usi ciò che un altro file o modulo mette a disposizione. È anche il modo in cui la piattaforma collega le edizioni fra loro.</p>
-    <pre>importa "contabilità.leo" come conti
-stampa conti.totale()</pre>
+    <h2 id="moduli">Moduli</h2>
+    <p>Con <code>importa … come …</code> usi ciò che un altro file mette a disposizione. Qui il file <code>conti.leo</code> sta nella stessa cartella del programma:</p>
+    <pre aria-label="Il file conti.leo">funzione totale(voci)
+    variabile somma = 0
+    per ogni v in voci fai
+        somma = somma + v
+    fine
+    restituisci somma
+fine</pre>
+    <pre aria-label="Il programma principale">importa conti come c
+stampa(c.totale([12, 30, 8]))</pre>
+    <p class="ling-esce">Stampa:</p>
+    <pre class="ling-uscita" aria-label="Risultato">50</pre>
+    <p>Con lo stesso <code>importa</code> si usano anche i gruppi della libreria (<code>importa matematica come m</code>). Una libreria Python (<code>importa python "requests" come rete</code>) può fare qualunque cosa sul computer: per questo Leo chiede un permesso esplicito, vedi <a href="../riferimento/linguaggio/permessi.html">i permessi</a>.</p>
 
     <div class="n-indice" style="margin-top:44px">
+      <a href="../manuale/index.html" style="--cc:var(--c-suite)"><strong>Il manuale completo</strong><span>15 capitoli: dall'installazione al file .exe, con oltre cento esempi.</span></a>
+      <a href="../libro/index.html" style="--cc:var(--c-suite)"><strong>Il libro Pensare in codice</strong><span>Venti capitoli per imparare da zero, con esercizi.</span></a>
       <a href="piattaforma.html" style="--cc:var(--c-suite)"><strong>La piattaforma Suite</strong><span>Come i moduli diventano interconnessione tra edizioni.</span></a>
-      <a href="index.html" style="--cc:var(--c-web)"><strong>Tutte le guide</strong><span>Torna all'indice dei manuali.</span></a>
+      <a href="index.html" style="--cc:var(--c-web)"><strong>Tutte le guide</strong><span>Torna all'indice delle guide delle edizioni.</span></a>
     </div>
   </div>
 </section>

@@ -505,6 +505,8 @@ details.m-domanda summary:focus-visible { outline: 2px solid var(--m-acc); outli
   border-radius: 999px; padding: 7px 12px; cursor: pointer; transition: border-color .2s, color .2s, background-color .2s;
 }
 .m-cerca-prove button:hover { border-color: var(--m-acc); color: var(--m-acc-vivo); background: var(--accento-tenue); }
+.m-altre-guide a { color: var(--m-testo-2); text-decoration: underline; text-underline-offset: 3px; }
+.m-altre-guide a:hover { color: var(--m-acc-vivo); }
 
 .m-blocco { padding: clamp(48px, 6vw, 88px) 0; }
 .m-blocco + .m-blocco { border-top: 1px solid var(--m-bordo); }

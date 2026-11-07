@@ -361,6 +361,12 @@ pre.uscita::before { content: "Uscita"; display: block; margin-bottom: 6px; font
 .documento ul, .documento ol { padding-left: 1.3em; }
 .documento li { margin: .35em 0; }
 .documento li::marker { color: var(--accento); }
+.documento .tabella-doc { overflow-x: auto; margin: 1em 0 1.2em; border: 1px solid var(--bordo); border-radius: var(--r); }
+.documento .tabella-doc:focus-visible { outline: 2px solid var(--accento-vivo); outline-offset: 2px; }
+.documento table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 560px; }
+.documento th, .documento td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--bordo); color: var(--testo); }
+.documento thead th { border-top: 0; color: var(--testo-2); font-weight: 600; background: var(--superficie-2); }
+.documento td code { font-size: 12.5px; overflow-wrap: anywhere; }
 .riquadro-breve { border: 1px solid var(--accento-linea); background: var(--accento-tenue); border-radius: 16px; padding: 22px 26px; }
 .riquadro-breve h2 { margin-top: 0; font-size: 19px; }
 .riquadro-breve h2::before { display: none; }
