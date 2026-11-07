@@ -275,3 +275,6 @@ pre.r-testo { font: 13.5px/1.6 var(--car-codice); background: var(--superficie);
   .r-lato, .r-toc, .r-barra-mobile, .testata, .piede { display: none !important; }
   .r-guscio, .r-guscio.con-toc { display: block; }
 }
+
+/* Nomi lunghi nel testo (es. a/b/c): vanno a capo invece di allargare la pagina sul telefono */
+.r-corpo p code, .r-corpo li code, .r-corpo td code { overflow-wrap: anywhere; }
