@@ -76,6 +76,8 @@ def aggiorna(da: str, a: str, dati: dict[str, dict]) -> list[str]:
         n = n.replace(f"Versione {da}", f"Versione {a}").replace(f"<span>{da}</span>", f"<span>{a}</span>")
         n = n.replace(f"Setup_Leo_{da}.exe", f"Setup_Leo_{a}.exe").replace(f"/tag/v{da}", f"/tag/v{a}")
         n = n.replace(f"Versione {da},", f"Versione {a},")
+        n = n.replace(f'"softwareVersion":"{da}"', f'"softwareVersion":"{a}"')
+        n = re.sub(r'("fileSize":")\d+( MB")', lambda m: m.group(1) + str(mb(dati[f"Setup_Leo_{a}.exe"]["dimensione"])) + m.group(2), n)
 
         # pesi dentro ogni collegamento a un file della release
         def peso(m: re.Match) -> str:
@@ -110,7 +112,7 @@ def controlla(da: str, a: str, dati: dict[str, dict]) -> list[str]:
         if p.name == "novita.html" or ".git" in p.parts:
             continue
         t = p.read_text(encoding="utf-8")
-        if f"v{da}/" in t or f"_{da}.exe" in t or f"-{da}.apk" in t:
+        if f"v{da}/" in t or f"_{da}.exe" in t or f"-{da}.apk" in t or f'"softwareVersion":"{da}"' in t:
             problemi.append(f"{p.relative_to(RADICE)}: restano riferimenti a {da}")
     s = (RADICE / "scarica.html").read_text(encoding="utf-8")
     for nome, info in dati.items():

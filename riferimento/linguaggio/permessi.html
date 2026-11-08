@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Permessi dei programmi — Riferimento di Leo</title>
-<meta name="description" content="Che cosa un programma Leo può fare fuori dalla sua cartella: le sei categorie, la riga permessi:, l&#x27;approvazione, --permetti e leo permessi.">
+<meta name="description" content="Che cosa un programma Leo può fare fuori dalla sua cartella: le sette categorie, la riga permessi:, l&#x27;approvazione, --permetti e leo permessi.">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/riferimento/linguaggio/permessi.html">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Leo">
 <meta property="og:url" content="https://leoitalia.com/riferimento/linguaggio/permessi.html">
 <meta property="og:title" content="Permessi dei programmi — Riferimento di Leo">
-<meta property="og:description" content="Che cosa un programma Leo può fare fuori dalla sua cartella: le sei categorie, la riga permessi:, l&#x27;approvazione, --permetti e leo permessi.">
+<meta property="og:description" content="Che cosa un programma Leo può fare fuori dalla sua cartella: le sette categorie, la riga permessi:, l&#x27;approvazione, --permetti e leo permessi.">
 <meta property="og:image" content="https://leoitalia.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -125,7 +125,7 @@
     <header class="r-testa">
       <p class="r-tipo"><svg class="r-tipo-icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6 3 12l5 6M16 6l5 6-5 6M13.5 4l-3 16"/></svg>Programmi robusti</p>
       <h1>Permessi dei programmi</h1>
-      <p class="r-sommario">Che cosa un programma Leo può fare fuori dalla sua cartella: le sei categorie, la riga permessi:, l&#x27;approvazione, --permetti e leo permessi.</p>
+      <p class="r-sommario">Che cosa un programma Leo può fare fuori dalla sua cartella: le sette categorie, la riga permessi:, l&#x27;approvazione, --permetti e leo permessi.</p>
       <ul class="r-meta"><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Esempi e messaggi provati con Leo</li></ul>
     </header>
     <div class="r-corpo">
@@ -134,7 +134,7 @@
 <p>Un programma Leo, come un'app del telefono, <strong>dichiara che cosa gli serve</strong> fuori dalla sua cartella: Internet, file altrove, impostazioni del computer, altri programmi, appunti, fotocamera. Chi lo esegue lo vede <strong>prima</strong> e decide; la scelta si ricorda. Se il programma prova a fare di più, Leo lo ferma con un messaggio chiaro.</p>
 <p>Le funzioni che calcolano soltanto (matematica, testi, liste, date, la tartaruga, le finestre del programma stesso) non hanno bisogno di niente.</p>
 
-<h2 id="categorie">Le sei categorie<a class="m-ancora" href="#categorie" aria-label="Collegamento a questa parte">#</a></h2>
+<h2 id="categorie">Le sette categorie<a class="m-ancora" href="#categorie" aria-label="Collegamento a questa parte">#</a></h2>
 <div class="m-tabella" tabindex="0" role="region" aria-label="Le categorie dei permessi"><table><thead><tr><th scope="col">Categoria</th><th scope="col">Che cosa protegge</th><th scope="col">Esempi</th></tr></thead><tbody>
 <tr><td><code>file</code></td><td>file e cartelle <strong>fuori</strong> dalla cartella del programma</td><td><code>leggi_file</code>, <code>scrivi_file</code>, <code>copia_file</code>, <code>elimina_cartella</code>, <code>estrai_zip</code>, <code>apri_database</code></td></tr>
 <tr><td><code>rete</code></td><td>Internet e altri computer</td><td><code>scarica_json</code>, <code>scarica_testo</code>, <code>richiesta_web</code>, <code>invia_email</code>, il controllo <code>RichiestaWeb</code></td></tr>
@@ -142,11 +142,12 @@
 <tr><td><code>processi</code></td><td>avviare, elencare o chiudere altri programmi, eseguire comandi</td><td><code>esegui_comando</code>, <code>esegui_powershell</code>, <code>avvia_programma</code>, <code>termina_processo</code></td></tr>
 <tr><td><code>appunti</code></td><td>copia e incolla</td><td><code>leggi_appunti</code>, <code>scrivi_appunti</code>, il controllo <code>Appunti</code></td></tr>
 <tr><td><code>hardware</code></td><td>fotocamera, microfono, posizione, torcia, porte seriali, schede collegate</td><td>i controlli <code>Fotocamera</code>, <code>LettoreQR</code>, <code>Dettatura</code>, <code>Posizione</code>, <code>PortaSeriale</code>, <code>SchedaPico</code></td></tr>
+<tr><td><code>codice</code></td><td>codice esterno fuori dai controlli di Leo (dalla 0.1.5)</td><td><code>importa python "…"</code>, <code>importa c "…"</code></td></tr>
 </tbody></table></div>
 
 <h2 id="dichiarare">La riga permessi:<a class="m-ancora" href="#dichiarare" aria-label="Collegamento a questa parte">#</a></h2>
 <p>La riga <code>permessi:</code> va <strong>in cima</strong> al programma, prima del codice (prima ci possono essere solo commenti). Ogni voce è <code>categoria valore</code>, separate da virgole.</p>
-<figure class="m-codice m-semplice"><div class="m-codice-barra"><span class="m-file">meteo.leo</span></div><pre class="m-pre" tabindex="0"><code>permessi: rete &quot;api.meteo.it&quot;, file &quot;dati/&quot;, sistema no, processi no, appunti no, hardware no
+<figure class="m-codice m-semplice"><div class="m-codice-barra"><span class="m-file">meteo.leo</span></div><pre class="m-pre" tabindex="0"><code>permessi: rete &quot;api.meteo.it&quot;, file &quot;dati/&quot;, sistema no, processi no, appunti no, hardware no, codice no
 
 stampa(&quot;Il programma parte&quot;)</code></pre></figure>
 <div class="m-tabella" tabindex="0" role="region" aria-label="I valori dei permessi"><table><thead><tr><th scope="col">Valore</th><th scope="col">Significato</th></tr></thead><tbody>
@@ -192,7 +193,7 @@ leo programma.leo --permetti rete,file   # queste categorie senza chiedere
 leo programma.leo --permetti-tutto       # tutto: solo per programmi di cui ti fidi</code></pre></figure>
 <p>Anche <code>leo spiega programma.leo</code> mostra i permessi prima di eseguire. Esempio di <code>leo permessi</code> dopo l'approvazione:</p>
 <figure class="m-codice m-semplice"><div class="m-codice-barra"><span class="m-file">Terminale</span></div><pre class="m-pre" tabindex="0"><code>Permessi:
-- Dichiarati (programma): file &quot;dati/&quot;, rete &quot;api.meteo.it&quot;, sistema no, processi no, appunti no, hardware no
+- Dichiarati (programma): file &quot;dati/&quot;, rete &quot;api.meteo.it&quot;, sistema no, processi no, appunti no, hardware no, codice no
 - Approvati: sì (la scelta è ricordata).
 - Usa: niente di protetto (solo la sua cartella e calcoli).</code></pre></figure>
 <p>Le scelte ricordate stanno nel file <code>permessi.json</code> nella cartella delle impostazioni di Leo (<code>%APPDATA%\Leo</code> su Windows).</p>
@@ -215,7 +216,7 @@ fine</code></pre></figure>
 <nav class="m-precsucc" aria-label="Pagine vicine"><a class="m-prec" href="moduli.html" rel="prev"><span class="m-ps-dir">Precedente</span><span class="m-ps-tit">Moduli</span></a><a class="m-succ" href="ingresso-uscita.html" rel="next"><span class="m-ps-dir">Successiva</span><span class="m-ps-tit">Scrivere e chiedere</span></a></nav>
     </div>
   </article>
-  <aside class="r-toc" aria-label="In questa pagina"><p class="r-toc-titolo">In questa pagina</p><ol><li><a href="#in-breve" data-toc="in-breve">In breve</a></li><li><a href="#categorie" data-toc="categorie">Le sei categorie</a></li><li><a href="#dichiarare" data-toc="dichiarare">La riga permessi:</a></li><li><a href="#predefiniti" data-toc="predefiniti">Senza dichiarazione</a></li><li><a href="#approvare" data-toc="approvare">Chi esegue approva</a></li><li><a href="#riga-di-comando" data-toc="riga-di-comando">Dalla riga di comando</a></li><li><a href="#negato" data-toc="negato">Quando un permesso è negato</a></li><li><a href="#python-c" data-toc="python-c">Codice Python e C</a></li></ol></aside>
+  <aside class="r-toc" aria-label="In questa pagina"><p class="r-toc-titolo">In questa pagina</p><ol><li><a href="#in-breve" data-toc="in-breve">In breve</a></li><li><a href="#categorie" data-toc="categorie">Le sette categorie</a></li><li><a href="#dichiarare" data-toc="dichiarare">La riga permessi:</a></li><li><a href="#predefiniti" data-toc="predefiniti">Senza dichiarazione</a></li><li><a href="#approvare" data-toc="approvare">Chi esegue approva</a></li><li><a href="#riga-di-comando" data-toc="riga-di-comando">Dalla riga di comando</a></li><li><a href="#negato" data-toc="negato">Quando un permesso è negato</a></li><li><a href="#python-c" data-toc="python-c">Codice Python e C</a></li></ol></aside>
 </main>
 <!--#piede-->
 <footer class="piede">
