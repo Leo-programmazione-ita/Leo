@@ -11,16 +11,16 @@ window.LEO_CONFIG = {
      Indirizzo del programma di installazione (per esempio il link di GitHub
      Releases, Google Drive, Dropbox o del tuo sito).
      ""  -> i pulsanti "Scarica Leo" mostrano "Link in arrivo" e non portano altrove. */
-  urlDownload: "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Setup_Leo_0.1.4.exe",
+  urlDownload: "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.5/Setup_Leo_0.1.5.exe",
 
   /* Versione e dimensione mostrate sotto il pulsante ("" = non mostrarle). */
-  versione: "0.1.4",
-  dimensione: "288 MB",
+  versione: "0.1.5",
+  dimensione: "287 MB",
 
   /* App Leo per Android: indirizzo dell'APK (o della pagina del Play Store).
      ""  -> il pulsante "Scarica l'app" mostra "Link in arrivo".                 */
-  urlDownloadAndroid: "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.4/Leo-0.1.4.apk",
-  versioneAndroid: "0.1.4",
+  urlDownloadAndroid: "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.5/Leo-0.1.5.apk",
+  versioneAndroid: "0.1.5",
 
   /* --- Indirizzo del sito pubblicato ------------------------------------------
      Serve quando il sito si apre dal disco o dentro l'app: senza i video sul
