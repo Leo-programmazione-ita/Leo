@@ -1,0 +1,60 @@
+.q-home { padding-bottom: 72px; }
+.qh-apertura { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center; padding-top: 72px; padding-bottom: 96px; }
+.qh-testo h1 { font-size: clamp(44px, 5.6vw, 70px); line-height: .98; font-weight: 800; letter-spacing: -.035em; margin: 0 0 24px; color: var(--testo); }
+.qh-sotto { font-size: 20px; line-height: 1.5; color: var(--testo-2); max-width: 30em; margin: 0 0 32px; }
+.qh-azioni { display: flex; flex-wrap: wrap; gap: 12px; }
+.qh-nota { margin: 18px 0 0; font-size: 15px; color: var(--testo-3); }
+
+.qh-pagina { position: relative; margin: 0; padding: 48px 0 72px; }
+.qh-pagina .q-foglio { transform: rotate(-.6deg); }
+.qh-glossa { position: absolute; margin: 0; font-size: 25px; line-height: 1.05; transform: rotate(-3deg); }
+.qh-g1 { top: 0; right: 0; }
+.qh-g2 { bottom: 0; right: 0; text-align: right; transform: rotate(-2deg); }
+.qh-freccia { position: absolute; z-index: 2; fill: none; stroke: var(--inchiostro); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.qh-f1 { top: 42px; right: 12%; width: 90px; height: 130px; }
+.qh-f2 { bottom: 30px; left: 70px; width: 220px; height: 70px; }
+.js .qh-freccia path { stroke-dasharray: 260; stroke-dashoffset: 260; animation: qh-traccia .7s .5s var(--curva) forwards; }
+.js .qh-f2 path { animation-delay: .9s; }
+.js .qh-glossa { opacity: 0; animation: qh-compari .4s .35s forwards; }
+.js .qh-g2 { animation-delay: .75s; }
+@keyframes qh-traccia { to { stroke-dashoffset: 0; } }
+@keyframes qh-compari { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .js .qh-freccia path, .js .qh-glossa { animation: none; opacity: 1; stroke-dashoffset: 0; } }
+
+.qh-indice, .qh-via { padding-top: 56px; padding-bottom: 40px; border-top: 2px solid var(--testo); }
+.qh-indice h2, .qh-via h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 800; margin: 0 0 10px; }
+.qh-intro { font-size: 18px; color: var(--testo-2); margin: 0 0 28px; max-width: 34em; }
+.qh-voci { list-style: none; margin: 0; padding: 0; }
+.qh-voci li { border-bottom: 1px solid var(--bordo-forte); }
+.qh-voci a { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(0, 330px); gap: 24px; align-items: baseline; padding: 20px 0; text-decoration: none; color: var(--testo); }
+.v-nome { font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
+.v-cosa { font-size: 17px; color: var(--testo-2); }
+.qh-voci code.v-riga { border: 0; border-radius: 0;
+ font: 14px/1.4 var(--car-codice); color: var(--testo-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: none; padding: 0; }
+.qh-voci a:hover .v-nome { color: var(--accento); }
+.qh-voci a:hover .v-riga { color: var(--inchiostro); }
+.qh-voci a:focus-visible { outline: 3px solid var(--inchiostro); outline-offset: 2px; }
+.qh-suite { margin: 28px 0 0; font-size: 18px; line-height: 1.55; color: var(--testo-2); max-width: 46em; }
+.qh-suite strong { color: var(--testo); }
+.qh-suite a, .qh-indice a.link { color: var(--accento); font-weight: 600; }
+
+.qh-strade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 24px; border: 2px solid var(--testo); background: var(--superficie); }
+.qh-strade a { display: block; padding: 24px; text-decoration: none; color: var(--testo-2); font-size: 16px; line-height: 1.45; }
+.qh-strade a + a { border-left: 2px solid var(--testo); }
+.qh-strade strong { display: block; font-size: 21px; color: var(--testo); margin-bottom: 6px; }
+.qh-strade a:hover strong { color: var(--accento); }
+.qh-strade a:focus-visible { outline: 3px solid var(--inchiostro); outline-offset: -5px; }
+
+@media (max-width: 900px) {
+  .qh-apertura { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; padding-bottom: 56px; }
+  .qh-voci a { grid-template-columns: 1fr; gap: 4px; }
+  .qh-strade { grid-template-columns: 1fr; }
+  .qh-strade a + a { border-left: 0; border-top: 2px solid var(--testo); }
+}
+@media (max-width: 520px) {
+  .qh-glossa { font-size: 21px; }
+  .qh-f1, .qh-f2 { display: none; }
+  .q-foglio { padding-left: 46px; }
+  .q-foglio::before { left: 32px; }
+  .q-foglio pre { font-size: 13px; }
+}
