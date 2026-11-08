@@ -1,42 +1,48 @@
 {
-  "versione": "0.1.4",
-  "note": "0.1.4: nella Suite i siti con dati (liste dal database, moduli) si pubblicano anche come app Python (Flask) o Node autonome, oltre a PHP e statico (si sceglie in Esporta sito web); liste e moduli funzionano anche nel sito compresso; corretto un errore che nelle edizioni mirate bloccava il costruttore di siti; nelle edizioni Web, Dati, Sistema e Sicurezza arrivano i mattoni, blocchi di codice pronti da inserire; app a piu' schermate con Vai a una schermata.",
+  "versione": "0.1.5",
+  "note": "0.1.5: permessi piu' severi (rete, database, file, Robotica; importa python e c hanno il permesso codice); Leo avvisa quando scrivi nome stampa la parola invece della variabile e quando una variabile nasconde una funzione; suggerimenti tra ordina(v) e v.ordina(); 0.1 + 0.2 si stampa 0.3; sfide scritte dagli insegnanti; app Android piu' sicura con conferme native; aggiornamenti firmati.",
   "url": "https://leoitalia.com/scarica.html",
   "installatori": {
     "suite": {
-      "sha256": "163ae0b8beb61fdf601c2477c61cf6751d6859a6e5f2564a167f51e900ad7154",
-      "nome": "Setup_Leo_0.1.4.exe",
-      "dimensione": 301935168
+      "sha256": "0d222eb7115d2ee829d6c4115a812452b36d0f303382ff9df6d7445142853c75",
+      "nome": "Setup_Leo_0.1.5.exe",
+      "dimensione": 300557296
     },
     "web": {
-      "sha256": "a0afcabd7e60078ef653099e7cc8f24941ff18ae1c5aaebd355b1403caba1d55",
-      "nome": "Setup_Leo_Web_0.1.4.exe",
-      "dimensione": 298601016
+      "sha256": "f26e66add14ca3544db202fefde008f35548ef0bf42009c7754f67827c585c9e",
+      "nome": "Setup_Leo_Web_0.1.5.exe",
+      "dimensione": 297224216
     },
     "dati": {
-      "sha256": "547d003a0b138d2af66d852150a5a7c5941318df68a28121f410b604b1e46fae",
-      "nome": "Setup_Leo_Dati_0.1.4.exe",
-      "dimensione": 298595592
+      "sha256": "25731ec081be5fc23257a97af51fc22598d2c69c685c176de93089a88f400d9b",
+      "nome": "Setup_Leo_Dati_0.1.5.exe",
+      "dimensione": 297221456
     },
     "giochi": {
-      "sha256": "33e5385d09880d1fb420dfd7e0630c7e673ca3d5560283c7b037a3d43046fc1e",
-      "nome": "Setup_Leo_Giochi_0.1.4.exe",
-      "dimensione": 301824320
+      "sha256": "5ed52d6a40f4157956cbff697b429712b8f54298e3d275e94bd5f8fafe51c1a1",
+      "nome": "Setup_Leo_Giochi_0.1.5.exe",
+      "dimensione": 300450696
     },
     "sistema": {
-      "sha256": "b7aa23d82305f199183ac8748d2ae7791d426ea8c70eb68637bc13c31389a606",
-      "nome": "Setup_Leo_Sistema_0.1.4.exe",
-      "dimensione": 298617480
+      "sha256": "95fc0deac25f72f9c2e7a8cda5b77d2212a769d2df69e70967e39b04e0368181",
+      "nome": "Setup_Leo_Sistema_0.1.5.exe",
+      "dimensione": 297240608
     },
     "sicurezza": {
-      "sha256": "39c13aa39b21b707389e571ec53221e8dcd0df1c73fa00ca695a2659c631968c",
-      "nome": "Setup_Leo_Sicurezza_0.1.4.exe",
-      "dimensione": 298592512
+      "sha256": "92d5b02bb0170ab5af4b3184948a80792db646491721b3945fd81d9f305558c8",
+      "nome": "Setup_Leo_Sicurezza_0.1.5.exe",
+      "dimensione": 296940136
     },
     "robotica": {
-      "sha256": "f5c2249f3456690763085d9b1b09c2b5dc4e34c887b5497f32bdf3d54163f568",
-      "nome": "Setup_Leo_Robotica_0.1.4.exe",
-      "dimensione": 298599224
+      "sha256": "f9958da9495045eeb53b7abc895237843d848b45b85241d031fd63f2ba176ed6",
+      "nome": "Setup_Leo_Robotica_0.1.5.exe",
+      "dimensione": 296951184
     }
+  },
+  "canale": "stabile",
+  "firma": {
+    "algoritmo": "ed25519",
+    "chiave": "af3e08d9f539b3d1",
+    "valore": "4h10SWbeedFjpc0+obcmuvKje6YRTk7oiV/KwaW6iErtujHTm8H5mhOL8vj+yvi4b8xelXGe0n2OcZXA0ufvDQ=="
   }
 }
