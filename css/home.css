@@ -17,13 +17,13 @@
 .qh-pagina, .qh-terminale { position: relative; margin: 0; }
 .qh-pagina { padding: 48px 0 72px; }
 .qh-pagina .q-foglio { transform: rotate(-.6deg); }
-.qh-timbro { position: absolute; right: 14px; bottom: 12px; width: 56px; height: 56px; opacity: .9; transform: rotate(8deg); }
+.qh-timbro { position: absolute; right: 14px; top: 12px; width: 56px; height: 56px; opacity: .9; transform: rotate(8deg); }
 .qh-glossa { position: absolute; margin: 0; font-size: 25px; line-height: 1.05; transform: rotate(-3deg); }
 .qh-g1 { top: 0; right: 0; }
-.qh-g2 { bottom: 0; right: 0; text-align: right; transform: rotate(-2deg); }
+.qh-g2 { bottom: 4px; left: 0; transform: rotate(-2deg); }
 .qh-freccia { position: absolute; z-index: 2; fill: none; stroke: var(--inchiostro); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .qh-f1 { top: 42px; right: 12%; width: 90px; height: 130px; }
-.qh-f2 { bottom: 30px; left: 70px; width: 220px; height: 70px; }
+.qh-f2 { bottom: 26px; left: 250px; width: 120px; height: 70px; }
 /* unica animazione: le frecce si disegnano una volta, all'apertura */
 .js .qh-freccia path { stroke-dasharray: 260; stroke-dashoffset: 260; animation: qh-traccia .8s .4s ease-out forwards; }
 .js .qh-f2 path { animation-delay: .8s; }
@@ -94,3 +94,15 @@
   .q-foglio pre { font-size: 13px; }
   .qh-timbro { width: 40px; height: 40px; }
 }
+
+/* la finestra del programma, accanto al codice */
+.qh-pagina { padding-bottom: 120px; }
+.qh-app { position: absolute; right: -12px; bottom: 0; width: 250px; background: #fff; border: 1px solid #C9D2E0; border-radius: 6px; box-shadow: 0 18px 36px -18px rgba(21, 25, 42, .45); transform: rotate(1.2deg); font: 14px/1.3 "Segoe UI", system-ui, sans-serif; color: #1B1F2A; z-index: 1; }
+.qh-app-barra { display: flex; align-items: center; gap: 6px; padding: 7px 10px; border-bottom: 1px solid #E3E8F0; font-size: 12.5px; }
+.qh-app-barra span { margin-left: auto; color: #8B93A7; letter-spacing: 3px; font-size: 11px; }
+.qh-app-corpo { display: grid; gap: 10px; padding: 14px; }
+.qh-app-campo { border: 1px solid #BFC8D6; border-radius: 3px; padding: 6px 8px; }
+.qh-app-tasto { justify-self: start; padding: 6px 16px; border-radius: 3px; background: #D7262E; color: #fff; font-weight: 600; }
+.qh-app-msg { font-weight: 600; }
+@media (max-width: 520px) { .qh-app { position: relative; right: auto; margin: 16px 0 0 auto; } .qh-pagina { padding-bottom: 64px; } .qh-g2 { bottom: 0; } }
+.qh-pagina .q-foglio pre { font-size: 14px; } @media (min-width: 901px) and (max-width: 1100px) { .qh-pagina .q-foglio pre { font-size: 12.5px; } }
