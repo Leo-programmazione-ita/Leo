@@ -102,3 +102,24 @@ pre, .m-pre, code { font-family: var(--car-codice); font-variant-ligatures: none
 :root[data-tema="scuro"] .s { color: #9BD7A8; }
 
 @media (prefers-reduced-motion: reduce) { .q-tasto { transition: none; } }
+
+/* niente aloni rossi: il quaderno è carta pulita */
+.n-hero::before, .alone, .alone-idea, .offline-scena::before, .m-eroe-sfondo::before, .testa-pagina::before, .hero-sfondo { display: none !important; }
+.modo-foto, .compari { background-image: none !important; }
+/* titoli a due colori delle vecchie pagine: un solo inchiostro */
+.n-hero h1 em, .n-hero h1 span, .grad, .titolo-grad { background: none !important; -webkit-text-fill-color: currentColor !important; }
+
+/* animazioni sobrie: niente comparse allo scroll, il contenuto è subito lì */
+:root.js .compari, :root.js .parole, :root.js .h-testa-sezione, :root.js .h-tessera, :root.js .h-novita-voce,
+:root.js .hed-suite, :root.js .hed-card, :root.js .mondo, :root.js .cf-caso, :root.js .nv-voce,
+:root.js .documento h2, :root.js .dl-quadr, :root.js .dl-suite, :root.js .dl-smart, :root.js .parole .p {
+  opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important;
+}
+
+.pulsante, .dl-grande, .n-pill, .n-btn, .n-chip, .bottone { border-radius: 4px !important; box-shadow: none !important; }
+.dl-consigliato { box-shadow: var(--ombra) !important; border-radius: 4px !important; }
+.dl-avviso { margin: 10px 0 0; font-size: 14px; line-height: 1.45; color: var(--testo-3); }
+.dl-avviso a { color: var(--testo-2); text-decoration: underline; }
+/* fasce di testata: trasparenti, si vede il quaderno */
+:root .dl-testa, :root .n-hero, :root .n-banda, :root .n-dl, :root[data-tema] .dl-testa, :root[data-tema] .n-hero, :root[data-tema] .n-banda, :root[data-tema] .n-dl { background: transparent !important; }
+.dl-suite, .dl-quadr { background-image: none !important; }
