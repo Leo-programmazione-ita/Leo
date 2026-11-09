@@ -18,7 +18,7 @@
 
   /* ------------------------------------------------------------------ tema nero-rosso / chiaro
      Di serie il tema e' quello NERO E ROSSO di Leo ("scuro"). La scelta e' ricordata nel browser
-     (localStorage "leo-tema": "scuro" | "chiaro" | "sistema"); "sistema" (facoltativo) segue il
+     (localStorage "leo-tema-2": "scuro" | "chiaro" | "sistema"); "sistema" (facoltativo) segue il
      tema del dispositivo. Dentro l'app Leo la scelta viaggia in window.name ("leo-app:chiaro"),
      che resta da una pagina all'altra. Il cambio e' immediato, senza ricaricare. */
   var inApp = doc.classList.contains("in-app");
@@ -26,7 +26,7 @@
   function normalizza(s) { return s === "scuro" || s === "sistema" ? s : "chiaro"; }
   function leggiScelta() {
     if (inApp) return normalizza(String(window.name || "").split(":")[1]);
-    try { return normalizza(localStorage.getItem("leo-tema")); } catch (e) { return "chiaro"; }
+    try { return normalizza(localStorage.getItem("leo-tema-2")); } catch (e) { return "chiaro"; }
   }
   function risolvi(scelta) { return scelta === "sistema" ? (mqChiaro && mqChiaro.matches ? "chiaro" : "scuro") : scelta; }
   function temaEffettivo() { return doc.getAttribute("data-tema") === "chiaro" ? "chiaro" : "scuro"; }
@@ -35,7 +35,7 @@
     doc.setAttribute("data-tema", risolvi(scelta));
     doc.setAttribute("data-tema-scelto", scelta);
     if (inApp) { try { window.name = "leo-app:" + scelta; } catch (e) { /* niente */ } }
-    else { try { localStorage.setItem("leo-tema", scelta); } catch (e) { /* niente */ } }
+    else { try { localStorage.setItem("leo-tema-2", scelta); } catch (e) { /* niente */ } }
     aggiornaControlliTema();
     try { document.dispatchEvent(new CustomEvent("leo:tema", { detail: { tema: temaEffettivo() } })); } catch (e) { /* niente */ }
   }
