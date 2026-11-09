@@ -95,3 +95,4 @@
   .qh-timbro { width: 40px; height: 40px; }
 }
 .qh-sotto strong { color: var(--testo); font-weight: 700; }
+.qh-intro strong { color: var(--testo); }
