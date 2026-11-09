@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leo — un linguaggio, qualunque software</title>
 <meta name="description" content="Leo: un solo linguaggio, in italiano, per costruire qualunque software. Leo Suite è la piattaforma dove programmi — un foglio di codice e una finestra — e in più interconnette siti, dati, giochi, agenti di sistema, sicurezza e robotica.">
-<meta name="theme-color" content="#050506">
+<meta name="theme-color" content="#F6F8FB">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/">
 <meta property="og:type" content="website">
@@ -19,9 +19,11 @@
 <link rel="apple-touch-icon" href="img/stemma_180.png">
 <link rel="stylesheet" href="css/stile.css?v=20261107">
 <link rel="stylesheet" href="css/nuovo.css?v=20261026">
-<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<link rel="stylesheet" href="css/quaderno.css?v=20261108">
+<link rel="stylesheet" href="css/home.css?v=20261109">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="scuro"?"scuro":"chiaro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261026" defer></script>
+<script src="js/sito.js?v=20261109" defer></script>
 <script src="js/cerca.js" defer></script>
 <style>
 .n-scuola{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:18px 0 4px;padding:10px 16px;border:1px solid var(--accento-linea);border-radius:14px;
@@ -108,136 +110,93 @@
 <p class="avviso-rete" data-avviso-rete hidden role="status">Sei senza internet: il sito funziona lo stesso, tranne i video che non sono sul dispositivo e i download.</p>
 <!--/testata-->
 
-<main id="contenuto">
-<!-- ===== HERO ===== -->
-<section class="n-hero">
-  <div class="contenitore n-hero-griglia">
-    <div>
-      <span class="n-occhiello"><span class="pallino"></span> Leo <b>Suite</b> · la piattaforma</span>
-      <h1 class="n-h1">Un linguaggio.<span class="riga2">Qualunque software.</span></h1>
-      <a class="n-scuola" href="scuola.html"><strong>Impari o insegni?</strong> <span>Leo a scuola: età, un primo percorso di lezioni, laboratorio e privacy</span> <span class="n-scuola-frec" aria-hidden="true">→</span></a>
-      <p class="n-sotto">Scrivi in <strong>Leo</strong>, in italiano. La piattaforma capisce cosa stai costruendo — un sito, dei dati, un gioco, un agente, un dispositivo — e genera da sé ciò che serve. <strong>Senza uscire da Leo. Senza conoscere altri linguaggi.</strong></p>
-      <div class="n-azioni">
-        <a class="n-btn n-btn-pri" href="scarica.html">Scarica Leo <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg></a>
-        <a class="n-btn n-btn-ghost" href="#edizioni">Scopri le edizioni</a>
-      </div>
-      <p class="n-nota">Windows · Android · gratis e senza scadenza in questa versione</p>
-    </div>
-    <div class="n-vetro" aria-hidden="true">
-      <div class="n-vetro-barra"><i></i><i></i><i></i><span>negozio.leo</span></div>
-<pre><span class="cm"># lo stesso Leo, qualunque cosa tu stia costruendo</span>
-<span class="kw">variabile</span> sito = <span class="fn">pagina</span>(<span class="st">"Negozio"</span>)
-sito.<span class="fn">titolo</span>(<span class="st">"I nostri prodotti"</span>)
-sito.<span class="fn">mostra</span>(prodotti)
-sito.<span class="fn">salva</span>(<span class="st">"index.html"</span>)
+<main id="contenuto" class="q-home">
 
-<span class="kw">quando</span> si_compra(prodotto) <span class="kw">fai</span>
-    magazzino.<span class="fn">scala</span>(prodotto, <span class="nu">1</span>)
-    <span class="fn">avvisa</span>(<span class="st">"Ordine ricevuto"</span>)
-<span class="kw">fine</span></pre>
-      <div class="n-diventa">
-        <b>diventa</b>
-        <span class="n-tag">HTML + CSS</span><span class="n-tag">database</span><span class="n-tag">PHP</span><span class="n-tag">app Android</span><span class="n-tag">.exe</span>
-      </div>
+<section class="qh-apertura q-largo">
+  <div class="qh-testo">
+    <h1>Programma<br>in italiano.</h1>
+    <p class="qh-sotto">Non serve imparare prima l'inglese. Con le stesse parole fai un sito, un gioco, un foglio di dati o un programma che lavora per te.</p>
+    <div class="qh-azioni">
+      <a class="q-tasto pieno" href="scarica.html">Scarica gratis</a>
+      <a class="q-tasto" href="prova.html">Prova nel browser</a>
     </div>
+    <p class="qh-nota">Windows 10 e 11 · Android 7 o successivo · nessun account</p>
   </div>
+
+  <figure class="qh-pagina" aria-label="Un programma Leo con le note a margine">
+    <div class="q-foglio">
+      <span class="nome">negozio.leo</span>
+      <img class="qh-timbro" src="img/stemma.svg" alt="" width="64" height="64">
+<pre><code><span class="k">variabile</span> p = pagina(<span class="s">"Negozio"</span>)
+p.titolo(<span class="s">"I nostri prodotti"</span>)
+p.mostra(prodotti)
+p.salva(<span class="s">"index.html"</span>)
+
+<span class="k">quando</span> si_compra(prodotto) <span class="k">fai</span>
+    magazzino.scala(prodotto, 1)
+    avvisa(<span class="s">"Ordine ricevuto"</span>)
+<span class="k">fine</span></code></pre>
+    </div>
+    <p class="qh-glossa qh-g1 q-mano">diventa una pagina web vera</p>
+    <p class="qh-glossa qh-g2 q-mano">«quando… fai… fine»:<br>si legge come si dice</p>
+    <svg class="qh-freccia qh-f1" viewBox="0 0 90 130" aria-hidden="true"><path d="M82 4 C80 60 56 104 14 118" /><path d="M14 118 l10 -10 M14 118 l14 4" /></svg>
+    <svg class="qh-freccia qh-f2" viewBox="0 0 220 70" aria-hidden="true"><path d="M214 56 C150 64 70 52 12 12" /><path d="M12 12 l5 13 M12 12 l13 2" /></svg>
+  </figure>
 </section>
 
-<!-- ===== EDIZIONI ===== -->
-<section id="edizioni" class="n-sez">
-  <div class="contenitore">
-    <p class="n-occ">Ognuno col suo</p>
-    <h2 class="n-h2">Sei strumenti, uno per ogni mestiere</h2>
-    <p class="n-intro">Ogni edizione di Leo è un prodotto a sé, pensato e disegnato per il suo lavoro. La lingua è sempre la stessa: cambia la forma dello strumento che ti trovi davanti.</p>
-    <div class="n-edizioni">
-      <a class="n-ed" href="web.html" style="--cc:var(--c-web)">
-        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
-        <h3>Leo Web <em>Web</em></h3>
-        <p>Costruttore di siti a due finestre: scrivi Leo, vedi la pagina. Il compilatore decide da sé HTML, CSS, PHP o JavaScript.</p>
-        <span class="n-forma">Costruttore di siti</span>
-      </a>
-      <a class="n-ed" href="dati.html" style="--cc:var(--c-dati)">
-        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
-        <h3>Leo Dati <em>Dati</em></h3>
-        <p>Un foglio con una pipeline di passi: carichi, pulisci, trasformi e pubblichi i dati, un passo alla volta, vedendo il risultato.</p>
-        <span class="n-forma">Foglio a passi</span>
-      </a>
-      <a class="n-ed" href="giochi.html" style="--cc:var(--c-giochi)">
-        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h3M8.5 10.5v3M15 11h.01M18 13h.01"/></svg></div>
-        <h3>Leo Giochi <em>Giochi</em></h3>
-        <p>Un palco: scegli i personaggi, dai le regole, premi Prova. I personaggi e le risorse li scarichi quando servono.</p>
-        <span class="n-forma">Palco di gioco</span>
-      </a>
-      <a class="n-ed" href="sistema.html" style="--cc:var(--c-sistema)">
-        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <h3>Leo Sistema <em>Sistema</em></h3>
-        <p>Un laboratorio di agenti: sensi, testa e mani. La testa può essere regole o un'IA locale. Comandano il computer per te.</p>
-        <span class="n-forma">Laboratorio di agenti</span>
-      </a>
-      <a class="n-ed" href="sicurezza.html" style="--cc:var(--c-sicurezza)">
-        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></div>
-        <h3>Leo Sicurezza <em>Sicurezza</em></h3>
-        <p>Il banco del perito: gli attrezzi per controllare, cifrare e verificare, con un taccuino che tiene traccia di ogni prova.</p>
-        <span class="n-forma">Banco del perito</span>
-      </a>
-      <a class="n-ed" href="robotica.html" style="--cc:var(--c-robotica)">
-        <div class="n-ed-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3M9 13h.01M15 13h.01"/></svg></div>
-        <h3>Leo Robotica <em>Robotica</em></h3>
-        <p>Una plancia di comando: pin, sensori, LED e motori della scheda Pico, con un simulatore per provare prima di collegare.</p>
-        <span class="n-forma">Plancia hardware</span>
-      </a>
-    </div>
+<section class="qh-errore q-largo" aria-labelledby="qh-errore-t">
+  <div>
+    <h2 id="qh-errore-t">Sbagliare è normale.<br>Leo ti dice perché.</h2>
+    <p>Gli errori sono scritti in italiano, indicano il punto preciso e quando può ti suggeriscono la correzione.</p>
   </div>
+  <figure class="qh-terminale">
+    <div class="q-foglio">
+      <span class="nome">quello che vedi</span>
+<pre><code><span class="k">ErroreNome</span> alla riga 2, colonna 8 di p.leo
+
+    2 | stampa(nomee)
+      |        ^^^^^
+
+`nomee` non è definito.
+Suggerimento: forse intendevi `nome`
+(definito alla riga 1)?</code></pre>
+    </div>
+    <p class="qh-glossa qh-g3 q-mano">ha visto l'errore di battitura</p>
+  </figure>
 </section>
 
-<!-- ===== PIATTAFORMA ===== -->
-<section id="piattaforma" class="n-banda">
-  <div class="contenitore n-sez n-due">
-    <div>
-      <p class="n-occ" style="color:var(--c-suite)">Leo Suite · la piattaforma</p>
-      <h2 class="n-h2">La piattaforma dove programmi. E in più si parla.</h2>
-      <p class="n-intro">Leo Suite è la <strong>piattaforma di programmazione</strong> completa: un foglio di codice e una finestra da disegnare, per costruire qualunque programma in Leo. <strong>E in più</strong> tiene insieme le edizioni e le fa collaborare — un progetto <strong>espone</strong> ciò che sa fare, un altro lo <strong>usa</strong>: una tabella di Leo Dati finisce in un sito di Leo Web, un agente di Leo Sistema la aggiorna, senza colla scritta a mano e senza cambiare linguaggio.</p>
-      <p class="n-intro" style="margin-top:14px">Così, quando serve, in Leo costruisci anche un <em>sistema intero</em>, non sei pezzi separati. <a href="suite.html">Scopri la piattaforma →</a></p>
-    </div>
-    <div class="n-flusso" aria-hidden="true">
-      <div class="n-nodo"><span class="p" style="background:var(--c-dati)">D</span><div><div class="d"><strong>Leo Dati</strong> espone una tabella</div><code>espone  dato/tabella  "prodotti"</code></div></div>
-      <div class="n-frec">↓</div>
-      <div class="n-nodo"><span class="p" style="background:var(--c-web)">W</span><div><div class="d"><strong>Leo Web</strong> la usa nel sito</div><code>usa  "magazzino"  come catalogo</code></div></div>
-      <div class="n-frec">↓</div>
-      <div class="n-nodo"><span class="p" style="background:var(--c-sistema)">S</span><div><div class="d"><strong>Leo Sistema</strong> la tiene aggiornata</div><code>espone  azione  "aggiorna"</code></div></div>
-    </div>
-  </div>
+<section class="qh-indice q-largo" aria-labelledby="qh-indice-t">
+  <h2 id="qh-indice-t">Cosa vuoi creare?</h2>
+  <p class="qh-intro">Ogni edizione è uno strumento fatto per il suo lavoro. La lingua è sempre la stessa.</p>
+  <a class="qh-suite" href="suite.html">
+    <span class="qh-consiglio q-mano">se non sai quale scegliere</span>
+    <strong>Leo Suite</strong>
+    <span>Le contiene tutte e le fa lavorare insieme: una tabella di Dati finisce in un sito di Web, un agente di Sistema la tiene aggiornata.</span>
+  </a>
+  <ol class="qh-voci">
+    <li style="--cc:var(--c-web)"><a href="web.html"><span class="qh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span><span class="v-nome">Web<small>Costruttore di siti</small></span><span class="v-cosa">siti e pagine: scrivi a destra, vedi la pagina a sinistra</span><code class="v-riga">p.modulo("nome", "messaggio")</code></a></li>
+    <li style="--cc:var(--c-dati)"><a href="dati.html"><span class="qh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span class="v-nome">Dati<small>Foglio a passi</small></span><span class="v-cosa">tabelle e grafici, un passo alla volta</span><code class="v-riga">dati.filtra("incasso", "&gt;=", 1000)</code></a></li>
+    <li style="--cc:var(--c-giochi)"><a href="giochi.html"><span class="qh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M7 12h3M8.5 10.5v3M15 11h.01M18 13h.01"/></svg></span><span class="v-nome">Giochi<small>Palco di gioco</small></span><span class="v-cosa">personaggi, regole e un palco per provarli</span><code class="v-riga">quando Eroe.tocca Moneta fai</code></a></li>
+    <li style="--cc:var(--c-sistema)"><a href="sistema.html"><span class="qh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="v-nome">Sistema<small>Laboratorio di agenti</small></span><span class="v-cosa">programmi che lavorano sul computer al posto tuo</span><code class="v-riga">sorveglia "~/Download" fai arrivato</code></a></li>
+    <li style="--cc:var(--c-sicurezza)"><a href="sicurezza.html"><span class="qh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></span><span class="v-nome">Sicurezza<small>Banco del perito</small></span><span class="v-cosa">controllare file, impronte e cifratura, con un taccuino</span><code class="v-riga">impronta_file("allegato.bin")</code></a></li>
+    <li style="--cc:var(--c-robotica)"><a href="robotica.html"><span class="qh-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3M9 13h.01M15 13h.01"/></svg></span><span class="v-nome">Robotica<small>Plancia di comando</small></span><span class="v-cosa">LED, sensori e motori della scheda Pico, con un simulatore</span><code class="v-riga">luce.accendi()</code></a></li>
+  </ol>
 </section>
 
-<!-- ===== MANUALI ===== -->
-<section id="manuali" class="n-sez">
-  <div class="contenitore">
-    <p class="n-occ">Imparare</p>
-    <h2 class="n-h2">Un manuale per ogni cosa — e uno per la lingua</h2>
-    <p class="n-intro">Ogni distribuzione ha la sua guida pratica, «come si fa e dove trovo le cose». La lingua Leo, uguale per tutti, ha un unico manuale generale.</p>
-    <div class="n-indice">
-      <a href="manuali/linguaggio.html" style="--cc:var(--c-suite)"><strong>Il linguaggio Leo</strong><span>La grammatica, le parole, i concetti: valido in ogni edizione.</span></a>
-      <a href="manuali/piattaforma.html" style="--cc:var(--c-suite)"><strong>La piattaforma Suite</strong><span>Come interconnettere gli strumenti: espone / usa, progetti e flussi.</span></a>
-      <a href="manuali/index.html" style="--cc:var(--c-web)"><strong>Guide delle edizioni</strong><span>Web, Dati, Giochi, Sistema, Sicurezza, Robotica: una guida ciascuna.</span></a>
-    </div>
-  </div>
+<section class="qh-scuola q-largo">
+  <a href="scuola.html"><strong>Impari o insegni?</strong> Leo a scuola: per che età, un primo percorso di lezioni, il laboratorio e la privacy degli studenti.</a>
 </section>
 
-<!-- ===== SCARICA ===== -->
-<section id="scarica" class="n-dl">
-  <div class="contenitore n-sez">
-    <div class="n-dl-card">
-      <h2>Scarica l'edizione che ti serve</h2>
-      <p>Ogni edizione ha il suo installatore per Windows e la sua app per Android. Oppure prendi <strong>Leo Suite</strong> e hai tutto, interconnesso.</p>
-      <div class="n-dl-azioni">
-        <a class="n-btn n-btn-pri" href="scarica.html">Leo Suite per Windows</a>
-        <a class="n-btn n-btn-ghost" href="scarica.html#android">App Leo per Android</a>
-        <a class="n-btn n-btn-ghost" href="scarica.html">Tutte le edizioni</a>
-      </div>
-      <p class="n-nota" style="margin-top:18px">Versione 0.1.5 · gratis e senza scadenza in questa versione</p>
-    </div>
+<section class="qh-fine q-largo" aria-labelledby="qh-fine-t">
+  <h2 id="qh-fine-t">Comincia adesso</h2>
+  <div class="qh-strade">
+    <a href="scarica.html"><strong>Leo Suite per Windows</strong><span>Installatore, 287 MB. Contiene tutte le edizioni.</span></a>
+    <a href="telefono.html"><strong>App Leo per Android</strong><span>54 MB. Programmi e provi anche dal telefono.</span></a>
+    <a href="prova.html"><strong>Prova nel browser</strong><span>Le prime righe subito, senza installare niente.</span></a>
   </div>
+  <p class="qh-nota">Gratis e senza scadenza in questa versione. Versione 0.1.5. <a href="manuale/">Il manuale</a> spiega la lingua dall'inizio.</p>
 </section>
+
 </main>
 
 <!--#piede-->
@@ -304,8 +263,8 @@ sito.<span class="fn">salva</span>(<span class="st">"index.html"</span>)
     <div class="piede-fondo">
       <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
       <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
-        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
-        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="scuro" tabindex="-1">Lavagna</button>
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="chiaro">Quaderno</button>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
       </div>
       <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>

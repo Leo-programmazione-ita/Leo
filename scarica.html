@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scarica Leo — tutte le edizioni per Windows e Android</title>
 <meta name="description" content="Scarica l'edizione di Leo che ti serve: installatore per Windows e app per Android per Web, Dati, Giochi, Sistema, Sicurezza, Robotica e la Suite completa. Versione 0.1.5, gratis.">
-<meta name="theme-color" content="#050506">
+<meta name="theme-color" content="#F6F8FB">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://leoitalia.com/scarica.html">
 <meta property="og:type" content="website">
@@ -19,9 +19,10 @@
 <link rel="apple-touch-icon" href="img/stemma_180.png">
 <link rel="stylesheet" href="css/stile.css?v=20261107">
 <link rel="stylesheet" href="css/nuovo.css?v=20261026">
-<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="chiaro"?"chiaro":"scuro")})(document.documentElement)</script>
+<link rel="stylesheet" href="css/quaderno.css?v=20261109">
+<script>(function(d){d.classList.add("js");var t=null,n="";try{t=localStorage.getItem("leo-tema")}catch(e){}try{n=String(window.name||"")}catch(e){}if(n.indexOf("leo-app")===0){d.classList.add("in-app");t=n.split(":")[1]||t}if(t==="sistema"){try{t=matchMedia("(prefers-color-scheme: light)").matches?"chiaro":"scuro"}catch(e){t="scuro"}}d.setAttribute("data-tema",t==="scuro"?"scuro":"chiaro")})(document.documentElement)</script>
 <script src="config.js" defer></script>
-<script src="js/sito.js?v=20261026" defer></script>
+<script src="js/sito.js?v=20261109" defer></script>
 <script src="js/cerca.js" defer></script>
 <style>
 .dl-testa{position:relative;overflow:hidden;padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px);border-bottom:1px solid var(--bordo);
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     q("[data-dl-principale]").href = "https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.5/Leo-0.1.5.apk";
     q("[data-dl-testo]").textContent = "Scarica per Android";
     q("[data-dl-meta]").textContent = "54 MB · app .apk";
-    q("[data-dl-avviso]").innerHTML = 'Android chiederà di consentire l\'installazione da questa fonte: succede con le app fuori dal Play Store. <a href="#installa" style="color:var(--testo-2)">Come proseguire</a>';
+    q("[data-dl-avviso]").innerHTML = 'Android chiederà di consentire l\'installazione da questa fonte: succede con le app fuori dal Play Store. <a href="#installa">Come proseguire</a>';
     q("[data-dl-altro]").innerHTML = 'Per il computer: <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.5/Setup_Leo_0.1.5.exe">scarica per Windows</a> (287 MB)';
   } else if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
     q("[data-dl-perche]").textContent = "Su iPhone e iPad";
@@ -269,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <p class="dl-cosa">Tutte e sei le edizioni in una. Se non sai quale scegliere, parti da qui.</p>
       <a class="dl-grande" data-dl-principale href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.5/Setup_Leo_0.1.5.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6.5 10.5 12 16l5.5-5.5M5 20h14"/></svg><span data-dl-testo>Scarica per Windows</span></a>
       <p class="dl-meta" data-dl-meta>287 MB · installer .exe</p>
-      <p class="dl-avviso" data-dl-avviso style="margin:10px 0 0;font-size:14px;line-height:1.45;color:var(--testo-3);text-align:center">Windows potrebbe mostrare «Windows ha protetto il PC»: succede con i programmi nuovi. <a href="#installa" style="color:var(--testo-2)">Come proseguire</a></p>
+      <p class="dl-avviso" data-dl-avviso>Windows potrebbe mostrare «Windows ha protetto il PC»: succede con i programmi nuovi. <a href="#installa">Come proseguire</a></p>
       <p class="dl-altro" data-dl-altro>Ti serve sul telefono? <a href="https://github.com/Leo-programmazione-ita/Leo/releases/download/v0.1.5/Leo-0.1.5.apk">Scarica per Android</a> (54 MB)</p>
     </div>
   </div>
@@ -500,8 +501,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="piede-fondo">
       <p>© <span data-anno>2026</span> Rosario Zappalà, tutti i diritti riservati. I programmi scritti in Leo appartengono ai loro autori.</p>
       <div class="scelta-tema" role="radiogroup" aria-label="Aspetto del sito">
-        <button type="button" role="radio" aria-checked="true" data-tema-scelta="scuro">Nero e rosso</button>
-        <button type="button" role="radio" aria-checked="false" data-tema-scelta="chiaro" tabindex="-1">Chiaro</button>
+        <button type="button" role="radio" aria-checked="false" data-tema-scelta="scuro" tabindex="-1">Lavagna</button>
+        <button type="button" role="radio" aria-checked="true" data-tema-scelta="chiaro">Quaderno</button>
         <button type="button" role="radio" aria-checked="false" data-tema-scelta="sistema" tabindex="-1">Come il sistema</button>
       </div>
       <p>Niente cookie, niente tracciamento. Alcune pagine usano servizi esterni: <a href="privacy.html#servizi-esterni">quali e perché</a>.</p>
