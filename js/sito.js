@@ -23,10 +23,10 @@
      che resta da una pagina all'altra. Il cambio e' immediato, senza ricaricare. */
   var inApp = doc.classList.contains("in-app");
   var mqChiaro = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
-  function normalizza(s) { return s === "scuro" || s === "sistema" ? s : "chiaro"; }
+  function normalizza(s) { return s === "chiaro" || s === "sistema" ? s : "scuro"; }
   function leggiScelta() {
     if (inApp) return normalizza(String(window.name || "").split(":")[1]);
-    try { return normalizza(localStorage.getItem("leo-tema")); } catch (e) { return "chiaro"; }
+    try { return normalizza(localStorage.getItem("leo-tema")); } catch (e) { return "scuro"; }
   }
   function risolvi(scelta) { return scelta === "sistema" ? (mqChiaro && mqChiaro.matches ? "chiaro" : "scuro") : scelta; }
   function temaEffettivo() { return doc.getAttribute("data-tema") === "chiaro" ? "chiaro" : "scuro"; }
