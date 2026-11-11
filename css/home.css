@@ -98,5 +98,5 @@
 .qh-intro strong { color: var(--testo); }
 
 /* note a mano e frecce in rosso Leo */
-.q-home .q-mano { color: var(--accento); }
+
 .q-home .qh-freccia { stroke: var(--accento); }
